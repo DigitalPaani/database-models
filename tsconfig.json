@@ -6,7 +6,9 @@
       "target": "ES6",
       "strict": true,
       "esModuleInterop": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "declaration": true,
+      "declarationMap": true
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules"]

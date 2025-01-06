@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 import { FORMULA_TYPES, FORMULA_UNITS } from "../constants/formulaConst";
 import { FormulaCommonTypes } from "../types/formulaTypes";
 
-interface IFormula extends Document {
+export interface IFormula extends Document {
   version: number;
   name: string;
   description: string;
