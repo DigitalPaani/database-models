@@ -81,4 +81,4 @@ const FormulasModel: Model<IFormula> = mongoose.model<IFormula>(
   "formulas"
 );
 
-export { FormulasModel, IFormula };
+export default FormulasModel;

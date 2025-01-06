@@ -33,7 +33,6 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormulasModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const formulaConst_1 = require("../constants/formulaConst");
 const frequencySchema = new mongoose_1.Schema({
@@ -84,4 +83,4 @@ const formulasSchema = new mongoose_1.Schema({
     timestamps: true,
 });
 const FormulasModel = mongoose_1.default.model("formulas", formulasSchema, "formulas");
-exports.FormulasModel = FormulasModel;
+exports.default = FormulasModel;
