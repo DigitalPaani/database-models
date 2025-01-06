@@ -1,5 +1,3 @@
-import FormulasModel from './models/formulaModel';
+import FormulasModel from "./models/formulaModel";
 
-export default {
-    FormulasModel,
-}
+export { FormulasModel };
