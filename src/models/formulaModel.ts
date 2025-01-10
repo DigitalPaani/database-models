@@ -6,7 +6,7 @@ import {
   FORMULAS_CHIP_TYPES,
 } from "../constants/formulaConst";
 import { FormulaCommonTypes } from "../types/formulaTypes";
-require('./sensorModel');
+require("./sensorModel");
 
 interface IFormula extends Document {
   version: number;
@@ -62,7 +62,7 @@ const formulasSchema = new Schema<IFormula>(
       ref: "NewWorkspace",
       required: true,
     } as any,
-    formulaTag: { type: String, required: true },
+    formulaTag: { type: String, required: true, unique: true },
     formulaChips: {
       type: [
         {

@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormulasModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const formulaConst_1 = require("../constants/formulaConst");
-require('./sensorModel');
+require("./sensorModel");
 const frequencySchema = new mongoose_1.Schema({
     dateTime: {
         type: Number,
@@ -68,7 +68,7 @@ const formulasSchema = new mongoose_1.Schema({
         ref: "NewWorkspace",
         required: true,
     },
-    formulaTag: { type: String, required: true },
+    formulaTag: { type: String, required: true, unique: true },
     formulaChips: {
         type: [
             {
