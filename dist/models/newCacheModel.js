@@ -61,6 +61,7 @@ const newCacheSchema = new mongoose_1.Schema({
                 type: [mongoose_1.Schema.Types.Mixed], // Can be a Number, String, or Array
                 required: true,
             },
+            isCalculated: { type: Boolean, default: false },
         },
     ],
 }, {

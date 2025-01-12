@@ -7,6 +7,7 @@ interface INewCache extends Document {
     values: Array<{
         timestamp: number;
         value: string[];
+        isCalculated: boolean;
     }>;
 }
 declare const NewCacheModel: Model<INewCache>;
