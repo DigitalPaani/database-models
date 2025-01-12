@@ -9,6 +9,7 @@ interface INewCache extends Document {
   values: Array<{
     timestamp: number;
     value: string[];
+    isCalculated?: boolean;
   }>;
 }
 
@@ -39,6 +40,7 @@ const newCacheSchema = new Schema<INewCache>(
           type: [Schema.Types.Mixed], // Can be a Number, String, or Array
           required: true,
         },
+        isCalculated: Boolean,
       },
     ],
   },
