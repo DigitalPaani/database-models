@@ -62,7 +62,7 @@ const formulasSchema = new Schema<IFormula>(
       ref: "NewWorkspace",
       required: true,
     } as any,
-    formulaTag: { type: String, required: true, unique: true },
+    formulaTag: { type: String, required: true },
     formulaChips: {
       type: [
         {

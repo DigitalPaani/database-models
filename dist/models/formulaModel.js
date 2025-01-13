@@ -68,7 +68,7 @@ const formulasSchema = new mongoose_1.Schema({
         ref: "NewWorkspace",
         required: true,
     },
-    formulaTag: { type: String, required: true, unique: true },
+    formulaTag: { type: String, required: true },
     formulaChips: {
         type: [
             {
