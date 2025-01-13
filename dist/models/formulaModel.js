@@ -37,6 +37,9 @@ exports.FormulasModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const formulaConst_1 = require("../constants/formulaConst");
 require("./sensorModel");
+require("./workspace.model");
+require("./newuser.model");
+require("./plant.model");
 const frequencySchema = new mongoose_1.Schema({
     dateTime: {
         type: Number,
