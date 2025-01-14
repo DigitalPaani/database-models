@@ -6,7 +6,8 @@ interface INewCache extends Document {
     details: FormulaCommonTypes.SensorSetting;
     values: Array<{
         timestamp: number;
-        value: string[];
+        value: number[];
+        aggregatedValue: number[];
         isCalculated: boolean;
     }>;
 }
