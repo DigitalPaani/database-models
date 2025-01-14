@@ -11,7 +11,6 @@ interface INewCache extends Document {
     value: number[];
     aggregatedValue: number[];
     isCalculated: boolean;
-    expiresAt: Date; // Added field for TTL
   }>;
 }
 
@@ -47,15 +46,6 @@ const newCacheSchema = new Schema<INewCache>(
           required: true,
         },
         isCalculated: { type: Boolean, default: false },
-        expiresAt: {
-          type: Date,
-          required: true,
-          default: function () {
-            // Set the expiration date to 7 days from now
-            return new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-          },
-          index: { expireAfterSeconds: 0 },
-        },
       },
     ],
   },
