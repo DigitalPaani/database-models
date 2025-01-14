@@ -6,6 +6,7 @@ interface ISensorSetting extends Document {
     aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative";
     firstReferenceTimeInMinutes: number;
     lastReferenceTimeInMinutes: number;
+    returnType: "values" | "value" | "datetime";
 }
 declare const SensorSettingsModel: Model<ISensorSetting>;
 export { SensorSettingsModel, ISensorSetting };

@@ -320,6 +320,12 @@ const SENSOR_SETTING_AGGREGATION = [
   "Cumulative",
 ];
 
+const SENSOR_SETTING_RETURN_TYPES = [
+  "values",
+  "value",
+  "datetime"
+];
+
 const FORMULAS_CHIP_TYPES = [
   "hyperFormulaFunction",
   "operator",
@@ -334,4 +340,5 @@ export {
   SENSOR_SETTING_AGGREGATION,
   SENSOR_SETTING_GRANULARITY,
   FORMULAS_CHIP_TYPES,
+  SENSOR_SETTING_RETURN_TYPES,
 };

@@ -3,6 +3,7 @@ import mongoose, { Schema } from "mongoose";
 import {
   SENSOR_SETTING_AGGREGATION,
   SENSOR_SETTING_GRANULARITY,
+  SENSOR_SETTING_RETURN_TYPES,
 } from "../constants/formulaConst";
 
 interface ISensorSetting extends Document {
@@ -12,6 +13,7 @@ interface ISensorSetting extends Document {
   aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative";
   firstReferenceTimeInMinutes: number;
   lastReferenceTimeInMinutes: number;
+  returnType: "values" | "value" | "datetime";
 }
 
 const sensorSettingsSchema = new Schema<ISensorSetting>(
@@ -39,6 +41,12 @@ const sensorSettingsSchema = new Schema<ISensorSetting>(
       type: Number,
       required: true,
       default: 0,
+    },
+    returnType: {
+      type: String,
+      enum: SENSOR_SETTING_RETURN_TYPES,
+      required: true,
+      default: "value",
     },
   },
   {

@@ -58,7 +58,11 @@ const newCacheSchema = new mongoose_1.Schema({
                 required: true,
             },
             value: {
-                type: [mongoose_1.Schema.Types.Mixed], // Can be a Number, String, or Array
+                type: [Number],
+                required: true,
+            },
+            aggregatedValue: {
+                type: [Number],
                 required: true,
             },
             isCalculated: { type: Boolean, default: false },

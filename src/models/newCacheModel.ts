@@ -37,7 +37,11 @@ const newCacheSchema = new Schema<INewCache>(
           required: true,
         },
         value: {
-          type: [Schema.Types.Mixed], // Can be a Number, String, or Array
+          type: [Number],
+          required: true,
+        },
+        aggregatedValue: {
+          type: [Number],
           required: true,
         },
         isCalculated: { type: Boolean, default: false },

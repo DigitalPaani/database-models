@@ -61,6 +61,12 @@ const sensorSettingsSchema = new mongoose_1.Schema({
         required: true,
         default: 0,
     },
+    returnType: {
+        type: String,
+        enum: formulaConst_1.SENSOR_SETTING_RETURN_TYPES,
+        required: true,
+        default: "value",
+    },
 }, {
     timestamps: true, // Automatically add createdAt and updatedAt fields
 });
