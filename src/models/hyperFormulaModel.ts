@@ -1,6 +1,6 @@
-import type { Document } from 'mongoose';
-import mongoose from 'mongoose';
-import { ARGUMENT_TYPES, HYPER_FORMULAS } from '../constants/formulaConst'
+import type { Document } from "mongoose";
+import mongoose from "mongoose";
+import { ARGUMENT_TYPES, HYPER_FORMULAS } from "../constants/formulaConst";
 
 interface IHyperFormulaParameter {
   dataType: string;
@@ -16,12 +16,14 @@ interface IHyperFormulaParameter {
 
 interface IHyperFormula extends Document {
   functionName: string;
+  returnNumberType: string;
+  method: string;
   parameters: IHyperFormulaParameter[];
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-const hyperformulasSchema = new mongoose.Schema(
+const hyperFormulasSchema = new mongoose.Schema(
   {
     functionName: {
       type: String,
@@ -29,6 +31,14 @@ const hyperformulasSchema = new mongoose.Schema(
       unique: true,
       trim: true,
       enum: HYPER_FORMULAS,
+    },
+    returnNumberType: {
+      type: String,
+      trim: true,
+    },
+    method: {
+      type: String,
+      trim: true,
     },
     parameters: {
       type: [
@@ -55,9 +65,9 @@ const hyperformulasSchema = new mongoose.Schema(
 
 // Create the model
 const HyperFormulaModel = mongoose.model<IHyperFormula>(
-  'hyperformulas',
-  hyperformulasSchema,
-  'hyperformulas'
+  "hyperFormulas",
+  hyperFormulasSchema,
+  "hyperFormulas"
 );
 
 export { HyperFormulaModel, IHyperFormula };

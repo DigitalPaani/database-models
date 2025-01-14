@@ -7,9 +7,10 @@ import {
 } from "../constants/formulaConst";
 import { FormulaCommonTypes } from "../types/formulaTypes";
 require("./sensorModel");
-require("./workspace.model");
-require("./newuser.model");
-require("./plant.model");
+require("./workspaceModel");
+require("./newUserModel");
+require("./plantModel");
+require("./userGroupModel");
 
 interface IFormula extends Document {
   version: number;

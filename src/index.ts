@@ -1,5 +1,5 @@
 import { FormulasModel, IFormula } from "./models/formulaModel";
-import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormula";
+import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormulaModel";
 import { NewCacheModel, INewCache } from "./models/newCacheModel";
 import {
   SensorSettingsModel,
