@@ -66,6 +66,15 @@ const newCacheSchema = new mongoose_1.Schema({
                 required: true,
             },
             isCalculated: { type: Boolean, default: false },
+            expiresAt: {
+                type: Date,
+                required: true,
+                default: function () {
+                    // Set the expiration date to 7 days from now
+                    return new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+                },
+                index: { expireAfterSeconds: 0 },
+            },
         },
     ],
 }, {

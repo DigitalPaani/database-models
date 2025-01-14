@@ -9,6 +9,7 @@ interface INewCache extends Document {
         value: number[];
         aggregatedValue: number[];
         isCalculated: boolean;
+        expiresAt: Date;
     }>;
 }
 declare const NewCacheModel: Model<INewCache>;
