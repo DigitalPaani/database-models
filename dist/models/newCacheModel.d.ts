@@ -7,7 +7,6 @@ interface INewCache extends Document {
     details: FormulaCommonTypes.SensorSetting;
     firstDataDate: number | null;
     rawValue: [number | null];
-    value: number[];
     values: Array<{
         timestamp: number;
         aggregatedValue: number[];
