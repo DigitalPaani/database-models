@@ -7,6 +7,8 @@ interface INewCache extends Document {
   formulaId:Types.ObjectId;
   sensorSettingId: Types.ObjectId;
   details: FormulaCommonTypes.SensorSetting;
+  firstDataDate:number|null;
+  rawValue:[number|null];
   value: number[];
   values: Array<{
     timestamp: number;
@@ -37,8 +39,13 @@ const newCacheSchema = new Schema<INewCache>(
       type: Object,
       required: true,
     },
-    value: {
-      type: [Number],
+    firstDataDate:{
+      type:Number,
+      require:true,
+      default:null
+    },
+    rawValue: {
+      type: [Schema.Types.Mixed],
       required: true,
     },
     values: [

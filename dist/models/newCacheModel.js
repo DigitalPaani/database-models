@@ -56,8 +56,13 @@ const newCacheSchema = new mongoose_1.Schema({
         type: Object,
         required: true,
     },
-    value: {
-        type: [Number],
+    firstDataDate: {
+        type: Number,
+        require: true,
+        default: null
+    },
+    rawValue: {
+        type: [mongoose_1.Schema.Types.Mixed],
         required: true,
     },
     values: [
