@@ -4,11 +4,12 @@ import type { FormulaCommonTypes } from "../types/formulaTypes";
 
 interface INewCache extends Document {
   sensorTag: string;
+  formulaId:Types.ObjectId;
   sensorSettingId: Types.ObjectId;
   details: FormulaCommonTypes.SensorSetting;
+  value: number[];
   values: Array<{
     timestamp: number;
-    value: number[];
     aggregatedValue: number[];
     isCalculated: boolean;
   }>;
@@ -21,6 +22,11 @@ const newCacheSchema = new Schema<INewCache>(
       required: true,
       trim: true,
     },
+    formulaId:{
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "formulas"      
+    },
     sensorSettingId: {
       type: Schema.Types.ObjectId,
       required: true,
@@ -31,14 +37,14 @@ const newCacheSchema = new Schema<INewCache>(
       type: Object,
       required: true,
     },
+    value: {
+      type: [Number],
+      required: true,
+    },
     values: [
       {
         timestamp: {
           type: Number, // Assuming epoch is stored as a number
-          required: true,
-        },
-        value: {
-          type: [Number],
           required: true,
         },
         aggregatedValue: {

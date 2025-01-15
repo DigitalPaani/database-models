@@ -41,6 +41,11 @@ const newCacheSchema = new mongoose_1.Schema({
         required: true,
         trim: true,
     },
+    formulaId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+        ref: "formulas"
+    },
     sensorSettingId: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
@@ -51,14 +56,14 @@ const newCacheSchema = new mongoose_1.Schema({
         type: Object,
         required: true,
     },
+    value: {
+        type: [Number],
+        required: true,
+    },
     values: [
         {
             timestamp: {
                 type: Number, // Assuming epoch is stored as a number
-                required: true,
-            },
-            value: {
-                type: [Number],
                 required: true,
             },
             aggregatedValue: {
