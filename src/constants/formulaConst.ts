@@ -321,16 +321,13 @@ const SENSOR_SETTING_AGGREGATION = [
   "Raw",
 ];
 
-const SENSOR_SETTING_RETURN_TYPES = [
-  "values",
-  "value",
-  "datetime"
-];
+const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime"];
 
 const FORMULAS_CHIP_TYPES = [
   "hyperFormulaFunction",
   "operator",
   "sensorSetting",
+  "number",
 ];
 
 export {
