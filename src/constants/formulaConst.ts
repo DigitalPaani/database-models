@@ -318,6 +318,7 @@ const SENSOR_SETTING_AGGREGATION = [
   "Minimum",
   "Maximum",
   "Cumulative",
+  "Raw",
 ];
 
 const SENSOR_SETTING_RETURN_TYPES = [

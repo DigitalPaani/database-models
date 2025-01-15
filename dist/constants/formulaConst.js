@@ -322,6 +322,7 @@ const SENSOR_SETTING_AGGREGATION = [
     "Minimum",
     "Maximum",
     "Cumulative",
+    "Raw",
 ];
 exports.SENSOR_SETTING_AGGREGATION = SENSOR_SETTING_AGGREGATION;
 const SENSOR_SETTING_RETURN_TYPES = [
