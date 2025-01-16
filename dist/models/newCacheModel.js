@@ -65,6 +65,10 @@ const newCacheSchema = new mongoose_1.Schema({
         type: [mongoose_1.Schema.Types.Mixed],
         required: true,
     },
+    nextCalculationTime: {
+        type: Number,
+        required: true
+    },
     values: [
         {
             timestamp: {

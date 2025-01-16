@@ -6,6 +6,7 @@ interface INewCache extends Document {
     sensorSettingId: Types.ObjectId;
     details: FormulaCommonTypes.SensorSetting;
     firstDataDate: number | null;
+    nextCalculationTime: number | null;
     rawValue: [number | null];
     values: Array<{
         timestamp: number;
