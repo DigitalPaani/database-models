@@ -41,6 +41,7 @@ const frequencySchema = new Schema<FormulaCommonTypes.Frequency>({
   sensorId: {
     type: Types.ObjectId,
     required: false,
+    ref: "sensors",
   } as any,
   timeInMinutes: {
     type: Number,
@@ -84,7 +85,7 @@ const formulasSchema = new Schema<IFormula>(
     type: { type: String, enum: FORMULA_TYPES, required: false },
     nextCalculationTime: {
       type: Number,
-      required: true,
+      required: false,
       default: () => {
         const currentDate = new Date();
         currentDate.setSeconds(0, 0);
