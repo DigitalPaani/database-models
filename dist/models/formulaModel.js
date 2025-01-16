@@ -49,6 +49,7 @@ const frequencySchema = new mongoose_1.Schema({
     sensorId: {
         type: mongoose_1.Types.ObjectId,
         required: false,
+        ref: "sensors",
     },
     timeInMinutes: {
         type: Number,
@@ -90,7 +91,7 @@ const formulasSchema = new mongoose_1.Schema({
     type: { type: String, enum: formulaConst_1.FORMULA_TYPES, required: false },
     nextCalculationTime: {
         type: Number,
-        required: true,
+        required: false,
         default: () => {
             const currentDate = new Date();
             currentDate.setSeconds(0, 0);
