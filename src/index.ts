@@ -5,10 +5,12 @@ import {
   SensorSettingsModel,
   ISensorSetting,
 } from "./models/sensorSettingModel";
+import { PlcModel, IPlcData } from "./models/plcModel";
+
 import { ConnectToDatabase } from "./mongoConnection";
 
 // export the interface of the models
-export type { IFormula, IHyperFormula, INewCache, ISensorSetting };
+export type { IFormula, IHyperFormula, INewCache, ISensorSetting, IPlcData };
 
 // exports the models
 export {
@@ -17,4 +19,5 @@ export {
   HyperFormulaModel,
   NewCacheModel,
   SensorSettingsModel,
+  PlcModel,
 };
