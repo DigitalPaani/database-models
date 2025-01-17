@@ -73,6 +73,7 @@ const formulasSchema = new Schema<IFormula>(
         {
           value: { type: String, trim: true, required: true },
           type: { type: String, required: true, enum: FORMULAS_CHIP_TYPES },
+          color: { type: String, trim: true, required: true },
           sensorSetting: Object,
         },
       ],

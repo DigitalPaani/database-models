@@ -12,6 +12,7 @@ export declare namespace FormulaCommonTypes {
     type FormulaChip = {
         value: string;
         type: "hyperFormulaFunction" | "operator" | "sensorSetting";
+        color: string;
         sensorSetting?: SensorSetting;
     };
     type Frequency = {
