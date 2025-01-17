@@ -1,7 +1,7 @@
-import mongoose, { Schema, Document } from "mongoose";
+import mongoose, { Document, Types } from "mongoose";
 interface IPlcData extends Document {
     nickName: string;
-    plantId: Schema.Types.ObjectId;
+    plantId: Types.ObjectId;
     lastUpdateTime?: Date;
     lastMessageSentTime?: Date;
     connectionStatus: "online" | "offline";
