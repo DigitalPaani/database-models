@@ -4,7 +4,6 @@ import type { FormulaCommonTypes } from "../types/formulaTypes";
 
 interface INewCache extends Document {
   sensorTag: string;
-  plantId:Types.ObjectId;
   formulaId:Types.ObjectId;
   sensorSettingId: Types.ObjectId;
   details: FormulaCommonTypes.SensorSetting;
@@ -24,10 +23,6 @@ const newCacheSchema = new Schema<INewCache>(
       type: String,
       required: true,
       trim: true,
-    },
-    plantId:{
-      type:Schema.Types.ObjectId,
-      require:true
     },
     formulaId:{
       type: Schema.Types.ObjectId,

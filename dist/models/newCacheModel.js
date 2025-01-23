@@ -41,10 +41,6 @@ const newCacheSchema = new mongoose_1.Schema({
         required: true,
         trim: true,
     },
-    plantId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        require: true
-    },
     formulaId: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
