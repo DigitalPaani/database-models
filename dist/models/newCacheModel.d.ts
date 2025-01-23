@@ -2,6 +2,7 @@ import type { Document, Model, Types } from "mongoose";
 import type { FormulaCommonTypes } from "../types/formulaTypes";
 interface INewCache extends Document {
     sensorTag: string;
+    plantId: Types.ObjectId;
     formulaId: Types.ObjectId;
     sensorSettingId: Types.ObjectId;
     details: FormulaCommonTypes.SensorSetting;
