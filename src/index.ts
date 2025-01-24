@@ -6,11 +6,19 @@ import {
   ISensorSetting,
 } from "./models/sensorSettingModel";
 import { PlcModel, IPlcData } from "./models/plcModel";
+import { TriggerModel, ITriggerDocument } from "./models/trigger.model";
 
 import { ConnectToDatabase } from "./mongoConnection";
 
 // export the interface of the models
-export type { IFormula, IHyperFormula, INewCache, ISensorSetting, IPlcData };
+export type {
+  IFormula,
+  IHyperFormula,
+  INewCache,
+  ISensorSetting,
+  IPlcData,
+  ITriggerDocument,
+};
 
 // exports the models
 export {
@@ -20,4 +28,5 @@ export {
   NewCacheModel,
   SensorSettingsModel,
   PlcModel,
+  TriggerModel,
 };
