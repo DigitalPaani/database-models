@@ -34,7 +34,6 @@ const taskTemplateSchema = new Schema<TaskTemplate>(
   {
     name: {
       type: String,
-      unique: true,
       required: true,
     },
     description: {
