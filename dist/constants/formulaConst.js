@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SENSOR_SETTING_RETURN_TYPES = exports.FORMULAS_CHIP_TYPES = exports.SENSOR_SETTING_GRANULARITY = exports.SENSOR_SETTING_AGGREGATION = exports.ARGUMENT_TYPES = exports.HYPER_FORMULAS = exports.FORMULA_UNITS = exports.FORMULA_TYPES = void 0;
-const FORMULA_UNITS = ["l", "kl", "kl/h", "m", "%", "kg", "NTU", "", "pH"];
+const FORMULA_UNITS = ["l", "kl", "kl/h", "m", "%", "kg", "NTU", "None", "pH"];
 exports.FORMULA_UNITS = FORMULA_UNITS;
 const FORMULA_TYPES = ["BOOLEAN", "FLOAT", "TIME"];
 exports.FORMULA_TYPES = FORMULA_TYPES;
@@ -323,6 +323,7 @@ const SENSOR_SETTING_AGGREGATION = [
     "Maximum",
     "Cumulative",
     "Raw",
+    "LastActiveValue"
 ];
 exports.SENSOR_SETTING_AGGREGATION = SENSOR_SETTING_AGGREGATION;
 const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime"];

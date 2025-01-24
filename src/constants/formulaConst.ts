@@ -1,4 +1,4 @@
-const FORMULA_UNITS = ["l", "kl", "kl/h", "m", "%", "kg", "NTU", "", "pH"];
+const FORMULA_UNITS = ["l", "kl", "kl/h", "m", "%", "kg", "NTU", "None", "pH"];
 
 const FORMULA_TYPES = ["BOOLEAN", "FLOAT", "TIME"];
 
@@ -319,6 +319,7 @@ const SENSOR_SETTING_AGGREGATION = [
   "Maximum",
   "Cumulative",
   "Raw",
+  "LastActiveValue"
 ];
 
 const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime"];
