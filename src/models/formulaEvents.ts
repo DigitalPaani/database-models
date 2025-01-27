@@ -25,6 +25,11 @@ const formulaEventSchema = new Schema<IFormulaEvents>(
   }
 );
 
+formulaEventSchema.index(
+  { formulaId: 1, calculationTime: 1 },
+  { unique: true }
+);
+
 const FormulaEventModel: Model<IFormulaEvents> = mongoose.model<IFormulaEvents>(
   "formulaEvents",
   formulaEventSchema,
