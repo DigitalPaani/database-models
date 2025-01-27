@@ -45,17 +45,10 @@ const formulaEventSchema = new mongoose_1.Schema({
         type: Number,
         required: true,
     },
-    ttlDate: {
-        type: Date, // Additional field for TTL indexing
-        required: true,
-    },
     isAggregated: { type: Boolean, required: true, default: false },
 }, {
     timestamps: true,
 });
-formulaEventSchema.pre("save", function (next) {
-    this.ttlDate = new Date(this.calculationTime); // Convert epoch milliseconds to Date
-    next();
-});
+formulaEventSchema.index({ calculationTime: 1 }, { expireAfterSeconds: 86400 });
 const FormulaEventModel = mongoose_1.default.model("formulaEvents", formulaEventSchema, "formulaEvents");
 exports.FormulaEventModel = FormulaEventModel;
