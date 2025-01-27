@@ -4,7 +4,8 @@ import { NewCacheModel, INewCache } from "./models/newCacheModel";
 import { SensorSettingsModel, ISensorSetting } from "./models/sensorSettingModel";
 import { PlcModel, IPlcData } from "./models/plcModel";
 import { TriggerModel, ITriggerDocument } from "./models/trigger.model";
+import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
 import { ConnectToDatabase } from "./mongoConnection";
-export type { IFormula, IHyperFormula, INewCache, ISensorSetting, IPlcData, ITriggerDocument, };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, NewCacheModel, SensorSettingsModel, PlcModel, TriggerModel, };
+export type { IFormula, IHyperFormula, INewCache, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, NewCacheModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, };
 //# sourceMappingURL=index.d.ts.map
