@@ -1,12 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.NewCacheModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
 Object.defineProperty(exports, "HyperFormulaModel", { enumerable: true, get: function () { return hyperFormulaModel_1.HyperFormulaModel; } });
-const newCacheModel_1 = require("./models/newCacheModel");
-Object.defineProperty(exports, "NewCacheModel", { enumerable: true, get: function () { return newCacheModel_1.NewCacheModel; } });
 const sensorSettingModel_1 = require("./models/sensorSettingModel");
 Object.defineProperty(exports, "SensorSettingsModel", { enumerable: true, get: function () { return sensorSettingModel_1.SensorSettingsModel; } });
 const plcModel_1 = require("./models/plcModel");

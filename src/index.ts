@@ -1,6 +1,5 @@
 import { FormulasModel, IFormula } from "./models/formulaModel";
 import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormulaModel";
-import { NewCacheModel, INewCache } from "./models/newCacheModel";
 import {
   SensorSettingsModel,
   ISensorSetting,
@@ -15,7 +14,6 @@ import { ConnectToDatabase } from "./mongoConnection";
 export type {
   IFormula,
   IHyperFormula,
-  INewCache,
   ISensorSetting,
   IPlcData,
   ITriggerDocument,
@@ -27,7 +25,6 @@ export {
   ConnectToDatabase,
   FormulasModel,
   HyperFormulaModel,
-  NewCacheModel,
   SensorSettingsModel,
   PlcModel,
   TriggerModel,
