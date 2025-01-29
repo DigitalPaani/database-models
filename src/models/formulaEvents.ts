@@ -24,7 +24,7 @@ const formulaEventSchema = new Schema<IFormulaEvents>(
     timestamps: true,
   }
 );
-formulaEventSchema.index({calculationTime:1},{expireAfterSeconds:86400})
+formulaEventSchema.index({createdAt:1},{expireAfterSeconds:172800})
 const FormulaEventModel: Model<IFormulaEvents> = mongoose.model<IFormulaEvents>(
   "formulaEvents",
   formulaEventSchema,

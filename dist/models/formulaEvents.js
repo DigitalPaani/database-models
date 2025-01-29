@@ -49,6 +49,6 @@ const formulaEventSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-formulaEventSchema.index({ calculationTime: 1 }, { expireAfterSeconds: 86400 });
+formulaEventSchema.index({ createdAt: 1 }, { expireAfterSeconds: 172800 });
 const FormulaEventModel = mongoose_1.default.model("formulaEvents", formulaEventSchema, "formulaEvents");
 exports.FormulaEventModel = FormulaEventModel;
