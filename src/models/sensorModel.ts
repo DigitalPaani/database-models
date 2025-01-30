@@ -1,8 +1,24 @@
 import mongoose, { Types } from "mongoose";
 const Schema = mongoose.Schema;
 
+interface FlocChildSensors {
+  FDSTParent: Types.ObjectId;
+  SVOL30: Types.ObjectId;
+  SVOL30Image: Types.ObjectId
+  SVOL60: Types.ObjectId;
+  SVOL60Image: Types.ObjectId
+  SVOL90: Types.ObjectId;
+  SVOL90Image: Types.ObjectId
+  SVOLRaw: Types.ObjectId;
+  SVOLCustom: Types.ObjectId;
+  SVOLCustomImage: Types.ObjectId;
+  SVOLIssue: Types.ObjectId;
+  SVOLIssueImage: Types.ObjectId;
+}
+
 export interface ISensor {
   _id?: Types.ObjectId;
+  sensorName?: string;
   sensorTag: string;
   sensorNickName: string;
   plantId?: Types.ObjectId;
@@ -15,10 +31,64 @@ export interface ISensor {
   sensorTypeAbr?: string;
   oldSensorTag?: string;
   sensorOffSet?: Types.ObjectId;
+  parentSensor?: Types.ObjectId | null;
+  flocChildSensors?: FlocChildSensors;
 }
+
+const flocChildSensorsSchema = new Schema({
+  FDSTParent: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOL30: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOL30Image: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOL60: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOL60Image: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOL90: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOL90Image: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOLRaw: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOLCustom: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOLCustomImage: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOLIssue: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVOLIssueImage: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+});
 
 const sensor = new Schema(
   {
+    sensorName: String,
     sensorTag: String,
     sensorNickName: String,
     plantId: mongoose.Schema.Types.ObjectId,
@@ -43,6 +113,14 @@ const sensor = new Schema(
     sensorOffSet: {
       type: Types.ObjectId,
       ref: "sensorOffSet",
+    },
+    parentSensor: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: null,
+    },
+    flocChildSensors: {
+      type: flocChildSensorsSchema,
+      required: false
     },
   },
   {
