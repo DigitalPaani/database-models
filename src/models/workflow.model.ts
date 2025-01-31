@@ -1,7 +1,7 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-interface Workflow extends Document {
+export interface IWorkflow extends Document {
   name: string;
   description: string;
   scope: string;
@@ -12,7 +12,7 @@ interface Workflow extends Document {
   createdBy: Types.ObjectId;
 }
 
-const workflowSchema = new Schema<Workflow>(
+const workflowSchema = new Schema<IWorkflow>(
   {
     name: {
       type: String,
@@ -55,7 +55,7 @@ const workflowSchema = new Schema<Workflow>(
   }
 );
 
-const WorkflowModel: Model<Workflow> = mongoose.model<Workflow>(
+const WorkflowModel: Model<IWorkflow> = mongoose.model<IWorkflow>(
   'workflows',
   workflowSchema,
   'workflows'

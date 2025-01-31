@@ -1,7 +1,7 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-interface Roster extends Document {
+export interface IRoster extends Document {
   name: string;
   description: string;
   userGroupId: Types.ObjectId;
@@ -10,7 +10,7 @@ interface Roster extends Document {
   createdBy: Types.ObjectId;
 }
 
-const rosterManagementSchema = new Schema<Roster>(
+const rosterManagementSchema = new Schema<IRoster>(
   {
     name: {
       type: String,
@@ -44,7 +44,7 @@ const rosterManagementSchema = new Schema<Roster>(
 );
 
 
-const RosterManagementModel: Model<Roster> = mongoose.model<Roster>(
+const RosterManagementModel: Model<IRoster> = mongoose.model<IRoster>(
   'rosters',
   rosterManagementSchema,
   'rosters'

@@ -1,7 +1,7 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-interface RosterEvent extends Document {
+export interface IRosterEvent extends Document {
   rosterId: Types.ObjectId;
   eventId: string;
   title: string;
@@ -14,7 +14,7 @@ interface RosterEvent extends Document {
   createdBy: Types.ObjectId;
 }
 
-const rosterEventsSchema = new Schema<RosterEvent>(
+const rosterEventsSchema = new Schema<IRosterEvent>(
   {
     rosterId: {
       type: Types.ObjectId,
@@ -65,7 +65,7 @@ const rosterEventsSchema = new Schema<RosterEvent>(
   }
 );
 
-const RosterEventsModel: Model<RosterEvent> = mongoose.model<RosterEvent>(
+const RosterEventsModel: Model<IRosterEvent> = mongoose.model<IRosterEvent>(
   'roster-events',
   rosterEventsSchema,
   'roster-events'

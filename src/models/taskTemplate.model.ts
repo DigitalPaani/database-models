@@ -6,7 +6,7 @@ import { taskCompletionEnums, assigneeMethodEnums } from '../constants/taskManag
 
 
 
-interface TaskTemplate extends Document {
+export interface ITaskTemplate extends Document {
   name: string;
   description: string;
   trainingVideoId: Types.ObjectId | null;
@@ -30,7 +30,7 @@ interface TaskTemplate extends Document {
 
 
 
-const taskTemplateSchema = new Schema<TaskTemplate>(
+const taskTemplateSchema = new Schema<ITaskTemplate>(
   {
     name: {
       type: String,
@@ -109,7 +109,7 @@ const taskTemplateSchema = new Schema<TaskTemplate>(
 );
 
 
-const TaskTemplateModel: Model<TaskTemplate> = mongoose.model<TaskTemplate>(
+const TaskTemplateModel: Model<ITaskTemplate> = mongoose.model<ITaskTemplate>(
   'task-templates',
   taskTemplateSchema,
   'task-templates'

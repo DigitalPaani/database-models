@@ -6,7 +6,7 @@ import mongoose, { Schema, Types } from 'mongoose';
 
 import { skillTypes, skillLevels } from '../constants/taskManagementConst';
 
-interface Skill extends Document {
+export interface ISkill extends Document {
   name: string;
   description: string;
   skillType: string;
@@ -15,7 +15,7 @@ interface Skill extends Document {
   createdBy: Types.ObjectId;
 }
 
-const skillManagementSchema = new Schema<Skill>(
+const skillManagementSchema = new Schema<ISkill>(
   {
     name: {
       type: String,
@@ -59,7 +59,7 @@ skillManagementSchema.index(
   }
 );
 
-const SkillManagementModel: Model<Skill> = mongoose.model<Skill>(
+const SkillManagementModel: Model<ISkill> = mongoose.model<ISkill>(
   'skill-managements',
   skillManagementSchema,
   'skill-managements'
