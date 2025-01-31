@@ -7,7 +7,7 @@ export namespace FormulaCommonTypes {
     sensorId: Types.ObjectId;
     sensorTag: string;
     granularity: "Minutes" | "Hours" | "Days" | "Weeks" | "Months";
-    aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative";
+    aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative" | "LastActiveValue";
     firstReferenceTimeInMinutes: number;
     lastReferenceTimeInMinutes: number;
   };
