@@ -62,7 +62,7 @@ const skillManagementSchema = new mongoose_1.Schema({
         required: false,
     },
     createdBy: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
 }, {

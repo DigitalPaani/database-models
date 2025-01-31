@@ -1,12 +1,9 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-
-
-
 import { skillTypes, skillLevels } from '../constants/taskManagementConst';
 
-export interface ISkill extends Document {
+interface ISkill extends Document {
   name: string;
   description: string;
   skillType: string;
@@ -42,9 +39,9 @@ const skillManagementSchema = new Schema<ISkill>(
       required: false,
     },
     createdBy: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
   },
   {
     timestamps: true,
@@ -65,4 +62,4 @@ const SkillManagementModel: Model<ISkill> = mongoose.model<ISkill>(
   'skill-managements'
 );
 
-export { SkillManagementModel };
+export { SkillManagementModel, ISkill };

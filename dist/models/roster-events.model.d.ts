@@ -1,6 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import { Types } from 'mongoose';
-export interface IRosterEvent extends Document {
+interface IRosterEvent extends Document {
     rosterId: Types.ObjectId;
     eventId: string;
     title: string;
@@ -13,5 +13,5 @@ export interface IRosterEvent extends Document {
     createdBy: Types.ObjectId;
 }
 declare const RosterEventsModel: Model<IRosterEvent>;
-export { RosterEventsModel };
+export { RosterEventsModel, IRosterEvent };
 //# sourceMappingURL=roster-events.model.d.ts.map

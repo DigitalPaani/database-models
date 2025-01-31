@@ -50,7 +50,7 @@ const workflowSchema = new mongoose_1.Schema({
         required: true,
     },
     userGroupId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "UserGroup",
         required: false,
     },
@@ -68,7 +68,7 @@ const workflowSchema = new mongoose_1.Schema({
         required: false,
     },
     createdBy: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
 }, {

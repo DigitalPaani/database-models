@@ -33,5 +33,5 @@ interface ITask extends Document {
     richTextContent: string;
 }
 declare const TaskModel: Model<ITask>;
-export { TaskModel };
+export { TaskModel, ITask };
 //# sourceMappingURL=tasks.model.d.ts.map

@@ -1,6 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import { Types } from 'mongoose';
-export interface ITaskTemplate extends Document {
+interface ITaskTemplate extends Document {
     name: string;
     description: string;
     trainingVideoId: Types.ObjectId | null;
@@ -18,8 +18,9 @@ export interface ITaskTemplate extends Document {
     sensorTag: string;
     isArchived: boolean;
     createdBy: Types.ObjectId;
-    attachmentId: Types.ObjectId;
+    attachmentId?: Types.ObjectId | null;
+    richTextContent: string;
 }
 declare const TaskTemplateModel: Model<ITaskTemplate>;
-export { TaskTemplateModel };
+export { TaskTemplateModel, ITaskTemplate };
 //# sourceMappingURL=taskTemplate.model.d.ts.map

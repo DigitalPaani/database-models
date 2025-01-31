@@ -6,7 +6,7 @@ import { taskCompletionEnums, assigneeMethodEnums } from '../constants/taskManag
 
 
 
-export interface ITaskTemplate extends Document {
+interface ITaskTemplate extends Document {
   name: string;
   description: string;
   trainingVideoId: Types.ObjectId | null;
@@ -24,7 +24,8 @@ export interface ITaskTemplate extends Document {
   sensorTag: string;
   isArchived: boolean;
   createdBy: Types.ObjectId;
-  attachmentId: Types.ObjectId;
+  attachmentId?: Types.ObjectId | null; 
+  richTextContent: string;
 }
 
 
@@ -41,9 +42,14 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
       required: true,
     },
     trainingVideoId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
-    } as any,
+    },
+    attachmentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "attachments",
+      required: false,
+    },
     priority: {
       type: String,
       required: true,
@@ -53,9 +59,9 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
       required: true,
     },
     workflowId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
-    } as any,
+    },
     taskCompletion: {
       type: String,
       enum: taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
@@ -81,7 +87,7 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
         required: false,
     },
     skillsSelected: {
-        type: [Types.ObjectId],
+        type: [mongoose.Schema.Types.ObjectId],
         required: false,
     },
     dataEntry: {
@@ -92,16 +98,20 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     sensorTag: {
         type: String,
         required: false,
-    } as any,
+    },
+    richTextContent: {
+      type: String,
+      required: false,
+  },
     isArchived: {
       type: Boolean,
       default: false,
       required: false,
     },
     createdBy: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
   },
   {
     timestamps: true,
@@ -115,4 +125,4 @@ const TaskTemplateModel: Model<ITaskTemplate> = mongoose.model<ITaskTemplate>(
   'task-templates'
 );
 
-export { TaskTemplateModel };
+export { TaskTemplateModel, ITaskTemplate };

@@ -37,7 +37,7 @@ exports.RosterEventsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const rosterEventsSchema = new mongoose_1.Schema({
     rosterId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
     },
     eventId: {
@@ -76,7 +76,7 @@ const rosterEventsSchema = new mongoose_1.Schema({
         required: false,
     },
     createdBy: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
 }, {

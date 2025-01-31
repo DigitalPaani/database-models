@@ -28,10 +28,10 @@ const workflowSchema = new Schema<IWorkflow>(
       required: true,
     },
     userGroupId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "UserGroup",
       required: false,
-    } as any,
+    },
     isArchived: {
       type: Boolean,
       default: false,
@@ -46,9 +46,9 @@ const workflowSchema = new Schema<IWorkflow>(
       required: false,
     },
     createdBy: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
   },
   {
     timestamps: true,

@@ -38,7 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const taskManagementConst_1 = require("../constants/taskManagementConst");
 const workflowDetailsSchema = new mongoose_1.Schema({
     workflowId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false
     },
     status: {
@@ -48,7 +48,7 @@ const workflowDetailsSchema = new mongoose_1.Schema({
 });
 const taskSchema = new mongoose_1.Schema({
     taskTemplateId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
     scope: {
@@ -57,19 +57,19 @@ const taskSchema = new mongoose_1.Schema({
         required: false,
     },
     userGroupId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
     workspaceId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
     assetIds: {
-        type: [mongoose_1.Types.ObjectId],
+        type: [mongoose_1.default.Schema.Types.ObjectId],
         required: false,
     },
     assignee: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
     workflowDetails: {
@@ -85,11 +85,11 @@ const taskSchema = new mongoose_1.Schema({
         required: false,
     },
     trainingVideoId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
     attachmentId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'attachments',
         required: false,
     },
@@ -102,7 +102,7 @@ const taskSchema = new mongoose_1.Schema({
         required: true,
     },
     workflowId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'workflows',
         required: true,
     },
@@ -131,7 +131,7 @@ const taskSchema = new mongoose_1.Schema({
         required: false,
     },
     skillsSelected: {
-        type: [mongoose_1.Types.ObjectId],
+        type: [mongoose_1.default.Schema.Types.ObjectId],
         ref: 'skill-managements',
         required: false,
     },

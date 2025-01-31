@@ -1,7 +1,7 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-export interface IRosterEvent extends Document {
+interface IRosterEvent extends Document {
   rosterId: Types.ObjectId;
   eventId: string;
   title: string;
@@ -17,9 +17,9 @@ export interface IRosterEvent extends Document {
 const rosterEventsSchema = new Schema<IRosterEvent>(
   {
     rosterId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
-    } as any,
+    },
     eventId: {
       type: String,
       required: true,
@@ -56,9 +56,9 @@ const rosterEventsSchema = new Schema<IRosterEvent>(
       required: false,
     },
     createdBy: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
   },
   {
     timestamps: true,
@@ -71,4 +71,4 @@ const RosterEventsModel: Model<IRosterEvent> = mongoose.model<IRosterEvent>(
   'roster-events'
 );
 
-export { RosterEventsModel };
+export { RosterEventsModel, IRosterEvent };

@@ -46,8 +46,13 @@ const taskTemplateSchema = new mongoose_1.Schema({
         required: true,
     },
     trainingVideoId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
+    },
+    attachmentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
+        required: false,
     },
     priority: {
         type: String,
@@ -58,7 +63,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
         required: true,
     },
     workflowId: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
     },
     taskCompletion: {
@@ -86,7 +91,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
         required: false,
     },
     skillsSelected: {
-        type: [mongoose_1.Types.ObjectId],
+        type: [mongoose_1.default.Schema.Types.ObjectId],
         required: false,
     },
     dataEntry: {
@@ -98,13 +103,17 @@ const taskTemplateSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    richTextContent: {
+        type: String,
+        required: false,
+    },
     isArchived: {
         type: Boolean,
         default: false,
         required: false,
     },
     createdBy: {
-        type: mongoose_1.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
 }, {

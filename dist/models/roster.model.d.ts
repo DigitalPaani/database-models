@@ -1,6 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import { Types } from 'mongoose';
-export interface IRoster extends Document {
+interface IRoster extends Document {
     name: string;
     description: string;
     userGroupId: Types.ObjectId;
@@ -9,5 +9,5 @@ export interface IRoster extends Document {
     createdBy: Types.ObjectId;
 }
 declare const RosterManagementModel: Model<IRoster>;
-export { RosterManagementModel };
+export { RosterManagementModel, IRoster };
 //# sourceMappingURL=roster.model.d.ts.map

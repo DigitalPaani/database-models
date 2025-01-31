@@ -39,9 +39,9 @@ interface ITask extends Document {
 
 const workflowDetailsSchema = new Schema<IWorkflowDetails>({
   workflowId: {
-    type: Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: false
-  } as any,
+  },
   status: {
     type: String,
     required: false
@@ -51,30 +51,30 @@ const workflowDetailsSchema = new Schema<IWorkflowDetails>({
 const taskSchema = new Schema<ITask>(
   {
     taskTemplateId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
     scope: {
       type: String,
       enum: ['SYSTEM', 'USER_GROUP'],
       required: false,
     },
     userGroupId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
     workspaceId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
     assetIds: {
-      type: [Types.ObjectId],
+      type: [mongoose.Schema.Types.ObjectId],
       required: false,
-    } as any,
+    },
     assignee: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
     workflowDetails: {
       type: workflowDetailsSchema,
       required: false
@@ -88,14 +88,14 @@ const taskSchema = new Schema<ITask>(
       required: false,
     },
     trainingVideoId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
-    } as any,
+    },
     attachmentId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'attachments',
       required: false,
-    } as any,
+    },
     priority: {
       type: String,
       required: true,
@@ -105,10 +105,10 @@ const taskSchema = new Schema<ITask>(
       required: true,
     },
     workflowId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'workflows',
       required: true,
-    } as any,
+    },
     taskCompletion: {
       type: String,
       enum: taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
@@ -134,7 +134,7 @@ const taskSchema = new Schema<ITask>(
       required: false,
     },
     skillsSelected: {
-      type: [Types.ObjectId],
+      type: [mongoose.Schema.Types.ObjectId],
       ref: 'skill-managements',
       required: false,
     },
@@ -164,4 +164,4 @@ const taskSchema = new Schema<ITask>(
 
 const TaskModel: Model<ITask> = mongoose.model<ITask>('tasks', taskSchema, 'tasks');
 
-export { TaskModel };
+export { TaskModel, ITask };
