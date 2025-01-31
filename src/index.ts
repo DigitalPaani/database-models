@@ -7,7 +7,7 @@ import {
 import { PlcModel, IPlcData } from "./models/plcModel";
 import { TriggerModel, ITriggerDocument } from "./models/trigger.model";
 import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
-
+import { CompanyModel, } from "./models/CompanyModel";
 import { ConnectToDatabase } from "./mongoConnection";
 
 // export the interface of the models
@@ -29,4 +29,5 @@ export {
   PlcModel,
   TriggerModel,
   FormulaEventModel,
+  CompanyModel
 };
