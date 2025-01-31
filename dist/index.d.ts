@@ -11,6 +11,7 @@ import { RosterEventsModel, IRosterEvent } from "./models/roster-events.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask } from "./models/tasks.model";
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterEvent, IWorkflow, ITask };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterEventsModel, WorkflowModel, TaskModel };
+import { AttachmentModel, IAttachment } from "./models/attachments.model";
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterEvent, IWorkflow, ITask, IAttachment };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterEventsModel, WorkflowModel, TaskModel, AttachmentModel };
 //# sourceMappingURL=index.d.ts.map

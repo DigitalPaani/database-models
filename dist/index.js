@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TaskModel = exports.WorkflowModel = exports.RosterEventsModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterEventsModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -27,3 +27,5 @@ const mongoConnection_1 = require("./mongoConnection");
 Object.defineProperty(exports, "ConnectToDatabase", { enumerable: true, get: function () { return mongoConnection_1.ConnectToDatabase; } });
 const tasks_model_1 = require("./models/tasks.model");
 Object.defineProperty(exports, "TaskModel", { enumerable: true, get: function () { return tasks_model_1.TaskModel; } });
+const attachments_model_1 = require("./models/attachments.model");
+Object.defineProperty(exports, "AttachmentModel", { enumerable: true, get: function () { return attachments_model_1.AttachmentModel; } });

@@ -14,6 +14,7 @@ import { RosterEventsModel, IRosterEvent } from "./models/roster-events.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask } from  "./models/tasks.model";
+import { AttachmentModel, IAttachment } from "./models/attachments.model";
 
 // export the interface of the models
 export type {
@@ -28,7 +29,8 @@ export type {
   IRoster,
   IRosterEvent,
   IWorkflow,
-  ITask
+  ITask,
+  IAttachment
 };
 
 // exports the models
@@ -45,5 +47,6 @@ export {
   RosterManagementModel,
   RosterEventsModel,
   WorkflowModel,
-  TaskModel
+  TaskModel,
+  AttachmentModel
 };
