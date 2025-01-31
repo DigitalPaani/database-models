@@ -60,11 +60,11 @@ const workflowSchema = new mongoose_1.Schema({
         required: true,
     },
     nodes: {
-        type: Object,
+        type: [Object],
         required: false,
     },
     edges: {
-        type: Object,
+        type: [Object],
         required: false,
     },
     createdBy: {

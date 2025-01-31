@@ -5,8 +5,8 @@ export interface IWorkflow extends Document {
     description: string;
     scope: string;
     userGroupId: Types.ObjectId | null;
-    nodes: object;
-    edges: object;
+    nodes: object[];
+    edges: object[];
     isArchived: boolean;
     createdBy: Types.ObjectId;
 }

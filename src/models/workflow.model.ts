@@ -6,8 +6,8 @@ export interface IWorkflow extends Document {
   description: string;
   scope: string;
   userGroupId: Types.ObjectId | null;
-  nodes: object,
-  edges: object,
+  nodes: object[],
+  edges: object[],
   isArchived: boolean;
   createdBy: Types.ObjectId;
 }
@@ -38,11 +38,11 @@ const workflowSchema = new Schema<IWorkflow>(
       required: true,
     },
     nodes: {
-      type: Object,
+      type: [Object],
       required: false,
     },
     edges: {
-      type: Object,
+      type: [Object],
       required: false,
     },
     createdBy: {
