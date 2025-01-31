@@ -35,7 +35,58 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
+const flocChildSensorsSchema = new Schema({
+    FDSTParent: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOL30: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOL30Image: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOL60: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOL60Image: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOL90: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOL90Image: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOLRaw: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOLCustom: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOLCustomImage: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOLIssue: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVOLIssueImage: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+});
 const sensor = new Schema({
+    sensorName: String,
     sensorTag: String,
     sensorNickName: String,
     plantId: mongoose_1.default.Schema.Types.ObjectId,
@@ -60,6 +111,14 @@ const sensor = new Schema({
     sensorOffSet: {
         type: mongoose_1.Types.ObjectId,
         ref: "sensorOffSet",
+    },
+    parentSensor: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        default: null,
+    },
+    flocChildSensors: {
+        type: flocChildSensorsSchema,
+        required: false
     },
 }, {
     timestamps: true,

@@ -4,7 +4,12 @@ import { SensorSettingsModel, ISensorSetting } from "./models/sensorSettingModel
 import { PlcModel, IPlcData } from "./models/plcModel";
 import { TriggerModel, ITriggerDocument } from "./models/trigger.model";
 import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
+import { TaskTemplateModel, ITaskTemplate } from "./models/taskTemplate.model";
+import { SkillManagementModel, ISkill } from "./models/skills.model";
+import { RosterManagementModel, IRoster } from "./models/roster.model";
+import { RosterEventsModel, IRosterEvent } from "./models/roster-events.model";
+import { IWorkflow, WorkflowModel } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterEvent, IWorkflow };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterEventsModel, WorkflowModel };
 //# sourceMappingURL=index.d.ts.map
