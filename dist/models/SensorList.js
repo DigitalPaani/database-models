@@ -33,25 +33,19 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CompanyModel = void 0;
+exports.SensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const contactSchema = new mongoose_1.Schema({
-    fullName: { type: String, required: true },
-    phoneNumber: { type: String, required: true },
-    emailId: { type: String, required: true },
-    designation: { type: String, required: true },
-    comments: { type: String, required: false },
-});
-const companySchema = new mongoose_1.Schema({
-    companyName: { type: String, required: true },
-    companyDescription: { type: String, required: false },
-    address: { type: String, required: true },
-    tags: {
+const SensorSchema = new mongoose_1.Schema({
+    sensorCompany: { type: String, required: true },
+    sensorModelNumber: { type: String, required: true },
+    granularity: { type: [String], required: true }, // ["1 Minute", "1 Millisecond", "1 Hour"]
+    purpose: { type: [String], required: true }, // ["pH", "BOD", "COD", "Turbidity"]
+    inputType: {
         type: [String],
-        enum: ["sensor", "electrical panel"], // Restrict values
-        required: false,
+        enum: ["Modbus", "Analog", "Digital"], // Restricts values to these three options
+        required: true,
     },
-    contacts: { type: [contactSchema], required: true }, // Array of contacts
+    tags: { type: [String], default: [] },
 }, { timestamps: true });
-const CompanyModel = mongoose_1.default.model("Company", companySchema, 'Companys');
-exports.CompanyModel = CompanyModel;
+const SensorModel = mongoose_1.default.model("SensorList", SensorSchema, 'SensorLists');
+exports.SensorModel = SensorModel;

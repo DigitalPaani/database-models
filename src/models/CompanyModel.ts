@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-
-import { Document, Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
 interface Contact {
   fullName: string;
@@ -43,6 +41,6 @@ const companySchema = new Schema<Company>(
   { timestamps: true }
 );
 
-const CompanyModel = mongoose.model("Company", companySchema);
+const CompanyModel = mongoose.model<Company>("Company", companySchema,'Companys');
 
 export { CompanyModel };
