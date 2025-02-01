@@ -53,5 +53,5 @@ const companySchema = new mongoose_1.Schema({
     },
     contacts: { type: [contactSchema], required: true }, // Array of contacts
 }, { timestamps: true });
-const CompanyModel = mongoose_1.default.model("Company", companySchema, 'Companys');
+const CompanyModel = mongoose_1.default.model("company", companySchema, 'companies');
 exports.CompanyModel = CompanyModel;
