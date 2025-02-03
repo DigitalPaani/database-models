@@ -11,9 +11,9 @@ interface Contact {
 interface Company extends Document {
   companyName: string;
   companyDescription?: string;
-  address: string;
+  companyAddress: string;
   tags?: string[];
-  contacts: Contact[];
+  contactDetails: Contact[];
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -30,13 +30,13 @@ const companySchema = new Schema<Company>(
   {
     companyName: { type: String, required: true },
     companyDescription: { type: String, required: false },
-    address: { type: String, required: true },
+    companyAddress: { type: String, required: true },
     tags: {
       type: [String],
       enum: ["sensor", "electrical panel"], // Restrict values
       required: false,
     },
-    contacts: { type: [contactSchema], required: true }, // Array of contacts
+    contactDetails: { type: [contactSchema], required: true }, // Array of contacts
   },
   { timestamps: true }
 );

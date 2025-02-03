@@ -45,13 +45,13 @@ const contactSchema = new mongoose_1.Schema({
 const companySchema = new mongoose_1.Schema({
     companyName: { type: String, required: true },
     companyDescription: { type: String, required: false },
-    address: { type: String, required: true },
+    companyAddress: { type: String, required: true },
     tags: {
         type: [String],
         enum: ["sensor", "electrical panel"], // Restrict values
         required: false,
     },
-    contacts: { type: [contactSchema], required: true }, // Array of contacts
+    contactDetails: { type: [contactSchema], required: true }, // Array of contacts
 }, { timestamps: true });
 const CompanyModel = mongoose_1.default.model("company", companySchema, 'companies');
 exports.CompanyModel = CompanyModel;

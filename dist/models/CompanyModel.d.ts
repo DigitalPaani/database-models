@@ -9,9 +9,9 @@ interface Contact {
 interface Company extends Document {
     companyName: string;
     companyDescription?: string;
-    address: string;
+    companyAddress: string;
     tags?: string[];
-    contacts: Contact[];
+    contactDetails: Contact[];
     createdAt?: Date;
     updatedAt?: Date;
 }
