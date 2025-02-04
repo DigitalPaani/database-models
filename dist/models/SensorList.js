@@ -37,7 +37,6 @@ exports.SensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const SensorSchema = new mongoose_1.Schema({
     sensorCompanyId: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: "company" },
-    sensorCompany: { type: String, required: true },
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true }, // ["1 Minute", "1 Millisecond", "1 Hour"]
     purpose: { type: [String], required: true }, // ["pH", "BOD", "COD", "Turbidity"]
