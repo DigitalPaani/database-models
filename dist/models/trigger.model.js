@@ -106,8 +106,8 @@ const triggerSchema = new mongoose_1.Schema({
         type: {
             resolutionFreq: Number,
             observationFreq: Number,
-            currentResolutionFreq: { default: 0 },
-            currentObservationFreq: { default: 0 },
+            currentResolutionFreq: { type: Number, default: 0 },
+            currentObservationFreq: { type: Number, default: 0 },
             resolutionSensorId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Sensors" },
             observationSensorId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Sensors" },
         },
