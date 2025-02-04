@@ -1,5 +1,6 @@
 import mongoose, { Document, Types } from "mongoose";
 interface ISensor extends Document {
+    sensorName: string;
     sensorCompanyId: Types.ObjectId;
     sensorModelNumber: string;
     granularity: string[];
