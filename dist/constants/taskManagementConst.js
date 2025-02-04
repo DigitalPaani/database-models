@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assigneeMethodEnums = exports.taskCompletionEnums = exports.createWorkflowAvailableActions = exports.skillLevels = exports.skillTypes = void 0;
+exports.communicationMediumEnums = exports.escalationUnitsEnums = exports.assigneeMethodEnums = exports.taskCompletionEnums = exports.createWorkflowAvailableActions = exports.skillLevels = exports.skillTypes = void 0;
 exports.skillTypes = [
     {
         label: 'Electrical',
@@ -100,3 +100,5 @@ exports.assigneeMethodEnums = [
         value: "NON_ASSIGNED_TASK",
     },
 ];
+exports.escalationUnitsEnums = ["MINUTES", "HOURS", "WEEKS", "DAYS", "MONTHS", "YEARS"];
+exports.communicationMediumEnums = ["EMAIL", "SMS", "WHATSAPP", "CALL"];

@@ -39,11 +39,48 @@ const taskManagementConst_1 = require("../constants/taskManagementConst");
 const workflowDetailsSchema = new mongoose_1.Schema({
     workflowId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false
+        ref: 'workflows',
+        required: false,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    nodes: {
+        type: [Object],
+        required: false,
+    },
+    edges: {
+        type: [Object],
+        required: false,
     },
     status: {
         type: String,
-        required: false
+        required: false,
+    },
+});
+const escalationSchema = new mongoose_1.Schema({
+    time: {
+        type: Number,
+        required: false,
+    },
+    unit: {
+        type: String,
+        enum: taskManagementConst_1.escalationUnitsEnums,
+        required: false,
+    },
+    communicationMedium: {
+        type: String,
+        enum: taskManagementConst_1.communicationMediumEnums,
+        required: false,
+    },
+    userIds: {
+        type: [mongoose_1.Types.ObjectId],
+        required: false,
     }
 });
 const taskSchema = new mongoose_1.Schema({
@@ -64,8 +101,8 @@ const taskSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
-    assetIds: {
-        type: [mongoose_1.default.Schema.Types.ObjectId],
+    assetId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
     assignee: {
@@ -99,11 +136,6 @@ const taskSchema = new mongoose_1.Schema({
     },
     taskType: {
         type: String,
-        required: true,
-    },
-    workflowId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: 'workflows',
         required: true,
     },
     taskCompletion: {
@@ -146,6 +178,10 @@ const taskSchema = new mongoose_1.Schema({
     },
     richTextContent: {
         type: String,
+        required: false,
+    },
+    escalations: {
+        type: [escalationSchema],
         required: false,
     },
     isArchived: {

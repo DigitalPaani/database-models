@@ -47,7 +47,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     trainingVideoId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: true,
+        required: false,
     },
     attachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,

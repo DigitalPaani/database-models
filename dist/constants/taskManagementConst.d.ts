@@ -24,4 +24,6 @@ export declare const assigneeMethodEnums: {
     label: string;
     value: string;
 }[];
+export declare const escalationUnitsEnums: string[];
+export declare const communicationMediumEnums: string[];
 //# sourceMappingURL=taskManagementConst.d.ts.map
