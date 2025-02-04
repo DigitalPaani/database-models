@@ -2,7 +2,7 @@ import type { Document, Model } from "mongoose";
 interface IAttachment extends Document {
     attachmentLink: string;
     filename: string;
-    neverExpire: boolean;
+    expireAt: Date | null;
 }
 declare const AttachmentModel: Model<IAttachment>;
 export { AttachmentModel, IAttachment };
