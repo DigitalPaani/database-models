@@ -64,6 +64,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     workflowId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "workflows",
         required: true,
     },
     taskCompletion: {
@@ -92,6 +93,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     skillsSelected: {
         type: [mongoose_1.default.Schema.Types.ObjectId],
+        ref: "skill-managements",
         required: false,
     },
     dataEntry: {
