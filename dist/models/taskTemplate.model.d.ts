@@ -10,8 +10,8 @@ interface ITaskTemplate extends Document {
     taskCompletion: string;
     assigneeMethod: string;
     complexity: number;
-    taskDeadlineTime: number;
-    taskExpectedTime: number;
+    taskDeadlineTime: IRelativeTime;
+    taskExpectedTime: IRelativeTime;
     equipmentSelected: string;
     skillsSelected: Types.ObjectId[];
     dataEntry: boolean;
@@ -20,6 +20,10 @@ interface ITaskTemplate extends Document {
     createdBy: Types.ObjectId;
     attachmentId?: Types.ObjectId | null;
     richTextContent: string;
+}
+interface IRelativeTime extends Document {
+    value: number;
+    unit: string;
 }
 declare const TaskTemplateModel: Model<ITaskTemplate>;
 export { TaskTemplateModel, ITaskTemplate };

@@ -36,6 +36,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const taskManagementConst_1 = require("../constants/taskManagementConst");
+const relativeTimeSchema = new mongoose_1.Schema({
+    value: {
+        type: Number,
+        required: false
+    },
+    unit: {
+        type: String,
+        enum: taskManagementConst_1.escalationUnitsEnums,
+        required: false
+    }
+});
 const taskTemplateSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -77,15 +88,15 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     complexity: {
         type: Number,
-        required: false,
+        required: true,
     },
     taskDeadlineTime: {
-        type: Number,
-        required: false,
+        type: relativeTimeSchema,
+        required: true,
     },
     taskExpectedTime: {
-        type: Number,
-        required: false,
+        type: relativeTimeSchema,
+        required: true,
     },
     equipmentSelected: {
         type: String,
@@ -94,12 +105,12 @@ const taskTemplateSchema = new mongoose_1.Schema({
     skillsSelected: {
         type: [mongoose_1.default.Schema.Types.ObjectId],
         ref: "skill-managements",
-        required: false,
+        required: true,
     },
     dataEntry: {
         type: Boolean,
         default: false,
-        required: false,
+        required: true,
     },
     sensorTag: {
         type: String,
@@ -111,12 +122,11 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     isArchived: {
         type: Boolean,
-        default: false,
-        required: false,
+        default: false
     },
     createdBy: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
+        required: true,
     },
 }, {
     timestamps: true,
