@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import {
   COMPONENT_NAMES,
   RECURRENCE_FREQUENCY_TYPES,
@@ -8,7 +8,7 @@ import {
 import type { Document, Model, Types } from "mongoose";
 import type { TriggerTypes } from "../types/triggerTypes";
 
-const Schema = mongoose.Schema;
+
 
 interface ITriggerDocument extends Document {
   name: string;
@@ -105,8 +105,8 @@ const triggerSchema = new Schema(
         observationFreq: Number,
         currentResolutionFreq: { default: 0 },
         currentObservationFreq: { default: 0 },
-        resolutionSensorId: { type: Schema.Types.ObjectId, ref: "Sensors" },
-        observationSensorId: { type: Schema.Types.ObjectId, ref: "Sensors" },
+        resolutionSensorId: { type: mongoose.Schema.Types.ObjectId, ref: "Sensors" },
+        observationSensorId: { type: mongoose.Schema.Types.ObjectId, ref: "Sensors" },
       },
       required: false,
     },
