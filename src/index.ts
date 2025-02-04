@@ -17,6 +17,8 @@ import { TaskModel, ITask } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 
+import commonConstants from "./constants/commonConstants";
+
 // export the interface of the models
 export type {
   IFormula,
@@ -52,4 +54,5 @@ export {
   TaskModel,
   AttachmentModel,
   TriggerLogsModel,
+  commonConstants
 };
