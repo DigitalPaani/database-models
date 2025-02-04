@@ -2,7 +2,7 @@ import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
 
-import { taskCompletionEnums, assigneeMethodEnums } from '../constants/taskManagementConst';
+import { taskCompletionEnums, assigneeMethodEnums, escalationUnitsEnums } from '../constants/taskManagementConst';
 
 
 
@@ -16,8 +16,8 @@ interface ITaskTemplate extends Document {
   taskCompletion: string;
   assigneeMethod: string;
   complexity: number;
-  taskDeadlineTime: number;
-  taskExpectedTime: number;
+  taskDeadlineTime: IRelativeTime;
+  taskExpectedTime: IRelativeTime;
   equipmentSelected: string;
   skillsSelected: Types.ObjectId[];
   dataEntry: boolean;
@@ -28,8 +28,22 @@ interface ITaskTemplate extends Document {
   richTextContent: string;
 }
 
+interface IRelativeTime extends Document {
+  value: number;
+  unit: string;
+}
 
-
+const relativeTimeSchema = new Schema<IRelativeTime>({
+  value: {
+    type: Number,
+    required: false
+  },
+  unit: {
+    type: String,
+    enum: escalationUnitsEnums,
+    required: false
+  }
+});
 
 const taskTemplateSchema = new Schema<ITaskTemplate>(
   {
@@ -73,15 +87,15 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     },
     complexity: {
         type: Number,
-        required: false,  
+        required: true,  
     },
     taskDeadlineTime: {
-        type: Number,
-        required: false,  
+        type: relativeTimeSchema,
+        required: true,  
     },
     taskExpectedTime: {
-        type: Number,
-        required: false,  
+        type: relativeTimeSchema,
+        required: true,  
     },
     equipmentSelected: {
         type: String,
@@ -90,12 +104,12 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     skillsSelected: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: "skill-managements",
-        required: false,
+        required: true,
     },
     dataEntry: {
         type: Boolean,
         default: false,
-        required: false,
+        required: true,
     },
     sensorTag: {
         type: String,
@@ -107,12 +121,11 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
   },
     isArchived: {
       type: Boolean,
-      default: false,
-      required: false,
+      default: false
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      required: true,
     },
   },
   {
