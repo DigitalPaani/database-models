@@ -9,12 +9,13 @@ import { TriggerModel, ITriggerDocument } from "./models/trigger.model";
 import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
 import { TaskTemplateModel, ITaskTemplate } from "./models/taskTemplate.model";
 import { SkillManagementModel, ISkill } from "./models/skills.model";
-import { RosterManagementModel, IRoster  } from "./models/roster.model";
+import { RosterManagementModel, IRoster } from "./models/roster.model";
 import { RosterEventsModel, IRosterEvent } from "./models/roster-events.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
-import { TaskModel, ITask } from  "./models/tasks.model";
+import { TaskModel, ITask } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
+import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 
 // export the interface of the models
 export type {
@@ -30,7 +31,8 @@ export type {
   IRosterEvent,
   IWorkflow,
   ITask,
-  IAttachment
+  IAttachment,
+  ITriggerLog,
 };
 
 // exports the models
@@ -48,5 +50,6 @@ export {
   RosterEventsModel,
   WorkflowModel,
   TaskModel,
-  AttachmentModel
+  AttachmentModel,
+  TriggerLogsModel,
 };

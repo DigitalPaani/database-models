@@ -38,27 +38,6 @@ const recurrenceSchema = new Schema({
         type: [Number], // e.g., 1 for January (used for yearly recurrence)
     },
 });
-const triggerConditionSchema = new Schema({
-    operator: {
-        type: String,
-        required: true,
-        enum: Object.values(triggerConst_1.CONDITIONAL_OPERATORS),
-    },
-    sensorTag: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    threshold: {
-        type: Number,
-        required: true,
-    },
-    thresholdType: {
-        type: String,
-        required: true,
-        enum: Object.values(triggerConst_1.CONDITION_THRESHOLD_TYPES),
-    },
-});
 const triggerSchema = new Schema({
     name: {
         type: String,
@@ -98,8 +77,10 @@ const triggerSchema = new Schema({
         type: {
             resolutionFreq: Number,
             observationFreq: Number,
-            resolutionConditions: [[triggerConditionSchema]],
-            observationConditions: [[triggerConditionSchema]],
+            currentResolutionFreq: { default: 0 },
+            currentObservationFreq: { default: 0 },
+            resolutionSensorId: { type: Schema.Types.ObjectId, ref: "Sensors" },
+            observationSensorId: { type: Schema.Types.ObjectId, ref: "Sensors" },
         },
         required: false,
     },
@@ -120,6 +101,7 @@ const triggerSchema = new Schema({
         ref: "NewUser",
         required: true,
     },
+    isOpen: { type: Boolean, required: true, default: false },
     isActive: { type: Boolean, required: true, default: true },
     isDeleted: { type: Boolean, required: true, default: false },
 }, { timestamps: true });

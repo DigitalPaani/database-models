@@ -1,8 +1,6 @@
 import mongoose from "mongoose";
 import {
   COMPONENT_NAMES,
-  CONDITION_THRESHOLD_TYPES,
-  CONDITIONAL_OPERATORS,
   RECURRENCE_FREQUENCY_TYPES,
   TRIGGER_SCOPE,
   TRIGGER_TYPES,
@@ -65,28 +63,6 @@ const recurrenceSchema = new Schema({
   },
 });
 
-const triggerConditionSchema = new Schema({
-  operator: {
-    type: String,
-    required: true,
-    enum: Object.values(CONDITIONAL_OPERATORS),
-  },
-  sensorTag: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  threshold: {
-    type: Number,
-    required: true,
-  },
-  thresholdType: {
-    type: String,
-    required: true,
-    enum: Object.values(CONDITION_THRESHOLD_TYPES),
-  },
-});
-
 const triggerSchema = new Schema(
   {
     name: {
@@ -127,8 +103,10 @@ const triggerSchema = new Schema(
       type: {
         resolutionFreq: Number,
         observationFreq: Number,
-        resolutionConditions: [[triggerConditionSchema]],
-        observationConditions: [[triggerConditionSchema]],
+        currentResolutionFreq: { default: 0 },
+        currentObservationFreq: { default: 0 },
+        resolutionSensorId: { type: Schema.Types.ObjectId, ref: "Sensors" },
+        observationSensorId: { type: Schema.Types.ObjectId, ref: "Sensors" },
       },
       required: false,
     },
@@ -149,6 +127,7 @@ const triggerSchema = new Schema(
       ref: "NewUser",
       required: true,
     },
+    isOpen: { type: Boolean, required: true, default: false },
     isActive: { type: Boolean, required: true, default: true },
     isDeleted: { type: Boolean, required: true, default: false },
   },
