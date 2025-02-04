@@ -1,5 +1,6 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document, Types } from "mongoose";
 interface ISensor extends Document {
+    sensorCompanyId: Types.ObjectId;
     sensorCompany: string;
     sensorModelNumber: string;
     granularity: string[];
