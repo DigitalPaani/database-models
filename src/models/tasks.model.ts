@@ -1,11 +1,23 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-import { taskCompletionEnums, assigneeMethodEnums } from '../constants/taskManagementConst';
+import { taskCompletionEnums, assigneeMethodEnums, escalationUnitsEnums, communicationMediumEnums } from '../constants/taskManagementConst';
 
 interface IWorkflowDetails extends Document {
   workflowId: Types.ObjectId;
+  name: string;
+  description: string;
+  nodes: object[];
+  edges: object[];
   status: string;
+}
+
+
+interface IEscalation extends Document {
+  time: number,
+  unit: string,
+  communicationMedium: string,
+  userIds: Types.ObjectId[]
 }
 
 interface ITask extends Document {
@@ -13,7 +25,7 @@ interface ITask extends Document {
   scope: string;
   userGroupId: Types.ObjectId;
   workspaceId: Types.ObjectId;
-  assetIds: Types.ObjectId[];
+  assetId: Types.ObjectId;
   assignee: Types.ObjectId;
   workflowDetails: IWorkflowDetails;
   name: string;
@@ -35,16 +47,55 @@ interface ITask extends Document {
   createdBy: Types.ObjectId;
   attachmentId?: Types.ObjectId | null; 
   richTextContent: string;
+  escalations: IEscalation[]
 }
 
 const workflowDetailsSchema = new Schema<IWorkflowDetails>({
   workflowId: {
     type: mongoose.Schema.Types.ObjectId,
-    required: false
+    ref: 'workflows',
+    required: false,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  nodes: {
+    type: [Object],
+    required: false,
+  },
+  edges: {
+    type: [Object],
+    required: false,
   },
   status: {
     type: String,
-    required: false
+    required: false,
+  },
+});
+
+const escalationSchema = new Schema({
+  time: {
+    type: Number,
+    required: false,
+  },
+  unit: {
+    type: String,
+    enum: escalationUnitsEnums,
+    required: false,
+  },
+  communicationMedium: {
+    type: String,
+    enum: communicationMediumEnums,
+    required: false,
+  },
+  userIds: {
+    type: [Types.ObjectId],
+    required: false,
   }
 });
 
@@ -67,8 +118,8 @@ const taskSchema = new Schema<ITask>(
       type: mongoose.Schema.Types.ObjectId,
       required: false,
     },
-    assetIds: {
-      type: [mongoose.Schema.Types.ObjectId],
+    assetId: {
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
     },
     assignee: {
@@ -102,11 +153,6 @@ const taskSchema = new Schema<ITask>(
     },
     taskType: {
       type: String,
-      required: true,
-    },
-    workflowId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'workflows',
       required: true,
     },
     taskCompletion: {
@@ -149,6 +195,10 @@ const taskSchema = new Schema<ITask>(
     },
     richTextContent: {
       type: String,
+      required: false,
+    },
+    escalations: {
+      type: [escalationSchema],
       required: false,
     },
     isArchived: {

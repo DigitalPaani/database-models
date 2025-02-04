@@ -101,3 +101,7 @@ export const skillTypes = [
       value: "NON_ASSIGNED_TASK",
     },
   ]
+
+export const escalationUnitsEnums = ["MINUTES", "HOURS", "WEEKS", "DAYS", "MONTHS", "YEARS"];
+
+export const communicationMediumEnums = ["EMAIL", "SMS", "WHATSAPP", "CALL"];
