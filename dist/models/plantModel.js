@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.PlantModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const PlantSchema = new mongoose_1.Schema({
     plantName: String,
@@ -65,4 +66,4 @@ const PlantSchema = new mongoose_1.Schema({
     },
 });
 const PlantModel = mongoose_1.default.model('Plant', PlantSchema, 'Plants');
-exports.default = PlantModel;
+exports.PlantModel = PlantModel;

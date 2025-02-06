@@ -16,6 +16,7 @@ import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
+import { PlantModel, IPlant } from "./models/plantModel";
 
 import commonConstants from "./constants/commonConstants";
 
@@ -35,6 +36,7 @@ export type {
   ITask,
   IAttachment,
   ITriggerLog,
+  IPlant
 };
 
 // exports the models
@@ -54,5 +56,6 @@ export {
   TaskModel,
   AttachmentModel,
   TriggerLogsModel,
+  PlantModel,
   commonConstants
 };

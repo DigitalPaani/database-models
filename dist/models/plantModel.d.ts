@@ -41,6 +41,5 @@ declare const PlantModel: mongoose.Model<IPlant, {}, {}, {}, Document<unknown, {
 }> & {
     __v: number;
 }>>;
-export { IPlant };
-export default PlantModel;
+export { PlantModel, IPlant };
 //# sourceMappingURL=plantModel.d.ts.map
