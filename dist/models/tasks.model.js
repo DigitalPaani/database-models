@@ -103,6 +103,7 @@ const taskSchema = new mongoose_1.Schema({
     },
     assetId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "Plants",
         required: false,
     },
     assignee: {
