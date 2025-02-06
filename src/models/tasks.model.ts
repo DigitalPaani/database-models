@@ -120,7 +120,7 @@ const taskSchema = new Schema<ITask>(
     },
     assetId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Plants",
+      ref: "Plant",
       required: false,
     },
     assignee: {
