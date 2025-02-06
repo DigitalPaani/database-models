@@ -4,7 +4,7 @@ import mongoose, { Schema } from "mongoose";
 interface IAttachment extends Document {
   attachmentLink: string;
   filename: string;
-  mediaType: string;
+  mimetype: string;
   expireAt: Date | null;
 }
 
@@ -18,7 +18,7 @@ const attachmentSchema = new Schema<IAttachment>(
       type: String,
       required: false,
     },
-    mediaType: {
+    mimetype: {
       type: String,
       required: false,
     },

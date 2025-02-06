@@ -44,7 +44,7 @@ const attachmentSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
-    mediaType: {
+    mimetype: {
         type: String,
         required: false,
     },
