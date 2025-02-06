@@ -15,6 +15,7 @@ import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
 import commonConstants from "./constants/commonConstants";
+import { Types } from 'mongoose';
 export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterEvent, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterEventsModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, commonConstants };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterEventsModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, Types, commonConstants };
 //# sourceMappingURL=index.d.ts.map
