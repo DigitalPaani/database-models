@@ -44,6 +44,10 @@ const attachmentSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    mediaType: {
+        type: String,
+        required: false,
+    },
     expireAt: {
         type: Date,
         required: false, // If we don't want the document to expire, we can set it to null

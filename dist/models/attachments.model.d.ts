@@ -2,6 +2,7 @@ import type { Document, Model } from "mongoose";
 interface IAttachment extends Document {
     attachmentLink: string;
     filename: string;
+    mediaType: string;
     expireAt: Date | null;
 }
 declare const AttachmentModel: Model<IAttachment>;
