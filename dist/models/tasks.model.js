@@ -58,7 +58,7 @@ const workflowDetailsSchema = new mongoose_1.Schema({
         type: [Object],
         required: false,
     },
-    status: {
+    transitionStatus: {
         type: String,
         required: false,
     },
