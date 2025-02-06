@@ -65,5 +65,5 @@ const PlantSchema = new mongoose_1.Schema({
         abbr: String,
     },
 });
-const PlantModel = mongoose_1.default.model('Plant', PlantSchema, 'Plants');
+const PlantModel = mongoose_1.default.model('Plants', PlantSchema);
 exports.PlantModel = PlantModel;
