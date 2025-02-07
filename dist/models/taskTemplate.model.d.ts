@@ -8,6 +8,7 @@ interface ITaskTemplate extends Document {
     taskType: string;
     workflowId: Types.ObjectId;
     taskCompletion: string;
+    taskCompletionState: string;
     assigneeMethod: string;
     complexity: number;
     taskDeadlineTime: IRelativeTime;

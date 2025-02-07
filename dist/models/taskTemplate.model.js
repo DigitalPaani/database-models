@@ -82,6 +82,10 @@ const taskTemplateSchema = new mongoose_1.Schema({
         type: String,
         enum: taskManagementConst_1.taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
     },
+    taskCompletionState: {
+        type: String,
+        required: false
+    },
     assigneeMethod: {
         type: String,
         enum: taskManagementConst_1.assigneeMethodEnums.map(assigneeMethodEnum => assigneeMethodEnum.value),

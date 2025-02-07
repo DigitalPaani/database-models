@@ -14,6 +14,7 @@ interface ITaskTemplate extends Document {
   taskType: string;
   workflowId: Types.ObjectId;
   taskCompletion: string;
+  taskCompletionState: string;
   assigneeMethod: string;
   complexity: number;
   taskDeadlineTime: IRelativeTime;
@@ -80,6 +81,10 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     taskCompletion: {
       type: String,
       enum: taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
+    },
+    taskCompletionState: {
+      type: String,
+      required: false
     },
     assigneeMethod: {
         type: String,
