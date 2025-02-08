@@ -13,6 +13,7 @@ interface ITriggerDocument extends Document {
   description: string;
   dateAsText?: string;
   scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
+  triggerTag: string;
   userGroup?: Types.ObjectId; // Array of ObjectId references
   type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
   startDate?: number;
@@ -83,6 +84,11 @@ const triggerSchema = new Schema(
       type: String,
       required: true,
       enum: Object.values(TRIGGER_SCOPE),
+    },
+    triggerTag: {
+      type: String,
+      required: true,
+      trim: true,
     },
     userGroup: {
       type: Schema.Types.ObjectId,

@@ -87,6 +87,11 @@ const triggerSchema = new mongoose_1.Schema({
         required: true,
         enum: Object.values(triggerConst_1.TRIGGER_SCOPE),
     },
+    triggerTag: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     userGroup: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "UserGroup",

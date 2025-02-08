@@ -6,6 +6,7 @@ interface ITriggerDocument extends Document {
     description: string;
     dateAsText?: string;
     scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
+    triggerTag: string;
     userGroup?: Types.ObjectId;
     type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
     startDate?: number;
