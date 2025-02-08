@@ -8,8 +8,6 @@ import {
 import type { Document, Model, Types } from "mongoose";
 import type { TriggerTypes } from "../types/triggerTypes";
 
-
-
 interface ITriggerDocument extends Document {
   name: string;
   description: string;
@@ -25,6 +23,8 @@ interface ITriggerDocument extends Document {
   conditions?: TriggerTypes.Conditions;
   triggerComponent: TriggerTypes.TriggerData[];
   createdBy: Types.ObjectId; // ObjectId reference
+  triggerSensorId: Types.ObjectId;
+  isOpen: boolean;
   isActive: boolean; // Default is true
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
@@ -105,8 +105,15 @@ const triggerSchema = new Schema(
         observationFreq: Number,
         currentResolutionFreq: { type: Number, default: 0 },
         currentObservationFreq: { type: Number, default: 0 },
-        resolutionSensorId: { type: mongoose.Schema.Types.ObjectId, ref: "Sensors" },
-        observationSensorId: { type: mongoose.Schema.Types.ObjectId, ref: "Sensors" },
+        resolutionSensorId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Sensors",
+        },
+        observationSensorId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Sensors",
+        },
+        resolutionTime: Number,
       },
       required: false,
     },
@@ -125,6 +132,11 @@ const triggerSchema = new Schema(
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "NewUser",
+      required: true,
+    },
+    triggerSensorId: {
+      type: Schema.Types.ObjectId,
+      ref: "Sensors",
       required: true,
     },
     isOpen: { type: Boolean, required: true, default: false },

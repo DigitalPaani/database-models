@@ -3,6 +3,10 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    EVENT_TYPES: {
+        formula: string;
+        trigger: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

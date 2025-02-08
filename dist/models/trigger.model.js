@@ -108,8 +108,15 @@ const triggerSchema = new mongoose_1.Schema({
             observationFreq: Number,
             currentResolutionFreq: { type: Number, default: 0 },
             currentObservationFreq: { type: Number, default: 0 },
-            resolutionSensorId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Sensors" },
-            observationSensorId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Sensors" },
+            resolutionSensorId: {
+                type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: "Sensors",
+            },
+            observationSensorId: {
+                type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: "Sensors",
+            },
+            resolutionTime: Number,
         },
         required: false,
     },
@@ -128,6 +135,11 @@ const triggerSchema = new mongoose_1.Schema({
     createdBy: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "NewUser",
+        required: true,
+    },
+    triggerSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Sensors",
         required: true,
     },
     isOpen: { type: Boolean, required: true, default: false },
