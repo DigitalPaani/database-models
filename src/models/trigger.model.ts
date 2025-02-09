@@ -26,6 +26,7 @@ interface ITriggerDocument extends Document {
   triggerComponent: TriggerTypes.TriggerData[];
   createdBy: Types.ObjectId; // ObjectId reference
   triggerSensorId: Types.ObjectId;
+  status: string;
   isOpen: boolean;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
