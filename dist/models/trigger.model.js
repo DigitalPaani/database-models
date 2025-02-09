@@ -147,8 +147,12 @@ const triggerSchema = new mongoose_1.Schema({
         ref: "Sensors",
         required: true,
     },
+    status: {
+        type: String,
+        enum: Object.values(triggerConst_1.TRIGGER_STATUS),
+        default: triggerConst_1.TRIGGER_STATUS.active,
+    },
     isOpen: { type: Boolean, required: true, default: false },
-    isActive: { type: Boolean, required: true, default: true },
     isDeleted: { type: Boolean, required: true, default: false },
 }, { timestamps: true });
 const TriggerModel = mongoose_1.default.model("triggers", triggerSchema, "triggers");

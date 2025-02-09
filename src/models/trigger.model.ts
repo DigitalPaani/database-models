@@ -3,6 +3,7 @@ import {
   COMPONENT_NAMES,
   RECURRENCE_FREQUENCY_TYPES,
   TRIGGER_SCOPE,
+  TRIGGER_STATUS,
   TRIGGER_TYPES,
 } from "../constants/triggerConst";
 import type { Document, Model, Types } from "mongoose";
@@ -26,7 +27,6 @@ interface ITriggerDocument extends Document {
   createdBy: Types.ObjectId; // ObjectId reference
   triggerSensorId: Types.ObjectId;
   isOpen: boolean;
-  isActive: boolean; // Default is true
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -145,8 +145,12 @@ const triggerSchema = new Schema(
       ref: "Sensors",
       required: true,
     },
+    status: {
+      type: String,
+      enum: Object.values(TRIGGER_STATUS),
+      default: TRIGGER_STATUS.active,
+    },
     isOpen: { type: Boolean, required: true, default: false },
-    isActive: { type: Boolean, required: true, default: true },
     isDeleted: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }
