@@ -26,6 +26,7 @@ interface ITriggerDocument extends Document {
   triggerComponent: TriggerTypes.TriggerData[];
   createdBy: Types.ObjectId; // ObjectId reference
   triggerSensorId: Types.ObjectId;
+  plantId: Types.ObjectId;
   status: string;
   isOpen: boolean;
   isDeleted: boolean; // Default is false
@@ -145,6 +146,10 @@ const triggerSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Sensors",
       required: true,
+    },
+    plantId: {
+      type: Schema.Types.ObjectId,
+      ref: "Plant",
     },
     status: {
       type: String,

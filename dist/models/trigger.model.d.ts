@@ -18,6 +18,7 @@ interface ITriggerDocument extends Document {
     triggerComponent: TriggerTypes.TriggerData[];
     createdBy: Types.ObjectId;
     triggerSensorId: Types.ObjectId;
+    plantId: Types.ObjectId;
     status: string;
     isOpen: boolean;
     isDeleted: boolean;

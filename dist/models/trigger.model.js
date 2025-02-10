@@ -147,6 +147,10 @@ const triggerSchema = new mongoose_1.Schema({
         ref: "Sensors",
         required: true,
     },
+    plantId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant",
+    },
     status: {
         type: String,
         enum: Object.values(triggerConst_1.TRIGGER_STATUS),
