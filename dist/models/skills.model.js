@@ -39,7 +39,6 @@ const taskManagementConst_1 = require("../constants/taskManagementConst");
 const skillManagementSchema = new mongoose_1.Schema({
     name: {
         type: String,
-        unique: true,
         required: true,
     },
     description: {
