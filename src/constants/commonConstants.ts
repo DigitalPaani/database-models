@@ -1,7 +1,11 @@
+import { skillLevels } from "./taskManagementConst";
 
-
-import { skillLevels } from './taskManagementConst';
+const EVENT_TYPES = {
+  formula: "formula",
+  trigger: "trigger",
+};
 
 export default {
-    skillLevels
-}
+  skillLevels,
+  EVENT_TYPES,
+};

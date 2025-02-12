@@ -3,18 +3,18 @@ import {
   COMPONENT_NAMES,
   RECURRENCE_FREQUENCY_TYPES,
   TRIGGER_SCOPE,
+  TRIGGER_STATUS,
   TRIGGER_TYPES,
 } from "../constants/triggerConst";
 import type { Document, Model, Types } from "mongoose";
 import type { TriggerTypes } from "../types/triggerTypes";
-
-
 
 interface ITriggerDocument extends Document {
   name: string;
   description: string;
   dateAsText?: string;
   scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
+  triggerTag: string;
   userGroup?: Types.ObjectId; // Array of ObjectId references
   type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
   startDate?: number;
@@ -25,7 +25,10 @@ interface ITriggerDocument extends Document {
   conditions?: TriggerTypes.Conditions;
   triggerComponent: TriggerTypes.TriggerData[];
   createdBy: Types.ObjectId; // ObjectId reference
-  isActive: boolean; // Default is true
+  triggerSensorId: Types.ObjectId;
+  plantId: Types.ObjectId;
+  status: string;
+  isOpen: boolean;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -84,6 +87,11 @@ const triggerSchema = new Schema(
       required: true,
       enum: Object.values(TRIGGER_SCOPE),
     },
+    triggerTag: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     userGroup: {
       type: Schema.Types.ObjectId,
       ref: "UserGroup",
@@ -105,8 +113,15 @@ const triggerSchema = new Schema(
         observationFreq: Number,
         currentResolutionFreq: { type: Number, default: 0 },
         currentObservationFreq: { type: Number, default: 0 },
-        resolutionSensorId: { type: mongoose.Schema.Types.ObjectId, ref: "Sensors" },
-        observationSensorId: { type: mongoose.Schema.Types.ObjectId, ref: "Sensors" },
+        resolutionSensorId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Sensors",
+        },
+        observationSensorId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Sensors",
+        },
+        resolutionTime: Number,
       },
       required: false,
     },
@@ -127,8 +142,21 @@ const triggerSchema = new Schema(
       ref: "NewUser",
       required: true,
     },
+    triggerSensorId: {
+      type: Schema.Types.ObjectId,
+      ref: "Sensors",
+      required: true,
+    },
+    plantId: {
+      type: Schema.Types.ObjectId,
+      ref: "Plant",
+    },
+    status: {
+      type: String,
+      enum: Object.values(TRIGGER_STATUS),
+      default: TRIGGER_STATUS.active,
+    },
     isOpen: { type: Boolean, required: true, default: false },
-    isActive: { type: Boolean, required: true, default: true },
     isDeleted: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }

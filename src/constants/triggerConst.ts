@@ -26,9 +26,15 @@ const RECURRENCE_FREQUENCY_TYPES = {
   custom: "CUSTOM",
 };
 
+const TRIGGER_STATUS = {
+  active: "Active",
+  inactive: "Inactive",
+};
+
 export {
   TRIGGER_SCOPE,
   TRIGGER_TYPES,
   COMPONENT_NAMES,
   RECURRENCE_FREQUENCY_TYPES,
+  TRIGGER_STATUS,
 };

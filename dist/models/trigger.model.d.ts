@@ -6,6 +6,7 @@ interface ITriggerDocument extends Document {
     description: string;
     dateAsText?: string;
     scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
+    triggerTag: string;
     userGroup?: Types.ObjectId;
     type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
     startDate?: number;
@@ -16,7 +17,10 @@ interface ITriggerDocument extends Document {
     conditions?: TriggerTypes.Conditions;
     triggerComponent: TriggerTypes.TriggerData[];
     createdBy: Types.ObjectId;
-    isActive: boolean;
+    triggerSensorId: Types.ObjectId;
+    plantId: Types.ObjectId;
+    status: string;
+    isOpen: boolean;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

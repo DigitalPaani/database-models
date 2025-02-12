@@ -87,6 +87,11 @@ const triggerSchema = new mongoose_1.Schema({
         required: true,
         enum: Object.values(triggerConst_1.TRIGGER_SCOPE),
     },
+    triggerTag: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     userGroup: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "UserGroup",
@@ -108,8 +113,15 @@ const triggerSchema = new mongoose_1.Schema({
             observationFreq: Number,
             currentResolutionFreq: { type: Number, default: 0 },
             currentObservationFreq: { type: Number, default: 0 },
-            resolutionSensorId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Sensors" },
-            observationSensorId: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Sensors" },
+            resolutionSensorId: {
+                type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: "Sensors",
+            },
+            observationSensorId: {
+                type: mongoose_1.default.Schema.Types.ObjectId,
+                ref: "Sensors",
+            },
+            resolutionTime: Number,
         },
         required: false,
     },
@@ -130,8 +142,21 @@ const triggerSchema = new mongoose_1.Schema({
         ref: "NewUser",
         required: true,
     },
+    triggerSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Sensors",
+        required: true,
+    },
+    plantId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant",
+    },
+    status: {
+        type: String,
+        enum: Object.values(triggerConst_1.TRIGGER_STATUS),
+        default: triggerConst_1.TRIGGER_STATUS.active,
+    },
     isOpen: { type: Boolean, required: true, default: false },
-    isActive: { type: Boolean, required: true, default: true },
     isDeleted: { type: Boolean, required: true, default: false },
 }, { timestamps: true });
 const TriggerModel = mongoose_1.default.model("triggers", triggerSchema, "triggers");

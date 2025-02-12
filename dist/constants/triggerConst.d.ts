@@ -22,5 +22,9 @@ declare const RECURRENCE_FREQUENCY_TYPES: {
     yearly: string;
     custom: string;
 };
-export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, };
+declare const TRIGGER_STATUS: {
+    active: string;
+    inactive: string;
+};
+export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, TRIGGER_STATUS, };
 //# sourceMappingURL=triggerConst.d.ts.map

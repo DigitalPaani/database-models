@@ -1,18 +1,30 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
+import commonConstants from "../constants/commonConstants";
 
 interface IFormulaEvents extends Document {
+  type: string;
   formulaId: Types.ObjectId;
+  triggerId: Types.ObjectId;
   calculationTime: number;
   isAggregated: boolean;
 }
 
 const formulaEventSchema = new Schema<IFormulaEvents>(
   {
+    type: {
+      type: String,
+      enum: Object.values(commonConstants.EVENT_TYPES),
+      required: true,
+      default: commonConstants.EVENT_TYPES.formula,
+    },
     formulaId: {
       type: Schema.Types.ObjectId,
-      required: true,
       ref: "formulas",
+    },
+    triggerId: {
+      type: Schema.Types.ObjectId,
+      ref: "triggers",
     },
     calculationTime: {
       type: Number,
@@ -24,7 +36,7 @@ const formulaEventSchema = new Schema<IFormulaEvents>(
     timestamps: true,
   }
 );
-formulaEventSchema.index({createdAt:1},{expireAfterSeconds:172800})
+formulaEventSchema.index({ createdAt: 1 }, { expireAfterSeconds: 172800 });
 const FormulaEventModel: Model<IFormulaEvents> = mongoose.model<IFormulaEvents>(
   "formulaEvents",
   formulaEventSchema,
