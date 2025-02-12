@@ -16,7 +16,6 @@ const skillManagementSchema = new Schema<ISkill>(
   {
     name: {
       type: String,
-      unique: true,
       required: true,
     },
     description: {
