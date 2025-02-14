@@ -36,12 +36,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.QuestionSchemaModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const questionSchema = new mongoose_1.Schema({
-    text: String, // Question text
+    question: String, // Question text
     key: String, // Unique key for reference
     type: String, // "text", "radio", "checkbox", "dropdown", "date"
     options: [String], // Only for radio, checkbox, dropdown
     required: Boolean,
     order: Number, // New field to track question order
+    batchId: Number,
+    plantType: String,
 });
 questionSchema.index({ order: 1 });
 const QuestionSchemaModel = mongoose_1.default.model("QuestionSchema", questionSchema, "QuestionSchemas");
