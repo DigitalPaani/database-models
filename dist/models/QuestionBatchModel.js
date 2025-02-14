@@ -37,7 +37,7 @@ exports.BatchSchemaModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const batchSchema = new mongoose_1.Schema({
     batchId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
+        type: Number,
         required: true,
     },
     batchName: {

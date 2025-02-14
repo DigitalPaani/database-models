@@ -8,7 +8,7 @@ interface IBatch {
 
 const batchSchema = new Schema({
   batchId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Number,
     required: true,
   },
   batchName: {
