@@ -8,7 +8,8 @@ import { CompanyModel } from "./models/CompanyModel";
 import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
 import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
 import { SensorModel, ISensor } from "./models/SensorList";
+import { PlantModel } from "./models/plantModel";
 import { ConnectToDatabase } from "./mongoConnection";
 export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ISensor, IQuestion, IBatch };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, CompanyModel, SensorModel, QuestionSchemaModel, BatchSchemaModel };
+export { ConnectToDatabase, FormulasModel, PlantModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, CompanyModel, SensorModel, QuestionSchemaModel, BatchSchemaModel };
 //# sourceMappingURL=index.d.ts.map

@@ -11,6 +11,7 @@ import { CompanyModel } from "./models/CompanyModel";
 import { QuestionSchemaModel,IQuestion } from "./models/QuestionSchema";
 import {BatchSchemaModel,IBatch} from "./models/QuestionBatchModel";
 import { SensorModel,ISensor } from "./models/SensorList";
+import {PlantModel} from "./models/plantModel";
 import { ConnectToDatabase } from "./mongoConnection";
 
 // export the interface of the models
@@ -30,6 +31,7 @@ export type {
 export {
   ConnectToDatabase,
   FormulasModel,
+  PlantModel,
   HyperFormulaModel,
   SensorSettingsModel,
   PlcModel,

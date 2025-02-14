@@ -62,6 +62,4 @@ const PlantSchema = new Schema<IPlant>({
 });
 const PlantModel = mongoose.model('Plant', PlantSchema, 'Plants');
 
-export { IPlant };
-
-export default PlantModel
+export { IPlant ,PlantModel};
