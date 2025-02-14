@@ -1,13 +1,14 @@
 import mongoose, { Schema } from "mongoose";
 
-interface Answer {
+interface IAnswer {
   _id?: string; // Optional if using MongoDB ObjectId
   questionId: string; // Reference to Question model (ObjectId as string)
   assetId: string; // Reference to Plant model (ObjectId as string)
   answer: string | number | boolean | null; // Supports multiple data types
 }
 
-const answerSchema = new Schema({
+const answerSchema = new Schema
+({
   questionId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Question",
@@ -21,6 +22,6 @@ const answerSchema = new Schema({
   answer: mongoose.Schema.Types.Mixed, // Supports text, array, etc.
 });
 
-const AnswerSchemaModel = mongoose.model<Answer>("Answers", answerSchema, "Answers");
+const AnswerSchemaModel = mongoose.model<IAnswer>("Answers", answerSchema, "Answers");
 
-export { Answer, AnswerSchemaModel };
+export { IAnswer, AnswerSchemaModel };

@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
-interface Question extends Document {
+interface IQuestion extends Document {
   _id?: string; // Optional if using MongoDB ObjectId
   text: string; // Question text
   key: string; // Unique key for reference
@@ -21,10 +21,10 @@ const questionSchema = new Schema({
 
 questionSchema.index({ order: 1 });
 
-const QuestionSchemaModel = mongoose.model<Question>(
+const QuestionSchemaModel = mongoose.model<IQuestion>(
   "QuestionSchema",
   questionSchema,
   "QuestionSchemas"
 );
 
-export { QuestionSchemaModel, Question };
+export { QuestionSchemaModel, IQuestion };
