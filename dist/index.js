@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.QuestionSchemaModel = exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -15,6 +15,8 @@ const formulaEvents_1 = require("./models/formulaEvents");
 Object.defineProperty(exports, "FormulaEventModel", { enumerable: true, get: function () { return formulaEvents_1.FormulaEventModel; } });
 const CompanyModel_1 = require("./models/CompanyModel");
 Object.defineProperty(exports, "CompanyModel", { enumerable: true, get: function () { return CompanyModel_1.CompanyModel; } });
+const QuestionSchema_1 = require("./models/QuestionSchema");
+Object.defineProperty(exports, "QuestionSchemaModel", { enumerable: true, get: function () { return QuestionSchema_1.QuestionSchemaModel; } });
 const SensorList_1 = require("./models/SensorList");
 Object.defineProperty(exports, "SensorModel", { enumerable: true, get: function () { return SensorList_1.SensorModel; } });
 const mongoConnection_1 = require("./mongoConnection");

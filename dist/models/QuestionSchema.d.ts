@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-interface Question extends Document {
+interface IQuestion extends Document {
     _id?: string;
     text: string;
     key: string;
@@ -8,10 +8,10 @@ interface Question extends Document {
     required: boolean;
     order: number;
 }
-declare const QuestionSchemaModel: mongoose.Model<Question, {}, {}, {}, mongoose.Document<unknown, {}, Question> & Question & Required<{
+declare const QuestionSchemaModel: mongoose.Model<IQuestion, {}, {}, {}, mongoose.Document<unknown, {}, IQuestion> & IQuestion & Required<{
     _id: string;
 }> & {
     __v: number;
 }, any>;
-export { QuestionSchemaModel, Question };
+export { QuestionSchemaModel, IQuestion };
 //# sourceMappingURL=QuestionSchema.d.ts.map
