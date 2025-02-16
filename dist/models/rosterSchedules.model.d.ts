@@ -1,8 +1,8 @@
 import type { Model } from 'mongoose';
-import { Schema, Types } from 'mongoose';
+import { Schema } from 'mongoose';
 interface IRosterSchedule {
     rosterId: Schema.Types.ObjectId;
-    userId: Types.ObjectId;
+    userId: Schema.Types.ObjectId;
     reoccurrenceId: string;
     fromDate: number;
     toDate: number;

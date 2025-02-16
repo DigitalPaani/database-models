@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from 'mongoose';
 
 interface IRosterSchedule  {
   rosterId: Schema.Types.ObjectId;
-  userId: Types.ObjectId;
+  userId: Schema.Types.ObjectId;
   reoccurrenceId: string;
   fromDate: number;
   toDate: number;
