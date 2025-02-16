@@ -1,13 +1,13 @@
 import type { Document, Model } from 'mongoose';
-import { Schema } from 'mongoose';
+import mongoose from 'mongoose';
 interface IRoster extends Document {
     name: string;
     description: string;
-    userGroupId: Schema.Types.ObjectId;
-    assetIds: Schema.Types.ObjectId[];
+    userGroupId: mongoose.Schema.Types.ObjectId;
+    assetIds: mongoose.Schema.Types.ObjectId[];
     isArchived: boolean;
-    managementUserId: Schema.Types.ObjectId | null;
-    createdBy: Schema.Types.ObjectId;
+    managementUserId: mongoose.Schema.Types.ObjectId | null;
+    createdBy: mongoose.Schema.Types.ObjectId;
 }
 declare const RosterManagementModel: Model<IRoster>;
 export { RosterManagementModel, IRoster };

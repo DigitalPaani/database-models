@@ -45,12 +45,12 @@ const rosterManagementSchema = new mongoose_1.Schema({
         required: true,
     },
     userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "UserGroup",
         required: true,
     },
     assetIds: {
-        type: [mongoose_1.Schema.Types.ObjectId],
+        type: [mongoose_1.default.Schema.Types.ObjectId],
         ref: "Plant",
         required: true,
     },
@@ -60,12 +60,12 @@ const rosterManagementSchema = new mongoose_1.Schema({
         required: false,
     },
     managementUserId: {
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'NewUser',
         required: false,
     },
     createdBy: {
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
 }, {
