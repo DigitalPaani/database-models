@@ -2,7 +2,7 @@ import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
 interface IRosterSchedule  {
-  rosterId: mongoose.Schema.Types.ObjectId;
+  rosterId: Schema.Types.ObjectId;
   userId: Types.ObjectId;
   reoccurrenceId: string;
   fromDate: number;
@@ -12,17 +12,17 @@ interface IRosterSchedule  {
   rule: string;
   color: string;
   isArchived: boolean;
-  createdBy: mongoose.Schema.Types.ObjectId;
+  createdBy: Schema.Types.ObjectId;
 }
 
 const rosterScheduleSchema = new Schema<IRosterSchedule>(
   {
     rosterId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
     },
     userId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
     },
     reoccurrenceId: {
@@ -58,7 +58,7 @@ const rosterScheduleSchema = new Schema<IRosterSchedule>(
       default: false
     },
     createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
     },
   },

@@ -19,7 +19,7 @@ import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
 
 import commonConstants from "./constants/commonConstants";
-import { Types } from 'mongoose';
+import mongoose, { Types } from 'mongoose';
 
 // export the interface of the models
 export type {
@@ -59,5 +59,6 @@ export {
   TriggerLogsModel,
   PlantModel,
   Types,
-  commonConstants
+  commonConstants,
+  mongoose
 };

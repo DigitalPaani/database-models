@@ -37,11 +37,11 @@ exports.RosterSchedulesModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const rosterScheduleSchema = new mongoose_1.Schema({
     rosterId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
     userId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
     reoccurrenceId: {
@@ -77,7 +77,7 @@ const rosterScheduleSchema = new mongoose_1.Schema({
         default: false
     },
     createdBy: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
 }, {
