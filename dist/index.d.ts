@@ -7,7 +7,7 @@ import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
 import { TaskTemplateModel, ITaskTemplate } from "./models/taskTemplate.model";
 import { SkillManagementModel, ISkill } from "./models/skills.model";
 import { RosterManagementModel, IRoster } from "./models/roster.model";
-import { RosterEventsModel, IRosterEvent } from "./models/roster-events.model";
+import { RosterSchedulesModel, IRosterSchedule } from "./models/rosterSchedules.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask } from "./models/tasks.model";
@@ -16,6 +16,6 @@ import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
 import commonConstants from "./constants/commonConstants";
 import { Types } from 'mongoose';
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterEvent, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterEventsModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, Types, commonConstants };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, Types, commonConstants };
 //# sourceMappingURL=index.d.ts.map

@@ -4,10 +4,11 @@ import mongoose, { Schema, Types } from 'mongoose';
 interface IRoster extends Document {
   name: string;
   description: string;
-  userGroupId: Types.ObjectId;
-  assetIds: Types.ObjectId[]
+  userGroupId: Schema.Types.ObjectId;
+  assetIds: Schema.Types.ObjectId[];
   isArchived: boolean;
-  createdBy: Types.ObjectId;
+  managementUserId: Schema.Types.ObjectId | null;
+  createdBy: Schema.Types.ObjectId;
 }
 
 const rosterManagementSchema = new Schema<IRoster>(
@@ -21,11 +22,13 @@ const rosterManagementSchema = new Schema<IRoster>(
       required: true,
     },
     userGroupId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
+        ref: "UserGroup",
         required: true,
     },
     assetIds: {
-        type: [mongoose.Schema.Types.ObjectId],
+        type: [Schema.Types.ObjectId],
+        ref: "Plant",
         required: true,
     },
     isArchived: {
@@ -33,8 +36,13 @@ const rosterManagementSchema = new Schema<IRoster>(
       default: false,
       required: false,
     },
+    managementUserId: {
+      type: Schema.Types.ObjectId,
+      ref: 'NewUser',
+      required: false,
+    },
     createdBy: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: false,
     },
   },

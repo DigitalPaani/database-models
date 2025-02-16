@@ -10,7 +10,7 @@ import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
 import { TaskTemplateModel, ITaskTemplate } from "./models/taskTemplate.model";
 import { SkillManagementModel, ISkill } from "./models/skills.model";
 import { RosterManagementModel, IRoster } from "./models/roster.model";
-import { RosterEventsModel, IRosterEvent } from "./models/roster-events.model";
+import { RosterSchedulesModel, IRosterSchedule } from "./models/rosterSchedules.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask } from "./models/tasks.model";
@@ -32,7 +32,7 @@ export type {
   ITaskTemplate,
   ISkill,
   IRoster,
-  IRosterEvent,
+  IRosterSchedule,
   IWorkflow,
   ITask,
   IAttachment,
@@ -52,7 +52,7 @@ export {
   TaskTemplateModel,
   SkillManagementModel,
   RosterManagementModel,
-  RosterEventsModel,
+  RosterSchedulesModel,
   WorkflowModel,
   TaskModel,
   AttachmentModel,

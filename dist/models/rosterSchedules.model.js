@@ -33,43 +33,56 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RosterManagementModel = void 0;
+exports.RosterSchedulesModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const rosterManagementSchema = new mongoose_1.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    userGroupId: {
+const rosterScheduleSchema = new mongoose_1.Schema({
+    rosterId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
         required: true,
     },
-    assetIds: {
-        type: [mongoose_1.Schema.Types.ObjectId],
-        ref: "Plant",
+    userId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+    },
+    reoccurrenceId: {
+        type: String,
+        required: false,
+    },
+    fromDate: {
+        type: Number,
+        required: true,
+    },
+    toDate: {
+        type: Number,
+        required: true,
+    },
+    bounds: {
+        type: Object,
+        required: false
+    },
+    slots: {
+        type: [Object],
+        required: false
+    },
+    rule: {
+        type: String,
+        required: false
+    },
+    color: {
+        type: String,
         required: true,
     },
     isArchived: {
         type: Boolean,
-        default: false,
-        required: false,
-    },
-    managementUserId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: 'NewUser',
-        required: false,
+        default: false
     },
     createdBy: {
         type: mongoose_1.Schema.Types.ObjectId,
-        required: false,
+        required: true,
     },
 }, {
     timestamps: true,
+    minimize: false
 });
-const RosterManagementModel = mongoose_1.default.model('rosters', rosterManagementSchema, 'rosters');
-exports.RosterManagementModel = RosterManagementModel;
+const RosterSchedulesModel = mongoose_1.default.model('roster-schedules', rosterScheduleSchema, 'roster-schedules');
+exports.RosterSchedulesModel = RosterSchedulesModel;
