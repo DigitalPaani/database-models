@@ -1,8 +1,8 @@
-import type { Model } from 'mongoose';
-import { Schema } from 'mongoose';
-interface IRosterSchedule {
-    rosterId: Schema.Types.ObjectId;
-    userId: Schema.Types.ObjectId;
+import type { Document, Model } from 'mongoose';
+import { Types } from 'mongoose';
+interface IRosterSchedule extends Document {
+    rosterId: Types.ObjectId;
+    userId: Types.ObjectId;
     reoccurrenceId: string;
     fromDate: number;
     toDate: number;
@@ -11,7 +11,7 @@ interface IRosterSchedule {
     rule: string;
     color: string;
     isArchived: boolean;
-    createdBy: Schema.Types.ObjectId;
+    createdBy: Types.ObjectId;
 }
 declare const RosterSchedulesModel: Model<IRosterSchedule>;
 export { RosterSchedulesModel, IRosterSchedule };

@@ -4,11 +4,11 @@ import mongoose, { Schema, Types } from 'mongoose';
 interface IRoster extends Document {
   name: string;
   description: string;
-  userGroupId: Schema.Types.ObjectId;
-  assetIds: Schema.Types.ObjectId[];
+  userGroupId: Types.ObjectId;
+  assetIds: Types.ObjectId[];
   isArchived: boolean;
-  managementUserId: Schema.Types.ObjectId | null;
-  createdBy: Schema.Types.ObjectId;
+  managementUserId: Types.ObjectId | null;
+  createdBy: Types.ObjectId;
 }
 
 const rosterManagementSchema = new Schema<IRoster>(
