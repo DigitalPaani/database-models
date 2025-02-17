@@ -27,9 +27,9 @@ const answerSchema = new Schema(
 );
 
 const AnswerSchemaModel = mongoose.model<IAnswer>(
-  "Answers",
+  "SurveyAnswers",
   answerSchema,
-  "Answers"
+  "SurveyAnswers"
 );
 
 export { IAnswer, AnswerSchemaModel };

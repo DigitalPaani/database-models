@@ -38,6 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const questionSchema = new mongoose_1.Schema({
     conditionalQuestionId: Number,
     conditionalAnswer: [String],
+    questionId: Number,
     question: String, // Question text
     tag: String, // Unique key for reference
     type: String, // "text", "radio", "checkbox", "dropdown", "date"
@@ -48,5 +49,5 @@ const questionSchema = new mongoose_1.Schema({
     plantType: String,
 }, { timestamps: true });
 questionSchema.index({ order: 1 });
-const QuestionSchemaModel = mongoose_1.default.model("QuestionSchema", questionSchema, "QuestionSchemas");
+const QuestionSchemaModel = mongoose_1.default.model("SurveyQuestion", questionSchema, "SurveyQuestions");
 exports.QuestionSchemaModel = QuestionSchemaModel;

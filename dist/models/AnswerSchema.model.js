@@ -50,5 +50,5 @@ const answerSchema = new mongoose_1.Schema({
     },
     answer: mongoose_1.default.Schema.Types.Mixed, // Supports text, array, etc.
 }, { timestamps: true });
-const AnswerSchemaModel = mongoose_1.default.model("Answers", answerSchema, "Answers");
+const AnswerSchemaModel = mongoose_1.default.model("SurveyAnswers", answerSchema, "SurveyAnswers");
 exports.AnswerSchemaModel = AnswerSchemaModel;

@@ -5,6 +5,7 @@ interface IQuestion extends Document {
     tag: string;
     conditionalQuestionId: number;
     conditionalAnswer: [string];
+    questionId: number;
     type: "text" | "radio" | "checkbox" | "dropdown" | "date";
     options?: string[];
     required: boolean;
