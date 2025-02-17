@@ -44,7 +44,7 @@ const questionSchema = new mongoose_1.Schema({
     order: Number, // New field to track question order
     batchId: Number,
     plantType: String,
-});
+}, { timestamps: true });
 questionSchema.index({ order: 1 });
 const QuestionSchemaModel = mongoose_1.default.model("QuestionSchema", questionSchema, "QuestionSchemas");
 exports.QuestionSchemaModel = QuestionSchemaModel;

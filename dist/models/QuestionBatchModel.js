@@ -48,6 +48,6 @@ const batchSchema = new mongoose_1.Schema({
         type: Number,
         required: true,
     },
-});
+}, { timestamps: true });
 const BatchSchemaModel = mongoose_1.default.model("QuestionsBatch", batchSchema, "QuestionsBatch");
 exports.BatchSchemaModel = BatchSchemaModel;

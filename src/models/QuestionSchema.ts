@@ -21,7 +21,10 @@ const questionSchema = new Schema({
   order: Number, // New field to track question order
   batchId: Number,
   plantType: String,
-});
+}
+,{ timestamps: true }
+
+);
 
 questionSchema.index({ order: 1 });
 

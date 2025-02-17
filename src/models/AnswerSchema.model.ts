@@ -7,21 +7,30 @@ interface IAnswer {
   answer: string | number | boolean | null; // Supports multiple data types
 }
 
-const answerSchema = new Schema
-({
-  questionId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Question",
-    required: true,
+const answerSchema = new Schema(
+  {
+    questionId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Question",
+      required: true,
+    },
+    assetId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Plant",
+      required: true,
+    },
+    batchId: {
+      type: Number,
+    },
+    answer: mongoose.Schema.Types.Mixed, // Supports text, array, etc.
   },
-  assetId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Plant",
-    required: true,
-  },
-  answer: mongoose.Schema.Types.Mixed, // Supports text, array, etc.
-});
+  { timestamps: true }
+);
 
-const AnswerSchemaModel = mongoose.model<IAnswer>("Answers", answerSchema, "Answers");
+const AnswerSchemaModel = mongoose.model<IAnswer>(
+  "Answers",
+  answerSchema,
+  "Answers"
+);
 
 export { IAnswer, AnswerSchemaModel };

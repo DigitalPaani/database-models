@@ -6,20 +6,23 @@ interface IBatch {
   batchOrder: number; // Supports multiple data types
 }
 
-const batchSchema = new Schema({
-  batchId: {
-    type: Number,
-    required: true,
+const batchSchema = new Schema(
+  {
+    batchId: {
+      type: Number,
+      required: true,
+    },
+    batchName: {
+      type: String,
+      required: true,
+    },
+    batchOrder: {
+      type: Number,
+      required: true,
+    },
   },
-  batchName: {
-    type: String,
-    required: true,
-  },
-  batchOrder: {
-    type: Number,
-    required: true,
-  },
-});
+  { timestamps: true }
+);
 
 const BatchSchemaModel = mongoose.model<IBatch>(
   "QuestionsBatch",

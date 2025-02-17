@@ -46,7 +46,10 @@ const answerSchema = new mongoose_1.Schema({
         ref: "Plant",
         required: true,
     },
+    batchId: {
+        type: Number,
+    },
     answer: mongoose_1.default.Schema.Types.Mixed, // Supports text, array, etc.
-});
+}, { timestamps: true });
 const AnswerSchemaModel = mongoose_1.default.model("Answers", answerSchema, "Answers");
 exports.AnswerSchemaModel = AnswerSchemaModel;
