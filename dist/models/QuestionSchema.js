@@ -36,8 +36,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.QuestionSchemaModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const questionSchema = new mongoose_1.Schema({
+    conditionalQuestionId: Number,
+    conditionalAnswer: [String],
     question: String, // Question text
-    key: String, // Unique key for reference
+    tag: String, // Unique key for reference
     type: String, // "text", "radio", "checkbox", "dropdown", "date"
     options: [String], // Only for radio, checkbox, dropdown
     required: Boolean,

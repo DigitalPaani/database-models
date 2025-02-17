@@ -2,7 +2,9 @@ import mongoose from "mongoose";
 interface IQuestion extends Document {
     _id?: string;
     question: string;
-    key: string;
+    tag: string;
+    conditionalQuestionId: number;
+    conditionalAnswer: [string];
     type: "text" | "radio" | "checkbox" | "dropdown" | "date";
     options?: string[];
     required: boolean;

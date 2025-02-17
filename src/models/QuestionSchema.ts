@@ -3,7 +3,9 @@ import mongoose, { Schema } from "mongoose";
 interface IQuestion extends Document {
   _id?: string; // Optional if using MongoDB ObjectId
   question: string; // Question text
-  key: string; // Unique key for reference
+  tag: string; // Unique key for reference
+  conditionalQuestionId:number;
+  conditionalAnswer:[string];
   type: "text" | "radio" | "checkbox" | "dropdown" | "date"; // Restrict to valid types
   options?: string[]; // Optional, only for radio, checkbox, dropdown
   required: boolean;
@@ -13,8 +15,10 @@ interface IQuestion extends Document {
 }
 
 const questionSchema = new Schema({
+  conditionalQuestionId:Number,
+  conditionalAnswer: [String],
   question: String, // Question text
-  key: String, // Unique key for reference
+  tag: String, // Unique key for reference
   type: String, // "text", "radio", "checkbox", "dropdown", "date"
   options: [String], // Only for radio, checkbox, dropdown
   required: Boolean,
