@@ -37,8 +37,7 @@ exports.AnswerSchemaModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const answerSchema = new mongoose_1.Schema({
     questionId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: "Question",
+        type: Number,
         required: true,
     },
     assetId: {

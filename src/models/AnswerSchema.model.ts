@@ -10,8 +10,7 @@ interface IAnswer {
 const answerSchema = new Schema(
   {
     questionId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Question",
+      type: Number,
       required: true,
     },
     assetId: {
