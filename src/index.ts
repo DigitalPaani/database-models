@@ -11,6 +11,7 @@ import { CompanyModel } from "./models/CompanyModel";
 import { QuestionSchemaModel,IQuestion } from "./models/QuestionSchema";
 import {BatchSchemaModel,IBatch} from "./models/QuestionBatchModel";
 import { SensorModel,ISensor } from "./models/SensorList";
+import { AnswerSchemaModel,IAnswer } from "./models/AnswerSchema.model";
 import {PlantModel} from "./models/plantModel";
 import { ConnectToDatabase } from "./mongoConnection";
 
@@ -24,7 +25,8 @@ export type {
   IFormulaEvents,
   ISensor,
   IQuestion,
-  IBatch
+  IBatch,
+  IAnswer
 };
 
 // exports the models
@@ -40,5 +42,6 @@ export {
   CompanyModel,
   SensorModel,
   QuestionSchemaModel,
-  BatchSchemaModel
+  BatchSchemaModel,
+  AnswerSchemaModel
 };
