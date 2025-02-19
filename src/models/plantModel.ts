@@ -42,8 +42,16 @@ const PlantSchema = new Schema<IPlant>({
   plantName: String,
   status: String,
   lat: String,
-  workspaceId:Schema.Types.ObjectId,
-  userGroupId:Schema.Types.ObjectId,
+  workspaceId:{
+    type:Schema.Types.ObjectId,
+    ref:"NewWorkspace",
+    required:true
+  },
+  userGroupId:{
+    type:Schema.Types.ObjectId,
+    ref:"UserGroup",
+    required:true
+  },
   long: String,
   description:String,
   schematic: String,

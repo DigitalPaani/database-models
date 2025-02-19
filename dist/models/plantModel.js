@@ -39,8 +39,16 @@ const PlantSchema = new mongoose_1.Schema({
     plantName: String,
     status: String,
     lat: String,
-    workspaceId: mongoose_1.Schema.Types.ObjectId,
-    userGroupId: mongoose_1.Schema.Types.ObjectId,
+    workspaceId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewWorkspace",
+        required: true
+    },
+    userGroupId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "UserGroup",
+        required: true
+    },
     long: String,
     description: String,
     schematic: String,
