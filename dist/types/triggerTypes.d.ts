@@ -15,7 +15,9 @@ export declare namespace TriggerTypes {
         currentResolutionFreq?: number;
         currentObservationFreq?: number;
         resolutionSensorId?: Types.ObjectId;
+        resolutionSensorTag?: string;
         observationSensorId?: Types.ObjectId;
+        observationSensorTag?: string;
         resolutionTime?: number;
     };
     type TriggerData = {

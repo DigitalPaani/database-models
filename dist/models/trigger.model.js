@@ -117,9 +117,17 @@ const triggerSchema = new mongoose_1.Schema({
                 type: mongoose_1.default.Schema.Types.ObjectId,
                 ref: "Sensors",
             },
+            resolutionSensorTag: {
+                type: String,
+                required: false,
+            },
             observationSensorId: {
                 type: mongoose_1.default.Schema.Types.ObjectId,
                 ref: "Sensors",
+            },
+            observationSensorTag: {
+                type: String,
+                required: false,
             },
             resolutionTime: Number,
         },
