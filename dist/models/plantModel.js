@@ -40,11 +40,17 @@ const PlantSchema = new mongoose_1.Schema({
     status: String,
     lat: String,
     long: String,
+    description: String,
     schematic: String,
     sensorfreq: String,
     plantType: String,
     createdOn: Date,
     tur: String,
+    location: {
+        lat: String,
+        lng: String,
+        place: String
+    },
     autoEmailing: {
         dailyReportPageId: mongoose_1.Schema.Types.ObjectId,
         weeklyReportPageId: mongoose_1.Schema.Types.ObjectId,

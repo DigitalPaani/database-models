@@ -8,8 +8,14 @@ interface IPlant extends Partial<Document> {
     abbr: string;
     lat: string;
     long: string;
+    description: string;
     schematic?: string;
     sensorfreq: string;
+    location: {
+        lat: string;
+        lng: string;
+        place: string;
+    };
     plantType: string;
     createdOn: Date;
     tur: string;
