@@ -4,8 +4,8 @@ interface IQuestion extends Document {
   _id?: string; // Optional if using MongoDB ObjectId
   question: string; // Question text
   tag: string; // Unique key for reference
-  conditionalQuestionId: number;
-  conditionalAnswer: [string];
+  conditionalQuestionId: [number] | null;
+  conditionalAnswer: string[][];
   questionId: number;
   type: "text" | "radio" | "checkbox" | "dropdown" | "date"; // Restrict to valid types
   options?: string[]; // Optional, only for radio, checkbox, dropdown
@@ -17,8 +17,8 @@ interface IQuestion extends Document {
 
 const questionSchema = new Schema(
   {
-    conditionalQuestionId: Number,
-    conditionalAnswer: [String],
+    conditionalQuestionId: { type: [Number], default: null },
+    conditionalAnswer: [[String]],
     questionId: Number,
     question: String, // Question text
     tag: String, // Unique key for reference

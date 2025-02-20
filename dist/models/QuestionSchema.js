@@ -36,8 +36,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.QuestionSchemaModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const questionSchema = new mongoose_1.Schema({
-    conditionalQuestionId: Number,
-    conditionalAnswer: [String],
+    conditionalQuestionId: { type: [Number], default: null },
+    conditionalAnswer: [[String]],
     questionId: Number,
     question: String, // Question text
     tag: String, // Unique key for reference

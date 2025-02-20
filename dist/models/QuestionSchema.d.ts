@@ -3,8 +3,8 @@ interface IQuestion extends Document {
     _id?: string;
     question: string;
     tag: string;
-    conditionalQuestionId: number;
-    conditionalAnswer: [string];
+    conditionalQuestionId: [number] | null;
+    conditionalAnswer: string[][];
     questionId: number;
     type: "text" | "radio" | "checkbox" | "dropdown" | "date";
     options?: string[];
