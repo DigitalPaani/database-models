@@ -33,6 +33,7 @@ interface ITask extends Document {
     complexity: number;
     taskDeadlineTime: number;
     taskExpectedTime: number;
+    taskCompletionTime: number;
     equipmentSelected: string;
     skillsSelected: Types.ObjectId[];
     dataEntry: boolean;

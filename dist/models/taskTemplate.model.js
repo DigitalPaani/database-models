@@ -36,17 +36,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const taskManagementConst_1 = require("../constants/taskManagementConst");
-const relativeTimeSchema = new mongoose_1.Schema({
-    value: {
-        type: Number,
-        required: false
-    },
-    unit: {
-        type: String,
-        enum: taskManagementConst_1.escalationUnitsEnums,
-        required: false
-    }
-});
 const taskTemplateSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -104,11 +93,11 @@ const taskTemplateSchema = new mongoose_1.Schema({
         required: true,
     },
     taskDeadlineTime: {
-        type: relativeTimeSchema,
+        type: Number,
         required: true,
     },
     taskExpectedTime: {
-        type: relativeTimeSchema,
+        type: Number,
         required: true,
     },
     equipmentSelected: {

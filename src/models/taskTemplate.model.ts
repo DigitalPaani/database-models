@@ -19,8 +19,8 @@ interface ITaskTemplate extends Document {
   taskCompletionState: string;
   assigneeMethod: string;
   complexity: number;
-  taskDeadlineTime: IRelativeTime;
-  taskExpectedTime: IRelativeTime;
+  taskDeadlineTime: number;
+  taskExpectedTime: number;
   equipmentSelected: string;
   skillsSelected: Types.ObjectId[];
   dataEntry: boolean;
@@ -30,23 +30,6 @@ interface ITaskTemplate extends Document {
   attachmentId?: Types.ObjectId | null; 
   richTextContent: string;
 }
-
-interface IRelativeTime extends Document {
-  value: number;
-  unit: string;
-}
-
-const relativeTimeSchema = new Schema<IRelativeTime>({
-  value: {
-    type: Number,
-    required: false
-  },
-  unit: {
-    type: String,
-    enum: escalationUnitsEnums,
-    required: false
-  }
-});
 
 const taskTemplateSchema = new Schema<ITaskTemplate>(
   {
@@ -106,11 +89,11 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
         required: true,  
     },
     taskDeadlineTime: {
-        type: relativeTimeSchema,
+        type: Number,
         required: true,  
     },
     taskExpectedTime: {
-        type: relativeTimeSchema,
+        type: Number,
         required: true,  
     },
     equipmentSelected: {

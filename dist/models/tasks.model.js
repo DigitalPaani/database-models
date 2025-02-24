@@ -159,6 +159,10 @@ const taskSchema = new mongoose_1.Schema({
         type: Number,
         required: false,
     },
+    taskCompletionTime: {
+        type: Number,
+        required: false,
+    },
     equipmentSelected: {
         type: String,
         required: false,

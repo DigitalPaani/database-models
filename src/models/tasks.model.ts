@@ -39,6 +39,7 @@ interface ITask extends Document {
   complexity: number;
   taskDeadlineTime: number;
   taskExpectedTime: number;
+  taskCompletionTime: number;
   equipmentSelected: string;
   skillsSelected: Types.ObjectId[];
   dataEntry: boolean;
@@ -174,6 +175,10 @@ const taskSchema = new Schema<ITask>(
       required: false,
     },
     taskExpectedTime: {
+      type: Number,
+      required: false,
+    },
+    taskCompletionTime: {
       type: Number,
       required: false,
     },
