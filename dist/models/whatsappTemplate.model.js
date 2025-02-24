@@ -56,5 +56,5 @@ const whatsappTemplateSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-const WhatsappTemplateModel = mongoose_1.default.model('whatsappTemplates', whatsappTemplateSchema, 'whatsappTemplatesc');
+const WhatsappTemplateModel = mongoose_1.default.model('whatsappTemplates', whatsappTemplateSchema, 'whatsappTemplates');
 exports.WhatsappTemplateModel = WhatsappTemplateModel;
