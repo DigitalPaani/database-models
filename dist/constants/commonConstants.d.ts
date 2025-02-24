@@ -7,6 +7,11 @@ declare const _default: {
         formula: string;
         trigger: string;
     };
+    TRIGGER_COMPONENT_TYPES: {
+        task: string;
+        issue: string;
+        communication: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

@@ -16,6 +16,8 @@ interface ITriggerDocument extends Document {
   scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
   triggerTag: string;
   userGroup?: Types.ObjectId; // Array of ObjectId references
+  workspace?: Types.ObjectId;
+  assets?: Types.ObjectId[];
   type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
   startDate?: number;
   endDate?: number;
@@ -26,7 +28,6 @@ interface ITriggerDocument extends Document {
   triggerComponent: TriggerTypes.TriggerData[];
   createdBy: Types.ObjectId; // ObjectId reference
   triggerSensorId: Types.ObjectId;
-  plantId: Types.ObjectId;
   status: string;
   isOpen: boolean;
   isDeleted: boolean; // Default is false
@@ -97,6 +98,11 @@ const triggerSchema = new Schema(
       ref: "UserGroup",
       required: false,
     },
+    workspace: {
+      type: Schema.ObjectId,
+      ref: "NewWorkspace",
+    },
+    assets: { type: [Schema.Types.ObjectId], ref: "Plant", required: false },
     type: {
       type: String,
       required: true,
@@ -133,16 +139,9 @@ const triggerSchema = new Schema(
       },
       required: false,
     },
-    triggerComponent: {
-      type: [
-        {
-          componentName: {
-            type: String,
-            enum: Object.values(COMPONENT_NAMES),
-          },
-          componentData: Object,
-        },
-      ],
+    triggerComponents: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "triggerComponents",
       required: true,
     },
     createdBy: {
@@ -154,10 +153,6 @@ const triggerSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Sensors",
       required: true,
-    },
-    plantId: {
-      type: Schema.Types.ObjectId,
-      ref: "Plant",
     },
     status: {
       type: String,

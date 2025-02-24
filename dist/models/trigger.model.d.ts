@@ -8,6 +8,8 @@ interface ITriggerDocument extends Document {
     scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
     triggerTag: string;
     userGroup?: Types.ObjectId;
+    workspace?: Types.ObjectId;
+    assets?: Types.ObjectId[];
     type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
     startDate?: number;
     endDate?: number;
@@ -18,7 +20,6 @@ interface ITriggerDocument extends Document {
     triggerComponent: TriggerTypes.TriggerData[];
     createdBy: Types.ObjectId;
     triggerSensorId: Types.ObjectId;
-    plantId: Types.ObjectId;
     status: string;
     isOpen: boolean;
     isDeleted: boolean;

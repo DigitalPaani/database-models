@@ -10,7 +10,10 @@ import { FormulaEventModel, IFormulaEvents } from "./models/formulaEvents";
 import { TaskTemplateModel, ITaskTemplate } from "./models/taskTemplate.model";
 import { SkillManagementModel, ISkill } from "./models/skills.model";
 import { RosterManagementModel, IRoster } from "./models/roster.model";
-import { RosterSchedulesModel, IRosterSchedule } from "./models/rosterSchedules.model";
+import {
+  RosterSchedulesModel,
+  IRosterSchedule,
+} from "./models/rosterSchedules.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask } from "./models/tasks.model";
@@ -19,13 +22,23 @@ import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
 import { TwilioCallModel, ITwilioCall } from "./models/twilioCalls.model";
 import { CallLogModel, ICallLog } from "./models/callLogs.model";
-import { WhatsappLogModel, IWhatsappLog } from "./models/whatsappMessageLogs.model";
+import {
+  WhatsappLogModel,
+  IWhatsappLog,
+} from "./models/whatsappMessageLogs.model";
 import { SmsLogModel, ISmsLog } from "./models/smsLogs.model";
 import { EmailLogModel, IEmailLog } from "./models/emailLogs.model";
+<<<<<<< Updated upstream
 import { WhatsappTemplateModel, IWhatsappTemplate } from "./models/whatsappTemplate.model";
+=======
+import {
+  TriggerComponentModel,
+  ITriggerComponent,
+} from "./models/triggerComponents.model";
+>>>>>>> Stashed changes
 
 import commonConstants from "./constants/commonConstants";
-import { Types } from 'mongoose';
+import { Types } from "mongoose";
 
 // export the interface of the models
 export type {
@@ -49,7 +62,11 @@ export type {
   IWhatsappLog,
   ISmsLog,
   IEmailLog,
+<<<<<<< Updated upstream
   IWhatsappTemplate
+=======
+  ITriggerComponent,
+>>>>>>> Stashed changes
 };
 
 // exports the models
@@ -77,5 +94,6 @@ export {
   EmailLogModel,
   WhatsappTemplateModel,
   Types,
-  commonConstants
+  TriggerComponentModel,
+  commonConstants,
 };
