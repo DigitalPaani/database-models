@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TRIGGER_STATUS = exports.RECURRENCE_FREQUENCY_TYPES = exports.COMPONENT_NAMES = exports.TRIGGER_TYPES = exports.TRIGGER_SCOPE = void 0;
+exports.TRIGGER_COMPONENT_TYPES = exports.TRIGGER_STATUS = exports.RECURRENCE_FREQUENCY_TYPES = exports.COMPONENT_NAMES = exports.TRIGGER_TYPES = exports.TRIGGER_SCOPE = void 0;
 const TRIGGER_SCOPE = {
     system: "System",
     group: "Group",
@@ -34,3 +34,9 @@ const TRIGGER_STATUS = {
     inactive: "Inactive",
 };
 exports.TRIGGER_STATUS = TRIGGER_STATUS;
+const TRIGGER_COMPONENT_TYPES = {
+    task: 'TASK',
+    issue: 'ISSUE',
+    communication: 'COMMUNICATION',
+};
+exports.TRIGGER_COMPONENT_TYPES = TRIGGER_COMPONENT_TYPES;

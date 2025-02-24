@@ -97,6 +97,11 @@ const triggerSchema = new mongoose_1.Schema({
         ref: "UserGroup",
         required: false,
     },
+    workspace: {
+        type: mongoose_1.Schema.ObjectId,
+        ref: "NewWorkspace",
+    },
+    assets: { type: [mongoose_1.Schema.Types.ObjectId], ref: "Plant", required: false },
     type: {
         type: String,
         required: true,
@@ -133,16 +138,9 @@ const triggerSchema = new mongoose_1.Schema({
         },
         required: false,
     },
-    triggerComponent: {
-        type: [
-            {
-                componentName: {
-                    type: String,
-                    enum: Object.values(triggerConst_1.COMPONENT_NAMES),
-                },
-                componentData: Object,
-            },
-        ],
+    triggerComponents: {
+        type: [mongoose_1.default.Schema.Types.ObjectId],
+        ref: "triggerComponents",
         required: true,
     },
     createdBy: {
@@ -154,10 +152,6 @@ const triggerSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Sensors",
         required: true,
-    },
-    plantId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
     },
     status: {
         type: String,

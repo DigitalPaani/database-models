@@ -31,10 +31,17 @@ const TRIGGER_STATUS = {
   inactive: "Inactive",
 };
 
+const TRIGGER_COMPONENT_TYPES = {
+  task: 'TASK',
+  issue: 'ISSUE',
+  communication: 'COMMUNICATION',
+}
+
 export {
   TRIGGER_SCOPE,
   TRIGGER_TYPES,
   COMPONENT_NAMES,
   RECURRENCE_FREQUENCY_TYPES,
   TRIGGER_STATUS,
+  TRIGGER_COMPONENT_TYPES,
 };
