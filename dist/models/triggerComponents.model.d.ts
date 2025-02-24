@@ -1,6 +1,8 @@
-import type { Document, Model } from "mongoose";
+import type { Document, Model, Types } from "mongoose";
 interface ITriggerComponent extends Document {
+    componentName: string;
     type: string;
+    triggerId: Types.ObjectId;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

@@ -69,6 +69,11 @@ const triggerComponentSchema = new mongoose_1.Schema({
         required: true,
         trim: true,
     },
+    triggerId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "triggers",
+        required: true,
+    },
     taskData: { type: taskDataSchema },
     asset: { type: mongoose_1.default.Schema.Types.ObjectId },
     assignMethod: { type: String },

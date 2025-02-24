@@ -1,9 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 import { TRIGGER_COMPONENT_TYPES } from "../constants/triggerConst";
-import type { Document, Model } from "mongoose";
+import type { Document, Model, Types } from "mongoose";
 
 interface ITriggerComponent extends Document {
+  componentName: string;
   type: string;
+  triggerId: Types.ObjectId
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -54,6 +56,11 @@ const triggerComponentSchema = new Schema(
       enum: Object.values(TRIGGER_COMPONENT_TYPES),
       required: true,
       trim: true,
+    },
+    triggerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "triggers",
+      required: true,
     },
     taskData: { type: taskDataSchema },
     asset: { type: mongoose.Schema.Types.ObjectId },
