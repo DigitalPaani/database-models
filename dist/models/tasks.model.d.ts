@@ -41,6 +41,7 @@ interface ITask extends Document {
     createdBy: Types.ObjectId;
     attachmentId?: Types.ObjectId | null;
     richTextContent: string;
+    taskCompleted: boolean;
     escalations: IEscalation[];
 }
 declare const TaskModel: Model<ITask>;

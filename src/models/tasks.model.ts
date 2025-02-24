@@ -47,6 +47,7 @@ interface ITask extends Document {
   createdBy: Types.ObjectId;
   attachmentId?: Types.ObjectId | null; 
   richTextContent: string;
+  taskCompleted: boolean;
   escalations: IEscalation[]
 }
 
@@ -200,6 +201,10 @@ const taskSchema = new Schema<ITask>(
     },
     escalations: {
       type: [escalationSchema],
+      required: false,
+    },
+    taskCompleted: {
+      type: Boolean,
       required: false,
     },
     isArchived: {
