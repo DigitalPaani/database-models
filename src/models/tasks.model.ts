@@ -21,11 +21,12 @@ interface IEscalation extends Document {
 }
 
 interface ITask extends Document {
+  triggerId: Types.ObjectId;
   taskTemplateId: Types.ObjectId;
   scope: string;
   userGroupId: Types.ObjectId;
   workspaceId: Types.ObjectId;
-  assetId: Types.ObjectId;
+  assetId: Types.ObjectId | null;
   assignee: Types.ObjectId;
   workflowDetails: IWorkflowDetails;
   name: string;
@@ -103,6 +104,10 @@ const escalationSchema = new Schema({
 
 const taskSchema = new Schema<ITask>(
   {
+    triggerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
     taskTemplateId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,

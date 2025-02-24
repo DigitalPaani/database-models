@@ -15,11 +15,12 @@ interface IEscalation extends Document {
     userIds: Types.ObjectId[];
 }
 interface ITask extends Document {
+    triggerId: Types.ObjectId;
     taskTemplateId: Types.ObjectId;
     scope: string;
     userGroupId: Types.ObjectId;
     workspaceId: Types.ObjectId;
-    assetId: Types.ObjectId;
+    assetId: Types.ObjectId | null;
     assignee: Types.ObjectId;
     workflowDetails: IWorkflowDetails;
     name: string;

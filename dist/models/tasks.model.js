@@ -84,6 +84,10 @@ const escalationSchema = new mongoose_1.Schema({
     }
 });
 const taskSchema = new mongoose_1.Schema({
+    triggerId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
     taskTemplateId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
