@@ -12,7 +12,7 @@ interface ISensor extends Document {
 
 const SensorSchema = new Schema<ISensor>(
   {
-    sensorName: {type:String,required:true},
+    sensorName: {type:String,required:true,trim:true},
     sensorCompanyId: {type:Schema.Types.ObjectId,required:true,ref:"company"},
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true }, // ["1 Minute", "1 Millisecond", "1 Hour"]
