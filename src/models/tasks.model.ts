@@ -43,7 +43,6 @@ interface ITask extends Document {
   skillsSelected: Types.ObjectId[];
   dataEntry: boolean;
   sensorTag: string;
-  sensorValue: number;
   isArchived: boolean;
   createdBy: Types.ObjectId;
   attachmentId?: Types.ObjectId | null; 
@@ -193,10 +192,6 @@ const taskSchema = new Schema<ITask>(
     },
     sensorTag: {
       type: String,
-      required: false,
-    },
-    sensorValue: {
-      type: Number,
       required: false,
     },
     richTextContent: {
