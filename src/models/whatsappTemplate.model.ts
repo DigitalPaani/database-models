@@ -37,7 +37,7 @@ const whatsappTemplateSchema = new Schema<IWhatsappTemplate>(
 const WhatsappTemplateModel: Model<IWhatsappTemplate> = mongoose.model<IWhatsappTemplate>(
   'whatsappTemplates',
   whatsappTemplateSchema,
-  'whatsappTemplatesc'
+  'whatsappTemplates'
 );
 
 
