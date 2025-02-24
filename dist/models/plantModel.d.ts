@@ -21,6 +21,7 @@ interface IPlant extends Partial<Document> {
     tur: string;
     workspaceId: Types.ObjectId;
     userGroupId: Types.ObjectId;
+    operationType: string;
     autoEmailing?: {
         dailyReportPageId: Types.ObjectId;
         weeklyReportPageId: Types.ObjectId;

@@ -75,6 +75,7 @@ const PlantSchema = new mongoose_1.Schema({
     subTopic: String,
     pubTopic: String,
     abbr: String,
+    operationType: String,
     userGroup: {
         id: mongoose_1.Schema.Types.ObjectId,
         name: String,

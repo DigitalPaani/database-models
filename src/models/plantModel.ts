@@ -22,6 +22,7 @@ interface IPlant extends Partial<Document> {
   tur: string;
   workspaceId:Types.ObjectId,
   userGroupId:Types.ObjectId,
+  operationType:string;
   autoEmailing?: {
     dailyReportPageId: Types.ObjectId;
     weeklyReportPageId: Types.ObjectId;
@@ -78,6 +79,7 @@ const PlantSchema = new Schema<IPlant>({
   subTopic: String,
   pubTopic: String,
   abbr: String,
+  operationType:String,
   userGroup: {
     id: Schema.Types.ObjectId,
     name: String,
