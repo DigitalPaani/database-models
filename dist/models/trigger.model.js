@@ -90,6 +90,7 @@ const triggerSchema = new mongoose_1.Schema({
     triggerTag: {
         type: String,
         required: true,
+        unique: true,
         trim: true,
     },
     userGroup: {

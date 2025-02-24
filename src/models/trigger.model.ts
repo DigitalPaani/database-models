@@ -91,6 +91,7 @@ const triggerSchema = new Schema(
     triggerTag: {
       type: String,
       required: true,
+      unique: true,
       trim: true,
     },
     userGroup: {
