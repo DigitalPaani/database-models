@@ -44,7 +44,7 @@ interface ITask extends Document {
   equipmentSelected: string;
   skillsSelected: Types.ObjectId[];
   dataEntry: boolean;
-  sensorTag: string;
+  sensorId: Types.ObjectId;
   isArchived: boolean;
   createdBy: Types.ObjectId;
   attachmentId?: Types.ObjectId | null; 
@@ -201,9 +201,9 @@ const taskSchema = new Schema<ITask>(
       default: false,
       required: false,
     },
-    sensorTag: {
-      type: String,
-      required: false,
+    sensorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false
     },
     richTextContent: {
       type: String,

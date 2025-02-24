@@ -181,9 +181,9 @@ const taskSchema = new mongoose_1.Schema({
         default: false,
         required: false,
     },
-    sensorTag: {
-        type: String,
-        required: false,
+    sensorId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false
     },
     richTextContent: {
         type: String,

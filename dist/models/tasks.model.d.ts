@@ -38,7 +38,7 @@ interface ITask extends Document {
     equipmentSelected: string;
     skillsSelected: Types.ObjectId[];
     dataEntry: boolean;
-    sensorTag: string;
+    sensorId: Types.ObjectId;
     isArchived: boolean;
     createdBy: Types.ObjectId;
     attachmentId?: Types.ObjectId | null;
