@@ -1,5 +1,6 @@
 import type { Document, Model } from "mongoose";
 interface ITriggerComponent extends Document {
+    type: string;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

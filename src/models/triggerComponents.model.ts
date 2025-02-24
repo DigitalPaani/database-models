@@ -3,6 +3,7 @@ import { TRIGGER_COMPONENT_TYPES } from "../constants/triggerConst";
 import type { Document, Model } from "mongoose";
 
 interface ITriggerComponent extends Document {
+  type: string;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
