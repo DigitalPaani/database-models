@@ -78,7 +78,7 @@ const triggerSchema = new mongoose_1.Schema({
         required: true,
         trim: true,
     },
-    dateAsText: {
+    recurrenceText: {
         type: String,
         trim: true,
     },

@@ -4,7 +4,7 @@ import type { TriggerTypes } from "../types/triggerTypes";
 interface ITriggerDocument extends Document {
     name: string;
     description: string;
-    dateAsText?: string;
+    recurrenceText?: string;
     scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
     triggerTag: string;
     userGroup?: Types.ObjectId;
