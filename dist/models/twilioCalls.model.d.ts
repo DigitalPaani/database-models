@@ -8,6 +8,7 @@ interface ITwilioCall extends Document {
     callAnswered: boolean;
     serviceType: string;
     code: string;
+    commonCallId: string;
 }
 declare const TwilioCallModel: Model<ITwilioCall>;
 export { TwilioCallModel, ITwilioCall };

@@ -10,6 +10,7 @@ interface ITwilioCall extends Document {
   callAnswered: boolean;
   serviceType: string;
   code: string;
+  commonCallId: string;
 }
 
 const twilioCallSchema = new Schema(
@@ -46,6 +47,10 @@ const twilioCallSchema = new Schema(
       type: String,
       required: false,
     },
+    commonCallId: {
+      type: String,
+      required: false,
+    }
   },
   {
     timestamps: true,

@@ -68,6 +68,10 @@ const twilioCallSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    commonCallId: {
+        type: String,
+        required: false,
+    }
 }, {
     timestamps: true,
 });
