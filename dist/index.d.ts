@@ -19,17 +19,10 @@ import { CallLogModel, ICallLog } from "./models/callLogs.model";
 import { WhatsappLogModel, IWhatsappLog } from "./models/whatsappMessageLogs.model";
 import { SmsLogModel, ISmsLog } from "./models/smsLogs.model";
 import { EmailLogModel, IEmailLog } from "./models/emailLogs.model";
-<<<<<<< Updated upstream
 import { WhatsappTemplateModel, IWhatsappTemplate } from "./models/whatsappTemplate.model";
-import commonConstants from "./constants/commonConstants";
-import { Types } from 'mongoose';
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, WhatsappTemplateModel, Types, commonConstants };
-=======
 import { TriggerComponentModel, ITriggerComponent } from "./models/triggerComponents.model";
 import commonConstants from "./constants/commonConstants";
 import { Types } from "mongoose";
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, ITriggerComponent, };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, Types, TriggerComponentModel, commonConstants, };
->>>>>>> Stashed changes
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, WhatsappTemplateModel, Types, TriggerComponentModel, commonConstants, };
 //# sourceMappingURL=index.d.ts.map

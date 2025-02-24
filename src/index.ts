@@ -28,14 +28,14 @@ import {
 } from "./models/whatsappMessageLogs.model";
 import { SmsLogModel, ISmsLog } from "./models/smsLogs.model";
 import { EmailLogModel, IEmailLog } from "./models/emailLogs.model";
-<<<<<<< Updated upstream
-import { WhatsappTemplateModel, IWhatsappTemplate } from "./models/whatsappTemplate.model";
-=======
+import {
+  WhatsappTemplateModel,
+  IWhatsappTemplate,
+} from "./models/whatsappTemplate.model";
 import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
->>>>>>> Stashed changes
 
 import commonConstants from "./constants/commonConstants";
 import { Types } from "mongoose";
@@ -62,11 +62,8 @@ export type {
   IWhatsappLog,
   ISmsLog,
   IEmailLog,
-<<<<<<< Updated upstream
-  IWhatsappTemplate
-=======
+  IWhatsappTemplate,
   ITriggerComponent,
->>>>>>> Stashed changes
 };
 
 // exports the models

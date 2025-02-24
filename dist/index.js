@@ -3,11 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-<<<<<<< Updated upstream
-exports.commonConstants = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.PlantModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
-=======
-exports.commonConstants = exports.TriggerComponentModel = exports.Types = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.PlantModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
->>>>>>> Stashed changes
+exports.commonConstants = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.PlantModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -50,13 +46,10 @@ const smsLogs_model_1 = require("./models/smsLogs.model");
 Object.defineProperty(exports, "SmsLogModel", { enumerable: true, get: function () { return smsLogs_model_1.SmsLogModel; } });
 const emailLogs_model_1 = require("./models/emailLogs.model");
 Object.defineProperty(exports, "EmailLogModel", { enumerable: true, get: function () { return emailLogs_model_1.EmailLogModel; } });
-<<<<<<< Updated upstream
 const whatsappTemplate_model_1 = require("./models/whatsappTemplate.model");
 Object.defineProperty(exports, "WhatsappTemplateModel", { enumerable: true, get: function () { return whatsappTemplate_model_1.WhatsappTemplateModel; } });
-=======
 const triggerComponents_model_1 = require("./models/triggerComponents.model");
 Object.defineProperty(exports, "TriggerComponentModel", { enumerable: true, get: function () { return triggerComponents_model_1.TriggerComponentModel; } });
->>>>>>> Stashed changes
 const commonConstants_1 = __importDefault(require("./constants/commonConstants"));
 exports.commonConstants = commonConstants_1.default;
 const mongoose_1 = require("mongoose");
