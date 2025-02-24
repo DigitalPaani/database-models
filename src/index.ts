@@ -22,6 +22,7 @@ import { CallLogModel, ICallLog } from "./models/callLogs.model";
 import { WhatsappLogModel, IWhatsappLog } from "./models/whatsappMessageLogs.model";
 import { SmsLogModel, ISmsLog } from "./models/smsLogs.model";
 import { EmailLogModel, IEmailLog } from "./models/emailLogs.model";
+import { WhatsappTemplateModel, IWhatsappTemplate } from "./models/whatsappTemplate.model";
 
 import commonConstants from "./constants/commonConstants";
 import { Types } from 'mongoose';
@@ -47,7 +48,8 @@ export type {
   ICallLog,
   IWhatsappLog,
   ISmsLog,
-  IEmailLog
+  IEmailLog,
+  IWhatsappTemplate
 };
 
 // exports the models
@@ -73,6 +75,7 @@ export {
   WhatsappLogModel,
   SmsLogModel,
   EmailLogModel,
+  WhatsappTemplateModel,
   Types,
   commonConstants
 };
