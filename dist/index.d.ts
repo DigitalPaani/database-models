@@ -14,8 +14,9 @@ import { TaskModel, ITask } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
+import { TwilioCallModel, ITwilioCall } from "./models/twilioCalls.model";
 import commonConstants from "./constants/commonConstants";
 import { Types } from 'mongoose';
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant };
-export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, Types, commonConstants };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall };
+export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, Types, commonConstants };
 //# sourceMappingURL=index.d.ts.map

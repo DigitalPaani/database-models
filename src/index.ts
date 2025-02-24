@@ -17,6 +17,7 @@ import { TaskModel, ITask } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
+import { TwilioCallModel, ITwilioCall } from "./models/twilioCalls.model";
 
 import commonConstants from "./constants/commonConstants";
 import { Types } from 'mongoose';
@@ -37,7 +38,8 @@ export type {
   ITask,
   IAttachment,
   ITriggerLog,
-  IPlant
+  IPlant,
+  ITwilioCall
 };
 
 // exports the models
@@ -58,6 +60,7 @@ export {
   AttachmentModel,
   TriggerLogsModel,
   PlantModel,
+  TwilioCallModel,
   Types,
   commonConstants
 };
