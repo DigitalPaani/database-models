@@ -58,7 +58,7 @@ const taskDataSchema = new mongoose_1.default.Schema({
     name: { type: String, required: true },
 }, { _id: false, strict: false });
 const triggerComponentSchema = new mongoose_1.Schema({
-    name: {
+    componentName: {
         type: String,
         required: true,
         trim: true,
