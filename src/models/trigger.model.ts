@@ -25,7 +25,7 @@ interface ITriggerDocument extends Document {
   occurrenceLeft?: number;
   recurrence?: TriggerTypes.Recurrence;
   conditions?: TriggerTypes.Conditions;
-  triggerComponent: TriggerTypes.TriggerData[];
+  triggerComponents: TriggerTypes.TriggerData[];
   createdBy: Types.ObjectId; // ObjectId reference
   triggerSensorId: Types.ObjectId;
   status: string;
