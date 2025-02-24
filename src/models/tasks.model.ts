@@ -151,11 +151,11 @@ const taskSchema = new Schema<ITask>(
     },
     priority: {
       type: String,
-      required: true,
+      required: false,
     },
     taskType: {
       type: String,
-      required: true,
+      required: false,
     },
     taskCompletion: {
       type: String,
