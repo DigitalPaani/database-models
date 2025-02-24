@@ -177,6 +177,10 @@ const taskSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    sensorValue: {
+        type: Number,
+        required: false,
+    },
     richTextContent: {
         type: String,
         required: false,

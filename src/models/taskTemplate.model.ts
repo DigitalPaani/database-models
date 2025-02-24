@@ -10,6 +10,8 @@ interface ITaskTemplate extends Document {
   name: string;
   description: string;
   trainingVideoId: Types.ObjectId | null;
+  scope: string;
+  userGroupId: Types.ObjectId;
   priority: string;
   taskType: string;
   workflowId: Types.ObjectId;
@@ -57,6 +59,15 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
       required: true,
     },
     trainingVideoId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
+    scope: {
+      type: String,
+      enum: ['SYSTEM', 'USER_GROUP'],
+      required: true,
+    },
+    userGroupId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,
     },

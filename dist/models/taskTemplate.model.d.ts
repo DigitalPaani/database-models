@@ -4,6 +4,8 @@ interface ITaskTemplate extends Document {
     name: string;
     description: string;
     trainingVideoId: Types.ObjectId | null;
+    scope: string;
+    userGroupId: Types.ObjectId;
     priority: string;
     taskType: string;
     workflowId: Types.ObjectId;
