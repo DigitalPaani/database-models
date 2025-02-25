@@ -13,6 +13,17 @@ interface IEscalation extends Document {
     communicationMedium: string;
     userIds: Types.ObjectId[];
 }
+interface IActionNode extends Document {
+    id: string;
+    label: string;
+    selectedAction: string;
+    selectedActionValue: string;
+}
+interface IComponentActions extends Document {
+    nodeId: string;
+    actionNodes: IActionNode[];
+    actionIds: Types.ObjectId[];
+}
 interface ITask extends Document {
     triggerId: Types.ObjectId;
     taskTemplateId: Types.ObjectId;
@@ -44,6 +55,7 @@ interface ITask extends Document {
     richTextContent: string;
     taskCompleted: boolean;
     escalations: IEscalation[];
+    componentActions: IComponentActions[];
 }
 declare const TaskModel: Model<ITask>;
 export { TaskModel, ITask, IEscalation };

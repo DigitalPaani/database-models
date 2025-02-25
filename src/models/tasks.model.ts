@@ -19,6 +19,19 @@ interface IEscalation extends Document {
   userIds: Types.ObjectId[]
 }
 
+interface IActionNode extends Document {
+  id: string;
+  label: string;
+  selectedAction: string;
+  selectedActionValue: string;
+}
+
+interface IComponentActions extends Document {
+  nodeId: string,
+  actionNodes: IActionNode[],
+  actionIds: Types.ObjectId[]
+}
+
 interface ITask extends Document {
   triggerId: Types.ObjectId;
   taskTemplateId: Types.ObjectId;
@@ -50,6 +63,7 @@ interface ITask extends Document {
   richTextContent: string;
   taskCompleted: boolean;
   escalations: IEscalation[]
+  componentActions: IComponentActions[]
 }
 
 const workflowDetailsSchema = new Schema<IWorkflowDetails>({
@@ -94,6 +108,40 @@ const escalationSchema = new Schema({
     type: [Types.ObjectId],
     required: false,
   }
+});
+
+const actionNodeSchema = new Schema<IActionNode>({
+  id: {
+    type: String,
+    required: false,
+  },
+  label: {
+    type: String,
+    required: false,
+  },
+  selectedAction: {
+    type: String,
+    required: false,
+  },
+  selectedActionValue: {
+    type: String,
+    required: false,
+  }
+});
+
+const componentActionSchema = new Schema<IComponentActions>({
+    nodeId: {
+      type: String,
+      required: false,
+    },
+    actionNodes: {
+      type: [actionNodeSchema],
+      required: false
+    },
+    actionIds: {
+      type: [mongoose.Schema.Types.ObjectId],
+      required: false
+    }
 });
 
 const taskSchema = new Schema<ITask>(
@@ -205,6 +253,10 @@ const taskSchema = new Schema<ITask>(
     },
     escalations: {
       type: [escalationSchema],
+      required: false,
+    },
+    componentActions: {
+      type: [componentActionSchema],
       required: false,
     },
     taskCompleted: {

@@ -78,6 +78,38 @@ const escalationSchema = new mongoose_1.Schema({
         required: false,
     }
 });
+const actionNodeSchema = new mongoose_1.Schema({
+    id: {
+        type: String,
+        required: false,
+    },
+    label: {
+        type: String,
+        required: false,
+    },
+    selectedAction: {
+        type: String,
+        required: false,
+    },
+    selectedActionValue: {
+        type: String,
+        required: false,
+    }
+});
+const componentActionSchema = new mongoose_1.Schema({
+    nodeId: {
+        type: String,
+        required: false,
+    },
+    actionNodes: {
+        type: [actionNodeSchema],
+        required: false
+    },
+    actionIds: {
+        type: [mongoose_1.default.Schema.Types.ObjectId],
+        required: false
+    }
+});
 const taskSchema = new mongoose_1.Schema({
     triggerId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
@@ -186,6 +218,10 @@ const taskSchema = new mongoose_1.Schema({
     },
     escalations: {
         type: [escalationSchema],
+        required: false,
+    },
+    componentActions: {
+        type: [componentActionSchema],
         required: false,
     },
     taskCompleted: {
