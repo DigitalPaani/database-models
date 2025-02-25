@@ -41,7 +41,7 @@ const actionNodeSchema = new mongoose_1.Schema({
         required: false,
     },
     actionNode: {
-        type: Object,
+        type: mongoose_1.default.Schema.Types.Mixed,
         required: false,
     },
 });

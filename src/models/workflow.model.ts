@@ -24,7 +24,7 @@ const actionNodeSchema = new Schema<IActionNode>({
     required: false,
   },
   actionNode: {
-    type: Object,
+    type: mongoose.Schema.Types.Mixed,
     required: false,
   },
 });
