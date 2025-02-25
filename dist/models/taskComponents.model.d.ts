@@ -75,12 +75,8 @@ interface IEscalation {
 }
 interface IComponentAction {
     nodeId: string;
-    selectedAction: {
-        type: String;
-    };
-    selectedActionValue: {
-        type: String;
-    };
+    selectedAction: string;
+    selectedActionValue: string;
 }
 declare const TaskComponentsModel: Model<ITaskComponent>;
 export { TaskComponentsModel, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowNodeData, IWorkflowEdge, IEscalation, IComponentAction, };
