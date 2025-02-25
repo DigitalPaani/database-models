@@ -32,10 +32,22 @@ const TRIGGER_STATUS = {
 };
 
 const TRIGGER_COMPONENT_TYPES = {
-  task: 'TASK',
-  issue: 'ISSUE',
-  communication: 'COMMUNICATION',
-}
+  task: "TASK",
+  issue: "ISSUE",
+  communication: "COMMUNICATION",
+};
+
+const COMMUNICATION_COMPONENT_TYPES = {
+  email: "EMAIL",
+  whatsapp: "WHATSAPP",
+  call: "CALL",
+  sms: "SMS",
+};
+
+const COMMUNICATION_COMPONENT_SERVICE_TYPE = {
+  nodeBackend: "NODE_BACKEND",
+  trigger: "TRIGGER",
+};
 
 export {
   TRIGGER_SCOPE,
@@ -44,4 +56,6 @@ export {
   RECURRENCE_FREQUENCY_TYPES,
   TRIGGER_STATUS,
   TRIGGER_COMPONENT_TYPES,
+  COMMUNICATION_COMPONENT_TYPES,
+  COMMUNICATION_COMPONENT_SERVICE_TYPE,
 };

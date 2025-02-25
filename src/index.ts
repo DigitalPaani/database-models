@@ -37,6 +37,22 @@ import {
   ITriggerComponent,
 } from "./models/triggerComponents.model";
 
+import {
+  TaskComponentsModel,
+  ITaskComponent,
+  IWorkflowDetails,
+  IWorkflowNode,
+  IPosition,
+  IWorkflowNodeData,
+  IWorkflowEdge,
+  IComponentAction,
+} from "./models/taskComponents.model";
+
+import {
+  CommunicationComponentsModel,
+  ICommunicationComponent,
+} from "./models/communicationComponents.model";
+
 import commonConstants from "./constants/commonConstants";
 import { Types } from "mongoose";
 
@@ -65,7 +81,15 @@ export type {
   IWhatsappTemplate,
   ITriggerComponent,
   IEscalation,
-  IActionNode
+  IActionNode,
+  ITaskComponent,
+  IWorkflowDetails,
+  IWorkflowNode,
+  IPosition,
+  IWorkflowNodeData,
+  IWorkflowEdge,
+  IComponentAction,
+  ICommunicationComponent,
 };
 
 // exports the models
@@ -94,5 +118,7 @@ export {
   WhatsappTemplateModel,
   Types,
   TriggerComponentModel,
+  TaskComponentsModel,
+  CommunicationComponentsModel,
   commonConstants,
 };

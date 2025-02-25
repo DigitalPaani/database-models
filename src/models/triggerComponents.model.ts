@@ -3,9 +3,10 @@ import { TRIGGER_COMPONENT_TYPES } from "../constants/triggerConst";
 import type { Document, Model, Types } from "mongoose";
 
 interface ITriggerComponent extends Document {
-  componentName: string;
-  type: string;
   triggerId: Types.ObjectId;
+  componentName: string;
+  externalType: string;
+  externalId: string;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -13,20 +14,24 @@ interface ITriggerComponent extends Document {
 
 const triggerComponentSchema = new Schema(
   {
+    triggerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "triggers",
+      required: true,
+    },
     componentName: {
       type: String,
       required: true,
       trim: true,
     },
-    type: {
+    externalType: {
       type: String,
       enum: Object.values(TRIGGER_COMPONENT_TYPES),
       required: true,
       trim: true,
     },
-    triggerId: {
+    externalId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "triggers",
       required: true,
     },
     isDeleted: { type: Boolean, default: false },
