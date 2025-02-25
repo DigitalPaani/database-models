@@ -36,27 +36,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TriggerComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const triggerConst_1 = require("../constants/triggerConst");
-const workflowActionSchema = new mongoose_1.default.Schema({
-    communication: { type: String, default: "" },
-    users: [
-        {
-            id: { type: mongoose_1.default.Schema.Types.ObjectId },
-            name: { type: String },
-        },
-    ],
-    action: { type: String },
-    nodeName: { type: String },
-}, { _id: false, strict: false });
-const escalationSchema = new mongoose_1.default.Schema({
-    unit: { type: String },
-    value: { type: String },
-    users: [{ type: mongoose_1.default.Schema.Types.ObjectId }],
-    channel: { type: String },
-}, { _id: false, strict: false });
-const taskDataSchema = new mongoose_1.default.Schema({
-    id: { type: mongoose_1.default.Schema.Types.ObjectId, required: true },
-    name: { type: String, required: true },
-}, { _id: false, strict: false });
 const triggerComponentSchema = new mongoose_1.Schema({
     componentName: {
         type: String,
@@ -74,17 +53,6 @@ const triggerComponentSchema = new mongoose_1.Schema({
         ref: "triggers",
         required: true,
     },
-    taskData: { type: taskDataSchema },
-    asset: { type: mongoose_1.default.Schema.Types.ObjectId },
-    assignMethod: { type: String },
-    user: { type: mongoose_1.default.Schema.Types.ObjectId, default: null },
-    expectedTime: { type: String },
-    expectedUnit: { type: String },
-    deadlineTime: { type: String },
-    deadlineUnit: { type: String },
-    dataInputTag: { type: String },
-    escalations: [escalationSchema],
-    workflowActions: [workflowActionSchema],
     isDeleted: { type: Boolean, default: false },
 }, { timestamps: true, strict: false });
 const TriggerComponentModel = mongoose_1.default.model("triggerComponents", triggerComponentSchema, "triggerComponents");
