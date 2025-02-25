@@ -9,8 +9,7 @@ interface IWorkflowDetails extends Document {
     transitionStatus: string;
 }
 interface IEscalation extends Document {
-    time: number;
-    unit: string;
+    timeInMinutes: number;
     communicationMedium: string;
     userIds: Types.ObjectId[];
 }

@@ -14,8 +14,7 @@ interface IWorkflowDetails extends Document {
 
 
 interface IEscalation extends Document {
-  time: number,
-  unit: string,
+  timeInMinutes: number,
   communicationMedium: string,
   userIds: Types.ObjectId[]
 }
@@ -82,13 +81,8 @@ const workflowDetailsSchema = new Schema<IWorkflowDetails>({
 });
 
 const escalationSchema = new Schema({
-  time: {
+  timeInMinutes: {
     type: Number,
-    required: false,
-  },
-  unit: {
-    type: String,
-    enum: escalationUnitsEnums,
     required: false,
   },
   communicationMedium: {

@@ -64,13 +64,8 @@ const workflowDetailsSchema = new mongoose_1.Schema({
     },
 });
 const escalationSchema = new mongoose_1.Schema({
-    time: {
+    timeInMinutes: {
         type: Number,
-        required: false,
-    },
-    unit: {
-        type: String,
-        enum: taskManagementConst_1.escalationUnitsEnums,
         required: false,
     },
     communicationMedium: {
