@@ -12,7 +12,6 @@ interface IWorkflowDetails extends Document {
   transitionStatus: string;
 }
 
-
 interface IEscalation extends Document {
   timeInMinutes: number,
   communicationMedium: string,
