@@ -1,10 +1,14 @@
 import { Model, Schema, model } from "mongoose";
-import { COMMUNICATION_COMPONENT_TYPES, COMMUNICATION_COMPONENT_SERVICE_TYPE } from "../constants/triggerConst";
+import {
+  COMMUNICATION_COMPONENT_TYPES,
+  COMMUNICATION_COMPONENT_SERVICE_TYPE,
+} from "../constants/triggerConst";
 
 // Interface for the message body
 interface ICommunicationComponent {
+  receiverName: string;
   to: string;
-  emailSubject?: string; // Optional, for EMAIL
+  attachment?: { name: string; link: string }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
   emailAttachment?: string; // Optional, for EMAIL (S3 Link)
   whatsappContentSid?: string; // Optional, for WHATSAPP
@@ -17,10 +21,11 @@ interface ICommunicationComponent {
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new Schema(
   {
+    receiverName: { type: String },
     to: { type: String, required: true },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
-    emailAttachment: { type: String }, // S3 link for EMAIL
+    attachments: [{ name: String, link: String }],
     whatsappContentSid: { type: String }, // Only for WHATSAPP type
     whatsappContentVariables: {
       // Only for WHATSAPP type
