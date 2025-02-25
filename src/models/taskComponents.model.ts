@@ -154,22 +154,12 @@ const WorkflowDetailsSchema = new Schema(
   { _id: false }
 );
 
-// Schema for an action node inside componentActions.actionsNode
-const ActionNodeSchema = new Schema(
-  {
-    type: { type: String },
-    actionType: { type: String },
-    label: { type: String },
-  },
-  { _id: false }
-);
-
 // Schema for each entry in componentActions
 const ComponentActionSchema = new Schema(
   {
     nodeId: { type: Schema.Types.ObjectId },
-    actionsNode: [ActionNodeSchema],
-    actionIDs: [{ type: Schema.Types.ObjectId }],
+    selectedAction: { type: String },
+    selectedActionValue: { type: String },
   },
   { _id: false }
 );
