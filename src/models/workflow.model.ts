@@ -1,6 +1,18 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
+interface IActionNode {
+  id: string;
+  label: string;
+  selectedAction: string;
+  selectedActionValue: string;
+}
+
+interface IWorkflowActions extends Document {
+  nodeId: string,
+  actionNodes: IActionNode[]
+}
+
 interface IWorkflow extends Document {
   name: string;
   description: string;
@@ -8,29 +20,39 @@ interface IWorkflow extends Document {
   userGroupId: Types.ObjectId | null;
   nodes: object[],
   edges: object[],
-  actionNodes: object[],
+  workflowActions: IWorkflowActions[],
   isArchived: boolean;
   createdBy: Types.ObjectId;
 }
 
-interface IActionNode {
-  nodeId: string,
-  actionNode: object
-}
-
-interface IActionNodeDocument extends Document {
-  nodeId: string,
-  actionNode: object
-}
 
 
-const actionNodeSchema = new Schema<IActionNodeDocument>({
+const actionNodeSchema = new Schema<IActionNode>({
+  id: {
+    type: String,
+    required: false,
+  },
+  label: {
+    type: String,
+    required: false,
+  },
+  selectedAction: {
+    type: String,
+    required: false,
+  },
+  selectedActionValue: {
+    type: String,
+    required: false,
+  }
+});
+
+const workflowActionSchema = new Schema<IWorkflowActions>({
   nodeId: {
     type: String,
     required: false,
   },
-  actionNode: {
-    type: mongoose.Schema.Types.Mixed,
+  actionNodes: {
+    type: [actionNodeSchema],
     required: false,
   },
 });
@@ -68,8 +90,8 @@ const workflowSchema = new Schema<IWorkflow>(
       type: [Object],
       required: true,
     },
-    actionNodes: {
-      type: [actionNodeSchema],
+    workflowActions: {
+      type: [workflowActionSchema],
       required: false,
     },
     createdBy: {

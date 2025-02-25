@@ -1,5 +1,15 @@
 import type { Document, Model } from 'mongoose';
 import { Types } from 'mongoose';
+interface IActionNode {
+    id: string;
+    label: string;
+    selectedAction: string;
+    selectedActionValue: string;
+}
+interface IWorkflowActions extends Document {
+    nodeId: string;
+    actionNodes: IActionNode[];
+}
 interface IWorkflow extends Document {
     name: string;
     description: string;
@@ -7,13 +17,9 @@ interface IWorkflow extends Document {
     userGroupId: Types.ObjectId | null;
     nodes: object[];
     edges: object[];
-    actionNodes: object[];
+    workflowActions: IWorkflowActions[];
     isArchived: boolean;
     createdBy: Types.ObjectId;
-}
-interface IActionNode {
-    nodeId: string;
-    actionNode: object;
 }
 declare const WorkflowModel: Model<IWorkflow>;
 export { WorkflowModel, IWorkflow, IActionNode };
