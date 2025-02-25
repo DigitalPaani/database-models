@@ -83,14 +83,8 @@ interface IEscalation {
 
 interface IComponentAction {
   nodeId: string; // ObjectID as string
-  actionsNode: IActionNode[];
-  actionIDs: string[]; // Array of ObjectID strings
-}
-
-interface IActionNode {
-  type: string;
-  actionType: string;
-  label: string;
+  selectedAction: { type: String };
+  selectedActionValue: { type: String };
 }
 
 // Schema for each node inside workflowDetails.nodes
@@ -223,5 +217,4 @@ export {
   IWorkflowEdge,
   IEscalation,
   IComponentAction,
-  IActionNode,
 };
