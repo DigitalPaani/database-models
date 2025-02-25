@@ -11,7 +11,10 @@ interface IQuestion extends Document {
     required: boolean;
     order: number;
     batchId: number;
-    plantType: string;
+    dummy: boolean;
+    validation: string[];
+    analyticalValue: boolean | null;
+    name: string;
 }
 declare const QuestionSchemaModel: mongoose.Model<IQuestion, {}, {}, {}, mongoose.Document<unknown, {}, IQuestion> & IQuestion & Required<{
     _id: string;

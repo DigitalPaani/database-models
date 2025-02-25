@@ -46,7 +46,9 @@ const questionSchema = new mongoose_1.Schema({
     required: Boolean,
     order: Number, // New field to track question order
     batchId: Number,
-    plantType: String,
+    dummy: Boolean,
+    analyticalValue: { type: Boolean, default: false },
+    name: String,
 }, { timestamps: true });
 questionSchema.index({ order: 1 });
 const QuestionSchemaModel = mongoose_1.default.model("SurveyQuestion", questionSchema, "SurveyQuestions");

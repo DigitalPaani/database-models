@@ -12,7 +12,10 @@ interface IQuestion extends Document {
   required: boolean;
   order: number; // Question order for tracking
   batchId: number;
-  plantType: string;
+  dummy: boolean;
+  validation: string[];
+  analyticalValue: boolean | null;
+  name: string;
 }
 
 const questionSchema = new Schema(
@@ -27,7 +30,9 @@ const questionSchema = new Schema(
     required: Boolean,
     order: Number, // New field to track question order
     batchId: Number,
-    plantType: String,
+    dummy: Boolean,
+    analyticalValue: { type: Boolean, default: false },
+    name: String,
   },
   { timestamps: true }
 );
