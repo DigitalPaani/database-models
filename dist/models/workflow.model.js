@@ -35,6 +35,16 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WorkflowModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const actionNodeSchema = new mongoose_1.Schema({
+    nodeId: {
+        type: String,
+        required: false,
+    },
+    actionNode: {
+        type: Object,
+        required: false,
+    },
+});
 const workflowSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -61,10 +71,14 @@ const workflowSchema = new mongoose_1.Schema({
     },
     nodes: {
         type: [Object],
-        required: false,
+        required: true,
     },
     edges: {
         type: [Object],
+        required: true,
+    },
+    actionNodes: {
+        type: [actionNodeSchema],
         required: false,
     },
     createdBy: {
