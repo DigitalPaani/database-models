@@ -13,7 +13,7 @@ interface IWorkflowActions {
   actionNodes: IActionNode[]
 }
 
-interface IWorkflow {
+interface IWorkflow extends Document{
   name: string;
   description: string;
   scope: string;
