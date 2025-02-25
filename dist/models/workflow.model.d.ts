@@ -11,7 +11,7 @@ interface IWorkflow extends Document {
     isArchived: boolean;
     createdBy: Types.ObjectId;
 }
-interface IActionNode extends Document {
+interface IActionNode {
     nodeId: string;
     actionNode: object;
 }

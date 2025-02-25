@@ -13,12 +13,18 @@ interface IWorkflow extends Document {
   createdBy: Types.ObjectId;
 }
 
-interface IActionNode extends Document {
+interface IActionNode {
   nodeId: string,
   actionNode: object
 }
 
-const actionNodeSchema = new Schema<IActionNode>({
+interface IActionNodeDocument extends Document {
+  nodeId: string,
+  actionNode: object
+}
+
+
+const actionNodeSchema = new Schema<IActionNodeDocument>({
   nodeId: {
     type: String,
     required: false,
