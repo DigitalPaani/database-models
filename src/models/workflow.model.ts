@@ -1,7 +1,7 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-export interface IWorkflow extends Document {
+interface IWorkflow extends Document {
   name: string;
   description: string;
   scope: string;
@@ -12,6 +12,22 @@ export interface IWorkflow extends Document {
   isArchived: boolean;
   createdBy: Types.ObjectId;
 }
+
+interface IActionNode extends Document {
+  nodeId: string,
+  actionNode: object
+}
+
+const actionNodeSchema = new Schema<IActionNode>({
+  nodeId: {
+    type: String,
+    required: false,
+  },
+  actionNode: {
+    type: Object,
+    required: false,
+  },
+});
 
 const workflowSchema = new Schema<IWorkflow>(
   {
@@ -47,7 +63,7 @@ const workflowSchema = new Schema<IWorkflow>(
       required: true,
     },
     actionNodes: {
-      type: [Object],
+      type: [actionNodeSchema],
       required: false,
     },
     createdBy: {
@@ -66,4 +82,4 @@ const WorkflowModel: Model<IWorkflow> = mongoose.model<IWorkflow>(
   'workflows'
 );
 
-export { WorkflowModel };
+export { WorkflowModel, IWorkflow, IActionNode };
