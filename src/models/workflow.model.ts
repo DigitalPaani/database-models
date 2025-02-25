@@ -8,12 +8,12 @@ interface IActionNode {
   selectedActionValue: string;
 }
 
-interface IWorkflowActions extends Document {
+interface IWorkflowActions {
   nodeId: string,
   actionNodes: IActionNode[]
 }
 
-interface IWorkflow extends Document {
+interface IWorkflow {
   name: string;
   description: string;
   scope: string;
@@ -110,4 +110,4 @@ const WorkflowModel: Model<IWorkflow> = mongoose.model<IWorkflow>(
   'workflows'
 );
 
-export { WorkflowModel, IWorkflow, IActionNode };
+export { WorkflowModel, IWorkflow, IWorkflowActions, IActionNode };

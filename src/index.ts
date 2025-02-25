@@ -14,7 +14,7 @@ import {
   RosterSchedulesModel,
   IRosterSchedule,
 } from "./models/rosterSchedules.model";
-import { WorkflowModel, IWorkflow, IActionNode } from "./models/workflow.model";
+import { WorkflowModel, IWorkflow, IWorkflowActions, IActionNode } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
@@ -86,6 +86,7 @@ export type {
   IWorkflowDetails,
   IWorkflowNode,
   IPosition,
+  IWorkflowActions,
   IWorkflowNodeData,
   IWorkflowEdge,
   IComponentAction,
