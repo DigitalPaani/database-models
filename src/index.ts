@@ -16,7 +16,7 @@ import {
 } from "./models/rosterSchedules.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
-import { TaskModel, ITask } from "./models/tasks.model";
+import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
@@ -64,6 +64,7 @@ export type {
   IEmailLog,
   IWhatsappTemplate,
   ITriggerComponent,
+  IEscalation
 };
 
 // exports the models

@@ -10,7 +10,7 @@ import { RosterManagementModel, IRoster } from "./models/roster.model";
 import { RosterSchedulesModel, IRosterSchedule } from "./models/rosterSchedules.model";
 import { WorkflowModel, IWorkflow } from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
-import { TaskModel, ITask } from "./models/tasks.model";
+import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
@@ -23,6 +23,6 @@ import { WhatsappTemplateModel, IWhatsappTemplate } from "./models/whatsappTempl
 import { TriggerComponentModel, ITriggerComponent } from "./models/triggerComponents.model";
 import commonConstants from "./constants/commonConstants";
 import { Types } from "mongoose";
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation };
 export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, WhatsappTemplateModel, Types, TriggerComponentModel, commonConstants, };
 //# sourceMappingURL=index.d.ts.map

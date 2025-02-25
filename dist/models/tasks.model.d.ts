@@ -47,5 +47,5 @@ interface ITask extends Document {
     escalations: IEscalation[];
 }
 declare const TaskModel: Model<ITask>;
-export { TaskModel, ITask };
+export { TaskModel, ITask, IEscalation };
 //# sourceMappingURL=tasks.model.d.ts.map

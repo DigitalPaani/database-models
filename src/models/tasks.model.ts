@@ -230,4 +230,4 @@ const taskSchema = new Schema<ITask>(
 
 const TaskModel: Model<ITask> = mongoose.model<ITask>('tasks', taskSchema, 'tasks');
 
-export { TaskModel, ITask };
+export { TaskModel, ITask, IEscalation };
