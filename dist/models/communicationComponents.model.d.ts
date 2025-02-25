@@ -2,7 +2,7 @@ import { Model } from "mongoose";
 interface ICommunicationComponent {
     receiverName: string;
     to: string;
-    attachment?: {
+    attachments?: {
         name: string;
         link: string;
     }[];

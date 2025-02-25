@@ -8,7 +8,7 @@ import {
 interface ICommunicationComponent {
   receiverName: string;
   to: string;
-  attachment?: { name: string; link: string }[]; // Optional, for EMAIL
+  attachments?: { name: string; link: string }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
   emailAttachment?: string; // Optional, for EMAIL (S3 Link)
   whatsappContentSid?: string; // Optional, for WHATSAPP
