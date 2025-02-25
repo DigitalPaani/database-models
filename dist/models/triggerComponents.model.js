@@ -37,20 +37,24 @@ exports.TriggerComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const triggerConst_1 = require("../constants/triggerConst");
 const triggerComponentSchema = new mongoose_1.Schema({
+    triggerId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "triggers",
+        required: true,
+    },
     componentName: {
         type: String,
         required: true,
         trim: true,
     },
-    type: {
+    externalType: {
         type: String,
         enum: Object.values(triggerConst_1.TRIGGER_COMPONENT_TYPES),
         required: true,
         trim: true,
     },
-    triggerId: {
+    externalId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: "triggers",
         required: true,
     },
     isDeleted: { type: Boolean, default: false },

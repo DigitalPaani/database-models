@@ -31,5 +31,15 @@ declare const TRIGGER_COMPONENT_TYPES: {
     issue: string;
     communication: string;
 };
-export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, TRIGGER_STATUS, TRIGGER_COMPONENT_TYPES, };
+declare const COMMUNICATION_COMPONENT_TYPES: {
+    email: string;
+    whatsapp: string;
+    call: string;
+    sms: string;
+};
+declare const COMMUNICATION_COMPONENT_SERVICE_TYPE: {
+    nodeBackend: string;
+    trigger: string;
+};
+export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, TRIGGER_STATUS, TRIGGER_COMPONENT_TYPES, COMMUNICATION_COMPONENT_TYPES, COMMUNICATION_COMPONENT_SERVICE_TYPE, };
 //# sourceMappingURL=triggerConst.d.ts.map

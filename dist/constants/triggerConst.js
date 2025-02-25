@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TRIGGER_COMPONENT_TYPES = exports.TRIGGER_STATUS = exports.RECURRENCE_FREQUENCY_TYPES = exports.COMPONENT_NAMES = exports.TRIGGER_TYPES = exports.TRIGGER_SCOPE = void 0;
+exports.COMMUNICATION_COMPONENT_SERVICE_TYPE = exports.COMMUNICATION_COMPONENT_TYPES = exports.TRIGGER_COMPONENT_TYPES = exports.TRIGGER_STATUS = exports.RECURRENCE_FREQUENCY_TYPES = exports.COMPONENT_NAMES = exports.TRIGGER_TYPES = exports.TRIGGER_SCOPE = void 0;
 const TRIGGER_SCOPE = {
     system: "System",
     group: "Group",
@@ -35,8 +35,20 @@ const TRIGGER_STATUS = {
 };
 exports.TRIGGER_STATUS = TRIGGER_STATUS;
 const TRIGGER_COMPONENT_TYPES = {
-    task: 'TASK',
-    issue: 'ISSUE',
-    communication: 'COMMUNICATION',
+    task: "TASK",
+    issue: "ISSUE",
+    communication: "COMMUNICATION",
 };
 exports.TRIGGER_COMPONENT_TYPES = TRIGGER_COMPONENT_TYPES;
+const COMMUNICATION_COMPONENT_TYPES = {
+    email: "EMAIL",
+    whatsapp: "WHATSAPP",
+    call: "CALL",
+    sms: "SMS",
+};
+exports.COMMUNICATION_COMPONENT_TYPES = COMMUNICATION_COMPONENT_TYPES;
+const COMMUNICATION_COMPONENT_SERVICE_TYPE = {
+    nodeBackend: "NODE_BACKEND",
+    trigger: "TRIGGER",
+};
+exports.COMMUNICATION_COMPONENT_SERVICE_TYPE = COMMUNICATION_COMPONENT_SERVICE_TYPE;

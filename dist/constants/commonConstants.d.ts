@@ -12,6 +12,16 @@ declare const _default: {
         issue: string;
         communication: string;
     };
+    COMMUNICATION_COMPONENT_TYPES: {
+        email: string;
+        whatsapp: string;
+        call: string;
+        sms: string;
+    };
+    COMMUNICATION_COMPONENT_SERVICE_TYPE: {
+        nodeBackend: string;
+        trigger: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
