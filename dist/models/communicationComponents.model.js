@@ -5,10 +5,11 @@ const mongoose_1 = require("mongoose");
 const triggerConst_1 = require("../constants/triggerConst");
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new mongoose_1.Schema({
+    receiverName: { type: String },
     to: { type: String, required: true },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
-    emailAttachment: { type: String }, // S3 link for EMAIL
+    attachments: [{ name: String, link: String }],
     whatsappContentSid: { type: String }, // Only for WHATSAPP type
     whatsappContentVariables: {
         // Only for WHATSAPP type

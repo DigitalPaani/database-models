@@ -1,7 +1,11 @@
 import { Model } from "mongoose";
 interface ICommunicationComponent {
+    receiverName: string;
     to: string;
-    emailSubject?: string;
+    attachments?: {
+        name: string;
+        link: string;
+    }[];
     message?: string;
     emailAttachment?: string;
     whatsappContentSid?: string;
