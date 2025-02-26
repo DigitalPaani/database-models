@@ -27,6 +27,12 @@ interface ITaskComponent extends Document {
   componentActions: IComponentAction[];
   parentId?: Types.ObjectId;
   isSubtask: boolean;
+
+  // frontend requirements
+  TaskFormDataId: string;
+  parentIndex: number;
+  parentAutocompleteId: string;
+  workflowActions: any;
 }
 
 interface IWorkflowDetails {
@@ -222,6 +228,12 @@ const TaskComponentSchema = new Schema(
     componentActions: [ComponentActionSchema],
     parentId: { type: Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
+
+    // frontend requirements
+    TaskFormDataId: { type: String },
+    parentIndex: { type: Number },
+    parentAutocompleteId: { type: String },
+    workflowActions: { type: [Schema.Types.Mixed] },
   },
   { timestamps: true }
 );

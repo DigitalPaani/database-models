@@ -101,6 +101,11 @@ const TaskComponentSchema = new mongoose_1.Schema({
     componentActions: [ComponentActionSchema],
     parentId: { type: mongoose_1.Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
+    // frontend requirements
+    TaskFormDataId: { type: String },
+    parentIndex: { type: Number },
+    parentAutocompleteId: { type: String },
+    workflowActions: { type: [mongoose_1.Schema.Types.Mixed] },
 }, { timestamps: true });
 const TaskComponentsModel = (0, mongoose_1.model)("taskComponents", TaskComponentSchema, "taskComponents");
 exports.TaskComponentsModel = TaskComponentsModel;
