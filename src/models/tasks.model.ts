@@ -23,12 +23,12 @@ interface IActionNode extends Document {
   label: string;
   selectedAction: string;
   selectedActionValue: string;
+  actionIds: Types.ObjectId[];
 }
 
 interface IComponentActions extends Document {
   nodeId: string,
-  actionNodes: IActionNode[],
-  actionIds: Types.ObjectId[]
+  actionNodes: IActionNode[]
 }
 
 interface ITask extends Document {
@@ -125,6 +125,10 @@ const actionNodeSchema = new Schema<IActionNode>({
   selectedActionValue: {
     type: String,
     required: false,
+  },
+  actionIds: {
+    type: [mongoose.Schema.Types.ObjectId],
+    required: false
   }
 });
 
@@ -135,10 +139,6 @@ const componentActionSchema = new Schema<IComponentActions>({
     },
     actionNodes: {
       type: [actionNodeSchema],
-      required: false
-    },
-    actionIds: {
-      type: [mongoose.Schema.Types.ObjectId],
       required: false
     }
 });

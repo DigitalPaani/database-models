@@ -18,11 +18,11 @@ interface IActionNode extends Document {
     label: string;
     selectedAction: string;
     selectedActionValue: string;
+    actionIds: Types.ObjectId[];
 }
 interface IComponentActions extends Document {
     nodeId: string;
     actionNodes: IActionNode[];
-    actionIds: Types.ObjectId[];
 }
 interface ITask extends Document {
     triggerId: Types.ObjectId;

@@ -94,6 +94,10 @@ const actionNodeSchema = new mongoose_1.Schema({
     selectedActionValue: {
         type: String,
         required: false,
+    },
+    actionIds: {
+        type: [mongoose_1.default.Schema.Types.ObjectId],
+        required: false
     }
 });
 const componentActionSchema = new mongoose_1.Schema({
@@ -103,10 +107,6 @@ const componentActionSchema = new mongoose_1.Schema({
     },
     actionNodes: {
         type: [actionNodeSchema],
-        required: false
-    },
-    actionIds: {
-        type: [mongoose_1.default.Schema.Types.ObjectId],
         required: false
     }
 });
