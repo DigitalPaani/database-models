@@ -1,5 +1,5 @@
 import { Model } from "mongoose";
-interface ICommunicationComponent {
+interface ICommunicationComponent extends Document {
     receiverName: string;
     to: string;
     attachments?: {

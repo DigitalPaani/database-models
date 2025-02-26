@@ -1,6 +1,6 @@
 import { Model, model, Schema, Types } from "mongoose";
 
-interface ITaskComponent {
+interface ITaskComponent extends Document {
   taskTemplateId: string; // ObjectID as string
   assetId: string; // ObjectID as string
   name: string;

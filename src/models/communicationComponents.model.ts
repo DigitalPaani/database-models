@@ -5,7 +5,7 @@ import {
 } from "../constants/triggerConst";
 
 // Interface for the message body
-interface ICommunicationComponent {
+interface ICommunicationComponent extends Document {
   receiverName: string;
   to: string;
   attachments?: { name: string; link: string }[]; // Optional, for EMAIL
