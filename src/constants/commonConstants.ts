@@ -1,4 +1,4 @@
-import { skillLevels } from "./taskManagementConst";
+import { assigneeMethodEnums, skillLevels } from "./taskManagementConst";
 import {
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
   COMMUNICATION_COMPONENT_TYPES,
@@ -16,4 +16,5 @@ export default {
   TRIGGER_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
+  assigneeMethodEnums,
 };
