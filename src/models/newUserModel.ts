@@ -14,6 +14,7 @@ interface INewUser extends Document {
   profilePic: string;
   isStaff: boolean;
   parentUserId: Types.ObjectId;
+  skillIds: Types.ObjectId[];
   isArchived: boolean;
   // defaultHomePage: string;
   [key: string]: any;
