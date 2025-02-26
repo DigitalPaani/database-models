@@ -23,7 +23,7 @@ interface ITaskComponent {
     richTextContent: string;
     escalations: IEscalation[];
     componentActions: IComponentAction[];
-    parentTaskId?: Types.ObjectId;
+    parentTaskComponentId?: Types.ObjectId;
     isSubtask: boolean;
 }
 interface IWorkflowDetails {
