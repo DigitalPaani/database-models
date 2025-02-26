@@ -12,6 +12,7 @@ interface IEscalation extends Document {
     timeInMinutes: number;
     communicationMedium: string;
     userIds: Types.ObjectId[];
+    isNotified: boolean;
 }
 interface IActionNode extends Document {
     id: string;

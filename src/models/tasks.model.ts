@@ -17,6 +17,7 @@ interface IEscalation extends Document {
   timeInMinutes: number,
   communicationMedium: string,
   userIds: Types.ObjectId[]
+  isNotified: boolean;
 }
 
 interface IActionNode extends Document {
@@ -108,7 +109,8 @@ const escalationSchema = new Schema<IEscalation>({
     type: [Types.ObjectId],
     ref: "NewUser",
     required: false,
-  }
+  },
+  isNotified: { type: Boolean, default: false },
 }, { _id: false });
 
 const actionNodeSchema = new Schema<IActionNode>({

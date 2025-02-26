@@ -78,7 +78,8 @@ const escalationSchema = new mongoose_1.Schema({
         type: [mongoose_1.Types.ObjectId],
         ref: "NewUser",
         required: false,
-    }
+    },
+    isNotified: { type: Boolean, default: false },
 }, { _id: false });
 const actionNodeSchema = new mongoose_1.Schema({
     id: {
