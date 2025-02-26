@@ -22,6 +22,10 @@ declare const _default: {
         nodeBackend: string;
         trigger: string;
     };
+    assigneeMethodEnums: {
+        label: string;
+        value: string;
+    }[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
