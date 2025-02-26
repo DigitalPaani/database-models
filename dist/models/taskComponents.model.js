@@ -25,7 +25,7 @@ const WorkflowNodeSchema = new mongoose_1.Schema({
         y: { type: Number },
     },
     dragging: { type: Boolean },
-}, { _id: false });
+}, { timestamps: true });
 // Schema for each edge inside workflowDetails.edges
 const WorkflowEdgeSchema = new mongoose_1.Schema({
     id: { type: String, required: true },

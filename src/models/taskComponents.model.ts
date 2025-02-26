@@ -115,7 +115,7 @@ const WorkflowNodeSchema = new Schema(
     },
     dragging: { type: Boolean },
   },
-  { _id: false }
+  { timestamps: true }
 );
 
 // Schema for each edge inside workflowDetails.edges

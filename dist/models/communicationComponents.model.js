@@ -27,6 +27,6 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         required: true,
     },
     code: { type: String, required: true },
-}, { _id: false });
+}, { timestamps: true });
 const CommunicationComponentsModel = (0, mongoose_1.model)("communicationComponents", communicationComponentsSchema, "communicationComponents");
 exports.CommunicationComponentsModel = CommunicationComponentsModel;
