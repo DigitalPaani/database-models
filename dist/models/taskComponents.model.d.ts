@@ -1,4 +1,4 @@
-import { Model } from "mongoose";
+import { Model, Types } from "mongoose";
 interface ITaskComponent {
     taskTemplateId: string;
     assetId: string;
@@ -12,6 +12,7 @@ interface ITaskComponent {
     workflowDetails: IWorkflowDetails;
     taskCompletion: string;
     assigneeMethod: string;
+    assignee: Types.ObjectId;
     complexity: number;
     taskDeadlineTime: number;
     taskExpectedTime: number;

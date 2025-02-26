@@ -1,4 +1,4 @@
-import type { Model } from 'mongoose';
+import type { Document, Model } from 'mongoose';
 import { Types } from 'mongoose';
 interface IActionNode {
     id: string;
@@ -10,7 +10,7 @@ interface IWorkflowActions {
     nodeId: string;
     actionNodes: IActionNode[];
 }
-interface IWorkflow {
+interface IWorkflow extends Document {
     name: string;
     description: string;
     scope: string;

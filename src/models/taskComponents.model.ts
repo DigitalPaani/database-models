@@ -1,4 +1,4 @@
-import { Model, model, Schema } from "mongoose";
+import { Model, model, Schema, Types } from "mongoose";
 
 interface ITaskComponent {
   taskTemplateId: string; // ObjectID as string
@@ -13,6 +13,7 @@ interface ITaskComponent {
   workflowDetails: IWorkflowDetails;
   taskCompletion: string; // Adjust as needed
   assigneeMethod: string; // Adjust as needed
+  assignee: Types.ObjectId;
   complexity: number;
   taskDeadlineTime: number; // Assuming relative minutes
   taskExpectedTime: number; // Assuming relative minutes
