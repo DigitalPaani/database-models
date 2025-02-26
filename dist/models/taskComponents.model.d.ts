@@ -1,5 +1,6 @@
 import { Model, Types } from "mongoose";
 interface ITaskComponent extends Document {
+    _id: Types.ObjectId;
     taskTemplateId: string;
     assetId: string;
     name: string;

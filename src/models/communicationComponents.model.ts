@@ -3,9 +3,11 @@ import {
   COMMUNICATION_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
 } from "../constants/triggerConst";
+import { Types } from "mongoose";
 
 // Interface for the message body
 interface ICommunicationComponent extends Document {
+  _id: Types.ObjectId;
   receiverName: string;
   to: string;
   attachments?: { name: string; link: string }[]; // Optional, for EMAIL

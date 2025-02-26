@@ -1,6 +1,7 @@
 import { Model, model, Schema, Types } from "mongoose";
 
 interface ITaskComponent extends Document {
+  _id: Types.ObjectId;
   taskTemplateId: string; // ObjectID as string
   assetId: string; // ObjectID as string
   name: string;
@@ -115,7 +116,7 @@ const WorkflowNodeSchema = new Schema(
     },
     dragging: { type: Boolean },
   },
-  { timestamps: true }
+  { _id: false }
 );
 
 // Schema for each edge inside workflowDetails.edges
