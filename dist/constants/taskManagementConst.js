@@ -92,13 +92,13 @@ exports.assigneeMethodEnums = [
         value: "SCHEDULED_BASED",
     },
     {
-        label: "Re-Assignment",
-        value: "RE_ASSIGNMENT",
-    },
-    {
         label: "Non Assigned task",
         value: "NON_ASSIGNED_TASK",
     },
+    {
+        label: "Fixed User",
+        value: "FIXED_USER"
+    }
 ];
 exports.escalationUnitsEnums = ["MINUTES", "HOURS", "WEEKS", "DAYS", "MONTHS", "YEARS"];
 exports.communicationMediumEnums = ["EMAIL", "SMS", "WHATSAPP", "CALL"];

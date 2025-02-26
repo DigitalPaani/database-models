@@ -93,13 +93,13 @@ export const skillTypes = [
       value: "SCHEDULED_BASED",
     },
     {
-      label: "Re-Assignment",
-      value: "RE_ASSIGNMENT",
-    },
-    {
       label: "Non Assigned task",
       value: "NON_ASSIGNED_TASK",
     },
+    {
+      label: "Fixed User",
+      value: "FIXED_USER"
+    }
   ]
 
 export const escalationUnitsEnums = ["MINUTES", "HOURS", "WEEKS", "DAYS", "MONTHS", "YEARS"];
