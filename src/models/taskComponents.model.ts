@@ -24,7 +24,7 @@ interface ITaskComponent {
   richTextContent: string;
   escalations: IEscalation[];
   componentActions: IComponentAction[];
-  parentTaskComponentId?: Types.ObjectId;
+  parentId?: Types.ObjectId;
   isSubtask: boolean;
 }
 
@@ -203,7 +203,7 @@ const TaskComponentSchema = new Schema(
     richTextContent: { type: String },
     escalations: [EscalationSchema],
     componentActions: [ComponentActionSchema],
-    parentTaskComponentId: { type: Schema.Types.ObjectId, ref: "taskComponents" },
+    parentId: { type: Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
   },
   { timestamps: true }
