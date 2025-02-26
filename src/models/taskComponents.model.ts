@@ -223,7 +223,7 @@ const TaskComponentSchema = new Schema(
     parentId: { type: Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
   },
-  { timestamps: true, strict: false }
+  { timestamps: true }
 );
 
 const TaskComponentsModel: Model<ITaskComponent> = model<ITaskComponent>(
