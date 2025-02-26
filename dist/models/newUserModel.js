@@ -45,6 +45,7 @@ const userSchema = new mongoose_1.Schema({
     twoFactorAuthentication: Boolean,
     language: String,
     profilePic: String,
+    skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
     parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser' },
     isStaff: { type: Boolean, required: true, default: false },
     isArchived: { type: Boolean, default: false },

@@ -35,6 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RosterSchedulesModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+require('./newUserModel');
 const rosterScheduleSchema = new mongoose_1.Schema({
     rosterId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -42,6 +43,7 @@ const rosterScheduleSchema = new mongoose_1.Schema({
     },
     userId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
     reoccurrenceId: {

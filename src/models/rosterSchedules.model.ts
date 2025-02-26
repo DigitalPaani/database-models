@@ -1,5 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
+require('./newUserModel');
 
 interface IRosterSchedule extends Document {
   rosterId: Types.ObjectId;
@@ -23,6 +24,7 @@ const rosterScheduleSchema = new Schema<IRosterSchedule>(
     },
     userId: {
       type: Schema.Types.ObjectId,
+      ref: "NewUser",
       required: true,
     },
     reoccurrenceId: {

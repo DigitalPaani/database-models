@@ -31,6 +31,7 @@ const userSchema = new Schema<INewUser>(
     twoFactorAuthentication: Boolean,
     language: String,
     profilePic: String,
+    skillIds: { type: [Schema.Types.ObjectId], required: false },
     parentUserId: { type: Schema.Types.ObjectId, ref: 'NewUser' },
     isStaff: { type: Boolean, required: true, default: false },
     isArchived: { type: Boolean, default: false },
