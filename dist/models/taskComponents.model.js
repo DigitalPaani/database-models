@@ -101,6 +101,6 @@ const TaskComponentSchema = new mongoose_1.Schema({
     componentActions: [ComponentActionSchema],
     parentId: { type: mongoose_1.Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 const TaskComponentsModel = (0, mongoose_1.model)("taskComponents", TaskComponentSchema, "taskComponents");
 exports.TaskComponentsModel = TaskComponentsModel;
