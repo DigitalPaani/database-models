@@ -49,7 +49,8 @@ const questionSchema = new mongoose_1.Schema({
     dummy: Boolean,
     analyticalValue: { type: Boolean, default: false },
     name: String,
-    defaultValue: [String]
+    defaultValue: { type: String, default: null },
+    validation: [String]
 }, { timestamps: true });
 questionSchema.index({ order: 1 });
 const QuestionSchemaModel = mongoose_1.default.model("SurveyQuestion", questionSchema, "SurveyQuestions");
