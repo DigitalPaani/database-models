@@ -1,4 +1,4 @@
-import type { Document, Model, Types } from 'mongoose';
+import type { Document, Model, Types } from "mongoose";
 interface INewUser extends Document {
     name: string;
     email: string;
@@ -15,6 +15,5 @@ interface INewUser extends Document {
     [key: string]: any;
 }
 declare const NewUserModel: Model<INewUser>;
-export { INewUser };
-export default NewUserModel;
+export { NewUserModel, INewUser };
 //# sourceMappingURL=newUserModel.d.ts.map

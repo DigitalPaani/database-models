@@ -14,7 +14,12 @@ import {
   RosterSchedulesModel,
   IRosterSchedule,
 } from "./models/rosterSchedules.model";
-import { WorkflowModel, IWorkflow, IWorkflowActions, IActionNode } from "./models/workflow.model";
+import {
+  WorkflowModel,
+  IWorkflow,
+  IWorkflowActions,
+  IActionNode,
+} from "./models/workflow.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
@@ -52,6 +57,8 @@ import {
   CommunicationComponentsModel,
   ICommunicationComponent,
 } from "./models/communicationComponents.model";
+
+import { NewUserModel, INewUser } from "./models/newUserModel";
 
 import commonConstants from "./constants/commonConstants";
 import { Types } from "mongoose";
@@ -91,6 +98,7 @@ export type {
   IWorkflowEdge,
   IComponentAction,
   ICommunicationComponent,
+  INewUser,
 };
 
 // exports the models
@@ -121,5 +129,6 @@ export {
   TriggerComponentModel,
   TaskComponentsModel,
   CommunicationComponentsModel,
+  NewUserModel,
   commonConstants,
 };
