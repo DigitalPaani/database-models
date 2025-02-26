@@ -13,6 +13,7 @@ export namespace TriggerTypes {
     dayOfMonth?: number[];
     weekOfMonth?: number[];
     month?: number[];
+    occurrences?: number
   };
 
   export type Conditions = {

@@ -66,6 +66,7 @@ const recurrenceSchema = new mongoose_1.Schema({
     month: {
         type: [Number], // e.g., 1 for January (used for yearly recurrence)
     },
+    occurrences: { type: Number },
 });
 const triggerSchema = new mongoose_1.Schema({
     name: {
@@ -110,8 +111,6 @@ const triggerSchema = new mongoose_1.Schema({
     },
     startDate: { type: Number },
     endDate: { type: Number },
-    totalOccurrence: { type: Number },
-    occurrenceLeft: { type: Number },
     recurrence: { type: recurrenceSchema, required: false },
     conditions: {
         type: {
