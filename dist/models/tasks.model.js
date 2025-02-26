@@ -35,6 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+require('./newUserModel');
 const taskManagementConst_1 = require("../constants/taskManagementConst");
 const workflowDetailsSchema = new mongoose_1.Schema({
     workflowId: {
@@ -75,6 +76,7 @@ const escalationSchema = new mongoose_1.Schema({
     },
     userIds: {
         type: [mongoose_1.Types.ObjectId],
+        ref: "NewUser",
         required: false,
     }
 }, { _id: false });

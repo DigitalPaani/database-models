@@ -1,5 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
+require('./newUserModel');
 
 import { taskCompletionEnums, assigneeMethodEnums, escalationUnitsEnums, communicationMediumEnums } from '../constants/taskManagementConst';
 
@@ -105,6 +106,7 @@ const escalationSchema = new Schema<IEscalation>({
   },
   userIds: {
     type: [Types.ObjectId],
+    ref: "NewUser",
     required: false,
   }
 }, { _id: false });
