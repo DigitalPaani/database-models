@@ -174,7 +174,7 @@ const ActionNodeSchema = new Schema(
 // Schema for each entry in componentActions
 const ComponentActionSchema = new Schema(
   {
-    nodeId: { type: Schema.Types.ObjectId },
+    nodeId: { type: String },
     actionNodes: [ActionNodeSchema],
   },
   { _id: false }
