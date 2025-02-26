@@ -15,6 +15,7 @@ interface IQuestion extends Document {
     validation: string[];
     analyticalValue: boolean | null;
     name: string;
+    defaultValue: string[];
 }
 declare const QuestionSchemaModel: mongoose.Model<IQuestion, {}, {}, {}, mongoose.Document<unknown, {}, IQuestion> & IQuestion & Required<{
     _id: string;

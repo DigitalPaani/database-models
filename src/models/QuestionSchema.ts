@@ -16,6 +16,7 @@ interface IQuestion extends Document {
   validation: string[];
   analyticalValue: boolean | null;
   name: string;
+  defaultValue:string[];
 }
 
 const questionSchema = new Schema(
@@ -33,6 +34,7 @@ const questionSchema = new Schema(
     dummy: Boolean,
     analyticalValue: { type: Boolean, default: false },
     name: String,
+    defaultValue:[String]
   },
   { timestamps: true }
 );
