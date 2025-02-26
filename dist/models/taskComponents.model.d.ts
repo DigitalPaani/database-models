@@ -77,10 +77,16 @@ interface IEscalation {
     communicationMedium: string;
     userIds: string[];
 }
-interface IComponentAction {
-    nodeId: string;
+interface IActionNode {
+    id: string;
+    label: string;
     selectedAction: string;
     selectedActionValue: string;
+    actionIds: Types.ObjectId[];
+}
+interface IComponentAction {
+    nodeId: string;
+    actionNodes: IActionNode[];
 }
 declare const TaskComponentsModel: Model<ITaskComponent>;
 export { TaskComponentsModel, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowNodeData, IWorkflowEdge, IEscalation, IComponentAction, };

@@ -13,7 +13,6 @@ const WorkflowNodeSchema = new mongoose_1.Schema({
     data: {
         type: { type: String },
         label: { type: String },
-        actionType: { type: String }, // Optional: only available on some nodes
         selectedAction: { type: String },
         selectedActionValue: { type: String },
     },
@@ -53,11 +52,17 @@ const WorkflowDetailsSchema = new mongoose_1.Schema({
     nodes: [WorkflowNodeSchema],
     edges: [WorkflowEdgeSchema],
 }, { _id: false });
+const ActionNodeSchema = new mongoose_1.Schema({
+    id: { type: String },
+    label: { type: String },
+    selectedAction: { type: String },
+    selectedActionValue: { type: String },
+    actionIds: { type: [mongoose_1.Schema.Types.ObjectId] },
+}, { _id: false });
 // Schema for each entry in componentActions
 const ComponentActionSchema = new mongoose_1.Schema({
     nodeId: { type: mongoose_1.Schema.Types.ObjectId },
-    selectedAction: { type: String },
-    selectedActionValue: { type: String },
+    actionNodes: [ActionNodeSchema],
 }, { _id: false });
 // Schema for each escalation entry
 const EscalationSchema = new mongoose_1.Schema({

@@ -85,10 +85,17 @@ interface IEscalation {
   userIds: string[];
 }
 
-interface IComponentAction {
-  nodeId: string; // ObjectID as string
+interface IActionNode {
+  id: string;
+  label: string;
   selectedAction: string;
   selectedActionValue: string;
+  actionIds: Types.ObjectId[];
+}
+
+interface IComponentAction {
+  nodeId: string; // ObjectID as string
+  actionNodes: IActionNode[];
 }
 
 // Schema for each node inside workflowDetails.nodes
@@ -103,7 +110,6 @@ const WorkflowNodeSchema = new Schema(
     data: {
       type: { type: String },
       label: { type: String },
-      actionType: { type: String }, // Optional: only available on some nodes
       selectedAction: { type: String },
       selectedActionValue: { type: String },
     },
@@ -154,12 +160,22 @@ const WorkflowDetailsSchema = new Schema(
   { _id: false }
 );
 
+const ActionNodeSchema = new Schema(
+  {
+    id: { type: String },
+    label: { type: String },
+    selectedAction: { type: String },
+    selectedActionValue: { type: String },
+    actionIds: { type: [Schema.Types.ObjectId] },
+  },
+  { _id: false }
+);
+
 // Schema for each entry in componentActions
 const ComponentActionSchema = new Schema(
   {
     nodeId: { type: Schema.Types.ObjectId },
-    selectedAction: { type: String },
-    selectedActionValue: { type: String },
+    actionNodes: [ActionNodeSchema],
   },
   { _id: false }
 );
