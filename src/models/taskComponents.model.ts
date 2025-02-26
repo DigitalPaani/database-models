@@ -24,6 +24,8 @@ interface ITaskComponent {
   richTextContent: string;
   escalations: IEscalation[];
   componentActions: IComponentAction[];
+  parentTaskId?: Types.ObjectId;
+  isSubtask: boolean;
 }
 
 interface IWorkflowDetails {
@@ -201,6 +203,8 @@ const TaskComponentSchema = new Schema(
     richTextContent: { type: String },
     escalations: [EscalationSchema],
     componentActions: [ComponentActionSchema],
+    parentTaskId: { type: Schema.Types.ObjectId, ref: "taskComponents" },
+    isSubtask: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
