@@ -2,6 +2,10 @@ import { Model, Types } from "mongoose";
 interface ITaskComponent extends Document {
     _id: Types.ObjectId;
     taskTemplateId: string;
+    taskData: {
+        taskTemplateId: Types.ObjectId;
+        name: string;
+    };
     assetId: string;
     name: string;
     description: string;
@@ -17,7 +21,6 @@ interface ITaskComponent extends Document {
     complexity: number;
     taskDeadlineTime: number;
     taskExpectedTime: number;
-    equipmentSelected?: string;
     skillsSelected: string[];
     dataEntry: boolean;
     sensorTag: string;

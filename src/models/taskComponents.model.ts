@@ -3,6 +3,7 @@ import { Model, model, Schema, Types } from "mongoose";
 interface ITaskComponent extends Document {
   _id: Types.ObjectId;
   taskTemplateId: string; // ObjectID as string
+  taskData: { taskTemplateId: Types.ObjectId; name: string };
   assetId: string; // ObjectID as string
   name: string;
   description: string;
@@ -18,7 +19,6 @@ interface ITaskComponent extends Document {
   complexity: number;
   taskDeadlineTime: number; // Assuming relative minutes
   taskExpectedTime: number; // Assuming relative minutes
-  equipmentSelected?: string; // ObjectID as string; optional or empty string
   skillsSelected: string[]; // Array of ObjectID strings
   dataEntry: boolean;
   sensorTag: string;
@@ -198,6 +198,7 @@ const TaskComponentSchema = new Schema(
       ref: "task-templates",
       required: true,
     },
+    taskData: { taskTemplateId: Schema.Types.ObjectId, name: String },
     assetId: { type: Schema.Types.ObjectId, ref: "Plant" },
     name: { type: String, required: true },
     description: { type: String },
@@ -213,7 +214,6 @@ const TaskComponentSchema = new Schema(
     complexity: { type: Number },
     taskDeadlineTime: { type: Number },
     taskExpectedTime: { type: Number },
-    equipmentSelected: { type: Schema.Types.ObjectId },
     skillsSelected: [{ type: Schema.Types.ObjectId, ref: "skill-managements" }],
     dataEntry: { type: Boolean },
     sensorTag: { type: String },
