@@ -91,9 +91,9 @@ const workflowDetailsSchema = new Schema<IWorkflowDetails>({
     type: String,
     required: false,
   },
-});
+}, { _id: false });
 
-const escalationSchema = new Schema({
+const escalationSchema = new Schema<IEscalation>({
   timeInMinutes: {
     type: Number,
     required: false,
@@ -107,7 +107,7 @@ const escalationSchema = new Schema({
     type: [Types.ObjectId],
     required: false,
   }
-});
+}, { _id: false });
 
 const actionNodeSchema = new Schema<IActionNode>({
   id: {
@@ -130,7 +130,7 @@ const actionNodeSchema = new Schema<IActionNode>({
     type: [mongoose.Schema.Types.ObjectId],
     required: false
   }
-});
+}, { _id: false });
 
 const componentActionSchema = new Schema<IComponentActions>({
     nodeId: {
@@ -141,7 +141,7 @@ const componentActionSchema = new Schema<IComponentActions>({
       type: [actionNodeSchema],
       required: false
     }
-});
+}, { _id: false });
 
 const taskSchema = new Schema<ITask>(
   {

@@ -62,7 +62,7 @@ const workflowDetailsSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
-});
+}, { _id: false });
 const escalationSchema = new mongoose_1.Schema({
     timeInMinutes: {
         type: Number,
@@ -77,7 +77,7 @@ const escalationSchema = new mongoose_1.Schema({
         type: [mongoose_1.Types.ObjectId],
         required: false,
     }
-});
+}, { _id: false });
 const actionNodeSchema = new mongoose_1.Schema({
     id: {
         type: String,
@@ -99,7 +99,7 @@ const actionNodeSchema = new mongoose_1.Schema({
         type: [mongoose_1.default.Schema.Types.ObjectId],
         required: false
     }
-});
+}, { _id: false });
 const componentActionSchema = new mongoose_1.Schema({
     nodeId: {
         type: String,
@@ -109,7 +109,7 @@ const componentActionSchema = new mongoose_1.Schema({
         type: [actionNodeSchema],
         required: false
     }
-});
+}, { _id: false });
 const taskSchema = new mongoose_1.Schema({
     triggerId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
