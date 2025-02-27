@@ -131,6 +131,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
         required: true,
     },
 }, {
+    minimize: false,
     timestamps: true,
 });
 const TaskTemplateModel = mongoose_1.default.model('task-templates', taskTemplateSchema, 'task-templates');

@@ -75,7 +75,7 @@ const workflowSchema = new Schema<IWorkflow>(
     userGroupId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "UserGroup",
-      required: false,
+      default: null
     },
     isArchived: {
       type: Boolean,
@@ -100,6 +100,7 @@ const workflowSchema = new Schema<IWorkflow>(
     },
   },
   {
+    minimize: false,
     timestamps: true,
   }
 );

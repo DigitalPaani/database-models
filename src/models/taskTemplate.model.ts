@@ -128,6 +128,7 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     },
   },
   {
+    minimize: false,
     timestamps: true,
   }
 );

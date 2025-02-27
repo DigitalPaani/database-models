@@ -125,11 +125,11 @@ const taskSchema = new mongoose_1.Schema({
     scope: {
         type: String,
         enum: ['SYSTEM', 'USER_GROUP'],
-        required: false,
+        required: true,
     },
     userGroupId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
+        default: null,
     },
     workspaceId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
@@ -246,6 +246,7 @@ const taskSchema = new mongoose_1.Schema({
     },
 }, {
     timestamps: true,
+    minimize: false
 });
 const TaskModel = mongoose_1.default.model('tasks', taskSchema, 'tasks');
 exports.TaskModel = TaskModel;

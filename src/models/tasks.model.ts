@@ -57,7 +57,7 @@ interface ITask extends Document {
   equipmentSelected: string;
   skillsSelected: Types.ObjectId[];
   dataEntry: boolean;
-  sensorId: Types.ObjectId;
+  sensorId: Types.ObjectId | null; 
   isArchived: boolean;
   createdBy: Types.ObjectId;
   attachmentId?: Types.ObjectId | null; 
@@ -162,11 +162,11 @@ const taskSchema = new Schema<ITask>(
     scope: {
       type: String,
       enum: ['SYSTEM', 'USER_GROUP'],
-      required: false,
+      required: true,
     },
     userGroupId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      default: null,
     },
     workspaceId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -284,6 +284,7 @@ const taskSchema = new Schema<ITask>(
   },
   {
     timestamps: true,
+    minimize: false
   }
 );
 
