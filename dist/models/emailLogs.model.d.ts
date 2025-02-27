@@ -4,6 +4,7 @@ interface IEmailLog extends Document {
     to: string;
     subject: string;
     message: string;
+    attachments: object[];
     libResponse: any;
     serviceType: string;
     code: string;

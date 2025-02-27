@@ -36,6 +36,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const notificationLogsConst_1 = require("../constants/notificationLogsConst");
+const attachmentSchema = new mongoose_1.Schema({
+    name: {
+        type: String,
+        required: false
+    },
+    link: {
+        type: String,
+        required: false
+    },
+});
 const emailLogSchema = new mongoose_1.Schema({
     from: {
         type: String,
@@ -51,6 +61,10 @@ const emailLogSchema = new mongoose_1.Schema({
     },
     message: {
         type: String,
+        required: false
+    },
+    attachments: {
+        type: [attachmentSchema],
         required: false
     },
     libResponse: {

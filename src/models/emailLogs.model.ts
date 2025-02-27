@@ -3,11 +3,17 @@ import mongoose, { Schema } from "mongoose";
 
 import { SERVICE_TYPES, CODES, LOGS_STATUS } from '../constants/notificationLogsConst';
 
+interface IAttachment extends Document {
+  name: string;
+  link: string;
+}
+
 interface IEmailLog extends Document {
   from: string;
   to: string;
   subject: string;
   message: string;
+  attachments: object[];
   libResponse: any;
   serviceType: string;
   code: string;
@@ -15,7 +21,18 @@ interface IEmailLog extends Document {
   errorDetails: any;
 }
 
-const emailLogSchema = new Schema(
+const attachmentSchema = new Schema<IAttachment>({
+  name: {
+    type: String,
+    required: false
+  },
+  link: {
+    type: String,
+    required: false
+  },
+})
+
+const emailLogSchema = new Schema<IEmailLog>(
   {
     from: {
         type: String,
@@ -32,6 +49,10 @@ const emailLogSchema = new Schema(
     message: {
         type: String,
         required: false
+    },
+    attachments: {
+      type: [attachmentSchema],
+      required: false
     },
     libResponse: {
         type: Schema.Types.Mixed,
