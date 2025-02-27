@@ -20,6 +20,6 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         enum: Object.values(triggerConst_1.COMMUNICATION_COMPONENT_TYPES),
         required: true,
     },
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 const CommunicationComponentsModel = (0, mongoose_1.model)("communicationComponents", communicationComponentsSchema, "communicationComponents");
 exports.CommunicationComponentsModel = CommunicationComponentsModel;

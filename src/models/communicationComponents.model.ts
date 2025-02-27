@@ -35,7 +35,7 @@ const communicationComponentsSchema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false },
 );
 
 const CommunicationComponentsModel: Model<ICommunicationComponent> =
