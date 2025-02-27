@@ -227,6 +227,14 @@ const taskSchema = new mongoose_1.Schema({
         type: [componentActionSchema],
         required: false,
     },
+    isObsolete: {
+        type: Boolean,
+        default: false
+    },
+    taskComponentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
     taskCompleted: {
         type: Boolean,
         required: false,

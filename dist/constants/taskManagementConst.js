@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.communicationMediumEnums = exports.escalationUnitsEnums = exports.assigneeMethodEnums = exports.taskCompletionEnums = exports.createWorkflowAvailableActions = exports.skillLevels = exports.skillTypes = void 0;
 exports.skillTypes = [
     {
-        label: 'Electrical',
-        value: 'ELECTRICAL',
+        label: "Electrical",
+        value: "ELECTRICAL",
     },
     {
-        label: 'Plant Manager',
-        value: 'PLANT_MANAGER',
+        label: "Plant Manager",
+        value: "PLANT_MANAGER",
     },
 ];
 exports.skillLevels = [
@@ -23,41 +23,41 @@ exports.skillLevels = [
     {
         label: "High",
         value: "HIGH",
-    }
+    },
 ];
 exports.createWorkflowAvailableActions = [
     {
         navbar: {
-            label: 'Action',
-            value: 'ACTION',
+            label: "Action",
+            value: "ACTION",
         },
         availableOptions: [
-            { label: 'Assign to a different user', value: 'ASSIGN_TO_A_DIFFERENT_USER' },
-            { label: 'Set field', value: 'SET_FIELD' },
-            { label: 'Create Sub Task', value: 'CREATE_SUB_TASK' },
+            {
+                label: "Assign to a different user",
+                value: "ASSIGN_TO_A_DIFFERENT_USER",
+            },
+            { label: "Set field", value: "SET_FIELD" },
+            { label: "Create Sub Task", value: "CREATE_SUB_TASK" },
         ],
     },
     {
         navbar: {
-            label: 'Communication',
-            value: 'COMMUNICATION',
+            label: "Communication",
+            value: "COMMUNICATION",
         },
         availableOptions: [
-            { label: 'Send Whatsapp Message', value: 'SEND_WHATSAPP_MESSAGE' },
-            { label: 'Send SMS', value: 'SEND_SMS' },
-            { label: 'Send Email', value: 'SEND_EMAIL' },
-            { label: 'Call', value: 'CALL' },
+            { label: "Send Whatsapp Message", value: "SEND_WHATSAPP_MESSAGE" },
+            { label: "Send SMS", value: "SEND_SMS" },
+            { label: "Send Email", value: "SEND_EMAIL" },
+            { label: "Call", value: "CALL" },
         ],
     },
     {
         navbar: {
-            label: 'Validate',
-            value: 'VALIDATE',
+            label: "Media",
+            value: "MEDIA",
         },
-        availableOptions: [
-            { label: 'Validate Media', value: 'VALIDATE_MEDIA' },
-            { label: 'Validate Field', value: 'VALIDATE_FIELD' },
-        ],
+        availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
     },
 ];
 exports.taskCompletionEnums = [
@@ -69,10 +69,6 @@ exports.taskCompletionEnums = [
         label: "Manual Update",
         value: "MANUAL_UPDATE",
     },
-    {
-        label: "Manager Approval",
-        value: "MANAGER_APPROVAL",
-    }
 ];
 exports.assigneeMethodEnums = [
     {
@@ -88,17 +84,20 @@ exports.assigneeMethodEnums = [
         value: "EMERGENCY_BASED",
     },
     {
-        label: "Scheduled Based",
-        value: "SCHEDULED_BASED",
-    },
-    {
         label: "Non Assigned task",
         value: "NON_ASSIGNED_TASK",
     },
     {
         label: "Fixed User",
-        value: "FIXED_USER"
-    }
+        value: "FIXED_USER",
+    },
 ];
-exports.escalationUnitsEnums = ["MINUTES", "HOURS", "WEEKS", "DAYS", "MONTHS", "YEARS"];
+exports.escalationUnitsEnums = [
+    "MINUTES",
+    "HOURS",
+    "WEEKS",
+    "DAYS",
+    "MONTHS",
+    "YEARS",
+];
 exports.communicationMediumEnums = ["EMAIL", "SMS", "WHATSAPP", "CALL"];

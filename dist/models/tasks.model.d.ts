@@ -56,6 +56,8 @@ interface ITask extends Document {
     richTextContent: string;
     taskCompleted: boolean;
     escalations: IEscalation[];
+    isObsolete: boolean;
+    taskComponentId: Types.ObjectId;
     componentActions: IComponentActions[];
 }
 declare const TaskModel: Model<ITask>;

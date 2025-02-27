@@ -64,6 +64,8 @@ interface ITask extends Document {
   richTextContent: string;
   taskCompleted: boolean;
   escalations: IEscalation[]
+  isObsolete: boolean;
+  taskComponentId: Types.ObjectId;
   componentActions: IComponentActions[]
 }
 
@@ -260,6 +262,14 @@ const taskSchema = new Schema<ITask>(
     },
     componentActions: {
       type: [componentActionSchema],
+      required: false,
+    },
+    isObsolete: {
+      type: Boolean,
+      default: false
+    },
+    taskComponentId: {
+      type: mongoose.Schema.Types.ObjectId,
       required: false,
     },
     taskCompleted: {
