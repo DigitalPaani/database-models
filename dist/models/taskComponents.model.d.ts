@@ -29,6 +29,7 @@ interface ITaskComponent extends Document {
     componentActions: IComponentAction[];
     parentId?: Types.ObjectId;
     isSubtask: boolean;
+    triggerId: Types.ObjectId;
     TaskFormDataId: string;
     parentIndex: number;
     parentAutocompleteId: string;

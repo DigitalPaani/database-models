@@ -101,6 +101,7 @@ const TaskComponentSchema = new mongoose_1.Schema({
     componentActions: [ComponentActionSchema],
     parentId: { type: mongoose_1.Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
+    triggerId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
     // frontend requirements
     TaskFormDataId: { type: String },
     parentIndex: { type: Number },

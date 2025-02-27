@@ -27,6 +27,7 @@ interface ITaskComponent extends Document {
   componentActions: IComponentAction[];
   parentId?: Types.ObjectId;
   isSubtask: boolean;
+  triggerId: Types.ObjectId;
 
   // frontend requirements
   TaskFormDataId: string;
@@ -228,6 +229,7 @@ const TaskComponentSchema = new Schema(
     componentActions: [ComponentActionSchema],
     parentId: { type: Schema.Types.ObjectId },
     isSubtask: { type: Boolean, default: false },
+    triggerId: { type: Schema.Types.ObjectId, required: true },
 
     // frontend requirements
     TaskFormDataId: { type: String },
