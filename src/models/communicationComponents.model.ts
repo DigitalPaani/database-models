@@ -8,9 +8,9 @@ import { Types } from "mongoose";
 // Interface for the message body
 interface ICommunicationComponent extends Document {
   userIds: Types.ObjectId[]; // Array of User IDs
+  emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
-  emailAttachment?: string; // Optional, for EMAIL (S3 Link)
   whatsappContentSid?: string; // Optional, for WHATSAPP
   whatsappContentVariables?: Record<string, string>; // Optional, for WHATSAPP
   type: string;
