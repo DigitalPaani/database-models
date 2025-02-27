@@ -20,6 +20,8 @@ import {
   IWorkflowActions,
   IActionNode,
 } from "./models/workflow.model";
+import { CompanyModel } from "./models/CompanyModel";
+import { SensorModel,ISensor } from "./models/SensorList";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
@@ -99,6 +101,7 @@ export type {
   IComponentAction,
   ICommunicationComponent,
   INewUser,
+  ISensor
 };
 
 // exports the models
@@ -131,4 +134,6 @@ export {
   CommunicationComponentsModel,
   NewUserModel,
   commonConstants,
+  CompanyModel,
+  SensorModel
 };
