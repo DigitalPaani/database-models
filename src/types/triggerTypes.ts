@@ -26,6 +26,8 @@ export namespace TriggerTypes {
     observationSensorId?: Types.ObjectId;
     observationSensorTag?: string;
     resolutionTime?: number;
+    resolutionValue?: Number,
+    resolutionUnit?: Number,
   };
 
   export type TriggerData = {

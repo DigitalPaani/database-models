@@ -20,6 +20,8 @@ export declare namespace TriggerTypes {
         observationSensorId?: Types.ObjectId;
         observationSensorTag?: string;
         resolutionTime?: number;
+        resolutionValue?: Number;
+        resolutionUnit?: Number;
     };
     type TriggerData = {
         componentName?: (typeof COMPONENT_NAMES)[keyof typeof COMPONENT_NAMES];
