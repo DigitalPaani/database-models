@@ -63,7 +63,10 @@ import {
 import { NewUserModel, INewUser } from "./models/newUserModel";
 
 import commonConstants from "./constants/commonConstants";
-import { Types } from "mongoose";
+import mongoose, { Types } from "mongoose";
+
+// Assign mongoose to mongooseDatabaseModels
+const mongooseDatabaseModels = mongoose;
 
 // export the interface of the models
 export type {
@@ -135,5 +138,6 @@ export {
   NewUserModel,
   commonConstants,
   CompanyModel,
-  SensorModel
+  SensorModel,
+  mongooseDatabaseModels
 };
