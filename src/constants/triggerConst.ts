@@ -9,23 +9,6 @@ const TRIGGER_TYPES = {
   conditional: "conditional",
 };
 
-const CONDITION_THRESHOLD_TYPES = {
-  numeric: "numeric",
-  boolean: "boolean",
-  time: "time",
-};
-
-const CONDITIONAL_OPERATORS = {
-  EQ: "EQ",
-  NEQ: "NEQ",
-  GT: "GT",
-  GTE: "GTE",
-  LT: "LT",
-  LTE: "LTE",
-  AND: "AND",
-  OR: "OR",
-};
-
 const COMPONENT_NAMES = {
   createTask: "Create Task",
   createIssue: "Create Issue",
@@ -43,11 +26,36 @@ const RECURRENCE_FREQUENCY_TYPES = {
   custom: "CUSTOM",
 };
 
+const TRIGGER_STATUS = {
+  active: "Active",
+  inactive: "Inactive",
+};
+
+const TRIGGER_COMPONENT_TYPES = {
+  task: "TASK",
+  issue: "ISSUE",
+  communication: "COMMUNICATION",
+};
+
+const COMMUNICATION_COMPONENT_TYPES = {
+  email: "EMAIL",
+  whatsapp: "WHATSAPP",
+  call: "CALL",
+  sms: "SMS",
+};
+
+const COMMUNICATION_COMPONENT_SERVICE_TYPE = {
+  nodeBackend: "NODE_BACKEND",
+  trigger: "TRIGGER",
+};
+
 export {
   TRIGGER_SCOPE,
   TRIGGER_TYPES,
-  CONDITION_THRESHOLD_TYPES,
-  CONDITIONAL_OPERATORS,
   COMPONENT_NAMES,
   RECURRENCE_FREQUENCY_TYPES,
+  TRIGGER_STATUS,
+  TRIGGER_COMPONENT_TYPES,
+  COMMUNICATION_COMPONENT_TYPES,
+  COMMUNICATION_COMPONENT_SERVICE_TYPE,
 };
