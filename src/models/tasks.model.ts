@@ -36,7 +36,6 @@ interface IComponentActions extends Document {
 interface ITask extends Document {
   triggerId: Types.ObjectId;
   taskTemplateId: Types.ObjectId;
-  scope: string;
   userGroupId: Types.ObjectId;
   workspaceId: Types.ObjectId;
   assetId: Types.ObjectId | null;
@@ -158,11 +157,6 @@ const taskSchema = new Schema<ITask>(
     taskTemplateId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,
-    },
-    scope: {
-      type: String,
-      enum: ['SYSTEM', 'USER_GROUP'],
-      required: true,
     },
     userGroupId: {
       type: mongoose.Schema.Types.ObjectId,

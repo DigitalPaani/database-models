@@ -122,11 +122,6 @@ const taskSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
-    scope: {
-        type: String,
-        enum: ['SYSTEM', 'USER_GROUP'],
-        required: true,
-    },
     userGroupId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         default: null,
