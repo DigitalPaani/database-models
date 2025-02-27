@@ -161,7 +161,7 @@ const taskSchema = new mongoose_1.Schema({
         required: false,
     },
     priority: {
-        type: String,
+        type: Number,
         required: false,
     },
     taskType: {

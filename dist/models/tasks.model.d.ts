@@ -36,7 +36,7 @@ interface ITask extends Document {
     name: string;
     description: string;
     trainingVideoId?: Types.ObjectId | null;
-    priority: string;
+    priority: number;
     taskType: string;
     workflowId: Types.ObjectId;
     taskCompletion: string;

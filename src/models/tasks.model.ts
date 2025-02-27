@@ -44,7 +44,7 @@ interface ITask extends Document {
   name: string;
   description: string;
   trainingVideoId?: Types.ObjectId | null; 
-  priority: string;
+  priority: number;
   taskType: string;
   workflowId: Types.ObjectId;
   taskCompletion: string;
@@ -197,7 +197,7 @@ const taskSchema = new Schema<ITask>(
       required: false,
     },
     priority: {
-      type: String,
+      type: Number,
       required: false,
     },
     taskType: {
