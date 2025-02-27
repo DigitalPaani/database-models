@@ -1,6 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.SensorsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -21,6 +24,8 @@ const QuestionBatchModel_1 = require("./models/QuestionBatchModel");
 Object.defineProperty(exports, "BatchSchemaModel", { enumerable: true, get: function () { return QuestionBatchModel_1.BatchSchemaModel; } });
 const SensorList_1 = require("./models/SensorList");
 Object.defineProperty(exports, "SensorModel", { enumerable: true, get: function () { return SensorList_1.SensorModel; } });
+const sensorModel_1 = __importDefault(require("./models/sensorModel"));
+exports.SensorsModel = sensorModel_1.default;
 const AnswerSchema_model_1 = require("./models/AnswerSchema.model");
 Object.defineProperty(exports, "AnswerSchemaModel", { enumerable: true, get: function () { return AnswerSchema_model_1.AnswerSchemaModel; } });
 const plantModel_1 = require("./models/plantModel");
