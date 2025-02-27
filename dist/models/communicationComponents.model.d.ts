@@ -1,9 +1,7 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
 interface ICommunicationComponent extends Document {
-    _id: Types.ObjectId;
-    receiverName: string;
-    to: string;
+    userIds: Types.ObjectId[];
     attachments?: {
         name: string;
         link: string;
@@ -13,8 +11,6 @@ interface ICommunicationComponent extends Document {
     whatsappContentSid?: string;
     whatsappContentVariables?: Record<string, string>;
     type: string;
-    serviceType: string;
-    code: string;
 }
 declare const CommunicationComponentsModel: Model<ICommunicationComponent>;
 export { CommunicationComponentsModel, ICommunicationComponent };

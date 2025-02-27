@@ -7,24 +7,19 @@ import { Types } from "mongoose";
 
 // Interface for the message body
 interface ICommunicationComponent extends Document {
-  _id: Types.ObjectId;
-  receiverName: string;
-  to: string;
+  userIds: Types.ObjectId[]; // Array of User IDs
   attachments?: { name: string; link: string }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
   emailAttachment?: string; // Optional, for EMAIL (S3 Link)
   whatsappContentSid?: string; // Optional, for WHATSAPP
   whatsappContentVariables?: Record<string, string>; // Optional, for WHATSAPP
   type: string;
-  serviceType: string;
-  code: string;
 }
 
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new Schema(
   {
-    receiverName: { type: String },
-    to: { type: String, required: true },
+    userIds: [{ type: Schema.Types.ObjectId, ref: "NewUser" }],
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
     attachments: [{ name: String, link: String }],
@@ -39,12 +34,6 @@ const communicationComponentsSchema = new Schema(
       enum: Object.values(COMMUNICATION_COMPONENT_TYPES),
       required: true,
     },
-    serviceType: {
-      type: String,
-      enum: Object.values(COMMUNICATION_COMPONENT_SERVICE_TYPE),
-      required: true,
-    },
-    code: { type: String, required: true },
   },
   { timestamps: true }
 );

@@ -5,8 +5,7 @@ const mongoose_1 = require("mongoose");
 const triggerConst_1 = require("../constants/triggerConst");
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new mongoose_1.Schema({
-    receiverName: { type: String },
-    to: { type: String, required: true },
+    userIds: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" }],
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
     attachments: [{ name: String, link: String }],
@@ -21,12 +20,6 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         enum: Object.values(triggerConst_1.COMMUNICATION_COMPONENT_TYPES),
         required: true,
     },
-    serviceType: {
-        type: String,
-        enum: Object.values(triggerConst_1.COMMUNICATION_COMPONENT_SERVICE_TYPE),
-        required: true,
-    },
-    code: { type: String, required: true },
 }, { timestamps: true });
 const CommunicationComponentsModel = (0, mongoose_1.model)("communicationComponents", communicationComponentsSchema, "communicationComponents");
 exports.CommunicationComponentsModel = CommunicationComponentsModel;
