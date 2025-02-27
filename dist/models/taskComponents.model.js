@@ -66,6 +66,8 @@ const ComponentActionSchema = new mongoose_1.Schema({
 }, { _id: false });
 // Schema for each escalation entry
 const EscalationSchema = new mongoose_1.Schema({
+    value: { type: String },
+    unit: { type: String },
     timeInMinutes: { type: String },
     communicationMedium: { type: String },
     userIds: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" }],

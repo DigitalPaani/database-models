@@ -87,6 +87,8 @@ interface IWorkflowEdge {
 }
 
 interface IEscalation {
+  value: string;
+  unit: string;
   timeInMinutes: string;
   communicationMedium: string;
   userIds: string[];
@@ -190,6 +192,8 @@ const ComponentActionSchema = new Schema(
 // Schema for each escalation entry
 const EscalationSchema = new Schema(
   {
+    value: { type: String },
+    unit: { type: String },
     timeInMinutes: { type: String },
     communicationMedium: { type: String },
     userIds: [{ type: Schema.Types.ObjectId, ref: "NewUser" }],

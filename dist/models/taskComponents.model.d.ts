@@ -81,6 +81,8 @@ interface IWorkflowEdge {
     selected: boolean;
 }
 interface IEscalation {
+    value: string;
+    unit: string;
     timeInMinutes: string;
     communicationMedium: string;
     userIds: string[];
