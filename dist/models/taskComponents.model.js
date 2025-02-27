@@ -81,6 +81,7 @@ const TaskComponentSchema = new mongoose_1.Schema({
     },
     taskData: { taskTemplateId: mongoose_1.Schema.Types.ObjectId, name: String },
     assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant" },
+    userGroupId: { type: mongoose_1.Schema.Types.ObjectId, ref: "UserGroup" },
     name: { type: String, required: true },
     description: { type: String },
     trainingVideoId: { type: String, default: "" },

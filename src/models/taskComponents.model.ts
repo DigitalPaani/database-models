@@ -5,6 +5,7 @@ interface ITaskComponent extends Document {
   taskTemplateId: string; // ObjectID as string
   taskData: { taskTemplateId: Types.ObjectId; name: string };
   assetId: string; // ObjectID as string
+  userGroupId?: Types.ObjectId;
   name: string;
   description: string;
   trainingVideoId: string;
@@ -211,6 +212,7 @@ const TaskComponentSchema = new Schema(
     },
     taskData: { taskTemplateId: Schema.Types.ObjectId, name: String },
     assetId: { type: Schema.Types.ObjectId, ref: "Plant" },
+    userGroupId: { type: Schema.Types.ObjectId, ref: "UserGroup" },
     name: { type: String, required: true },
     description: { type: String },
     trainingVideoId: { type: String, default: "" },

@@ -7,6 +7,7 @@ interface ITaskComponent extends Document {
         name: string;
     };
     assetId: string;
+    userGroupId?: Types.ObjectId;
     name: string;
     description: string;
     trainingVideoId: string;
