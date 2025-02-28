@@ -26,6 +26,10 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    OBSOLETE_CONDITIONS: {
+        observation: string;
+        resolution: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

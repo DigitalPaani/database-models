@@ -10,6 +10,11 @@ const EVENT_TYPES = {
   trigger: "trigger",
 };
 
+const OBSOLETE_CONDITIONS = {
+  observation: "observation",
+  resolution: "resolution",
+};
+
 export default {
   skillLevels,
   EVENT_TYPES,
@@ -17,4 +22,5 @@ export default {
   COMMUNICATION_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
   assigneeMethodEnums,
+  OBSOLETE_CONDITIONS,
 };
