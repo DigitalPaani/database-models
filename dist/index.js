@@ -36,7 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.PlantModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.PlantModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -93,6 +93,8 @@ const communicationComponents_model_1 = require("./models/communicationComponent
 Object.defineProperty(exports, "CommunicationComponentsModel", { enumerable: true, get: function () { return communicationComponents_model_1.CommunicationComponentsModel; } });
 const newUserModel_1 = require("./models/newUserModel");
 Object.defineProperty(exports, "NewUserModel", { enumerable: true, get: function () { return newUserModel_1.NewUserModel; } });
+const obsolete_model_1 = require("./models/obsolete.model");
+Object.defineProperty(exports, "ObsoleteTaskModel", { enumerable: true, get: function () { return obsolete_model_1.ObsoleteTaskModel; } });
 const commonConstants_1 = __importDefault(require("./constants/commonConstants"));
 exports.commonConstants = commonConstants_1.default;
 const mongoose_1 = __importStar(require("mongoose"));

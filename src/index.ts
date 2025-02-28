@@ -21,7 +21,7 @@ import {
   IActionNode,
 } from "./models/workflow.model";
 import { CompanyModel } from "./models/CompanyModel";
-import { SensorModel,ISensor } from "./models/SensorList";
+import { SensorModel, ISensor } from "./models/SensorList";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
@@ -61,6 +61,8 @@ import {
 } from "./models/communicationComponents.model";
 
 import { NewUserModel, INewUser } from "./models/newUserModel";
+
+import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
@@ -104,7 +106,8 @@ export type {
   IComponentAction,
   ICommunicationComponent,
   INewUser,
-  ISensor
+  ISensor,
+  IObsoleteTask,
 };
 
 // exports the models
@@ -139,5 +142,6 @@ export {
   commonConstants,
   CompanyModel,
   SensorModel,
-  mongooseDatabaseModels
+  mongooseDatabaseModels,
+  ObsoleteTaskModel,
 };
