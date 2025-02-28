@@ -62,6 +62,9 @@ const formulaEventSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-formulaEventSchema.index({ createdAt: 1 }, { expireAfterSeconds: 172800 });
+formulaEventSchema.index({ createdAt: 1 }, {
+    expireAfterSeconds: 172800,
+    partialFilterExpression: { formulaId: { $exists: true } },
+});
 const FormulaEventModel = mongoose_1.default.model("formulaEvents", formulaEventSchema, "formulaEvents");
 exports.FormulaEventModel = FormulaEventModel;
