@@ -4,7 +4,8 @@ import commonConstants from "../constants/commonConstants";
 
 interface IObsoleteTask extends Document {
   taskTemplateId: Types.ObjectId;
-  triggerIds: Types.ObjectId[];
+  triggerId: Types.ObjectId;
+  selectedTriggerIds: Types.ObjectId[];
   conditionType: string;
   isDeleted: boolean;
   createdAt?: Date;
@@ -18,7 +19,12 @@ const obsoleteTaskSchema = new Schema<IObsoleteTask>(
       ref: "task-templates",
       required: true,
     },
-    triggerIds: {
+    triggerId: {
+      type: Schema.Types.ObjectId,
+      ref: "triggers",
+      required: true,
+    },
+    selectedTriggerIds: {
       type: [Schema.Types.ObjectId],
       ref: "triggers",
       required: true,

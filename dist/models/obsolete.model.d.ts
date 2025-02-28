@@ -2,7 +2,8 @@ import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 interface IObsoleteTask extends Document {
     taskTemplateId: Types.ObjectId;
-    triggerIds: Types.ObjectId[];
+    triggerId: Types.ObjectId;
+    selectedTriggerIds: Types.ObjectId[];
     conditionType: string;
     isDeleted: boolean;
     createdAt?: Date;

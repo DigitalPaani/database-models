@@ -45,7 +45,12 @@ const obsoleteTaskSchema = new mongoose_1.Schema({
         ref: "task-templates",
         required: true,
     },
-    triggerIds: {
+    triggerId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "triggers",
+        required: true,
+    },
+    selectedTriggerIds: {
         type: [mongoose_1.Schema.Types.ObjectId],
         ref: "triggers",
         required: true,
