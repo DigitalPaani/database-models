@@ -50,7 +50,7 @@ interface ITask extends Document {
     dataEntry: boolean;
     sensorId: Types.ObjectId | null;
     isArchived: boolean;
-    createdBy: Types.ObjectId;
+    createdBy: Types.ObjectId | null;
     attachmentId?: Types.ObjectId | null;
     richTextContent: string;
     taskCompleted: boolean;
