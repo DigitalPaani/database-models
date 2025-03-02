@@ -32,14 +32,27 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormulaEventModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
 const formulaEventSchema = new mongoose_1.Schema({
+    type: {
+        type: String,
+        enum: Object.values(commonConstants_1.default.EVENT_TYPES),
+        required: true,
+        default: commonConstants_1.default.EVENT_TYPES.formula,
+    },
     formulaId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
         ref: "formulas",
+    },
+    triggerId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "triggers",
     },
     calculationTime: {
         type: Number,
@@ -49,6 +62,9 @@ const formulaEventSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-formulaEventSchema.index({ createdAt: 1 }, { expireAfterSeconds: 172800 });
+formulaEventSchema.index({ createdAt: 1 }, {
+    expireAfterSeconds: 172800,
+    partialFilterExpression: { formulaId: { $exists: true } },
+});
 const FormulaEventModel = mongoose_1.default.model("formulaEvents", formulaEventSchema, "formulaEvents");
 exports.FormulaEventModel = FormulaEventModel;

@@ -4,9 +4,12 @@ import type { TriggerTypes } from "../types/triggerTypes";
 interface ITriggerDocument extends Document {
     name: string;
     description: string;
-    dateAsText?: string;
+    recurrenceText?: string;
     scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
+    triggerTag: string;
     userGroup?: Types.ObjectId;
+    workspace?: Types.ObjectId;
+    assets?: Types.ObjectId[];
     type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
     startDate?: number;
     endDate?: number;
@@ -14,9 +17,11 @@ interface ITriggerDocument extends Document {
     occurrenceLeft?: number;
     recurrence?: TriggerTypes.Recurrence;
     conditions?: TriggerTypes.Conditions;
-    triggerComponent: TriggerTypes.TriggerData[];
+    triggerComponents: Types.ObjectId[];
     createdBy: Types.ObjectId;
-    isActive: boolean;
+    triggerSensorId: Types.ObjectId;
+    status: string;
+    isOpen: boolean;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

@@ -1,4 +1,4 @@
-import type { Document, Model, Types } from 'mongoose';
+import type { Document, Model, Types } from "mongoose";
 interface INewUser extends Document {
     name: string;
     email: string;
@@ -11,10 +11,10 @@ interface INewUser extends Document {
     profilePic: string;
     isStaff: boolean;
     parentUserId: Types.ObjectId;
+    skillIds: Types.ObjectId[];
     isArchived: boolean;
     [key: string]: any;
 }
 declare const NewUserModel: Model<INewUser>;
-export { INewUser };
-export default NewUserModel;
+export { NewUserModel, INewUser };
 //# sourceMappingURL=newUserModel.d.ts.map

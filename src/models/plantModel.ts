@@ -60,8 +60,5 @@ const PlantSchema = new Schema<IPlant>({
     abbr: String,
   },
 });
-const PlantModel = mongoose.model('Plant', PlantSchema, 'Plants');
-
-export { IPlant };
-
-export default PlantModel
+const PlantModel = mongoose.model<IPlant>('Plant', PlantSchema, 'Plants');
+export { PlantModel, IPlant };
