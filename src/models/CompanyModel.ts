@@ -19,18 +19,18 @@ interface Company extends Document {
 }
 
 const contactSchema = new Schema<Contact>({
-  fullName: { type: String, required: true },
+  fullName: { type: String, required: true, trim: true },
   phoneNumber: { type: String, required: true },
-  emailId: { type: String, required: true },
-  designation: { type: String, required: true },
-  comments: { type: String, required: false },
+  emailId: { type: String, required: true, trim: true },
+  designation: { type: String, required: true, trim: true },
+  comments: { type: String, required: false, trim: true },
 });
 
 const companySchema = new Schema<Company>(
   {
-    companyName: { type: String, required: true },
-    companyDescription: { type: String, required: false },
-    companyAddress: { type: String, required: true },
+    companyName: { type: String, required: true, trim: true },
+    companyDescription: { type: String, required: false, trim: true },
+    companyAddress: { type: String, required: true, trim: true },
     tags: {
       type: [String],
       enum: ["sensor", "electrical panel"], // Restrict values
@@ -41,6 +41,6 @@ const companySchema = new Schema<Company>(
   { timestamps: true }
 );
 
-const CompanyModel = mongoose.model("company", companySchema,'companies');
+const CompanyModel = mongoose.model("company", companySchema, "companies");
 
 export { CompanyModel };

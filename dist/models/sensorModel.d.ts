@@ -31,10 +31,10 @@ export interface ISensor {
     parentSensor?: Types.ObjectId | null;
     flocChildSensors?: FlocChildSensors;
 }
-declare const SensorModel: mongoose.Model<ISensor & mongoose.Document<unknown, any, any>, {}, {}, {}, mongoose.Document<unknown, {}, ISensor & mongoose.Document<unknown, any, any>> & ISensor & mongoose.Document<unknown, any, any> & Required<{
+declare const SensorsModel: mongoose.Model<ISensor & mongoose.Document<unknown, any, any>, {}, {}, {}, mongoose.Document<unknown, {}, ISensor & mongoose.Document<unknown, any, any>> & ISensor & mongoose.Document<unknown, any, any> & Required<{
     _id: Types.ObjectId;
 }> & {
     __v: number;
 }, any>;
-export default SensorModel;
+export default SensorsModel;
 //# sourceMappingURL=sensorModel.d.ts.map

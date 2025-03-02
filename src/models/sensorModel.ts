@@ -128,8 +128,8 @@ const sensor = new Schema(
   }
 );
 
-const SensorModel = mongoose.model<ISensor & mongoose.Document>(
+const SensorsModel = mongoose.model<ISensor & mongoose.Document>(
   "sensors",
   sensor
 );
-export default SensorModel;
+export default SensorsModel;
