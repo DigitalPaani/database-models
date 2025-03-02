@@ -11,15 +11,15 @@ const OBSOLETE_CONDITIONS = {
     resolution: "resolution",
 };
 exports.default = {
-    skillLevels: taskManagementConst_1.skillLevels,
-    skillTypes: taskManagementConst_1.skillTypes,
-    createWorkflowAvailableActions: taskManagementConst_1.createWorkflowAvailableActions,
-    taskCompletionEnums: taskManagementConst_1.taskCompletionEnums,
-    escalationUnitsEnums: taskManagementConst_1.escalationUnitsEnums,
+    SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
+    SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
+    CREATE_WORKFLOW_AVAILABLE_ACTIONS: taskManagementConst_1.CREATE_WORKFLOW_AVAILABLE_ACTIONS,
+    TASK_COMPLETION_ENUMS: taskManagementConst_1.TASK_COMPLETION_ENUMS,
+    ESCALATION_UNITS_ENUMS: taskManagementConst_1.ESCALATION_UNITS_ENUMS,
     EVENT_TYPES,
     TRIGGER_COMPONENT_TYPES: triggerConst_1.TRIGGER_COMPONENT_TYPES,
     COMMUNICATION_COMPONENT_TYPES: triggerConst_1.COMMUNICATION_COMPONENT_TYPES,
     COMMUNICATION_COMPONENT_SERVICE_TYPE: triggerConst_1.COMMUNICATION_COMPONENT_SERVICE_TYPE,
-    assigneeMethodEnums: taskManagementConst_1.assigneeMethodEnums,
+    ASSIGNEE_METHOD_ENUMS: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS,
     OBSOLETE_CONDITIONS,
 };

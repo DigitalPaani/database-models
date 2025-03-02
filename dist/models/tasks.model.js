@@ -71,7 +71,7 @@ const escalationSchema = new mongoose_1.Schema({
     },
     communicationMedium: {
         type: String,
-        enum: taskManagementConst_1.communicationMediumEnums,
+        enum: taskManagementConst_1.COMMUNICATION_MEDIUM_ENUMS,
         required: false,
     },
     userIds: {
@@ -170,11 +170,11 @@ const taskSchema = new mongoose_1.Schema({
     },
     taskCompletion: {
         type: String,
-        enum: taskManagementConst_1.taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
+        enum: taskManagementConst_1.TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
     },
     assigneeMethod: {
         type: String,
-        enum: taskManagementConst_1.assigneeMethodEnums.map(assigneeMethodEnum => assigneeMethodEnum.value),
+        enum: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
     },
     complexity: {
         type: Number,

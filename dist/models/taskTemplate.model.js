@@ -78,7 +78,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     taskCompletion: {
         type: String,
-        enum: taskManagementConst_1.taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
+        enum: taskManagementConst_1.TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
     },
     taskCompletionState: {
         type: String,
@@ -86,7 +86,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     assigneeMethod: {
         type: String,
-        enum: taskManagementConst_1.assigneeMethodEnums.map(assigneeMethodEnum => assigneeMethodEnum.value),
+        enum: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
     },
     complexity: {
         type: Number,

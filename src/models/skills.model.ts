@@ -1,7 +1,7 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
-import { skillTypes, skillLevels } from '../constants/taskManagementConst';
+import { SKILL_TYPES, SKILL_LEVELS } from '../constants/taskManagementConst';
 
 interface ISkill extends Document {
   name: string;
@@ -24,12 +24,12 @@ const skillManagementSchema = new Schema<ISkill>(
     },
     skillType: {
       type: String,
-      enum: skillTypes.map(skillType => skillType.value),
+      enum: SKILL_TYPES.map(skillType => skillType.value),
       required: false,
     },
     skillLevel: {
       type: String,
-      enum: skillLevels.map(skillLevel => skillLevel.value),
+      enum: SKILL_LEVELS.map(skillLevel => skillLevel.value),
       required: false,
     },
     isArchived: {

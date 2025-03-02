@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.communicationMediumEnums = exports.escalationUnitsEnums = exports.assigneeMethodEnums = exports.taskCompletionEnums = exports.createWorkflowAvailableActions = exports.skillLevels = exports.skillTypes = void 0;
-exports.skillTypes = [
+exports.COMMUNICATION_MEDIUM_ENUMS = exports.ESCALATION_UNITS_ENUMS = exports.ASSIGNEE_METHOD_ENUMS = exports.TASK_COMPLETION_ENUMS = exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = exports.SKILL_LEVELS = exports.SKILL_TYPES = void 0;
+exports.SKILL_TYPES = [
     {
         label: "Electrical",
         value: "ELECTRICAL",
@@ -11,7 +11,7 @@ exports.skillTypes = [
         value: "PLANT_MANAGER",
     },
 ];
-exports.skillLevels = [
+exports.SKILL_LEVELS = [
     {
         label: "Low",
         value: "LOW",
@@ -25,7 +25,7 @@ exports.skillLevels = [
         value: "HIGH",
     },
 ];
-exports.createWorkflowAvailableActions = [
+exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = [
     {
         navbar: {
             label: "Action",
@@ -36,7 +36,6 @@ exports.createWorkflowAvailableActions = [
                 label: "Assign to a different user",
                 value: "ASSIGN_TO_A_DIFFERENT_USER",
             },
-            { label: "Set field", value: "SET_FIELD" },
             { label: "Create Sub Task", value: "CREATE_SUB_TASK" },
         ],
     },
@@ -60,7 +59,7 @@ exports.createWorkflowAvailableActions = [
         availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
     },
 ];
-exports.taskCompletionEnums = [
+exports.TASK_COMPLETION_ENUMS = [
     {
         label: "Sensor Based",
         value: "SENSOR_BASED",
@@ -70,7 +69,7 @@ exports.taskCompletionEnums = [
         value: "MANUAL_UPDATE",
     },
 ];
-exports.assigneeMethodEnums = [
+exports.ASSIGNEE_METHOD_ENUMS = [
     {
         label: "Shift Based",
         value: "SHIFT_BASED",
@@ -92,7 +91,7 @@ exports.assigneeMethodEnums = [
         value: "FIXED_USER",
     },
 ];
-exports.escalationUnitsEnums = [
+exports.ESCALATION_UNITS_ENUMS = [
     "MINUTES",
     "HOURS",
     "WEEKS",
@@ -100,4 +99,4 @@ exports.escalationUnitsEnums = [
     "MONTHS",
     "YEARS",
 ];
-exports.communicationMediumEnums = ["EMAIL", "SMS", "WHATSAPP", "CALL"];
+exports.COMMUNICATION_MEDIUM_ENUMS = ["EMAIL", "SMS", "WHATSAPP", "CALL"];

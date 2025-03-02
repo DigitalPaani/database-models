@@ -1,13 +1,13 @@
 declare const _default: {
-    skillLevels: {
+    SKILL_LEVELS: {
         label: string;
         value: string;
     }[];
-    skillTypes: {
+    SKILL_TYPES: {
         label: string;
         value: string;
     }[];
-    createWorkflowAvailableActions: {
+    CREATE_WORKFLOW_AVAILABLE_ACTIONS: {
         navbar: {
             label: string;
             value: string;
@@ -17,11 +17,11 @@ declare const _default: {
             value: string;
         }[];
     }[];
-    taskCompletionEnums: {
+    TASK_COMPLETION_ENUMS: {
         label: string;
         value: string;
     }[];
-    escalationUnitsEnums: string[];
+    ESCALATION_UNITS_ENUMS: string[];
     EVENT_TYPES: {
         formula: string;
         trigger: string;
@@ -42,7 +42,7 @@ declare const _default: {
         nodeBackend: string;
         trigger: string;
     };
-    assigneeMethodEnums: {
+    ASSIGNEE_METHOD_ENUMS: {
         label: string;
         value: string;
     }[];

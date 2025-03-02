@@ -1,4 +1,4 @@
-export const skillTypes = [
+export const SKILL_TYPES = [
   {
     label: "Electrical",
     value: "ELECTRICAL",
@@ -8,7 +8,7 @@ export const skillTypes = [
     value: "PLANT_MANAGER",
   },
 ];
-export const skillLevels = [
+export const SKILL_LEVELS = [
   {
     label: "Low",
     value: "LOW",
@@ -23,7 +23,7 @@ export const skillLevels = [
   },
 ];
 
-export const createWorkflowAvailableActions = [
+export const CREATE_WORKFLOW_AVAILABLE_ACTIONS = [
   {
     navbar: {
       label: "Action",
@@ -58,7 +58,7 @@ export const createWorkflowAvailableActions = [
   },
 ];
 
-export const taskCompletionEnums = [
+export const TASK_COMPLETION_ENUMS = [
   {
     label: "Sensor Based",
     value: "SENSOR_BASED",
@@ -69,7 +69,7 @@ export const taskCompletionEnums = [
   },
 ];
 
-export const assigneeMethodEnums = [
+export const ASSIGNEE_METHOD_ENUMS = [
   {
     label: "Shift Based",
     value: "SHIFT_BASED",
@@ -92,7 +92,7 @@ export const assigneeMethodEnums = [
   },
 ];
 
-export const escalationUnitsEnums = [
+export const ESCALATION_UNITS_ENUMS = [
   "MINUTES",
   "HOURS",
   "WEEKS",
@@ -101,4 +101,4 @@ export const escalationUnitsEnums = [
   "YEARS",
 ];
 
-export const communicationMediumEnums = ["EMAIL", "SMS", "WHATSAPP", "CALL"];
+export const COMMUNICATION_MEDIUM_ENUMS = ["EMAIL", "SMS", "WHATSAPP", "CALL"];

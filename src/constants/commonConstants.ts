@@ -1,6 +1,7 @@
-import { assigneeMethodEnums, skillLevels, skillTypes, createWorkflowAvailableActions,
-  taskCompletionEnums, escalationUnitsEnums
+import { ASSIGNEE_METHOD_ENUMS, SKILL_LEVELS, SKILL_TYPES, CREATE_WORKFLOW_AVAILABLE_ACTIONS, TASK_COMPLETION_ENUMS,
+  ESCALATION_UNITS_ENUMS
  } from "./taskManagementConst";
+
 import {
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
   COMMUNICATION_COMPONENT_TYPES,
@@ -18,15 +19,15 @@ const OBSOLETE_CONDITIONS = {
 };
 
 export default {
-  skillLevels,
-  skillTypes,
-  createWorkflowAvailableActions,
-  taskCompletionEnums,
-  escalationUnitsEnums,
+  SKILL_LEVELS,
+  SKILL_TYPES,
+  CREATE_WORKFLOW_AVAILABLE_ACTIONS,
+  TASK_COMPLETION_ENUMS,
+  ESCALATION_UNITS_ENUMS,
   EVENT_TYPES,
   TRIGGER_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
-  assigneeMethodEnums,
+  ASSIGNEE_METHOD_ENUMS,
   OBSOLETE_CONDITIONS,
 };

@@ -2,7 +2,7 @@ import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 require('./newUserModel');
 
-import { taskCompletionEnums, assigneeMethodEnums, escalationUnitsEnums, communicationMediumEnums } from '../constants/taskManagementConst';
+import { TASK_COMPLETION_ENUMS, ASSIGNEE_METHOD_ENUMS, ESCALATION_UNITS_ENUMS, COMMUNICATION_MEDIUM_ENUMS } from '../constants/taskManagementConst';
 
 interface IWorkflowDetails extends Document {
   workflowId: Types.ObjectId;
@@ -103,7 +103,7 @@ const escalationSchema = new Schema<IEscalation>({
   },
   communicationMedium: {
     type: String,
-    enum: communicationMediumEnums,
+    enum: COMMUNICATION_MEDIUM_ENUMS,
     required: false,
   },
   userIds: {
@@ -206,11 +206,11 @@ const taskSchema = new Schema<ITask>(
     },
     taskCompletion: {
       type: String,
-      enum: taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
+      enum: TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
     },
     assigneeMethod: {
       type: String,
-      enum: assigneeMethodEnums.map(assigneeMethodEnum => assigneeMethodEnum.value),
+      enum: ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
     },
     complexity: {
       type: Number,

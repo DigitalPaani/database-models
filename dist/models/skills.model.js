@@ -47,12 +47,12 @@ const skillManagementSchema = new mongoose_1.Schema({
     },
     skillType: {
         type: String,
-        enum: taskManagementConst_1.skillTypes.map(skillType => skillType.value),
+        enum: taskManagementConst_1.SKILL_TYPES.map(skillType => skillType.value),
         required: false,
     },
     skillLevel: {
         type: String,
-        enum: taskManagementConst_1.skillLevels.map(skillLevel => skillLevel.value),
+        enum: taskManagementConst_1.SKILL_LEVELS.map(skillLevel => skillLevel.value),
         required: false,
     },
     isArchived: {

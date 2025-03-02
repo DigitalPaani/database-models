@@ -2,7 +2,7 @@ import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
 
-import { taskCompletionEnums, assigneeMethodEnums, escalationUnitsEnums } from '../constants/taskManagementConst';
+import { TASK_COMPLETION_ENUMS, ASSIGNEE_METHOD_ENUMS, ESCALATION_UNITS_ENUMS } from '../constants/taskManagementConst';
 
 
 
@@ -74,7 +74,7 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     },
     taskCompletion: {
       type: String,
-      enum: taskCompletionEnums.map(taskCompletionEnum => taskCompletionEnum.value),
+      enum: TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
     },
     taskCompletionState: {
       type: String,
@@ -82,7 +82,7 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     },
     assigneeMethod: {
         type: String,
-        enum: assigneeMethodEnums.map(assigneeMethodEnum => assigneeMethodEnum.value),
+        enum: ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
     },
     complexity: {
         type: Number,
