@@ -123,5 +123,5 @@ const sensor = new Schema({
 }, {
     timestamps: true,
 });
-const SensorModel = mongoose_1.default.model("sensors", sensor);
-exports.default = SensorModel;
+const SensorsModel = mongoose_1.default.model("sensors", sensor);
+exports.default = SensorsModel;
