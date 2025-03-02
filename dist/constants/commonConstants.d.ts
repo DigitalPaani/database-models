@@ -3,6 +3,25 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    skillTypes: {
+        label: string;
+        value: string;
+    }[];
+    createWorkflowAvailableActions: {
+        navbar: {
+            label: string;
+            value: string;
+        };
+        availableOptions: {
+            label: string;
+            value: string;
+        }[];
+    }[];
+    taskCompletionEnums: {
+        label: string;
+        value: string;
+    }[];
+    escalationUnitsEnums: string[];
     EVENT_TYPES: {
         formula: string;
         trigger: string;

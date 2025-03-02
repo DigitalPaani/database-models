@@ -12,6 +12,10 @@ const OBSOLETE_CONDITIONS = {
 };
 exports.default = {
     skillLevels: taskManagementConst_1.skillLevels,
+    skillTypes: taskManagementConst_1.skillTypes,
+    createWorkflowAvailableActions: taskManagementConst_1.createWorkflowAvailableActions,
+    taskCompletionEnums: taskManagementConst_1.taskCompletionEnums,
+    escalationUnitsEnums: taskManagementConst_1.escalationUnitsEnums,
     EVENT_TYPES,
     TRIGGER_COMPONENT_TYPES: triggerConst_1.TRIGGER_COMPONENT_TYPES,
     COMMUNICATION_COMPONENT_TYPES: triggerConst_1.COMMUNICATION_COMPONENT_TYPES,
