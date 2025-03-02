@@ -34,7 +34,6 @@ export const createWorkflowAvailableActions = [
         label: "Assign to a different user",
         value: "ASSIGN_TO_A_DIFFERENT_USER",
       },
-      { label: "Set field", value: "SET_FIELD" },
       { label: "Create Sub Task", value: "CREATE_SUB_TASK" },
     ],
   },
