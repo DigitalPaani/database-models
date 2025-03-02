@@ -35,6 +35,7 @@ const TRIGGER_COMPONENT_TYPES = {
   task: "TASK",
   issue: "ISSUE",
   communication: "COMMUNICATION",
+  obsolete: "OBSOLETE",
 };
 
 const COMMUNICATION_COMPONENT_TYPES = {

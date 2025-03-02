@@ -11,6 +11,7 @@ declare const _default: {
         task: string;
         issue: string;
         communication: string;
+        obsolete: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;

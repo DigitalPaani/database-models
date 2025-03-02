@@ -30,6 +30,7 @@ declare const TRIGGER_COMPONENT_TYPES: {
     task: string;
     issue: string;
     communication: string;
+    obsolete: string;
 };
 declare const COMMUNICATION_COMPONENT_TYPES: {
     email: string;
