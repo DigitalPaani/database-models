@@ -1,0 +1,1 @@
+{"version":3,"file":"equipmentsSchema.model.d.ts","sourceRoot":"","sources":["../../src/models/equipmentsSchema.model.ts"],"names":[],"mappings":"AAAA,OAAO,QAAoB,MAAM,UAAU,CAAC;AAE5C,UAAU,UAAW,SAAQ,QAAQ;IACnC,WAAW,EAAE,MAAM,CAAC;IACpB,aAAa,EAAE,MAAM,CAAC;CACvB;AAUD,QAAA,MAAM,eAAe;;;;OAIpB,CAAC;AAEF,OAAO,EAAE,eAAe,EAAE,UAAU,EAAE,CAAC"}
