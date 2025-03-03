@@ -8,11 +8,20 @@ interface IPlant extends Partial<Document> {
     abbr: string;
     lat: string;
     long: string;
+    description: string;
     schematic?: string;
     sensorfreq: string;
+    location: {
+        lat: string;
+        lng: string;
+        place: string;
+    };
     plantType: string;
     createdOn: Date;
     tur: string;
+    workspaceId: Types.ObjectId;
+    userGroupId: Types.ObjectId;
+    operationType: string;
     autoEmailing?: {
         dailyReportPageId: Types.ObjectId;
         weeklyReportPageId: Types.ObjectId;
@@ -41,6 +50,5 @@ declare const PlantModel: mongoose.Model<IPlant, {}, {}, {}, Document<unknown, {
 }> & {
     __v: number;
 }>>;
-export { IPlant };
-export default PlantModel;
+export { IPlant, PlantModel };
 //# sourceMappingURL=plantModel.d.ts.map
