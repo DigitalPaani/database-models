@@ -1,13 +1,13 @@
 import mongoose, { Schema } from "mongoose";
 
 interface ILayout extends Document {
-  id?: string;
+  assetId?: string;
   layout: object;
 }
 
 const LayoutSchema = new Schema(
   {
-    id: Schema.Types.ObjectId,
+    assetId: Schema.Types.ObjectId,
     layout: mongoose.Schema.Types.Mixed,
   },
   { timestamps: true }
