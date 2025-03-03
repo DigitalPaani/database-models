@@ -18,6 +18,17 @@ const OBSOLETE_CONDITIONS = {
   resolution: "resolution",
 };
 
+const TASK_OR_FILTERS = {
+  open: "Open",
+  highPriorityOpen: "High Priority Open",
+  mediumPriorityOpen: "Medium Priority Open",
+  lowPriorityOpen: "Low Priority Open",
+  closed: "Closed",
+  highPriorityClosed: "High Priority Closed",
+  mediumPriorityClosed: "Medium Priority Closed",
+  lowPriorityClosed: "Low Priority Closed",
+};
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -30,4 +41,5 @@ export default {
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
   ASSIGNEE_METHOD_ENUMS,
   OBSOLETE_CONDITIONS,
+  TASK_OR_FILTERS,
 };

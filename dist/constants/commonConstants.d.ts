@@ -50,6 +50,16 @@ declare const _default: {
         observation: string;
         resolution: string;
     };
+    TASK_OR_FILTERS: {
+        open: string;
+        highPriorityOpen: string;
+        mediumPriorityOpen: string;
+        lowPriorityOpen: string;
+        closed: string;
+        highPriorityClosed: string;
+        mediumPriorityClosed: string;
+        lowPriorityClosed: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
