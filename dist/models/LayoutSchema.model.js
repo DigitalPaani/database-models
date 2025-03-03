@@ -33,25 +33,11 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LayoutModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Define the schema using the TypeScript interface
-const userSchema = new mongoose_1.Schema({
-    name: String,
-    email: { type: String, required: true }, // Ensure email is unique
-    password: String,
-    defaultPageId: Object,
-    number: String,
-    userStatus: String,
-    twoFactorAuthentication: Boolean,
-    language: String,
-    profilePic: String,
-    parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser' },
-    isStaff: { type: Boolean, required: true, default: false },
-    isArchived: { type: Boolean, default: false },
-    // defaultHomePage: { type: String, required: true, default: '' },
-}, {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
-});
-// Define the model using the schema and the TypeScript interface
-const NewUserModel = mongoose_1.default.model('NewUser', userSchema, 'newUsers');
-exports.default = NewUserModel;
+const LayoutSchema = new mongoose_1.Schema({
+    id: mongoose_1.Schema.Types.ObjectId,
+    layout: mongoose_1.default.Schema.Types.Mixed,
+}, { timestamps: true });
+const LayoutModel = mongoose_1.default.model("Layouts", LayoutSchema, "Layouts");
+exports.LayoutModel = LayoutModel;

@@ -33,57 +33,11 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewCacheModel = void 0;
+exports.EquipmentsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const newCacheSchema = new mongoose_1.Schema({
-    sensorTag: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    formulaId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
-        ref: "formulas"
-    },
-    sensorSettingId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
-        unique: true,
-        ref: "SensorSettings",
-    },
-    details: {
-        type: Object,
-        required: true,
-    },
-    firstDataDate: {
-        type: Number,
-        require: true,
-        default: null
-    },
-    rawValue: {
-        type: [mongoose_1.Schema.Types.Mixed],
-        required: true,
-    },
-    nextCalculationTime: {
-        type: Number,
-        required: true
-    },
-    values: [
-        {
-            timestamp: {
-                type: Number, // Assuming epoch is stored as a number
-                required: true,
-            },
-            aggregatedValue: {
-                type: [Number],
-                required: true,
-            },
-            isCalculated: { type: Boolean, default: false },
-        },
-    ],
-}, {
-    timestamps: true,
-});
-const NewCacheModel = mongoose_1.default.model("newCache", newCacheSchema, "newCaches");
-exports.NewCacheModel = NewCacheModel;
+const EquipmentsSchema = new mongoose_1.Schema({
+    equipmentId: String,
+    equipmentName: String,
+}, { timestamps: true });
+const EquipmentsModel = mongoose_1.default.model("Equipments", EquipmentsSchema, "Equipments");
+exports.EquipmentsModel = EquipmentsModel;
