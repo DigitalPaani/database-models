@@ -3,12 +3,14 @@ import mongoose, { Schema } from "mongoose";
 interface IEquipment extends Document {
   equipmentId: string;
   equipmentName: object;
+  xlineHref: string;
 }
 
 const EquipmentsSchema = new Schema(
   {
     equipmentId: String,
     equipmentName: String,
+    xlineHref:String,
   },
   { timestamps: true }
 );

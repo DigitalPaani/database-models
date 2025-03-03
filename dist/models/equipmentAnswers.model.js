@@ -33,12 +33,12 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentsModel = void 0;
+exports.EquipmentAnswersModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const EquipmentsSchema = new mongoose_1.Schema({
-    equipmentId: String,
-    equipmentName: String,
-    xlineHref: String,
+const EquipmentQuestionsSchema = new mongoose_1.Schema({
+    assetId: String,
+    equipmentType: String,
+    answer: mongoose_1.Schema.Types.Mixed,
 }, { timestamps: true });
-const EquipmentsModel = mongoose_1.default.model("Equipments", EquipmentsSchema, "Equipments");
-exports.EquipmentsModel = EquipmentsModel;
+const EquipmentAnswersModel = mongoose_1.default.model("EquipmentAnswers", EquipmentQuestionsSchema, "EquipmentAnswers");
+exports.EquipmentAnswersModel = EquipmentAnswersModel;
