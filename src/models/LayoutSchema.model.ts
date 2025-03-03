@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 interface ILayout extends Document {
-  _id?: string;
+  id?: string;
   layout: object;
 }
 

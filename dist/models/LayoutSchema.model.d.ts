@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 interface ILayout extends Document {
-    _id?: string;
+    id?: string;
     layout: object;
 }
-declare const LayoutModel: mongoose.Model<ILayout, {}, {}, {}, mongoose.Document<unknown, {}, ILayout> & ILayout & Required<{
-    _id: string;
-}> & {
+declare const LayoutModel: mongoose.Model<ILayout, {}, {}, {}, mongoose.Document<unknown, {}, ILayout> & ILayout & {
+    _id: mongoose.Types.ObjectId;
+} & {
     __v: number;
 }, any>;
 export { LayoutModel, ILayout };
