@@ -38,6 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const EquipmentQuestionsSchema = new mongoose_1.Schema({
     equipmentType: String,
     question: String,
+    type: { type: String, default: null },
 }, { timestamps: true });
 const EquipmentQuestionsModel = mongoose_1.default.model("EquipmentQuestions", EquipmentQuestionsSchema, "EquipmentQuestions");
 exports.EquipmentQuestionsModel = EquipmentQuestionsModel;
