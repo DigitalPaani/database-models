@@ -50,7 +50,7 @@ declare const _default: {
         observation: string;
         resolution: string;
     };
-    TASK_OR_FILTERS: {
+    TASK_OR_ISSUE_FILTERS: {
         open: string;
         highPriorityOpen: string;
         mediumPriorityOpen: string;

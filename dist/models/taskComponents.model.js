@@ -86,7 +86,7 @@ const TaskComponentSchema = new mongoose_1.Schema({
     description: { type: String },
     trainingVideoId: { type: String, default: "" },
     attachmentId: { type: mongoose_1.Schema.Types.ObjectId, ref: "attachments" },
-    priority: { type: String },
+    priority: { type: Number },
     taskType: { type: String },
     workflowId: { type: mongoose_1.Schema.Types.ObjectId, ref: "workflows" },
     workflowDetails: WorkflowDetailsSchema,

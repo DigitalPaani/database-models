@@ -18,7 +18,7 @@ const OBSOLETE_CONDITIONS = {
   resolution: "resolution",
 };
 
-const TASK_OR_FILTERS = {
+const TASK_OR_ISSUE_FILTERS = {
   open: "Open",
   highPriorityOpen: "High Priority Open",
   mediumPriorityOpen: "Medium Priority Open",
@@ -41,5 +41,5 @@ export default {
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
   ASSIGNEE_METHOD_ENUMS,
   OBSOLETE_CONDITIONS,
-  TASK_OR_FILTERS,
+  TASK_OR_ISSUE_FILTERS,
 };

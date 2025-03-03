@@ -74,12 +74,12 @@ const communicationComponentsSchema = new Schema(
     taskRange: { time: Number, unit: String, required: Boolean },
     taskFilter: {
       type: String,
-      enum: Object.values(commonConstants.TASK_OR_FILTERS),
+      enum: Object.values(commonConstants.TASK_OR_ISSUE_FILTERS),
     },
     taskLimit: { type: Number },
     issueFilter: {
       type: String,
-      enum: Object.values(commonConstants.TASK_OR_FILTERS),
+      enum: Object.values(commonConstants.TASK_OR_ISSUE_FILTERS),
     },
     issueLimit: { type: Number },
   },

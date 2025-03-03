@@ -12,7 +12,7 @@ interface ITaskComponent extends Document {
     description: string;
     trainingVideoId: string;
     attachmentId: string;
-    priority: string;
+    priority: number;
     taskType: string;
     workflowId: string;
     workflowDetails: IWorkflowDetails;
