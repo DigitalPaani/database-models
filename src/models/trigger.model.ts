@@ -135,7 +135,7 @@ const triggerSchema = new Schema(
           required: false,
         },
         resolutionValue: Number,
-        resolutionUnit: Number,
+        resolutionUnit: String,
         resolutionTime: Number,
       },
       required: false,

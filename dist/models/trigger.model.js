@@ -135,7 +135,7 @@ const triggerSchema = new mongoose_1.Schema({
                 required: false,
             },
             resolutionValue: Number,
-            resolutionUnit: Number,
+            resolutionUnit: String,
             resolutionTime: Number,
         },
         required: false,
