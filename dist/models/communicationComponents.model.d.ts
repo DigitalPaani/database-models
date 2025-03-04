@@ -9,8 +9,8 @@ interface ICommunicationComponent extends Document {
         isReport: boolean;
     }[];
     message?: string;
-    whatsappContentSid?: string;
-    whatsappContentVariables?: Record<string, string>;
+    contentTemplateSid?: string;
+    contentTemplateVariables?: Record<string, string>;
     type: string;
     userGroup?: Types.ObjectId;
     asset?: Types.ObjectId;

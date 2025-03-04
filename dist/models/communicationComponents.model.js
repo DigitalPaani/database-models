@@ -22,8 +22,8 @@ const communicationComponentsSchema = new mongoose_1.Schema({
             isReport: { type: Boolean, default: false },
         },
     ],
-    whatsappContentSid: { type: String }, // Only for WHATSAPP type
-    whatsappContentVariables: {
+    contentTemplateSid: { type: String }, // Only for WHATSAPP type
+    contentTemplateVariables: {
         // Only for WHATSAPP type
         type: mongoose_1.Schema.Types.Mixed,
         default: {},

@@ -11,8 +11,8 @@ interface ICommunicationComponent extends Document {
   emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string; isReport: boolean }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
-  whatsappContentSid?: string; // Optional, for WHATSAPP
-  whatsappContentVariables?: Record<string, string>; // Optional, for WHATSAPP
+  contentTemplateSid?: string; // Optional, for WHATSAPP
+  contentTemplateVariables?: Record<string, string>; // Optional, for WHATSAPP
   type: string;
   userGroup?: Types.ObjectId;
   asset?: Types.ObjectId;
@@ -48,8 +48,8 @@ const communicationComponentsSchema = new Schema(
         isReport: { type: Boolean, default: false },
       },
     ],
-    whatsappContentSid: { type: String }, // Only for WHATSAPP type
-    whatsappContentVariables: {
+    contentTemplateSid: { type: String }, // Only for WHATSAPP type
+    contentTemplateVariables: {
       // Only for WHATSAPP type
       type: Schema.Types.Mixed,
       default: {},
