@@ -49,7 +49,7 @@ interface ITask extends Document {
   workflowId: Types.ObjectId;
   taskCompletion: string;
   assigneeMethod: string;
-  taskCompletionState: string;
+  taskCompletionState: string | null;
   complexity: number;
   taskDeadlineTime: number;
   taskExpectedTime: number;
