@@ -21,7 +21,9 @@ interface ITaskComponent extends Document {
     assignee: Types.ObjectId;
     complexity: number;
     taskDeadlineTime: number;
+    taskDeadlineUnit: string;
     taskExpectedTime: number;
+    taskExpectedUnit: string;
     skillsSelected: string[];
     dataEntry: boolean;
     sensorTag: string;

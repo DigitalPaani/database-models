@@ -19,7 +19,9 @@ interface ITaskComponent extends Document {
   assignee: Types.ObjectId;
   complexity: number;
   taskDeadlineTime: number; // Assuming relative minutes
+  taskDeadlineUnit: string; // Adjust as needed
   taskExpectedTime: number; // Assuming relative minutes
+  taskExpectedUnit: string; // Adjust as needed
   skillsSelected: string[]; // Array of ObjectID strings
   dataEntry: boolean;
   sensorTag: string;
@@ -227,7 +229,9 @@ const TaskComponentSchema = new Schema(
     assignee: { type: Schema.Types.ObjectId, ref: "NewUser" },
     complexity: { type: Number },
     taskDeadlineTime: { type: Number },
+    taskDeadlineUnit: { type: String },
     taskExpectedTime: { type: Number },
+    taskExpectedUnit: { type: String },
     skillsSelected: [{ type: Schema.Types.ObjectId, ref: "skill-managements" }],
     dataEntry: { type: Boolean },
     sensorTag: { type: String },
@@ -244,7 +248,7 @@ const TaskComponentSchema = new Schema(
     parentAutocompleteId: { type: String },
     workflowActions: { type: [Schema.Types.Mixed] },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 const TaskComponentsModel: Model<ITaskComponent> = model<ITaskComponent>(

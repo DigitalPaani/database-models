@@ -38,6 +38,7 @@ const obsoleteTaskSchema = new Schema<IObsoleteTask>(
   },
   {
     timestamps: true,
+    strict: false,
   }
 );
 

@@ -96,7 +96,9 @@ const TaskComponentSchema = new mongoose_1.Schema({
     assignee: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
     complexity: { type: Number },
     taskDeadlineTime: { type: Number },
+    taskDeadlineUnit: { type: String },
     taskExpectedTime: { type: Number },
+    taskExpectedUnit: { type: String },
     skillsSelected: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "skill-managements" }],
     dataEntry: { type: Boolean },
     sensorTag: { type: String },
@@ -111,6 +113,6 @@ const TaskComponentSchema = new mongoose_1.Schema({
     parentIndex: { type: Number },
     parentAutocompleteId: { type: String },
     workflowActions: { type: [mongoose_1.Schema.Types.Mixed] },
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
 const TaskComponentsModel = (0, mongoose_1.model)("taskComponents", TaskComponentSchema, "taskComponents");
 exports.TaskComponentsModel = TaskComponentsModel;

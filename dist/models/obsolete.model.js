@@ -63,6 +63,7 @@ const obsoleteTaskSchema = new mongoose_1.Schema({
     isDeleted: { type: Boolean, default: false },
 }, {
     timestamps: true,
+    strict: false,
 });
 const ObsoleteTaskModel = mongoose_1.default.model("obsoleteTasks", obsoleteTaskSchema, "obsoleteTasks");
 exports.ObsoleteTaskModel = ObsoleteTaskModel;
