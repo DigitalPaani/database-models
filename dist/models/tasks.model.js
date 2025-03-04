@@ -176,6 +176,10 @@ const taskSchema = new mongoose_1.Schema({
         type: String,
         enum: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
     },
+    taskCompletionState: {
+        type: String,
+        required: false
+    },
     complexity: {
         type: Number,
         required: false,

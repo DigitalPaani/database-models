@@ -49,6 +49,7 @@ interface ITask extends Document {
   workflowId: Types.ObjectId;
   taskCompletion: string;
   assigneeMethod: string;
+  taskCompletionState: string;
   complexity: number;
   taskDeadlineTime: number;
   taskExpectedTime: number;
@@ -211,6 +212,10 @@ const taskSchema = new Schema<ITask>(
     assigneeMethod: {
       type: String,
       enum: ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
+    },
+    taskCompletionState: {
+      type: String,
+      required: false
     },
     complexity: {
       type: Number,

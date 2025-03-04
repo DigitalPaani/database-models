@@ -14,7 +14,6 @@ interface ITriggerDocument extends Document {
     startDate?: number;
     endDate?: number;
     totalOccurrence?: number;
-    occurrenceLeft?: number;
     recurrence?: TriggerTypes.Recurrence;
     conditions?: TriggerTypes.Conditions;
     triggerComponents: Types.ObjectId[];
