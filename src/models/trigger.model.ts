@@ -22,7 +22,6 @@ interface ITriggerDocument extends Document {
   startDate?: number;
   endDate?: number;
   totalOccurrence?: number;
-  occurrenceLeft?: number;
   recurrence?: TriggerTypes.Recurrence;
   conditions?: TriggerTypes.Conditions;
   triggerComponents: Types.ObjectId[];
@@ -65,7 +64,6 @@ const recurrenceSchema = new Schema({
   month: {
     type: [Number], // e.g., 1 for January (used for yearly recurrence)
   },
-  occurrences: { type: Number },
 });
 
 const triggerSchema = new Schema(
@@ -112,6 +110,7 @@ const triggerSchema = new Schema(
     },
     startDate: { type: Number },
     endDate: { type: Number },
+    totalOccurrence: { type: Number },
     recurrence: { type: recurrenceSchema, required: false },
     conditions: {
       type: {
