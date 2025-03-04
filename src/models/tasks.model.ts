@@ -36,7 +36,7 @@ interface IComponentActions extends Document {
 interface ITask extends Document {
   triggerId: Types.ObjectId;
   taskTemplateId: Types.ObjectId;
-  userGroupId: Types.ObjectId;
+  userGroupId: Types.ObjectId | null;
   workspaceId: Types.ObjectId;
   assetId: Types.ObjectId | null;
   assignee: Types.ObjectId;
