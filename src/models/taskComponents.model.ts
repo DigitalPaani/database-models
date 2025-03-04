@@ -10,7 +10,7 @@ interface ITaskComponent extends Document {
   description: string;
   trainingVideoId: string;
   attachmentId: string; // ObjectID as string
-  priority: number; // Adjust as needed
+  priority: string; // Adjust as needed
   taskType: string; // Adjust as needed
   workflowId: string; // ObjectID as string
   workflowDetails: IWorkflowDetails;
@@ -217,11 +217,12 @@ const TaskComponentSchema = new Schema(
     description: { type: String },
     trainingVideoId: { type: String, default: "" },
     attachmentId: { type: Schema.Types.ObjectId, ref: "attachments" },
-    priority: { type: Number },
+    priority: { type: String },
     taskType: { type: String },
     workflowId: { type: Schema.Types.ObjectId, ref: "workflows" },
     workflowDetails: WorkflowDetailsSchema,
     taskCompletion: { type: String },
+    taskCompletionState: { type: String },
     assigneeMethod: { type: String },
     assignee: { type: Schema.Types.ObjectId, ref: "NewUser" },
     complexity: { type: Number },
