@@ -174,6 +174,7 @@ const taskSchema = new Schema<ITask>(
     },
     assignee: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "NewUser",
       required: false,
     },
     workflowDetails: {
