@@ -177,6 +177,10 @@ const taskSchema = new Schema<ITask>(
       ref: "NewUser",
       required: false,
     },
+    workflowId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
     workflowDetails: {
       type: workflowDetailsSchema,
       required: false

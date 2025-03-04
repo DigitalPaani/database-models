@@ -140,6 +140,10 @@ const taskSchema = new mongoose_1.Schema({
         ref: "NewUser",
         required: false,
     },
+    workflowId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
     workflowDetails: {
         type: workflowDetailsSchema,
         required: false
