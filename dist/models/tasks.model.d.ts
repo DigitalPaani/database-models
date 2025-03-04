@@ -60,5 +60,5 @@ interface ITask extends Document {
     componentActions: IComponentActions[];
 }
 declare const TaskModel: Model<ITask>;
-export { TaskModel, ITask, IEscalation };
+export { TaskModel, ITask, IEscalation, IWorkflowDetails };
 //# sourceMappingURL=tasks.model.d.ts.map

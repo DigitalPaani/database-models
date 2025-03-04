@@ -23,7 +23,7 @@ import {
 import { CompanyModel } from "./models/CompanyModel";
 import { SensorModel, ISensor } from "./models/SensorList";
 import { ConnectToDatabase } from "./mongoConnection";
-import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
+import { TaskModel, ITask, IEscalation, IWorkflowDetails as IWorkflowDetailsTasks } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
@@ -98,6 +98,7 @@ export type {
   IActionNode,
   ITaskComponent,
   IWorkflowDetails,
+  IWorkflowDetailsTasks,
   IWorkflowNode,
   IPosition,
   IWorkflowActions,

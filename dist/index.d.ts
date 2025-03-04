@@ -12,7 +12,7 @@ import { WorkflowModel, IWorkflow, IWorkflowActions, IActionNode } from "./model
 import { CompanyModel } from "./models/CompanyModel";
 import { SensorModel, ISensor } from "./models/SensorList";
 import { ConnectToDatabase } from "./mongoConnection";
-import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
+import { TaskModel, ITask, IEscalation, IWorkflowDetails as IWorkflowDetailsTasks } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
@@ -30,6 +30,6 @@ import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 declare const mongooseDatabaseModels: typeof mongoose;
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowDetailsTasks, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, };
 export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, WhatsappTemplateModel, Types, TriggerComponentModel, TaskComponentsModel, CommunicationComponentsModel, NewUserModel, commonConstants, CompanyModel, SensorModel, mongooseDatabaseModels, ObsoleteTaskModel, };
 //# sourceMappingURL=index.d.ts.map
