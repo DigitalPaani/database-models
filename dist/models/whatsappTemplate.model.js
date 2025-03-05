@@ -32,9 +32,26 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WhatsappTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
+;
+;
+const variableSchema = new mongoose_1.Schema({
+    position: {
+        type: Number,
+        required: true
+    },
+    value: {
+        type: String,
+        enum: commonConstants_1.default.WHATSAPP_TEMPLATE_VARIABLES,
+        required: true
+    },
+});
 const whatsappTemplateSchema = new mongoose_1.Schema({
     contentTemplateSid: {
         type: String,
@@ -46,6 +63,10 @@ const whatsappTemplateSchema = new mongoose_1.Schema({
     },
     templateContent: {
         type: String,
+        required: false,
+    },
+    variables: {
+        type: [variableSchema],
         required: false,
     },
     isArchived: {

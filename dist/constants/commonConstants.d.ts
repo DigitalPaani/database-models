@@ -60,6 +60,7 @@ declare const _default: {
         mediumPriorityClosed: string;
         lowPriorityClosed: string;
     };
+    WHATSAPP_TEMPLATE_VARIABLES: string[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

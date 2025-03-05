@@ -1,12 +1,34 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 
+import commonConstants from '../constants/commonConstants';
+
+interface IVariable extends Document {
+  position: number,
+  value: string
+};
+
 interface IWhatsappTemplate extends Document {
   contentTemplateSid: string;
   templateName: string;
   templateContent: string;
+  variables: IVariable[]
   isArchived: boolean;
-}
+};
+
+
+const variableSchema = new Schema<IVariable>({
+  position: {
+    type: Number,
+    required: true
+  },
+  value: {
+    type: String,
+    enum: commonConstants.WHATSAPP_TEMPLATE_VARIABLES,
+    required: true
+  },
+});
+
 
 const whatsappTemplateSchema = new Schema<IWhatsappTemplate>(
   {
@@ -21,6 +43,10 @@ const whatsappTemplateSchema = new Schema<IWhatsappTemplate>(
     templateContent: {
         type: String,
         required: false,  
+    },
+    variables: {
+      type: [variableSchema],
+      required: false,  
     },
     isArchived: {
       type: Boolean,

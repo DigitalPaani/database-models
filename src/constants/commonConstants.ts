@@ -29,6 +29,8 @@ const TASK_OR_ISSUE_FILTERS = {
   lowPriorityClosed: "Low Priority Closed",
 };
 
+const WHATSAPP_TEMPLATE_VARIABLES = ['PLANT_NAME', 'TASK_NAME', 'USER_NAME'];
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -42,4 +44,5 @@ export default {
   ASSIGNEE_METHOD_ENUMS,
   OBSOLETE_CONDITIONS,
   TASK_OR_ISSUE_FILTERS,
+  WHATSAPP_TEMPLATE_VARIABLES
 };
