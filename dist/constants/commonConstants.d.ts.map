@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"file":"commonConstants.d.ts","sourceRoot":"","sources":["../../src/constants/commonConstants.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAiCA,wBAcE"}
-=======
-{"version":3,"file":"commonConstants.d.ts","sourceRoot":"","sources":["../../src/constants/commonConstants.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAgCA,wBAcE"}
->>>>>>> a7ef96e6b38dd4f8e553bf415346b28930843978
+{"version":3,"file":"commonConstants.d.ts","sourceRoot":"","sources":["../../src/constants/commonConstants.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAkCA,wBAeE"}
