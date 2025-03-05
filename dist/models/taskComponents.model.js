@@ -51,6 +51,7 @@ const WorkflowDetailsSchema = new mongoose_1.Schema({
     description: { type: String },
     nodes: [WorkflowNodeSchema],
     edges: [WorkflowEdgeSchema],
+    workflowActions: [mongoose_1.Schema.Types.Mixed]
 }, { _id: false });
 const ActionNodeSchema = new mongoose_1.Schema({
     id: { type: String },

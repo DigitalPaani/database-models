@@ -168,6 +168,7 @@ const WorkflowDetailsSchema = new Schema(
     description: { type: String },
     nodes: [WorkflowNodeSchema],
     edges: [WorkflowEdgeSchema],
+    workflowActions: [Schema.Types.Mixed]
   },
   { _id: false }
 );

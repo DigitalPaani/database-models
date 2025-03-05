@@ -10,6 +10,7 @@ interface IWorkflowDetails extends Document {
   description: string;
   nodes: object[];
   edges: object[];
+  workflowActions: object[];
   transitionStatus: string;
 }
 
@@ -88,6 +89,10 @@ const workflowDetailsSchema = new Schema<IWorkflowDetails>({
     required: false,
   },
   edges: {
+    type: [Object],
+    required: false,
+  },
+  workflowActions: {
     type: [Object],
     required: false,
   },

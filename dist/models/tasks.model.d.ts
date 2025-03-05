@@ -6,6 +6,7 @@ interface IWorkflowDetails extends Document {
     description: string;
     nodes: object[];
     edges: object[];
+    workflowActions: object[];
     transitionStatus: string;
 }
 interface IEscalation extends Document {
