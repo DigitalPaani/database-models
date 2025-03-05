@@ -60,7 +60,15 @@ declare const _default: {
         mediumPriorityClosed: string;
         lowPriorityClosed: string;
     };
+<<<<<<< HEAD
     WHATSAPP_TEMPLATE_VARIABLES: string[];
+=======
+    TRIGGER_TYPES: {
+        onetime: string;
+        recurring: string;
+        conditional: string;
+    };
+>>>>>>> a7ef96e6b38dd4f8e553bf415346b28930843978
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
