@@ -20,7 +20,7 @@ const TASK_OR_ISSUE_FILTERS = {
     mediumPriorityClosed: "Medium Priority Closed",
     lowPriorityClosed: "Low Priority Closed",
 };
-const WHATSAPP_TEMPLATE_VARIABLES = ['PLANT_NAME', 'TASK_NAME', 'USER_NAME'];
+const WHATSAPP_TEMPLATE_VARIABLES = ['PLANT_NAME', 'TASK_NAME', 'USER_NAME', 'TRANSITION_NAME'];
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
