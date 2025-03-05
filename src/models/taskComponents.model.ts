@@ -103,6 +103,9 @@ interface IActionNode {
   selectedAction: string;
   selectedActionValue: string;
   actionIds: Types.ObjectId[];
+  parentAutocompleteId: string,
+  nodeId: string,
+  actionTemplate: object,
 }
 
 interface IComponentAction {
@@ -180,6 +183,9 @@ const ActionNodeSchema = new Schema(
     selectedAction: { type: String },
     selectedActionValue: { type: String },
     actionIds: { type: [Schema.Types.ObjectId] },
+    parentAutocompleteId: { type: String },
+    nodeId: { type: String },
+    actionTemplate: { type: Object },
   },
   { _id: false }
 );

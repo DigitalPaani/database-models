@@ -187,6 +187,10 @@ const taskSchema = new mongoose_1.Schema({
         enum: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
         required: true
     },
+    emergencyTaskCommonId: {
+        type: String,
+        default: null
+    },
     taskCompletionState: {
         type: String,
         default: null

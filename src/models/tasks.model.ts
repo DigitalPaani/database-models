@@ -50,6 +50,7 @@ interface ITask extends Document {
   workflowId: Types.ObjectId;
   taskCompletion: string;
   assigneeMethod: string;
+  emergencyTaskCommonId: string;
   taskCompletionState: string | null;
   complexity: number;
   taskDeadlineTime: number;
@@ -224,6 +225,10 @@ const taskSchema = new Schema<ITask>(
       type: String,
       enum: ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
       required: true
+    },
+    emergencyTaskCommonId: {
+      type: String,
+      default: null
     },
     taskCompletionState: {
       type: String,

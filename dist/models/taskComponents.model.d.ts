@@ -96,6 +96,9 @@ interface IActionNode {
     selectedAction: string;
     selectedActionValue: string;
     actionIds: Types.ObjectId[];
+    parentAutocompleteId: string;
+    nodeId: string;
+    actionTemplate: object;
 }
 interface IComponentAction {
     nodeId: string;

@@ -59,6 +59,9 @@ const ActionNodeSchema = new mongoose_1.Schema({
     selectedAction: { type: String },
     selectedActionValue: { type: String },
     actionIds: { type: [mongoose_1.Schema.Types.ObjectId] },
+    parentAutocompleteId: { type: String },
+    nodeId: { type: String },
+    actionTemplate: { type: Object },
 }, { _id: false });
 // Schema for each entry in componentActions
 const ComponentActionSchema = new mongoose_1.Schema({
