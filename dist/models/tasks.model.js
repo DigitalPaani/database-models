@@ -142,32 +142,32 @@ const taskSchema = new mongoose_1.Schema({
     assignee: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "NewUser",
-        required: false,
+        default: null
     },
     workflowId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
+        required: true,
     },
     workflowDetails: {
         type: workflowDetailsSchema,
-        required: false
+        required: true
     },
     name: {
         type: String,
-        required: false,
+        required: true,
     },
     description: {
         type: String,
-        required: false,
+        default: ""
     },
     trainingVideoId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
+        default: null
     },
     attachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'attachments',
-        required: false,
+        default: null
     },
     priority: {
         type: Number,
@@ -180,26 +180,28 @@ const taskSchema = new mongoose_1.Schema({
     taskCompletion: {
         type: String,
         enum: taskManagementConst_1.TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
+        required: true
     },
     assigneeMethod: {
         type: String,
         enum: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
+        required: true
     },
     taskCompletionState: {
         type: String,
-        required: false
+        default: null
     },
     complexity: {
         type: Number,
-        required: false,
+        required: true,
     },
     taskDeadlineTime: {
         type: Number,
-        required: false,
+        required: true,
     },
     taskExpectedTime: {
         type: Number,
-        required: false,
+        required: true,
     },
     taskCompletionTime: {
         type: Number,
@@ -212,16 +214,15 @@ const taskSchema = new mongoose_1.Schema({
     skillsSelected: {
         type: [mongoose_1.default.Schema.Types.ObjectId],
         ref: 'skill-managements',
-        required: false,
+        default: []
     },
     dataEntry: {
         type: Boolean,
         default: false,
-        required: false,
     },
     sensorId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false
+        default: null
     },
     richTextContent: {
         type: String,
@@ -245,7 +246,7 @@ const taskSchema = new mongoose_1.Schema({
     },
     taskCompleted: {
         type: Boolean,
-        required: false,
+        default: false,
     },
     isArchived: {
         type: Boolean,

@@ -40,7 +40,7 @@ interface ITask extends Document {
   userGroupId: Types.ObjectId | null;
   workspaceId: Types.ObjectId;
   assetId: Types.ObjectId | null;
-  assignee: Types.ObjectId;
+  assignee: Types.ObjectId | null;
   workflowDetails: IWorkflowDetails;
   name: string;
   description: string;
@@ -180,32 +180,32 @@ const taskSchema = new Schema<ITask>(
     assignee: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "NewUser",
-      required: false,
+      default: null
     },
     workflowId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      required: true,
     },
     workflowDetails: {
       type: workflowDetailsSchema,
-      required: false
+      required: true
     },   
     name: {
       type: String,
-      required: false,
+      required: true,
     },
     description: {
       type: String,
-      required: false,
+      default: ""
     },
     trainingVideoId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      default: null
     },
     attachmentId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'attachments',
-      required: false,
+      default: null
     },
     priority: {
       type: Number,
@@ -218,26 +218,28 @@ const taskSchema = new Schema<ITask>(
     taskCompletion: {
       type: String,
       enum: TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
+      required: true
     },
     assigneeMethod: {
       type: String,
       enum: ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
+      required: true
     },
     taskCompletionState: {
       type: String,
-      required: false
+      default: null
     },
     complexity: {
       type: Number,
-      required: false,
+      required: true,
     },
     taskDeadlineTime: {
       type: Number,
-      required: false,
+      required: true,
     },
     taskExpectedTime: {
       type: Number,
-      required: false,
+      required: true,
     },
     taskCompletionTime: {
       type: Number,
@@ -250,16 +252,15 @@ const taskSchema = new Schema<ITask>(
     skillsSelected: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: 'skill-managements',
-      required: false,
+      default: []
     },
     dataEntry: {
       type: Boolean,
       default: false,
-      required: false,
     },
     sensorId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false
+      default: null
     },
     richTextContent: {
       type: String,
@@ -283,7 +284,7 @@ const taskSchema = new Schema<ITask>(
     },
     taskCompleted: {
       type: Boolean,
-      required: false,
+      default: false,
     },
     isArchived: {
       type: Boolean,

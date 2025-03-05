@@ -32,7 +32,7 @@ interface ITask extends Document {
     userGroupId: Types.ObjectId | null;
     workspaceId: Types.ObjectId;
     assetId: Types.ObjectId | null;
-    assignee: Types.ObjectId;
+    assignee: Types.ObjectId | null;
     workflowDetails: IWorkflowDetails;
     name: string;
     description: string;
