@@ -56,7 +56,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     userGroupId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
+        default: null
     },
     attachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,

@@ -52,7 +52,7 @@ const taskTemplateSchema = new Schema<ITaskTemplate>(
     },
     userGroupId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      default: null
     },
     attachmentId: {
       type: mongoose.Schema.Types.ObjectId,
