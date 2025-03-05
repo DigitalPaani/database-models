@@ -12,8 +12,8 @@ import SensorsModel from "./models/sensorModel";
 import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
 import { PlantModel } from "./models/plantModel";
 import { LayoutModel, ILayout } from "./models/LayoutSchema.model";
-import { EquipmentsModel, IEquipment } from "./models/equipmentsSchema.model";
+import { LayoutItemsModel, ILayoutItem } from "./models/LayoutItems.model";
 import { ConnectToDatabase } from "./mongoConnection";
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ISensor, IQuestion, IBatch, IAnswer, ILayout, IEquipment, };
-export { ConnectToDatabase, FormulasModel, PlantModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, CompanyModel, SensorModel, QuestionSchemaModel, BatchSchemaModel, AnswerSchemaModel, SensorsModel, LayoutModel, EquipmentsModel, };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ISensor, IQuestion, IBatch, IAnswer, ILayout, ILayoutItem, };
+export { ConnectToDatabase, FormulasModel, PlantModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, CompanyModel, SensorModel, QuestionSchemaModel, BatchSchemaModel, AnswerSchemaModel, SensorsModel, LayoutModel, LayoutItemsModel, };
 //# sourceMappingURL=index.d.ts.map
