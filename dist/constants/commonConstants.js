@@ -33,4 +33,5 @@ exports.default = {
     ASSIGNEE_METHOD_ENUMS: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS,
     OBSOLETE_CONDITIONS,
     TASK_OR_ISSUE_FILTERS,
+    TRIGGER_TYPES: triggerConst_1.TRIGGER_TYPES,
 };

@@ -60,6 +60,11 @@ declare const _default: {
         mediumPriorityClosed: string;
         lowPriorityClosed: string;
     };
+    TRIGGER_TYPES: {
+        onetime: string;
+        recurring: string;
+        conditional: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
