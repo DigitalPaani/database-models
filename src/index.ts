@@ -22,6 +22,10 @@ import {
 } from "./models/workflow.model";
 import { CompanyModel } from "./models/CompanyModel";
 import { SensorModel, ISensor } from "./models/SensorList";
+import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
+import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
+import SensorsModel from "./models/sensorModel";
+import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
@@ -108,12 +112,16 @@ export type {
   INewUser,
   ISensor,
   IObsoleteTask,
+  IQuestion,
+  IBatch,
+  IAnswer,
 };
 
 // exports the models
 export {
   ConnectToDatabase,
   FormulasModel,
+  PlantModel,
   HyperFormulaModel,
   SensorSettingsModel,
   PlcModel,
@@ -127,7 +135,6 @@ export {
   TaskModel,
   AttachmentModel,
   TriggerLogsModel,
-  PlantModel,
   TwilioCallModel,
   CallLogModel,
   WhatsappLogModel,
@@ -144,4 +151,8 @@ export {
   SensorModel,
   mongooseDatabaseModels,
   ObsoleteTaskModel,
+  QuestionSchemaModel,
+  BatchSchemaModel,
+  AnswerSchemaModel,
+  SensorsModel,
 };

@@ -1,4 +1,5 @@
 "use strict";
+<<<<<<< HEAD
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -32,11 +33,17 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+=======
+>>>>>>> 0a4580be181797ae1e96c5c8ed06970090054660
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+<<<<<<< HEAD
 exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.PlantModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+=======
+exports.SensorsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+>>>>>>> 0a4580be181797ae1e96c5c8ed06970090054660
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -61,8 +68,18 @@ const workflow_model_1 = require("./models/workflow.model");
 Object.defineProperty(exports, "WorkflowModel", { enumerable: true, get: function () { return workflow_model_1.WorkflowModel; } });
 const CompanyModel_1 = require("./models/CompanyModel");
 Object.defineProperty(exports, "CompanyModel", { enumerable: true, get: function () { return CompanyModel_1.CompanyModel; } });
+const QuestionSchema_1 = require("./models/QuestionSchema");
+Object.defineProperty(exports, "QuestionSchemaModel", { enumerable: true, get: function () { return QuestionSchema_1.QuestionSchemaModel; } });
+const QuestionBatchModel_1 = require("./models/QuestionBatchModel");
+Object.defineProperty(exports, "BatchSchemaModel", { enumerable: true, get: function () { return QuestionBatchModel_1.BatchSchemaModel; } });
 const SensorList_1 = require("./models/SensorList");
 Object.defineProperty(exports, "SensorModel", { enumerable: true, get: function () { return SensorList_1.SensorModel; } });
+const sensorModel_1 = __importDefault(require("./models/sensorModel"));
+exports.SensorsModel = sensorModel_1.default;
+const AnswerSchema_model_1 = require("./models/AnswerSchema.model");
+Object.defineProperty(exports, "AnswerSchemaModel", { enumerable: true, get: function () { return AnswerSchema_model_1.AnswerSchemaModel; } });
+const plantModel_1 = require("./models/plantModel");
+Object.defineProperty(exports, "PlantModel", { enumerable: true, get: function () { return plantModel_1.PlantModel; } });
 const mongoConnection_1 = require("./mongoConnection");
 Object.defineProperty(exports, "ConnectToDatabase", { enumerable: true, get: function () { return mongoConnection_1.ConnectToDatabase; } });
 const tasks_model_1 = require("./models/tasks.model");

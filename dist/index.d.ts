@@ -10,8 +10,14 @@ import { RosterManagementModel, IRoster } from "./models/roster.model";
 import { RosterSchedulesModel, IRosterSchedule } from "./models/rosterSchedules.model";
 import { WorkflowModel, IWorkflow, IWorkflowActions, IActionNode } from "./models/workflow.model";
 import { CompanyModel } from "./models/CompanyModel";
+import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
+import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
 import { SensorModel, ISensor } from "./models/SensorList";
+import SensorsModel from './models/sensorModel';
+import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
+import { PlantModel } from "./models/plantModel";
 import { ConnectToDatabase } from "./mongoConnection";
+<<<<<<< HEAD
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
 import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
@@ -32,4 +38,8 @@ import mongoose, { Types } from "mongoose";
 declare const mongooseDatabaseModels: typeof mongoose;
 export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, };
 export { ConnectToDatabase, FormulasModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, PlantModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, WhatsappTemplateModel, Types, TriggerComponentModel, TaskComponentsModel, CommunicationComponentsModel, NewUserModel, commonConstants, CompanyModel, SensorModel, mongooseDatabaseModels, ObsoleteTaskModel, };
+=======
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ISensor, IQuestion, IBatch, IAnswer };
+export { ConnectToDatabase, FormulasModel, PlantModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, CompanyModel, SensorModel, QuestionSchemaModel, BatchSchemaModel, AnswerSchemaModel, SensorsModel };
+>>>>>>> 0a4580be181797ae1e96c5c8ed06970090054660
 //# sourceMappingURL=index.d.ts.map

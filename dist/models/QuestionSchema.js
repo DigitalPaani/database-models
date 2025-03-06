@@ -33,25 +33,25 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CompanyModel = void 0;
+exports.QuestionSchemaModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const contactSchema = new mongoose_1.Schema({
-    fullName: { type: String, required: true, trim: true },
-    phoneNumber: { type: String, required: true },
-    emailId: { type: String, required: true, trim: true },
-    designation: { type: String, required: true, trim: true },
-    comments: { type: String, required: false, trim: true },
-});
-const companySchema = new mongoose_1.Schema({
-    companyName: { type: String, required: true, trim: true },
-    companyDescription: { type: String, required: false, trim: true },
-    companyAddress: { type: String, required: true, trim: true },
-    tags: {
-        type: [String],
-        enum: ["sensor", "electrical panel"], // Restrict values
-        required: false,
-    },
-    contactDetails: { type: [contactSchema], required: true }, // Array of contacts
+const questionSchema = new mongoose_1.Schema({
+    conditionalQuestionId: { type: [Number], default: null },
+    conditionalAnswer: [[String]],
+    questionId: Number,
+    question: String, // Question text
+    tag: String, // Unique key for reference
+    type: String, // "text", "radio", "checkbox", "dropdown", "date"
+    options: [String], // Only for radio, checkbox, dropdown
+    required: Boolean,
+    order: Number, // New field to track question order
+    batchId: Number,
+    dummy: Boolean,
+    analyticalValue: { type: Boolean, default: false },
+    name: String,
+    defaultValue: { type: String, default: null },
+    validation: [String]
 }, { timestamps: true });
-const CompanyModel = mongoose_1.default.model("company", companySchema, "companies");
-exports.CompanyModel = CompanyModel;
+questionSchema.index({ order: 1 });
+const QuestionSchemaModel = mongoose_1.default.model("SurveyQuestion", questionSchema, "SurveyQuestions");
+exports.QuestionSchemaModel = QuestionSchemaModel;

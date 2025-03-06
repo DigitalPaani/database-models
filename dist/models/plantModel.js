@@ -39,12 +39,28 @@ const PlantSchema = new mongoose_1.Schema({
     plantName: String,
     status: String,
     lat: String,
+    workspaceId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewWorkspace",
+        required: true
+    },
+    userGroupId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "UserGroup",
+        required: true
+    },
     long: String,
+    description: String,
     schematic: String,
     sensorfreq: String,
     plantType: String,
     createdOn: Date,
     tur: String,
+    location: {
+        lat: String,
+        lng: String,
+        place: String
+    },
     autoEmailing: {
         dailyReportPageId: mongoose_1.Schema.Types.ObjectId,
         weeklyReportPageId: mongoose_1.Schema.Types.ObjectId,
@@ -59,6 +75,7 @@ const PlantSchema = new mongoose_1.Schema({
     subTopic: String,
     pubTopic: String,
     abbr: String,
+    operationType: String,
     userGroup: {
         id: mongoose_1.Schema.Types.ObjectId,
         name: String,
