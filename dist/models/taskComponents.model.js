@@ -66,6 +66,7 @@ const ActionNodeSchema = new mongoose_1.Schema({
 // Schema for each entry in componentActions
 const ComponentActionSchema = new mongoose_1.Schema({
     nodeId: { type: String },
+    nodeLabel: { type: String },
     actionNodes: [ActionNodeSchema],
 }, { _id: false });
 // Schema for each escalation entry

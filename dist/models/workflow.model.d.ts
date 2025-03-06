@@ -8,6 +8,7 @@ interface IActionNode {
 }
 interface IWorkflowActions {
     nodeId: string;
+    nodeLabel: string;
     actionNodes: IActionNode[];
 }
 interface IWorkflow extends Document {

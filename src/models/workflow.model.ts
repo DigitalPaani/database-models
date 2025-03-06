@@ -10,6 +10,7 @@ interface IActionNode {
 
 interface IWorkflowActions {
   nodeId: string,
+  nodeLabel: string,
   actionNodes: IActionNode[]
 }
 
@@ -48,6 +49,10 @@ const actionNodeSchema = new Schema<IActionNode>({
 
 const workflowActionSchema = new Schema<IWorkflowActions>({
   nodeId: {
+    type: String,
+    required: false,
+  },
+  nodeLabel: {
     type: String,
     required: false,
   },

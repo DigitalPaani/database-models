@@ -102,6 +102,7 @@ interface IActionNode {
 }
 interface IComponentAction {
     nodeId: string;
+    nodeLabel: string;
     actionNodes: IActionNode[];
 }
 declare const TaskComponentsModel: Model<ITaskComponent>;

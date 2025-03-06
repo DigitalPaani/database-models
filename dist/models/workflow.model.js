@@ -58,6 +58,10 @@ const workflowActionSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    nodeLabel: {
+        type: String,
+        required: false,
+    },
     actionNodes: {
         type: [actionNodeSchema],
         required: false,

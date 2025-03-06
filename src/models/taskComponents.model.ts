@@ -110,6 +110,7 @@ interface IActionNode {
 
 interface IComponentAction {
   nodeId: string; // ObjectID as string
+  nodeLabel: string;
   actionNodes: IActionNode[];
 }
 
@@ -194,6 +195,7 @@ const ActionNodeSchema = new Schema(
 const ComponentActionSchema = new Schema(
   {
     nodeId: { type: String },
+    nodeLabel: { type: String },
     actionNodes: [ActionNodeSchema],
   },
   { _id: false }
