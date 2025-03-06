@@ -49,13 +49,13 @@ export const CREATE_WORKFLOW_AVAILABLE_ACTIONS = [
       { label: "Call", value: "CALL" },
     ],
   },
-  {
-    navbar: {
-      label: "Media",
-      value: "MEDIA",
-    },
-    availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
-  },
+  // {
+  //   navbar: {
+  //     label: "Media",
+  //     value: "MEDIA",
+  //   },
+  //   availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
+  // },
 ];
 
 export const TASK_COMPLETION_ENUMS = [
