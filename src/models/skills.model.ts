@@ -51,7 +51,8 @@ skillManagementSchema.index(
   { name: 1 },
   {
     unique: true,
-    partialFilterExpression: { isArchived: false }
+    partialFilterExpression: { isArchived: false },
+    collation: { locale: 'en', strength: 2 } // Case-insensitive collation
   }
 );
 

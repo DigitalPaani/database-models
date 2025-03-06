@@ -69,7 +69,8 @@ const skillManagementSchema = new mongoose_1.Schema({
 });
 skillManagementSchema.index({ name: 1 }, {
     unique: true,
-    partialFilterExpression: { isArchived: false }
+    partialFilterExpression: { isArchived: false },
+    collation: { locale: 'en', strength: 2 } // Case-insensitive collation
 });
 const SkillManagementModel = mongoose_1.default.model('skill-managements', skillManagementSchema, 'skill-managements');
 exports.SkillManagementModel = SkillManagementModel;
