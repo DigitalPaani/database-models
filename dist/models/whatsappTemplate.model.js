@@ -48,7 +48,7 @@ const variableSchema = new mongoose_1.Schema({
     },
     value: {
         type: String,
-        enum: commonConstants_1.default.WHATSAPP_TEMPLATE_VARIABLES,
+        enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_VARIABLES),
         required: true
     },
 });

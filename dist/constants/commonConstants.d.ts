@@ -65,7 +65,16 @@ declare const _default: {
         recurring: string;
         conditional: string;
     };
-    WHATSAPP_TEMPLATE_VARIABLES: string[];
+    WHATSAPP_TEMPLATE_VARIABLES: {
+        plantName: string;
+        issueName: string;
+        issueTime: string;
+        taskName: string;
+        taskTime: string;
+        userName: string;
+        transitionName: string;
+        overdueTime: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

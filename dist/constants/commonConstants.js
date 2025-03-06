@@ -20,7 +20,16 @@ const TASK_OR_ISSUE_FILTERS = {
     mediumPriorityClosed: "Medium Priority Closed",
     lowPriorityClosed: "Low Priority Closed",
 };
-const WHATSAPP_TEMPLATE_VARIABLES = ['PLANT_NAME', 'ISSUE_NAME', 'ISSUE_TIME', 'TASK_NAME', 'USER_NAME', 'TRANSITION_NAME', 'OVERDUE_TIME'];
+const WHATSAPP_TEMPLATE_VARIABLES = {
+    plantName: "PLANT_NAME",
+    issueName: "ISSUE_NAME",
+    issueTime: "ISSUE_TIME",
+    taskName: "TASK_NAME",
+    taskTime: "TASK_TIME",
+    userName: "USER_NAME",
+    transitionName: "TRANSITION_NAME",
+    overdueTime: "OVERDUE_TIME",
+};
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -35,5 +44,5 @@ exports.default = {
     OBSOLETE_CONDITIONS,
     TASK_OR_ISSUE_FILTERS,
     TRIGGER_TYPES: triggerConst_1.TRIGGER_TYPES,
-    WHATSAPP_TEMPLATE_VARIABLES
+    WHATSAPP_TEMPLATE_VARIABLES,
 };

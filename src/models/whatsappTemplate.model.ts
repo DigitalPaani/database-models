@@ -24,7 +24,7 @@ const variableSchema = new Schema<IVariable>({
   },
   value: {
     type: String,
-    enum: commonConstants.WHATSAPP_TEMPLATE_VARIABLES,
+    enum: Object.values(commonConstants.WHATSAPP_TEMPLATE_VARIABLES),
     required: true
   },
 });
