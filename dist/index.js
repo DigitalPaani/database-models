@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LayoutItemsModel = exports.LayoutModel = exports.SensorsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.EquipmentAnswersModel = exports.EquipmentQuestionsModel = exports.LayoutItemsModel = exports.LayoutModel = exports.SensorsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.SensorModel = exports.CompanyModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -34,5 +34,9 @@ const LayoutSchema_model_1 = require("./models/LayoutSchema.model");
 Object.defineProperty(exports, "LayoutModel", { enumerable: true, get: function () { return LayoutSchema_model_1.LayoutModel; } });
 const LayoutItems_model_1 = require("./models/LayoutItems.model");
 Object.defineProperty(exports, "LayoutItemsModel", { enumerable: true, get: function () { return LayoutItems_model_1.LayoutItemsModel; } });
+const equipmentQuestions_model_1 = require("./models/equipmentQuestions.model");
+Object.defineProperty(exports, "EquipmentQuestionsModel", { enumerable: true, get: function () { return equipmentQuestions_model_1.EquipmentQuestionsModel; } });
+const equipmentAnswers_model_1 = require("./models/equipmentAnswers.model");
+Object.defineProperty(exports, "EquipmentAnswersModel", { enumerable: true, get: function () { return equipmentAnswers_model_1.EquipmentAnswersModel; } });
 const mongoConnection_1 = require("./mongoConnection");
 Object.defineProperty(exports, "ConnectToDatabase", { enumerable: true, get: function () { return mongoConnection_1.ConnectToDatabase; } });

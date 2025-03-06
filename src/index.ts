@@ -16,6 +16,14 @@ import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
 import { PlantModel } from "./models/plantModel";
 import { LayoutModel, ILayout } from "./models/LayoutSchema.model";
 import { LayoutItemsModel, ILayoutItem } from "./models/LayoutItems.model";
+import {
+  EquipmentQuestionsModel,
+  IEquipmentQuestion,
+} from "./models/equipmentQuestions.model";
+import {
+  EquipmentAnswersModel,
+  IEquipmentAnswer,
+} from "./models/equipmentAnswers.model";
 import { ConnectToDatabase } from "./mongoConnection";
 
 // export the interface of the models
@@ -32,6 +40,8 @@ export type {
   IAnswer,
   ILayout,
   ILayoutItem,
+  IEquipmentQuestion,
+  IEquipmentAnswer,
 };
 
 // exports the models
@@ -52,4 +62,6 @@ export {
   SensorsModel,
   LayoutModel,
   LayoutItemsModel,
+  EquipmentQuestionsModel,
+  EquipmentAnswersModel,
 };
