@@ -30,6 +30,16 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
     transitionName: "TRANSITION_NAME",
     overdueTime: "OVERDUE_TIME",
 };
+const USER_GROUP_OR_SYSTEM = [
+    {
+        value: "SYSTEM",
+        label: "System",
+    },
+    {
+        value: "USER_GROUP",
+        label: "User Group",
+    },
+];
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -45,4 +55,5 @@ exports.default = {
     TASK_OR_ISSUE_FILTERS,
     TRIGGER_TYPES: triggerConst_1.TRIGGER_TYPES,
     WHATSAPP_TEMPLATE_VARIABLES,
+    USER_GROUP_OR_SYSTEM
 };

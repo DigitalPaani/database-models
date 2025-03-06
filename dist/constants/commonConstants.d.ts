@@ -75,6 +75,10 @@ declare const _default: {
         transitionName: string;
         overdueTime: string;
     };
+    USER_GROUP_OR_SYSTEM: {
+        value: string;
+        label: string;
+    }[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
