@@ -7,21 +7,6 @@ declare const TRIGGER_TYPES: {
     recurring: string;
     conditional: string;
 };
-declare const CONDITION_THRESHOLD_TYPES: {
-    numeric: string;
-    boolean: string;
-    time: string;
-};
-declare const CONDITIONAL_OPERATORS: {
-    EQ: string;
-    NEQ: string;
-    GT: string;
-    GTE: string;
-    LT: string;
-    LTE: string;
-    AND: string;
-    OR: string;
-};
 declare const COMPONENT_NAMES: {
     createTask: string;
     createIssue: string;
@@ -36,6 +21,28 @@ declare const RECURRENCE_FREQUENCY_TYPES: {
     monthly: string;
     yearly: string;
     custom: string;
+    hourly: string;
+    minutely: string;
 };
-export { TRIGGER_SCOPE, TRIGGER_TYPES, CONDITION_THRESHOLD_TYPES, CONDITIONAL_OPERATORS, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, };
+declare const TRIGGER_STATUS: {
+    active: string;
+    inactive: string;
+};
+declare const TRIGGER_COMPONENT_TYPES: {
+    task: string;
+    issue: string;
+    communication: string;
+    obsolete: string;
+};
+declare const COMMUNICATION_COMPONENT_TYPES: {
+    email: string;
+    whatsapp: string;
+    call: string;
+    sms: string;
+};
+declare const COMMUNICATION_COMPONENT_SERVICE_TYPE: {
+    nodeBackend: string;
+    trigger: string;
+};
+export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, TRIGGER_STATUS, TRIGGER_COMPONENT_TYPES, COMMUNICATION_COMPONENT_TYPES, COMMUNICATION_COMPONENT_SERVICE_TYPE, };
 //# sourceMappingURL=triggerConst.d.ts.map

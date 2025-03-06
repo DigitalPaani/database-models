@@ -1,40 +1,34 @@
 /* eslint-disable no-unused-vars */
+import { Types } from "mongoose";
 import {
   COMPONENT_NAMES,
-  CONDITION_THRESHOLD_TYPES,
-  CONDITIONAL_OPERATORS,
   RECURRENCE_FREQUENCY_TYPES,
 } from "../constants/triggerConst";
 
 export namespace TriggerTypes {
-  export type TriggerCondition = {
-    operator: (typeof CONDITIONAL_OPERATORS)[keyof typeof CONDITIONAL_OPERATORS];
-    sensorTag: string;
-    threshold: number;
-    thresholdType: (typeof CONDITION_THRESHOLD_TYPES)[keyof typeof CONDITION_THRESHOLD_TYPES];
-  };
-
   export type Recurrence = {
     frequency?: (typeof RECURRENCE_FREQUENCY_TYPES)[keyof typeof RECURRENCE_FREQUENCY_TYPES];
-    interval?: number; // Default is 1
+    interval?: number; // Default is 1 (e.g., every 1 day, 2 hours, etc.)
     daysOfWeek?: number[]; // [0-6] for Monday to Sunday
-    dayOfMonth?: number[];
-    weekOfMonth?: number[];
-    month?: number[];
-  };
-
-  export type TriggerConditionDetails = {
-    operator: (typeof CONDITIONAL_OPERATORS)[keyof typeof CONDITIONAL_OPERATORS]; // The operator from the CONDITIONAL_OPERATORS enum
-    sensorTag: string; // The associated sensor tag
-    threshold: number; // The numeric threshold value
-    thresholdType: (typeof CONDITION_THRESHOLD_TYPES)[keyof typeof CONDITION_THRESHOLD_TYPES]; // The threshold type from CONDITION_THRESHOLD_TYPES enum
+    dayOfMonth?: number[]; // Specific days in a month
+    weekOfMonth?: number[]; // Specific weeks in a month
+    month?: number[]; // Specific months in a year
+    hours?: number[]; // [0-23] for hourly recurrence
+    minutes?: number[]; // [0-59] for minutely recurrence
   };
 
   export type Conditions = {
     resolutionFreq?: number;
     observationFreq?: number;
-    resolutionConditions?: TriggerConditionDetails[][];
-    observationConditions?: TriggerConditionDetails[][];
+    currentResolutionFreq?: number;
+    currentObservationFreq?: number;
+    resolutionSensorId?: Types.ObjectId;
+    resolutionSensorTag?: string;
+    observationSensorId?: Types.ObjectId;
+    observationSensorTag?: string;
+    resolutionTime?: number;
+    resolutionValue?: number;
+    resolutionUnit?: string;
   };
 
   export type TriggerData = {
