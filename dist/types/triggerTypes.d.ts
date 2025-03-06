@@ -8,6 +8,8 @@ export declare namespace TriggerTypes {
         dayOfMonth?: number[];
         weekOfMonth?: number[];
         month?: number[];
+        hours?: number[];
+        minutes?: number[];
     };
     type Conditions = {
         resolutionFreq?: number;

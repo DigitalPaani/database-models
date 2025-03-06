@@ -66,6 +66,26 @@ const recurrenceSchema = new mongoose_1.Schema({
     month: {
         type: [Number], // e.g., 1 for January (used for yearly recurrence)
     },
+    hours: {
+        type: [Number], // 0-23, e.g., [9, 15] for 9 AM and 3 PM
+        validate: {
+            validator: function (values) {
+                return values.every((v) => v >= 0 && v <= 23);
+            },
+            message: "Hours should be between 0 and 23.",
+        },
+        default: [],
+    },
+    minutes: {
+        type: [Number], // 0-59, e.g., [0, 30] for start of hour and half-past
+        validate: {
+            validator: function (values) {
+                return values.every((v) => v >= 0 && v <= 59);
+            },
+            message: "Minutes should be between 0 and 59.",
+        },
+        default: [],
+    },
 });
 const triggerSchema = new mongoose_1.Schema({
     name: {

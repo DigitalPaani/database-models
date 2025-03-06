@@ -27,6 +27,8 @@ const RECURRENCE_FREQUENCY_TYPES = {
     monthly: "MONTHLY",
     yearly: "YEARLY",
     custom: "CUSTOM",
+    hourly: "HOURLY",
+    minutely: "MINUTELY",
 };
 exports.RECURRENCE_FREQUENCY_TYPES = RECURRENCE_FREQUENCY_TYPES;
 const TRIGGER_STATUS = {

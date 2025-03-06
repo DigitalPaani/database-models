@@ -24,6 +24,8 @@ const RECURRENCE_FREQUENCY_TYPES = {
   monthly: "MONTHLY",
   yearly: "YEARLY",
   custom: "CUSTOM",
+  hourly: "HOURLY",
+  minutely: "MINUTELY",
 };
 
 const TRIGGER_STATUS = {

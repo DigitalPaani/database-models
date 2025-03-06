@@ -8,11 +8,13 @@ import {
 export namespace TriggerTypes {
   export type Recurrence = {
     frequency?: (typeof RECURRENCE_FREQUENCY_TYPES)[keyof typeof RECURRENCE_FREQUENCY_TYPES];
-    interval?: number; // Default is 1
+    interval?: number; // Default is 1 (e.g., every 1 day, 2 hours, etc.)
     daysOfWeek?: number[]; // [0-6] for Monday to Sunday
-    dayOfMonth?: number[];
-    weekOfMonth?: number[];
-    month?: number[];
+    dayOfMonth?: number[]; // Specific days in a month
+    weekOfMonth?: number[]; // Specific weeks in a month
+    month?: number[]; // Specific months in a year
+    hours?: number[]; // [0-23] for hourly recurrence
+    minutes?: number[]; // [0-59] for minutely recurrence
   };
 
   export type Conditions = {
@@ -25,8 +27,8 @@ export namespace TriggerTypes {
     observationSensorId?: Types.ObjectId;
     observationSensorTag?: string;
     resolutionTime?: number;
-    resolutionValue?: number,
-    resolutionUnit?: string,
+    resolutionValue?: number;
+    resolutionUnit?: string;
   };
 
   export type TriggerData = {

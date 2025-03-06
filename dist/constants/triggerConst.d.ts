@@ -21,6 +21,8 @@ declare const RECURRENCE_FREQUENCY_TYPES: {
     monthly: string;
     yearly: string;
     custom: string;
+    hourly: string;
+    minutely: string;
 };
 declare const TRIGGER_STATUS: {
     active: string;
