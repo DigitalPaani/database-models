@@ -23,6 +23,7 @@ const EVENT_TYPES = {
 const OBSOLETE_CONDITIONS = {
   observation: "observation",
   resolution: "resolution",
+  none: "none",
 };
 
 const TASK_OR_ISSUE_FILTERS = {
@@ -74,5 +75,5 @@ export default {
   TASK_OR_ISSUE_FILTERS,
   TRIGGER_TYPES,
   WHATSAPP_TEMPLATE_VARIABLES,
-  USER_GROUP_OR_SYSTEM
+  USER_GROUP_OR_SYSTEM,
 };

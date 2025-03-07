@@ -53,6 +53,7 @@ declare const _default: {
     OBSOLETE_CONDITIONS: {
         observation: string;
         resolution: string;
+        none: string;
     };
     TASK_OR_ISSUE_FILTERS: {
         open: string;
