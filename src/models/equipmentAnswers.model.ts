@@ -6,6 +6,7 @@ interface IEquipmentAnswer extends Document {
   answer: string;
 }
 
+// ! We don't need this schema
 // Todo: Fix the Schema Name
 const EquipmentQuestionsSchema = new Schema(
   {
