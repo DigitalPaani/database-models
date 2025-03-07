@@ -39,6 +39,9 @@ const EquipmentQuestionsSchema = new mongoose_1.Schema({
     equipmentType: String,
     question: String,
     type: { type: String, default: null },
+    options: [String],
+    questionType: String,
+    order: Number,
 }, { timestamps: true });
 const EquipmentQuestionsModel = mongoose_1.default.model("EquipmentQuestions", EquipmentQuestionsSchema, "EquipmentQuestions");
 exports.EquipmentQuestionsModel = EquipmentQuestionsModel;
