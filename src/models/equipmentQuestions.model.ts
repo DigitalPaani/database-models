@@ -11,12 +11,13 @@ interface IEquipmentQuestion extends Document {
 
 const EquipmentQuestionsSchema = new Schema(
   {
-    equipmentType: String,
-    question: String,
+    equipmentType: String, // Todo: nodeType
+    question: String, // Todo: Array of Questions
+    // Todo: Fix these
     type: { type: String, default: null },
     options: [String],
     questionType:String,
-    order: Number,
+    order: Number, // Todo: Not Required
   },
   { timestamps: true }
 );

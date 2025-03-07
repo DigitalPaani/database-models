@@ -6,10 +6,12 @@ interface IEquipmentAnswer extends Document {
   answer: string;
 }
 
+// Todo: Fix the Schema Name
 const EquipmentQuestionsSchema = new Schema(
   {
-    assetId: String,
-    equipmentType: String,
+    assetId: String, // Todo: nodeID
+    equipmentType: String, // Todo: nodeType
+    // Todo: QuestionID
     answer: Schema.Types.Mixed,
   },
   { timestamps: true }

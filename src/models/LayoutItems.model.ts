@@ -19,7 +19,8 @@ interface ILayoutItem extends Document {
 
 const LayoutItemsSchema = new Schema<ILayoutItem>(
   {
-    type: { type: String, required: true },
+    type: { type: String, required: true }, 
+    // TODO: Add ABBREVIATION
     size: {
       height: { type: Number, required: true },
       width: { type: Number, required: true },
@@ -31,7 +32,7 @@ const LayoutItemsSchema = new Schema<ILayoutItem>(
         height: { type: Number, required: true },
       },
     },
-    family: { type: String, required: true },
+    family: { type: String, required: true }, // TODO: ENUM - Asset, Equipment, Sensors
   },
   { timestamps: true }
 );

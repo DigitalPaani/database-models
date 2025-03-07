@@ -7,7 +7,7 @@ interface ILayout extends Document {
 
 const LayoutSchema = new Schema(
   {
-    assetId: Schema.Types.ObjectId,
+    assetId: Schema.Types.ObjectId, // Todo: Make it nodeID
     layout: mongoose.Schema.Types.Mixed,
   },
   { timestamps: true }
