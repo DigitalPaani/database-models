@@ -2,7 +2,7 @@ import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 require('./newUserModel');
 
-import { TASK_COMPLETION_ENUMS, ASSIGNEE_METHOD_ENUMS, ESCALATION_UNITS_ENUMS, COMMUNICATION_MEDIUM_ENUMS } from '../constants/taskManagementConst';
+import { TASK_COMPLETION_ENUMS, ASSIGNEE_METHOD_ENUMS, COMMUNICATION_MEDIUM_ENUMS, TASK_TYPES } from '../constants/taskManagementConst';
 
 interface IWorkflowDetails extends Document {
   workflowId: Types.ObjectId;
@@ -214,7 +214,8 @@ const taskSchema = new Schema<ITask>(
     },
     taskType: {
       type: String,
-      required: false,
+      enum: TASK_TYPES.map(taskType => taskType.value),
+      required: true
     },
     taskCompletion: {
       type: String,

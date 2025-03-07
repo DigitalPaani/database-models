@@ -8,6 +8,19 @@ export const SKILL_TYPES = [
     value: "PLANT_MANAGER",
   },
 ];
+
+export const TASK_TYPES = [
+  {
+    label: "Electrical",
+    value: "ELECTRICAL",
+  },
+  {
+    label: "Plant Manager",
+    value: "PLANT_MANAGER",
+  },
+];
+
+
 export const SKILL_LEVELS = [
   {
     label: "Low",

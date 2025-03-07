@@ -2,6 +2,10 @@ export declare const SKILL_TYPES: {
     label: string;
     value: string;
 }[];
+export declare const TASK_TYPES: {
+    label: string;
+    value: string;
+}[];
 export declare const SKILL_LEVELS: {
     label: string;
     value: string;
