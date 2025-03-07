@@ -1,33 +1,34 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import {
   COMPONENT_NAMES,
-  CONDITION_THRESHOLD_TYPES,
-  CONDITIONAL_OPERATORS,
   RECURRENCE_FREQUENCY_TYPES,
   TRIGGER_SCOPE,
+  TRIGGER_STATUS,
   TRIGGER_TYPES,
 } from "../constants/triggerConst";
 import type { Document, Model, Types } from "mongoose";
 import type { TriggerTypes } from "../types/triggerTypes";
 
-const Schema = mongoose.Schema;
-
 interface ITriggerDocument extends Document {
   name: string;
   description: string;
-  dateAsText?: string;
+  recurrenceText?: string;
   scope: (typeof TRIGGER_SCOPE)[keyof typeof TRIGGER_SCOPE];
+  triggerTag: string;
   userGroup?: Types.ObjectId; // Array of ObjectId references
+  workspace?: Types.ObjectId;
+  assets?: Types.ObjectId[];
   type: (typeof TRIGGER_TYPES)[keyof typeof TRIGGER_TYPES];
   startDate?: number;
   endDate?: number;
   totalOccurrence?: number;
-  occurrenceLeft?: number;
   recurrence?: TriggerTypes.Recurrence;
   conditions?: TriggerTypes.Conditions;
-  triggerComponent: TriggerTypes.TriggerData[];
+  triggerComponents: Types.ObjectId[];
   createdBy: Types.ObjectId; // ObjectId reference
-  isActive: boolean; // Default is true
+  triggerSensorId: Types.ObjectId;
+  status: string;
+  isOpen: boolean;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -63,27 +64,25 @@ const recurrenceSchema = new Schema({
   month: {
     type: [Number], // e.g., 1 for January (used for yearly recurrence)
   },
-});
-
-const triggerConditionSchema = new Schema({
-  operator: {
-    type: String,
-    required: true,
-    enum: Object.values(CONDITIONAL_OPERATORS),
+  hours: {
+    type: [Number], // 0-23, e.g., [9, 15] for 9 AM and 3 PM
+    validate: {
+      validator: function (values: number[]): boolean {
+        return values.every((v) => v >= 0 && v <= 23);
+      },
+      message: "Hours should be between 0 and 23.",
+    },
+    default: [],
   },
-  sensorTag: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  threshold: {
-    type: Number,
-    required: true,
-  },
-  thresholdType: {
-    type: String,
-    required: true,
-    enum: Object.values(CONDITION_THRESHOLD_TYPES),
+  minutes: {
+    type: [Number], // 0-59, e.g., [0, 30] for start of hour and half-past
+    validate: {
+      validator: function (values: number[]): boolean {
+        return values.every((v) => v >= 0 && v <= 59);
+      },
+      message: "Minutes should be between 0 and 59.",
+    },
+    default: [],
   },
 });
 
@@ -99,7 +98,7 @@ const triggerSchema = new Schema(
       required: true,
       trim: true,
     },
-    dateAsText: {
+    recurrenceText: {
       type: String,
       trim: true,
     },
@@ -108,11 +107,22 @@ const triggerSchema = new Schema(
       required: true,
       enum: Object.values(TRIGGER_SCOPE),
     },
+    triggerTag: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
     userGroup: {
       type: Schema.Types.ObjectId,
       ref: "UserGroup",
       required: false,
     },
+    workspace: {
+      type: Schema.ObjectId,
+      ref: "NewWorkspace",
+    },
+    assets: { type: [Schema.Types.ObjectId], ref: "Plant", required: false },
     type: {
       type: String,
       required: true,
@@ -121,27 +131,38 @@ const triggerSchema = new Schema(
     startDate: { type: Number },
     endDate: { type: Number },
     totalOccurrence: { type: Number },
-    occurrenceLeft: { type: Number },
     recurrence: { type: recurrenceSchema, required: false },
     conditions: {
       type: {
         resolutionFreq: Number,
         observationFreq: Number,
-        resolutionConditions: [[triggerConditionSchema]],
-        observationConditions: [[triggerConditionSchema]],
+        currentResolutionFreq: { type: Number, default: 0 },
+        currentObservationFreq: { type: Number, default: 0 },
+        resolutionSensorId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Sensors",
+        },
+        resolutionSensorTag: {
+          type: String,
+          required: false,
+        },
+        observationSensorId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Sensors",
+        },
+        observationSensorTag: {
+          type: String,
+          required: false,
+        },
+        resolutionValue: Number,
+        resolutionUnit: String,
+        resolutionTime: Number,
       },
       required: false,
     },
-    triggerComponent: {
-      type: [
-        {
-          componentName: {
-            type: String,
-            enum: Object.values(COMPONENT_NAMES),
-          },
-          componentData: Object,
-        },
-      ],
+    triggerComponents: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "triggerComponents",
       required: true,
     },
     createdBy: {
@@ -149,7 +170,17 @@ const triggerSchema = new Schema(
       ref: "NewUser",
       required: true,
     },
-    isActive: { type: Boolean, required: true, default: true },
+    triggerSensorId: {
+      type: Schema.Types.ObjectId,
+      ref: "Sensors",
+      required: true,
+    },
+    status: {
+      type: String,
+      enum: Object.values(TRIGGER_STATUS),
+      default: TRIGGER_STATUS.active,
+    },
+    isOpen: { type: Boolean, required: true, default: false },
     isDeleted: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }

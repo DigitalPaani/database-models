@@ -41,14 +41,6 @@ declare const PlantModel: mongoose.Model<IPlant, {}, {}, {}, Document<unknown, {
     _id: unknown;
 }> & {
     __v: number;
-}, mongoose.Schema<IPlant, mongoose.Model<IPlant, any, any, any, Document<unknown, any, IPlant> & IPlant & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, IPlant, Document<unknown, {}, mongoose.FlatRecord<IPlant>> & mongoose.FlatRecord<IPlant> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}>>;
-export { IPlant, PlantModel };
+}, any>;
+export { PlantModel, IPlant };
 //# sourceMappingURL=plantModel.d.ts.map
