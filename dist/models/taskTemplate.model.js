@@ -69,6 +69,7 @@ const taskTemplateSchema = new mongoose_1.Schema({
     },
     taskType: {
         type: String,
+        enum: taskManagementConst_1.TASK_TYPES.map(taskType => taskType.value),
         required: true,
     },
     workflowId: {

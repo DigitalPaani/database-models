@@ -7,6 +7,10 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    TASK_TYPES: {
+        label: string;
+        value: string;
+    }[];
     CREATE_WORKFLOW_AVAILABLE_ACTIONS: {
         navbar: {
             label: string;
