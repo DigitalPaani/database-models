@@ -43,6 +43,7 @@ interface ICommunicationComponent extends Document {
     taskLimit?: number;
     issueFilter?: string;
     issueLimit?: number;
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }

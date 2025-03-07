@@ -51,7 +51,7 @@ const WorkflowDetailsSchema = new mongoose_1.Schema({
     description: { type: String },
     nodes: [WorkflowNodeSchema],
     edges: [WorkflowEdgeSchema],
-    workflowActions: [mongoose_1.Schema.Types.Mixed]
+    workflowActions: [mongoose_1.Schema.Types.Mixed],
 }, { _id: false });
 const ActionNodeSchema = new mongoose_1.Schema({
     id: { type: String },
@@ -118,6 +118,7 @@ const TaskComponentSchema = new mongoose_1.Schema({
     parentIndex: { type: Number },
     parentAutocompleteId: { type: String },
     workflowActions: { type: [mongoose_1.Schema.Types.Mixed] },
+    isDeleted: { type: Boolean, default: false },
 }, { timestamps: true, strict: false });
 const TaskComponentsModel = (0, mongoose_1.model)("taskComponents", TaskComponentSchema, "taskComponents");
 exports.TaskComponentsModel = TaskComponentsModel;

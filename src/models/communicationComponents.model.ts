@@ -31,6 +31,7 @@ interface ICommunicationComponent extends Document {
   taskLimit?: number;
   issueFilter?: string;
   issueLimit?: number;
+  isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -82,6 +83,7 @@ const communicationComponentsSchema = new Schema(
       enum: Object.values(commonConstants.TASK_OR_ISSUE_FILTERS),
     },
     issueLimit: { type: Number },
+    isDeleted: { type: Boolean, default: false },
   },
   { timestamps: true, strict: false }
 );

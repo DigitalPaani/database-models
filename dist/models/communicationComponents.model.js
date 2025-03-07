@@ -56,6 +56,7 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         enum: Object.values(commonConstants_1.default.TASK_OR_ISSUE_FILTERS),
     },
     issueLimit: { type: Number },
+    isDeleted: { type: Boolean, default: false },
 }, { timestamps: true, strict: false });
 const CommunicationComponentsModel = (0, mongoose_1.model)("communicationComponents", communicationComponentsSchema, "communicationComponents");
 exports.CommunicationComponentsModel = CommunicationComponentsModel;
