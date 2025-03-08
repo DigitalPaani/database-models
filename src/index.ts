@@ -47,7 +47,7 @@ import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
-
+import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
 import {
   TaskComponentsModel,
   ITaskComponent,
@@ -115,6 +115,7 @@ export type {
   IQuestion,
   IBatch,
   IAnswer,
+  IEquipmentQuestion
 };
 
 // exports the models
@@ -154,5 +155,6 @@ export {
   QuestionSchemaModel,
   BatchSchemaModel,
   AnswerSchemaModel,
+  EquipmentQuestionsModel,
   SensorsModel,
 };

@@ -36,7 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SensorsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -95,6 +95,8 @@ const whatsappTemplate_model_1 = require("./models/whatsappTemplate.model");
 Object.defineProperty(exports, "WhatsappTemplateModel", { enumerable: true, get: function () { return whatsappTemplate_model_1.WhatsappTemplateModel; } });
 const triggerComponents_model_1 = require("./models/triggerComponents.model");
 Object.defineProperty(exports, "TriggerComponentModel", { enumerable: true, get: function () { return triggerComponents_model_1.TriggerComponentModel; } });
+const equipmentQuestions_model_1 = require("./models/equipmentQuestions.model");
+Object.defineProperty(exports, "EquipmentQuestionsModel", { enumerable: true, get: function () { return equipmentQuestions_model_1.EquipmentQuestionsModel; } });
 const taskComponents_model_1 = require("./models/taskComponents.model");
 Object.defineProperty(exports, "TaskComponentsModel", { enumerable: true, get: function () { return taskComponents_model_1.TaskComponentsModel; } });
 const communicationComponents_model_1 = require("./models/communicationComponents.model");
