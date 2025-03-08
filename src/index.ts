@@ -50,6 +50,7 @@ import {
 import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
 import {ILayout,LayoutModel} from './models/LayoutSchema.model'
 import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
+import { SidebarLayoutItemsModel,ISidebarLayoutItem } from "./models/SidebarLayoutItems.model";
 import {
   TaskComponentsModel,
   ITaskComponent,
@@ -119,7 +120,8 @@ export type {
   IAnswer,
   IEquipmentQuestion,
   ILayout,
-  ILayoutEquipment
+  ILayoutEquipment,
+  ISidebarLayoutItem
 };
 
 // exports the models
@@ -162,5 +164,6 @@ export {
   EquipmentQuestionsModel,
   SensorsModel,
   LayoutModel,
-  LayoutEquipmentModel
+  LayoutEquipmentModel,
+  SidebarLayoutItemsModel
 };
