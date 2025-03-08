@@ -48,6 +48,8 @@ import {
   ITriggerComponent,
 } from "./models/triggerComponents.model";
 import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
+import {ILayout,LayoutModel} from './models/LayoutSchema.model'
+import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
 import {
   TaskComponentsModel,
   ITaskComponent,
@@ -115,7 +117,9 @@ export type {
   IQuestion,
   IBatch,
   IAnswer,
-  IEquipmentQuestion
+  IEquipmentQuestion,
+  ILayout,
+  ILayoutEquipment
 };
 
 // exports the models
@@ -157,4 +161,6 @@ export {
   AnswerSchemaModel,
   EquipmentQuestionsModel,
   SensorsModel,
+  LayoutModel,
+  LayoutEquipmentModel
 };
