@@ -33,15 +33,12 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentQuestionsModel = void 0;
+exports.LayoutEquipmentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const EquipmentQuestionsSchema = new mongoose_1.Schema({
+const LayoutEquipments = new mongoose_1.Schema({
+    nodeId: String,
     nodeType: String,
-    question: String,
-    type: { type: String, default: null },
-    options: [String],
-    questionType: String,
-    order: Number, // Todo: Not Required
+    parentId: { type: String, default: null },
 }, { timestamps: true });
-const EquipmentQuestionsModel = mongoose_1.default.model("EquipmentQuestions", EquipmentQuestionsSchema, "EquipmentQuestions");
-exports.EquipmentQuestionsModel = EquipmentQuestionsModel;
+const LayoutEquipmentModel = mongoose_1.default.model("LayoutEquipments", LayoutEquipments, "LayoutEquipments");
+exports.LayoutEquipmentModel = LayoutEquipmentModel;

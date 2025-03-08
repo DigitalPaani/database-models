@@ -1,22 +1,21 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
 interface IEquipmentQuestion extends Document {
-  equipmentType: string;
+  nodeType: string;
   question: string;
   type: string | null;
   options: [string];
-  questionType:string;
+  questionType: string;
   order: number;
 }
 
 const EquipmentQuestionsSchema = new Schema(
   {
-    equipmentType: String, // Todo: nodeType
-    question: String, // Todo: Array of Questions
-    // Todo: Fix these
+    nodeType: String, 
+    question: String,
     type: { type: String, default: null },
     options: [String],
-    questionType:String,
+    questionType: String,
     order: Number, // Todo: Not Required
   },
   { timestamps: true }

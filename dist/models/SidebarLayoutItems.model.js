@@ -33,15 +33,23 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentQuestionsModel = void 0;
+exports.SidebarLayoutItemsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const EquipmentQuestionsSchema = new mongoose_1.Schema({
-    nodeType: String,
-    question: String,
-    type: { type: String, default: null },
-    options: [String],
-    questionType: String,
-    order: Number, // Todo: Not Required
+const SidebarLayoutItemsSchema = new mongoose_1.Schema({
+    type: { type: String, required: true },
+    abbr: { type: String, required: true },
+    size: {
+        height: { type: Number, required: true },
+        width: { type: Number, required: true },
+    },
+    name: { type: String, required: true },
+    targetAttributes: {
+        size: {
+            width: { type: Number, required: true },
+            height: { type: Number, required: true },
+        },
+    },
+    family: { type: String, required: true }, // TODO: ENUM - Asset, Equipment, Sensors
 }, { timestamps: true });
-const EquipmentQuestionsModel = mongoose_1.default.model("EquipmentQuestions", EquipmentQuestionsSchema, "EquipmentQuestions");
-exports.EquipmentQuestionsModel = EquipmentQuestionsModel;
+const SidebarLayoutItemsModel = mongoose_1.default.model("SidebarLayoutItems", SidebarLayoutItemsSchema, "SidebarLayoutItems");
+exports.SidebarLayoutItemsModel = SidebarLayoutItemsModel;

@@ -9,18 +9,19 @@ interface ITargetAttributes {
   size: ISize;
 }
 
-interface ILayoutItem extends Document {
+interface ISidebarLayoutItem extends Document {
   type: string;
+  abbr: string;
   size: ISize;
   name: string;
   targetAttributes: ITargetAttributes;
   family: string;
 }
 
-const LayoutItemsSchema = new Schema<ILayoutItem>(
+const SidebarLayoutItemsSchema = new Schema<ISidebarLayoutItem>(
   {
-    type: { type: String, required: true }, 
-    // TODO: Add ABBREVIATION
+    type: { type: String, required: true },
+    abbr: { type: String, required: true },
     size: {
       height: { type: Number, required: true },
       width: { type: Number, required: true },
@@ -37,10 +38,10 @@ const LayoutItemsSchema = new Schema<ILayoutItem>(
   { timestamps: true }
 );
 
-const LayoutItemsModel = mongoose.model<ILayoutItem>(
-  "LayoutItems",
-  LayoutItemsSchema,
-  "LayoutItems"
+const SidebarLayoutItemsModel = mongoose.model<ISidebarLayoutItem>(
+  "SidebarLayoutItems",
+  SidebarLayoutItemsSchema,
+  "SidebarLayoutItems"
 );
 
-export { LayoutItemsModel, ILayoutItem };
+export { SidebarLayoutItemsModel, ISidebarLayoutItem };

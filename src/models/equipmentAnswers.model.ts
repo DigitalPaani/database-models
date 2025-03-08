@@ -8,7 +8,7 @@ interface IEquipmentAnswer extends Document {
 
 // ! We don't need this schema
 // Todo: Fix the Schema Name
-const EquipmentQuestionsSchema = new Schema(
+const EquipmentAnswerSchema = new Schema(
   {
     assetId: String, // Todo: nodeID
     equipmentType: String, // Todo: nodeType
@@ -20,7 +20,7 @@ const EquipmentQuestionsSchema = new Schema(
 
 const EquipmentAnswersModel = mongoose.model<IEquipmentAnswer>(
   "EquipmentAnswers",
-  EquipmentQuestionsSchema,
+  EquipmentAnswerSchema,
   "EquipmentAnswers"
 );
 

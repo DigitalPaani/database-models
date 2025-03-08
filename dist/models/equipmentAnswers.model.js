@@ -35,10 +35,13 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EquipmentAnswersModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const EquipmentQuestionsSchema = new mongoose_1.Schema({
-    assetId: String,
-    equipmentType: String,
+// ! We don't need this schema
+// Todo: Fix the Schema Name
+const EquipmentAnswerSchema = new mongoose_1.Schema({
+    assetId: String, // Todo: nodeID
+    equipmentType: String, // Todo: nodeType
+    // Todo: QuestionID
     answer: mongoose_1.Schema.Types.Mixed,
 }, { timestamps: true });
-const EquipmentAnswersModel = mongoose_1.default.model("EquipmentAnswers", EquipmentQuestionsSchema, "EquipmentAnswers");
+const EquipmentAnswersModel = mongoose_1.default.model("EquipmentAnswers", EquipmentAnswerSchema, "EquipmentAnswers");
 exports.EquipmentAnswersModel = EquipmentAnswersModel;
