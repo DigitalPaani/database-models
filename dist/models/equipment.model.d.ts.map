@@ -1,0 +1,1 @@
+{"version":3,"file":"equipment.model.d.ts","sourceRoot":"","sources":["../../src/models/equipment.model.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAE,QAAQ,EAAU,MAAM,UAAU,CAAC;AAEtD,UAAU,gBAAiB,SAAQ,QAAQ;IACzC,MAAM,EAAE,MAAM,CAAC;IACf,QAAQ,EAAE,MAAM,CAAC;IACjB,QAAQ,EAAE,MAAM,CAAC;CAClB;AAWD,QAAA,MAAM,oBAAoB;;;;OAIzB,CAAC;AAEF,OAAO,EAAE,oBAAoB,EAAE,gBAAgB,EAAE,CAAC"}
