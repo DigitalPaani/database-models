@@ -37,6 +37,7 @@ interface ITaskComponent extends Document {
     parentIndex: number;
     parentAutocompleteId: string;
     workflowActions: any;
+    isDeleted: boolean;
 }
 interface IWorkflowDetails {
     name: string;

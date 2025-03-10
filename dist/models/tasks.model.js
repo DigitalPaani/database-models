@@ -175,7 +175,8 @@ const taskSchema = new mongoose_1.Schema({
     },
     taskType: {
         type: String,
-        required: false,
+        enum: taskManagementConst_1.TASK_TYPES.map(taskType => taskType.value),
+        required: true,
     },
     taskCompletion: {
         type: String,

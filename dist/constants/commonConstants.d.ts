@@ -7,6 +7,10 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    TASK_TYPES: {
+        label: string;
+        value: string;
+    }[];
     CREATE_WORKFLOW_AVAILABLE_ACTIONS: {
         navbar: {
             label: string;
@@ -49,6 +53,7 @@ declare const _default: {
     OBSOLETE_CONDITIONS: {
         observation: string;
         resolution: string;
+        none: string;
     };
     TASK_OR_ISSUE_FILTERS: {
         open: string;

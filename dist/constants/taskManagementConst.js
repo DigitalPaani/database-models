@@ -1,7 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.COMMUNICATION_MEDIUM_ENUMS = exports.ESCALATION_UNITS_ENUMS = exports.ASSIGNEE_METHOD_ENUMS = exports.TASK_COMPLETION_ENUMS = exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = exports.SKILL_LEVELS = exports.SKILL_TYPES = void 0;
+exports.COMMUNICATION_MEDIUM_ENUMS = exports.ESCALATION_UNITS_ENUMS = exports.ASSIGNEE_METHOD_ENUMS = exports.TASK_COMPLETION_ENUMS = exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = exports.SKILL_LEVELS = exports.TASK_TYPES = exports.SKILL_TYPES = void 0;
 exports.SKILL_TYPES = [
+    {
+        label: "Electrical",
+        value: "ELECTRICAL",
+    },
+    {
+        label: "Plant Manager",
+        value: "PLANT_MANAGER",
+    },
+];
+exports.TASK_TYPES = [
     {
         label: "Electrical",
         value: "ELECTRICAL",
