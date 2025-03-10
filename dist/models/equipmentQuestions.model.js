@@ -39,7 +39,7 @@ const EquipmentQuestionsSchema = new mongoose_1.Schema({
     questionId: { type: String, required: true },
     nodeType: { type: String, required: true },
     question: { type: String, required: true },
-    type: { type: String, required: true, default: null },
+    type: { type: String, default: null },
     options: [String],
     questionType: { type: String, required: true },
     order: Number, // Todo: Not Required
