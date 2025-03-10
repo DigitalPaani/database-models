@@ -50,6 +50,7 @@ const SidebarLayoutItemsSchema = new mongoose_1.Schema({
         },
     },
     family: { type: String, required: true }, // TODO: ENUM - Asset, Equipment, Sensors
+    category: { type: String, required: true },
 }, { timestamps: true });
 const SidebarLayoutItemsModel = mongoose_1.default.model("SidebarLayoutItems", SidebarLayoutItemsSchema, "SidebarLayoutItems");
 exports.SidebarLayoutItemsModel = SidebarLayoutItemsModel;

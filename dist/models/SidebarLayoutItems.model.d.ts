@@ -13,6 +13,7 @@ interface ISidebarLayoutItem extends Document {
     name: string;
     targetAttributes: ITargetAttributes;
     family: string;
+    category: string;
 }
 declare const SidebarLayoutItemsModel: mongoose.Model<ISidebarLayoutItem, {}, {}, {}, mongoose.Document<unknown, {}, ISidebarLayoutItem> & ISidebarLayoutItem & {
     _id: mongoose.Types.ObjectId;

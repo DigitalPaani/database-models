@@ -16,6 +16,7 @@ interface ISidebarLayoutItem extends Document {
   name: string;
   targetAttributes: ITargetAttributes;
   family: string;
+  category: string;
 }
 
 const SidebarLayoutItemsSchema = new Schema<ISidebarLayoutItem>(
@@ -34,6 +35,7 @@ const SidebarLayoutItemsSchema = new Schema<ISidebarLayoutItem>(
       },
     },
     family: { type: String, required: true }, // TODO: ENUM - Asset, Equipment, Sensors
+    category: { type: String, required: true },
   },
   { timestamps: true }
 );

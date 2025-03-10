@@ -39,8 +39,9 @@ const mongoose_1 = __importStar(require("mongoose"));
 // Todo: Fix the Schema Name
 const EquipmentAnswerSchema = new mongoose_1.Schema({
     assetId: String, // Todo: nodeID
-    equipmentType: String, // Todo: nodeType
-    // Todo: QuestionID
+    nodeType: String, // Todo: nodeType
+    nodeId: String,
+    questionId: String,
     answer: mongoose_1.Schema.Types.Mixed,
 }, { timestamps: true });
 const EquipmentAnswersModel = mongoose_1.default.model("EquipmentAnswers", EquipmentAnswerSchema, "EquipmentAnswers");

@@ -1,12 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
 interface IEquipmentAnswer extends Document {
     assetId: string;
-    equipmentType: string;
+    nodeType: string;
+    nodeId: string;
+    questionId: string;
     answer: string;
 }
-declare const EquipmentAnswersModel: mongoose.Model<IEquipmentAnswer, {}, {}, {}, mongoose.Document<unknown, {}, IEquipmentAnswer> & IEquipmentAnswer & {
-    _id: mongoose.Types.ObjectId;
-} & {
+declare const EquipmentAnswersModel: mongoose.Model<IEquipmentAnswer, {}, {}, {}, mongoose.Document<unknown, {}, IEquipmentAnswer> & IEquipmentAnswer & Required<{
+    _id: unknown;
+}> & {
     __v: number;
 }, any>;
 export { EquipmentAnswersModel, IEquipmentAnswer };

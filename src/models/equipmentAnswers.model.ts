@@ -1,8 +1,10 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
 interface IEquipmentAnswer extends Document {
   assetId: string;
-  equipmentType: string;
+  nodeType: string;
+  nodeId: string;
+  questionId: string;
   answer: string;
 }
 
@@ -11,8 +13,9 @@ interface IEquipmentAnswer extends Document {
 const EquipmentAnswerSchema = new Schema(
   {
     assetId: String, // Todo: nodeID
-    equipmentType: String, // Todo: nodeType
-    // Todo: QuestionID
+    nodeType: String, // Todo: nodeType
+    nodeId: String,
+    questionId: String,
     answer: Schema.Types.Mixed,
   },
   { timestamps: true }
