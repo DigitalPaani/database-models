@@ -36,9 +36,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LayoutEquipmentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const LayoutEquipments = new mongoose_1.Schema({
-    nodeId: String,
+    refId: String,
+    assetId: String,
     nodeType: String,
-    parentId: { type: String, default: null },
+    itemDetails: {
+        type: mongoose_1.Schema.Types.Mixed,
+        default: {},
+    },
 }, { timestamps: true });
 const LayoutEquipmentModel = mongoose_1.default.model("LayoutEquipments", LayoutEquipments, "LayoutEquipments");
 exports.LayoutEquipmentModel = LayoutEquipmentModel;

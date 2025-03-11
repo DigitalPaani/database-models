@@ -1,16 +1,21 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 interface ILayoutEquipment extends Document {
-  nodeId: string;
+  refId: string;
+  assetId: string;
   nodeType: string;
-  parentId: string;
+  itemDetails: string;
 }
 
 const LayoutEquipments = new Schema(
   {
-    nodeId: String,
+    refId: String,
+    assetId: String,
     nodeType: String,
-    parentId: { type: String, default: null },
+    itemDetails: {
+      type: Schema.Types.Mixed,
+      default: {},
+    },
   },
   { timestamps: true }
 );
