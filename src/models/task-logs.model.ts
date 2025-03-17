@@ -17,11 +17,11 @@ const taskLogSchema = new Schema<ITaskLog>(
     },
     url: {
       type: String,
-      required: false,
+      default: "",
     },
     message: {
       type: String,
-      required: false,
+      default: "",
     },
     isArchived: {
       type: Boolean,

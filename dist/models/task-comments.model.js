@@ -35,6 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskCommentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+require('./newUserModel');
 const taskCommentSchema = new mongoose_1.Schema({
     taskId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
@@ -50,6 +51,7 @@ const taskCommentSchema = new mongoose_1.Schema({
     },
     createdBy: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
 }, {

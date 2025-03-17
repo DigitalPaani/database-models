@@ -1,5 +1,7 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
+require('./newUserModel');
+
 
 interface ITaskComment extends Document {
   taskId: Types.ObjectId;
@@ -24,6 +26,7 @@ const taskCommentSchema = new Schema<ITaskComment>(
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "NewUser",
       required: true,
     },
   },

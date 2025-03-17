@@ -68,7 +68,6 @@ import { NewUserModel, INewUser } from "./models/newUserModel";
 
 import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
-import { TaskUploadMediaModel, ITaskUploadMedia } from "./models/task-upload-media.model";
 import { TaskCommentModel, ITaskComment } from "./models/task-comments.model";
 import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
 
@@ -119,7 +118,6 @@ export type {
   IQuestion,
   IBatch,
   IAnswer,
-  ITaskUploadMedia,
   ITaskComment,
   ITaskLog
 };
@@ -162,7 +160,6 @@ export {
   BatchSchemaModel,
   AnswerSchemaModel,
   SensorsModel,
-  TaskUploadMediaModel,
   TaskCommentModel,
   TaskLogModel
 };

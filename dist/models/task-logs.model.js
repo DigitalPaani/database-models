@@ -43,11 +43,11 @@ const taskLogSchema = new mongoose_1.Schema({
     },
     url: {
         type: String,
-        required: false,
+        default: "",
     },
     message: {
         type: String,
-        required: false,
+        default: "",
     },
     isArchived: {
         type: Boolean,
