@@ -1,18 +1,23 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
-interface ITaskWorkLog extends Document {
+interface ITaskLog extends Document {
   taskId: Types.ObjectId;
-  message: String;
-  isArchived: Boolean;
+  url: string;
+  message: string;
+  isArchived: boolean;
   createdBy: Types.ObjectId;
 };
 
-const taskWorkLogSchema = new Schema<ITaskWorkLog>(
+const taskLogSchema = new Schema<ITaskLog>(
   {
     taskId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
+    },
+    url: {
+      type: String,
+      required: false,
     },
     message: {
       type: String,
@@ -33,10 +38,10 @@ const taskWorkLogSchema = new Schema<ITaskWorkLog>(
   }
 );
 
-const TaskWorkLogModel: Model<ITaskWorkLog> = mongoose.model<ITaskWorkLog>(
-  "task-work-logs",
-  taskWorkLogSchema,
-  "task-work-logs"
+const TaskLogModel: Model<ITaskLog> = mongoose.model<ITaskLog>(
+  "task-logs",
+  taskLogSchema,
+  "task-logs"
 );
 
-export { TaskWorkLogModel, ITaskWorkLog };
+export { TaskLogModel, ITaskLog };

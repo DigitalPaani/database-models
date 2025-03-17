@@ -70,7 +70,7 @@ import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
 import { TaskUploadMediaModel, ITaskUploadMedia } from "./models/task-upload-media.model";
 import { TaskCommentModel, ITaskComment } from "./models/task-comments.model";
-import { TaskWorkLogModel, ITaskWorkLog } from "./models/task-work-logs.model";
+import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
 
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
@@ -121,7 +121,7 @@ export type {
   IAnswer,
   ITaskUploadMedia,
   ITaskComment,
-  ITaskWorkLog
+  ITaskLog
 };
 
 // exports the models
@@ -164,5 +164,5 @@ export {
   SensorsModel,
   TaskUploadMediaModel,
   TaskCommentModel,
-  TaskWorkLogModel
+  TaskLogModel
 };
