@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 
 interface ITaskLog extends Document {
   taskId: Types.ObjectId;
-  transitionedTo: string;
+  transition: string;
   url: string;
   message: string;
   type: string;
@@ -17,7 +17,7 @@ const taskLogSchema = new Schema<ITaskLog>(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
-    transitionedTo: {
+    transition: { // FROM NODE -> TO NODE
       type: String,
       required: true
     },
