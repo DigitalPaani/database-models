@@ -3,8 +3,10 @@ import mongoose, { Schema, Types } from "mongoose";
 
 interface ITaskLog extends Document {
   taskId: Types.ObjectId;
+  transitionedTo: string;
   url: string;
   message: string;
+  type: string;
   isArchived: boolean;
   createdBy: Types.ObjectId;
 };
@@ -15,6 +17,10 @@ const taskLogSchema = new Schema<ITaskLog>(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
+    transitionedTo: {
+      type: String,
+      required: true
+    },
     url: {
       type: String,
       default: "",
@@ -22,6 +28,10 @@ const taskLogSchema = new Schema<ITaskLog>(
     message: {
       type: String,
       default: "",
+    },
+    type: {
+      type: String,
+      enum: ["RCA", "MEDIA"]
     },
     isArchived: {
       type: Boolean,

@@ -41,6 +41,10 @@ const taskLogSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
     },
+    transitionedTo: {
+        type: String,
+        required: true
+    },
     url: {
         type: String,
         default: "",
@@ -48,6 +52,10 @@ const taskLogSchema = new mongoose_1.Schema({
     message: {
         type: String,
         default: "",
+    },
+    type: {
+        type: String,
+        enum: ["RCA", "MEDIA"]
     },
     isArchived: {
         type: Boolean,
