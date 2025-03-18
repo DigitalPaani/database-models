@@ -2,7 +2,7 @@ import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 interface ITaskLog extends Document {
     taskId: Types.ObjectId;
-    transitionedTo: string;
+    transition: string;
     url: string;
     message: string;
     type: string;

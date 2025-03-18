@@ -41,7 +41,7 @@ const taskLogSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
     },
-    transitionedTo: {
+    transition: {
         type: String,
         required: true
     },
