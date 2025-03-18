@@ -41,7 +41,7 @@ const EquipmentQuestionsSchema = new mongoose_1.Schema({
     question: { type: String, required: true },
     type: { type: String, default: null },
     options: [String],
-    questionType: { type: String, required: true },
+    compulsory: { type: Boolean, default: null },
     order: Number, // Todo: Not Required
 }, { timestamps: true });
 const EquipmentQuestionsModel = mongoose_1.default.model("EquipmentQuestions", EquipmentQuestionsSchema, "EquipmentQuestions");

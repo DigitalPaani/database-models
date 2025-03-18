@@ -1,10 +1,11 @@
 import mongoose, { Document } from "mongoose";
 interface IEquipmentQuestion extends Document {
+    questionId: string;
     nodeType: string;
     question: string;
     type: string | null;
     options: [string];
-    questionType: string;
+    compulsory: boolean | null;
     order: number;
 }
 declare const EquipmentQuestionsModel: mongoose.Model<IEquipmentQuestion, {}, {}, {}, mongoose.Document<unknown, {}, IEquipmentQuestion> & IEquipmentQuestion & Required<{
