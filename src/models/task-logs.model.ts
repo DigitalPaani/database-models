@@ -63,7 +63,7 @@ const taskLogSchema = new Schema<ITaskLog>(
     },
     type: {
       type: String,
-      enum: ["RCA", "MEDIA"],
+      enum: ["RCA", "MEDIA", "COMMUNICATION", "CREATE_SUB_TASK", "ASSIGN_TO_A_DIFFERENT_USER"],
     },
     isArchived: {
       type: Boolean,
