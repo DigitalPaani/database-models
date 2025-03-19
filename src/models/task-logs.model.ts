@@ -1,16 +1,33 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
-require('./newUserModel');
+require("./newUserModel");
+
+interface ITransitionDetails extends Document {
+  id: string;
+  value: string;
+}
 
 interface ITaskLog extends Document {
   taskId: Types.ObjectId;
-  transition: string;
+  transitionFrom: ITransitionDetails;
+  transitionTo: ITransitionDetails;
   url: string;
   message: string;
   type: string;
   isArchived: boolean;
   createdBy: Types.ObjectId;
-};
+}
+
+const transitionSchema = new Schema<ITransitionDetails>({
+  id: {
+    type: String,
+    required: true,
+  },
+  value: {
+    type: String,
+    required: true,
+  },
+});
 
 const taskLogSchema = new Schema<ITaskLog>(
   {
@@ -18,9 +35,13 @@ const taskLogSchema = new Schema<ITaskLog>(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
-    transition: { // FROM NODE -> TO NODE
-      type: String,
-      required: true
+    transitionFrom: {
+      type: transitionSchema,
+      required: true,
+    },
+    transitionTo: {
+      type: transitionSchema,
+      required: true,
     },
     url: {
       type: String,
@@ -32,7 +53,7 @@ const taskLogSchema = new Schema<ITaskLog>(
     },
     type: {
       type: String,
-      enum: ["RCA", "MEDIA"]
+      enum: ["RCA", "MEDIA"],
     },
     isArchived: {
       type: Boolean,

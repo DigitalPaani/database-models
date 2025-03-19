@@ -35,16 +35,29 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-require('./newUserModel');
-;
+require("./newUserModel");
+const transitionSchema = new mongoose_1.Schema({
+    id: {
+        type: String,
+        required: true,
+    },
+    value: {
+        type: String,
+        required: true,
+    },
+});
 const taskLogSchema = new mongoose_1.Schema({
     taskId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
     },
-    transition: {
-        type: String,
-        required: true
+    transitionFrom: {
+        type: transitionSchema,
+        required: true,
+    },
+    transitionTo: {
+        type: transitionSchema,
+        required: true,
     },
     url: {
         type: String,
@@ -56,7 +69,7 @@ const taskLogSchema = new mongoose_1.Schema({
     },
     type: {
         type: String,
-        enum: ["RCA", "MEDIA"]
+        enum: ["RCA", "MEDIA"],
     },
     isArchived: {
         type: Boolean,

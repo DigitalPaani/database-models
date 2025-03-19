@@ -1,8 +1,13 @@
 import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
+interface ITransitionDetails extends Document {
+    id: string;
+    value: string;
+}
 interface ITaskLog extends Document {
     taskId: Types.ObjectId;
-    transition: string;
+    transitionFrom: ITransitionDetails;
+    transitionTo: ITransitionDetails;
     url: string;
     message: string;
     type: string;
