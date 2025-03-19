@@ -12,6 +12,8 @@ interface ITaskLog extends Document {
   transitionFrom: ITransitionDetails;
   transitionTo: ITransitionDetails;
   url: string;
+  filename: string;
+  mimetype: string;
   message: string;
   type: string;
   isArchived: boolean;
@@ -46,6 +48,14 @@ const taskLogSchema = new Schema<ITaskLog>(
     url: {
       type: String,
       default: "",
+    },
+    filename: {
+      type: String,
+      default: null,
+    },
+    mimetype: {
+      type: String,
+      default: null,
     },
     message: {
       type: String,

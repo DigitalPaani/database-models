@@ -63,6 +63,14 @@ const taskLogSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    filename: {
+        type: String,
+        default: null,
+    },
+    mimetype: {
+        type: String,
+        default: null,
+    },
     message: {
         type: String,
         default: "",
