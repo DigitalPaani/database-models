@@ -35,6 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+require('./newUserModel');
 ;
 const taskLogSchema = new mongoose_1.Schema({
     taskId: {
@@ -63,6 +64,7 @@ const taskLogSchema = new mongoose_1.Schema({
     },
     createdBy: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
 }, {
