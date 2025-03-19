@@ -37,6 +37,42 @@ exports.TaskModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 require('./newUserModel');
 const taskManagementConst_1 = require("../constants/taskManagementConst");
+const workflowActionNodeSchema = new mongoose_1.Schema({
+    id: {
+        type: String,
+        required: false,
+    },
+    label: {
+        type: String,
+        required: false,
+    },
+    selectedAction: {
+        type: String,
+        required: false,
+    },
+    selectedActionValue: {
+        type: String,
+        required: false,
+    },
+    actionCompleted: {
+        type: Boolean,
+        required: false
+    },
+}, { _id: false });
+const workflowActionSchema = new mongoose_1.Schema({
+    nodeId: {
+        type: String,
+        required: true,
+    },
+    nodeLabel: {
+        type: String,
+        required: true,
+    },
+    actionNodes: {
+        type: [workflowActionNodeSchema], // Assuming actionNodeSchema is defined correctly
+        required: false
+    }
+}, { _id: false });
 const workflowDetailsSchema = new mongoose_1.Schema({
     workflowId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
@@ -60,7 +96,7 @@ const workflowDetailsSchema = new mongoose_1.Schema({
         required: false,
     },
     workflowActions: {
-        type: [Object],
+        type: [workflowActionSchema],
         required: false,
     },
     transitionStatus: {
