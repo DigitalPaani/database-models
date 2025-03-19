@@ -1,5 +1,6 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
+require('./newUserModel');
 
 interface ITaskLog extends Document {
   taskId: Types.ObjectId;
@@ -39,6 +40,7 @@ const taskLogSchema = new Schema<ITaskLog>(
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "NewUser",
       required: true,
     },
   },
