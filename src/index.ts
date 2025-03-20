@@ -68,6 +68,9 @@ import { NewUserModel, INewUser } from "./models/newUserModel";
 
 import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
+import { TaskCommentModel, ITaskComment } from "./models/task-comments.model";
+import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
+
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 
@@ -115,6 +118,8 @@ export type {
   IQuestion,
   IBatch,
   IAnswer,
+  ITaskComment,
+  ITaskLog
 };
 
 // exports the models
@@ -155,4 +160,6 @@ export {
   BatchSchemaModel,
   AnswerSchemaModel,
   SensorsModel,
+  TaskCommentModel,
+  TaskLogModel
 };

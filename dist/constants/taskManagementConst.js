@@ -61,13 +61,16 @@ exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = [
             { label: "Call", value: "CALL" },
         ],
     },
-    // {
-    //   navbar: {
-    //     label: "Media",
-    //     value: "MEDIA",
-    //   },
-    //   availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
-    // },
+    {
+        navbar: {
+            label: "Validate",
+            value: "VALIDATE",
+        },
+        availableOptions: [
+            { label: "Upload Media", value: "UPLOAD_MEDIA" },
+            { label: "Add RCA", value: "ADD_RCA" },
+        ],
+    },
 ];
 exports.TASK_COMPLETION_ENUMS = [
     {
