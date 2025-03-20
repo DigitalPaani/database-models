@@ -9,6 +9,7 @@ interface ITransitionDetails extends Document {
 
 interface ITaskLog extends Document {
   taskId: Types.ObjectId;
+  actionId: string | null;
   transitionFrom: ITransitionDetails;
   transitionTo: ITransitionDetails;
   url: string;
@@ -36,6 +37,10 @@ const taskLogSchema = new Schema<ITaskLog>(
     taskId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
+    },
+    actionId: {
+      type: String,
+      default: null,
     },
     transitionFrom: {
       type: transitionSchema,

@@ -118,7 +118,7 @@ const workflowActionSchema = new Schema<IWorkflowAction>({
     required: true,
   },
   actionNodes: {
-    type: [workflowActionNodeSchema],  // Assuming actionNodeSchema is defined correctly
+    type: [workflowActionNodeSchema],
     required: false
   }
 }, { _id: false });

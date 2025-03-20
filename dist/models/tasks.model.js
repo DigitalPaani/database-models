@@ -69,7 +69,7 @@ const workflowActionSchema = new mongoose_1.Schema({
         required: true,
     },
     actionNodes: {
-        type: [workflowActionNodeSchema], // Assuming actionNodeSchema is defined correctly
+        type: [workflowActionNodeSchema],
         required: false
     }
 }, { _id: false });

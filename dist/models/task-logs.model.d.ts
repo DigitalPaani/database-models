@@ -6,6 +6,7 @@ interface ITransitionDetails extends Document {
 }
 interface ITaskLog extends Document {
     taskId: Types.ObjectId;
+    actionId: string | null;
     transitionFrom: ITransitionDetails;
     transitionTo: ITransitionDetails;
     url: string;
