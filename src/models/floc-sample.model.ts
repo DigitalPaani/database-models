@@ -2,7 +2,7 @@ import type { Document } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 import SensorsModel from './sensorModel';
 
-export  interface IFlocSample extends Document {
+interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
     sampleId: string;
     startTime: Date;
@@ -12,7 +12,7 @@ export  interface IFlocSample extends Document {
     marks: IFlocMark[]
 };
 
-export interface IFlocMark extends Document {
+interface IFlocMark extends Document {
     mark: string,
     timestamp: Date
 };
@@ -69,5 +69,6 @@ const flocSampleSchema = new Schema<IFlocSample>(
 
 const FlocSampleModel = mongoose.model<IFlocSample>('FlocSamples', flocSampleSchema);
 export {
-  FlocSampleModel
+  FlocSampleModel,
+  IFlocSample
 };

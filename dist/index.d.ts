@@ -35,9 +35,9 @@ import { TaskCommentModel, ITaskComment } from "./models/task-comments.model";
 import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
-import { FlocSampleModel } from '../src/models/floc-sample.model';
-import { FlocImageModel } from '../src/models/floc-image.model';
+import { FlocSampleModel, IFlocSample } from '../src/models/floc-sample.model';
+import { FlocImageModel, IFlocImage } from '../src/models/floc-image.model';
 declare const mongooseDatabaseModels: typeof mongoose;
-export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, IQuestion, IBatch, IAnswer, ITaskComment, ITaskLog };
+export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, ITriggerLog, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, IQuestion, IBatch, IAnswer, ITaskComment, ITaskLog, IFlocSample, IFlocImage };
 export { ConnectToDatabase, FormulasModel, PlantModel, HyperFormulaModel, SensorSettingsModel, PlcModel, TriggerModel, FormulaEventModel, TaskTemplateModel, SkillManagementModel, RosterManagementModel, RosterSchedulesModel, WorkflowModel, TaskModel, AttachmentModel, TriggerLogsModel, TwilioCallModel, CallLogModel, WhatsappLogModel, SmsLogModel, EmailLogModel, WhatsappTemplateModel, Types, TriggerComponentModel, TaskComponentsModel, CommunicationComponentsModel, NewUserModel, commonConstants, CompanyModel, SensorModel, mongooseDatabaseModels, ObsoleteTaskModel, QuestionSchemaModel, BatchSchemaModel, AnswerSchemaModel, SensorsModel, TaskCommentModel, TaskLogModel, FlocSampleModel, FlocImageModel };
 //# sourceMappingURL=index.d.ts.map

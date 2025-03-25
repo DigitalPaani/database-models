@@ -74,8 +74,8 @@ import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 
-import { FlocSampleModel } from '../src/models/floc-sample.model';
-import { FlocImageModel } from '../src/models/floc-image.model';
+import { FlocSampleModel, IFlocSample } from '../src/models/floc-sample.model';
+import { FlocImageModel, IFlocImage } from '../src/models/floc-image.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -122,7 +122,9 @@ export type {
   IBatch,
   IAnswer,
   ITaskComment,
-  ITaskLog
+  ITaskLog,
+  IFlocSample,
+  IFlocImage
 };
 
 // exports the models

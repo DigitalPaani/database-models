@@ -1,6 +1,6 @@
 import type { Document } from 'mongoose';
 import mongoose, { Types } from 'mongoose';
-export interface IFlocSample extends Document {
+interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
     sampleId: string;
     startTime: Date;
@@ -9,7 +9,7 @@ export interface IFlocSample extends Document {
     hide: boolean;
     marks: IFlocMark[];
 }
-export interface IFlocMark extends Document {
+interface IFlocMark extends Document {
     mark: string;
     timestamp: Date;
 }
@@ -18,5 +18,5 @@ declare const FlocSampleModel: mongoose.Model<IFlocSample, {}, {}, {}, Document<
 }> & {
     __v: number;
 }, any>;
-export { FlocSampleModel };
+export { FlocSampleModel, IFlocSample };
 //# sourceMappingURL=floc-sample.model.d.ts.map

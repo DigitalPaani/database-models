@@ -2,7 +2,7 @@ import type { Document } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 import { STATES } from "../constants/bio-health-tracker.constants";
 
-export interface IFlocImage extends Document {
+interface IFlocImage extends Document {
   sensorId?: Types.ObjectId;
   sampleId?: Types.ObjectId;
   fullImageUrl?: string;
@@ -36,4 +36,4 @@ const FlocImageModel = mongoose.model<IFlocImage>(
   "FlocImages",
   flocImageSchema
 );
-export { FlocImageModel };
+export { FlocImageModel, IFlocImage };
