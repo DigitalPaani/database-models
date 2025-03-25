@@ -1,5 +1,4 @@
-import type { Document, Model } from 'mongoose';
-import { Types } from 'mongoose';
+import type { Document, Model, Types } from "mongoose";
 interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
     sampleId: string;

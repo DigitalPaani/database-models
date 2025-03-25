@@ -1,5 +1,5 @@
-import type { Document, Model } from 'mongoose';
-import mongoose, { Schema, Types } from 'mongoose';
+import type { Document, Model, Types } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 require("./sensorModel");
 
 interface IFlocSample extends Document {
