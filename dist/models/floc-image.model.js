@@ -52,5 +52,5 @@ const flocImageSchema = new mongoose_1.Schema({
     timestamps: true,
     minimize: false,
 });
-const FlocImageModel = mongoose_1.default.model("FlocImages", flocImageSchema, "FlocImages");
+const FlocImageModel = mongoose_1.default.model("flocimages", flocImageSchema, "flocimages");
 exports.FlocImageModel = FlocImageModel;

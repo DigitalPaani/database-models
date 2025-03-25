@@ -33,8 +33,8 @@ const flocImageSchema = new Schema<IFlocImage>(
 );
 
 const FlocImageModel: Model<IFlocImage> = mongoose.model<IFlocImage>(
-  "FlocImages",
+  "flocimages",
   flocImageSchema,
-  "FlocImages"
+  "flocimages"
 );
 export { FlocImageModel, IFlocImage };

@@ -82,5 +82,5 @@ const flocSampleSchema = new mongoose_1.Schema({
     timestamps: true,
     minimize: false
 });
-const FlocSampleModel = mongoose_1.default.model('FlocSamples', flocSampleSchema, 'FlocSamples');
+const FlocSampleModel = mongoose_1.default.model('flocsamples', flocSampleSchema, 'flocsamples');
 exports.FlocSampleModel = FlocSampleModel;
