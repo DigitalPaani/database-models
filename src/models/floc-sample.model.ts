@@ -67,7 +67,7 @@ const flocSampleSchema = new Schema<IFlocSample>(
   }
 );
 
-const FlocSampleModel: Model<IFlocSample> = mongoose.model<IFlocSample>('FlocSamples', flocSampleSchema);
+const FlocSampleModel: Model<IFlocSample> = mongoose.model<IFlocSample>('FlocSamples', flocSampleSchema, 'FlocSamples');
 export {
   FlocSampleModel,
   IFlocSample
