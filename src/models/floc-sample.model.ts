@@ -1,6 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
-import SensorsModel from './sensorModel';
+require("./sensorModel");
 
 interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
@@ -33,7 +33,7 @@ const flocSampleSchema = new Schema<IFlocSample>(
     sensorId: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: SensorsModel,
+      ref: "sensors"
     },
     sampleId: {
       type: String,

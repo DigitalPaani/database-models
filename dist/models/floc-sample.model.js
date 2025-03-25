@@ -32,13 +32,10 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlocSampleModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const sensorModel_1 = __importDefault(require("./sensorModel"));
+require("./sensorModel");
 ;
 ;
 const flocMarkSchema = new mongoose_1.Schema({
@@ -54,7 +51,7 @@ const flocSampleSchema = new mongoose_1.Schema({
     sensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
-        ref: sensorModel_1.default,
+        ref: "sensors"
     },
     sampleId: {
         type: String,
