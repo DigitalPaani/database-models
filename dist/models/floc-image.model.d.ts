@@ -2,7 +2,7 @@ import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 interface IFlocImage extends Document {
     sensorId?: Types.ObjectId;
-    sampleId?: Types.ObjectId;
+    sampleId?: string;
     fullImageUrl?: string;
     thumbnailUrl?: string;
     state: string;

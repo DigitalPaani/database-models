@@ -38,7 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const bio_health_tracker_constants_1 = require("../constants/bio-health-tracker.constants");
 const flocImageSchema = new mongoose_1.Schema({
     sensorId: { type: mongoose_1.Types.ObjectId, ref: "sensors" },
-    sampleId: { type: mongoose_1.Types.ObjectId, ref: "FlocSamples" },
+    sampleId: { type: String },
     fullImageUrl: { type: String },
     thumbnailUrl: { type: String },
     timestamp: { type: Date, default: Date.now },

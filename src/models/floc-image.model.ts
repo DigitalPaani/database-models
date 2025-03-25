@@ -4,7 +4,7 @@ import { STATES } from "../constants/bio-health-tracker.constants";
 
 interface IFlocImage extends Document {
   sensorId?: Types.ObjectId;
-  sampleId?: Types.ObjectId;
+  sampleId?: string;
   fullImageUrl?: string;
   thumbnailUrl?: string;
   state: string;
@@ -15,7 +15,7 @@ interface IFlocImage extends Document {
 const flocImageSchema = new Schema<IFlocImage>(
   {
     sensorId: { type: Types.ObjectId, ref: "sensors" },
-    sampleId: { type: Types.ObjectId, ref: "FlocSamples" },
+    sampleId: { type: String },
     fullImageUrl: { type: String },
     thumbnailUrl: { type: String },
     timestamp: { type: Date, default: Date.now },
