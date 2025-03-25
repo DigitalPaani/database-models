@@ -111,9 +111,9 @@ const commonConstants_1 = __importDefault(require("./constants/commonConstants")
 exports.commonConstants = commonConstants_1.default;
 const mongoose_1 = __importStar(require("mongoose"));
 Object.defineProperty(exports, "Types", { enumerable: true, get: function () { return mongoose_1.Types; } });
-const floc_sample_model_1 = require("../src/models/floc-sample.model");
+const floc_sample_model_1 = require("./models/floc-sample.model");
 Object.defineProperty(exports, "FlocSampleModel", { enumerable: true, get: function () { return floc_sample_model_1.FlocSampleModel; } });
-const floc_image_model_1 = require("../src/models/floc-image.model");
+const floc_image_model_1 = require("./models/floc-image.model");
 Object.defineProperty(exports, "FlocImageModel", { enumerable: true, get: function () { return floc_image_model_1.FlocImageModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
