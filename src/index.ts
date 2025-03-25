@@ -74,6 +74,9 @@ import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 
+import { FlocSampleModel } from '../src/models/floc-sample.model';
+import { FlocImageModel } from '../src/models/floc-image.model';
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -161,5 +164,7 @@ export {
   AnswerSchemaModel,
   SensorsModel,
   TaskCommentModel,
-  TaskLogModel
+  TaskLogModel,
+  FlocSampleModel,
+  FlocImageModel
 };
