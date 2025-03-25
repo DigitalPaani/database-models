@@ -31,7 +31,7 @@ const flocMarkSchema = new Schema<IFlocMark>({
 const flocSampleSchema = new Schema<IFlocSample>(
   {
     sensorId: {
-      type: Schema.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: SensorsModel,
     },

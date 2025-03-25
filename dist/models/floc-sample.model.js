@@ -52,7 +52,7 @@ const flocMarkSchema = new mongoose_1.Schema({
 });
 const flocSampleSchema = new mongoose_1.Schema({
     sensorId: {
-        type: mongoose_1.Schema.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         required: true,
         ref: sensorModel_1.default,
     },
