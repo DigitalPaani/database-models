@@ -1,5 +1,5 @@
-import type { Document } from "mongoose";
-import mongoose, { Types } from "mongoose";
+import type { Document, Model } from "mongoose";
+import { Types } from "mongoose";
 interface IFlocImage extends Document {
     sensorId?: Types.ObjectId;
     sampleId?: Types.ObjectId;
@@ -9,10 +9,6 @@ interface IFlocImage extends Document {
     timestamp?: Date;
     regionOfInterestCoordinates?: number[][];
 }
-declare const FlocImageModel: mongoose.Model<IFlocImage, {}, {}, {}, Document<unknown, {}, IFlocImage> & IFlocImage & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>;
+declare const FlocImageModel: Model<IFlocImage>;
 export { FlocImageModel, IFlocImage };
 //# sourceMappingURL=floc-image.model.d.ts.map

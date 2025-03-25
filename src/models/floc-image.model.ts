@@ -1,4 +1,4 @@
-import type { Document } from "mongoose";
+import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 import { STATES } from "../constants/bio-health-tracker.constants";
 
@@ -32,7 +32,7 @@ const flocImageSchema = new Schema<IFlocImage>(
   }
 );
 
-const FlocImageModel = mongoose.model<IFlocImage>(
+const FlocImageModel: Model<IFlocImage> = mongoose.model<IFlocImage>(
   "FlocImages",
   flocImageSchema
 );

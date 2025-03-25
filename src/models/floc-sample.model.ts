@@ -1,4 +1,4 @@
-import type { Document } from 'mongoose';
+import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 import SensorsModel from './sensorModel';
 
@@ -67,7 +67,7 @@ const flocSampleSchema = new Schema<IFlocSample>(
   }
 );
 
-const FlocSampleModel = mongoose.model<IFlocSample>('FlocSamples', flocSampleSchema);
+const FlocSampleModel: Model<IFlocSample> = mongoose.model<IFlocSample>('FlocSamples', flocSampleSchema);
 export {
   FlocSampleModel,
   IFlocSample
