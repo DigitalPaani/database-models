@@ -31,6 +31,7 @@ interface IFormula extends Document {
   nextCalculationTime: number;
   sensorSettingIds: Types.ObjectId[];
   formulaSensorId: Types.ObjectId;
+  parentFormulaId?: Types.ObjectId;
 }
 
 const frequencySchema = new Schema<FormulaCommonTypes.Frequency>({
@@ -95,6 +96,7 @@ const formulasSchema = new Schema<IFormula>(
     },
     sensorSettingIds: { type: [Schema.ObjectId], ref: "SensorSettings" }, // Reference the `sensors` model
     formulaSensorId: { type: Schema.ObjectId, required: true, ref: "sensors" },
+    parentFormulaId: { type: Schema.ObjectId, required: false, ref: "formulaAudits" },
   },
   {
     timestamps: true,
