@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormulasModel = void 0;
+exports.formulasSchema = exports.FormulasModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const formulaConst_1 = require("../constants/formulaConst");
 require("./sensorModel");
@@ -104,5 +104,6 @@ const formulasSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
+exports.formulasSchema = formulasSchema;
 const FormulasModel = mongoose_1.default.model("formulas", formulasSchema, "formulas");
 exports.FormulasModel = FormulasModel;
