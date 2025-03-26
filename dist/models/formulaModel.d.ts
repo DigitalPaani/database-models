@@ -20,6 +20,7 @@ interface IFormula extends Document {
     nextCalculationTime: number;
     sensorSettingIds: Types.ObjectId[];
     formulaSensorId: Types.ObjectId;
+    parentFormulaId?: Types.ObjectId;
 }
 declare const formulasSchema: mongoose.Schema<IFormula, Model<IFormula, any, any, any, Document<unknown, any, IFormula> & IFormula & Required<{
     _id: unknown;

@@ -101,6 +101,7 @@ const formulasSchema = new mongoose_1.Schema({
     },
     sensorSettingIds: { type: [mongoose_1.Schema.ObjectId], ref: "SensorSettings" }, // Reference the `sensors` model
     formulaSensorId: { type: mongoose_1.Schema.ObjectId, required: true, ref: "sensors" },
+    parentFormulaId: { type: mongoose_1.Schema.ObjectId, required: false, ref: "formulaAudits" },
 }, {
     timestamps: true,
 });
