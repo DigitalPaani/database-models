@@ -6,25 +6,25 @@ interface IFlocImage extends Document {
   sensorId?: Types.ObjectId;
   sampleId?: string;
   fullImageUrl?: string;
-  thumbnailUrl?: string;
+  thumbnailUrl?: string | null;
   state: string;
   timestamp?: Date;
-  regionOfInterestCoordinates?: number[][];
+  regionOfInterestCoordinates?: number[][] | null;
 }
 
 const flocImageSchema = new Schema<IFlocImage>(
   {
-    sensorId: { type: Types.ObjectId, ref: "sensors" },
-    sampleId: { type: String },
-    fullImageUrl: { type: String },
-    thumbnailUrl: { type: String },
+    sensorId: { type: Types.ObjectId, ref: "sensors", required: true },
+    sampleId: { type: String, required: true },
+    fullImageUrl: { type: String, required: true },
+    thumbnailUrl: { type: String, default: null },
     timestamp: { type: Date, default: Date.now },
     state: {
       type: String,
       enum: STATES,
       required: true,
     },
-    regionOfInterestCoordinates: { type: [[Number]], required: true },
+    regionOfInterestCoordinates: { type: [[Number]], required: false },
   },
   {
     timestamps: true,

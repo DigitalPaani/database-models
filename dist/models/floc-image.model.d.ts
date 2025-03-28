@@ -4,10 +4,10 @@ interface IFlocImage extends Document {
     sensorId?: Types.ObjectId;
     sampleId?: string;
     fullImageUrl?: string;
-    thumbnailUrl?: string;
+    thumbnailUrl?: string | null;
     state: string;
     timestamp?: Date;
-    regionOfInterestCoordinates?: number[][];
+    regionOfInterestCoordinates?: number[][] | null;
 }
 declare const FlocImageModel: Model<IFlocImage>;
 export { FlocImageModel, IFlocImage };

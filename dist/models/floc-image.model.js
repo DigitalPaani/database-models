@@ -37,17 +37,17 @@ exports.FlocImageModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const bio_health_tracker_constants_1 = require("../constants/bio-health-tracker.constants");
 const flocImageSchema = new mongoose_1.Schema({
-    sensorId: { type: mongoose_1.Types.ObjectId, ref: "sensors" },
-    sampleId: { type: String },
-    fullImageUrl: { type: String },
-    thumbnailUrl: { type: String },
+    sensorId: { type: mongoose_1.Types.ObjectId, ref: "sensors", required: true },
+    sampleId: { type: String, required: true },
+    fullImageUrl: { type: String, required: true },
+    thumbnailUrl: { type: String, default: null },
     timestamp: { type: Date, default: Date.now },
     state: {
         type: String,
         enum: bio_health_tracker_constants_1.STATES,
         required: true,
     },
-    regionOfInterestCoordinates: { type: [[Number]], required: true },
+    regionOfInterestCoordinates: { type: [[Number]], required: false },
 }, {
     timestamps: true,
     minimize: false,
