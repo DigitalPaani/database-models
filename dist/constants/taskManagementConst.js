@@ -10,6 +10,42 @@ exports.SKILL_TYPES = [
         label: "Plant Manager",
         value: "PLANT_MANAGER",
     },
+    {
+        label: "Operator",
+        value: "OPERATOR"
+    },
+    {
+        label: "Mechanical",
+        value: "MECHANICAL"
+    },
+    {
+        label: "Helper",
+        value: "HELPER"
+    },
+    {
+        label: "Instrumentation",
+        value: "INSTRUMENTATION"
+    },
+    {
+        label: "Supervisor",
+        value: "SUPERVISOR"
+    },
+    {
+        label: "Manager",
+        value: "MANAGER"
+    },
+    {
+        label: "Procurement",
+        value: "PROCUREMENT"
+    },
+    {
+        label: "Digital Paani Team",
+        value: "DIGITAL_PAANI_TEAM"
+    },
+    {
+        label: "Chemist",
+        value: "CHEMIST"
+    }
 ];
 exports.TASK_TYPES = [
     {
@@ -19,6 +55,30 @@ exports.TASK_TYPES = [
     {
         label: "Plant Manager",
         value: "PLANT_MANAGER",
+    },
+    {
+        label: "Routine Process",
+        value: "ROUTINE_PROCESS",
+    },
+    {
+        label: "Routine Maintenance",
+        value: "ROUTINE_MAINTENANCE",
+    },
+    {
+        label: "Routine Electrical",
+        value: "ROUTINE_ELECTRICAL",
+    },
+    {
+        label: "Emergency Process",
+        value: "EMERGENCY_PROCESS",
+    },
+    {
+        label: "Emergency Maintenance",
+        value: "EMERGENCY_MAINTENANCE",
+    },
+    {
+        label: "Emergency Electrical",
+        value: "EMERGENCY_ELECTRICAL",
     },
 ];
 exports.SKILL_LEVELS = [
