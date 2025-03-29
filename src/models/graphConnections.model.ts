@@ -7,7 +7,7 @@ interface ILayoutSet {
 }
 
 interface IPathSchema extends Document {
-  graphId: string; // Reference to the Layout 
+  graphId: string; // Reference to the Layout
   layoutSets: ILayoutSet[]; // Array of SEN-to-SEN paths
 }
 
@@ -28,5 +28,9 @@ const PathSchema = new Schema(
   },
   { timestamps: true }
 );
-const LayoutPathModel = mongoose.model<IPathSchema>("LayoutPaths", PathSchema);
-export { LayoutPathModel,IPathSchema };
+const LayoutPathModel = mongoose.model<IPathSchema>(
+  "LayoutPaths",
+  PathSchema,
+  "LayoutPaths"
+);
+export { LayoutPathModel, IPathSchema };

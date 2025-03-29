@@ -49,5 +49,5 @@ const PathSchema = new mongoose_1.Schema({
         },
     ],
 }, { timestamps: true });
-const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema);
+const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema, "LayoutPaths");
 exports.LayoutPathModel = LayoutPathModel;
