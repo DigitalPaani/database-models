@@ -68,6 +68,7 @@ import {
 } from "./models/communicationComponents.model";
 
 import { NewUserModel, INewUser } from "./models/newUserModel";
+import { LayoutPathModel,IPathSchema } from "./models/graphConnections.model";
 
 import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
@@ -121,7 +122,8 @@ export type {
   IEquipmentQuestion,
   ILayout,
   ILayoutEquipment,
-  ISidebarLayoutItem
+  ISidebarLayoutItem,
+  IPathSchema
 };
 
 // exports the models
@@ -165,5 +167,6 @@ export {
   SensorsModel,
   LayoutModel,
   LayoutEquipmentModel,
-  SidebarLayoutItemsModel
+  SidebarLayoutItemsModel,
+  LayoutPathModel
 };

@@ -33,11 +33,21 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LayoutModel = void 0;
+exports.LayoutPathModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const LayoutSchema = new mongoose_1.Schema({
-    nodeId: mongoose_1.Schema.Types.ObjectId, // Todo: Make it nodeID
-    layout: mongoose_1.default.Schema.Types.Mixed,
+const PathSchema = new mongoose_1.Schema({
+    graphId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "Layouts",
+        required: true,
+    },
+    layoutSets: [
+        {
+            from: { type: String, required: true }, // Starting Equipment ID (SEN)
+            to: { type: String, required: true }, // Ending Equipment ID (SEN)
+            path: [{ type: String, required: true }], // Ordered list of Equipment IDs
+        },
+    ],
 }, { timestamps: true });
-const LayoutModel = mongoose_1.default.model("Layouts", LayoutSchema, "Layouts");
-exports.LayoutModel = LayoutModel;
+const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema);
+exports.LayoutPathModel = LayoutPathModel;

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 interface ILayout extends Document {
-    assetId?: string;
+    nodeId: string;
     layout: object;
 }
 declare const LayoutModel: mongoose.Model<ILayout, {}, {}, {}, mongoose.Document<unknown, {}, ILayout> & ILayout & {
