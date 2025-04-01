@@ -3,7 +3,7 @@ interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
     sampleId: string;
     startTime: Date;
-    endTime?: Date | null;
+    endTime: Date;
     isDefault: boolean;
     hide: boolean;
     marks: IFlocMark[];

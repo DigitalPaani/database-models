@@ -63,7 +63,7 @@ const flocSampleSchema = new mongoose_1.Schema({
     },
     endTime: {
         type: Date,
-        default: null,
+        required: true,
     },
     isDefault: {
         type: Boolean,
