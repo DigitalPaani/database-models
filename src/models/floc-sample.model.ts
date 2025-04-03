@@ -10,6 +10,7 @@ interface IFlocSample extends Document {
     isDefault: boolean;
     hide: boolean;
     marks: IFlocMark[]
+    isArchived: boolean;
 };
 
 interface IFlocMark extends Document {
@@ -60,6 +61,10 @@ const flocSampleSchema = new Schema<IFlocSample>(
       default: [],
       required: false,
     },
+    isArchived: {
+      type: Boolean,
+      default: false,
+    }
   },
   {
     timestamps: true,

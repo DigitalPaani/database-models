@@ -78,6 +78,10 @@ const flocSampleSchema = new mongoose_1.Schema({
         default: [],
         required: false,
     },
+    isArchived: {
+        type: Boolean,
+        default: false,
+    }
 }, {
     timestamps: true,
     minimize: false
