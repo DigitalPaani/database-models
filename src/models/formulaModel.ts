@@ -31,6 +31,7 @@ interface IFormula extends Document {
   nextCalculationTime: number;
   sensorSettingIds: Types.ObjectId[];
   formulaSensorId: Types.ObjectId;
+  parentFormulaId?: Types.ObjectId;
 }
 
 const frequencySchema = new Schema<FormulaCommonTypes.Frequency>({
@@ -73,7 +74,7 @@ const formulasSchema = new Schema<IFormula>(
         {
           value: { type: String, trim: true, required: true },
           type: { type: String, required: true, enum: FORMULAS_CHIP_TYPES },
-          color: { type: String, trim: true, required: true },
+          color: { type: String, trim: true, required: false },
           sensorSetting: Object,
         },
       ],
@@ -95,6 +96,7 @@ const formulasSchema = new Schema<IFormula>(
     },
     sensorSettingIds: { type: [Schema.ObjectId], ref: "SensorSettings" }, // Reference the `sensors` model
     formulaSensorId: { type: Schema.ObjectId, required: true, ref: "sensors" },
+    parentFormulaId: { type: Schema.ObjectId, required: false, ref: "formulaAudits" },
   },
   {
     timestamps: true,
@@ -107,4 +109,4 @@ const FormulasModel: Model<IFormula> = mongoose.model<IFormula>(
   "formulas"
 );
 
-export { FormulasModel, IFormula };
+export { FormulasModel, IFormula, formulasSchema };

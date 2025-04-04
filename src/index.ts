@@ -71,6 +71,8 @@ import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 import { TaskCommentModel, ITaskComment } from "./models/task-comments.model";
 import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
 
+import { FormulaAuditsModel } from "./models/formula-audits";
+
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 
@@ -168,5 +170,6 @@ export {
   TaskCommentModel,
   TaskLogModel,
   FlocSampleModel,
-  FlocImageModel
+  FlocImageModel,
+  FormulaAuditsModel,
 };
