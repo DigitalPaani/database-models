@@ -4,6 +4,7 @@ interface IEquipmentQuestion extends Document {
     nodeType: string;
     question: string;
     type: string | null;
+    apiPath: string | null;
     options: [string];
     compulsory: boolean | null;
     order: number;

@@ -39,6 +39,7 @@ const EquipmentQuestionsSchema = new mongoose_1.Schema({
     questionId: { type: String, required: true },
     nodeType: { type: String, required: true },
     question: { type: String, required: true },
+    apiPath: { type: String, required: false },
     type: { type: String, default: null },
     options: [String],
     compulsory: { type: Boolean, default: null },

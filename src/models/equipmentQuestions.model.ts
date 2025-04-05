@@ -5,6 +5,7 @@ interface IEquipmentQuestion extends Document {
   nodeType: string;
   question: string;
   type: string | null;
+  apiPath: string|null;
   options: [string];
   compulsory: boolean | null;
   order: number;
@@ -15,6 +16,7 @@ const EquipmentQuestionsSchema = new Schema(
     questionId: { type: String, required: true },
     nodeType: { type: String, required: true },
     question: { type: String, required: true },
+    apiPath: {type:String,required:false},
     type: { type: String, default: null },
     options: [String],
     compulsory: { type: Boolean, default: null },
