@@ -44,7 +44,7 @@ const flocImageSchema = new mongoose_1.Schema({
     timestamp: { type: Date, default: Date.now },
     state: {
         type: String,
-        enum: bio_health_tracker_constants_1.STATES,
+        enum: bio_health_tracker_constants_1.FLOC_STATES,
         required: true,
     },
     regionOfInterestCoordinates: { type: [[Number]], required: false },

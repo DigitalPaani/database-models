@@ -1,6 +1,6 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
-import { STATES } from "../constants/bio-health-tracker.constants";
+import { FLOC_STATES } from "../constants/bio-health-tracker.constants";
 
 interface IFlocImage extends Document {
   sensorId?: Types.ObjectId;
@@ -21,7 +21,7 @@ const flocImageSchema = new Schema<IFlocImage>(
     timestamp: { type: Date, default: Date.now },
     state: {
       type: String,
-      enum: STATES,
+      enum: FLOC_STATES,
       required: true,
     },
     regionOfInterestCoordinates: { type: [[Number]], required: false },

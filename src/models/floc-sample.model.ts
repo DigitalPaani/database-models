@@ -1,6 +1,7 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 require("./sensorModel");
+import { FLOC_STATES } from '../constants/bio-health-tracker.constants';
 
 interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
@@ -21,7 +22,7 @@ interface IFlocMark extends Document {
 const flocMarkSchema = new Schema<IFlocMark>({
     mark: {
       type: String,
-      enum: ['30Mark', '60Mark', '90Mark', 'noSludge', 'floatingSludge']
+      enum: FLOC_STATES
     },
     timestamp: {
       type: Date

@@ -1,5 +1,5 @@
 
-const STATES = [
+const FLOC_STATES = [
     '30Mark',
     '60Mark',
     '90Mark',
@@ -10,5 +10,5 @@ const STATES = [
 
 
 export {
-    STATES
+    FLOC_STATES
 };
