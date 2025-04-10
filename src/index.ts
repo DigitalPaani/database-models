@@ -76,6 +76,9 @@ import { FormulaAuditsModel } from "./models/formula-audits";
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 
+import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
+import { FlocImageModel, IFlocImage } from './models/floc-image.model';
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -121,7 +124,9 @@ export type {
   IBatch,
   IAnswer,
   ITaskComment,
-  ITaskLog
+  ITaskLog,
+  IFlocSample,
+  IFlocImage
 };
 
 // exports the models
@@ -164,5 +169,7 @@ export {
   SensorsModel,
   TaskCommentModel,
   TaskLogModel,
+  FlocSampleModel,
+  FlocImageModel,
   FormulaAuditsModel,
 };
