@@ -5,7 +5,10 @@ interface IEquipmentQuestion extends Document {
     question: string;
     type: string | null;
     apiPath: string | null;
-    options: [string];
+    options: (string | {
+        label: string;
+        value: string;
+    })[];
     compulsory: boolean | null;
     order: number;
 }

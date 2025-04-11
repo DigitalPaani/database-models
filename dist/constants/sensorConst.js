@@ -1,0 +1,37 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sensorInputType = exports.sensorPurposeTags = void 0;
+exports.sensorPurposeTags = [
+    "LT",
+    "HLS",
+    "LLS",
+    "PH",
+    "BOD",
+    "COD",
+    "TSS",
+    "TUR",
+    "TDS",
+    "ORP",
+    "PT",
+    "CA",
+    "DO",
+    "SV",
+    "PTI",
+    "PTO",
+    "BS",
+    "ONOFF",
+    "PS",
+    "PTBWS",
+    "CATPT",
+    "BWS",
+    "TURI",
+    "CHLI",
+    "TDSI",
+    "PHI",
+    "MAN",
+    "TRP",
+    "VBS",
+    "TMP",
+    "FMF",
+];
+exports.sensorInputType = ["Modbus", "Analog", "Digital"];

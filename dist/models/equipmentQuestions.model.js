@@ -35,13 +35,14 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EquipmentQuestionsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const Mixed = mongoose_1.Schema.Types.Mixed;
 const EquipmentQuestionsSchema = new mongoose_1.Schema({
     questionId: { type: String, required: true },
     nodeType: { type: String, required: true },
     question: { type: String, required: true },
     apiPath: { type: String, required: false },
     type: { type: String, default: null },
-    options: [String],
+    options: [{ type: Mixed }], // allow string or object
     compulsory: { type: Boolean, default: null },
     order: Number, // Todo: Not Required
 }, { timestamps: true });

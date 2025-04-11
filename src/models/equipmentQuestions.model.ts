@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
+const Mixed = Schema.Types.Mixed;
 
 interface IEquipmentQuestion extends Document {
   questionId: string;
@@ -6,7 +7,7 @@ interface IEquipmentQuestion extends Document {
   question: string;
   type: string | null;
   apiPath: string|null;
-  options: [string];
+  options: (string | { label: string; value: string })[]; // updated here
   compulsory: boolean | null;
   order: number;
 }
@@ -18,7 +19,7 @@ const EquipmentQuestionsSchema = new Schema(
     question: { type: String, required: true },
     apiPath: {type:String,required:false},
     type: { type: String, default: null },
-    options: [String],
+    options: [{ type: Mixed }], // allow string or object
     compulsory: { type: Boolean, default: null },
     order: Number, // Todo: Not Required
   },
