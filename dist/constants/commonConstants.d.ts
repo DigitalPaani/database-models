@@ -84,6 +84,14 @@ declare const _default: {
         value: string;
         label: string;
     }[];
+    TYPES_OF_INSIGHTS: {
+        label: string;
+        value: string;
+    }[];
+    EQUIPMENT_TYPES: {
+        label: string;
+        value: string;
+    }[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

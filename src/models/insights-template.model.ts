@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 
 import {
   TYPES_OF_INSIGHTS,
-  EQUIPMENT_TYPE,
+  EQUIPMENT_TYPES,
 } from "../constants/insights.constants";
 
 interface IInsightsTemplate extends Document {
@@ -28,7 +28,7 @@ const insightsTemplateSchema = new Schema<IInsightsTemplate>(
     },
     equipmentTypes: {
       type: [String],
-      enums: EQUIPMENT_TYPE,
+      enums: EQUIPMENT_TYPES,
     },
     insightType: {
       type: String,

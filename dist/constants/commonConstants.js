@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const taskManagementConst_1 = require("./taskManagementConst");
 const triggerConst_1 = require("./triggerConst");
+const insights_constants_1 = require("./insights.constants");
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -58,4 +59,6 @@ exports.default = {
     TRIGGER_TYPES: triggerConst_1.TRIGGER_TYPES,
     WHATSAPP_TEMPLATE_VARIABLES,
     USER_GROUP_OR_SYSTEM,
+    TYPES_OF_INSIGHTS: insights_constants_1.TYPES_OF_INSIGHTS,
+    EQUIPMENT_TYPES: insights_constants_1.EQUIPMENT_TYPES
 };

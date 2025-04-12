@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EQUIPMENT_TYPE = exports.TYPES_OF_INSIGHTS = void 0;
+exports.EQUIPMENT_TYPES = exports.TYPES_OF_INSIGHTS = void 0;
 exports.TYPES_OF_INSIGHTS = [
     {
         label: "Achievements",
@@ -15,7 +15,7 @@ exports.TYPES_OF_INSIGHTS = [
         value: "INCIDENTS",
     },
 ];
-exports.EQUIPMENT_TYPE = [
+exports.EQUIPMENT_TYPES = [
     {
         label: "Sensors",
         value: "SENSORS",

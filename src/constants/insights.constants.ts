@@ -14,7 +14,7 @@ export const TYPES_OF_INSIGHTS = [
   },
 ];
 
-export const EQUIPMENT_TYPE = [
+export const EQUIPMENT_TYPES = [
   {
     label: "Sensors",
     value: "SENSORS",
