@@ -55,6 +55,7 @@ const insightsTemplateSchema = new mongoose_1.Schema({
     },
     attachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
         default: null,
     },
     richTextContent: {
