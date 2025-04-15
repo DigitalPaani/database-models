@@ -39,6 +39,7 @@ const PlantSchema = new mongoose_1.Schema({
     plantName: String,
     status: String,
     lat: String,
+    plantImage: String,
     workspaceId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "NewWorkspace",
