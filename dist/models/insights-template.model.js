@@ -54,7 +54,7 @@ const insightsTemplateSchema = new mongoose_1.Schema({
         enums: insights_constants_1.TYPES_OF_INSIGHTS,
     },
     attachmentId: {
-        type: String,
+        type: mongoose_1.default.Schema.Types.ObjectId,
         default: null,
     },
     richTextContent: {

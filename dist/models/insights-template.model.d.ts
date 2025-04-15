@@ -1,10 +1,11 @@
 import type { Document, Model } from "mongoose";
+import { Types } from "mongoose";
 interface IInsightsTemplate extends Document {
     name: string;
     description: string;
     equipmentTypes: string[];
     insightType: string;
-    attachmentId: string;
+    attachmentId: Types.ObjectId | null;
     richTextContent: string;
     isArchived: boolean;
 }

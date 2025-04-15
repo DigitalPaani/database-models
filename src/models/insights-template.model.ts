@@ -11,7 +11,7 @@ interface IInsightsTemplate extends Document {
   description: string;
   equipmentTypes: string[];
   insightType: string;
-  attachmentId: string;
+  attachmentId: Types.ObjectId | null;
   richTextContent: string;
   isArchived: boolean;
 }
@@ -35,7 +35,7 @@ const insightsTemplateSchema = new Schema<IInsightsTemplate>(
       enums: TYPES_OF_INSIGHTS,
     },
     attachmentId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
       default: null,
     },
     richTextContent: {
