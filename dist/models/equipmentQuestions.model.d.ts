@@ -10,6 +10,7 @@ interface IEquipmentQuestion extends Document {
         value: string;
     })[];
     compulsory: boolean | null;
+    required: boolean;
     order: number;
 }
 declare const EquipmentQuestionsModel: mongoose.Model<IEquipmentQuestion, {}, {}, {}, mongoose.Document<unknown, {}, IEquipmentQuestion> & IEquipmentQuestion & Required<{

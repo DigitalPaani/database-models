@@ -9,6 +9,7 @@ interface IEquipmentQuestion extends Document {
   apiPath: string|null;
   options: (string | { label: string; value: string })[]; // updated here
   compulsory: boolean | null;
+  required: boolean
   order: number;
 }
 
@@ -21,6 +22,7 @@ const EquipmentQuestionsSchema = new Schema(
     type: { type: String, default: null },
     options: [{ type: Mixed }], // allow string or object
     compulsory: { type: Boolean, default: null },
+    required: { type: Boolean, default: false },
     order: Number, // Todo: Not Required
   },
   { timestamps: true }
