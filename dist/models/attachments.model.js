@@ -48,15 +48,19 @@ const attachmentSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    type: {
+        type: String,
+        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE"],
+    },
     expireAt: {
         type: Date,
         required: false, // If we don't want the document to expire, we can set it to null
-    }
+    },
 }, {
     timestamps: true,
-    minimize: false
+    minimize: false,
 });
 // Expire documents after 1 Day
 attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model('attachments', attachmentSchema, 'attachments');
+const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
 exports.AttachmentModel = AttachmentModel;
