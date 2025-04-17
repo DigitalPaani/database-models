@@ -37,6 +37,8 @@ interface ITaskComponent extends Document {
   parentIndex: number;
   parentAutocompleteId: string;
   workflowActions: any;
+
+  isDeleted: boolean;
 }
 
 interface IWorkflowDetails {
@@ -103,9 +105,9 @@ interface IActionNode {
   selectedAction: string;
   selectedActionValue: string;
   actionIds: Types.ObjectId[];
-  parentAutocompleteId: string,
-  nodeId: string,
-  actionTemplate: object,
+  parentAutocompleteId: string;
+  nodeId: string;
+  actionTemplate: object;
 }
 
 interface IComponentAction {
@@ -172,7 +174,7 @@ const WorkflowDetailsSchema = new Schema(
     description: { type: String },
     nodes: [WorkflowNodeSchema],
     edges: [WorkflowEdgeSchema],
-    workflowActions: [Schema.Types.Mixed]
+    workflowActions: [Schema.Types.Mixed],
   },
   { _id: false }
 );
@@ -256,6 +258,8 @@ const TaskComponentSchema = new Schema(
     parentIndex: { type: Number },
     parentAutocompleteId: { type: String },
     workflowActions: { type: [Schema.Types.Mixed] },
+
+    isDeleted: { type: Boolean, default: false },
   },
   { timestamps: true, strict: false }
 );

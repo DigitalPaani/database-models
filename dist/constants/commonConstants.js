@@ -9,6 +9,7 @@ const EVENT_TYPES = {
 const OBSOLETE_CONDITIONS = {
     observation: "observation",
     resolution: "resolution",
+    none: "none",
 };
 const TASK_OR_ISSUE_FILTERS = {
     open: "Open",
@@ -43,6 +44,7 @@ const USER_GROUP_OR_SYSTEM = [
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
+    TASK_TYPES: taskManagementConst_1.TASK_TYPES,
     CREATE_WORKFLOW_AVAILABLE_ACTIONS: taskManagementConst_1.CREATE_WORKFLOW_AVAILABLE_ACTIONS,
     TASK_COMPLETION_ENUMS: taskManagementConst_1.TASK_COMPLETION_ENUMS,
     ESCALATION_UNITS_ENUMS: taskManagementConst_1.ESCALATION_UNITS_ENUMS,
@@ -55,5 +57,5 @@ exports.default = {
     TASK_OR_ISSUE_FILTERS,
     TRIGGER_TYPES: triggerConst_1.TRIGGER_TYPES,
     WHATSAPP_TEMPLATE_VARIABLES,
-    USER_GROUP_OR_SYSTEM
+    USER_GROUP_OR_SYSTEM,
 };

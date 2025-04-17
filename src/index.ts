@@ -72,8 +72,16 @@ import { LayoutPathModel,IPathSchema } from "./models/graphConnections.model";
 
 import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
+import { TaskCommentModel, ITaskComment } from "./models/task-comments.model";
+import { TaskLogModel, ITaskLog } from "./models/task-logs.model";
+
+import { FormulaAuditsModel } from "./models/formula-audits";
+
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
+
+import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
+import { FlocImageModel, IFlocImage } from './models/floc-image.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -123,7 +131,11 @@ export type {
   ILayout,
   ILayoutEquipment,
   ISidebarLayoutItem,
-  IPathSchema
+  IPathSchema,
+  ITaskComment,
+  ITaskLog,
+  IFlocSample,
+  IFlocImage
 };
 
 // exports the models
@@ -168,5 +180,10 @@ export {
   LayoutModel,
   LayoutEquipmentModel,
   SidebarLayoutItemsModel,
-  LayoutPathModel
+  LayoutPathModel,
+  TaskCommentModel,
+  TaskLogModel,
+  FlocSampleModel,
+  FlocImageModel,
+  FormulaAuditsModel,
 };

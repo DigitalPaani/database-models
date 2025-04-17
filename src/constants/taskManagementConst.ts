@@ -7,7 +7,79 @@ export const SKILL_TYPES = [
     label: "Plant Manager",
     value: "PLANT_MANAGER",
   },
+  {
+    label: "Operator",
+    value: "OPERATOR"
+  },
+  {
+    label: "Mechanical",
+    value: "MECHANICAL"
+  },
+  {
+    label: "Helper",
+    value: "HELPER"
+  },
+  {
+    label: "Instrumentation",
+    value: "INSTRUMENTATION"
+  },
+  {
+    label: "Supervisor",
+    value: "SUPERVISOR"
+  },
+  {
+    label: "Manager",
+    value: "MANAGER"
+  },
+  {
+    label: "Procurement",
+    value: "PROCUREMENT"
+  },
+  {
+    label: "Digital Paani Team",
+    value: "DIGITAL_PAANI_TEAM"
+  },
+  {
+    label: "Chemist",
+    value: "CHEMIST"
+  }
 ];
+
+export const TASK_TYPES = [
+  {
+    label: "Electrical",
+    value: "ELECTRICAL",
+  },
+  {
+    label: "Plant Manager",
+    value: "PLANT_MANAGER",
+  },
+  {
+    label: "Routine Process",
+    value: "ROUTINE_PROCESS",
+  },
+  {
+    label: "Routine Maintenance",
+    value: "ROUTINE_MAINTENANCE",
+  },
+  {
+    label: "Routine Electrical",
+    value: "ROUTINE_ELECTRICAL",
+  },
+  {
+    label: "Emergency Process",
+    value: "EMERGENCY_PROCESS",
+  },
+  {
+    label: "Emergency Maintenance",
+    value: "EMERGENCY_MAINTENANCE",
+  },
+  {
+    label: "Emergency Electrical",
+    value: "EMERGENCY_ELECTRICAL",
+  },
+];
+
 export const SKILL_LEVELS = [
   {
     label: "Low",
@@ -49,13 +121,16 @@ export const CREATE_WORKFLOW_AVAILABLE_ACTIONS = [
       { label: "Call", value: "CALL" },
     ],
   },
-  // {
-  //   navbar: {
-  //     label: "Media",
-  //     value: "MEDIA",
-  //   },
-  //   availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
-  // },
+  {
+    navbar: {
+      label: "Validate",
+      value: "VALIDATE",
+    },
+    availableOptions: [
+      { label: "Upload Media", value: "UPLOAD_MEDIA" },
+      { label: "Add RCA", value: "ADD_RCA" },
+    ],
+  },
 ];
 
 export const TASK_COMPLETION_ENUMS = [

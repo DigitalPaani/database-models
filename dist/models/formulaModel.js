@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormulasModel = void 0;
+exports.formulasSchema = exports.FormulasModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const formulaConst_1 = require("../constants/formulaConst");
 require("./sensorModel");
@@ -79,7 +79,7 @@ const formulasSchema = new mongoose_1.Schema({
             {
                 value: { type: String, trim: true, required: true },
                 type: { type: String, required: true, enum: formulaConst_1.FORMULAS_CHIP_TYPES },
-                color: { type: String, trim: true, required: true },
+                color: { type: String, trim: true, required: false },
                 sensorSetting: Object,
             },
         ],
@@ -101,8 +101,10 @@ const formulasSchema = new mongoose_1.Schema({
     },
     sensorSettingIds: { type: [mongoose_1.Schema.ObjectId], ref: "SensorSettings" }, // Reference the `sensors` model
     formulaSensorId: { type: mongoose_1.Schema.ObjectId, required: true, ref: "sensors" },
+    parentFormulaId: { type: mongoose_1.Schema.ObjectId, required: false, ref: "formulaAudits" },
 }, {
     timestamps: true,
 });
+exports.formulasSchema = formulasSchema;
 const FormulasModel = mongoose_1.default.model("formulas", formulasSchema, "formulas");
 exports.FormulasModel = FormulasModel;

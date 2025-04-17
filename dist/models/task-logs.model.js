@@ -33,107 +33,68 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TaskTemplateModel = void 0;
+exports.TaskLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const taskManagementConst_1 = require("../constants/taskManagementConst");
-const taskTemplateSchema = new mongoose_1.Schema({
-    name: {
+require("./newUserModel");
+const transitionSchema = new mongoose_1.Schema({
+    id: {
         type: String,
         required: true,
     },
-    description: {
+    value: {
         type: String,
         required: true,
     },
-    trainingVideoId: {
+});
+const taskLogSchema = new mongoose_1.Schema({
+    taskId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
-    },
-    scope: {
-        type: String,
-        enum: ['SYSTEM', 'USER_GROUP'],
         required: true,
     },
-    userGroupId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        default: null
-    },
-    attachmentId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: "attachments",
-        required: false,
-    },
-    priority: {
+    actionId: {
         type: String,
+        default: null,
+    },
+    transitionFrom: {
+        type: transitionSchema,
         required: true,
     },
-    taskType: {
-        type: String,
-        enum: taskManagementConst_1.TASK_TYPES.map(taskType => taskType.value),
+    transitionTo: {
+        type: transitionSchema,
         required: true,
     },
-    workflowId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: "workflows",
-        required: true,
-    },
-    taskCompletion: {
+    url: {
         type: String,
-        enum: taskManagementConst_1.TASK_COMPLETION_ENUMS.map(taskCompletionEnum => taskCompletionEnum.value),
+        default: "",
     },
-    taskCompletionState: {
+    filename: {
         type: String,
-        required: false
+        default: null,
     },
-    assigneeMethod: {
+    mimetype: {
         type: String,
-        enum: taskManagementConst_1.ASSIGNEE_METHOD_ENUMS.map(assigneeMethodEnum => assigneeMethodEnum.value),
+        default: null,
     },
-    complexity: {
-        type: Number,
-        required: true,
-    },
-    taskDeadlineTime: {
-        type: Number,
-        required: true,
-    },
-    taskExpectedTime: {
-        type: Number,
-        required: true,
-    },
-    equipmentSelected: {
+    message: {
         type: String,
-        required: false,
+        default: "",
     },
-    skillsSelected: {
-        type: [mongoose_1.default.Schema.Types.ObjectId],
-        ref: "skill-managements",
-        required: true,
-    },
-    dataEntry: {
-        type: Boolean,
-        default: false,
-        required: true,
-    },
-    sensorTag: {
+    type: {
         type: String,
-        required: false,
-    },
-    richTextContent: {
-        type: String,
-        required: false,
+        enum: ["RCA", "MEDIA", "COMMUNICATION", "CREATE_SUB_TASK", "ASSIGN_TO_A_DIFFERENT_USER"],
     },
     isArchived: {
         type: Boolean,
-        default: false
+        default: false,
     },
     createdBy: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
 }, {
-    minimize: false,
     timestamps: true,
+    minimize: false,
 });
-const TaskTemplateModel = mongoose_1.default.model('task-templates', taskTemplateSchema, 'task-templates');
-exports.TaskTemplateModel = TaskTemplateModel;
+const TaskLogModel = mongoose_1.default.model("task-logs", taskLogSchema, "task-logs");
+exports.TaskLogModel = TaskLogModel;

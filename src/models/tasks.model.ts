@@ -2,7 +2,7 @@ import type { Document, Model } from 'mongoose';
 import mongoose, { Schema, Types } from 'mongoose';
 require('./newUserModel');
 
-import { TASK_COMPLETION_ENUMS, ASSIGNEE_METHOD_ENUMS, ESCALATION_UNITS_ENUMS, COMMUNICATION_MEDIUM_ENUMS } from '../constants/taskManagementConst';
+import { TASK_COMPLETION_ENUMS, ASSIGNEE_METHOD_ENUMS, COMMUNICATION_MEDIUM_ENUMS, TASK_TYPES } from '../constants/taskManagementConst';
 
 interface IWorkflowDetails extends Document {
   workflowId: Types.ObjectId;
@@ -71,6 +71,59 @@ interface ITask extends Document {
   componentActions: IComponentActions[]
 }
 
+interface IWorkflowActionNode extends Document {
+  id: string;
+  label: string;
+  selectedAction: string;
+  selectedActionValue: string;
+  actionCompleted: boolean
+}
+
+interface IWorkflowAction extends Document {
+  nodeId: string,
+  nodeLabel: string,
+  actionNodes: IWorkflowActionNode[]
+}
+
+const workflowActionNodeSchema = new Schema<IWorkflowActionNode>({
+  id: {
+    type: String,
+    required: false,
+  },
+  label: {
+    type: String,
+    required: false,
+  },
+  selectedAction: {
+    type: String,
+    required: false,
+  },
+  selectedActionValue: {
+    type: String,
+    required: false,
+  },
+  actionCompleted: {
+    type: Boolean,
+    required: false
+  },
+}, { _id: false });
+
+const workflowActionSchema = new Schema<IWorkflowAction>({
+  nodeId: {
+    type: String,
+    required: true,
+  },
+  nodeLabel: {
+    type: String,
+    required: true,
+  },
+  actionNodes: {
+    type: [workflowActionNodeSchema],
+    required: false
+  }
+}, { _id: false });
+
+
 const workflowDetailsSchema = new Schema<IWorkflowDetails>({
   workflowId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -94,7 +147,7 @@ const workflowDetailsSchema = new Schema<IWorkflowDetails>({
     required: false,
   },
   workflowActions: {
-    type: [Object],
+    type: [workflowActionSchema],
     required: false,
   },
   transitionStatus: {
@@ -214,7 +267,8 @@ const taskSchema = new Schema<ITask>(
     },
     taskType: {
       type: String,
-      required: false,
+      enum: TASK_TYPES.map(taskType => taskType.value),
+      required: true,
     },
     taskCompletion: {
       type: String,

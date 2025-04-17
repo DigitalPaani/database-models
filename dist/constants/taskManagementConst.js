@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.COMMUNICATION_MEDIUM_ENUMS = exports.ESCALATION_UNITS_ENUMS = exports.ASSIGNEE_METHOD_ENUMS = exports.TASK_COMPLETION_ENUMS = exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = exports.SKILL_LEVELS = exports.SKILL_TYPES = void 0;
+exports.COMMUNICATION_MEDIUM_ENUMS = exports.ESCALATION_UNITS_ENUMS = exports.ASSIGNEE_METHOD_ENUMS = exports.TASK_COMPLETION_ENUMS = exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = exports.SKILL_LEVELS = exports.TASK_TYPES = exports.SKILL_TYPES = void 0;
 exports.SKILL_TYPES = [
     {
         label: "Electrical",
@@ -9,6 +9,76 @@ exports.SKILL_TYPES = [
     {
         label: "Plant Manager",
         value: "PLANT_MANAGER",
+    },
+    {
+        label: "Operator",
+        value: "OPERATOR"
+    },
+    {
+        label: "Mechanical",
+        value: "MECHANICAL"
+    },
+    {
+        label: "Helper",
+        value: "HELPER"
+    },
+    {
+        label: "Instrumentation",
+        value: "INSTRUMENTATION"
+    },
+    {
+        label: "Supervisor",
+        value: "SUPERVISOR"
+    },
+    {
+        label: "Manager",
+        value: "MANAGER"
+    },
+    {
+        label: "Procurement",
+        value: "PROCUREMENT"
+    },
+    {
+        label: "Digital Paani Team",
+        value: "DIGITAL_PAANI_TEAM"
+    },
+    {
+        label: "Chemist",
+        value: "CHEMIST"
+    }
+];
+exports.TASK_TYPES = [
+    {
+        label: "Electrical",
+        value: "ELECTRICAL",
+    },
+    {
+        label: "Plant Manager",
+        value: "PLANT_MANAGER",
+    },
+    {
+        label: "Routine Process",
+        value: "ROUTINE_PROCESS",
+    },
+    {
+        label: "Routine Maintenance",
+        value: "ROUTINE_MAINTENANCE",
+    },
+    {
+        label: "Routine Electrical",
+        value: "ROUTINE_ELECTRICAL",
+    },
+    {
+        label: "Emergency Process",
+        value: "EMERGENCY_PROCESS",
+    },
+    {
+        label: "Emergency Maintenance",
+        value: "EMERGENCY_MAINTENANCE",
+    },
+    {
+        label: "Emergency Electrical",
+        value: "EMERGENCY_ELECTRICAL",
     },
 ];
 exports.SKILL_LEVELS = [
@@ -51,13 +121,16 @@ exports.CREATE_WORKFLOW_AVAILABLE_ACTIONS = [
             { label: "Call", value: "CALL" },
         ],
     },
-    // {
-    //   navbar: {
-    //     label: "Media",
-    //     value: "MEDIA",
-    //   },
-    //   availableOptions: [{ label: "Upload Media", value: "UPLOAD_MEDIA" }],
-    // },
+    {
+        navbar: {
+            label: "Validate",
+            value: "VALIDATE",
+        },
+        availableOptions: [
+            { label: "Upload Media", value: "UPLOAD_MEDIA" },
+            { label: "Add RCA", value: "ADD_RCA" },
+        ],
+    },
 ];
 exports.TASK_COMPLETION_ENUMS = [
     {
