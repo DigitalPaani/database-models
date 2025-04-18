@@ -33,55 +33,21 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlantModel = void 0;
+exports.LayoutPathModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const PlantSchema = new mongoose_1.Schema({
-    plantName: String,
-    status: String,
-    lat: String,
-    plantImage: String,
-    workspaceId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace",
-        required: true
+const PathSchema = new mongoose_1.Schema({
+    graphId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "Layouts",
+        required: true,
     },
-    userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
-        required: true
-    },
-    long: String,
-    description: String,
-    schematic: String,
-    sensorfreq: String,
-    plantType: String,
-    createdOn: Date,
-    tur: String,
-    location: {
-        lat: String,
-        lng: String,
-        place: String
-    },
-    autoEmailing: {
-        dailyReportPageId: mongoose_1.Schema.Types.ObjectId,
-        weeklyReportPageId: mongoose_1.Schema.Types.ObjectId,
-        monthlyReportPageId: mongoose_1.Schema.Types.ObjectId,
-    },
-    embeddedLinks: [
+    layoutSets: [
         {
-            name: String,
-            link: String,
+            from: { type: String, required: true }, // Starting Equipment ID (SEN)
+            to: { type: String, required: true }, // Ending Equipment ID (SEN)
+            path: [{ type: String, required: true }], // Ordered list of Equipment IDs
         },
     ],
-    subTopic: String,
-    pubTopic: String,
-    abbr: String,
-    operationType: String,
-    userGroup: {
-        id: mongoose_1.Schema.Types.ObjectId,
-        name: String,
-        abbr: String,
-    },
-});
-const PlantModel = mongoose_1.default.model('Plant', PlantSchema, 'Plants');
-exports.PlantModel = PlantModel;
+}, { timestamps: true });
+const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema, "LayoutPaths");
+exports.LayoutPathModel = LayoutPathModel;

@@ -5,7 +5,7 @@ interface ISensor extends Document {
     sensorModelNumber: string;
     granularity: string[];
     purpose: string[];
-    inputType: ("Modbus" | "Analog" | "Digital")[];
+    inputType: string[];
     tags: string[];
 }
 declare const SensorModel: mongoose.Model<ISensor, {}, {}, {}, mongoose.Document<unknown, {}, ISensor> & ISensor & Required<{

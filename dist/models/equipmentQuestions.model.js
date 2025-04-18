@@ -33,55 +33,19 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlantModel = void 0;
+exports.EquipmentQuestionsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const PlantSchema = new mongoose_1.Schema({
-    plantName: String,
-    status: String,
-    lat: String,
-    plantImage: String,
-    workspaceId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace",
-        required: true
-    },
-    userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
-        required: true
-    },
-    long: String,
-    description: String,
-    schematic: String,
-    sensorfreq: String,
-    plantType: String,
-    createdOn: Date,
-    tur: String,
-    location: {
-        lat: String,
-        lng: String,
-        place: String
-    },
-    autoEmailing: {
-        dailyReportPageId: mongoose_1.Schema.Types.ObjectId,
-        weeklyReportPageId: mongoose_1.Schema.Types.ObjectId,
-        monthlyReportPageId: mongoose_1.Schema.Types.ObjectId,
-    },
-    embeddedLinks: [
-        {
-            name: String,
-            link: String,
-        },
-    ],
-    subTopic: String,
-    pubTopic: String,
-    abbr: String,
-    operationType: String,
-    userGroup: {
-        id: mongoose_1.Schema.Types.ObjectId,
-        name: String,
-        abbr: String,
-    },
-});
-const PlantModel = mongoose_1.default.model('Plant', PlantSchema, 'Plants');
-exports.PlantModel = PlantModel;
+const Mixed = mongoose_1.Schema.Types.Mixed;
+const EquipmentQuestionsSchema = new mongoose_1.Schema({
+    questionId: { type: String, required: true },
+    nodeType: { type: String, required: true },
+    question: { type: String, required: true },
+    apiPath: { type: String, required: false },
+    type: { type: String, default: null },
+    options: [{ type: Mixed }], // allow string or object
+    compulsory: { type: Boolean, default: null },
+    required: { type: Boolean, default: false },
+    order: Number, // Todo: Not Required
+}, { timestamps: true });
+const EquipmentQuestionsModel = mongoose_1.default.model("EquipmentQuestions", EquipmentQuestionsSchema, "EquipmentQuestions");
+exports.EquipmentQuestionsModel = EquipmentQuestionsModel;
