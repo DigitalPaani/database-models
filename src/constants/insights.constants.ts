@@ -69,6 +69,15 @@ export const TYPES_OF_INSIGHTS = INSIGHT_CLASSIFICATIONS.flatMap(
   (item) => item.allowedInsightTypes.map((type) => type.value)
 );
 
+export const INSIGHT_TYPE_OBJECTS = Array.from(
+  new Map(
+    INSIGHT_CLASSIFICATIONS.flatMap((classification) =>
+      classification.allowedInsightTypes
+    ).map((type) => [type.value, type])
+  ).values()
+);
+
+
 export const EQUIPMENT_TYPES = [
   {
     label: "Sensors",

@@ -97,6 +97,10 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    INSIGHT_TYPE_OBJECTS: {
+        label: string;
+        value: string;
+    }[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
