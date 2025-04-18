@@ -35,6 +35,7 @@ declare const _default: {
         issue: string;
         communication: string;
         obsolete: string;
+        insight: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;
@@ -83,6 +84,22 @@ declare const _default: {
     USER_GROUP_OR_SYSTEM: {
         value: string;
         label: string;
+    }[];
+    INSIGHT_CLASSIFICATIONS: {
+        label: string;
+        value: string;
+        allowedInsightTypes: {
+            label: string;
+            value: string;
+        }[];
+    }[];
+    EQUIPMENT_TYPES: {
+        label: string;
+        value: string;
+    }[];
+    INSIGHT_TYPE_OBJECTS: {
+        label: string;
+        value: string;
     }[];
 };
 export default _default;

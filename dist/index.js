@@ -127,6 +127,8 @@ const floc_sample_model_1 = require("./models/floc-sample.model");
 Object.defineProperty(exports, "FlocSampleModel", { enumerable: true, get: function () { return floc_sample_model_1.FlocSampleModel; } });
 const floc_image_model_1 = require("./models/floc-image.model");
 Object.defineProperty(exports, "FlocImageModel", { enumerable: true, get: function () { return floc_image_model_1.FlocImageModel; } });
+const insights_template_model_1 = require("./models/insights-template.model");
+Object.defineProperty(exports, "InsightsTemplateModel", { enumerable: true, get: function () { return insights_template_model_1.InsightsTemplateModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
 exports.mongooseDatabaseModels = mongooseDatabaseModels;

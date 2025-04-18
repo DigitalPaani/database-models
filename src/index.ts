@@ -83,6 +83,8 @@ import mongoose, { Types } from "mongoose";
 import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
 import { FlocImageModel, IFlocImage } from './models/floc-image.model';
 
+import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -135,7 +137,8 @@ export type {
   ITaskComment,
   ITaskLog,
   IFlocSample,
-  IFlocImage
+  IFlocImage,
+  IInsightsTemplate
 };
 
 // exports the models
@@ -186,4 +189,5 @@ export {
   FlocSampleModel,
   FlocImageModel,
   FormulaAuditsModel,
+  InsightsTemplateModel
 };

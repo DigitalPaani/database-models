@@ -3,6 +3,7 @@ interface IAttachment extends Document {
     attachmentLink: string;
     filename: string;
     mimetype: string;
+    type: string;
     expireAt: Date | null;
 }
 declare const AttachmentModel: Model<IAttachment>;

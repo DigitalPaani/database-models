@@ -33,34 +33,46 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentModel = void 0;
+exports.InsightsTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const attachmentSchema = new mongoose_1.Schema({
-    attachmentLink: {
+const insights_constants_1 = require("../constants/insights.constants");
+const insightsTemplateSchema = new mongoose_1.Schema({
+    name: {
         type: String,
-        required: false,
+        required: true,
     },
-    filename: {
+    description: {
         type: String,
-        required: false,
+        default: "",
     },
-    mimetype: {
+    equipmentTypes: {
+        type: [String],
+        enums: insights_constants_1.EQUIPMENT_TYPES,
+    },
+    insightClassification: {
         type: String,
-        required: false,
+        enums: insights_constants_1.TYPES_OF_INSIGHT_CLASSIFICATIONS,
     },
-    type: {
+    insightType: {
         type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE"],
+        enums: insights_constants_1.TYPES_OF_INSIGHTS,
     },
-    expireAt: {
-        type: Date,
-        required: false, // If we don't want the document to expire, we can set it to null
+    attachmentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
+        default: null,
+    },
+    richTextContent: {
+        type: String,
+        default: "",
+    },
+    isArchived: {
+        type: Boolean,
+        default: false,
     },
 }, {
     timestamps: true,
     minimize: false,
 });
-// Expire documents after 1 Day
-attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
-exports.AttachmentModel = AttachmentModel;
+const InsightsTemplateModel = mongoose_1.default.model("insights-templates", insightsTemplateSchema, "insights-templates");
+exports.InsightsTemplateModel = InsightsTemplateModel;
