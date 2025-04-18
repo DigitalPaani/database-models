@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 interface IPlant extends Partial<Document> {
     plantName: string;
     status: string;
+    plantImage: string;
     subTopic: string;
     pubTopic: string;
     abbr: string;

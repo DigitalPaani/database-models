@@ -4,6 +4,7 @@ import mongoose, { Schema } from 'mongoose';
 interface IPlant extends Partial<Document> {
   plantName: string;
   status: string;
+  plantImage:string;
   subTopic: string;
   pubTopic: string;
   abbr: string;
@@ -43,6 +44,7 @@ const PlantSchema = new Schema<IPlant>({
   plantName: String,
   status: String,
   lat: String,
+  plantImage:String,
   workspaceId:{
     type:Schema.Types.ObjectId,
     ref:"NewWorkspace",

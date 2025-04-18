@@ -33,55 +33,17 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlantModel = void 0;
+exports.LayoutEquipmentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const PlantSchema = new mongoose_1.Schema({
-    plantName: String,
-    status: String,
-    lat: String,
-    plantImage: String,
-    workspaceId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace",
-        required: true
+const LayoutEquipments = new mongoose_1.Schema({
+    refId: String,
+    assetId: String,
+    nodeType: String,
+    category: String,
+    itemDetails: {
+        type: mongoose_1.Schema.Types.Mixed,
+        default: {},
     },
-    userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
-        required: true
-    },
-    long: String,
-    description: String,
-    schematic: String,
-    sensorfreq: String,
-    plantType: String,
-    createdOn: Date,
-    tur: String,
-    location: {
-        lat: String,
-        lng: String,
-        place: String
-    },
-    autoEmailing: {
-        dailyReportPageId: mongoose_1.Schema.Types.ObjectId,
-        weeklyReportPageId: mongoose_1.Schema.Types.ObjectId,
-        monthlyReportPageId: mongoose_1.Schema.Types.ObjectId,
-    },
-    embeddedLinks: [
-        {
-            name: String,
-            link: String,
-        },
-    ],
-    subTopic: String,
-    pubTopic: String,
-    abbr: String,
-    operationType: String,
-    userGroup: {
-        id: mongoose_1.Schema.Types.ObjectId,
-        name: String,
-        abbr: String,
-    },
-});
-const PlantModel = mongoose_1.default.model('Plant', PlantSchema, 'Plants');
-exports.PlantModel = PlantModel;
+}, { timestamps: true });
+const LayoutEquipmentModel = mongoose_1.default.model("LayoutEquipments", LayoutEquipments, "LayoutEquipments");
+exports.LayoutEquipmentModel = LayoutEquipmentModel;

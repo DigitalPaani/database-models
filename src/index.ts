@@ -47,7 +47,10 @@ import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
-
+import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
+import {ILayout,LayoutModel} from './models/LayoutSchema.model'
+import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
+import { SidebarLayoutItemsModel,ISidebarLayoutItem } from "./models/SidebarLayoutItems.model";
 import {
   TaskComponentsModel,
   ITaskComponent,
@@ -65,6 +68,7 @@ import {
 } from "./models/communicationComponents.model";
 
 import { NewUserModel, INewUser } from "./models/newUserModel";
+import { LayoutPathModel,IPathSchema } from "./models/graphConnections.model";
 
 import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
@@ -123,6 +127,11 @@ export type {
   IQuestion,
   IBatch,
   IAnswer,
+  IEquipmentQuestion,
+  ILayout,
+  ILayoutEquipment,
+  ISidebarLayoutItem,
+  IPathSchema,
   ITaskComment,
   ITaskLog,
   IFlocSample,
@@ -166,7 +175,12 @@ export {
   QuestionSchemaModel,
   BatchSchemaModel,
   AnswerSchemaModel,
+  EquipmentQuestionsModel,
   SensorsModel,
+  LayoutModel,
+  LayoutEquipmentModel,
+  SidebarLayoutItemsModel,
+  LayoutPathModel,
   TaskCommentModel,
   TaskLogModel,
   FlocSampleModel,
