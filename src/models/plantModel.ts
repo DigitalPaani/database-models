@@ -44,7 +44,10 @@ const PlantSchema = new Schema<IPlant>({
   plantName: String,
   status: String,
   lat: String,
-  plantImage:String,
+  plantImage:{
+    type:String,
+    required:true
+  },
   workspaceId:{
     type:Schema.Types.ObjectId,
     ref:"NewWorkspace",
