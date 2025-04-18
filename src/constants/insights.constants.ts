@@ -36,8 +36,8 @@ export const INSIGHT_CLASSIFICATIONS = [
     value: "POSITIVE",
     allowedInsightTypes: [
       {
-        label: "Achievements",
-        value: "ACHIEVEMENTS",
+        label: "Achievement",
+        value: "ACHIEVEMENT",
       },
     ],
   },
@@ -46,16 +46,16 @@ export const INSIGHT_CLASSIFICATIONS = [
     value: "NEGATIVE",
     allowedInsightTypes: [
       {
-        label: "Issues",
-        value: "ISSUES",
-      },
-      {
-        label: "Incidents",
-        value: "INCIDENTS",
-      },
-      {
         label: "Warning",
         value: "WARNING",
+      },
+      {
+        label: "Issue",
+        value: "ISSUE",
+      },
+      {
+        label: "Incident",
+        value: "INCIDENT",
       },
     ],
   },
