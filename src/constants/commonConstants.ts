@@ -16,7 +16,7 @@ import {
 } from "./triggerConst";
 
 import {
-  TYPES_OF_INSIGHTS,
+  INSIGHT_CLASSIFICATIONS,
   EQUIPMENT_TYPES
 } from "./insights.constants";
 
@@ -81,6 +81,6 @@ export default {
   TRIGGER_TYPES,
   WHATSAPP_TEMPLATE_VARIABLES,
   USER_GROUP_OR_SYSTEM,
-  TYPES_OF_INSIGHTS,
+  INSIGHT_CLASSIFICATIONS,
   EQUIPMENT_TYPES
 };

@@ -85,7 +85,14 @@ declare const _default: {
         value: string;
         label: string;
     }[];
-    TYPES_OF_INSIGHTS: string[];
+    INSIGHT_CLASSIFICATIONS: {
+        label: string;
+        value: string;
+        allowedInsightTypes: {
+            label: string;
+            value: string;
+        }[];
+    }[];
     EQUIPMENT_TYPES: {
         label: string;
         value: string;
