@@ -35,6 +35,7 @@ declare const _default: {
         issue: string;
         communication: string;
         obsolete: string;
+        insight: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;
@@ -84,10 +85,7 @@ declare const _default: {
         value: string;
         label: string;
     }[];
-    TYPES_OF_INSIGHTS: {
-        label: string;
-        value: string;
-    }[];
+    TYPES_OF_INSIGHTS: string[];
     EQUIPMENT_TYPES: {
         label: string;
         value: string;

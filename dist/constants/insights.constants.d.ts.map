@@ -1,1 +1,1 @@
-{"version":3,"file":"insights.constants.d.ts","sourceRoot":"","sources":["../../src/constants/insights.constants.ts"],"names":[],"mappings":"AACA,eAAO,MAAM,iBAAiB;;;GAa7B,CAAC;AAEF,eAAO,MAAM,eAAe;;;GAS3B,CAAC"}
+{"version":3,"file":"insights.constants.d.ts","sourceRoot":"","sources":["../../src/constants/insights.constants.ts"],"names":[],"mappings":"AAgCA,eAAO,MAAM,uBAAuB;;;;;;;GA6BnC,CAAC;AAEF,eAAO,MAAM,gCAAgC,UAE5C,CAAC;AAEF,eAAO,MAAM,iBAAiB,UAE7B,CAAC;AAEF,eAAO,MAAM,eAAe;;;GAS3B,CAAC"}

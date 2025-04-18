@@ -49,6 +49,10 @@ const insightsTemplateSchema = new mongoose_1.Schema({
         type: [String],
         enums: insights_constants_1.EQUIPMENT_TYPES,
     },
+    insightClassification: {
+        type: String,
+        enums: insights_constants_1.TYPES_OF_INSIGHT_CLASSIFICATIONS,
+    },
     insightType: {
         type: String,
         enums: insights_constants_1.TYPES_OF_INSIGHTS,

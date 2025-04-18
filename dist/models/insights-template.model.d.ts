@@ -4,6 +4,7 @@ interface IInsightsTemplate extends Document {
     name: string;
     description: string;
     equipmentTypes: string[];
+    insightClassification: string;
     insightType: string;
     attachmentId: Types.ObjectId | null;
     richTextContent: string;

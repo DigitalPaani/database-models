@@ -38,6 +38,7 @@ const TRIGGER_COMPONENT_TYPES = {
   issue: "ISSUE",
   communication: "COMMUNICATION",
   obsolete: "OBSOLETE",
+  insight: "INSIGHT"
 };
 
 const COMMUNICATION_COMPONENT_TYPES = {
