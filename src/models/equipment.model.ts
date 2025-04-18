@@ -4,7 +4,7 @@ interface ILayoutEquipment extends Document {
   refId: string;
   assetId: string;
   nodeType: string;
-  itemDetails: string;
+  itemDetails: string | object;
   category:string;
 }
 

@@ -3,7 +3,7 @@ interface ILayoutEquipment extends Document {
     refId: string;
     assetId: string;
     nodeType: string;
-    itemDetails: string;
+    itemDetails: string | object;
     category: string;
 }
 declare const LayoutEquipmentModel: mongoose.Model<ILayoutEquipment, {}, {}, {}, mongoose.Document<unknown, {}, ILayoutEquipment> & ILayoutEquipment & Required<{
