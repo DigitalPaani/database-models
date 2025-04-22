@@ -41,6 +41,35 @@ const insightComponentSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
+    triggerId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        default: "",
+    },
+    insightClassification: {
+        type: String,
+        required: true,
+    },
+    insightType: {
+        type: String,
+        required: true,
+    },
+    attachmentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
+        default: null,
+    },
+    richTextContent: {
+        type: String,
+        default: "",
+    },
     userGroupId: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,

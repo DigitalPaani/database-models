@@ -3,12 +3,19 @@ import { Types } from "mongoose";
 
 
 interface IInsightComponent extends Document {
-    insightTemplateId: Types.ObjectId,
-    userGroupId: Types.ObjectId,
-    assetId: Types.ObjectId,
-    equipmentIds: Types.ObjectId[],
-    priority: string,
-    isDeleted: boolean
+    insightTemplateId: Types.ObjectId;
+    triggerId: Types.ObjectId;
+    name: string;
+    description: string;
+    insightClassification: string;
+    insightType: string;
+    attachmentId: Types.ObjectId | null;
+    richTextContent: string;
+    userGroupId: Types.ObjectId;
+    assetId: Types.ObjectId;
+    equipmentIds: Types.ObjectId[];
+    priority: string;
+    isDeleted: boolean;
 };
 
 const insightComponentSchema = new Schema<IInsightComponent>(
@@ -16,6 +23,35 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     insightTemplateId: {
       type: Schema.Types.ObjectId,
       required: true,
+    },
+    triggerId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      default: "",
+    },
+    insightClassification: {
+      type: String,
+      required: true,
+    },
+    insightType: {
+      type: String,
+      required: true,
+    },
+    attachmentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "attachments",
+      default: null,
+    },
+    richTextContent: {
+      type: String,
+      default: "",
     },
     userGroupId: {
       type: Schema.Types.ObjectId,
