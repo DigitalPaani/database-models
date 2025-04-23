@@ -67,6 +67,7 @@ const insightsSchema = new Schema<IInsight>(
     },
     assetId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "Plant",
       required: false
     },
     isArchived: {
