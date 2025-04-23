@@ -1,6 +1,7 @@
 import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 interface IInsightsTemplate extends Document {
+    _id: Types.ObjectId;
     name: string;
     description: string;
     equipmentTypes: string[];
