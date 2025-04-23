@@ -3,6 +3,7 @@ import { Types } from "mongoose";
 
 
 interface IInsightComponent extends Document {
+    _id: Types.ObjectId;
     insightTemplateId: Types.ObjectId;
     triggerId: Types.ObjectId;
     name: string;
