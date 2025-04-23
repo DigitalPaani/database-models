@@ -11,6 +11,7 @@ interface IInsight extends Document {
     openTime: number;
     closeTime: number;
     priority: number;
+    assetId: Types.ObjectId;
     isArchived: boolean;
 }
 declare const InsightModel: Model<IInsight>;

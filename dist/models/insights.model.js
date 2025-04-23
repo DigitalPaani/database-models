@@ -78,6 +78,10 @@ const insightsSchema = new mongoose_1.Schema({
         type: Number,
         required: true,
     },
+    assetId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false
+    },
     isArchived: {
         type: Boolean,
         default: false,

@@ -18,6 +18,7 @@ interface IInsight extends Document {
   openTime: number;
   closeTime: number;
   priority: number;
+  assetId: Types.ObjectId;
   isArchived: boolean;
 }
 
@@ -63,6 +64,10 @@ const insightsSchema = new Schema<IInsight>(
     priority: {
       type: Number,
       required: true,
+    },
+    assetId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false
     },
     isArchived: {
       type: Boolean,
