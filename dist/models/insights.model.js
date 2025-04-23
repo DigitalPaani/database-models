@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InsightsModel = void 0;
+exports.InsightModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const insights_constants_1 = require("../constants/insights.constants");
 const insightsSchema = new mongoose_1.Schema({
@@ -82,5 +82,5 @@ const insightsSchema = new mongoose_1.Schema({
     timestamps: true,
     minimize: false,
 });
-const InsightsModel = mongoose_1.default.model("insights", insightsSchema, "insights");
-exports.InsightsModel = InsightsModel;
+const InsightModel = mongoose_1.default.model("insights", insightsSchema, "insights");
+exports.InsightModel = InsightModel;

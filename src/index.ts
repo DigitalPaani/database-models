@@ -85,6 +85,7 @@ import { FlocImageModel, IFlocImage } from './models/floc-image.model';
 
 import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
 import { InsightComponentModel, IInsightComponent } from "./models/insightComponents.model";
+import { InsightModel, IInsight } from "./models/insights.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -140,7 +141,8 @@ export type {
   IFlocSample,
   IFlocImage,
   IInsightsTemplate,
-  IInsightComponent
+  IInsightComponent,
+  IInsight
 };
 
 // exports the models
@@ -192,5 +194,6 @@ export {
   FlocImageModel,
   FormulaAuditsModel,
   InsightsTemplateModel,
-  InsightComponentModel
+  InsightComponentModel,
+  InsightModel
 };

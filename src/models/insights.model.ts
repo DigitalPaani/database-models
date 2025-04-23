@@ -7,7 +7,7 @@ import {
   EQUIPMENT_TYPES,
 } from "../constants/insights.constants";
 
-interface IInsights extends Document {
+interface IInsight extends Document {
   name: string;
   description: string;
   equipmentTypes: string[];
@@ -20,7 +20,7 @@ interface IInsights extends Document {
   isArchived: boolean;
 }
 
-const insightsSchema = new Schema<IInsights>(
+const insightsSchema = new Schema<IInsight>(
   {
     name: {
       type: String,
@@ -70,11 +70,11 @@ const insightsSchema = new Schema<IInsights>(
   }
 );
 
-const InsightsModel: Model<IInsights> =
-  mongoose.model<IInsights>(
+const InsightModel: Model<IInsight> =
+  mongoose.model<IInsight>(
     "insights",
     insightsSchema,
     "insights"
   );
 
-export { InsightsModel, IInsights };
+export { InsightModel, IInsight };
