@@ -15,7 +15,7 @@ interface IInsightComponent extends Document {
     userGroupId: Types.ObjectId;
     assetId: Types.ObjectId;
     equipmentIds: Types.ObjectId[];
-    priority: string;
+    priority: Number;
     isDeleted: boolean;
 };
 
@@ -71,7 +71,7 @@ const insightComponentSchema = new Schema<IInsightComponent>(
       required: true,
     },
     priority: {
-      type: String,
+      type: Number,
       required: true,
     },
     isDeleted: { type: Boolean, default: false },

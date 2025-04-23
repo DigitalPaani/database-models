@@ -87,7 +87,7 @@ const insightComponentSchema = new mongoose_1.Schema({
         required: true,
     },
     priority: {
-        type: String,
+        type: Number,
         required: true,
     },
     isDeleted: { type: Boolean, default: false },

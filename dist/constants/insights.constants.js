@@ -64,11 +64,23 @@ exports.TYPES_OF_INSIGHTS = exports.INSIGHT_CLASSIFICATIONS.flatMap((item) => it
 exports.INSIGHT_TYPE_OBJECTS = Array.from(new Map(exports.INSIGHT_CLASSIFICATIONS.flatMap((classification) => classification.allowedInsightTypes).map((type) => [type.value, type])).values());
 exports.EQUIPMENT_TYPES = [
     {
-        label: "Sensors",
-        value: "SENSORS",
+        label: "Tank",
+        value: "TANK",
     },
     {
-        label: "Valves",
-        value: "VALVES",
+        label: "Valve",
+        value: "VALVE",
+    },
+    {
+        label: "Pump",
+        value: "PUMP",
+    },
+    {
+        label: "Blower",
+        value: "BLOWER",
+    },
+    {
+        label: "FILTER",
+        value: "FILTER",
     },
 ];

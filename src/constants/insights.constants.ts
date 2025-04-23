@@ -77,14 +77,25 @@ export const INSIGHT_TYPE_OBJECTS = Array.from(
   ).values()
 );
 
-
 export const EQUIPMENT_TYPES = [
   {
-    label: "Sensors",
-    value: "SENSORS",
+    label: "Tank",
+    value: "TANK",
   },
   {
-    label: "Valves",
-    value: "VALVES",
+    label: "Valve",
+    value: "VALVE",
+  },
+  {
+    label: "Pump",
+    value: "PUMP",
+  },
+  {
+    label: "Blower",
+    value: "BLOWER",
+  },
+  {
+    label: "FILTER",
+    value: "FILTER",
   },
 ];

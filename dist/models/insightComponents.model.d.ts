@@ -13,7 +13,7 @@ interface IInsightComponent extends Document {
     userGroupId: Types.ObjectId;
     assetId: Types.ObjectId;
     equipmentIds: Types.ObjectId[];
-    priority: string;
+    priority: Number;
     isDeleted: boolean;
 }
 declare const InsightComponentModel: Model<IInsightComponent>;
