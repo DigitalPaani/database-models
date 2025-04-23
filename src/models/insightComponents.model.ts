@@ -22,6 +22,7 @@ const insightComponentSchema = new Schema<IInsightComponent>(
   {
     insightTemplateId: {
       type: Schema.Types.ObjectId,
+      ref: "insights-templates",
       required: true,
     },
     triggerId: {
@@ -55,10 +56,12 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     },
     userGroupId: {
       type: Schema.Types.ObjectId,
+      ref: "UserGroup",
       required: true,
     },
     assetId: {
       type: Schema.Types.ObjectId,
+      ref: "Plant",
       required: true,
     },
     equipmentIds: {

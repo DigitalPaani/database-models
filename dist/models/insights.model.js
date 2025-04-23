@@ -33,19 +33,10 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InsightComponentModel = void 0;
+exports.InsightsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-;
-const insightComponentSchema = new mongoose_1.Schema({
-    insightTemplateId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "insights-templates",
-        required: true,
-    },
-    triggerId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
-    },
+const insights_constants_1 = require("../constants/insights.constants");
+const insightsSchema = new mongoose_1.Schema({
     name: {
         type: String,
         required: true,
@@ -54,13 +45,17 @@ const insightComponentSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    equipmentTypes: {
+        type: [String],
+        enums: insights_constants_1.EQUIPMENT_TYPES,
+    },
     insightClassification: {
         type: String,
-        required: true,
+        enums: insights_constants_1.TYPES_OF_INSIGHT_CLASSIFICATIONS,
     },
     insightType: {
         type: String,
-        required: true,
+        enums: insights_constants_1.TYPES_OF_INSIGHTS,
     },
     attachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
@@ -71,27 +66,21 @@ const insightComponentSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
-    userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
+    openTime: {
+        type: Number,
         required: true,
     },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
+    closeTime: {
+        type: Number,
+        required: false,
     },
-    equipmentIds: {
-        type: [mongoose_1.Schema.Types.ObjectId],
-        required: true,
+    isArchived: {
+        type: Boolean,
+        default: false,
     },
-    priority: {
-        type: String,
-        required: true,
-    },
-    isDeleted: { type: Boolean, default: false },
 }, {
     timestamps: true,
+    minimize: false,
 });
-const InsightComponentModel = mongoose_1.default.model("insightComponents", insightComponentSchema, "insightComponents");
-exports.InsightComponentModel = InsightComponentModel;
+const InsightsModel = mongoose_1.default.model("insights", insightsSchema, "insights");
+exports.InsightsModel = InsightsModel;
