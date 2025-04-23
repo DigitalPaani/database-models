@@ -10,6 +10,7 @@ interface IInsight extends Document {
     richTextContent: string;
     openTime: number;
     closeTime: number;
+    priority: number;
     isArchived: boolean;
 }
 declare const InsightModel: Model<IInsight>;

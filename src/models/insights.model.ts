@@ -17,6 +17,7 @@ interface IInsight extends Document {
   richTextContent: string;
   openTime: number;
   closeTime: number;
+  priority: number;
   isArchived: boolean;
 }
 
@@ -58,6 +59,10 @@ const insightsSchema = new Schema<IInsight>(
     closeTime: {
         type: Number,
         required: false,
+    },
+    priority: {
+      type: Number,
+      required: true,
     },
     isArchived: {
       type: Boolean,
