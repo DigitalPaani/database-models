@@ -83,6 +83,7 @@ const insightComponentSchema = new mongoose_1.Schema({
     },
     equipmentIds: {
         type: [mongoose_1.Schema.Types.ObjectId],
+        ref: "LayoutEquipments",
         required: true,
     },
     priority: {

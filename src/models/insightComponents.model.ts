@@ -66,6 +66,7 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     },
     equipmentIds: {
       type: [Schema.Types.ObjectId],
+      ref: "LayoutEquipments",
       required: true,
     },
     priority: {
