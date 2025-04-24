@@ -40,6 +40,7 @@ const LayoutEquipments = new mongoose_1.Schema({
     assetId: String,
     nodeType: String,
     category: String,
+    equipmentType: String,
     itemDetails: {
         type: mongoose_1.Schema.Types.Mixed,
         default: {},

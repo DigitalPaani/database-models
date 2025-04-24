@@ -5,6 +5,7 @@ interface ILayoutEquipment extends Document {
   assetId: string;
   nodeType: string;
   itemDetails: string | object;
+  equipmentType:string;
   category:string;
 }
 
@@ -14,6 +15,7 @@ const LayoutEquipments = new Schema(
     assetId: String,
     nodeType: String,
     category:String,
+    equipmentType:String,
     itemDetails: {
       type: Schema.Types.Mixed,
       default: {},
