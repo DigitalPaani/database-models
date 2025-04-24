@@ -35,12 +35,16 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LayoutEquipmentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const visualization_constants_1 = require("../constants/visualization.constants");
 const LayoutEquipments = new mongoose_1.Schema({
     refId: String,
     assetId: String,
     nodeType: String,
     category: String,
-    equipmentType: String,
+    equipmentType: {
+        type: String,
+        enum: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS
+    },
     itemDetails: {
         type: mongoose_1.Schema.Types.Mixed,
         default: {},

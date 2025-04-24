@@ -1,5 +1,10 @@
 import mongoose, { Document, Schema } from "mongoose";
 
+
+import {
+  VISUALIZATION_EQUIPMENT_TYPES_ENUMS
+} from '../constants/visualization.constants';
+
 interface ILayoutEquipment extends Document {
   refId: string;
   assetId: string;
@@ -15,7 +20,10 @@ const LayoutEquipments = new Schema(
     assetId: String,
     nodeType: String,
     category:String,
-    equipmentType:String,
+    equipmentType:{
+      type: String,
+      enum: VISUALIZATION_EQUIPMENT_TYPES_ENUMS
+    },
     itemDetails: {
       type: Schema.Types.Mixed,
       default: {},
