@@ -20,5 +20,17 @@ exports.sensorPurposeTags = [
     "flowTotalizer",
     "energyUsedPerHour",
     "totalEnergyUsed",
+    "conductivity",
+    "sdianalyser",
+    "tss",
+    "barscreenchoking",
+    "LoadCellWeight",
+    "autoManual",
+    "trip",
+    "onOff",
+    "vibration",
+    "frequency",
+    "current",
+    "rpm",
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
