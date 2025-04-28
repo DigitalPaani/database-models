@@ -17,6 +17,18 @@ export const sensorPurposeTags = [
   "flowTotalizer",
   "energyUsedPerHour",
   "totalEnergyUsed",
+  "conductivity",
+  "sdianalyser",
+  "tss",
+  "barscreenchoking",
+  "LoadCellWeight",
+  "autoManual",
+  "trip",
+  "onOff",
+  "vibration",
+  "frequency",
+  "current",
+  "rpm",
 ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
