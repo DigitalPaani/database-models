@@ -45,11 +45,10 @@ const SensorSchema = new mongoose_1.Schema({
     },
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true },
-    purpose: { type: [String], enum: sensorConst_1.sensorPurposeTags, required: true },
+    purpose: { type: [String], enum: sensorConst_1.sensorPurposeTags },
     inputType: {
         type: [String],
         enum: sensorConst_1.sensorInputType, // Restricts values to these three options
-        required: true,
     },
     tags: { type: [String], default: [] },
 }, { timestamps: true });
