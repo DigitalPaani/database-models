@@ -13,7 +13,7 @@ export declare namespace FormulaCommonTypes {
         value: string;
         type: "hyperFormulaFunction" | "operator" | "sensorSetting" | 'number';
         color: string;
-        sensorSetting?: SensorSetting;
+        sensorSetting?: Types.ObjectId;
     };
     type Frequency = {
         dateTime?: number;

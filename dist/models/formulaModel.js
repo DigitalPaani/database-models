@@ -41,6 +41,7 @@ require("./workspaceModel");
 require("./newUserModel");
 require("./plantModel");
 require("./userGroupModel");
+require("./sensorSettingModel");
 const frequencySchema = new mongoose_1.Schema({
     dateTime: {
         type: Number,
@@ -80,7 +81,11 @@ const formulasSchema = new mongoose_1.Schema({
                 value: { type: String, trim: true, required: true },
                 type: { type: String, required: true, enum: formulaConst_1.FORMULAS_CHIP_TYPES },
                 color: { type: String, trim: true, required: false },
-                sensorSetting: Object,
+                sensorSetting: {
+                    type: mongoose_1.Types.ObjectId,
+                    required: false,
+                    ref: "SensorSettings",
+                },
             },
         ],
         required: true,
