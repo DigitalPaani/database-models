@@ -15,7 +15,7 @@ export namespace FormulaCommonTypes {
   export type FormulaChip = {
     value: string;
     type: "hyperFormulaFunction" | "operator" | "sensorSetting" | 'number';
-    color: string;
+    color?: string;
     sensorSetting?: Types.ObjectId;
   };
 
