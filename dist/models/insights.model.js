@@ -45,8 +45,8 @@ const insightsSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
-    equipmentTypes: {
-        type: [String],
+    equipmentIds: {
+        type: [mongoose_1.Types.ObjectId],
         enums: insights_constants_1.EQUIPMENT_TYPES,
     },
     insightClassification: {

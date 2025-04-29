@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 interface IInsight extends Document {
     name: string;
     description: string;
-    equipmentTypes: string[];
+    equipmentIds: Types.ObjectId[];
     insightClassification: string;
     insightType: string;
     attachmentId: Types.ObjectId | null;

@@ -10,7 +10,7 @@ import {
 interface IInsight extends Document {
   name: string;
   description: string;
-  equipmentTypes: string[];
+  equipmentIds: Types.ObjectId[];
   insightClassification: string;
   insightType: string;
   attachmentId: Types.ObjectId | null;
@@ -32,8 +32,8 @@ const insightsSchema = new Schema<IInsight>(
       type: String,
       default: "",
     },
-    equipmentTypes: {
-      type: [String],
+    equipmentIds: {
+      type: [Types.ObjectId],
       enums: EQUIPMENT_TYPES,
     },
     insightClassification: {
