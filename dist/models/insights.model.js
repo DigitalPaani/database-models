@@ -47,6 +47,7 @@ const insightsSchema = new mongoose_1.Schema({
     },
     equipmentIds: {
         type: [mongoose_1.Types.ObjectId],
+        ref: "LayoutEquipments",
         enums: insights_constants_1.EQUIPMENT_TYPES,
     },
     insightClassification: {

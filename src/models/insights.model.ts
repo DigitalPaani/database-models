@@ -34,6 +34,7 @@ const insightsSchema = new Schema<IInsight>(
     },
     equipmentIds: {
       type: [Types.ObjectId],
+      ref: "LayoutEquipments",
       enums: EQUIPMENT_TYPES,
     },
     insightClassification: {
