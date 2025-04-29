@@ -85,6 +85,8 @@ import { FlocImageModel, IFlocImage } from './models/floc-image.model';
 
 import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
 
+import { FormulaCommonTypes } from './types/formulaTypes'
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -138,7 +140,8 @@ export type {
   ITaskLog,
   IFlocSample,
   IFlocImage,
-  IInsightsTemplate
+  IInsightsTemplate,
+  FormulaCommonTypes,
 };
 
 // exports the models
