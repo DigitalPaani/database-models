@@ -21,11 +21,10 @@ const SensorSchema = new Schema<ISensor>(
     },
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true }, 
-    purpose: { type: [String], enum: sensorPurposeTags, required: true },
+    purpose: { type: [String], enum: sensorPurposeTags },
     inputType: {
       type: [String],
       enum: sensorInputType, // Restricts values to these three options
-      required: true,
     },
     tags: { type: [String], default: [] },
   },
