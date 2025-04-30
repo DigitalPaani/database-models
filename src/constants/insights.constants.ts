@@ -1,35 +1,4 @@
 
-
-// export const INSIGHT_CLASSIFICATION = [
-//   {
-//     label: "Positive",
-//     value: "POSITIVE"
-//   },
-//   {
-//     label: "Negative",
-//     value: "NEGATIVE",
-//   }
-// ]
-
-// export const TYPES_OF_INSIGHTS = [
-//   {
-//     label: "Achievements",
-//     value: "ACHIEVEMENTS",
-//   },
-//   {
-//     label: "Issues",
-//     value: "ISSUES",
-//   },
-//   {
-//     label: "Incidents",
-//     value: "INCIDENTS",
-//   },
-//   {
-//     label: "Warning",
-//     value: "WARNING",
-//   },
-// ];
-
 export const INSIGHT_CLASSIFICATIONS = [
   {
     label: "Positive",
@@ -95,7 +64,7 @@ export const EQUIPMENT_TYPES = [
     value: "BLOWER",
   },
   {
-    label: "FILTER",
+    label: "Filter",
     value: "FILTER",
   },
 ];

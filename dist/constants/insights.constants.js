@@ -1,34 +1,6 @@
 "use strict";
-// export const INSIGHT_CLASSIFICATION = [
-//   {
-//     label: "Positive",
-//     value: "POSITIVE"
-//   },
-//   {
-//     label: "Negative",
-//     value: "NEGATIVE",
-//   }
-// ]
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EQUIPMENT_TYPES = exports.INSIGHT_TYPE_OBJECTS = exports.TYPES_OF_INSIGHTS = exports.TYPES_OF_INSIGHT_CLASSIFICATIONS = exports.INSIGHT_CLASSIFICATIONS = void 0;
-// export const TYPES_OF_INSIGHTS = [
-//   {
-//     label: "Achievements",
-//     value: "ACHIEVEMENTS",
-//   },
-//   {
-//     label: "Issues",
-//     value: "ISSUES",
-//   },
-//   {
-//     label: "Incidents",
-//     value: "INCIDENTS",
-//   },
-//   {
-//     label: "Warning",
-//     value: "WARNING",
-//   },
-// ];
 exports.INSIGHT_CLASSIFICATIONS = [
     {
         label: "Positive",
@@ -80,7 +52,7 @@ exports.EQUIPMENT_TYPES = [
         value: "BLOWER",
     },
     {
-        label: "FILTER",
+        label: "Filter",
         value: "FILTER",
     },
 ];
