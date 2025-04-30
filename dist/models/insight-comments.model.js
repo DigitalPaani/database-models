@@ -43,6 +43,7 @@ const insightCommentSchema = new mongoose_1.Schema({
     },
     senderId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
     comment: {

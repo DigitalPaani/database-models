@@ -20,6 +20,7 @@ const insightCommentSchema = new Schema<IInsightComment>(
     },
     senderId: {
         type: Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
     comment: {
