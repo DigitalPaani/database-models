@@ -1,4 +1,5 @@
 import { Model } from "mongoose";
+import type { Document } from "mongoose";
 import { Types } from "mongoose";
 interface IInsightComment extends Document {
     insightId: Types.ObjectId;
