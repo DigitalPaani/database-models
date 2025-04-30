@@ -6,6 +6,8 @@ interface IInsightComment extends Document {
     senderId: Types.ObjectId;
     comment: string;
     isArchived: boolean;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 declare const InsightCommentModel: Model<IInsightComment>;
 export { InsightCommentModel, IInsightComment };

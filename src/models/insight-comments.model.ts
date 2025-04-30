@@ -7,7 +7,9 @@ interface IInsightComment extends Document {
     insightId: Types.ObjectId;
     senderId: Types.ObjectId;
     comment: string
-    isArchived: boolean;    
+    isArchived: boolean;
+    createdAt?: Date;
+    updatedAt?: Date;    
 };
 
 const insightCommentSchema = new Schema<IInsightComment>(
