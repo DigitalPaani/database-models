@@ -1,6 +1,10 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
+import type { IPlant } from "./plantModel";
+import type { ILayoutEquipment } from "./equipment.model";
+import type { IAttachment } from "./attachments.model";
+
 import {
   TYPES_OF_INSIGHT_CLASSIFICATIONS,
   TYPES_OF_INSIGHTS,
@@ -10,15 +14,16 @@ import {
 interface IInsight extends Document {
   name: string;
   description: string;
-  equipmentIds: Types.ObjectId[];
+  equipmentIds: Types.ObjectId[] | ILayoutEquipment[];
   insightClassification: string;
   insightType: string;
-  attachmentId: Types.ObjectId | null;
+  attachmentId: Types.ObjectId | null | IAttachment;
   richTextContent: string;
   openTime: number;
   closeTime: number;
   priority: number;
-  assetId: Types.ObjectId;
+  isOpen: boolean;
+  assetId: Types.ObjectId | IPlant;
   isArchived: boolean;
 }
 
@@ -61,6 +66,10 @@ const insightsSchema = new Schema<IInsight>(
     closeTime: {
         type: Number,
         required: false,
+    },
+    isOpen: {
+      type: Boolean,
+      default: false,
     },
     priority: {
       type: Number,

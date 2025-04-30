@@ -75,6 +75,10 @@ const insightsSchema = new mongoose_1.Schema({
         type: Number,
         required: false,
     },
+    isOpen: {
+        type: Boolean,
+        default: false,
+    },
     priority: {
         type: Number,
         required: true,
