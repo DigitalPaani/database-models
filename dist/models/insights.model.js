@@ -77,7 +77,7 @@ const insightsSchema = new mongoose_1.Schema({
     },
     isOpen: {
         type: Boolean,
-        default: false,
+        required: true,
     },
     priority: {
         type: Number,
@@ -87,6 +87,10 @@ const insightsSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "Plant",
         required: false
+    },
+    insightComponentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
     },
     isArchived: {
         type: Boolean,

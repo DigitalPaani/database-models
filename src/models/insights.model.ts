@@ -24,6 +24,7 @@ interface IInsight extends Document {
   priority: number;
   isOpen: boolean;
   assetId: Types.ObjectId | IPlant;
+  insightComponentId: Types.ObjectId;
   isArchived: boolean;
 }
 
@@ -69,7 +70,7 @@ const insightsSchema = new Schema<IInsight>(
     },
     isOpen: {
       type: Boolean,
-      default: false,
+      required: true,
     },
     priority: {
       type: Number,
@@ -79,6 +80,10 @@ const insightsSchema = new Schema<IInsight>(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Plant",
       required: false
+    },
+    insightComponentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
     },
     isArchived: {
       type: Boolean,

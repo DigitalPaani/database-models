@@ -16,6 +16,7 @@ interface IInsight extends Document {
     priority: number;
     isOpen: boolean;
     assetId: Types.ObjectId | IPlant;
+    insightComponentId: Types.ObjectId;
     isArchived: boolean;
 }
 declare const InsightModel: Model<IInsight>;
