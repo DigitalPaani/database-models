@@ -17,7 +17,7 @@ interface ISensorSetting extends Document {
 
 const sensorSettingsSchema = new Schema<ISensorSetting>(
   {
-    sensorId: { type: Schema.Types.ObjectId, ref: "Sensors", required: true },
+    sensorId: { type: Schema.Types.ObjectId, ref: "sensors", required: true },
     granularity: {
       type: String,
       enum: SENSOR_SETTING_GRANULARITY,
