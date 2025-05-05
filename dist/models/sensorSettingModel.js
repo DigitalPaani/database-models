@@ -38,7 +38,6 @@ const mongoose_1 = __importStar(require("mongoose"));
 const formulaConst_1 = require("../constants/formulaConst");
 const sensorSettingsSchema = new mongoose_1.Schema({
     sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Sensors", required: true },
-    sensorTag: { type: String, required: true, trim: true },
     granularity: {
         type: String,
         enum: formulaConst_1.SENSOR_SETTING_GRANULARITY,

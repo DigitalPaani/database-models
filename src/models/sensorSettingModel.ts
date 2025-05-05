@@ -8,7 +8,6 @@ import {
 
 interface ISensorSetting extends Document {
   sensorId: Types.ObjectId;
-  sensorTag: string;
   granularity: "Minutes" | "Hours" | "Days" | "Weeks" | "Months";
   aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative";
   firstReferenceTimeInMinutes: number;
@@ -19,7 +18,6 @@ interface ISensorSetting extends Document {
 const sensorSettingsSchema = new Schema<ISensorSetting>(
   {
     sensorId: { type: Schema.Types.ObjectId, ref: "Sensors", required: true },
-    sensorTag: { type: String, required: true, trim: true },
     granularity: {
       type: String,
       enum: SENSOR_SETTING_GRANULARITY,
