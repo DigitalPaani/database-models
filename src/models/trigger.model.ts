@@ -140,19 +140,11 @@ const triggerSchema = new Schema(
         currentObservationFreq: { type: Number, default: 0 },
         resolutionSensorId: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Sensors",
-        },
-        resolutionSensorTag: {
-          type: String,
-          required: false,
+          ref: "sensors",
         },
         observationSensorId: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "Sensors",
-        },
-        observationSensorTag: {
-          type: String,
-          required: false,
+          ref: "sensors",
         },
         resolutionValue: Number,
         resolutionUnit: String,
