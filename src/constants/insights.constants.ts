@@ -72,3 +72,18 @@ export const EQUIPMENT_TYPES = [
     value: "FILTER",
   },
 ];
+
+export const INSIGHT_PRIORITIES = [
+  {
+    label: "Low",
+    value: 3,
+  },
+  {
+    label: "Medium",
+    value: 2,
+  },
+  {
+    label: "High",
+    value: 1,
+  },
+];
