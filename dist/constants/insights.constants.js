@@ -3,18 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EQUIPMENT_TYPES = exports.INSIGHT_TYPE_OBJECTS = exports.TYPES_OF_INSIGHTS = exports.TYPES_OF_INSIGHT_CLASSIFICATIONS = exports.INSIGHT_CLASSIFICATIONS = void 0;
 exports.INSIGHT_CLASSIFICATIONS = [
     {
-        label: "Positive",
-        value: "POSITIVE",
+        label: "Achievement",
+        value: "ACHIEVEMENT",
         allowedInsightTypes: [
             {
-                label: "Achievement",
-                value: "ACHIEVEMENT",
+                label: "Improvement",
+                value: "Improvement",
+            },
+            {
+                label: "Accomplishment",
+                value: "ACCOMPLISHMENT",
             },
         ],
     },
     {
-        label: "Negative",
-        value: "NEGATIVE",
+        label: "Alarm",
+        value: "ALARM",
         allowedInsightTypes: [
             {
                 label: "Warning",

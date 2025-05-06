@@ -1,18 +1,22 @@
 
 export const INSIGHT_CLASSIFICATIONS = [
   {
-    label: "Positive",
-    value: "POSITIVE",
+    label: "Achievement",
+    value: "ACHIEVEMENT",
     allowedInsightTypes: [
       {
-        label: "Achievement",
-        value: "ACHIEVEMENT",
+        label: "Improvement",
+        value: "Improvement",
+      },
+      {
+        label: "Accomplishment",
+        value: "ACCOMPLISHMENT",
       },
     ],
   },
   {
-    label: "Negative",
-    value: "NEGATIVE",
+    label: "Alarm",
+    value: "ALARM",
     allowedInsightTypes: [
       {
         label: "Warning",
