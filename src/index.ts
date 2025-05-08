@@ -88,6 +88,8 @@ import { InsightComponentModel, IInsightComponent } from "./models/insight-compo
 import { InsightModel, IInsight } from "./models/insights.model";
 import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
 
+import { FormulaCommonTypes } from './types/formulaTypes'
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -144,7 +146,8 @@ export type {
   IInsightsTemplate,
   IInsightComponent,
   IInsight,
-  IInsightComment
+  IInsightComment,
+  FormulaCommonTypes
 };
 
 // exports the models
