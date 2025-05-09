@@ -8,7 +8,7 @@ exports.INSIGHT_CLASSIFICATIONS = [
         allowedInsightTypes: [
             {
                 label: "Improvement",
-                value: "Improvement",
+                value: "IMPROVEMENT",
             },
             {
                 label: "Accomplishment",
