@@ -101,6 +101,10 @@ declare const _default: {
         label: string;
         value: string;
     }[];
+    INSIGHT_PRIORITIES: {
+        label: string;
+        value: number;
+    }[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

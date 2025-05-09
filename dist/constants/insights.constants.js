@@ -1,48 +1,24 @@
 "use strict";
-// export const INSIGHT_CLASSIFICATION = [
-//   {
-//     label: "Positive",
-//     value: "POSITIVE"
-//   },
-//   {
-//     label: "Negative",
-//     value: "NEGATIVE",
-//   }
-// ]
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EQUIPMENT_TYPES = exports.INSIGHT_TYPE_OBJECTS = exports.TYPES_OF_INSIGHTS = exports.TYPES_OF_INSIGHT_CLASSIFICATIONS = exports.INSIGHT_CLASSIFICATIONS = void 0;
-// export const TYPES_OF_INSIGHTS = [
-//   {
-//     label: "Achievements",
-//     value: "ACHIEVEMENTS",
-//   },
-//   {
-//     label: "Issues",
-//     value: "ISSUES",
-//   },
-//   {
-//     label: "Incidents",
-//     value: "INCIDENTS",
-//   },
-//   {
-//     label: "Warning",
-//     value: "WARNING",
-//   },
-// ];
+exports.INSIGHT_PRIORITIES = exports.EQUIPMENT_TYPES = exports.INSIGHT_TYPE_OBJECTS = exports.TYPES_OF_INSIGHTS = exports.TYPES_OF_INSIGHT_CLASSIFICATIONS = exports.INSIGHT_CLASSIFICATIONS = void 0;
 exports.INSIGHT_CLASSIFICATIONS = [
     {
-        label: "Positive",
-        value: "POSITIVE",
+        label: "Achievement",
+        value: "ACHIEVEMENT",
         allowedInsightTypes: [
             {
-                label: "Achievement",
-                value: "ACHIEVEMENT",
+                label: "Improvement",
+                value: "IMPROVEMENT",
+            },
+            {
+                label: "Accomplishment",
+                value: "ACCOMPLISHMENT",
             },
         ],
     },
     {
-        label: "Negative",
-        value: "NEGATIVE",
+        label: "Alarm",
+        value: "ALARM",
         allowedInsightTypes: [
             {
                 label: "Warning",
@@ -64,11 +40,37 @@ exports.TYPES_OF_INSIGHTS = exports.INSIGHT_CLASSIFICATIONS.flatMap((item) => it
 exports.INSIGHT_TYPE_OBJECTS = Array.from(new Map(exports.INSIGHT_CLASSIFICATIONS.flatMap((classification) => classification.allowedInsightTypes).map((type) => [type.value, type])).values());
 exports.EQUIPMENT_TYPES = [
     {
-        label: "Sensors",
-        value: "SENSORS",
+        label: "Tank",
+        value: "TANK",
     },
     {
-        label: "Valves",
-        value: "VALVES",
+        label: "Valve",
+        value: "VALVE",
+    },
+    {
+        label: "Pump",
+        value: "PUMP",
+    },
+    {
+        label: "Blower",
+        value: "BLOWER",
+    },
+    {
+        label: "Filter",
+        value: "FILTER",
+    },
+];
+exports.INSIGHT_PRIORITIES = [
+    {
+        label: "Low",
+        value: 3,
+    },
+    {
+        label: "Medium",
+        value: 2,
+    },
+    {
+        label: "High",
+        value: 1,
     },
 ];

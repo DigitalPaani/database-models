@@ -33,34 +33,29 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentModel = void 0;
+exports.InsightCommentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const attachmentSchema = new mongoose_1.Schema({
-    attachmentLink: {
+;
+const insightCommentSchema = new mongoose_1.Schema({
+    insightId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+    },
+    senderId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
+    comment: {
         type: String,
-        required: false,
+        default: "",
     },
-    filename: {
-        type: String,
-        required: false,
-    },
-    mimetype: {
-        type: String,
-        required: false,
-    },
-    type: {
-        type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT"],
-    },
-    expireAt: {
-        type: Date,
-        required: false, // If we don't want the document to expire, we can set it to null
-    },
+    isArchived: {
+        type: Boolean,
+        default: false
+    }
 }, {
     timestamps: true,
-    minimize: false,
 });
-// Expire documents after 1 Day
-attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
-exports.AttachmentModel = AttachmentModel;
+const InsightCommentModel = mongoose_1.default.model("insightComments", insightCommentSchema, "insightComments");
+exports.InsightCommentModel = InsightCommentModel;

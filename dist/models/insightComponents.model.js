@@ -33,34 +33,66 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentModel = void 0;
+exports.InsightComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const attachmentSchema = new mongoose_1.Schema({
-    attachmentLink: {
+;
+const insightComponentSchema = new mongoose_1.Schema({
+    insightTemplateId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "insights-templates",
+        required: true,
+    },
+    triggerId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+    },
+    name: {
         type: String,
-        required: false,
+        required: true,
     },
-    filename: {
+    description: {
         type: String,
-        required: false,
+        default: "",
     },
-    mimetype: {
+    insightClassification: {
         type: String,
-        required: false,
+        required: true,
     },
-    type: {
+    insightType: {
         type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT"],
+        required: true,
     },
-    expireAt: {
-        type: Date,
-        required: false, // If we don't want the document to expire, we can set it to null
+    attachmentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
+        default: null,
     },
+    richTextContent: {
+        type: String,
+        default: "",
+    },
+    userGroupId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "UserGroup",
+        required: true,
+    },
+    assetId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant",
+        required: true,
+    },
+    equipmentIds: {
+        type: [mongoose_1.Schema.Types.ObjectId],
+        ref: "LayoutEquipments",
+        required: true,
+    },
+    priority: {
+        type: Number,
+        required: true,
+    },
+    isDeleted: { type: Boolean, default: false },
 }, {
     timestamps: true,
-    minimize: false,
 });
-// Expire documents after 1 Day
-attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
-exports.AttachmentModel = AttachmentModel;
+const InsightComponentModel = mongoose_1.default.model("insightComponents", insightComponentSchema, "insightComponents");
+exports.InsightComponentModel = InsightComponentModel;

@@ -8,6 +8,7 @@ import {
 } from "../constants/insights.constants";
 
 interface IInsightsTemplate extends Document {
+  _id: Types.ObjectId;
   name: string;
   description: string;
   equipmentTypes: string[];

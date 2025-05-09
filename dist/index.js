@@ -36,7 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.InsightCommentModel = exports.InsightModel = exports.InsightComponentModel = exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.TriggerLogsModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -129,6 +129,12 @@ const floc_image_model_1 = require("./models/floc-image.model");
 Object.defineProperty(exports, "FlocImageModel", { enumerable: true, get: function () { return floc_image_model_1.FlocImageModel; } });
 const insights_template_model_1 = require("./models/insights-template.model");
 Object.defineProperty(exports, "InsightsTemplateModel", { enumerable: true, get: function () { return insights_template_model_1.InsightsTemplateModel; } });
+const insight_components_model_1 = require("./models/insight-components.model");
+Object.defineProperty(exports, "InsightComponentModel", { enumerable: true, get: function () { return insight_components_model_1.InsightComponentModel; } });
+const insights_model_1 = require("./models/insights.model");
+Object.defineProperty(exports, "InsightModel", { enumerable: true, get: function () { return insights_model_1.InsightModel; } });
+const insight_comments_model_1 = require("./models/insight-comments.model");
+Object.defineProperty(exports, "InsightCommentModel", { enumerable: true, get: function () { return insight_comments_model_1.InsightCommentModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
 exports.mongooseDatabaseModels = mongooseDatabaseModels;

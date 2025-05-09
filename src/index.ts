@@ -84,6 +84,9 @@ import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
 import { FlocImageModel, IFlocImage } from './models/floc-image.model';
 
 import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
+import { InsightComponentModel, IInsightComponent } from "./models/insight-components.model";
+import { InsightModel, IInsight } from "./models/insights.model";
+import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
 
@@ -141,7 +144,10 @@ export type {
   IFlocSample,
   IFlocImage,
   IInsightsTemplate,
-  FormulaCommonTypes,
+  IInsightComponent,
+  IInsight,
+  IInsightComment,
+  FormulaCommonTypes
 };
 
 // exports the models
@@ -192,5 +198,8 @@ export {
   FlocSampleModel,
   FlocImageModel,
   FormulaAuditsModel,
-  InsightsTemplateModel
+  InsightsTemplateModel,
+  InsightComponentModel,
+  InsightModel,
+  InsightCommentModel
 };

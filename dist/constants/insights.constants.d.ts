@@ -16,4 +16,8 @@ export declare const EQUIPMENT_TYPES: {
     label: string;
     value: string;
 }[];
+export declare const INSIGHT_PRIORITIES: {
+    label: string;
+    value: number;
+}[];
 //# sourceMappingURL=insights.constants.d.ts.map
