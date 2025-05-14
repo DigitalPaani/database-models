@@ -16,6 +16,9 @@ interface IInsightComponent extends Document {
     assetId: Types.ObjectId;
     equipmentIds: Types.ObjectId[];
     priority: Number;
+    startInsightSensorId: Types.ObjectId;
+    endInsightSensorId: Types.ObjectId;
+    countInsightSensorId: Types.ObjectId;
     isDeleted: boolean;
 };
 
@@ -72,6 +75,18 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     },
     priority: {
       type: Number,
+      required: true,
+    },
+    startInsightSensorId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
+    endInsightSensorId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
+    countInsightSensorId: {
+      type: Schema.Types.ObjectId,
       required: true,
     },
     isDeleted: { type: Boolean, default: false },
