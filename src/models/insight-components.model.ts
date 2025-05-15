@@ -1,6 +1,7 @@
 import mongoose, { Model, Schema, model } from "mongoose";
 import { Types } from "mongoose";
 
+import { ISensor } from "./SensorList";
 
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
@@ -16,7 +17,7 @@ interface IInsightComponent extends Document {
     assetId: Types.ObjectId;
     equipmentIds: Types.ObjectId[];
     priority: Number;
-    startInsightSensorId: Types.ObjectId;
+    startInsightSensorId: Types.ObjectId | ISensor;
     isDeleted: boolean;
 };
 
