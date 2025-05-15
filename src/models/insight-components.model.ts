@@ -1,6 +1,7 @@
 import mongoose, { Model, Schema, model } from "mongoose";
 import { Types } from "mongoose";
 
+import { ISensor } from "./sensorModel";
 
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
@@ -16,6 +17,7 @@ interface IInsightComponent extends Document {
     assetId: Types.ObjectId;
     equipmentIds: Types.ObjectId[];
     priority: Number;
+    startInsightSensorId: Types.ObjectId | ISensor;
     isDeleted: boolean;
 };
 
@@ -72,6 +74,11 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     },
     priority: {
       type: Number,
+      required: true,
+    },
+    startInsightSensorId: {
+      type: Schema.Types.ObjectId,
+      ref: "sensors",
       required: true,
     },
     isDeleted: { type: Boolean, default: false },

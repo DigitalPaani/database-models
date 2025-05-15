@@ -1,5 +1,6 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
+import { ISensor } from "./sensorModel";
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
     insightTemplateId: Types.ObjectId;
@@ -14,6 +15,7 @@ interface IInsightComponent extends Document {
     assetId: Types.ObjectId;
     equipmentIds: Types.ObjectId[];
     priority: Number;
+    startInsightSensorId: Types.ObjectId | ISensor;
     isDeleted: boolean;
 }
 declare const InsightComponentModel: Model<IInsightComponent>;
