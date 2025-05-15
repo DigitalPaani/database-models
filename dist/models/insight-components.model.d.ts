@@ -15,8 +15,6 @@ interface IInsightComponent extends Document {
     equipmentIds: Types.ObjectId[];
     priority: Number;
     startInsightSensorId: Types.ObjectId;
-    endInsightSensorId: Types.ObjectId;
-    countInsightSensorId: Types.ObjectId;
     isDeleted: boolean;
 }
 declare const InsightComponentModel: Model<IInsightComponent>;
