@@ -77,6 +77,7 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     },
     startInsightSensorId: {
       type: Schema.Types.ObjectId,
+      ref: "sensors",
       required: true,
     },
     isDeleted: { type: Boolean, default: false },

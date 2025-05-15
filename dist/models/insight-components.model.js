@@ -92,6 +92,7 @@ const insightComponentSchema = new mongoose_1.Schema({
     },
     startInsightSensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
         required: true,
     },
     isDeleted: { type: Boolean, default: false },
