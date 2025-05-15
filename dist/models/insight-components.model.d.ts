@@ -1,6 +1,6 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
-import { ISensor } from "./SensorList";
+import { ISensor } from "./sensorModel";
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
     insightTemplateId: Types.ObjectId;
