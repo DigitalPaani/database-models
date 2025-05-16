@@ -9,6 +9,8 @@ interface IInsightsTemplate extends Document {
     insightType: string;
     attachmentId: Types.ObjectId | null;
     richTextContent: string;
+    rcaEnabled: boolean;
+    rcaContent: string;
     isArchived: boolean;
 }
 declare const InsightsTemplateModel: Model<IInsightsTemplate>;

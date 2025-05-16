@@ -25,6 +25,8 @@ interface IInsight extends Document {
   isOpen: boolean;
   assetId: Types.ObjectId | IPlant;
   insightComponentId: Types.ObjectId | null;
+  rcaEnabled: boolean;
+  rcaContent: string;
   isArchived: boolean;
 }
 
@@ -84,6 +86,14 @@ const insightsSchema = new Schema<IInsight>(
     insightComponentId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,
+    },
+    rcaEnabled: {
+      type: Boolean,
+      default: false,
+    },
+    rcaContent: {
+      type: String,
+      default: "",
     },
     isArchived: {
       type: Boolean,

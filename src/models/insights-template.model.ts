@@ -16,6 +16,8 @@ interface IInsightsTemplate extends Document {
   insightType: string;
   attachmentId: Types.ObjectId | null;
   richTextContent: string;
+  rcaEnabled: boolean;
+  rcaContent: string;
   isArchived: boolean;
 }
 
@@ -47,6 +49,14 @@ const insightsTemplateSchema = new Schema<IInsightsTemplate>(
       default: null,
     },
     richTextContent: {
+      type: String,
+      default: "",
+    },
+    rcaEnabled: {
+      type: Boolean,
+      default: false,
+    },
+    rcaContent: {
       type: String,
       default: "",
     },

@@ -18,6 +18,8 @@ interface IInsightComponent extends Document {
     equipmentIds: Types.ObjectId[];
     priority: Number;
     startInsightSensorId: Types.ObjectId | ISensor;
+    rcaEnabled: boolean;
+    rcaContent: string;
     isDeleted: boolean;
 };
 
@@ -80,6 +82,14 @@ const insightComponentSchema = new Schema<IInsightComponent>(
       type: Schema.Types.ObjectId,
       ref: "sensors",
       required: true,
+    },
+    rcaEnabled: {
+      type: Boolean,
+      default: false,
+    },
+    rcaContent: {
+      type: String,
+      default: "",
     },
     isDeleted: { type: Boolean, default: false },
   },
