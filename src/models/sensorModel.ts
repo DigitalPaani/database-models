@@ -33,6 +33,7 @@ export interface ISensor {
   sensorOffSet?: Types.ObjectId;
   parentSensor?: Types.ObjectId | null;
   flocChildSensors?: FlocChildSensors;
+  granularity?: number;
 }
 
 const flocChildSensorsSchema = new Schema({
@@ -96,6 +97,7 @@ const sensor = new Schema(
     dataType: String,
     sensorType: String,
     dataInputType: String,
+    granularity: { type: Number, default: 60 },
     plcId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,
