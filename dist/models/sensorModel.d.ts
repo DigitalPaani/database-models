@@ -30,6 +30,7 @@ export interface ISensor {
     sensorOffSet?: Types.ObjectId;
     parentSensor?: Types.ObjectId | null;
     flocChildSensors?: FlocChildSensors;
+    granularity?: number;
 }
 declare const SensorsModel: mongoose.Model<ISensor & mongoose.Document<unknown, any, any>, {}, {}, {}, mongoose.Document<unknown, {}, ISensor & mongoose.Document<unknown, any, any>> & ISensor & mongoose.Document<unknown, any, any> & Required<{
     _id: Types.ObjectId;

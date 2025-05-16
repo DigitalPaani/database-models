@@ -29,7 +29,6 @@ import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
-import { TriggerLogsModel, ITriggerLog } from "./models/triggerLogs.model";
 import { PlantModel, IPlant } from "./models/plantModel";
 import { TwilioCallModel, ITwilioCall } from "./models/twilioCalls.model";
 import { CallLogModel, ICallLog } from "./models/callLogs.model";
@@ -108,7 +107,6 @@ export type {
   IWorkflow,
   ITask,
   IAttachment,
-  ITriggerLog,
   IPlant,
   ITwilioCall,
   ICallLog,
@@ -167,7 +165,6 @@ export {
   WorkflowModel,
   TaskModel,
   AttachmentModel,
-  TriggerLogsModel,
   TwilioCallModel,
   CallLogModel,
   WhatsappLogModel,

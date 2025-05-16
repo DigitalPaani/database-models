@@ -94,6 +94,7 @@ const sensor = new Schema({
     dataType: String,
     sensorType: String,
     dataInputType: String,
+    granularity: { type: Number, default: 60 },
     plcId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
