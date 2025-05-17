@@ -66,6 +66,14 @@ const insightsTemplateSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    rcaEnabled: {
+        type: Boolean,
+        default: false,
+    },
+    rcaContent: {
+        type: String,
+        default: "",
+    },
     isArchived: {
         type: Boolean,
         default: false,

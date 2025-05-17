@@ -92,6 +92,14 @@ const insightsSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
+    rcaEnabled: {
+        type: Boolean,
+        default: false,
+    },
+    rcaContent: {
+        type: String,
+        default: "",
+    },
     isArchived: {
         type: Boolean,
         default: false,

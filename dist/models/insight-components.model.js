@@ -95,6 +95,14 @@ const insightComponentSchema = new mongoose_1.Schema({
         ref: "sensors",
         required: true,
     },
+    rcaEnabled: {
+        type: Boolean,
+        default: false,
+    },
+    rcaContent: {
+        type: String,
+        default: "",
+    },
     isDeleted: { type: Boolean, default: false },
 }, {
     timestamps: true,
