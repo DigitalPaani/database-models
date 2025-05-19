@@ -110,11 +110,11 @@ const insightsSchema = new mongoose_1.Schema({
     },
     createdAt: {
         type: Date,
-        default: false,
+        required: false,
     },
     updatedAt: {
         type: Date,
-        default: false,
+        required: false,
     }
 }, {
     timestamps: true,
