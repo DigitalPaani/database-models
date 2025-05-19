@@ -20,6 +20,8 @@ interface IInsight extends Document {
     rcaEnabled: boolean;
     rcaContent: string;
     isArchived: boolean;
+    createdAt: Date | undefined;
+    updatedAt: Date | undefined;
 }
 declare const InsightModel: Model<IInsight>;
 export { InsightModel, IInsight };

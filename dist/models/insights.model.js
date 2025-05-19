@@ -104,6 +104,14 @@ const insightsSchema = new mongoose_1.Schema({
         type: Boolean,
         default: false,
     },
+    createdAt: {
+        type: Date,
+        default: false,
+    },
+    updatedAt: {
+        type: Date,
+        default: false,
+    }
 }, {
     timestamps: true,
     minimize: false,
