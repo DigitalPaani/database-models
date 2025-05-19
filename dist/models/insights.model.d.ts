@@ -6,6 +6,7 @@ import type { IAttachment } from "./attachments.model";
 interface IInsight extends Document {
     name: string;
     description: string;
+    aiDescription: string;
     equipmentIds: Types.ObjectId[] | ILayoutEquipment[];
     insightClassification: string;
     insightType: string;
