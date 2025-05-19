@@ -14,6 +14,7 @@ import {
 interface IInsight extends Document {
   name: string;
   description: string;
+  aiDescription: string;
   equipmentIds: Types.ObjectId[] | ILayoutEquipment[];
   insightClassification: string;
   insightType: string;
@@ -39,6 +40,10 @@ const insightsSchema = new Schema<IInsight>(
       required: true,
     },
     description: {
+      type: String,
+      default: "",
+    },
+    aiDescription: {
       type: String,
       default: "",
     },
