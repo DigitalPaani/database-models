@@ -36,6 +36,7 @@ declare const _default: {
         communication: string;
         obsolete: string;
         insight: string;
+        equipments: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;
