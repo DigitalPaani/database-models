@@ -45,6 +45,10 @@ const insightsSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    aiDescription: {
+        type: String,
+        default: "",
+    },
     equipmentIds: {
         type: [mongoose_1.Types.ObjectId],
         ref: "LayoutEquipments",
@@ -103,7 +107,7 @@ const insightsSchema = new mongoose_1.Schema({
     isArchived: {
         type: Boolean,
         default: false,
-    },
+    }
 }, {
     timestamps: true,
     minimize: false,

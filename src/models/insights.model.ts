@@ -14,6 +14,7 @@ import {
 interface IInsight extends Document {
   name: string;
   description: string;
+  aiDescription: string;
   equipmentIds: Types.ObjectId[] | ILayoutEquipment[];
   insightClassification: string;
   insightType: string;
@@ -28,6 +29,8 @@ interface IInsight extends Document {
   rcaEnabled: boolean;
   rcaContent: string;
   isArchived: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const insightsSchema = new Schema<IInsight>(
@@ -37,6 +40,10 @@ const insightsSchema = new Schema<IInsight>(
       required: true,
     },
     description: {
+      type: String,
+      default: "",
+    },
+    aiDescription: {
       type: String,
       default: "",
     },
@@ -98,7 +105,7 @@ const insightsSchema = new Schema<IInsight>(
     isArchived: {
       type: Boolean,
       default: false,
-    },
+    }
   },
   {
     timestamps: true,
