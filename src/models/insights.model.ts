@@ -29,8 +29,8 @@ interface IInsight extends Document {
   rcaEnabled: boolean;
   rcaContent: string;
   isArchived: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const insightsSchema = new Schema<IInsight>(
@@ -105,14 +105,6 @@ const insightsSchema = new Schema<IInsight>(
     isArchived: {
       type: Boolean,
       default: false,
-    },
-    createdAt: {
-      type: Date,
-      required: false,
-    },
-    updatedAt: {
-      type: Date,
-      required: false,
     }
   },
   {
