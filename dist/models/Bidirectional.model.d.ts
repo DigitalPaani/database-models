@@ -4,7 +4,7 @@ interface IBidirectional extends Document {
     assetId: Types.ObjectId;
     referenceSensors: any;
     equipmentId: Types.ObjectId;
-    remoteControlSensorId: string;
+    bidirectionalSensorId: Types.ObjectId;
     createdAt?: Date;
     updatedAt?: Date;
 }
