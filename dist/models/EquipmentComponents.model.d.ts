@@ -1,7 +1,12 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IEquipmentComponent extends Document {
     bidirectionalId: Types.ObjectId;
-    action: string;
+    controlValue: string;
+    relativeTimeDetails: {
+        unit: string;
+        value: number;
+        timeInMinutes: number;
+    };
     createdAt?: Date;
     updatedAt?: Date;
 }
