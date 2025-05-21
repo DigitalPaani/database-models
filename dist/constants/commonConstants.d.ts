@@ -106,6 +106,7 @@ declare const _default: {
         label: string;
         value: number;
     }[];
+    VISUALIZATION_EQUIPMENT_TYPES_ENUMS: string[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

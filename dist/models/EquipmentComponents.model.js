@@ -39,9 +39,10 @@ const equipmentComponentSchema = new mongoose_1.Schema({
     bidirectionalId: {
         type: mongoose_1.Schema.Types.ObjectId
     },
-    action: {
+    controlValue: {
         type: String
-    }
+    },
+    relativeTimeDetails: { unit: String, value: Number, timeInMinutes: Number },
 }, { strict: false, timestamps: true });
 const EquipmentComponentModel = mongoose_1.default.model("equipmentComponents", equipmentComponentSchema, "equipmentComponents");
 exports.EquipmentComponentModel = EquipmentComponentModel;
