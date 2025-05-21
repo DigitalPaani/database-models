@@ -29,6 +29,10 @@ export const sensorPurposeTags = [
   "frequency",
   "current",
   "rpm",
+  "control",
+  "hmiBypass", 
+  "softwareBypass",
+  "bidirectional"
 ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];

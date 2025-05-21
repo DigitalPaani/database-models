@@ -5,7 +5,7 @@ interface IBidirectional extends Document {
     assetId: Types.ObjectId;
     referenceSensors: any;
     equipmentId: Types.ObjectId;
-    remoteControlSensorId: string;
+    bidirectionalSensorId: Types.ObjectId;
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -24,8 +24,8 @@ const bidirectionalSchema = new Schema<IBidirectional>(
         equipmentId: {
             type: Schema.Types.ObjectId,
         },
-        remoteControlSensorId: {
-            type: String,
+        bidirectionalSensorId: {
+            type: Schema.Types.ObjectId,
         },
 
     },

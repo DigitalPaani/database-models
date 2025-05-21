@@ -32,5 +32,9 @@ exports.sensorPurposeTags = [
     "frequency",
     "current",
     "rpm",
+    "control",
+    "hmiBypass",
+    "softwareBypass",
+    "bidirectional"
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];

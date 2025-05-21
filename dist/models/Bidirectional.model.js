@@ -48,8 +48,8 @@ const bidirectionalSchema = new mongoose_1.Schema({
     equipmentId: {
         type: mongoose_1.Schema.Types.ObjectId,
     },
-    remoteControlSensorId: {
-        type: String,
+    bidirectionalSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
     },
 }, { strict: false, timestamps: true });
 const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
