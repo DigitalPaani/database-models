@@ -1,5 +1,10 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
 
+interface IBidirectionalEvents {
+    triggerId?: Types.ObjectId,
+    sensorId?: Types.ObjectId,
+    status: boolean
+}
 interface IBidirectionalLogs extends Document {
     userId: Types.ObjectId;
     bidirectionalId: Types.ObjectId;
@@ -8,11 +13,7 @@ interface IBidirectionalLogs extends Document {
     startTime: number;
     endTime?: number;
     ipAddress: string;
-    events: {
-        triggerId?: Types.ObjectId,
-        sensorId?: Types.ObjectId,
-        status: boolean
-    }[];
+    events: IBidirectionalEvents[];
     success: boolean;
     isDeleted: boolean;
     createdAt?: Date;
@@ -45,17 +46,19 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
         ipAddress: {
             type: String,
         },
-        events: {
-            triggerId: {
-                type: Schema.Types.ObjectId,
-                ref: "triggers",
-            },
-            sensorId: {
-                type: Schema.Types.ObjectId,
-                ref: "sensors",
-            },
-            status: Boolean
-        },
+        events: [
+            {
+                triggerId: {
+                    type: Schema.Types.ObjectId,
+                    ref: "triggers",
+                },
+                sensorId: {
+                    type: Schema.Types.ObjectId,
+                    ref: "sensors",
+                },
+                status: Boolean
+            }
+        ],
         success: {
             type: Boolean
         },

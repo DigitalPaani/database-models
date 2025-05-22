@@ -60,17 +60,19 @@ const bidirectionalLogsSchema = new mongoose_1.Schema({
     ipAddress: {
         type: String,
     },
-    events: {
-        triggerId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "triggers",
-        },
-        sensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        status: Boolean
-    },
+    events: [
+        {
+            triggerId: {
+                type: mongoose_1.Schema.Types.ObjectId,
+                ref: "triggers",
+            },
+            sensorId: {
+                type: mongoose_1.Schema.Types.ObjectId,
+                ref: "sensors",
+            },
+            status: Boolean
+        }
+    ],
     success: {
         type: Boolean
     },
