@@ -38,14 +38,17 @@ const mongoose_1 = __importStar(require("mongoose"));
 const bidirectionalLogsSchema = new mongoose_1.Schema({
     userId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser"
     },
-    equipmentId: {
+    bidirectionalId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "bidirectional",
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant",
     },
-    action: {
+    controlValue: {
         type: String,
     },
     startTime: {
@@ -58,11 +61,23 @@ const bidirectionalLogsSchema = new mongoose_1.Schema({
         type: String,
     },
     events: {
-        type: [Object],
+        triggerId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "triggers",
+        },
+        sensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        status: Boolean
     },
     success: {
         type: Boolean
-    }
-}, { strict: false, timestamps: true });
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+    },
+}, { strict: false, timestamps: true, });
 const BidirectionalLogsModel = mongoose_1.default.model("bidirectionalLogs", bidirectionalLogsSchema, "bidirectionalLogs");
 exports.BidirectionalLogsModel = BidirectionalLogsModel;

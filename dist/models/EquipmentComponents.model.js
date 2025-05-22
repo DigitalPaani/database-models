@@ -37,12 +37,17 @@ exports.EquipmentComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const equipmentComponentSchema = new mongoose_1.Schema({
     bidirectionalId: {
-        type: mongoose_1.Schema.Types.ObjectId
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "bidirectional",
     },
     controlValue: {
         type: String
     },
     relativeTimeDetails: { unit: String, value: Number, timeInMinutes: Number },
+    isDeleted: {
+        type: Boolean,
+        default: false
+    },
 }, { strict: false, timestamps: true });
 const EquipmentComponentModel = mongoose_1.default.model("equipmentComponents", equipmentComponentSchema, "equipmentComponents");
 exports.EquipmentComponentModel = EquipmentComponentModel;

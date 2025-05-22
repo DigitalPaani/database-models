@@ -44,8 +44,13 @@ const dataLoggerSchema = new mongoose_1.Schema({
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant",
         required: false,
     },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+    }
 }, { strict: false, timestamps: true });
 const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
 exports.DataLoggerModel = DataLoggerModel;

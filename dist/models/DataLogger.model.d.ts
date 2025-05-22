@@ -3,6 +3,7 @@ interface IDataLogger extends Document {
     name: string;
     description: string;
     assetId: Types.ObjectId;
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
