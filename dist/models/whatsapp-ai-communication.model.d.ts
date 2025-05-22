@@ -1,5 +1,7 @@
 import type { Document, Model } from "mongoose";
+import { Types } from "mongoose";
 interface IWhatsappAiCommunication extends Document {
+    userId: Types.ObjectId;
     from: string;
     to: string;
     role: string;

@@ -1,7 +1,8 @@
 import type { Document, Model } from "mongoose";
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
 
 interface IWhatsappAiCommunication extends Document {
+    userId: Types.ObjectId;
     from: string;
     to: string;
     role: string;
@@ -11,18 +12,22 @@ interface IWhatsappAiCommunication extends Document {
 
 const whatsappAiCommunication = new Schema<IWhatsappAiCommunication>(
   {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
     from: {
       type: String,
-      required: false,
+      required: true,
     },
     to: {
       type: String,
-      required: false,
+      required: true,
     },
     role: {
         type: String,
         enum: ["USER", "ASSISTANT"],
-        required: false,  
+        required: true,  
     },
     content: {
       type: String,
@@ -30,7 +35,7 @@ const whatsappAiCommunication = new Schema<IWhatsappAiCommunication>(
     },
     assistantResponse: {
         type: Schema.Types.Mixed,
-        required: false,
+        required: true,
     }
   },
   {
