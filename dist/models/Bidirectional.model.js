@@ -38,18 +38,45 @@ const mongoose_1 = __importStar(require("mongoose"));
 const bidirectionalSchema = new mongoose_1.Schema({
     dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "dataLoggers",
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant"
     },
     referenceSensors: {
-        type: Object,
+        controlSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "controlSensorId",
+        },
+        tripSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "tripSensorId",
+        },
+        hmiSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "hmiSensorId",
+        },
+        softwareSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "softwareSensorId",
+        },
+        manualSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "manualSensorId",
+        },
+        bypassFormulaSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "bypassFormulaSensorId",
+        },
     },
     equipmentId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "LayoutEquipments"
     },
     bidirectionalSensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors"
     },
 }, { strict: false, timestamps: true });
 const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");

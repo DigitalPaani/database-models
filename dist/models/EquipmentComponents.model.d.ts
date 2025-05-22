@@ -7,6 +7,7 @@ interface IEquipmentComponent extends Document {
         value: number;
         timeInMinutes: number;
     };
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }

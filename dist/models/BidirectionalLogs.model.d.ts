@@ -1,14 +1,19 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IBidirectionalLogs extends Document {
     userId: Types.ObjectId;
-    equipmentId: Types.ObjectId;
+    bidirectionalId: Types.ObjectId;
     assetId: Types.ObjectId;
-    action: string;
+    controlValue: string;
     startTime: number;
     endTime?: number;
     ipAddress: string;
-    events: any;
+    events: {
+        triggerId?: Types.ObjectId;
+        sensorId?: Types.ObjectId;
+        status: boolean;
+    }[];
     success: boolean;
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
