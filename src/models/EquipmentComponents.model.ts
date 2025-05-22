@@ -3,7 +3,7 @@ import mongoose, { Schema, Document, Types } from "mongoose";
 interface IEquipmentComponent extends Document {
     bidirectionalId: Types.ObjectId;
     controlValue: string;
-    relativeTimeDetails: { unit: string; value: number; timeInMinutes: number };
+    relativeTimeDetails?: { unit: string; value: number; timeInMinutes: number };
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
