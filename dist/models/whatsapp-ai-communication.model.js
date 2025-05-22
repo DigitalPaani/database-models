@@ -37,7 +37,7 @@ exports.WhatsappAiCommunicationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const whatsappAiCommunication = new mongoose_1.Schema({
     userId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
+        type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
     from: {

@@ -13,7 +13,7 @@ interface IWhatsappAiCommunication extends Document {
 const whatsappAiCommunication = new Schema<IWhatsappAiCommunication>(
   {
     userId: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
     },
     from: {
