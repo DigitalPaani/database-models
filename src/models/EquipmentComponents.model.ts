@@ -4,6 +4,7 @@ interface IEquipmentComponent extends Document {
     bidirectionalId: Types.ObjectId;
     controlValue: string;
     relativeTimeDetails: { unit: string; value: number; timeInMinutes: number };
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -11,12 +12,17 @@ interface IEquipmentComponent extends Document {
 const equipmentComponentSchema = new Schema<IEquipmentComponent>(
     {
         bidirectionalId: {
-            type: Schema.Types.ObjectId
+            type: Schema.Types.ObjectId,
+            ref: "bidirectional",
         },
         controlValue: {
             type: String
         },
         relativeTimeDetails: { unit: String, value: Number, timeInMinutes: Number },
+        isDeleted: {
+            type: Boolean,
+            default: false
+        },
     },
     { strict: false, timestamps: true }
 );
