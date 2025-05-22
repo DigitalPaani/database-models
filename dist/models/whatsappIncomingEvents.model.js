@@ -40,6 +40,10 @@ const whatsappIncomingEventSchema = new mongoose_1.Schema({
         type: String,
         required: false,
     },
+    smsMessageSid: {
+        type: String,
+        required: false,
+    },
     messageServiceId: {
         type: String,
         required: false,

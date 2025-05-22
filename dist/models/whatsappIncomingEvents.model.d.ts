@@ -1,6 +1,7 @@
 import type { Document, Model } from "mongoose";
 interface IWhatsappIncomingEvent extends Document {
     profileName: string;
+    smsMessageSid: string;
     messageServiceId: string;
     messageType: string;
     from: string;

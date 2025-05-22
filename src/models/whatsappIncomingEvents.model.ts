@@ -3,6 +3,7 @@ import mongoose, { Schema } from "mongoose";
 
 interface IWhatsappIncomingEvent extends Document {
     profileName: string;
+    smsMessageSid: string;
     messageServiceId: string;
     messageType: string;
     from: string;
@@ -17,6 +18,10 @@ const whatsappIncomingEventSchema = new Schema(
     profileName: {
         type: String,
         required: false,  
+    },
+    smsMessageSid: {
+      type: String,
+      required: false,
     },
     messageServiceId: {
       type: String,
