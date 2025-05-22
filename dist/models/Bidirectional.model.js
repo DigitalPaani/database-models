@@ -47,27 +47,27 @@ const bidirectionalSchema = new mongoose_1.Schema({
     referenceSensors: {
         controlSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "controlSensorId",
+            ref: "sensors",
         },
         tripSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "tripSensorId",
+            ref: "sensors",
         },
         hmiSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "hmiSensorId",
+            ref: "sensors",
         },
         softwareSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "softwareSensorId",
+            ref: "sensors",
         },
         manualSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "manualSensorId",
+            ref: "sensors",
         },
         bypassFormulaSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "bypassFormulaSensorId",
+            ref: "sensors",
         },
     },
     equipmentId: {

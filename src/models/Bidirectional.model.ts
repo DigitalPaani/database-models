@@ -30,27 +30,27 @@ const bidirectionalSchema = new Schema<IBidirectional>(
         referenceSensors: {
             controlSensorId: {
                 type: Schema.Types.ObjectId,
-                ref: "controlSensorId",
+                ref: "sensors",
             },
             tripSensorId: {
                 type: Schema.Types.ObjectId,
-                ref: "tripSensorId",
+                ref: "sensors",
             },
             hmiSensorId: {
                 type: Schema.Types.ObjectId,
-                ref: "hmiSensorId",
+                ref: "sensors",
             },
             softwareSensorId: {
                 type: Schema.Types.ObjectId,
-                ref: "softwareSensorId",
+                ref: "sensors",
             },
             manualSensorId: {
                 type: Schema.Types.ObjectId,
-                ref: "manualSensorId",
+                ref: "sensors",
             },
             bypassFormulaSensorId: {
                 type: Schema.Types.ObjectId,
-                ref: "bypassFormulaSensorId",
+                ref: "sensors",
             },
         },
         equipmentId: {
