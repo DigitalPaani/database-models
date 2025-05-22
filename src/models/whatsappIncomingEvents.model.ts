@@ -12,7 +12,7 @@ interface IWhatsappIncomingEvent extends Document {
     twilioResponse: any;
 }
 
-const twilioCallSchema = new Schema(
+const whatsappIncomingEventSchema = new Schema(
   {
     profileName: {
         type: String,
@@ -54,7 +54,7 @@ const twilioCallSchema = new Schema(
 
 const WhatsappIncomingEventModel: Model<IWhatsappIncomingEvent> = mongoose.model<IWhatsappIncomingEvent>(
   "whatsappIncomingMessagesEvents",
-  twilioCallSchema,
+  whatsappIncomingEventSchema,
   "whatsappIncomingMessagesEvents"
 );
 

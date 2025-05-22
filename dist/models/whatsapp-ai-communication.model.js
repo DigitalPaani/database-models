@@ -33,43 +33,24 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WhatsappIncomingEventModel = void 0;
+exports.WhatsappAiCommunicationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const whatsappIncomingEventSchema = new mongoose_1.Schema({
-    profileName: {
+const whatsappAiCommunication = new mongoose_1.Schema({
+    role: {
+        type: String,
+        enum: ["USER", "ASSISTANT"],
+        required: false,
+    },
+    content: {
         type: String,
         required: false,
     },
-    messageServiceId: {
-        type: String,
-        required: false,
-    },
-    messageType: {
-        type: String,
-        required: false,
-    },
-    from: {
-        type: String,
-        required: false,
-    },
-    to: {
-        type: String,
-        required: false,
-    },
-    body: {
-        type: String,
-        required: false,
-    },
-    smsStatus: {
-        type: String,
-        required: false,
-    },
-    twilioResponse: {
+    assistantResponse: {
         type: mongoose_1.Schema.Types.Mixed,
         required: false,
     }
 }, {
     timestamps: true,
 });
-const WhatsappIncomingEventModel = mongoose_1.default.model("whatsappIncomingMessagesEvents", whatsappIncomingEventSchema, "whatsappIncomingMessagesEvents");
-exports.WhatsappIncomingEventModel = WhatsappIncomingEventModel;
+const WhatsappAiCommunicationModel = mongoose_1.default.model("whatsappAiCommunications", whatsappAiCommunication, "whatsappAiCommunications");
+exports.WhatsappAiCommunicationModel = WhatsappAiCommunicationModel;
