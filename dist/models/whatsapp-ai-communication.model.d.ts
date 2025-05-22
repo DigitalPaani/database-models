@@ -1,5 +1,7 @@
 import type { Document, Model } from "mongoose";
 interface IWhatsappAiCommunication extends Document {
+    from: string;
+    to: string;
     role: string;
     content: string;
     assistantResponse: any;

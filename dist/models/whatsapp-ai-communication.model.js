@@ -36,6 +36,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WhatsappAiCommunicationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const whatsappAiCommunication = new mongoose_1.Schema({
+    from: {
+        type: String,
+        required: false,
+    },
+    to: {
+        type: String,
+        required: false,
+    },
     role: {
         type: String,
         enum: ["USER", "ASSISTANT"],

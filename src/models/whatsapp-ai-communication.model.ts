@@ -2,6 +2,8 @@ import type { Document, Model } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 
 interface IWhatsappAiCommunication extends Document {
+    from: string;
+    to: string;
     role: string;
     content: string;
     assistantResponse: any;
@@ -9,6 +11,14 @@ interface IWhatsappAiCommunication extends Document {
 
 const whatsappAiCommunication = new Schema<IWhatsappAiCommunication>(
   {
+    from: {
+      type: String,
+      required: false,
+    },
+    to: {
+      type: String,
+      required: false,
+    },
     role: {
         type: String,
         enum: ["USER", "ASSISTANT"],
