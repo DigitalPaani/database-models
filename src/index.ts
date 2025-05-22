@@ -88,7 +88,7 @@ import { InsightModel, IInsight } from "./models/insights.model";
 import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
-
+import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -145,7 +145,8 @@ export type {
   IInsightComponent,
   IInsight,
   IInsightComment,
-  FormulaCommonTypes
+  FormulaCommonTypes,
+  IWhatsappIncomingEvent
 };
 
 // exports the models
@@ -198,5 +199,6 @@ export {
   InsightsTemplateModel,
   InsightComponentModel,
   InsightModel,
-  InsightCommentModel
+  InsightCommentModel,
+  WhatsappIncomingEventModel
 };
