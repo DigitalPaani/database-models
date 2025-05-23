@@ -165,7 +165,7 @@ const triggerSchema = new Schema(
     triggerSensorId: {
       type: Schema.Types.ObjectId,
       ref: "Sensors",
-      required: true,
+      required: false,
     },
     status: {
       type: String,
