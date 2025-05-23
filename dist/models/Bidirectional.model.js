@@ -78,6 +78,10 @@ const bidirectionalSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "sensors"
     },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+    },
 }, { strict: false, timestamps: true });
 const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
 exports.BidirectionalModel = BidirectionalModel;

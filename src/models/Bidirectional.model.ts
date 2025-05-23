@@ -13,6 +13,7 @@ interface IBidirectional extends Document {
     };
     equipmentId: Types.ObjectId;
     bidirectionalSensorId: Types.ObjectId;
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -61,7 +62,10 @@ const bidirectionalSchema = new Schema<IBidirectional>(
             type: Schema.Types.ObjectId,
             ref: "sensors"
         },
-
+        isDeleted: {
+            type: Boolean,
+            default: false,
+        },
     },
     { strict: false, timestamps: true },
 );
