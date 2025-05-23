@@ -12,6 +12,7 @@ interface ILayoutEquipment extends Document {
   itemDetails: string | object;
   equipmentType:string;
   category:string;
+  isArchived:boolean;
 }
 
 const LayoutEquipments = new Schema(
