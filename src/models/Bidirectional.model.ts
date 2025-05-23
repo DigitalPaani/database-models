@@ -67,7 +67,7 @@ const bidirectionalSchema = new Schema<IBidirectional>(
             default: false,
         },
     },
-    { strict: false, timestamps: true },
+    { timestamps: true },
 );
 
 const BidirectionalModel = mongoose.model<IBidirectional>(
