@@ -28,6 +28,10 @@ const LayoutEquipments = new Schema(
       type: Schema.Types.Mixed,
       default: {},
     },
+    isArchived:{
+      type:Boolean,
+      default:false
+    }
   },
   { timestamps: true }
 );
