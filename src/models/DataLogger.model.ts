@@ -27,7 +27,7 @@ const dataLoggerSchema = new Schema<IDataLogger>(
             default: false,
         }
     },
-    { strict: false, timestamps: true },
+    { timestamps: true },
 );
 
 const DataLoggerModel = mongoose.model<IDataLogger>(
