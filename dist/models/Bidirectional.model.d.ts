@@ -12,6 +12,7 @@ interface IBidirectional extends Document {
     };
     equipmentId: Types.ObjectId;
     bidirectionalSensorId: Types.ObjectId;
+    isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
