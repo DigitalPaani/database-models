@@ -36,7 +36,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InsightCommentModel = exports.InsightModel = exports.InsightComponentModel = exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.DataLoggerModel = exports.InsightCommentModel = exports.InsightModel = exports.InsightComponentModel = exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -133,6 +134,14 @@ const insights_model_1 = require("./models/insights.model");
 Object.defineProperty(exports, "InsightModel", { enumerable: true, get: function () { return insights_model_1.InsightModel; } });
 const insight_comments_model_1 = require("./models/insight-comments.model");
 Object.defineProperty(exports, "InsightCommentModel", { enumerable: true, get: function () { return insight_comments_model_1.InsightCommentModel; } });
+const DataLogger_model_1 = require("./models/DataLogger.model");
+Object.defineProperty(exports, "DataLoggerModel", { enumerable: true, get: function () { return DataLogger_model_1.DataLoggerModel; } });
+const Bidirectional_model_1 = require("./models/Bidirectional.model");
+Object.defineProperty(exports, "BidirectionalModel", { enumerable: true, get: function () { return Bidirectional_model_1.BidirectionalModel; } });
+const BidirectionalLogs_model_1 = require("./models/BidirectionalLogs.model");
+Object.defineProperty(exports, "BidirectionalLogsModel", { enumerable: true, get: function () { return BidirectionalLogs_model_1.BidirectionalLogsModel; } });
+const EquipmentComponents_model_1 = require("./models/EquipmentComponents.model");
+Object.defineProperty(exports, "EquipmentComponentModel", { enumerable: true, get: function () { return EquipmentComponents_model_1.EquipmentComponentModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
 exports.mongooseDatabaseModels = mongooseDatabaseModels;
