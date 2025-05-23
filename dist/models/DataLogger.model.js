@@ -51,6 +51,6 @@ const dataLoggerSchema = new mongoose_1.Schema({
         type: Boolean,
         default: false,
     }
-}, { strict: false, timestamps: true });
+}, { timestamps: true });
 const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
 exports.DataLoggerModel = DataLoggerModel;
