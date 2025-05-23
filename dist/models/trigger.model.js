@@ -165,7 +165,7 @@ const triggerSchema = new mongoose_1.Schema({
     triggerSensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Sensors",
-        required: true,
+        required: false,
     },
     status: {
         type: String,
