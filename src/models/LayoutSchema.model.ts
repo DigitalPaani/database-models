@@ -3,6 +3,7 @@ import mongoose, { Schema } from "mongoose";
 interface ILayout extends Document {
   nodeId: string;
   layout: object;
+  version: number;
 }
 
 const LayoutSchema = new Schema(
