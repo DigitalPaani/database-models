@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 interface ILayout extends Document {
     nodeId: string;
     layout: object;
+    version: number;
 }
 declare const LayoutModel: mongoose.Model<ILayout, {}, {}, {}, mongoose.Document<unknown, {}, ILayout> & ILayout & {
     _id: mongoose.Types.ObjectId;

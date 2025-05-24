@@ -6,6 +6,7 @@ interface ILayoutEquipment extends Document {
     itemDetails: string | object;
     equipmentType: string;
     category: string;
+    isArchived: boolean;
 }
 declare const LayoutEquipmentModel: mongoose.Model<ILayoutEquipment, {}, {}, {}, mongoose.Document<unknown, {}, ILayoutEquipment> & ILayoutEquipment & Required<{
     _id: unknown;
