@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
 
 interface IEquipmentComponent extends Document {
-  bidirectionalIdLogId: Types.ObjectId;
+  bidirectionalLogId: Types.ObjectId;
   controlValue: string;
   triggerTime: number;
   isTriggered: boolean;
@@ -12,7 +12,7 @@ interface IEquipmentComponent extends Document {
 
 const equipmentComponentSchema = new Schema<IEquipmentComponent>(
   {
-    bidirectionalIdLogId: {
+    bidirectionalLogId: {
       type: Schema.Types.ObjectId,
       ref: "bidirectionalLogs",
       required: true,
