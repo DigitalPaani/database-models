@@ -88,6 +88,7 @@ import { InsightModel, IInsight } from "./models/insights.model";
 import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
+import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -145,7 +146,8 @@ export type {
   IInsightComponent,
   IInsight,
   IInsightComment,
-  FormulaCommonTypes
+  FormulaCommonTypes,
+  IManualSensors,
 };
 
 // exports the models
@@ -198,5 +200,6 @@ export {
   InsightsTemplateModel,
   InsightComponentModel,
   InsightModel,
-  InsightCommentModel
+  InsightCommentModel,
+  ManualSensorModel
 };
