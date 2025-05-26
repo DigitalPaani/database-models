@@ -40,17 +40,17 @@ const SensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
     sensorCompanyId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
         ref: "company",
     },
-    sensorModelNumber: { type: String, required: true },
-    granularity: { type: [String], required: true },
+    sensorModelNumber: { type: String },
+    granularity: { type: [String] },
     purpose: { type: [String], enum: sensorConst_1.sensorPurposeTags },
     inputType: {
         type: [String],
         enum: sensorConst_1.sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
+    category: { type: String },
 }, { timestamps: true });
 const SensorModel = mongoose_1.default.model("SensorList", SensorSchema, "SensorLists");
 exports.SensorModel = SensorModel;
