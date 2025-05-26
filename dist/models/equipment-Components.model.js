@@ -36,11 +36,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EquipmentComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const equipmentComponentSchema = new mongoose_1.Schema({
-    equipmentId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "LayoutEquipments",
-        required: true,
-    },
     bidirectionalIdLogId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "bidirectionalLogs",

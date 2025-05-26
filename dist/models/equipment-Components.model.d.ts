@@ -1,6 +1,5 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IEquipmentComponent extends Document {
-    equipmentId: Types.ObjectId;
     bidirectionalIdLogId: Types.ObjectId;
     controlValue: string;
     triggerTime: number;

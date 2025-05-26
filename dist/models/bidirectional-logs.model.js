@@ -46,11 +46,6 @@ const bidirectionalLogsSchema = new mongoose_1.Schema({
         ref: "bidirectional",
         required: true,
     },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    },
     controlValue: {
         type: String,
         required: true,

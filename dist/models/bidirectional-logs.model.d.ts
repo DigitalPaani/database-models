@@ -7,7 +7,6 @@ interface IBidirectionalEvents {
 interface IBidirectionalLogs extends Document {
     userId: Types.ObjectId;
     bidirectionalId: Types.ObjectId;
-    assetId: Types.ObjectId;
     controlValue: string;
     startTime: number;
     endTime?: number;

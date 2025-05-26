@@ -8,7 +8,6 @@ interface IBidirectionalEvents {
 interface IBidirectionalLogs extends Document {
   userId: Types.ObjectId;
   bidirectionalId: Types.ObjectId;
-  assetId: Types.ObjectId;
   controlValue: string;
   startTime: number;
   endTime?: number;
@@ -30,11 +29,6 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
     bidirectionalId: {
       type: Schema.Types.ObjectId,
       ref: "bidirectional",
-      required: true,
-    },
-    assetId: {
-      type: Schema.Types.ObjectId,
-      ref: "Plant",
       required: true,
     },
     controlValue: {
