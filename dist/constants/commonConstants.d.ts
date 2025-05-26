@@ -71,6 +71,7 @@ declare const _default: {
         onetime: string;
         recurring: string;
         conditional: string;
+        manualControl: string;
     };
     WHATSAPP_TEMPLATE_VARIABLES: {
         plantName: string;

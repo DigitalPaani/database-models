@@ -10,6 +10,7 @@ const TRIGGER_TYPES = {
     onetime: "onetime",
     recurring: "recurring",
     conditional: "conditional",
+    manualControl: "manualControl",
 };
 exports.TRIGGER_TYPES = TRIGGER_TYPES;
 const COMPONENT_NAMES = {

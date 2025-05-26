@@ -6,6 +6,7 @@ declare const TRIGGER_TYPES: {
     onetime: string;
     recurring: string;
     conditional: string;
+    manualControl: string;
 };
 declare const COMPONENT_NAMES: {
     createTask: string;

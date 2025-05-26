@@ -7,6 +7,7 @@ const TRIGGER_TYPES = {
   onetime: "onetime",
   recurring: "recurring",
   conditional: "conditional",
+  manualControl: "manualControl",
 };
 
 const COMPONENT_NAMES = {
