@@ -22,4 +22,4 @@ declare const BidirectionalModel: mongoose.Model<IBidirectional, {}, {}, {}, mon
     __v: number;
 }, any>;
 export { BidirectionalModel, IBidirectional };
-//# sourceMappingURL=Bidirectional.model.d.ts.map
+//# sourceMappingURL=bidirectional.model.d.ts.map

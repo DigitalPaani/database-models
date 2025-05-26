@@ -46,10 +46,10 @@ import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-temp
 import { InsightComponentModel, IInsightComponent } from "./models/insight-components.model";
 import { InsightModel, IInsight } from "./models/insights.model";
 import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
-import { DataLoggerModel, IDataLogger } from "./models/DataLogger.model";
-import { BidirectionalModel, IBidirectional } from "./models/Bidirectional.model";
-import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/BidirectionalLogs.model";
-import { EquipmentComponentModel, IEquipmentComponent } from "./models/EquipmentComponents.model";
+import { DataLoggerModel, IDataLogger } from "./models/data-logger.model";
+import { BidirectionalModel, IBidirectional } from "./models/bidirectional.model";
+import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirectional-logs.model";
+import { EquipmentComponentModel, IEquipmentComponent } from "./models/equipment-components.model";
 import { FormulaCommonTypes } from './types/formulaTypes';
 declare const mongooseDatabaseModels: typeof mongoose;
 export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, IQuestion, IBatch, IAnswer, IEquipmentQuestion, ILayout, ILayoutEquipment, ISidebarLayoutItem, IPathSchema, ITaskComment, ITaskLog, IFlocSample, IFlocImage, IInsightsTemplate, IInsightComponent, IInsight, IInsightComment, FormulaCommonTypes, IDataLogger, IBidirectional, IBidirectionalLogs, IEquipmentComponent, };

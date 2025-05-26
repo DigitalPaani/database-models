@@ -33,12 +33,17 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BidirectionalModel = void 0;
+exports.BidirectionalLogsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const bidirectionalSchema = new mongoose_1.Schema({
-    dataLoggerId: {
+const bidirectionalLogsSchema = new mongoose_1.Schema({
+    userId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "dataLoggers",
+        ref: "NewUser",
+        required: true,
+    },
+    bidirectionalId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "bidirectional",
         required: true,
     },
     assetId: {
@@ -46,40 +51,36 @@ const bidirectionalSchema = new mongoose_1.Schema({
         ref: "Plant",
         required: true,
     },
-    referenceSensors: {
-        controlSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        tripSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        hmiSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        softwareSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        manualSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        bypassFormulaSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-    },
-    equipmentId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "LayoutEquipments",
+    controlValue: {
+        type: String,
         required: true,
     },
-    bidirectionalSensorId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "sensors",
+    startTime: {
+        type: Number,
+        required: true,
+    },
+    endTime: {
+        type: Number,
+    },
+    ipAddress: {
+        type: String,
+        required: true,
+    },
+    events: [
+        {
+            sensorId: {
+                type: mongoose_1.Schema.Types.ObjectId,
+                ref: "sensors",
+            },
+            status: {
+                type: Boolean,
+                default: false,
+            },
+        },
+    ],
+    success: {
+        type: Boolean,
+        default: false,
         required: true,
     },
     isDeleted: {
@@ -88,5 +89,5 @@ const bidirectionalSchema = new mongoose_1.Schema({
         required: true,
     },
 }, { timestamps: true });
-const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
-exports.BidirectionalModel = BidirectionalModel;
+const BidirectionalLogsModel = mongoose_1.default.model("bidirectionalLogs", bidirectionalLogsSchema, "bidirectionalLogs");
+exports.BidirectionalLogsModel = BidirectionalLogsModel;

@@ -33,53 +33,20 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BidirectionalModel = void 0;
+exports.DataLoggerModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const bidirectionalSchema = new mongoose_1.Schema({
-    dataLoggerId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "dataLoggers",
+const dataLoggerSchema = new mongoose_1.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
         required: true,
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
-        required: true,
-    },
-    referenceSensors: {
-        controlSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        tripSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        hmiSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        softwareSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        manualSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        bypassFormulaSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-    },
-    equipmentId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "LayoutEquipments",
-        required: true,
-    },
-    bidirectionalSensorId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "sensors",
         required: true,
     },
     isDeleted: {
@@ -88,5 +55,5 @@ const bidirectionalSchema = new mongoose_1.Schema({
         required: true,
     },
 }, { timestamps: true });
-const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
-exports.BidirectionalModel = BidirectionalModel;
+const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
+exports.DataLoggerModel = DataLoggerModel;
