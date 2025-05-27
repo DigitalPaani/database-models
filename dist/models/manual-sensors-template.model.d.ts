@@ -4,6 +4,7 @@ interface IManualSensors extends Document {
     tags: string;
     category: string;
     isArchived: boolean;
+    type: string;
 }
 declare const ManualSensorModel: mongoose.Model<IManualSensors, {}, {}, {}, mongoose.Document<unknown, {}, IManualSensors> & IManualSensors & Required<{
     _id: unknown;

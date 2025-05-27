@@ -42,6 +42,7 @@ const ManualSensorSchema = new mongoose_1.Schema({
     category: { type: String, required: true, enum: manualCategory },
     tags: { type: String },
     isArchived: { type: Boolean, default: false },
+    type: { type: String, required: true },
 }, { timestamps: true });
 const ManualSensorModel = mongoose_1.default.model("ManualSensorTemplate", ManualSensorSchema, "ManualSensorTemplates");
 exports.ManualSensorModel = ManualSensorModel;

@@ -7,6 +7,7 @@ interface IManualSensors extends Document {
   tags: string;
   category: string;
   isArchived:boolean;
+  type: string;
 }
 
 const ManualSensorSchema = new Schema<IManualSensors>(
@@ -15,6 +16,7 @@ const ManualSensorSchema = new Schema<IManualSensors>(
     category: { type: String, required: true, enum: manualCategory },
     tags: { type: String},
     isArchived: {type: Boolean, default: false},
+    type: {type: String, required: true},
   },
   { timestamps: true }
 );
