@@ -1,12 +1,13 @@
 import mongoose, { Document } from "mongoose";
+import { Types } from "..";
 interface ILayoutEquipment extends Document {
-    refId: string;
-    assetId: string;
+    parentId: Types.ObjectId;
     nodeType: string;
     itemDetails: string | object;
     equipmentType: string;
     category: string;
     isArchived: boolean;
+    nodeId: Types.ObjectId;
 }
 declare const LayoutEquipmentModel: mongoose.Model<ILayoutEquipment, {}, {}, {}, mongoose.Document<unknown, {}, ILayoutEquipment> & ILayoutEquipment & Required<{
     _id: unknown;
