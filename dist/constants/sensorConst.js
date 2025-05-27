@@ -1,0 +1,40 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sensorInputType = exports.sensorPurposeTags = void 0;
+exports.sensorPurposeTags = [
+    "ph",
+    "bod",
+    "cod",
+    "turbidity",
+    "level",
+    "highLevelSwitch",
+    "lowLevelSwitch",
+    "tds",
+    "orp",
+    "chlorine",
+    "do",
+    "proximity",
+    "pressure",
+    "flowSwitch",
+    "flowRate",
+    "flowTotalizer",
+    "energyUsedPerHour",
+    "totalEnergyUsed",
+    "conductivity",
+    "SDIAnalyser",
+    "TSS",
+    "Barscreenchoking",
+    "LoadCellWeight",
+    "autoManual",
+    "trip",
+    "onOff",
+    "vibration",
+    "frequency",
+    "current",
+    "rpm",
+    "control",
+    "hmiBypass",
+    "softwareBypass",
+    "bidirectional"
+];
+exports.sensorInputType = ["Modbus", "Analog", "Digital"];
