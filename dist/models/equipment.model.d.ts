@@ -1,5 +1,5 @@
 import mongoose, { Document } from "mongoose";
-import { Types } from "..";
+import { Types } from "mongoose";
 interface ILayoutEquipment extends Document {
     parentId: Types.ObjectId;
     nodeType: string;

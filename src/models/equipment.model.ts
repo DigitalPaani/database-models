@@ -4,7 +4,7 @@ import mongoose, { Document, Schema } from "mongoose";
 import {
   VISUALIZATION_EQUIPMENT_TYPES_ENUMS
 } from '../constants/visualization.constants';
-import { Types } from "..";
+import { Types } from "mongoose";
 
 interface ILayoutEquipment extends Document {
   parentId: Types.ObjectId;
