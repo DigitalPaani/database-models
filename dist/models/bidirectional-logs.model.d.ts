@@ -1,8 +1,7 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IBidirectionalEvents {
-    triggerId?: Types.ObjectId;
-    sensorId?: Types.ObjectId;
-    status: boolean;
+    sensorId: Types.ObjectId;
+    controlValue: string;
 }
 interface IBidirectionalLogs extends Document {
     userId: Types.ObjectId;
