@@ -33,22 +33,32 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LayoutItemsModel = void 0;
+exports.EquipmentComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const LayoutItemsSchema = new mongoose_1.Schema({
-    type: { type: String, required: true },
-    size: {
-        height: { type: Number, required: true },
-        width: { type: Number, required: true },
+const equipmentComponentSchema = new mongoose_1.Schema({
+    bidirectionalLogId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "bidirectionalLogs",
+        required: true,
     },
-    name: { type: String, required: true },
-    targetAttributes: {
-        size: {
-            width: { type: Number, required: true },
-            height: { type: Number, required: true },
-        },
+    controlValue: {
+        type: String,
+        required: true,
     },
-    family: { type: String, required: true },
+    triggerTime: {
+        type: Number,
+        required: true,
+    },
+    isTriggered: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
 }, { timestamps: true });
-const LayoutItemsModel = mongoose_1.default.model("LayoutItems", LayoutItemsSchema, "LayoutItems");
-exports.LayoutItemsModel = LayoutItemsModel;
+const EquipmentComponentModel = mongoose_1.default.model("equipmentComponents", equipmentComponentSchema, "equipmentComponents");
+exports.EquipmentComponentModel = EquipmentComponentModel;

@@ -21,6 +21,7 @@ import {
   EQUIPMENT_TYPES,
   INSIGHT_PRIORITIES
 } from "./insights.constants";
+import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -86,5 +87,6 @@ export default {
   INSIGHT_CLASSIFICATIONS,
   EQUIPMENT_TYPES,
   INSIGHT_TYPE_OBJECTS,
-  INSIGHT_PRIORITIES
+  INSIGHT_PRIORITIES,
+  VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
 };

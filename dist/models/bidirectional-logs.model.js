@@ -33,12 +33,55 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TriggerLogsModel = void 0;
+exports.BidirectionalLogsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const triggerLogsSchema = new mongoose_1.Schema({
-    triggerId: { type: mongoose_1.Schema.Types.ObjectId, ref: "triggers", required: true },
-    openTime: { type: Number },
-    closeTime: { type: Number },
+const bidirectionalLogsSchema = new mongoose_1.Schema({
+    userId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
+    bidirectionalId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "bidirectional",
+        required: true,
+    },
+    controlValue: {
+        type: String,
+        required: true,
+    },
+    startTime: {
+        type: Number,
+        required: true,
+    },
+    endTime: {
+        type: Number,
+    },
+    ipAddress: {
+        type: String,
+        required: true,
+    },
+    events: [
+        {
+            sensorId: {
+                type: mongoose_1.Schema.Types.ObjectId,
+                ref: "sensors",
+            },
+            controlValue: {
+                type: String,
+            },
+        },
+    ],
+    success: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
 }, { timestamps: true });
-const TriggerLogsModel = mongoose_1.default.model("triggerLogs", triggerLogsSchema, "triggerLogs");
-exports.TriggerLogsModel = TriggerLogsModel;
+const BidirectionalLogsModel = mongoose_1.default.model("bidirectionalLogs", bidirectionalLogsSchema, "bidirectionalLogs");
+exports.BidirectionalLogsModel = BidirectionalLogsModel;

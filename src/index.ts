@@ -87,6 +87,11 @@ import { InsightComponentModel, IInsightComponent } from "./models/insight-compo
 import { InsightModel, IInsight } from "./models/insights.model";
 import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
 
+import { DataLoggerModel, IDataLogger } from "./models/data-logger.model";
+import { BidirectionalModel, IBidirectional } from "./models/bidirectional.model";
+import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirectional-logs.model";
+import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-components.model";
+
 import { FormulaCommonTypes } from './types/formulaTypes'
 
 // Assign mongoose to mongooseDatabaseModels
@@ -145,7 +150,11 @@ export type {
   IInsightComponent,
   IInsight,
   IInsightComment,
-  FormulaCommonTypes
+  FormulaCommonTypes,
+  IDataLogger,
+  IBidirectional,
+  IBidirectionalLogs,
+  IEquipmentComponent,
 };
 
 // exports the models
@@ -198,5 +207,9 @@ export {
   InsightsTemplateModel,
   InsightComponentModel,
   InsightModel,
-  InsightCommentModel
+  InsightCommentModel,
+  DataLoggerModel,
+  BidirectionalModel,
+  BidirectionalLogsModel,
+  EquipmentComponentModel,
 };

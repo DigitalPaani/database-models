@@ -33,47 +33,12 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InsightComponentModel = void 0;
+exports.BidirectionalModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-;
-const insightComponentSchema = new mongoose_1.Schema({
-    insightTemplateId: {
+const bidirectionalSchema = new mongoose_1.Schema({
+    dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "insights-templates",
-        required: true,
-    },
-    triggerId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        required: true,
-    },
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        default: "",
-    },
-    insightClassification: {
-        type: String,
-        required: true,
-    },
-    insightType: {
-        type: String,
-        required: true,
-    },
-    attachmentId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: "attachments",
-        default: null,
-    },
-    richTextContent: {
-        type: String,
-        default: "",
-    },
-    userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
+        ref: "dataLoggers",
         required: true,
     },
     assetId: {
@@ -81,18 +46,52 @@ const insightComponentSchema = new mongoose_1.Schema({
         ref: "Plant",
         required: true,
     },
-    equipmentIds: {
-        type: [mongoose_1.Schema.Types.ObjectId],
+    referenceSensors: {
+        controlSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        tripSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        hmiSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        softwareSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        manualSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        bypassFormulaSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+    },
+    equipmentId: {
+        type: mongoose_1.Schema.Types.ObjectId,
         ref: "LayoutEquipments",
         required: true,
     },
-    priority: {
-        type: Number,
+    bidirectionalSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
         required: true,
     },
-    isDeleted: { type: Boolean, default: false },
-}, {
-    timestamps: true,
-});
-const InsightComponentModel = mongoose_1.default.model("insightComponents", insightComponentSchema, "insightComponents");
-exports.InsightComponentModel = InsightComponentModel;
+    createdBy: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
+}, { timestamps: true });
+const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
+exports.BidirectionalModel = BidirectionalModel;

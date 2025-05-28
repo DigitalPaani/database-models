@@ -21,6 +21,7 @@ interface ITriggerDocument extends Document {
     triggerSensorId: Types.ObjectId;
     status: string;
     isOpen: boolean;
+    equipmentId?: Types.ObjectId;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

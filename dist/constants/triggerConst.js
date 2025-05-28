@@ -10,6 +10,7 @@ const TRIGGER_TYPES = {
     onetime: "onetime",
     recurring: "recurring",
     conditional: "conditional",
+    manualControl: "manualControl",
 };
 exports.TRIGGER_TYPES = TRIGGER_TYPES;
 const COMPONENT_NAMES = {
@@ -41,7 +42,8 @@ const TRIGGER_COMPONENT_TYPES = {
     issue: "ISSUE",
     communication: "COMMUNICATION",
     obsolete: "OBSOLETE",
-    insight: "INSIGHT"
+    insight: "INSIGHT",
+    equipments: "EQUIPMENTS",
 };
 exports.TRIGGER_COMPONENT_TYPES = TRIGGER_COMPONENT_TYPES;
 const COMMUNICATION_COMPONENT_TYPES = {
