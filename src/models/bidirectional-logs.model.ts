@@ -52,9 +52,8 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
           type: Schema.Types.ObjectId,
           ref: "sensors",
         },
-        status: {
-          type: Boolean,
-          default: false,
+        controlValue: {
+          type: String,
         },
       },
     ],

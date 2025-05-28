@@ -82,6 +82,11 @@ const bidirectionalSchema = new mongoose_1.Schema({
         ref: "sensors",
         required: true,
     },
+    createdBy: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
     isDeleted: {
         type: Boolean,
         default: false,

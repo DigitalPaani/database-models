@@ -49,6 +49,11 @@ const dataLoggerSchema = new mongoose_1.Schema({
         ref: "Plant",
         required: true,
     },
+    createdBy: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
     isDeleted: {
         type: Boolean,
         default: false,

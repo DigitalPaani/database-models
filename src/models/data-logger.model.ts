@@ -4,6 +4,7 @@ interface IDataLogger extends Document {
   name: string;
   description: string;
   assetId: Types.ObjectId;
+  createdBy: Types.ObjectId;
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -22,6 +23,11 @@ const dataLoggerSchema = new Schema<IDataLogger>(
     assetId: {
       type: Schema.Types.ObjectId,
       ref: "Plant",
+      required: true,
+    },
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: "NewUser",
       required: true,
     },
     isDeleted: {
