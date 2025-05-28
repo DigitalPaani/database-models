@@ -40,7 +40,7 @@ const manualCategory = manualSensorsCategoryConst_1.manualCategoryList.map((cate
 const ManualSensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
     category: { type: String, required: true, enum: manualCategory },
-    tags: { type: String },
+    tag: { type: String },
     isArchived: { type: Boolean, default: false },
     type: { type: String, required: true },
 }, { timestamps: true });

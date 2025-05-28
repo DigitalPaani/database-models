@@ -1,7 +1,7 @@
 import mongoose, { Document } from "mongoose";
 interface IManualSensors extends Document {
     sensorName: string;
-    tags: string;
+    tag: string;
     category: string;
     isArchived: boolean;
     type: string;
