@@ -87,6 +87,11 @@ import { InsightComponentModel, IInsightComponent } from "./models/insight-compo
 import { InsightModel, IInsight } from "./models/insights.model";
 import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
 
+import { DataLoggerModel, IDataLogger } from "./models/data-logger.model";
+import { BidirectionalModel, IBidirectional } from "./models/bidirectional.model";
+import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirectional-logs.model";
+import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-components.model";
+
 import { FormulaCommonTypes } from './types/formulaTypes'
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 
@@ -148,6 +153,10 @@ export type {
   IInsightComment,
   FormulaCommonTypes,
   IManualSensors,
+  IDataLogger,
+  IBidirectional,
+  IBidirectionalLogs,
+  IEquipmentComponent,
 };
 
 // exports the models
@@ -201,5 +210,9 @@ export {
   InsightComponentModel,
   InsightModel,
   InsightCommentModel,
-  ManualSensorModel
+  ManualSensorModel,
+  DataLoggerModel,
+  BidirectionalModel,
+  BidirectionalLogsModel,
+  EquipmentComponentModel,
 };

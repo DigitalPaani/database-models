@@ -6,6 +6,7 @@ declare const TRIGGER_TYPES: {
     onetime: string;
     recurring: string;
     conditional: string;
+    manualControl: string;
 };
 declare const COMPONENT_NAMES: {
     createTask: string;
@@ -34,6 +35,7 @@ declare const TRIGGER_COMPONENT_TYPES: {
     communication: string;
     obsolete: string;
     insight: string;
+    equipments: string;
 };
 declare const COMMUNICATION_COMPONENT_TYPES: {
     email: string;

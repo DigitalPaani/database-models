@@ -29,6 +29,7 @@ interface ITriggerDocument extends Document {
   triggerSensorId: Types.ObjectId;
   status: string;
   isOpen: boolean;
+  equipmentId?: Types.ObjectId;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -165,7 +166,7 @@ const triggerSchema = new Schema(
     triggerSensorId: {
       type: Schema.Types.ObjectId,
       ref: "Sensors",
-      required: true,
+      required: false,
     },
     status: {
       type: String,
@@ -173,6 +174,10 @@ const triggerSchema = new Schema(
       default: TRIGGER_STATUS.active,
     },
     isOpen: { type: Boolean, required: true, default: false },
+    equipmentId: { 
+      type: Schema.Types.ObjectId,
+      ref:"LayoutEquipments" 
+    },
     isDeleted: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }

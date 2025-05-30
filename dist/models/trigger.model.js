@@ -165,7 +165,7 @@ const triggerSchema = new mongoose_1.Schema({
     triggerSensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Sensors",
-        required: true,
+        required: false,
     },
     status: {
         type: String,
@@ -173,6 +173,10 @@ const triggerSchema = new mongoose_1.Schema({
         default: triggerConst_1.TRIGGER_STATUS.active,
     },
     isOpen: { type: Boolean, required: true, default: false },
+    equipmentId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "LayoutEquipments"
+    },
     isDeleted: { type: Boolean, required: true, default: false },
 }, { timestamps: true });
 const TriggerModel = mongoose_1.default.model("triggers", triggerSchema, "triggers");
