@@ -33,7 +33,7 @@ const NotificationSchema: Schema = new Schema(
       enum: ["low", "medium", "high"],
       default: "low",
     },
-    plantId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
+    plantId: { type: Schema.Types.ObjectId, ref: "Plant" },
     usergroupId: { type: Schema.Types.ObjectId, ref: "UserGroup" },
     to: {
       type: {
@@ -44,7 +44,7 @@ const NotificationSchema: Schema = new Schema(
       id: { type: Schema.Types.ObjectId, required: true },
     },
     timestamp: { type: Date, default: Date.now },
-    createdBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    createdBy: { type: Schema.Types.ObjectId, ref: "User" },
     status: {
       type: String,
       enum: ["read", "unread"],

@@ -44,7 +44,7 @@ const NotificationSchema = new mongoose_1.Schema({
         enum: ["low", "medium", "high"],
         default: "low",
     },
-    plantId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
+    plantId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant" },
     usergroupId: { type: mongoose_1.Schema.Types.ObjectId, ref: "UserGroup" },
     to: {
         type: {
@@ -55,7 +55,7 @@ const NotificationSchema = new mongoose_1.Schema({
         id: { type: mongoose_1.Schema.Types.ObjectId, required: true },
     },
     timestamp: { type: Date, default: Date.now },
-    createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
+    createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "User" },
     status: {
         type: String,
         enum: ["read", "unread"],
