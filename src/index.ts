@@ -93,6 +93,7 @@ import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirection
 import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-components.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
+import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -151,6 +152,7 @@ export type {
   IInsight,
   IInsightComment,
   FormulaCommonTypes,
+  IManualSensors,
   IDataLogger,
   IBidirectional,
   IBidirectionalLogs,
@@ -208,6 +210,7 @@ export {
   InsightComponentModel,
   InsightModel,
   InsightCommentModel,
+  ManualSensorModel,
   DataLoggerModel,
   BidirectionalModel,
   BidirectionalLogsModel,
