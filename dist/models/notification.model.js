@@ -69,5 +69,5 @@ const NotificationSchema = new mongoose_1.Schema({
     templatedId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Template" },
     triggerId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Trigger" },
 }, { timestamps: true });
-const NotificationModel = mongoose_1.default.model("Notifications", NotificationSchema, "Notifications");
+const NotificationModel = mongoose_1.default.model("NewNotifications", NotificationSchema, "NewNotifications");
 exports.NotificationModel = NotificationModel;
