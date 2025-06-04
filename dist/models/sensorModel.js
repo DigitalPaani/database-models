@@ -95,7 +95,7 @@ const sensor = new Schema({
     sensorType: String,
     dataInputType: String,
     granularity: { type: Number, default: 60 },
-    frequency: String,
+    frequency: Number,
     plcId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,

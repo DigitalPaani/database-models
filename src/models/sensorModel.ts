@@ -34,7 +34,7 @@ export interface ISensor {
   parentSensor?: Types.ObjectId | null;
   flocChildSensors?: FlocChildSensors;
   granularity?: number;
-  frequency?:string;
+  frequency?: number;
 }
 
 const flocChildSensorsSchema = new Schema({
@@ -99,7 +99,7 @@ const sensor = new Schema(
     sensorType: String,
     dataInputType: String,
     granularity: { type: Number, default: 60 },
-    frequency: String,
+    frequency: Number,
     plcId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,
