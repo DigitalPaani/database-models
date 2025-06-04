@@ -51,6 +51,11 @@ const variableSchema = new mongoose_1.Schema({
         enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_VARIABLES),
         required: true
     },
+    allowedInputs: {
+        type: [String],
+        enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_ALLOWED_INPUTS),
+        default: []
+    }
 });
 const whatsappTemplateSchema = new mongoose_1.Schema({
     contentTemplateSid: {

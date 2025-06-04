@@ -108,6 +108,11 @@ declare const _default: {
         value: number;
     }[];
     VISUALIZATION_EQUIPMENT_TYPES_ENUMS: string[];
+    WHATSAPP_TEMPLATE_ALLOWED_INPUTS: {
+        sensor: string;
+        freeText: string;
+        units: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
