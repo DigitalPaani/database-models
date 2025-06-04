@@ -8,6 +8,8 @@ interface IWhatsappTemplate extends Document {
     templateName: string;
     templateContent: string;
     variables: IVariable[];
+    isReportConfigRequired: boolean;
+    isTaskConfigRequired: boolean;
     isArchived: boolean;
 }
 declare const WhatsappTemplateModel: Model<IWhatsappTemplate>;

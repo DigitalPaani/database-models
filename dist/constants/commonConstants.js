@@ -31,6 +31,8 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
     userName: "USER_NAME",
     transitionName: "TRANSITION_NAME",
     overdueTime: "OVERDUE_TIME",
+    taskAndInsightsDetails: "TASK_AND_INSIGHTS_DETAILS",
+    dashboardReportUnit: "DASHBOARD_REPORT_UNIT",
 };
 const USER_GROUP_OR_SYSTEM = [
     {

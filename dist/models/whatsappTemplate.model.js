@@ -69,6 +69,14 @@ const whatsappTemplateSchema = new mongoose_1.Schema({
         type: [variableSchema],
         required: false,
     },
+    isReportConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
+    isTaskConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
     isArchived: {
         type: Boolean,
         default: false,
