@@ -9,6 +9,7 @@ interface ICommunicationComponent extends Document {
         isReport: boolean;
     }[];
     message?: string;
+    messageType?: string;
     contentTemplateSid?: string;
     contentTemplateVariables?: Record<string, string>;
     type: string;
