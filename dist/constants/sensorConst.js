@@ -35,6 +35,7 @@ exports.sensorPurposeTags = [
     "control",
     "hmiBypass",
     "softwareBypass",
-    "bidirectional"
+    "bidirectional",
+    "temperature"
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
