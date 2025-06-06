@@ -58,6 +58,7 @@ declare const _default: {
         none: string;
     };
     TASK_OR_ISSUE_FILTERS: {
+        all: string;
         open: string;
         highPriorityOpen: string;
         mediumPriorityOpen: string;

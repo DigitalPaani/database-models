@@ -35,6 +35,7 @@ const OBSOLETE_CONDITIONS = {
 };
 
 const TASK_OR_ISSUE_FILTERS = {
+  all: "All",
   open: "Open",
   highPriorityOpen: "High Priority Open",
   mediumPriorityOpen: "Medium Priority Open",
