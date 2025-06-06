@@ -33,35 +33,22 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DataLoggerModel = void 0;
+exports.DataLoggerSessionModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const dataLoggerSchema = new mongoose_1.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    },
-    createdBy: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewUser",
+const dataLoggerSessionSchema = new mongoose_1.Schema({
+    code: {
+        type: Number,
         required: true,
     },
     serialNumber: {
-        type: String
+        type: String,
+        required: true,
     },
     isDeleted: {
         type: Boolean,
-        default: false,
         required: true,
+        default: false,
     },
 }, { timestamps: true });
-const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
-exports.DataLoggerModel = DataLoggerModel;
+const DataLoggerSessionModel = mongoose_1.default.model("dataLoggerSessions", dataLoggerSessionSchema, "dataLoggerSessions");
+exports.DataLoggerSessionModel = DataLoggerSessionModel;
