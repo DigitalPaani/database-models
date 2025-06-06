@@ -5,6 +5,7 @@ interface IDataLogger extends Document {
   description: string;
   assetId: Types.ObjectId;
   createdBy: Types.ObjectId;
+  serialNumber?: String;
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -29,6 +30,9 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       type: Schema.Types.ObjectId,
       ref: "NewUser",
       required: true,
+    },
+    serialNumber: {
+      type: String
     },
     isDeleted: {
       type: Boolean,
