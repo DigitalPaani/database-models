@@ -6,6 +6,9 @@ interface IDataLoggerSession extends Document {
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
+
+    // ! Only for testing
+    [key: string]: any;
 }
 
 const dataLoggerSessionSchema = new Schema<IDataLoggerSession>(
@@ -24,7 +27,11 @@ const dataLoggerSessionSchema = new Schema<IDataLoggerSession>(
             default: false,
         },
     },
-    { timestamps: true }
+    {
+        timestamps: true,
+        // ! Only for testing
+        strict: false,
+    }
 );
 
 const DataLoggerSessionModel = mongoose.model<IDataLoggerSession>(
