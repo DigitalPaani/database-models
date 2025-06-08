@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.COMMUNICATION_COMPONENT_SERVICE_TYPE = exports.COMMUNICATION_COMPONENT_TYPES = exports.TRIGGER_COMPONENT_TYPES = exports.TRIGGER_STATUS = exports.RECURRENCE_FREQUENCY_TYPES = exports.COMPONENT_NAMES = exports.TRIGGER_TYPES = exports.TRIGGER_SCOPE = void 0;
+exports.COMMUNICATION_UNITS = exports.COMMUNICATION_COMPONENT_SERVICE_TYPE = exports.COMMUNICATION_COMPONENT_TYPES = exports.TRIGGER_COMPONENT_TYPES = exports.TRIGGER_STATUS = exports.RECURRENCE_FREQUENCY_TYPES = exports.COMPONENT_NAMES = exports.TRIGGER_TYPES = exports.TRIGGER_SCOPE = void 0;
 const TRIGGER_SCOPE = {
     system: "System",
     group: "Group",
@@ -58,3 +58,11 @@ const COMMUNICATION_COMPONENT_SERVICE_TYPE = {
     trigger: "TRIGGER",
 };
 exports.COMMUNICATION_COMPONENT_SERVICE_TYPE = COMMUNICATION_COMPONENT_SERVICE_TYPE;
+const COMMUNICATION_UNITS = [
+    { unit: "Kg", value: "KG" },
+    { unit: "Ton", value: "TON" },
+    { unit: "Liter", value: "L" },
+    { unit: "Milliliter", value: "ML" },
+    { unit: "Gram", value: "G" },
+];
+exports.COMMUNICATION_UNITS = COMMUNICATION_UNITS;

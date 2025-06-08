@@ -55,6 +55,14 @@ const COMMUNICATION_COMPONENT_SERVICE_TYPE = {
   trigger: "TRIGGER",
 };
 
+const COMMUNICATION_UNITS = [
+  { unit: "Kg", value: "KG" },
+  { unit: "Ton", value: "TON" },
+  { unit: "Liter", value: "L" },
+  { unit: "Milliliter", value: "ML" },
+  { unit: "Gram", value: "G" },
+];
+
 export {
   TRIGGER_SCOPE,
   TRIGGER_TYPES,
@@ -64,4 +72,5 @@ export {
   TRIGGER_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
+  COMMUNICATION_UNITS
 };
