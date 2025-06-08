@@ -112,7 +112,7 @@ declare const _default: {
     WHATSAPP_TEMPLATE_ALLOWED_INPUTS: {
         sensor: string;
         freeText: string;
-        units: string;
+        unit: string;
     };
 };
 export default _default;

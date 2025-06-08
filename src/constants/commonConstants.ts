@@ -60,7 +60,7 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
 const WHATSAPP_TEMPLATE_ALLOWED_INPUTS = {
   sensor: "SENSOR",
   freeText: "FREE_TEXT",
-  units: "UNITS"
+  unit: "UNIT"
 };
 
 const USER_GROUP_OR_SYSTEM = [
