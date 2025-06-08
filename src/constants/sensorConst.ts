@@ -32,7 +32,8 @@ export const sensorPurposeTags = [
   "control",
   "hmiBypass", 
   "softwareBypass",
-  "bidirectional"
+  "bidirectional",
+  "temperature"
 ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
