@@ -16,7 +16,6 @@ export const sensorPurposeTags = [
   "flowRate",
   "flowTotalizer",
   "energyUsedPerHour",
-  "totalEnergyUsed",
   "conductivity",
   "SDIAnalyser",
   "TSS",
@@ -34,7 +33,9 @@ export const sensorPurposeTags = [
   "softwareBypass",
   "bidirectional",
   "temperature",
-  "sv30"
+  "sv30",
+  "flooding",
+  "energyTotalizer"
 ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
