@@ -37,8 +37,6 @@ exports.sensorPurposeTags = [
     "softwareBypass",
     "bidirectional",
     "temperature",
-    "sv30",
-    "flooding",
-    "energyTotalizer",
+    "sv30"
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
