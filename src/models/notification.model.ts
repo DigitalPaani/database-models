@@ -12,7 +12,7 @@ interface INotification extends Document {
     type: "user" | "usergroup";
     id: mongoose.Types.ObjectId;
   };
-  timestamp: Date;
+  timestamp: number;
   createdBy: mongoose.Types.ObjectId;
   status: "read" | "unread";
   flag?: boolean;
@@ -42,7 +42,7 @@ const NotificationSchema: Schema = new Schema(
       ref: "NewUser",
       required: true,
     },
-    timestamp: { type: Date, default: Date.now },
+    timestamp: { type:Number, default: 0 },
     createdBy: { type: Schema.Types.ObjectId, ref: "User" },
     status: {
       type: String,

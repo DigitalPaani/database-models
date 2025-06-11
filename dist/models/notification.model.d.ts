@@ -11,7 +11,7 @@ interface INotification extends Document {
         type: "user" | "usergroup";
         id: mongoose.Types.ObjectId;
     };
-    timestamp: Date;
+    timestamp: number;
     createdBy: mongoose.Types.ObjectId;
     status: "read" | "unread";
     flag?: boolean;

@@ -52,7 +52,7 @@ const NotificationSchema = new mongoose_1.Schema({
         ref: "NewUser",
         required: true,
     },
-    timestamp: { type: Date, default: Date.now },
+    timestamp: { type: Number, default: 0 },
     createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "User" },
     status: {
         type: String,
