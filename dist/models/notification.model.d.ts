@@ -3,6 +3,7 @@ interface INotification extends Document {
     eventType: string;
     eventMessage: string;
     iconUrl?: string;
+    iconId?: string;
     priority: "low" | "medium" | "high";
     plantId: mongoose.Types.ObjectId;
     usergroupId?: mongoose.Types.ObjectId;

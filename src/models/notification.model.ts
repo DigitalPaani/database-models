@@ -4,6 +4,7 @@ interface INotification extends Document {
   eventType: string;
   eventMessage: string;
   iconUrl?: string;
+  iconId?:string;
   priority: "low" | "medium" | "high";
   plantId: mongoose.Types.ObjectId;
   usergroupId?: mongoose.Types.ObjectId;
@@ -28,6 +29,7 @@ const NotificationSchema: Schema = new Schema(
     eventType: { type: String, required: true },
     eventMessage: { type: String, required: true },
     iconUrl: { type: String },
+    iconId: { type: String },
     priority: {
       type: String,
       enum: ["low", "medium", "high"],

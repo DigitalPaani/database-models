@@ -39,6 +39,7 @@ const NotificationSchema = new mongoose_1.Schema({
     eventType: { type: String, required: true },
     eventMessage: { type: String, required: true },
     iconUrl: { type: String },
+    iconId: { type: String },
     priority: {
         type: String,
         enum: ["low", "medium", "high"],
