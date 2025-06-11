@@ -58,6 +58,7 @@ declare const _default: {
         none: string;
     };
     TASK_OR_ISSUE_FILTERS: {
+        all: string;
         open: string;
         highPriorityOpen: string;
         mediumPriorityOpen: string;
@@ -108,6 +109,11 @@ declare const _default: {
         value: number;
     }[];
     VISUALIZATION_EQUIPMENT_TYPES_ENUMS: string[];
+    WHATSAPP_TEMPLATE_ALLOWED_INPUTS: {
+        sensor: string;
+        freeText: string;
+        unit: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
