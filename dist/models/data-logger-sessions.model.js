@@ -49,6 +49,10 @@ const dataLoggerSessionSchema = new mongoose_1.Schema({
         required: true,
         default: false,
     },
-}, { timestamps: true });
+}, {
+    timestamps: true,
+    // ! Only for testing
+    strict: false,
+});
 const DataLoggerSessionModel = mongoose_1.default.model("dataLoggerSessions", dataLoggerSessionSchema, "dataLoggerSessions");
 exports.DataLoggerSessionModel = DataLoggerSessionModel;

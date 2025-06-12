@@ -55,13 +55,29 @@ const dataLoggerSchema = new mongoose_1.Schema({
         required: true,
     },
     serialNumber: {
-        type: String
+        type: String,
+    },
+    parentId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "dataLoggers",
+    },
+    version: {
+        type: Number,
+        default: 0,
     },
     isDeleted: {
         type: Boolean,
         default: false,
         required: true,
     },
-}, { timestamps: true });
+}, { timestamps: true, strict: false });
+// Partial Unique Index
+dataLoggerSchema.index({ serialNumber: 1 }, {
+    unique: true,
+    partialFilterExpression: {
+        isDeleted: false,
+        serialNumber: { $exists: true },
+    },
+});
 const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
 exports.DataLoggerModel = DataLoggerModel;

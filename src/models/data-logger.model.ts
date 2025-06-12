@@ -5,7 +5,9 @@ interface IDataLogger extends Document {
   description: string;
   assetId: Types.ObjectId;
   createdBy: Types.ObjectId;
-  serialNumber?: String;
+  serialNumber?: string;
+  parentId?: Types.ObjectId;
+  version: number
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -32,7 +34,15 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       required: true,
     },
     serialNumber: {
-      type: String
+      type: String,
+    },
+    parentId: {
+      type: Schema.Types.ObjectId,
+      ref: "dataLoggers",
+    },
+    version: {
+      type: Number,
+      default: 0,
     },
     isDeleted: {
       type: Boolean,
@@ -40,7 +50,19 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
+);
+
+// Partial Unique Index
+dataLoggerSchema.index(
+  { serialNumber: 1 },
+  {
+    unique: true,
+    partialFilterExpression: {
+      isDeleted: false,
+      serialNumber: { $exists: true },
+    },
+  }
 );
 
 const DataLoggerModel = mongoose.model<IDataLogger>(

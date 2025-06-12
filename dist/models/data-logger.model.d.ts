@@ -4,7 +4,9 @@ interface IDataLogger extends Document {
     description: string;
     assetId: Types.ObjectId;
     createdBy: Types.ObjectId;
-    serialNumber?: String;
+    serialNumber?: string;
+    parentId?: Types.ObjectId;
+    version: number;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

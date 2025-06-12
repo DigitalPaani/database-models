@@ -5,6 +5,7 @@ interface IDataLoggerSession extends Document {
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
+    [key: string]: any;
 }
 declare const DataLoggerSessionModel: mongoose.Model<IDataLoggerSession, {}, {}, {}, mongoose.Document<unknown, {}, IDataLoggerSession> & IDataLoggerSession & Required<{
     _id: unknown;
