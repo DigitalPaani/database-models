@@ -1,5 +1,5 @@
 import type { Document, Model } from 'mongoose';
-import mongoose, { Schema, Types } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 import commonConstants from '../constants/commonConstants';
 
