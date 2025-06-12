@@ -15,6 +15,7 @@ interface IWhatsappTemplate extends Document {
   variables: IVariable[]
   isReportConfigRequired: boolean;
   isTaskConfigRequired: boolean;
+  isInsightConfigRequired: boolean;
   isArchived: boolean;
 };
 
@@ -55,6 +56,10 @@ const whatsappTemplateSchema = new Schema<IWhatsappTemplate>(
         required: false,
     },
     isTaskConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
+    isInsightConfigRequired: {
         type: Boolean,
         required: false,
     },

@@ -77,6 +77,10 @@ const whatsappTemplateSchema = new mongoose_1.Schema({
         type: Boolean,
         required: false,
     },
+    isInsightConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
     isArchived: {
         type: Boolean,
         default: false,
