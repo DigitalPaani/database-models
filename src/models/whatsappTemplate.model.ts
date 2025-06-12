@@ -5,7 +5,8 @@ import commonConstants from '../constants/commonConstants';
 
 interface IVariable extends Document {
   position: number,
-  value: string
+  value: string,
+  allowedInputs: string[]
 };
 
 interface IWhatsappTemplate extends Document {
@@ -28,8 +29,13 @@ const variableSchema = new Schema<IVariable>({
   value: {
     type: String,
     enum: Object.values(commonConstants.WHATSAPP_TEMPLATE_VARIABLES),
-    required: true
+    default: ""
   },
+  allowedInputs: {
+    type: [String],
+    enum: Object.values(commonConstants.WHATSAPP_TEMPLATE_ALLOWED_INPUTS),
+    default: []
+  }
 });
 
 

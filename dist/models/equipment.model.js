@@ -49,6 +49,10 @@ const LayoutEquipments = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.Mixed,
         default: {},
     },
+    isArchived: {
+        type: Boolean,
+        default: false
+    }
 }, { timestamps: true });
 const LayoutEquipmentModel = mongoose_1.default.model("LayoutEquipments", LayoutEquipments, "LayoutEquipments");
 exports.LayoutEquipmentModel = LayoutEquipmentModel;

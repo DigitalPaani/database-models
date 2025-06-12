@@ -7,6 +7,7 @@ const TRIGGER_TYPES = {
   onetime: "onetime",
   recurring: "recurring",
   conditional: "conditional",
+  manualControl: "manualControl",
 };
 
 const COMPONENT_NAMES = {
@@ -38,7 +39,8 @@ const TRIGGER_COMPONENT_TYPES = {
   issue: "ISSUE",
   communication: "COMMUNICATION",
   obsolete: "OBSOLETE",
-  insight: "INSIGHT"
+  insight: "INSIGHT",
+  equipments: "EQUIPMENTS",
 };
 
 const COMMUNICATION_COMPONENT_TYPES = {
@@ -53,6 +55,14 @@ const COMMUNICATION_COMPONENT_SERVICE_TYPE = {
   trigger: "TRIGGER",
 };
 
+const COMMUNICATION_UNITS = [
+  { unit: "Kg", value: "KG" },
+  { unit: "Ton", value: "TON" },
+  { unit: "Liter", value: "L" },
+  { unit: "Milliliter", value: "ML" },
+  { unit: "Gram", value: "G" },
+];
+
 export {
   TRIGGER_SCOPE,
   TRIGGER_TYPES,
@@ -62,4 +72,5 @@ export {
   TRIGGER_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_TYPES,
   COMMUNICATION_COMPONENT_SERVICE_TYPE,
+  COMMUNICATION_UNITS
 };

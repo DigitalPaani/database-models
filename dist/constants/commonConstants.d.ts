@@ -36,6 +36,7 @@ declare const _default: {
         communication: string;
         obsolete: string;
         insight: string;
+        equipments: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;
@@ -57,6 +58,7 @@ declare const _default: {
         none: string;
     };
     TASK_OR_ISSUE_FILTERS: {
+        all: string;
         open: string;
         highPriorityOpen: string;
         mediumPriorityOpen: string;
@@ -70,6 +72,7 @@ declare const _default: {
         onetime: string;
         recurring: string;
         conditional: string;
+        manualControl: string;
     };
     WHATSAPP_TEMPLATE_VARIABLES: {
         plantName: string;
@@ -107,6 +110,12 @@ declare const _default: {
         label: string;
         value: number;
     }[];
+    VISUALIZATION_EQUIPMENT_TYPES_ENUMS: string[];
+    WHATSAPP_TEMPLATE_ALLOWED_INPUTS: {
+        sensor: string;
+        freeText: string;
+        unit: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

@@ -15,6 +15,7 @@ const communicationComponentsSchema = new mongoose_1.Schema({
     userIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "NewUser" },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
+    messageType: { type: String, enum: ["TEXT", "HTML"] },
     attachments: [
         {
             name: String,

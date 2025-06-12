@@ -33,55 +33,53 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-<<<<<<<< HEAD:dist/models/whatsapp-ai-communication.model.js
-exports.WhatsappAiCommunicationModel = void 0;
+exports.BidirectionalModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const whatsappAiCommunication = new mongoose_1.Schema({
-    userId: {
+const bidirectionalSchema = new mongoose_1.Schema({
+    dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "dataLoggers",
         required: true,
     },
-    from: {
-        type: String,
-        required: true,
-    },
-    to: {
-        type: String,
-        required: true,
-    },
-    role: {
-        type: String,
-        enum: ["USER", "ASSISTANT"],
-        required: true,
-    },
-    content: {
-========
-exports.DataLoggerModel = void 0;
-const mongoose_1 = __importStar(require("mongoose"));
-const dataLoggerSchema = new mongoose_1.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
->>>>>>>> e917922690666c84b958b820dd722e63742cb1fb:dist/models/data-logger.model.js
-        type: String,
-        required: true,
-    },
-<<<<<<<< HEAD:dist/models/whatsapp-ai-communication.model.js
-    assistantResponse: {
-        type: mongoose_1.Schema.Types.Mixed,
-        required: true,
-    }
-}, {
-    timestamps: true,
-});
-const WhatsappAiCommunicationModel = mongoose_1.default.model("whatsappAiCommunications", whatsappAiCommunication, "whatsappAiCommunications");
-exports.WhatsappAiCommunicationModel = WhatsappAiCommunicationModel;
-========
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
+        required: true,
+    },
+    referenceSensors: {
+        controlSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        tripSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        hmiSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        softwareSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        manualSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+        bypassFormulaSensorId: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        },
+    },
+    equipmentId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "LayoutEquipments",
+        required: true,
+    },
+    bidirectionalSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
         required: true,
     },
     createdBy: {
@@ -95,6 +93,5 @@ exports.WhatsappAiCommunicationModel = WhatsappAiCommunicationModel;
         required: true,
     },
 }, { timestamps: true });
-const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
-exports.DataLoggerModel = DataLoggerModel;
->>>>>>>> e917922690666c84b958b820dd722e63742cb1fb:dist/models/data-logger.model.js
+const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
+exports.BidirectionalModel = BidirectionalModel;

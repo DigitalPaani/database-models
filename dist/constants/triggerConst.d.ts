@@ -6,6 +6,7 @@ declare const TRIGGER_TYPES: {
     onetime: string;
     recurring: string;
     conditional: string;
+    manualControl: string;
 };
 declare const COMPONENT_NAMES: {
     createTask: string;
@@ -34,6 +35,7 @@ declare const TRIGGER_COMPONENT_TYPES: {
     communication: string;
     obsolete: string;
     insight: string;
+    equipments: string;
 };
 declare const COMMUNICATION_COMPONENT_TYPES: {
     email: string;
@@ -45,5 +47,9 @@ declare const COMMUNICATION_COMPONENT_SERVICE_TYPE: {
     nodeBackend: string;
     trigger: string;
 };
-export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, TRIGGER_STATUS, TRIGGER_COMPONENT_TYPES, COMMUNICATION_COMPONENT_TYPES, COMMUNICATION_COMPONENT_SERVICE_TYPE, };
+declare const COMMUNICATION_UNITS: {
+    unit: string;
+    value: string;
+}[];
+export { TRIGGER_SCOPE, TRIGGER_TYPES, COMPONENT_NAMES, RECURRENCE_FREQUENCY_TYPES, TRIGGER_STATUS, TRIGGER_COMPONENT_TYPES, COMMUNICATION_COMPONENT_TYPES, COMMUNICATION_COMPONENT_SERVICE_TYPE, COMMUNICATION_UNITS };
 //# sourceMappingURL=triggerConst.d.ts.map

@@ -2,6 +2,7 @@ import type { Document, Model } from 'mongoose';
 interface IVariable extends Document {
     position: number;
     value: string;
+    allowedInputs: string[];
 }
 interface IWhatsappTemplate extends Document {
     contentTemplateSid: string;

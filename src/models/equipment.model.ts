@@ -12,6 +12,7 @@ interface ILayoutEquipment extends Document {
   itemDetails: string | object;
   equipmentType:string;
   category:string;
+  isArchived:boolean;
 }
 
 const LayoutEquipments = new Schema(
@@ -28,6 +29,10 @@ const LayoutEquipments = new Schema(
       type: Schema.Types.Mixed,
       default: {},
     },
+    isArchived:{
+      type:Boolean,
+      default:false
+    }
   },
   { timestamps: true }
 );

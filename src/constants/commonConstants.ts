@@ -21,6 +21,7 @@ import {
   EQUIPMENT_TYPES,
   INSIGHT_PRIORITIES
 } from "./insights.constants";
+import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -34,6 +35,7 @@ const OBSOLETE_CONDITIONS = {
 };
 
 const TASK_OR_ISSUE_FILTERS = {
+  all: "All",
   open: "Open",
   highPriorityOpen: "High Priority Open",
   mediumPriorityOpen: "Medium Priority Open",
@@ -55,6 +57,12 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
   overdueTime: "OVERDUE_TIME",
   taskAndInsightsDetails: "TASK_AND_INSIGHTS_DETAILS",
   dashboardReportUnit: "DASHBOARD_REPORT_UNIT",
+};
+
+const WHATSAPP_TEMPLATE_ALLOWED_INPUTS = {
+  sensor: "SENSOR",
+  freeText: "FREE_TEXT",
+  unit: "UNIT"
 };
 
 const USER_GROUP_OR_SYSTEM = [
@@ -88,5 +96,7 @@ export default {
   INSIGHT_CLASSIFICATIONS,
   EQUIPMENT_TYPES,
   INSIGHT_TYPE_OBJECTS,
-  INSIGHT_PRIORITIES
+  INSIGHT_PRIORITIES,
+  VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
+  WHATSAPP_TEMPLATE_ALLOWED_INPUTS
 };

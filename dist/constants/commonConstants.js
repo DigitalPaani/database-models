@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const taskManagementConst_1 = require("./taskManagementConst");
 const triggerConst_1 = require("./triggerConst");
 const insights_constants_1 = require("./insights.constants");
+const visualization_constants_1 = require("./visualization.constants");
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -13,6 +14,7 @@ const OBSOLETE_CONDITIONS = {
     none: "none",
 };
 const TASK_OR_ISSUE_FILTERS = {
+    all: "All",
     open: "Open",
     highPriorityOpen: "High Priority Open",
     mediumPriorityOpen: "Medium Priority Open",
@@ -33,6 +35,11 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
     overdueTime: "OVERDUE_TIME",
     taskAndInsightsDetails: "TASK_AND_INSIGHTS_DETAILS",
     dashboardReportUnit: "DASHBOARD_REPORT_UNIT",
+};
+const WHATSAPP_TEMPLATE_ALLOWED_INPUTS = {
+    sensor: "SENSOR",
+    freeText: "FREE_TEXT",
+    unit: "UNIT"
 };
 const USER_GROUP_OR_SYSTEM = [
     {
@@ -64,5 +71,7 @@ exports.default = {
     INSIGHT_CLASSIFICATIONS: insights_constants_1.INSIGHT_CLASSIFICATIONS,
     EQUIPMENT_TYPES: insights_constants_1.EQUIPMENT_TYPES,
     INSIGHT_TYPE_OBJECTS: insights_constants_1.INSIGHT_TYPE_OBJECTS,
-    INSIGHT_PRIORITIES: insights_constants_1.INSIGHT_PRIORITIES
+    INSIGHT_PRIORITIES: insights_constants_1.INSIGHT_PRIORITIES,
+    VISUALIZATION_EQUIPMENT_TYPES_ENUMS: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
+    WHATSAPP_TEMPLATE_ALLOWED_INPUTS
 };
