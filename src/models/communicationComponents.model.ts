@@ -16,7 +16,7 @@ interface ICommunicationComponent extends Document {
   contentTemplateVariables?: Record<string, string>; // Optional, for WHATSAPP
   type: string;
   userGroup?: Types.ObjectId;
-  asset?: Types.ObjectId;
+  assetIds?: Types.ObjectId[];
   messageFormat?: string; // Auto-complete feature for template selection.
   dashboardPageDetails?: {
     name: string;
@@ -63,7 +63,7 @@ const communicationComponentsSchema = new Schema(
       required: true,
     },
     userGroup: { type: Schema.Types.ObjectId, ref: "UserGroup" },
-    asset: { type: Schema.Types.ObjectId, ref: "Plant" },
+    assetIds: { type: [Schema.Types.ObjectId], ref: "Plant" },
     messageFormat: { type: String },
     dashboardPageDetails: {
       name: String,

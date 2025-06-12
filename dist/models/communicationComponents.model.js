@@ -35,7 +35,7 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         required: true,
     },
     userGroup: { type: mongoose_1.Schema.Types.ObjectId, ref: "UserGroup" },
-    asset: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant" },
+    assetIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "Plant" },
     messageFormat: { type: String },
     dashboardPageDetails: {
         name: String,

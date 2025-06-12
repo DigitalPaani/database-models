@@ -14,7 +14,7 @@ interface ICommunicationComponent extends Document {
     contentTemplateVariables?: Record<string, string>;
     type: string;
     userGroup?: Types.ObjectId;
-    asset?: Types.ObjectId;
+    assetIds?: Types.ObjectId[];
     messageFormat?: string;
     dashboardPageDetails?: {
         name: string;
