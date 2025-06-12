@@ -16,6 +16,7 @@ interface INewUser extends Document {
   parentUserId: Types.ObjectId;
   skillIds: Types.ObjectId[];
   isArchived: boolean;
+  blockedNotificationModules:[string];
   // defaultHomePage: string;
   [key: string]: any;
 }
@@ -36,6 +37,11 @@ const userSchema = new Schema<INewUser>(
     parentUserId: { type: Schema.Types.ObjectId, ref: "NewUser" },
     isStaff: { type: Boolean, required: true, default: false },
     isArchived: { type: Boolean, default: false },
+    blockedNotificationModules: {
+    type: [String],
+    enum:['Users','Inventory','Tasks','Insights'],
+    default: [],
+    },
     // defaultHomePage: { type: String, required: true, default: '' },
   },
   {

@@ -50,6 +50,11 @@ const userSchema = new mongoose_1.Schema({
     parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
     isStaff: { type: Boolean, required: true, default: false },
     isArchived: { type: Boolean, default: false },
+    blockedNotificationModules: {
+        type: [String],
+        enum: ['Users', 'Inventory', 'Tasks', 'Insights'],
+        default: [],
+    },
     // defaultHomePage: { type: String, required: true, default: '' },
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields
