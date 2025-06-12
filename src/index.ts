@@ -93,13 +93,10 @@ import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirection
 import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-components.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
-<<<<<<< HEAD
 import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
 import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
-=======
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 
->>>>>>> e917922690666c84b958b820dd722e63742cb1fb
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -157,16 +154,13 @@ export type {
   IInsight,
   IInsightComment,
   FormulaCommonTypes,
-<<<<<<< HEAD
   IWhatsappIncomingEvent,
-  IWhatsappAiCommunication
-=======
+  IWhatsappAiCommunication,
   IManualSensors,
   IDataLogger,
   IBidirectional,
   IBidirectionalLogs,
   IEquipmentComponent,
->>>>>>> e917922690666c84b958b820dd722e63742cb1fb
 };
 
 // exports the models
@@ -220,14 +214,11 @@ export {
   InsightComponentModel,
   InsightModel,
   InsightCommentModel,
-<<<<<<< HEAD
   WhatsappIncomingEventModel,
-  WhatsappAiCommunicationModel
-=======
+  WhatsappAiCommunicationModel,
   ManualSensorModel,
   DataLoggerModel,
   BidirectionalModel,
   BidirectionalLogsModel,
   EquipmentComponentModel,
->>>>>>> e917922690666c84b958b820dd722e63742cb1fb
 };
