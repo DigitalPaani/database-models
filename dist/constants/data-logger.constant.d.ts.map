@@ -1,1 +1,1 @@
-{"version":3,"file":"data-logger.constant.d.ts","sourceRoot":"","sources":["../../src/constants/data-logger.constant.ts"],"names":[],"mappings":"AAAA,QAAA,MAAM,WAAW;;;CAGhB,CAAC;AAEF,OAAO,EAAE,WAAW,EAAE,CAAC"}
+{"version":3,"file":"data-logger.constant.d.ts","sourceRoot":"","sources":["../../src/constants/data-logger.constant.ts"],"names":[],"mappings":"AAAA,QAAA,MAAM,WAAW;;;;;;CAMhB,CAAC;AAEF,OAAO,EAAE,WAAW,EAAE,CAAC"}

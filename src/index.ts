@@ -95,6 +95,7 @@ import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-
 import { FormulaCommonTypes } from './types/formulaTypes'
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 import { DataLoggerSessionModel, IDataLoggerSession } from './models/data-logger-sessions.model';
+import { DLSensorConfigModel, IDLSensorConfig } from './models/data-logger-sensor-config.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -159,6 +160,7 @@ export type {
   IBidirectionalLogs,
   IEquipmentComponent,
   IDataLoggerSession,
+  IDLSensorConfig,
 };
 
 // exports the models
@@ -218,4 +220,5 @@ export {
   BidirectionalLogsModel,
   EquipmentComponentModel,
   DataLoggerSessionModel,
+  DLSensorConfigModel,
 };
