@@ -6,8 +6,24 @@ interface IDataLogger extends Document {
   assetId: Types.ObjectId;
   createdBy: Types.ObjectId;
   serialNumber?: string;
+  code?: number
   parentId?: Types.ObjectId;
-  version: number
+  version: number;
+
+  // json fields for aws job
+  plcBrand?: string;
+  plcId?: string;
+  modbusHost?: string;
+  modbusPort?: number;
+  unitIdReal?: number;
+  startAddressReal?: number;
+  registerCountReal?: number;
+  unitIdBool?: number;
+  startAddressBool?: number;
+  registerCountBool?: number;
+  pollingInterval?: number;
+
+  // common fields for all schemas
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -36,6 +52,9 @@ const dataLoggerSchema = new Schema<IDataLogger>(
     serialNumber: {
       type: String,
     },
+    code: {
+      type: String,
+    },
     parentId: {
       type: Schema.Types.ObjectId,
       ref: "dataLoggers",
@@ -44,13 +63,50 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       type: Number,
       default: 0,
     },
+
+    // JSON fields in camelCase
+    plcBrand: {
+      type: String,
+    },
+    plcId: {
+      type: String,
+    },
+    modbusHost: {
+      type: String,
+    },
+    modbusPort: {
+      type: Number,
+    },
+    unitIdReal: {
+      type: Number,
+    },
+    startAddressReal: {
+      type: Number,
+    },
+    registerCountReal: {
+      type: Number,
+    },
+    unitIdBool: {
+      type: Number,
+    },
+    startAddressBool: {
+      type: Number,
+    },
+    registerCountBool: {
+      type: Number,
+    },
+    pollingInterval: {
+      type: Number,
+    },
+
+    // common field for all schema
     isDeleted: {
       type: Boolean,
       default: false,
       required: true,
     },
   },
-  { timestamps: true, strict: false }
+  { timestamps: true }
 );
 
 // Partial Unique Index

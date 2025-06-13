@@ -33,89 +33,43 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DataLoggerModel = void 0;
+exports.DLSensorConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const dataLoggerSchema = new mongoose_1.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true,
-    },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    },
-    createdBy: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewUser",
-        required: true,
-    },
-    serialNumber: {
-        type: String,
-    },
-    code: {
-        type: String,
-    },
-    parentId: {
+const data_logger_constant_1 = require("../constants/data-logger.constant");
+function isValidFunctionExpression(expr) {
+    // Basic pattern: only allows simple math with x
+    return /^[x\d\s\+\-\*\/\.\(\)]+$/.test(expr.trim());
+}
+const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
+    dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "dataLoggers",
-    },
-    version: {
-        type: Number,
-        default: 0,
-    },
-    // JSON fields in camelCase
-    plcBrand: {
-        type: String,
-    },
-    plcId: {
-        type: String,
-    },
-    modbusHost: {
-        type: String,
-    },
-    modbusPort: {
-        type: Number,
-    },
-    unitIdReal: {
-        type: Number,
-    },
-    startAddressReal: {
-        type: Number,
-    },
-    registerCountReal: {
-        type: Number,
-    },
-    unitIdBool: {
-        type: Number,
-    },
-    startAddressBool: {
-        type: Number,
-    },
-    registerCountBool: {
-        type: Number,
-    },
-    pollingInterval: {
-        type: Number,
-    },
-    // common field for all schema
-    isDeleted: {
-        type: Boolean,
-        default: false,
         required: true,
     },
-}, { timestamps: true });
-// Partial Unique Index
-dataLoggerSchema.index({ serialNumber: 1 }, {
-    unique: true,
-    partialFilterExpression: {
-        isDeleted: false,
-        serialNumber: { $exists: true },
+    sensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
+        required: true,
     },
-});
-const DataLoggerModel = mongoose_1.default.model("dataLoggers", dataLoggerSchema, "dataLoggers");
-exports.DataLoggerModel = DataLoggerModel;
+    start: { type: Number },
+    end: { type: Number },
+    type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE) },
+    wordOrder: {
+        type: String,
+    },
+    function: {
+        type: String,
+        validate: {
+            validator: isValidFunctionExpression,
+            message: (props) => `"${props.value}" is not a valid function expression.`,
+        },
+    },
+    scaledRequired: { type: Boolean },
+    scalingFactor: { type: Number },
+    totalizerRequired: { type: Boolean },
+    totalizerTag: { type: String },
+    modbusMisfireTotalizer: { type: Boolean },
+    bitIndex: { type: Number, required: false },
+}, { _id: false });
+const DLSensorConfigModel = mongoose_1.default.model("dataLoggerSensorConfig", dataLoggerSensorConfigSchema, "dataLoggerSensorConfig");
+exports.DLSensorConfigModel = DLSensorConfigModel;
