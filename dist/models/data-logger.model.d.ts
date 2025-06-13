@@ -19,6 +19,7 @@ interface IDataLogger extends Document {
     startAddressBool?: number;
     registerCountBool?: number;
     pollingInterval?: number;
+    isConfigured: boolean;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

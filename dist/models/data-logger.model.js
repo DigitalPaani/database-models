@@ -102,6 +102,11 @@ const dataLoggerSchema = new mongoose_1.Schema({
     pollingInterval: {
         type: Number,
     },
+    isConfigured: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
     // common field for all schema
     isDeleted: {
         type: Boolean,

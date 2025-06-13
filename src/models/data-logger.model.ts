@@ -6,7 +6,7 @@ interface IDataLogger extends Document {
   assetId: Types.ObjectId;
   createdBy: Types.ObjectId;
   serialNumber?: string;
-  code?: number
+  code?: number;
   parentId?: Types.ObjectId;
   version: number;
 
@@ -22,6 +22,8 @@ interface IDataLogger extends Document {
   startAddressBool?: number;
   registerCountBool?: number;
   pollingInterval?: number;
+
+  isConfigured: boolean;
 
   // common fields for all schemas
   isDeleted: boolean;
@@ -97,6 +99,12 @@ const dataLoggerSchema = new Schema<IDataLogger>(
     },
     pollingInterval: {
       type: Number,
+    },
+
+    isConfigured: {
+      type: Boolean,
+      default: false,
+      required: true,
     },
 
     // common field for all schema
