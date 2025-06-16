@@ -22,6 +22,7 @@ import {
   INSIGHT_PRIORITIES
 } from "./insights.constants";
 import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
+import { SENSOR_TYPE } from "./data-logger.constant";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -96,5 +97,6 @@ export default {
   INSIGHT_TYPE_OBJECTS,
   INSIGHT_PRIORITIES,
   VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
-  WHATSAPP_TEMPLATE_ALLOWED_INPUTS
+  WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
+  SENSOR_TYPE,
 };

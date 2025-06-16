@@ -114,6 +114,13 @@ declare const _default: {
         freeText: string;
         unit: string;
     };
+    SENSOR_TYPE: {
+        float: string;
+        double: string;
+        uint: string;
+        int: string;
+        boolean: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
