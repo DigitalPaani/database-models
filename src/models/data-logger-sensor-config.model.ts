@@ -17,11 +17,6 @@ interface IDLSensorConfig {
   bitIndex?: number;
 }
 
-function isValidFunctionExpression(expr: string): boolean {
-  // Basic pattern: only allows simple math with x
-  return /^[x\d\s\+\-\*\/\.\(\)]+$/.test(expr.trim());
-}
-
 const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
   {
     dataLoggerId: {
@@ -42,11 +37,6 @@ const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
     },
     function: {
       type: String,
-      validate: {
-        validator: isValidFunctionExpression,
-        message: (props: any) =>
-          `"${props.value}" is not a valid function expression.`,
-      },
     },
     scaledRequired: { type: Boolean },
     scalingFactor: { type: Number },

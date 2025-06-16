@@ -36,10 +36,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DLSensorConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const data_logger_constant_1 = require("../constants/data-logger.constant");
-function isValidFunctionExpression(expr) {
-    // Basic pattern: only allows simple math with x
-    return /^[x\d\s\+\-\*\/\.\(\)]+$/.test(expr.trim());
-}
 const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
     dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -59,10 +55,6 @@ const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
     },
     function: {
         type: String,
-        validate: {
-            validator: isValidFunctionExpression,
-            message: (props) => `"${props.value}" is not a valid function expression.`,
-        },
     },
     scaledRequired: { type: Boolean },
     scalingFactor: { type: Number },
