@@ -2,8 +2,8 @@ import mongoose, { Types } from "mongoose";
 interface IDLSensorConfig {
     dataLoggerId: Types.ObjectId;
     sensorId: Types.ObjectId;
-    start: number;
-    end: number;
+    start?: number;
+    end?: number;
     type: string;
     wordOrder: string;
     function?: string;

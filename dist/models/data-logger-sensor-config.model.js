@@ -69,7 +69,7 @@ const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
     totalizerRequired: { type: Boolean },
     totalizerTag: { type: String },
     modbusMisfireTotalizer: { type: Boolean },
-    bitIndex: { type: Number, required: false },
+    bitIndex: { type: Number },
 }, { _id: false });
 const DLSensorConfigModel = mongoose_1.default.model("dataLoggerSensorConfig", dataLoggerSensorConfigSchema, "dataLoggerSensorConfig");
 exports.DLSensorConfigModel = DLSensorConfigModel;

@@ -4,8 +4,8 @@ import { SENSOR_TYPE } from "../constants/data-logger.constant";
 interface IDLSensorConfig {
   dataLoggerId: Types.ObjectId;
   sensorId: Types.ObjectId;
-  start: number;
-  end: number;
+  start?: number;
+  end?: number;
   type: string; // Extend types as needed
   wordOrder: string;
   function?: string;
@@ -53,7 +53,7 @@ const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
     totalizerRequired: { type: Boolean },
     totalizerTag: { type: String },
     modbusMisfireTotalizer: { type: Boolean },
-    bitIndex: { type: Number, required: false },
+    bitIndex: { type: Number },
   },
   { _id: false }
 );
