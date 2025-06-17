@@ -91,6 +91,7 @@ import { DataLoggerModel, IDataLogger } from "./models/data-logger.model";
 import { BidirectionalModel, IBidirectional } from "./models/bidirectional.model";
 import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirectional-logs.model";
 import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-components.model";
+import { NotificationModel,INotification} from "./models/notification.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
@@ -157,6 +158,7 @@ export type {
   IBidirectional,
   IBidirectionalLogs,
   IEquipmentComponent,
+  INotification
 };
 
 // exports the models
@@ -215,4 +217,5 @@ export {
   BidirectionalModel,
   BidirectionalLogsModel,
   EquipmentComponentModel,
+  NotificationModel
 };

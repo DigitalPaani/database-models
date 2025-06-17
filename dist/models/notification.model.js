@@ -33,31 +33,41 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewUserModel = void 0;
+exports.NotificationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Define the schema using the TypeScript interface
-const userSchema = new mongoose_1.Schema({
-    name: String,
-    email: { type: String, required: true }, // Ensure email is unique
-    password: String,
-    defaultPageId: Object,
-    number: String,
-    userStatus: String,
-    twoFactorAuthentication: Boolean,
-    language: String,
-    profilePic: String,
-    skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
-    parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
-    isStaff: { type: Boolean, required: true, default: false },
-    isArchived: { type: Boolean, default: false },
-    blockedNotificationModules: {
-        type: [String],
-        default: [],
+const NotificationSchema = new mongoose_1.Schema({
+    eventType: { type: String, required: true },
+    eventMessage: { type: String, required: true },
+    iconUrl: { type: String },
+    iconId: { type: String },
+    priority: {
+        type: String,
+        enum: ["low", "medium", "high"],
+        default: "low",
     },
-    // defaultHomePage: { type: String, required: true, default: '' },
-}, {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
-});
-// Define the model using the schema and the TypeScript interface
-const NewUserModel = mongoose_1.default.model("NewUser", userSchema, "newUsers");
-exports.NewUserModel = NewUserModel;
+    plantId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", default: null },
+    usergroupId: { type: mongoose_1.Schema.Types.ObjectId, ref: "UserGroup" },
+    to: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
+    timestamp: { type: Number, default: 0 },
+    createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "User" },
+    status: {
+        type: String,
+        enum: ["read", "unread"],
+        default: "unread",
+    },
+    viewedAt: { type: Date, default: null },
+    flag: { type: Boolean, default: false },
+    uriPath: { type: String },
+    module: { type: mongoose_1.Schema.Types.Mixed },
+    escalation: { type: Boolean, default: false },
+    version: { type: Number, default: 1 },
+    templatedId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Template" },
+    triggerId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Trigger" },
+    type: { type: String }
+}, { timestamps: true });
+const NotificationModel = mongoose_1.default.model("Notifications", NotificationSchema, "Notifications");
+exports.NotificationModel = NotificationModel;
