@@ -13,6 +13,7 @@ interface INewUser extends Document {
     parentUserId: Types.ObjectId;
     skillIds: Types.ObjectId[];
     isArchived: boolean;
+    blockedNotificationModules: [string];
     [key: string]: any;
 }
 declare const NewUserModel: Model<INewUser>;
