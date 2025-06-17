@@ -96,6 +96,7 @@ import { FormulaCommonTypes } from './types/formulaTypes'
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 import { DataLoggerSessionModel, IDataLoggerSession } from './models/data-logger-sessions.model';
 import { DLSensorConfigModel, IDLSensorConfig } from './models/data-logger-sensor-config.model';
+import { DLSensorConfigAuditModel } from './models/dl-sensor-config-audit.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -221,4 +222,5 @@ export {
   EquipmentComponentModel,
   DataLoggerSessionModel,
   DLSensorConfigModel,
+  DLSensorConfigAuditModel,
 };

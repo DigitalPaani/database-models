@@ -2,22 +2,30 @@ import mongoose, { Types } from "mongoose";
 interface IDLSensorConfig {
     dataLoggerId: Types.ObjectId;
     sensorId: Types.ObjectId;
-    start?: number;
-    end?: number;
-    type: string;
-    wordOrder: string;
-    function?: string;
-    scaledRequired?: boolean;
+    sensorType: "analog" | "boolean";
+    referenceSensorId?: Types.ObjectId;
+    referenceSensorPurpose?: string;
     scalingFactor?: number;
-    totalizerRequired?: boolean;
-    totalizerTag?: string;
-    modbusMisfireTotalizer?: boolean;
+    start?: number;
+    type?: string;
+    wordOrder?: string;
+    function?: string;
     bitIndex?: number;
+    version: number;
 }
+declare const dataLoggerSensorConfigSchema: mongoose.Schema<IDLSensorConfig, mongoose.Model<IDLSensorConfig, any, any, any, mongoose.Document<unknown, any, IDLSensorConfig> & IDLSensorConfig & {
+    _id: Types.ObjectId;
+} & {
+    __v: number;
+}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, IDLSensorConfig, mongoose.Document<unknown, {}, mongoose.FlatRecord<IDLSensorConfig>> & mongoose.FlatRecord<IDLSensorConfig> & {
+    _id: Types.ObjectId;
+} & {
+    __v: number;
+}>;
 declare const DLSensorConfigModel: mongoose.Model<IDLSensorConfig, {}, {}, {}, mongoose.Document<unknown, {}, IDLSensorConfig> & IDLSensorConfig & {
     _id: Types.ObjectId;
 } & {
     __v: number;
 }, any>;
-export { DLSensorConfigModel, IDLSensorConfig };
+export { DLSensorConfigModel, IDLSensorConfig, dataLoggerSensorConfigSchema };
 //# sourceMappingURL=data-logger-sensor-config.model.d.ts.map

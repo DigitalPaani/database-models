@@ -119,7 +119,6 @@ declare const _default: {
         double: string;
         uint: string;
         int: string;
-        boolean: string;
     };
 };
 export default _default;

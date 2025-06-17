@@ -6,6 +6,5 @@ const SENSOR_TYPE = {
     double: 'double',
     uint: 'uint',
     int: 'int',
-    boolean: "boolean",
 };
 exports.SENSOR_TYPE = SENSOR_TYPE;

@@ -2,28 +2,24 @@ import mongoose, { Schema, Document, Types } from "mongoose";
 
 interface IDataLogger extends Document {
   name: string;
-  description: string;
-  assetId: Types.ObjectId;
   createdBy: Types.ObjectId;
-  serialNumber?: string;
-  code?: number;
-  parentId?: Types.ObjectId;
+  serialNumber: string;
   version: number;
 
   // json fields for aws job
-  plcBrand?: string;
-  plcId?: string;
-  modbusHost?: string;
-  modbusPort?: number;
-  unitIdReal?: number;
-  startAddressReal?: number;
-  registerCountReal?: number;
-  unitIdBool?: number;
-  startAddressBool?: number;
-  registerCountBool?: number;
-  pollingInterval?: number;
-
-  isConfigured: boolean;
+  debug: boolean;
+  plcBrand: string;
+  plcModel: string;
+  assetId: Types.ObjectId;
+  modbusHost: string;
+  modbusPort: number;
+  unitIdReal: number;
+  startAddressReal: number;
+  registerCountReal: number;
+  unitIdBool: number;
+  startAddressBool: number;
+  registerCountBool: number;
+  pollingInterval: number;
 
   // common fields for all schemas
   isDeleted: boolean;
@@ -37,29 +33,13 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       type: String,
       required: true,
     },
-    description: {
+    serialNumber: {
       type: String,
-      required: true,
-    },
-    assetId: {
-      type: Schema.Types.ObjectId,
-      ref: "Plant",
-      required: true,
     },
     createdBy: {
       type: Schema.Types.ObjectId,
       ref: "NewUser",
       required: true,
-    },
-    serialNumber: {
-      type: String,
-    },
-    code: {
-      type: String,
-    },
-    parentId: {
-      type: Schema.Types.ObjectId,
-      ref: "dataLoggers",
     },
     version: {
       type: Number,
@@ -67,43 +47,60 @@ const dataLoggerSchema = new Schema<IDataLogger>(
     },
 
     // JSON fields in camelCase
+    debug: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
     plcBrand: {
       type: String,
-    },
-    plcId: {
-      type: String,
-    },
-    modbusHost: {
-      type: String,
-    },
-    modbusPort: {
-      type: Number,
-    },
-    unitIdReal: {
-      type: Number,
-    },
-    startAddressReal: {
-      type: Number,
-    },
-    registerCountReal: {
-      type: Number,
-    },
-    unitIdBool: {
-      type: Number,
-    },
-    startAddressBool: {
-      type: Number,
-    },
-    registerCountBool: {
-      type: Number,
+      enum: ["Fuji", "Delta"],
+      required: true,
     },
     pollingInterval: {
       type: Number,
+      required: true,
     },
-
-    isConfigured: {
-      type: Boolean,
-      default: false,
+    plcModel: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    assetId: {
+      type: Schema.Types.ObjectId,
+      ref: "Plant",
+      required: true,
+    },
+    modbusHost: {
+      type: String,
+      required: true,
+    },
+    modbusPort: {
+      type: Number,
+      required: true,
+    },
+    unitIdReal: {
+      type: Number,
+      required: true,
+    },
+    startAddressReal: {
+      type: Number,
+      required: true,
+    },
+    registerCountReal: {
+      type: Number,
+      required: true,
+    },
+    unitIdBool: {
+      type: Number,
+      required: true,
+    },
+    startAddressBool: {
+      type: Number,
+      required: true,
+    },
+    registerCountBool: {
+      type: Number,
       required: true,
     },
 

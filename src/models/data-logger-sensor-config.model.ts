@@ -4,17 +4,16 @@ import { SENSOR_TYPE } from "../constants/data-logger.constant";
 interface IDLSensorConfig {
   dataLoggerId: Types.ObjectId;
   sensorId: Types.ObjectId;
-  start?: number;
-  end?: number;
-  type: string; // Extend types as needed
-  wordOrder: string;
-  function?: string;
-  scaledRequired?: boolean;
+  sensorType: "analog" | "boolean";
+  referenceSensorId?: Types.ObjectId;
+  referenceSensorPurpose?: string;
   scalingFactor?: number;
-  totalizerRequired?: boolean;
-  totalizerTag?: string;
-  modbusMisfireTotalizer?: boolean;
+  start?: number;
+  type?: string; // Extend types as needed
+  wordOrder?: string;
+  function?: string;
   bitIndex?: number;
+  version: number;
 }
 
 const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
@@ -29,21 +28,28 @@ const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
       ref: "sensors",
       required: true,
     },
+    sensorType: { type: String, enum: ["analog", "boolean"], required: true },
+    referenceSensorId: {
+      type: Schema.Types.ObjectId,
+      ref: "sensors",
+    },
+    referenceSensorPurpose: {
+      type: String,
+      enum: ["totalizer"],
+      trim: true,
+    },
+    scalingFactor: { type: Number },
     start: { type: Number },
-    end: { type: Number },
-    type: { type: String, enum: Object.values(SENSOR_TYPE) },
+    type: { type: String, enum: Object.values(SENSOR_TYPE), required: false },
     wordOrder: {
       type: String,
     },
     function: {
       type: String,
+      trim: true,
     },
-    scaledRequired: { type: Boolean },
-    scalingFactor: { type: Number },
-    totalizerRequired: { type: Boolean },
-    totalizerTag: { type: String },
-    modbusMisfireTotalizer: { type: Boolean },
     bitIndex: { type: Number },
+    version: { type: Number, default: 0, required: true },
   },
   { _id: false }
 );
@@ -54,4 +60,4 @@ const DLSensorConfigModel = mongoose.model<IDLSensorConfig>(
   "dataLoggerSensorConfig"
 );
 
-export { DLSensorConfigModel, IDLSensorConfig };
+export { DLSensorConfigModel, IDLSensorConfig, dataLoggerSensorConfigSchema };

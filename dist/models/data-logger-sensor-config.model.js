@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DLSensorConfigModel = void 0;
+exports.dataLoggerSensorConfigSchema = exports.DLSensorConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const data_logger_constant_1 = require("../constants/data-logger.constant");
 const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
@@ -47,21 +47,29 @@ const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
         ref: "sensors",
         required: true,
     },
+    sensorType: { type: String, enum: ["analog", "boolean"], required: true },
+    referenceSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
+    },
+    referenceSensorPurpose: {
+        type: String,
+        enum: ["totalizer"],
+        trim: true,
+    },
+    scalingFactor: { type: Number },
     start: { type: Number },
-    end: { type: Number },
-    type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE) },
+    type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE), required: false },
     wordOrder: {
         type: String,
     },
     function: {
         type: String,
+        trim: true,
     },
-    scaledRequired: { type: Boolean },
-    scalingFactor: { type: Number },
-    totalizerRequired: { type: Boolean },
-    totalizerTag: { type: String },
-    modbusMisfireTotalizer: { type: Boolean },
     bitIndex: { type: Number },
+    version: { type: Number, default: 0, required: true },
 }, { _id: false });
+exports.dataLoggerSensorConfigSchema = dataLoggerSensorConfigSchema;
 const DLSensorConfigModel = mongoose_1.default.model("dataLoggerSensorConfig", dataLoggerSensorConfigSchema, "dataLoggerSensorConfig");
 exports.DLSensorConfigModel = DLSensorConfigModel;

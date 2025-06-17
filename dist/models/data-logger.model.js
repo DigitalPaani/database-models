@@ -40,71 +40,73 @@ const dataLoggerSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    description: {
+    serialNumber: {
         type: String,
-        required: true,
-    },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
     },
     createdBy: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "NewUser",
         required: true,
     },
-    serialNumber: {
-        type: String,
-    },
-    code: {
-        type: String,
-    },
-    parentId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "dataLoggers",
-    },
     version: {
         type: Number,
         default: 0,
     },
     // JSON fields in camelCase
+    debug: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
     plcBrand: {
         type: String,
-    },
-    plcId: {
-        type: String,
-    },
-    modbusHost: {
-        type: String,
-    },
-    modbusPort: {
-        type: Number,
-    },
-    unitIdReal: {
-        type: Number,
-    },
-    startAddressReal: {
-        type: Number,
-    },
-    registerCountReal: {
-        type: Number,
-    },
-    unitIdBool: {
-        type: Number,
-    },
-    startAddressBool: {
-        type: Number,
-    },
-    registerCountBool: {
-        type: Number,
+        enum: ["Fuji", "Delta"],
+        required: true,
     },
     pollingInterval: {
         type: Number,
+        required: true,
     },
-    isConfigured: {
-        type: Boolean,
-        default: false,
+    plcModel: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    assetId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Plant",
+        required: true,
+    },
+    modbusHost: {
+        type: String,
+        required: true,
+    },
+    modbusPort: {
+        type: Number,
+        required: true,
+    },
+    unitIdReal: {
+        type: Number,
+        required: true,
+    },
+    startAddressReal: {
+        type: Number,
+        required: true,
+    },
+    registerCountReal: {
+        type: Number,
+        required: true,
+    },
+    unitIdBool: {
+        type: Number,
+        required: true,
+    },
+    startAddressBool: {
+        type: Number,
+        required: true,
+    },
+    registerCountBool: {
+        type: Number,
         required: true,
     },
     // common field for all schema
