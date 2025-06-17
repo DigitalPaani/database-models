@@ -7,6 +7,7 @@ require("./plantModel");
 
 // Interface for the message body
 interface ICommunicationComponent extends Document {
+  name: string;
   userIds: Types.ObjectId[]; // Array of User IDs
   emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string; isReport: boolean }[]; // Optional, for EMAIL
@@ -16,7 +17,7 @@ interface ICommunicationComponent extends Document {
   contentTemplateVariables?: Record<string, string>; // Optional, for WHATSAPP
   type: string;
   userGroup?: Types.ObjectId;
-  asset?: Types.ObjectId;
+  assetIds?: Types.ObjectId[];
   messageFormat?: string; // Auto-complete feature for template selection.
   dashboardPageDetails?: {
     name: string;
@@ -40,6 +41,7 @@ interface ICommunicationComponent extends Document {
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new Schema(
   {
+    name: { type: String },
     userIds: { type: [Schema.Types.ObjectId], ref: "NewUser" },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
@@ -63,7 +65,7 @@ const communicationComponentsSchema = new Schema(
       required: true,
     },
     userGroup: { type: Schema.Types.ObjectId, ref: "UserGroup" },
-    asset: { type: Schema.Types.ObjectId, ref: "Plant" },
+    assetIds: { type: [Schema.Types.ObjectId], ref: "Plant" },
     messageFormat: { type: String },
     dashboardPageDetails: {
       name: String,

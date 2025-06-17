@@ -83,6 +83,8 @@ declare const _default: {
         userName: string;
         transitionName: string;
         overdueTime: string;
+        taskAndInsightsDetails: string;
+        dashboardReportUnit: string;
     };
     USER_GROUP_OR_SYSTEM: {
         value: string;

@@ -1,5 +1,5 @@
 import type { Document, Model } from 'mongoose';
-import mongoose, { Schema, Types } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 import commonConstants from '../constants/commonConstants';
 
@@ -14,6 +14,9 @@ interface IWhatsappTemplate extends Document {
   templateName: string;
   templateContent: string;
   variables: IVariable[]
+  isReportConfigRequired: boolean;
+  isTaskConfigRequired: boolean;
+  isInsightConfigRequired: boolean;
   isArchived: boolean;
 };
 
@@ -48,11 +51,23 @@ const whatsappTemplateSchema = new Schema<IWhatsappTemplate>(
     },
     templateContent: {
         type: String,
-        required: false,  
+        required: false,
     },
     variables: {
       type: [variableSchema],
       required: false,  
+    },
+    isReportConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
+    isTaskConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
+    isInsightConfigRequired: {
+        type: Boolean,
+        required: false,
     },
     isArchived: {
       type: Boolean,

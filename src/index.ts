@@ -94,6 +94,8 @@ import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-
 import { NotificationModel,INotification} from "./models/notification.model";
 
 import { FormulaCommonTypes } from './types/formulaTypes'
+import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
+import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 
 // Assign mongoose to mongooseDatabaseModels
@@ -153,6 +155,8 @@ export type {
   IInsight,
   IInsightComment,
   FormulaCommonTypes,
+  IWhatsappIncomingEvent,
+  IWhatsappAiCommunication,
   IManualSensors,
   IDataLogger,
   IBidirectional,
@@ -212,6 +216,8 @@ export {
   InsightComponentModel,
   InsightModel,
   InsightCommentModel,
+  WhatsappIncomingEventModel,
+  WhatsappAiCommunicationModel,
   ManualSensorModel,
   DataLoggerModel,
   BidirectionalModel,

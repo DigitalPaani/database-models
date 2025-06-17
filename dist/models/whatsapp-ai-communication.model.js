@@ -32,67 +32,37 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WhatsappTemplateModel = void 0;
+exports.WhatsappAiCommunicationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
-;
-;
-const variableSchema = new mongoose_1.Schema({
-    position: {
-        type: Number,
-        required: true
+const whatsappAiCommunication = new mongoose_1.Schema({
+    userId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
     },
-    value: {
+    from: {
         type: String,
-        enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_VARIABLES),
-        default: ""
+        required: true,
     },
-    allowedInputs: {
-        type: [String],
-        enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_ALLOWED_INPUTS),
-        default: []
-    }
-});
-const whatsappTemplateSchema = new mongoose_1.Schema({
-    contentTemplateSid: {
+    to: {
+        type: String,
+        required: true,
+    },
+    role: {
+        type: String,
+        enum: ["USER", "ASSISTANT"],
+        required: true,
+    },
+    content: {
         type: String,
         required: false,
     },
-    templateName: {
-        type: String,
-        required: false,
-    },
-    templateContent: {
-        type: String,
-        required: false,
-    },
-    variables: {
-        type: [variableSchema],
-        required: false,
-    },
-    isReportConfigRequired: {
-        type: Boolean,
-        required: false,
-    },
-    isTaskConfigRequired: {
-        type: Boolean,
-        required: false,
-    },
-    isInsightConfigRequired: {
-        type: Boolean,
-        required: false,
-    },
-    isArchived: {
-        type: Boolean,
-        default: false,
-        required: false,
+    assistantResponse: {
+        type: mongoose_1.Schema.Types.Mixed,
+        required: true,
     }
 }, {
     timestamps: true,
 });
-const WhatsappTemplateModel = mongoose_1.default.model('whatsappTemplates', whatsappTemplateSchema, 'whatsappTemplates');
-exports.WhatsappTemplateModel = WhatsappTemplateModel;
+const WhatsappAiCommunicationModel = mongoose_1.default.model("whatsappAiCommunications", whatsappAiCommunication, "whatsappAiCommunications");
+exports.WhatsappAiCommunicationModel = WhatsappAiCommunicationModel;

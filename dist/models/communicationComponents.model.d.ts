@@ -1,6 +1,7 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
 interface ICommunicationComponent extends Document {
+    name: string;
     userIds: Types.ObjectId[];
     emailSubject?: string;
     attachments?: {
@@ -14,7 +15,7 @@ interface ICommunicationComponent extends Document {
     contentTemplateVariables?: Record<string, string>;
     type: string;
     userGroup?: Types.ObjectId;
-    asset?: Types.ObjectId;
+    assetIds?: Types.ObjectId[];
     messageFormat?: string;
     dashboardPageDetails?: {
         name: string;
