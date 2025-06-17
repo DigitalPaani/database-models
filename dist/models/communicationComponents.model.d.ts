@@ -1,6 +1,7 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
 interface ICommunicationComponent extends Document {
+    name: string;
     userIds: Types.ObjectId[];
     emailSubject?: string;
     attachments?: {

@@ -12,6 +12,7 @@ require("./userGroupModel");
 require("./plantModel");
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new mongoose_1.Schema({
+    name: { type: String },
     userIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "NewUser" },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },

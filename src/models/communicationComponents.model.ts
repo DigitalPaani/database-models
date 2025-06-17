@@ -7,6 +7,7 @@ require("./plantModel");
 
 // Interface for the message body
 interface ICommunicationComponent extends Document {
+  name: string;
   userIds: Types.ObjectId[]; // Array of User IDs
   emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string; isReport: boolean }[]; // Optional, for EMAIL
@@ -40,6 +41,7 @@ interface ICommunicationComponent extends Document {
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new Schema(
   {
+    name: { type: String },
     userIds: { type: [Schema.Types.ObjectId], ref: "NewUser" },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
