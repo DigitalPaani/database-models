@@ -14,6 +14,7 @@ const OBSOLETE_CONDITIONS = {
     none: "none",
 };
 const TASK_OR_ISSUE_FILTERS = {
+    all: "All",
     open: "Open",
     highPriorityOpen: "High Priority Open",
     mediumPriorityOpen: "Medium Priority Open",
@@ -32,6 +33,11 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
     userName: "USER_NAME",
     transitionName: "TRANSITION_NAME",
     overdueTime: "OVERDUE_TIME",
+};
+const WHATSAPP_TEMPLATE_ALLOWED_INPUTS = {
+    sensor: "SENSOR",
+    freeText: "FREE_TEXT",
+    unit: "UNIT"
 };
 const USER_GROUP_OR_SYSTEM = [
     {
@@ -65,4 +71,5 @@ exports.default = {
     INSIGHT_TYPE_OBJECTS: insights_constants_1.INSIGHT_TYPE_OBJECTS,
     INSIGHT_PRIORITIES: insights_constants_1.INSIGHT_PRIORITIES,
     VISUALIZATION_EQUIPMENT_TYPES_ENUMS: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
+    WHATSAPP_TEMPLATE_ALLOWED_INPUTS
 };

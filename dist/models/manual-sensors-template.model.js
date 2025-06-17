@@ -32,55 +32,17 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WhatsappTemplateModel = void 0;
+exports.ManualSensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
-;
-;
-const variableSchema = new mongoose_1.Schema({
-    position: {
-        type: Number,
-        required: true
-    },
-    value: {
-        type: String,
-        enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_VARIABLES),
-        default: ""
-    },
-    allowedInputs: {
-        type: [String],
-        enum: Object.values(commonConstants_1.default.WHATSAPP_TEMPLATE_ALLOWED_INPUTS),
-        default: []
-    }
-});
-const whatsappTemplateSchema = new mongoose_1.Schema({
-    contentTemplateSid: {
-        type: String,
-        required: false,
-    },
-    templateName: {
-        type: String,
-        required: false,
-    },
-    templateContent: {
-        type: String,
-        required: false,
-    },
-    variables: {
-        type: [variableSchema],
-        required: false,
-    },
-    isArchived: {
-        type: Boolean,
-        default: false,
-        required: false,
-    }
-}, {
-    timestamps: true,
-});
-const WhatsappTemplateModel = mongoose_1.default.model('whatsappTemplates', whatsappTemplateSchema, 'whatsappTemplates');
-exports.WhatsappTemplateModel = WhatsappTemplateModel;
+const manualSensorsCategoryConst_1 = require("../constants/manualSensorsCategoryConst");
+const manualCategory = manualSensorsCategoryConst_1.manualCategoryList.map((category) => category.key);
+const ManualSensorSchema = new mongoose_1.Schema({
+    sensorName: { type: String, required: true, trim: true },
+    category: { type: String, required: true, enum: manualCategory },
+    tag: { type: String },
+    isArchived: { type: Boolean, default: false },
+    type: { type: String, required: true },
+}, { timestamps: true });
+const ManualSensorModel = mongoose_1.default.model("ManualSensorTemplate", ManualSensorSchema, "ManualSensorTemplates");
+exports.ManualSensorModel = ManualSensorModel;

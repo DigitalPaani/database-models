@@ -19,7 +19,6 @@ exports.sensorPurposeTags = [
     "flowRate",
     "flowTotalizer",
     "energyUsedPerHour",
-    "totalEnergyUsed",
     "conductivity",
     "SDIAnalyser",
     "TSS",
@@ -35,6 +34,10 @@ exports.sensorPurposeTags = [
     "control",
     "hmiBypass",
     "softwareBypass",
-    "bidirectional"
+    "bidirectional",
+    "temperature",
+    "sv30",
+    "flooding",
+    "energyTotalizer"
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
