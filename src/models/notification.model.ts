@@ -9,7 +9,6 @@ interface INotification extends Document {
   plantId: mongoose.Types.ObjectId;
   usergroupId?: mongoose.Types.ObjectId;
   to: {
-    type: "user" | "usergroup";
     id: mongoose.Types.ObjectId;
   };
   timestamp: number;
@@ -22,6 +21,7 @@ interface INotification extends Document {
   version?: number;
   templatedId?: mongoose.Types.ObjectId;
   triggerId?: mongoose.Types.ObjectId;
+  type:string;
 }
 
 const NotificationSchema: Schema = new Schema(
@@ -57,6 +57,7 @@ const NotificationSchema: Schema = new Schema(
     version: { type: Number, default: 1 },
     templatedId: { type: Schema.Types.ObjectId, ref: "Template" },
     triggerId: { type: Schema.Types.ObjectId, ref: "Trigger" },
+    type:{type:String}
   },
   { timestamps: true }
 );

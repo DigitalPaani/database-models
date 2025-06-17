@@ -8,7 +8,6 @@ interface INotification extends Document {
     plantId: mongoose.Types.ObjectId;
     usergroupId?: mongoose.Types.ObjectId;
     to: {
-        type: "user" | "usergroup";
         id: mongoose.Types.ObjectId;
     };
     timestamp: number;
@@ -21,6 +20,7 @@ interface INotification extends Document {
     version?: number;
     templatedId?: mongoose.Types.ObjectId;
     triggerId?: mongoose.Types.ObjectId;
+    type: string;
 }
 declare const NotificationModel: mongoose.Model<INotification, {}, {}, {}, mongoose.Document<unknown, {}, INotification> & INotification & Required<{
     _id: unknown;
