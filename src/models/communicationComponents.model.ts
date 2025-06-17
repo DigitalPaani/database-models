@@ -11,6 +11,7 @@ interface ICommunicationComponent extends Document {
   emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string; isReport: boolean }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
+  messageType?: string;
   contentTemplateSid?: string; // Optional, for WHATSAPP
   contentTemplateVariables?: Record<string, string>; // Optional, for WHATSAPP
   type: string;
@@ -42,6 +43,7 @@ const communicationComponentsSchema = new Schema(
     userIds: { type: [Schema.Types.ObjectId], ref: "NewUser" },
     emailSubject: { type: String }, // Only for EMAIL type
     message: { type: String },
+    messageType: { type: String, enum: ["TEXT", "HTML"] },
     attachments: [
       {
         name: String,
