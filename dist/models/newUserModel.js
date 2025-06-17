@@ -52,7 +52,6 @@ const userSchema = new mongoose_1.Schema({
     isArchived: { type: Boolean, default: false },
     blockedNotificationModules: {
         type: [String],
-        enum: ['Users', 'Inventory', 'Tasks', 'Insights'],
         default: [],
     },
     // defaultHomePage: { type: String, required: true, default: '' },

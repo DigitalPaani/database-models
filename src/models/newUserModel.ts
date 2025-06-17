@@ -39,7 +39,6 @@ const userSchema = new Schema<INewUser>(
     isArchived: { type: Boolean, default: false },
     blockedNotificationModules: {
     type: [String],
-    enum:['Users','Inventory','Tasks','Insights'],
     default: [],
     },
     // defaultHomePage: { type: String, required: true, default: '' },
