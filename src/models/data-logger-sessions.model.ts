@@ -12,10 +12,12 @@ const dataLoggerSessionSchema = new Schema<IDataLoggerSession>(
   {
     code: {
       type: Number,
+      unique: true,
       required: true,
     },
     serialNumber: {
       type: String,
+      unique: true,
       required: true,
     },
     isDeleted: {
