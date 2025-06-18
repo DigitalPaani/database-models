@@ -9,6 +9,7 @@ interface IDLSensorConfig {
   referenceSensorPurpose?: string;
   scalingFactor?: number;
   start?: number;
+  end?: number;
   type?: string; // Extend types as needed
   wordOrder?: string;
   function?: string;
@@ -40,6 +41,7 @@ const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
     },
     scalingFactor: { type: Number },
     start: { type: Number },
+    end: { type: Number },
     type: { type: String, enum: Object.values(SENSOR_TYPE), required: false },
     wordOrder: {
       type: String,
