@@ -7,6 +7,7 @@ interface IDLSensorConfig {
     referenceSensorPurpose?: string;
     scalingFactor?: number;
     start?: number;
+    end?: number;
     type?: string;
     wordOrder?: string;
     function?: string;

@@ -1,5 +1,6 @@
 import mongoose, { Schema, Types } from "mongoose";
 import { SENSOR_TYPE } from "../constants/data-logger.constant";
+require('./sensorModel');
 
 interface IDLSensorConfig {
   dataLoggerId: Types.ObjectId;

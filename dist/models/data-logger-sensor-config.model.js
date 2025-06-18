@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.dataLoggerSensorConfigSchema = exports.DLSensorConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const data_logger_constant_1 = require("../constants/data-logger.constant");
+require('./sensorModel');
 const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
     dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -59,6 +60,7 @@ const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
     },
     scalingFactor: { type: Number },
     start: { type: Number },
+    end: { type: Number },
     type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE), required: false },
     wordOrder: {
         type: String,

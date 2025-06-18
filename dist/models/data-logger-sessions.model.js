@@ -38,10 +38,12 @@ const mongoose_1 = __importStar(require("mongoose"));
 const dataLoggerSessionSchema = new mongoose_1.Schema({
     code: {
         type: Number,
+        unique: true,
         required: true,
     },
     serialNumber: {
         type: String,
+        unique: true,
         required: true,
     },
     isDeleted: {
