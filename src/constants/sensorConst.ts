@@ -35,7 +35,13 @@ export const sensorPurposeTags = [
   "temperature",
   "sv30",
   "flooding",
-  "energyTotalizer"
+  "energyTotalizer",
+  "sv60",
+  "sv90",
+  "sv30Turbidity",
+  "vfdOnOrOff",
+  "vfdRpm",
+  "vfdAmpere"
 ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
