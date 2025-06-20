@@ -44,6 +44,13 @@ exports.sensorPurposeTags = [
     "sv30Turbidity",
     "vfdOnOrOff",
     "vfdRpm",
-    "vfdAmpere"
+    "vfdAmpere",
+    "sv30Image",
+    "sv60Image",
+    "sv90Image",
+    "svCustomImage",
+    "svRaw",
+    "svRawImage",
+    "svFloatingSludge",
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
