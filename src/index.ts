@@ -97,6 +97,7 @@ import { FormulaCommonTypes } from './types/formulaTypes'
 import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
 import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
+import { IMigrateSensorIds, MigrateSensorIdsModel } from './models/migrate-sensorIds.model';
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -162,7 +163,8 @@ export type {
   IBidirectional,
   IBidirectionalLogs,
   IEquipmentComponent,
-  INotification
+  INotification,
+  IMigrateSensorIds,
 };
 
 // exports the models
@@ -223,5 +225,6 @@ export {
   BidirectionalModel,
   BidirectionalLogsModel,
   EquipmentComponentModel,
-  NotificationModel
+  NotificationModel,
+  MigrateSensorIdsModel,
 };
