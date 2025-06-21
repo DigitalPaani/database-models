@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
-import { sensorPurposeTags, sensorInputType } from "../constants/sensorConst";
+import { SENSOR_PURPOSE_TAGS, sensorInputType } from "../constants/sensorConst";
 
 interface ISensor extends Document {
   sensorName: string;
@@ -21,7 +21,7 @@ const SensorSchema = new Schema<ISensor>(
     },
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true }, 
-    purpose: { type: [String], enum: sensorPurposeTags },
+    purpose: { type: [String], enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.key) },
     inputType: {
       type: [String],
       enum: sensorInputType, // Restricts values to these three options
