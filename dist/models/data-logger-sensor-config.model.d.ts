@@ -11,6 +11,7 @@ interface IDLSensorConfig {
     type?: string;
     wordOrder?: string;
     function?: string;
+    modbusMisfireTotalizer?: boolean;
     bitIndex?: number;
     version: number;
 }

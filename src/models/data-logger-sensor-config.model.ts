@@ -13,6 +13,7 @@ interface IDLSensorConfig {
   type?: string; // Extend types as needed
   wordOrder?: string;
   function?: string;
+  modbusMisfireTotalizer?: boolean;
   bitIndex?: number;
   version: number;
 }
@@ -50,6 +51,7 @@ const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
       type: String,
       trim: true,
     },
+    modbusMisfireTotalizer: { type: Boolean },
     bitIndex: { type: Number },
     version: { type: Number, default: 0, required: true },
   },
