@@ -103,6 +103,10 @@ const insightComponentSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    isTimeSensitive: {
+        type: Boolean,
+        default: false,
+    },
     isDeleted: { type: Boolean, default: false },
 }, {
     timestamps: true,
