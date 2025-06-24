@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserGroupModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 // Define the schema using the TypeScript interface
 const workspaceAssetsSchema = new mongoose_1.Schema({
@@ -58,4 +59,4 @@ const userGroupSchema = new mongoose_1.Schema({
 userGroupSchema.index({ name: 1, createdBy: 1 }, { unique: true });
 // Define the model using the schema and the TypeScript interface
 const UserGroupModel = mongoose_1.default.model("UserGroup", userGroupSchema, "userGroups");
-exports.default = UserGroupModel;
+exports.UserGroupModel = UserGroupModel;

@@ -60,6 +60,4 @@ const UserGroupModel: Model<IUserGroup> = mongoose.model<IUserGroup>(
   "userGroups"
 );
 
-export { IUserGroup, IWorkspaceAssets };
-
-export default UserGroupModel;
+export { IUserGroup, IWorkspaceAssets, UserGroupModel };

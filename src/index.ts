@@ -99,7 +99,7 @@ import { FormulaCommonTypes } from './types/formulaTypes'
 import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
 import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
-
+import {UserGroupModel} from './models/userGroupModel'
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -191,6 +191,7 @@ export {
   WhatsappLogModel,
   Store,
   StoreItemsModel,
+  UserGroupModel,
   SmsLogModel,
   EmailLogModel,
   WhatsappTemplateModel,
