@@ -81,7 +81,7 @@ import mongoose, { Types } from "mongoose";
 
 import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
 import { FlocImageModel, IFlocImage } from './models/floc-image.model';
-
+import {WorkspaceModel,IWorkspace} from './models/workspaceModel'
 import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
 import { InsightComponentModel, IInsightComponent } from "./models/insight-components.model";
 import { InsightModel, IInsight } from "./models/insights.model";
@@ -162,7 +162,8 @@ export type {
   IBidirectional,
   IBidirectionalLogs,
   IEquipmentComponent,
-  INotification
+  INotification,
+  IWorkspace
 };
 
 // exports the models
@@ -223,5 +224,6 @@ export {
   BidirectionalModel,
   BidirectionalLogsModel,
   EquipmentComponentModel,
-  NotificationModel
+  NotificationModel,
+  WorkspaceModel
 };

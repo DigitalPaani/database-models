@@ -37,7 +37,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WhatsappIncomingEventModel = exports.InsightCommentModel = exports.InsightModel = exports.InsightComponentModel = exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
-exports.NotificationModel = exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = exports.DataLoggerModel = exports.ManualSensorModel = exports.WhatsappAiCommunicationModel = void 0;
+exports.WorkspaceModel = exports.NotificationModel = exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = exports.DataLoggerModel = exports.ManualSensorModel = exports.WhatsappAiCommunicationModel = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -126,6 +126,8 @@ const floc_sample_model_1 = require("./models/floc-sample.model");
 Object.defineProperty(exports, "FlocSampleModel", { enumerable: true, get: function () { return floc_sample_model_1.FlocSampleModel; } });
 const floc_image_model_1 = require("./models/floc-image.model");
 Object.defineProperty(exports, "FlocImageModel", { enumerable: true, get: function () { return floc_image_model_1.FlocImageModel; } });
+const workspaceModel_1 = require("./models/workspaceModel");
+Object.defineProperty(exports, "WorkspaceModel", { enumerable: true, get: function () { return workspaceModel_1.WorkspaceModel; } });
 const insights_template_model_1 = require("./models/insights-template.model");
 Object.defineProperty(exports, "InsightsTemplateModel", { enumerable: true, get: function () { return insights_template_model_1.InsightsTemplateModel; } });
 const insight_components_model_1 = require("./models/insight-components.model");
