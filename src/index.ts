@@ -46,6 +46,8 @@ import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
+import {Store,IStore} from './models/Store.model'
+import {StoreItemsModel} from './models/StoreItem.model'
 import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
 import {ILayout,LayoutModel} from './models/LayoutSchema.model'
 import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
@@ -108,6 +110,7 @@ export type {
   ISensorSetting,
   IPlcData,
   ITriggerDocument,
+  IStore,
   IFormulaEvents,
   ITaskTemplate,
   ISkill,
@@ -186,6 +189,8 @@ export {
   TwilioCallModel,
   CallLogModel,
   WhatsappLogModel,
+  Store,
+  StoreItemsModel,
   SmsLogModel,
   EmailLogModel,
   WhatsappTemplateModel,
