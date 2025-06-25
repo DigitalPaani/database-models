@@ -5,6 +5,7 @@ const triggerConst_1 = require("./triggerConst");
 const insights_constants_1 = require("./insights.constants");
 const visualization_constants_1 = require("./visualization.constants");
 const data_logger_constant_1 = require("./data-logger.constant");
+const sensorConst_1 = require("./sensorConst");
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -34,6 +35,8 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
     userName: "USER_NAME",
     transitionName: "TRANSITION_NAME",
     overdueTime: "OVERDUE_TIME",
+    taskAndInsightsDetails: "TASK_AND_INSIGHTS_DETAILS",
+    dashboardReportUnit: "DASHBOARD_REPORT_UNIT",
 };
 const WHATSAPP_TEMPLATE_ALLOWED_INPUTS = {
     sensor: "SENSOR",
@@ -74,4 +77,5 @@ exports.default = {
     VISUALIZATION_EQUIPMENT_TYPES_ENUMS: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
     WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
     SENSOR_TYPE: data_logger_constant_1.SENSOR_TYPE,
+    SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
 };

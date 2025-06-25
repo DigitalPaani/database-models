@@ -83,6 +83,8 @@ declare const _default: {
         userName: string;
         transitionName: string;
         overdueTime: string;
+        taskAndInsightsDetails: string;
+        dashboardReportUnit: string;
     };
     USER_GROUP_OR_SYSTEM: {
         value: string;
@@ -120,6 +122,11 @@ declare const _default: {
         uint: string;
         int: string;
     };
+    SENSOR_PURPOSE_TAGS: {
+        key: string;
+        abbr: string;
+        name: string;
+    }[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

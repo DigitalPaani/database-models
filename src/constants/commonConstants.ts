@@ -23,6 +23,7 @@ import {
 } from "./insights.constants";
 import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 import { SENSOR_TYPE } from "./data-logger.constant";
+import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -56,6 +57,8 @@ const WHATSAPP_TEMPLATE_VARIABLES = {
   userName: "USER_NAME",
   transitionName: "TRANSITION_NAME",
   overdueTime: "OVERDUE_TIME",
+  taskAndInsightsDetails: "TASK_AND_INSIGHTS_DETAILS",
+  dashboardReportUnit: "DASHBOARD_REPORT_UNIT",
 };
 
 const WHATSAPP_TEMPLATE_ALLOWED_INPUTS = {
@@ -99,4 +102,5 @@ export default {
   VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
   WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
   SENSOR_TYPE,
+  SENSOR_PURPOSE_TAGS,
 };
