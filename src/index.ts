@@ -100,6 +100,7 @@ import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/wha
 import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 import {UserGroupModel} from './models/userGroupModel'
+import {NotificationComponentsModel} from './models/notificationComponents.model'
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -231,5 +232,6 @@ export {
   BidirectionalLogsModel,
   EquipmentComponentModel,
   NotificationModel,
-  WorkspaceModel
+  WorkspaceModel,
+  NotificationComponentsModel
 };
