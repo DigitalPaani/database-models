@@ -21,6 +21,7 @@ interface IInsightComponent extends Document {
     rcaEnabled: boolean;
     rcaContent: string;
     isTimeSensitive: boolean;
+    userIdsForTimeSensitive: Types.ObjectId[];
     isDeleted: boolean;
 };
 
@@ -95,6 +96,10 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     isTimeSensitive: {
       type: Boolean,
       default: false,
+    },
+    userIdsForTimeSensitive: {
+      type: [Schema.Types.ObjectId],
+      required: true,
     },
     isDeleted: { type: Boolean, default: false },
   },

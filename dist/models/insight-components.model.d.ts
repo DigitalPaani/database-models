@@ -19,6 +19,7 @@ interface IInsightComponent extends Document {
     rcaEnabled: boolean;
     rcaContent: string;
     isTimeSensitive: boolean;
+    userIdsForTimeSensitive: Types.ObjectId[];
     isDeleted: boolean;
 }
 declare const InsightComponentModel: Model<IInsightComponent>;
