@@ -109,6 +109,7 @@ const insightComponentSchema = new mongoose_1.Schema({
     },
     userIdsForTimeSensitive: {
         type: [mongoose_1.Schema.Types.ObjectId],
+        ref: "NewUser",
         required: true,
     },
     isDeleted: { type: Boolean, default: false },

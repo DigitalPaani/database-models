@@ -99,6 +99,7 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     },
     userIdsForTimeSensitive: {
       type: [Schema.Types.ObjectId],
+      ref: "NewUser",
       required: true,
     },
     isDeleted: { type: Boolean, default: false },
