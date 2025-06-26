@@ -2,8 +2,8 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 
 // Define the embedded schema for the message body
 interface INotification extends Document {
-  eventType: string;
-  eventMessage: string;
+  name: string;
+  description: string;
   iconUrl?: string;
   iconId?: string;
   priority: "low" | "medium" | "high";

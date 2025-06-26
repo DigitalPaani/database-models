@@ -1,7 +1,7 @@
 import mongoose, { Document, Model } from "mongoose";
 interface INotification extends Document {
-    eventType: string;
-    eventMessage: string;
+    name: string;
+    description: string;
     iconUrl?: string;
     iconId?: string;
     priority: "low" | "medium" | "high";
