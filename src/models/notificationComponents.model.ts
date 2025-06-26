@@ -27,8 +27,8 @@ interface INotification extends Document {
 
 const NotificationSchema: Schema = new Schema(
   {
-    eventType: { type: String, required: true },
-    eventMessage: { type: String, required: true },
+    name: { type: String, required: true },
+    description: { type: String, required: true },
     iconUrl: { type: String },
     iconId: { type: String },
     priority: {

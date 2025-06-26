@@ -36,8 +36,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationComponentsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const NotificationSchema = new mongoose_1.Schema({
-    eventType: { type: String, required: true },
-    eventMessage: { type: String, required: true },
+    name: { type: String, required: true },
+    description: { type: String, required: true },
     iconUrl: { type: String },
     iconId: { type: String },
     priority: {
