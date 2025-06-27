@@ -40,14 +40,22 @@ const generalCommunicationSchema = new mongoose_1.default.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
-    message: {
+    messageContent: {
         type: String,
         required: true,
     },
-    communicationType: {
+    senderType: {
+        type: String,
+        enum: ["USER", "DOCTOR_PAANI"],
+    },
+    channel: {
         type: String,
         enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT"],
         required: true,
+    },
+    status: {
+        type: String,
+        enum: ["ACTIVE", "INACTIVE"]
     },
     isArchived: {
         type: String,
