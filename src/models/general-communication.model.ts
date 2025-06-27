@@ -22,6 +22,10 @@ const generalCommunicationSchema = new mongoose.Schema(
       enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT"],
       required: true,
     },
+    isArchived: {
+      type: String,
+      default: false,
+    },
   },
   {
     timestamps: true,
