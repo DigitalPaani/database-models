@@ -32,6 +32,4 @@ const WorkspaceModel: Model<IWorkspace> = mongoose.model<IWorkspace>(
   'newWorkspaces'
 );
 
-export { IWorkspace };
-
-export default WorkspaceModel;
+export { IWorkspace,WorkspaceModel };

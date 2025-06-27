@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.WorkspaceModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 // Define the schema using the TypeScript interface
 const workspaceSchema = new mongoose_1.Schema({
@@ -46,4 +47,4 @@ const workspaceSchema = new mongoose_1.Schema({
 workspaceSchema.index({ name: 1, createdBy: 1 }, { unique: true });
 // Define the model using the schema and the TypeScript interface
 const WorkspaceModel = mongoose_1.default.model('NewWorkspace', workspaceSchema, 'newWorkspaces');
-exports.default = WorkspaceModel;
+exports.WorkspaceModel = WorkspaceModel;
