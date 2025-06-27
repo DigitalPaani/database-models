@@ -17,6 +17,5 @@ interface IUserGroup extends Document {
     abbr: string;
 }
 declare const UserGroupModel: Model<IUserGroup>;
-export { IUserGroup, IWorkspaceAssets };
-export default UserGroupModel;
+export { IUserGroup, IWorkspaceAssets, UserGroupModel };
 //# sourceMappingURL=userGroupModel.d.ts.map

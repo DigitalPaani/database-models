@@ -46,6 +46,8 @@ import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
+import {Store,IStore} from './models/Store.model'
+import {StoreItemsModel} from './models/StoreItem.model'
 import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
 import {ILayout,LayoutModel} from './models/LayoutSchema.model'
 import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
@@ -81,7 +83,7 @@ import mongoose, { Types } from "mongoose";
 
 import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
 import { FlocImageModel, IFlocImage } from './models/floc-image.model';
-
+import {WorkspaceModel,IWorkspace} from './models/workspaceModel'
 import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
 import { InsightComponentModel, IInsightComponent } from "./models/insight-components.model";
 import { InsightModel, IInsight } from "./models/insights.model";
@@ -99,6 +101,8 @@ import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
 
+import {UserGroupModel} from './models/userGroupModel'
+import {NotificationComponentsModel} from './models/notificationComponents.model'
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -109,6 +113,7 @@ export type {
   ISensorSetting,
   IPlcData,
   ITriggerDocument,
+  IStore,
   IFormulaEvents,
   ITaskTemplate,
   ISkill,
@@ -165,6 +170,7 @@ export type {
   IEquipmentComponent,
   INotification,
   IBulkEntryReport,
+  IWorkspace
 };
 
 // exports the models
@@ -187,6 +193,9 @@ export {
   TwilioCallModel,
   CallLogModel,
   WhatsappLogModel,
+  Store,
+  StoreItemsModel,
+  UserGroupModel,
   SmsLogModel,
   EmailLogModel,
   WhatsappTemplateModel,
@@ -227,4 +236,6 @@ export {
   EquipmentComponentModel,
   NotificationModel,
   BulkEntryReportModel,
+  WorkspaceModel,
+  NotificationComponentsModel
 };

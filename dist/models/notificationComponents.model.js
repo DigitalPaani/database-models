@@ -33,30 +33,41 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserGroupModel = void 0;
+exports.NotificationComponentsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Define the schema using the TypeScript interface
-const workspaceAssetsSchema = new mongoose_1.Schema({
-    workspaceId: {
+const NotificationSchema = new mongoose_1.Schema({
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    iconUrl: { type: String },
+    iconId: { type: String },
+    priority: {
+        type: String,
+        enum: ["low", "medium", "high"],
+        default: "low",
+    },
+    plantId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", default: null },
+    usergroupId: { type: mongoose_1.Schema.Types.ObjectId, ref: "UserGroup" },
+    to: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace",
+        ref: "NewUser",
         required: true,
     },
-    assetIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "Plant", default: [] },
-}, { _id: false });
-// Define the schema using the TypeScript interface
-const userGroupSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
-    description: { type: String, default: "", required: false },
-    createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser", required: true },
-    userIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "NewUser", default: [] },
-    featureTags: { type: [String], default: [] },
-    workspaceAssets: { type: [workspaceAssetsSchema], default: [] },
-    isArchived: { type: Boolean, default: false },
-    abbr: { type: String, required: false, unique: false },
+    timestamp: { type: Number, default: 0 },
+    createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "User" },
+    status: {
+        type: String,
+        enum: ["read", "unread"],
+        default: "unread",
+    },
+    viewedAt: { type: Date, default: null },
+    flag: { type: Boolean, default: false },
+    uriPath: { type: String },
+    module: { type: mongoose_1.Schema.Types.Mixed },
+    escalation: { type: Boolean, default: false },
+    version: { type: Number, default: 1 },
+    templatedId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Template" },
+    triggerId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Trigger" },
+    type: { type: String },
 }, { timestamps: true });
-// Create a compound index to ensure unique group name
-userGroupSchema.index({ name: 1, createdBy: 1 }, { unique: true });
-// Define the model using the schema and the TypeScript interface
-const UserGroupModel = mongoose_1.default.model("UserGroup", userGroupSchema, "userGroups");
-exports.UserGroupModel = UserGroupModel;
+const NotificationComponentsModel = mongoose_1.default.model("notificationComponents", NotificationSchema, "notificationComponents");
+exports.NotificationComponentsModel = NotificationComponentsModel;
