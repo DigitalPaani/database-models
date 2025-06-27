@@ -3,8 +3,11 @@ import mongoose, { Schema } from "mongoose";
 
 interface IGeneralCommunication extends Document {
   userId: Types.ObjectId;
-  message: string;
-  communicationType: string;
+  messageContent: string;
+  senderType: string;
+  channel: string;
+  status: string;
+  isArchived: boolean;
 }
 
 const generalCommunicationSchema = new mongoose.Schema(

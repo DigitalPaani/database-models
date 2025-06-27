@@ -1,8 +1,11 @@
 import type { Document, Model, Types } from "mongoose";
 interface IGeneralCommunication extends Document {
     userId: Types.ObjectId;
-    message: string;
-    communicationType: string;
+    messageContent: string;
+    senderType: string;
+    channel: string;
+    status: string;
+    isArchived: boolean;
 }
 declare const GeneralCommunicationModel: Model<IGeneralCommunication>;
 export { GeneralCommunicationModel, IGeneralCommunication };
