@@ -39,7 +39,7 @@ const generalCommunicationSchema = new mongoose.Schema(
       enum: ["ACTIVE", "INACTIVE"]
     },
     isArchived: {
-      type: String,
+      type: Boolean,
       default: false,
     },
   },
