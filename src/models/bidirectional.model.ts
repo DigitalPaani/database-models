@@ -7,7 +7,7 @@ interface IBidirectional extends Document {
     controlSensorId: Types.ObjectId;
     tripSensorId: Types.ObjectId;
     hmiSensorId: Types.ObjectId;
-    softwareSensorId: Types.ObjectId;
+    softwareBypassSensorId: Types.ObjectId;
     manualSensorId: Types.ObjectId;
     bypassFormulaSensorId: Types.ObjectId;
   };
@@ -44,7 +44,7 @@ const bidirectionalSchema = new Schema<IBidirectional>(
         type: Schema.Types.ObjectId,
         ref: "sensors",
       },
-      softwareSensorId: {
+      softwareBypassSensorId: {
         type: Schema.Types.ObjectId,
         ref: "sensors",
       },

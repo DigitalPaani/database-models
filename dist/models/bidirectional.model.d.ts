@@ -6,7 +6,7 @@ interface IBidirectional extends Document {
         controlSensorId: Types.ObjectId;
         tripSensorId: Types.ObjectId;
         hmiSensorId: Types.ObjectId;
-        softwareSensorId: Types.ObjectId;
+        softwareBypassSensorId: Types.ObjectId;
         manualSensorId: Types.ObjectId;
         bypassFormulaSensorId: Types.ObjectId;
     };
