@@ -1,6 +1,7 @@
 import type { Document, Model, Types } from "mongoose";
+import { INewUser } from "./newUserModel";
 interface IGeneralCommunication extends Document {
-    userId: Types.ObjectId;
+    userId: Types.ObjectId | INewUser;
     messageContent: string;
     senderType: string;
     channel: string;
