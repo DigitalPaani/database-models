@@ -8,6 +8,8 @@ interface IGeneralCommunication extends Document {
   channel: string;
   status: string;
   isArchived: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const generalCommunicationSchema = new mongoose.Schema(

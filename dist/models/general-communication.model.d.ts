@@ -6,6 +6,8 @@ interface IGeneralCommunication extends Document {
     channel: string;
     status: string;
     isArchived: boolean;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 declare const GeneralCommunicationModel: Model<IGeneralCommunication>;
 export { GeneralCommunicationModel, IGeneralCommunication };
