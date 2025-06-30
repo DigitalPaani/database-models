@@ -16,6 +16,7 @@ const generalCommunicationSchema = new mongoose.Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
+      ref: "NewUser",
       required: true,
     },
     messageContent: {

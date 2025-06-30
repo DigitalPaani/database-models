@@ -38,6 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const generalCommunicationSchema = new mongoose_1.default.Schema({
     userId: {
         type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
         required: true,
     },
     messageContent: {
