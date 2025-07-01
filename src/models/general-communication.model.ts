@@ -102,7 +102,7 @@ const generalCommunicationSchema = new Schema(
 
     deliveryStatus: {
       type: String,
-      enum: ["STATUS_NOT_AVAILABLE", "PENDING", "SENT", "DELIVERED", "FAILED"],
+      enum: ["STATUS_NOT_AVAILABLE", "PENDING", "SENT", "UNDELIVERED", "DELIVERED", "FAILED"],
       default: "STATUS_NOT_AVAILABLE",
     },
 
