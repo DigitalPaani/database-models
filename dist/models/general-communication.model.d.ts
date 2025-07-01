@@ -18,6 +18,7 @@ interface IGeneralCommunication extends Document {
     content: IContent;
     deliveryStatus?: "STATUS_NOT_AVAILABLE" | "PENDING" | "SENT" | "DELIVERED" | "FAILED";
     isMultipleConversations?: boolean;
+    multipleConversationPartner: string;
     isArchived?: boolean;
     isRead?: boolean;
     status?: "ACTIVE" | "INACTIVE";
