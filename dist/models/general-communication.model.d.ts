@@ -1,12 +1,29 @@
 import type { Document, Model, Types } from "mongoose";
 import { INewUser } from "./newUserModel";
-interface IGeneralCommunication extends Document {
+interface ISender {
+    type: "USER" | "DOCTOR_PAANI";
+    subTypeDetails?: "USER" | "BIDIRECTIONAL" | "INSIGHTS" | "INGESTION";
+    userId?: Types.ObjectId | INewUser;
+}
+interface IReceiver {
     userId: Types.ObjectId | INewUser;
-    messageContent: string;
-    senderType: string;
-    channel: string;
-    status: string;
-    isArchived: boolean;
+}
+interface IContent {
+    message: string;
+    channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL" | "REPORT" | "NOTIFICATION";
+}
+interface IGeneralCommunication extends Document {
+    sender: ISender;
+    receiver: IReceiver;
+    content: IContent;
+    deliveryStatus?: "STATUS_NOT_AVAILABLE" | "PENDING" | "SENT" | "DELIVERED" | "FAILED";
+    isMultipleConversations?: boolean;
+    isArchived?: boolean;
+    isRead?: boolean;
+    status?: "ACTIVE" | "INACTIVE";
+    errorDetails?: string;
+    tags?: string[];
+    meta?: Record<string, any>;
     createdAt?: Date;
     updatedAt?: Date;
 }

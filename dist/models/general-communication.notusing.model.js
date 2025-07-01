@@ -35,83 +35,28 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneralCommunicationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Sender Schema
-const senderSchema = new mongoose_1.Schema({
-    type: {
+const generalCommunicationSchema = new mongoose_1.default.Schema({
+    userId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: true,
+    },
+    messageContent: {
+        type: String,
+        required: true,
+    },
+    senderType: {
         type: String,
         enum: ["USER", "DOCTOR_PAANI"],
-        required: true,
-    },
-    subTypeDetails: {
-        type: String,
-        enum: ["USER", "BIDIRECTIONAL", "INSIGHTS", "INGESTION"],
-        required: false,
-    },
-    userId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewUser",
-        required: false,
-    },
-}, { _id: false });
-// Receiver Schema
-const receiverSchema = new mongoose_1.Schema({
-    userId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewUser",
-        required: true,
-    },
-}, { _id: false });
-// Content Schema
-const contentSchema = new mongoose_1.Schema({
-    message: {
-        type: String,
-        required: true,
     },
     channel: {
         type: String,
-        enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT", "NOTIFICATION"],
+        enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT"],
         required: true,
-    },
-}, { _id: false });
-// Main Schema (Composed)
-const generalCommunicationSchema = new mongoose_1.Schema({
-    sender: senderSchema,
-    receiver: receiverSchema,
-    content: contentSchema,
-    deliveryStatus: {
-        type: String,
-        enum: ["STATUS_NOT_AVAILABLE", "PENDING", "SENT", "DELIVERED", "FAILED"],
-        default: "STATUS_NOT_AVAILABLE",
-    },
-    isMultipleConversations: {
-        type: Boolean,
-        default: false,
-    },
-    multipleConversationPartner: {
-        type: String,
-        enum: ["BIDIRECTIONAL"],
-        required: false
-    },
-    isRead: {
-        type: Boolean,
-        default: false,
     },
     status: {
         type: String,
-        enum: ["ACTIVE", "INACTIVE"],
-        default: "ACTIVE",
-    },
-    errorDetails: {
-        type: String,
-        default: null,
-    },
-    tags: {
-        type: [String],
-        default: [],
-    },
-    meta: {
-        type: mongoose_1.Schema.Types.Mixed,
-        default: {},
+        enum: ["ACTIVE", "INACTIVE"]
     },
     isArchived: {
         type: Boolean,

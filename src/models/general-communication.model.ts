@@ -3,41 +3,146 @@ import mongoose, { Schema } from "mongoose";
 
 import { INewUser } from "./newUserModel";
 
-interface IGeneralCommunication extends Document {
+
+
+interface ISender {
+  type: "USER" | "DOCTOR_PAANI";
+  subTypeDetails?: "USER" | "BIDIRECTIONAL" | "INSIGHTS" | "INGESTION";
+  userId?: Types.ObjectId | INewUser;
+}
+
+
+interface IReceiver {
   userId: Types.ObjectId | INewUser;
-  messageContent: string;
-  senderType: string;
-  channel: string;
-  status: string;
-  isArchived: boolean;
+}
+
+interface IContent {
+  message: string;
+  channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL" | "REPORT" | "NOTIFICATION";
+}
+
+interface IGeneralCommunication extends Document {
+  sender: ISender;
+  receiver: IReceiver;
+  content: IContent;
+  
+  deliveryStatus?: "STATUS_NOT_AVAILABLE" | "PENDING" | "SENT" | "DELIVERED" | "FAILED";
+
+  isMultipleConversations?: boolean;
+  isArchived?: boolean;
+  isRead?: boolean;
+  status?: "ACTIVE" | "INACTIVE";
+
+  errorDetails?: string;
+  tags?: string[];
+  meta?: Record<string, any>;
+
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-const generalCommunicationSchema = new mongoose.Schema(
+
+
+// Sender Schema
+const senderSchema = new Schema(
+  {
+    type: {
+      type: String,
+      enum: ["USER", "DOCTOR_PAANI"],
+      required: true,
+    },
+    subTypeDetails: {
+      type: String,
+      enum: ["USER", "BIDIRECTIONAL", "INSIGHTS", "INGESTION"],
+      required: false,
+    },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "NewUser",
+      required: false,
+    },
+  },
+  { _id: false }
+);
+
+// Receiver Schema
+const receiverSchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
       ref: "NewUser",
       required: true,
     },
-    messageContent: {
+  },
+  { _id: false }
+);
+
+// Content Schema
+const contentSchema = new Schema(
+  {
+    message: {
       type: String,
       required: true,
-    },
-    senderType: {
-      type: String,
-      enum: ["USER", "DOCTOR_PAANI"],
     },
     channel: {
       type: String,
-      enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT"],
+      enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT", "NOTIFICATION"],
       required: true,
     },
+  },
+  { _id: false }
+);
+
+// Main Schema (Composed)
+const generalCommunicationSchema = new Schema(
+  {
+    sender: senderSchema,
+    receiver: receiverSchema,
+    content: contentSchema,
+
+    deliveryStatus: {
+      type: String,
+      enum: ["STATUS_NOT_AVAILABLE", "PENDING", "SENT", "DELIVERED", "FAILED"],
+      default: "STATUS_NOT_AVAILABLE",
+    },
+
+    isMultipleConversations: {
+      type: Boolean,
+      default: false,
+    },
+
+    multipleConversationPartner: {
+      type: String,
+      enum: ["BIDIRECTIONAL"],
+      required: false
+    },
+
+    isRead: {
+      type: Boolean,
+      default: false,
+    },
+
     status: {
       type: String,
-      enum: ["ACTIVE", "INACTIVE"]
+      enum: ["ACTIVE", "INACTIVE"],
+      default: "ACTIVE",
     },
+
+    errorDetails: {
+      type: String,
+      default: null,
+    },
+
+    tags: {
+      type: [String],
+      default: [],
+    },
+
+    meta: {
+      type: Schema.Types.Mixed,
+      default: {},
+    },
+
     isArchived: {
       type: Boolean,
       default: false,
