@@ -42,7 +42,7 @@ const senderSchema = new mongoose_1.Schema({
         enum: ["USER", "DOCTOR_PAANI"],
         required: true,
     },
-    subTypeDetails: {
+    interactionContext: {
         type: String,
         enum: ["USER", "BIDIRECTIONAL", "INSIGHTS", "INGESTION"],
         required: false,

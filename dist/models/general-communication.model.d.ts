@@ -2,7 +2,7 @@ import type { Document, Model, Types } from "mongoose";
 import { INewUser } from "./newUserModel";
 interface ISender {
     type: "USER" | "DOCTOR_PAANI";
-    subTypeDetails?: "USER" | "BIDIRECTIONAL" | "INSIGHTS" | "INGESTION";
+    interactionContext?: "USER" | "BIDIRECTIONAL" | "INSIGHTS" | "INGESTION";
     userId?: Types.ObjectId | INewUser;
 }
 interface IReceiver {

@@ -7,7 +7,7 @@ import { INewUser } from "./newUserModel";
 
 interface ISender {
   type: "USER" | "DOCTOR_PAANI";
-  subTypeDetails?: "USER" | "BIDIRECTIONAL" | "INSIGHTS" | "INGESTION";
+  interactionContext?: "USER" | "BIDIRECTIONAL" | "INSIGHTS" | "INGESTION";
   userId?: Types.ObjectId | INewUser;
 }
 
@@ -53,7 +53,7 @@ const senderSchema = new Schema(
       enum: ["USER", "DOCTOR_PAANI"],
       required: true,
     },
-    subTypeDetails: {
+    interactionContext: {
       type: String,
       enum: ["USER", "BIDIRECTIONAL", "INSIGHTS", "INGESTION"],
       required: false,
