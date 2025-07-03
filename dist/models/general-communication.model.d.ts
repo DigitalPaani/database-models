@@ -16,7 +16,7 @@ interface IGeneralCommunication extends Document {
     sender: ISender;
     receiver: IReceiver;
     content: IContent;
-    deliveryStatus?: "STATUS_NOT_AVAILABLE" | "PENDING" | "SENT" | "DELIVERED" | "FAILED";
+    deliveryStatus?: string;
     isMultipleConversations?: boolean;
     multipleConversationPartner: string;
     isArchived?: boolean;
