@@ -37,8 +37,8 @@ exports.LayoutEquipmentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const visualization_constants_1 = require("../constants/visualization.constants");
 const LayoutEquipments = new mongoose_1.Schema({
-    refId: String,
-    assetId: String,
+    parentId: mongoose_1.Schema.Types.ObjectId,
+    nodeId: mongoose_1.Schema.Types.ObjectId,
     nodeType: String,
     category: String,
     equipmentType: {
