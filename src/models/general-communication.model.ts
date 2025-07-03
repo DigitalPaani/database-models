@@ -88,7 +88,7 @@ const contentSchema = new Schema(
     },
     channel: {
       type: String,
-      enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT", "NOTIFICATION"],
+      enum: ["WHATSAPP", "SMS", "CALL", "EMAIL"],
       required: true,
     },
   },
@@ -137,12 +137,18 @@ const generalCommunicationSchema = new Schema(
 
     tags: {
       type: [String],
+      enum: ["REPORT"],
       default: [],
     },
 
     meta: {
       type: Schema.Types.Mixed,
       default: {},
+    },
+
+    emailAttachments: {
+      type: [String],
+      default: [],
     },
 
     isArchived: {

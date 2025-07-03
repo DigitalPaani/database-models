@@ -69,7 +69,7 @@ const contentSchema = new mongoose_1.Schema({
     },
     channel: {
         type: String,
-        enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT", "NOTIFICATION"],
+        enum: ["WHATSAPP", "SMS", "CALL", "EMAIL"],
         required: true,
     },
 }, { _id: false });
@@ -107,11 +107,16 @@ const generalCommunicationSchema = new mongoose_1.Schema({
     },
     tags: {
         type: [String],
+        enum: ["REPORT"],
         default: [],
     },
     meta: {
         type: mongoose_1.Schema.Types.Mixed,
         default: {},
+    },
+    emailAttachments: {
+        type: [String],
+        default: [],
     },
     isArchived: {
         type: Boolean,
