@@ -12,10 +12,6 @@ const escalationStepSchema = new Schema(
       type: String,
       required: true,
     },
-    timeInMinutes: {
-      type: Number,
-      required: true,
-    },
     userIds: [
       {
         type: Schema.Types.ObjectId,

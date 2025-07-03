@@ -4,17 +4,14 @@ declare const escalationStepSchema: mongoose.Schema<any, mongoose.Model<any, any
     _id: false;
 }, {
     value: string;
-    timeInMinutes: number;
     unit: string;
     userIds: Types.ObjectId[];
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     value: string;
-    timeInMinutes: number;
     unit: string;
     userIds: Types.ObjectId[];
 }>> & mongoose.FlatRecord<{
     value: string;
-    timeInMinutes: number;
     unit: string;
     userIds: Types.ObjectId[];
 }> & {

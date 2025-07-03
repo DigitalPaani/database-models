@@ -45,10 +45,6 @@ const escalationStepSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    timeInMinutes: {
-        type: Number,
-        required: true,
-    },
     userIds: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
