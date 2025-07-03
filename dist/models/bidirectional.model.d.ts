@@ -1,6 +1,6 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IBidirectional extends Document {
-    dataLoggerId: Types.ObjectId;
+    dataLoggerId?: Types.ObjectId;
     assetId: Types.ObjectId;
     referenceSensors: {
         controlSensorId: Types.ObjectId;
