@@ -80,8 +80,8 @@ const generalCommunicationSchema = new mongoose_1.Schema({
     content: contentSchema,
     deliveryStatus: {
         type: String,
-        enum: ["STATUS_NOT_AVAILABLE", "PENDING", "SENT", "UNDELIVERED", "DELIVERED", "FAILED"],
-        default: "STATUS_NOT_AVAILABLE",
+        enum: ["NOT_AVAILABLE", "ACCEPTED", "SCHEDULED", "CANCELED", "QUEUED", "SENDING", "SENT", "FAILED", "DELIVERED", "UNDELIVERED", "RECEIVING", "READ"],
+        default: "NOT_AVAILABLE",
     },
     isMultipleConversations: {
         type: Boolean,
