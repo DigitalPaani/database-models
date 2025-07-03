@@ -21,6 +21,13 @@ interface IContent {
   channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL" | "REPORT" | "NOTIFICATION";
 }
 
+
+type attachment = {
+  filename: string,
+  url: string
+};
+
+
 interface IGeneralCommunication extends Document {
   sender: ISender;
   receiver: IReceiver;
@@ -38,7 +45,7 @@ interface IGeneralCommunication extends Document {
   errorDetails?: string;
   tags?: string[];
   meta?: Record<string, any>;
-  attachments?: string[];
+  attachments?: attachment[];
 
   createdAt?: Date;
   updatedAt?: Date;
@@ -66,6 +73,17 @@ const senderSchema = new Schema(
     },
   },
   { _id: false }
+);
+
+const attachmentSchema = new Schema(
+  {
+    filename: {
+      type: String
+    },
+    url: {
+      type: String
+    }
+  }
 );
 
 // Receiver Schema
@@ -148,7 +166,7 @@ const generalCommunicationSchema = new Schema(
     },
 
     attachments: {
-      type: [String],
+      type: [attachmentSchema],
       default: [],
     },
 

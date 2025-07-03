@@ -12,6 +12,10 @@ interface IContent {
     message: string;
     channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL" | "REPORT" | "NOTIFICATION";
 }
+type attachment = {
+    filename: string;
+    url: string;
+};
 interface IGeneralCommunication extends Document {
     sender: ISender;
     receiver: IReceiver;
@@ -25,7 +29,7 @@ interface IGeneralCommunication extends Document {
     errorDetails?: string;
     tags?: string[];
     meta?: Record<string, any>;
-    attachments?: string[];
+    attachments?: attachment[];
     createdAt?: Date;
     updatedAt?: Date;
 }

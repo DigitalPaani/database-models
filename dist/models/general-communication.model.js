@@ -53,6 +53,14 @@ const senderSchema = new mongoose_1.Schema({
         required: false,
     },
 }, { _id: false });
+const attachmentSchema = new mongoose_1.Schema({
+    filename: {
+        type: String
+    },
+    url: {
+        type: String
+    }
+});
 // Receiver Schema
 const receiverSchema = new mongoose_1.Schema({
     userId: {
@@ -115,7 +123,7 @@ const generalCommunicationSchema = new mongoose_1.Schema({
         default: {},
     },
     attachments: {
-        type: [String],
+        type: [attachmentSchema],
         default: [],
     },
     isArchived: {
