@@ -25,6 +25,7 @@ interface IGeneralCommunication extends Document {
     errorDetails?: string;
     tags?: string[];
     meta?: Record<string, any>;
+    attachments?: string[];
     createdAt?: Date;
     updatedAt?: Date;
 }

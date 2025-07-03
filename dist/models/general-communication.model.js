@@ -114,7 +114,7 @@ const generalCommunicationSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.Mixed,
         default: {},
     },
-    emailAttachments: {
+    attachments: {
         type: [String],
         default: [],
     },
