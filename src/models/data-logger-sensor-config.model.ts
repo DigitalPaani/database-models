@@ -16,6 +16,8 @@ interface IDLSensorConfig {
   modbusMisfireTotalizer?: boolean;
   bitIndex?: number;
   version: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
@@ -55,7 +57,7 @@ const dataLoggerSensorConfigSchema = new Schema<IDLSensorConfig>(
     bitIndex: { type: Number },
     version: { type: Number, default: 0, required: true },
   },
-  { _id: false }
+  { timestamps: true }
 );
 
 const DLSensorConfigModel = mongoose.model<IDLSensorConfig>(
