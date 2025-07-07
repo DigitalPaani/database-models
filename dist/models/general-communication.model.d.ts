@@ -30,6 +30,7 @@ interface IGeneralCommunication extends Document {
     tags?: string[];
     meta?: Record<string, any>;
     attachments?: attachment[];
+    viewedAt?: Date | null;
     createdAt?: Date;
     updatedAt?: Date;
 }

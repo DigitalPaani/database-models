@@ -106,8 +106,8 @@ const generalCommunicationSchema = new mongoose_1.Schema({
     },
     status: {
         type: String,
-        enum: ["ACTIVE", "INACTIVE"],
-        default: "ACTIVE",
+        enum: ["READ", "UNREAD"],
+        default: "UNREAD",
     },
     errorDetails: {
         type: String,
@@ -125,6 +125,10 @@ const generalCommunicationSchema = new mongoose_1.Schema({
     attachments: {
         type: [attachmentSchema],
         default: [],
+    },
+    viewedAt: {
+        type: Date,
+        default: null
     },
     isArchived: {
         type: Boolean,

@@ -47,6 +47,8 @@ interface IGeneralCommunication extends Document {
   meta?: Record<string, any>;
   attachments?: attachment[];
 
+  viewedAt?: Date | null;
+
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -145,8 +147,8 @@ const generalCommunicationSchema = new Schema(
 
     status: {
       type: String,
-      enum: ["ACTIVE", "INACTIVE"],
-      default: "ACTIVE",
+      enum: ["READ", "UNREAD"],
+      default: "UNREAD",
     },
 
     errorDetails: {
@@ -168,6 +170,11 @@ const generalCommunicationSchema = new Schema(
     attachments: {
       type: [attachmentSchema],
       default: [],
+    },
+
+    viewedAt: {
+      type: Date,
+      default: null
     },
 
     isArchived: {
