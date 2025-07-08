@@ -53,6 +53,17 @@ const USER_GROUP_OR_SYSTEM = [
         label: "User Group",
     },
 ];
+const REMOTE_CONTROL_STATUS = {
+    initiated: "Initiated",
+    initiationFailed: "Initiation Failed",
+    published: "Published",
+    publishFailed: "Publish Failed",
+    Acknowledged: "Acknowledged",
+    acknowledgementFailed: "Acknowledgement Failed",
+    Executed: "Executed",
+    executionFailed: "Execution Failed",
+    Unknown: "Unknown",
+};
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -78,4 +89,5 @@ exports.default = {
     WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
     SENSOR_TYPE: data_logger_constant_1.SENSOR_TYPE,
     SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
+    REMOTE_CONTROL_STATUS,
 };

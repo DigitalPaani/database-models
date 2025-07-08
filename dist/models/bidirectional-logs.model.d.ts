@@ -12,6 +12,7 @@ interface IBidirectionalLogs extends Document {
     ipAddress: string;
     events: IBidirectionalEvents[];
     success: boolean;
+    status: string;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

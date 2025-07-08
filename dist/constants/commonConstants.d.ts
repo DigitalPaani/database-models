@@ -127,6 +127,17 @@ declare const _default: {
         abbr: string;
         name: string;
     }[];
+    REMOTE_CONTROL_STATUS: {
+        initiated: string;
+        initiationFailed: string;
+        published: string;
+        publishFailed: string;
+        Acknowledged: string;
+        acknowledgementFailed: string;
+        Executed: string;
+        executionFailed: string;
+        Unknown: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
