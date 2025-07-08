@@ -79,7 +79,7 @@ const bidirectionalLogsSchema = new mongoose_1.Schema({
     status: {
         type: String,
         enum: Object.values(commonConstants_1.default.REMOTE_CONTROL_STATUS),
-        default: commonConstants_1.default.REMOTE_CONTROL_STATUS.Unknown,
+        default: commonConstants_1.default.REMOTE_CONTROL_STATUS.unknown,
     },
     success: {
         type: Boolean,

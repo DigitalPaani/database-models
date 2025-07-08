@@ -58,11 +58,11 @@ const REMOTE_CONTROL_STATUS = {
     initiationFailed: "Initiation Failed",
     published: "Published",
     publishFailed: "Publish Failed",
-    Acknowledged: "Acknowledged",
+    acknowledged: "Acknowledged",
     acknowledgementFailed: "Acknowledgement Failed",
-    Executed: "Executed",
+    executed: "Executed",
     executionFailed: "Execution Failed",
-    Unknown: "Unknown",
+    unknown: "Unknown",
 };
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,

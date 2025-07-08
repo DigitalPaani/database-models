@@ -61,7 +61,7 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
     status: {
       type: String,
       enum: Object.values(commonConstants.REMOTE_CONTROL_STATUS),
-      default: commonConstants.REMOTE_CONTROL_STATUS.Unknown,
+      default: commonConstants.REMOTE_CONTROL_STATUS.unknown,
     },
     success: {
       type: Boolean,

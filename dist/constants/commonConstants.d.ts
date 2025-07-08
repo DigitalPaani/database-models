@@ -132,11 +132,11 @@ declare const _default: {
         initiationFailed: string;
         published: string;
         publishFailed: string;
-        Acknowledged: string;
+        acknowledged: string;
         acknowledgementFailed: string;
-        Executed: string;
+        executed: string;
         executionFailed: string;
-        Unknown: string;
+        unknown: string;
     };
 };
 export default _default;
