@@ -78,6 +78,22 @@ const USER_GROUP_OR_SYSTEM = [
   },
 ];
 
+const REMOTE_CONTROL_STATUS = {
+  initiated: "Initiated",
+  initiationFailed: "Initiation Failed",
+
+  published: "Published",
+  publishFailed: "Publish Failed",
+
+  Acknowledged: "Acknowledged",
+  acknowledgementFailed: "Acknowledgement Failed",
+
+  Executed: "Executed",
+  executionFailed: "Execution Failed",
+
+  Unknown: "Unknown",
+};
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -103,4 +119,5 @@ export default {
   WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
   SENSOR_TYPE,
   SENSOR_PURPOSE_TAGS,
+  REMOTE_CONTROL_STATUS,
 };

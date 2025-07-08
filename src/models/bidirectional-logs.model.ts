@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
+import commonConstants from "../constants/commonConstants";
 
 interface IBidirectionalEvents {
   sensorId: Types.ObjectId;
@@ -13,6 +14,7 @@ interface IBidirectionalLogs extends Document {
   ipAddress: string;
   events: IBidirectionalEvents[];
   success: boolean;
+  status: string;
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -56,6 +58,11 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
         },
       },
     ],
+    status: {
+      type: String,
+      enum: Object.values(commonConstants.REMOTE_CONTROL_STATUS),
+      default: commonConstants.REMOTE_CONTROL_STATUS.Unknown,
+    },
     success: {
       type: Boolean,
       default: false,
