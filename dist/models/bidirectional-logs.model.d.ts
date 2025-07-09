@@ -7,6 +7,7 @@ interface IBidirectionalLogs extends Document {
     userId: Types.ObjectId;
     bidirectionalId: Types.ObjectId;
     controlValue: string;
+    softwareBypassValue?: string;
     startTime: number;
     endTime?: number;
     ipAddress: string;

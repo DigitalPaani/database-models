@@ -9,6 +9,7 @@ interface IBidirectionalLogs extends Document {
   userId: Types.ObjectId;
   bidirectionalId: Types.ObjectId;
   controlValue: string;
+  softwareBypassValue?: string;
   startTime: number;
   endTime?: number;
   ipAddress: string;
@@ -35,6 +36,10 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
     controlValue: {
       type: String,
       required: true,
+    },
+    softwareBypassValue: {
+      type: String,
+      trim: true,
     },
     startTime: {
       type: Number,

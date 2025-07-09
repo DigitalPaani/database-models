@@ -54,6 +54,10 @@ const bidirectionalLogsSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    softwareBypassValue: {
+        type: String,
+        trim: true,
+    },
     startTime: {
         type: Number,
         required: true,
