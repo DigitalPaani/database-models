@@ -50,6 +50,7 @@ const userSchema = new mongoose_1.Schema({
     parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
     isStaff: { type: Boolean, required: true, default: false },
     isArchived: { type: Boolean, default: false },
+    defaultPage: { type: String, default: null },
     blockedNotificationModules: {
         type: [String],
         default: [],
