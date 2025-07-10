@@ -58,6 +58,7 @@ const escalationFlowSchema = new Schema<IEscalationFlow>(
       type: Schema.Types.ObjectId,
       ref: "UserGroup",
       required: true,
+      unique:true
     },
     assets: [
       {
