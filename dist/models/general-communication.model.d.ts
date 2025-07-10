@@ -10,7 +10,7 @@ interface IReceiver {
 }
 interface IContent {
     message: string;
-    channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL" | "REPORT" | "NOTIFICATION";
+    channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL";
 }
 type attachment = {
     filename: string;
