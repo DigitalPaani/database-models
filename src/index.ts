@@ -99,6 +99,8 @@ import { FormulaCommonTypes } from './types/formulaTypes'
 import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
 import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
+import { GeneralCommunicationModel, IGeneralCommunication } from "./models/general-communication.model";
+
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
 
 import {UserGroupModel} from './models/userGroupModel'
@@ -169,6 +171,7 @@ export type {
   IBidirectionalLogs,
   IEquipmentComponent,
   INotification,
+  IGeneralCommunication,
   IBulkEntryReport,
   IWorkspace
 };
@@ -235,6 +238,7 @@ export {
   BidirectionalLogsModel,
   EquipmentComponentModel,
   NotificationModel,
+  GeneralCommunicationModel,
   BulkEntryReportModel,
   WorkspaceModel,
   NotificationComponentsModel
