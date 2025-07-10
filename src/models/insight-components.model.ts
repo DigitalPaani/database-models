@@ -20,6 +20,8 @@ interface IInsightComponent extends Document {
     startInsightSensorId: Types.ObjectId | ISensor;
     rcaEnabled: boolean;
     rcaContent: string;
+    isTimeSensitive: boolean;
+    userIdsForTimeSensitive: Types.ObjectId[];
     isDeleted: boolean;
 };
 
@@ -90,6 +92,15 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     rcaContent: {
       type: String,
       default: "",
+    },
+    isTimeSensitive: {
+      type: Boolean,
+      default: false,
+    },
+    userIdsForTimeSensitive: {
+      type: [Schema.Types.ObjectId],
+      ref: "NewUser",
+      required: true,
     },
     isDeleted: { type: Boolean, default: false },
   },

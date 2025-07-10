@@ -33,30 +33,30 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserGroupModel = void 0;
+exports.BulkEntryReportModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Define the schema using the TypeScript interface
-const workspaceAssetsSchema = new mongoose_1.Schema({
-    workspaceId: {
+const dataInputBulkEntryReportSchema = new mongoose_1.Schema({
+    reportLink: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    plantId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace",
+        ref: "Plant",
         required: true,
     },
-    assetIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "Plant", default: [] },
-}, { _id: false });
-// Define the schema using the TypeScript interface
-const userGroupSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
-    description: { type: String, default: "", required: false },
-    createdBy: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser", required: true },
-    userIds: { type: [mongoose_1.Schema.Types.ObjectId], ref: "NewUser", default: [] },
-    featureTags: { type: [String], default: [] },
-    workspaceAssets: { type: [workspaceAssetsSchema], default: [] },
-    isArchived: { type: Boolean, default: false },
-    abbr: { type: String, required: false, unique: false },
+    summary: {
+        total: {
+            type: Number,
+        },
+        success: {
+            type: Number,
+        },
+        failed: {
+            type: Number,
+        },
+    },
 }, { timestamps: true });
-// Create a compound index to ensure unique group name
-userGroupSchema.index({ name: 1, createdBy: 1 }, { unique: true });
-// Define the model using the schema and the TypeScript interface
-const UserGroupModel = mongoose_1.default.model("UserGroup", userGroupSchema, "userGroups");
-exports.UserGroupModel = UserGroupModel;
+const BulkEntryReportModel = mongoose_1.default.model("dataInputBulkEntryReports", dataInputBulkEntryReportSchema, "dataInputBulkEntryReports");
+exports.BulkEntryReportModel = BulkEntryReportModel;

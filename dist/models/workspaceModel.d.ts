@@ -7,6 +7,5 @@ interface IWorkspace extends Document {
     isArchived: boolean;
 }
 declare const WorkspaceModel: Model<IWorkspace>;
-export { IWorkspace };
-export default WorkspaceModel;
+export { IWorkspace, WorkspaceModel };
 //# sourceMappingURL=workspaceModel.d.ts.map
