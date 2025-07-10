@@ -20,7 +20,7 @@ declare const escalationStepSchema: mongoose.Schema<any, mongoose.Model<any, any
     __v: number;
 }>;
 interface IEscalationFlow extends Document {
-    attendenceManager: Types.ObjectId[];
+    attendanceManager: Types.ObjectId[];
     rosterManager: Types.ObjectId[];
     operator: Types.ObjectId[];
     userGroup: Types.ObjectId;
