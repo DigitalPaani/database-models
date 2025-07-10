@@ -49,7 +49,6 @@ const escalationStepSchema = new mongoose_1.Schema({
         {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "NewUser",
-            required: true,
         },
     ],
 }, { _id: false });
@@ -58,16 +57,19 @@ const escalationFlowSchema = new mongoose_1.Schema({
     attendenceManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
+            ref: "NewUser",
         },
     ],
     rosterManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
+            ref: "NewUser",
         },
     ],
     operator: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
+            ref: "NewUser",
         },
     ],
     userGroup: {
@@ -78,6 +80,7 @@ const escalationFlowSchema = new mongoose_1.Schema({
     assets: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
+            ref: "Plant",
         },
     ],
     modules: {

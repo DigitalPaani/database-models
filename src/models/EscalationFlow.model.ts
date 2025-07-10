@@ -16,7 +16,6 @@ const escalationStepSchema = new Schema(
       {
         type: Schema.Types.ObjectId,
         ref: "NewUser",
-        required: true,
       },
     ],
   },
@@ -40,16 +39,19 @@ const escalationFlowSchema = new Schema<IEscalationFlow>(
     attendenceManager: [
       {
         type: Schema.Types.ObjectId,
+        ref: "NewUser",
       },
     ],
     rosterManager: [
       {
         type: Schema.Types.ObjectId,
+        ref: "NewUser",
       },
     ],
     operator: [
       {
         type: Schema.Types.ObjectId,
+        ref: "NewUser",
       },
     ],
     userGroup: {
@@ -60,6 +62,7 @@ const escalationFlowSchema = new Schema<IEscalationFlow>(
     assets: [
       {
         type: Schema.Types.ObjectId,
+        ref: "Plant",
       },
     ],
     modules: {
