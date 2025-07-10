@@ -59,6 +59,9 @@ const attachmentSchema = new mongoose_1.Schema({
     },
     url: {
         type: String
+    },
+    filetype: {
+        type: String
     }
 });
 // Receiver Schema

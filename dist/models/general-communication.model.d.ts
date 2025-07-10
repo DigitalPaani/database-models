@@ -15,6 +15,7 @@ interface IContent {
 type attachment = {
     filename: string;
     url: string;
+    filetype: string;
 };
 interface IGeneralCommunication extends Document {
     sender: ISender;

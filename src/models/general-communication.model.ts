@@ -24,7 +24,8 @@ interface IContent {
 
 type attachment = {
   filename: string,
-  url: string
+  url: string,
+  filetype: string
 };
 
 
@@ -83,6 +84,9 @@ const attachmentSchema = new Schema(
       type: String
     },
     url: {
+      type: String
+    },
+    filetype: {
       type: String
     }
   }
