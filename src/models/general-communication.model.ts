@@ -2,7 +2,7 @@ import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 
 import { INewUser } from "./newUserModel";
-
+import communicationConstants from "../constants/communication.constants";
 
 
 interface ISender {
@@ -129,7 +129,7 @@ const generalCommunicationSchema = new Schema(
 
     deliveryStatus: {
       type: String,
-      enum: ["NOT_AVAILABLE", "ACCEPTED", "SCHEDULED", "CANCELED", "QUEUED", "SENDING", "SENT", "FAILED", "DELIVERED", "UNDELIVERED", "RECEIVING", "READ"],
+      enum: communicationConstants.deliveryStatusEnums,
       default: "NOT_AVAILABLE",
     },
 
