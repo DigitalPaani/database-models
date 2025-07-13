@@ -122,6 +122,9 @@ declare const _default: {
         abbr: string;
         name: string;
     }[];
+    COMMUNICATION_FILE_CONSTANTS: {
+        DELIVERY_STATUS_ENUMS: string[];
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

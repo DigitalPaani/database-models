@@ -95,7 +95,7 @@ const generalCommunicationSchema = new mongoose_1.Schema({
     content: contentSchema,
     deliveryStatus: {
         type: String,
-        enum: communication_constants_1.default.deliveryStatusEnums,
+        enum: communication_constants_1.default.DELIVERY_STATUS_ENUMS,
         default: "NOT_AVAILABLE",
     },
     isMultipleConversations: {
