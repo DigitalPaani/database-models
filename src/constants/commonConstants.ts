@@ -23,6 +23,7 @@ import {
 } from "./insights.constants";
 import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
+import COMMUNICATION_CONSTANTS from "./communication.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -101,4 +102,5 @@ export default {
   VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
   WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
   SENSOR_PURPOSE_TAGS,
+  COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS
 };
