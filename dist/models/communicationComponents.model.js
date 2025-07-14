@@ -21,6 +21,7 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         {
             name: String,
             link: String,
+            filetype: String,
             isReport: { type: Boolean, default: false },
         },
     ],
