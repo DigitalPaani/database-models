@@ -25,8 +25,7 @@ interface IGeneralCommunication extends Document {
     isMultipleConversations?: boolean;
     multipleConversationPartner: string;
     isArchived?: boolean;
-    isRead?: boolean;
-    status?: "ACTIVE" | "INACTIVE";
+    status?: "READ" | "UNREAD";
     errorDetails?: string;
     tags?: string[];
     meta?: Record<string, any>;

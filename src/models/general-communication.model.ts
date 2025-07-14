@@ -40,8 +40,7 @@ interface IGeneralCommunication extends Document {
   multipleConversationPartner: string;
   
   isArchived?: boolean;
-  isRead?: boolean;
-  status?: "ACTIVE" | "INACTIVE";
+  status?: "READ" | "UNREAD";
 
   errorDetails?: string;
   tags?: string[];
@@ -142,11 +141,6 @@ const generalCommunicationSchema = new Schema(
       type: String,
       enum: ["BIDIRECTIONAL"],
       required: false
-    },
-
-    isRead: {
-      type: Boolean,
-      default: false,
     },
 
     status: {

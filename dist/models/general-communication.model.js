@@ -107,10 +107,6 @@ const generalCommunicationSchema = new mongoose_1.Schema({
         enum: ["BIDIRECTIONAL"],
         required: false
     },
-    isRead: {
-        type: Boolean,
-        default: false,
-    },
     status: {
         type: String,
         enum: ["READ", "UNREAD"],
