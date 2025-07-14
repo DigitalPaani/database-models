@@ -46,6 +46,8 @@ import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
+import {Store,IStore} from './models/Store.model'
+import {StoreItemsModel} from './models/StoreItem.model'
 import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
 import {ILayout,LayoutModel} from './models/LayoutSchema.model'
 import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
@@ -81,7 +83,7 @@ import mongoose, { Types } from "mongoose";
 
 import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
 import { FlocImageModel, IFlocImage } from './models/floc-image.model';
-
+import {WorkspaceModel,IWorkspace} from './models/workspaceModel'
 import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
 import { InsightComponentModel, IInsightComponent } from "./models/insight-components.model";
 import { InsightModel, IInsight } from "./models/insights.model";
@@ -100,7 +102,10 @@ import { ManualSensorModel, IManualSensors } from './models/manual-sensors-templ
 import { DataLoggerSessionModel, IDataLoggerSession } from './models/data-logger-sessions.model';
 import { DLSensorConfigModel, IDLSensorConfig } from './models/data-logger-sensor-config.model';
 import { DLSensorConfigAuditModel } from './models/dl-sensor-config-audit.model';
+import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
 
+import {UserGroupModel} from './models/userGroupModel'
+import {NotificationComponentsModel} from './models/notificationComponents.model'
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -111,6 +116,7 @@ export type {
   ISensorSetting,
   IPlcData,
   ITriggerDocument,
+  IStore,
   IFormulaEvents,
   ITaskTemplate,
   ISkill,
@@ -168,6 +174,8 @@ export type {
   IDataLoggerSession,
   IDLSensorConfig,
   INotification,
+  IBulkEntryReport,
+  IWorkspace,
 };
 
 // exports the models
@@ -190,6 +198,9 @@ export {
   TwilioCallModel,
   CallLogModel,
   WhatsappLogModel,
+  Store,
+  StoreItemsModel,
+  UserGroupModel,
   SmsLogModel,
   EmailLogModel,
   WhatsappTemplateModel,
@@ -232,4 +243,7 @@ export {
   DLSensorConfigModel,
   DLSensorConfigAuditModel,
   NotificationModel,
+  BulkEntryReportModel,
+  WorkspaceModel,
+  NotificationComponentsModel,
 };

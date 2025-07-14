@@ -37,6 +37,7 @@ declare const _default: {
         obsolete: string;
         insight: string;
         equipments: string;
+        notification: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;
