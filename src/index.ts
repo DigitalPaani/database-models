@@ -68,6 +68,12 @@ import {
   ICommunicationComponent,
 } from "./models/communicationComponents.model";
 
+import {
+  EscalationFlowModel,
+  IEscalationFlow,
+} from "./models/EscalationFlow.model";
+
+
 import { NewUserModel, INewUser } from "./models/newUserModel";
 import { LayoutPathModel,IPathSchema } from "./models/graphConnections.model";
 
@@ -173,7 +179,8 @@ export type {
   INotification,
   IGeneralCommunication,
   IBulkEntryReport,
-  IWorkspace
+  IWorkspace,
+  IEscalationFlow
 };
 
 // exports the models
@@ -241,5 +248,6 @@ export {
   GeneralCommunicationModel,
   BulkEntryReportModel,
   WorkspaceModel,
-  NotificationComponentsModel
+  NotificationComponentsModel,
+  EscalationFlowModel
 };
