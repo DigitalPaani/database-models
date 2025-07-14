@@ -1,5 +1,6 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
+import bcrypt from 'bcrypt';
 
 // Define a TypeScript interface for the User document
 interface INewUser extends Document {
@@ -49,6 +50,31 @@ const userSchema = new Schema<INewUser>(
     timestamps: true, // Automatically manage createdAt and updatedAt fields
   }
 );
+
+userSchema.pre('save', async function (next) {
+  try {
+
+    // Check for unique email only if the user is not archived
+    if (!this.isArchived && this.isNew) {
+      // $ will only match the exact email string, but in a case-insensitive way.
+      const user = await NewUserModel.findOne({ email: { $regex: new RegExp('^' + this.email + '$', 'i') },isArchived: false }).lean();
+      if (user) {
+        throw new Error('Email already exists');
+      }
+    }
+
+    if (this.isModified('password')) {
+      this.password = await bcrypt.hash(this.password, 10);
+    }
+
+    next(); // Proceed to save the user
+  } catch (error) {
+    console.error(`Error: ${JSON.stringify(error)}`)
+    throw error; // Pass any errors to the next middleware
+  }
+});
+
+
 
 // Define the model using the schema and the TypeScript interface
 const NewUserModel: Model<INewUser> = mongoose.model<INewUser>(
