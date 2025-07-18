@@ -63,7 +63,7 @@ const bidirectionalSchema = new mongoose_1.Schema({
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "sensors",
         },
-        manualSensorId: {
+        autoManualSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "sensors",
         },

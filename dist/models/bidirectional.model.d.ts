@@ -7,7 +7,7 @@ interface IBidirectional extends Document {
         tripSensorId: Types.ObjectId;
         hmiSensorId: Types.ObjectId;
         softwareBypassSensorId: Types.ObjectId;
-        manualSensorId: Types.ObjectId;
+        autoManualSensorId: Types.ObjectId;
         bypassFormulaSensorId: Types.ObjectId;
     };
     equipmentId: Types.ObjectId;
