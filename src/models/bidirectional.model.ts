@@ -1,14 +1,14 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
 
 interface IBidirectional extends Document {
-  dataLoggerId?: Types.ObjectId;
+  dataLoggerId: Types.ObjectId;
   assetId: Types.ObjectId;
   referenceSensors: {
     controlSensorId: Types.ObjectId;
     tripSensorId: Types.ObjectId;
     hmiSensorId: Types.ObjectId;
-    softwareBypassSensorId: Types.ObjectId;
-    autoManualSensorId: Types.ObjectId;
+    softwareSensorId: Types.ObjectId;
+    manualSensorId: Types.ObjectId;
     bypassFormulaSensorId: Types.ObjectId;
   };
   equipmentId: Types.ObjectId;
@@ -24,7 +24,7 @@ const bidirectionalSchema = new Schema<IBidirectional>(
     dataLoggerId: {
       type: Schema.Types.ObjectId,
       ref: "dataLoggers",
-      required: false,
+      required: true,
     },
     assetId: {
       type: Schema.Types.ObjectId,
@@ -44,11 +44,11 @@ const bidirectionalSchema = new Schema<IBidirectional>(
         type: Schema.Types.ObjectId,
         ref: "sensors",
       },
-      softwareBypassSensorId: {
+      softwareSensorId: {
         type: Schema.Types.ObjectId,
         ref: "sensors",
       },
-      autoManualSensorId: {
+      manualSensorId: {
         type: Schema.Types.ObjectId,
         ref: "sensors",
       },

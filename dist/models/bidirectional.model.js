@@ -39,7 +39,7 @@ const bidirectionalSchema = new mongoose_1.Schema({
     dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "dataLoggers",
-        required: false,
+        required: true,
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -59,11 +59,11 @@ const bidirectionalSchema = new mongoose_1.Schema({
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "sensors",
         },
-        softwareBypassSensorId: {
+        softwareSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "sensors",
         },
-        autoManualSensorId: {
+        manualSensorId: {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "sensors",
         },

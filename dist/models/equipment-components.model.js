@@ -45,10 +45,6 @@ const equipmentComponentSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    softwareBypassValue: {
-        type: String,
-        trim: true,
-    },
     triggerTime: {
         type: Number,
         required: true,

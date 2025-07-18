@@ -4,26 +4,17 @@ declare const escalationStepSchema: mongoose.Schema<any, mongoose.Model<any, any
     _id: false;
 }, {
     value: string;
-<<<<<<< HEAD
     timeInMinutes: number;
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     unit: string;
     userIds: Types.ObjectId[];
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     value: string;
-<<<<<<< HEAD
     timeInMinutes: number;
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     unit: string;
     userIds: Types.ObjectId[];
 }>> & mongoose.FlatRecord<{
     value: string;
-<<<<<<< HEAD
     timeInMinutes: number;
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     unit: string;
     userIds: Types.ObjectId[];
 }> & {
@@ -32,11 +23,7 @@ declare const escalationStepSchema: mongoose.Schema<any, mongoose.Model<any, any
     __v: number;
 }>;
 interface IEscalationFlow extends Document {
-<<<<<<< HEAD
     attendenceManager: Types.ObjectId[];
-=======
-    attendanceManager: Types.ObjectId[];
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     rosterManager: Types.ObjectId[];
     operator: Types.ObjectId[];
     userGroup: Types.ObjectId;

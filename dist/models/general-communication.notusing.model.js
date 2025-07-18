@@ -33,45 +33,37 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.dataLoggerSensorConfigSchema = exports.DLSensorConfigModel = void 0;
+exports.GeneralCommunicationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const data_logger_constant_1 = require("../constants/data-logger.constant");
-const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
-    dataLoggerId: {
+const generalCommunicationSchema = new mongoose_1.default.Schema({
+    userId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "dataLoggers",
+        ref: "NewUser",
         required: true,
     },
-    sensorId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "sensors",
+    messageContent: {
+        type: String,
         required: true,
     },
-    sensorType: { type: String, enum: ["analog", "boolean"], required: true },
-    referenceSensorId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "sensors",
-    },
-    referenceSensorPurpose: {
+    senderType: {
         type: String,
-        enum: ["totalizer"],
-        trim: true,
+        enum: ["USER", "DOCTOR_PAANI"],
     },
-    scalingFactor: { type: Number },
-    start: { type: Number },
-    end: { type: Number },
-    type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE), required: false },
-    wordOrder: {
+    channel: {
         type: String,
+        enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT"],
+        required: true,
     },
-    function: {
+    status: {
         type: String,
-        trim: true,
+        enum: ["ACTIVE", "INACTIVE"]
     },
-    modbusMisfireTotalizer: { type: Boolean },
-    bitIndex: { type: Number },
-    version: { type: Number, default: 0, required: true },
-}, { timestamps: true });
-exports.dataLoggerSensorConfigSchema = dataLoggerSensorConfigSchema;
-const DLSensorConfigModel = mongoose_1.default.model("dataLoggerSensorConfig", dataLoggerSensorConfigSchema, "dataLoggerSensorConfig");
-exports.DLSensorConfigModel = DLSensorConfigModel;
+    isArchived: {
+        type: Boolean,
+        default: false,
+    },
+}, {
+    timestamps: true,
+});
+const GeneralCommunicationModel = mongoose_1.default.model("generalCommunication", generalCommunicationSchema, "generalCommunication");
+exports.GeneralCommunicationModel = GeneralCommunicationModel;

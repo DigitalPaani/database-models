@@ -12,21 +12,15 @@ const escalationStepSchema = new Schema(
       type: String,
       required: true,
     },
-<<<<<<< HEAD
     timeInMinutes: {
       type: Number,
       required: true,
     },
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     userIds: [
       {
         type: Schema.Types.ObjectId,
         ref: "NewUser",
-<<<<<<< HEAD
         required: true,
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
       },
     ],
   },
@@ -35,11 +29,7 @@ const escalationStepSchema = new Schema(
 
 // Interface
 interface IEscalationFlow extends Document {
-<<<<<<< HEAD
   attendenceManager: Types.ObjectId[];
-=======
-  attendanceManager: Types.ObjectId[];
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
   rosterManager: Types.ObjectId[];
   operator: Types.ObjectId[];
   userGroup: Types.ObjectId;
@@ -51,52 +41,29 @@ interface IEscalationFlow extends Document {
 // Main schema
 const escalationFlowSchema = new Schema<IEscalationFlow>(
   {
-<<<<<<< HEAD
     attendenceManager: [
       {
         type: Schema.Types.ObjectId,
-=======
-    attendanceManager: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "NewUser",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
       },
     ],
     rosterManager: [
       {
         type: Schema.Types.ObjectId,
-<<<<<<< HEAD
-=======
-        ref: "NewUser",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
       },
     ],
     operator: [
       {
         type: Schema.Types.ObjectId,
-<<<<<<< HEAD
-=======
-        ref: "NewUser",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
       },
     ],
     userGroup: {
       type: Schema.Types.ObjectId,
       ref: "UserGroup",
       required: true,
-<<<<<<< HEAD
-=======
-      unique:true
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     },
     assets: [
       {
         type: Schema.Types.ObjectId,
-<<<<<<< HEAD
-=======
-        ref: "Plant",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
       },
     ],
     modules: {

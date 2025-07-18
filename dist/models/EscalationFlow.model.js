@@ -45,72 +45,43 @@ const escalationStepSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-<<<<<<< HEAD
     timeInMinutes: {
         type: Number,
         required: true,
     },
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     userIds: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "NewUser",
-<<<<<<< HEAD
             required: true,
-=======
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
         },
     ],
 }, { _id: false });
 // Main schema
 const escalationFlowSchema = new mongoose_1.Schema({
-<<<<<<< HEAD
     attendenceManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-=======
-    attendanceManager: [
-        {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "NewUser",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
         },
     ],
     rosterManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-<<<<<<< HEAD
-=======
-            ref: "NewUser",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
         },
     ],
     operator: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-<<<<<<< HEAD
-=======
-            ref: "NewUser",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
         },
     ],
     userGroup: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "UserGroup",
         required: true,
-<<<<<<< HEAD
-=======
-        unique: true
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
     },
     assets: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-<<<<<<< HEAD
-=======
-            ref: "Plant",
->>>>>>> 04951b40c78b1fb90e52113e07a56ab6329ad389
         },
     ],
     modules: {
