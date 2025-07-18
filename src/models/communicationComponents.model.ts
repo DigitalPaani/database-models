@@ -10,7 +10,7 @@ interface ICommunicationComponent extends Document {
   name: string;
   userIds: Types.ObjectId[]; // Array of User IDs
   emailSubject?: string; // Optional, for EMAIL type
-  attachments?: { name: string; link: string; isReport: boolean }[]; // Optional, for EMAIL
+  attachments?: { name: string; link: string; filetype: string; isReport: boolean }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
   messageType?: string;
   contentTemplateSid?: string; // Optional, for WHATSAPP
@@ -50,6 +50,7 @@ const communicationComponentsSchema = new Schema(
       {
         name: String,
         link: String,
+        filetype: String,
         isReport: { type: Boolean, default: false },
       },
     ],

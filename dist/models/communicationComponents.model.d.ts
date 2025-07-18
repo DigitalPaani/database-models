@@ -7,6 +7,7 @@ interface ICommunicationComponent extends Document {
     attachments?: {
         name: string;
         link: string;
+        filetype: string;
         isReport: boolean;
     }[];
     message?: string;

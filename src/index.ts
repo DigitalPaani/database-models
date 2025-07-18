@@ -68,6 +68,12 @@ import {
   ICommunicationComponent,
 } from "./models/communicationComponents.model";
 
+import {
+  EscalationFlowModel,
+  IEscalationFlow,
+} from "./models/EscalationFlow.model";
+
+
 import { NewUserModel, INewUser } from "./models/newUserModel";
 import { LayoutPathModel,IPathSchema } from "./models/graphConnections.model";
 
@@ -102,6 +108,8 @@ import { ManualSensorModel, IManualSensors } from './models/manual-sensors-templ
 import { DataLoggerSessionModel, IDataLoggerSession } from './models/data-logger-sessions.model';
 import { DLSensorConfigModel, IDLSensorConfig } from './models/data-logger-sensor-config.model';
 import { DLSensorConfigAuditModel } from './models/dl-sensor-config-audit.model';
+import { GeneralCommunicationModel, IGeneralCommunication } from "./models/general-communication.model";
+
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
 
 import {UserGroupModel} from './models/userGroupModel'
@@ -174,8 +182,10 @@ export type {
   IDataLoggerSession,
   IDLSensorConfig,
   INotification,
+  IGeneralCommunication,
   IBulkEntryReport,
   IWorkspace,
+  IEscalationFlow,
 };
 
 // exports the models
@@ -243,7 +253,9 @@ export {
   DLSensorConfigModel,
   DLSensorConfigAuditModel,
   NotificationModel,
+  GeneralCommunicationModel,
   BulkEntryReportModel,
   WorkspaceModel,
   NotificationComponentsModel,
+  EscalationFlowModel,
 };
