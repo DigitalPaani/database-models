@@ -43,7 +43,7 @@ const uploadSchema = new mongoose_1.Schema({
     },
     uploaderId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        ref: "User",
+        ref: "NewUser",
         required: true,
     },
     category: { type: String, required: true },
