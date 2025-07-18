@@ -139,6 +139,9 @@ declare const _default: {
         executionFailed: string;
         unknown: string;
     };
+    COMMUNICATION_FILE_CONSTANTS: {
+        DELIVERY_STATUS_ENUMS: string[];
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

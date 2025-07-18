@@ -1,4 +1,7 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const taskManagementConst_1 = require("./taskManagementConst");
 const triggerConst_1 = require("./triggerConst");
@@ -6,6 +9,7 @@ const insights_constants_1 = require("./insights.constants");
 const visualization_constants_1 = require("./visualization.constants");
 const data_logger_constant_1 = require("./data-logger.constant");
 const sensorConst_1 = require("./sensorConst");
+const communication_constants_1 = __importDefault(require("./communication.constants"));
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -90,4 +94,5 @@ exports.default = {
     SENSOR_TYPE: data_logger_constant_1.SENSOR_TYPE,
     SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
     REMOTE_CONTROL_STATUS,
+    COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
 };
