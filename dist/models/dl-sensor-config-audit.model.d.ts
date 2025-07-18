@@ -1,9 +1,26 @@
-import mongoose from "mongoose";
-import { IDLSensorConfig } from "./data-logger-sensor-config.model";
-declare const DLSensorConfigAuditModel: mongoose.Model<IDLSensorConfig, {}, {}, {}, mongoose.Document<unknown, {}, IDLSensorConfig> & IDLSensorConfig & {
-    _id: mongoose.Types.ObjectId;
+import mongoose, { Types } from "mongoose";
+interface IDLSensorConfigAudit {
+    dataLoggerId: Types.ObjectId;
+    sensorId: Types.ObjectId;
+    sensorType: "analog" | "boolean";
+    referenceSensorId?: Types.ObjectId;
+    referenceSensorPurpose?: string;
+    scalingFactor?: number;
+    start?: number;
+    end?: number;
+    type?: string;
+    wordOrder?: string;
+    function?: string;
+    modbusMisfireTotalizer?: boolean;
+    bitIndex?: number;
+    version: number;
+    createdAt?: Date;
+    updatedAt?: Date;
+}
+declare const DLSensorConfigAuditModel: mongoose.Model<IDLSensorConfigAudit, {}, {}, {}, mongoose.Document<unknown, {}, IDLSensorConfigAudit> & IDLSensorConfigAudit & {
+    _id: Types.ObjectId;
 } & {
     __v: number;
 }, any>;
-export { DLSensorConfigAuditModel };
+export { DLSensorConfigAuditModel, IDLSensorConfigAudit };
 //# sourceMappingURL=dl-sensor-config-audit.model.d.ts.map
