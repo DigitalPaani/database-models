@@ -108,6 +108,7 @@ import { ManualSensorModel, IManualSensors } from './models/manual-sensors-templ
 import { GeneralCommunicationModel, IGeneralCommunication } from "./models/general-communication.model";
 
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
+import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
@@ -180,7 +181,8 @@ export type {
   IGeneralCommunication,
   IBulkEntryReport,
   IWorkspace,
-  IEscalationFlow
+  IEscalationFlow,
+  IFileUpload
 };
 
 // exports the models
@@ -249,5 +251,6 @@ export {
   BulkEntryReportModel,
   WorkspaceModel,
   NotificationComponentsModel,
-  EscalationFlowModel
+  EscalationFlowModel,
+  FileManagementUploadModel
 };
