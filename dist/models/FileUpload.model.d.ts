@@ -12,7 +12,7 @@ interface IFileUpload extends Document {
     fileSize: number;
     etag?: string;
     uploadedAt: string;
-    deletedAt?: string;
+    isDeleted?: boolean;
 }
 declare const FileManagementUploadModel: mongoose.Model<IFileUpload, {}, {}, {}, mongoose.Document<unknown, {}, IFileUpload> & IFileUpload & Required<{
     _id: string;

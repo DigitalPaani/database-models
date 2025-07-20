@@ -13,7 +13,7 @@ interface IFileUpload extends Document {
   fileSize: number;
   etag?: string;
   uploadedAt: string;
-  deletedAt?: string;
+  isDeleted?: boolean;
 }
 
 const uploadSchema = new Schema(
@@ -37,7 +37,7 @@ const uploadSchema = new Schema(
     fileSize: Number,
     etag: String,
     uploadedAt: { type: Date, default: Date.now },
-    deletedAt: Date,
+    isDeleted: { type: Boolean, default: false },
   },
   { timestamps: true }
 );

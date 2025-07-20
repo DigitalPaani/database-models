@@ -55,7 +55,7 @@ const uploadSchema = new mongoose_1.Schema({
     fileSize: Number,
     etag: String,
     uploadedAt: { type: Date, default: Date.now },
-    deletedAt: Date,
+    isDeleted: { type: Boolean, default: false },
 }, { timestamps: true });
 const FileManagementUploadModel = mongoose_1.default.model("FileManagementUploadDetails", uploadSchema, "FileManagementUploadDetails");
 exports.FileManagementUploadModel = FileManagementUploadModel;
