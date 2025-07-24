@@ -11,6 +11,7 @@ interface IReceiver {
 interface IContent {
     message: string;
     channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL";
+    emailBody: string;
 }
 type attachment = {
     filename: string;
