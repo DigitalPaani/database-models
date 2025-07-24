@@ -19,6 +19,7 @@ interface IReceiver {
 interface IContent {
   message: string;
   channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL";
+  emailBody: string;
 }
 
 
@@ -114,6 +115,10 @@ const contentSchema = new Schema(
       type: String,
       enum: ["WHATSAPP", "SMS", "CALL", "EMAIL"],
       required: true,
+    },
+    emailBody: {
+      type: String,
+      default: ""
     },
   },
   { _id: false }
