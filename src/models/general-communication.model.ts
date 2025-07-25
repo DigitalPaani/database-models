@@ -20,6 +20,7 @@ interface IContent {
   message: string;
   channel: "WHATSAPP" | "SMS" | "CALL" | "EMAIL";
   emailBody: string;
+  emailBodyType: string
 }
 
 
