@@ -120,6 +120,11 @@ const contentSchema = new Schema(
       type: String,
       default: ""
     },
+    emailBodyType: {
+      type: String,
+      enum: ["NONE", "TEXT", "EMAIL"],
+      default: "NONE"
+    },
   },
   { _id: false }
 );

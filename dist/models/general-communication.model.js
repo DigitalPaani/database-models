@@ -91,6 +91,11 @@ const contentSchema = new mongoose_1.Schema({
         type: String,
         default: ""
     },
+    emailBodyType: {
+        type: String,
+        enum: ["NONE", "TEXT", "EMAIL"],
+        default: "NONE"
+    },
 }, { _id: false });
 // Main Schema (Composed)
 const generalCommunicationSchema = new mongoose_1.Schema({
