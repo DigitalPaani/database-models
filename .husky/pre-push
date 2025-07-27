@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔧 Running build before push..."
+npm run build
+
+# Check if dist changed
+if [ -n "$(git status dist --porcelain)" ]; then
+  echo "⚠️ dist has changed after build. Reverting changes..."
+  git checkout -- dist
+  echo "✅ Reverted dist changes. Continuing with push."
+else
+  echo "✅ dist is up to date. Continuing push."
+fi
