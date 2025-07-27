@@ -42,7 +42,7 @@ import {
   WhatsappTemplateModel,
   IWhatsappTemplate,
 } from "./models/whatsappTemplate.model";
-import {TestItemsModel} from './models/test.model';
+import {TestModel} from './models/test.model';
 import {
   TriggerComponentModel,
   ITriggerComponent,
@@ -251,5 +251,5 @@ export {
   WorkspaceModel,
   NotificationComponentsModel,
   EscalationFlowModel,
-  TestItemsModel
+  TestModel
 };
