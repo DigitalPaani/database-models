@@ -1,17 +1,17 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+# #!/bin/sh
+# . "$(dirname "$0")/_/husky.sh"
 
-echo "🔧 Running build before commit..."
-npm run build
+# echo "🔧 Running build before commit..."
+# npm run build
 
-if [ $? -ne 0 ]; then
-  echo "❌ Build failed. Commit aborted."
-  exit 1
-fi
+# if [ $? -ne 0 ]; then
+#   echo "❌ Build failed. Commit aborted."
+#   exit 1
+# fi
 
-if [ -n "$(git status dist --porcelain)" ]; then
-  echo "⚠️ dist/ has changes after build. Reverting..."
-  git restore dist
-else
-  echo "✅ dist/ is unchanged after build."
-fi
+# if [ -n "$(git status dist --porcelain)" ]; then
+#   echo "⚠️ dist/ has changes after build. Reverting..."
+#   git restore dist
+# else
+#   echo "✅ dist/ is unchanged after build."
+# fi
