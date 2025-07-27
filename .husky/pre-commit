@@ -1,0 +1,12 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔧 Running build before push..."
+npm run build
+
+if [ -n "$(git status dist --porcelain)" ]; then
+  echo "❌ You have uncommitted dist/ changes. Please commit them before pushing."
+  exit 1
+else
+  echo "✅ dist/ is up to date."
+fi
