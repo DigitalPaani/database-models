@@ -111,6 +111,9 @@ import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
+
+import { LogbookTemplateModel, ILogbookTemplate } from "./models/LogbookTemplates.model";
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -180,7 +183,8 @@ export type {
   IGeneralCommunication,
   IBulkEntryReport,
   IWorkspace,
-  IEscalationFlow
+  IEscalationFlow,
+  ILogbookTemplate
 };
 
 // exports the models
@@ -249,5 +253,6 @@ export {
   BulkEntryReportModel,
   WorkspaceModel,
   NotificationComponentsModel,
-  EscalationFlowModel
+  EscalationFlowModel,
+  LogbookTemplateModel
 };
