@@ -1,13 +1,13 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IBidirectional extends Document {
-    dataLoggerId: Types.ObjectId;
+    dataLoggerId?: Types.ObjectId;
     assetId: Types.ObjectId;
     referenceSensors: {
         controlSensorId: Types.ObjectId;
         tripSensorId: Types.ObjectId;
         hmiSensorId: Types.ObjectId;
-        softwareSensorId: Types.ObjectId;
-        manualSensorId: Types.ObjectId;
+        softwareBypassSensorId: Types.ObjectId;
+        autoManualSensorId: Types.ObjectId;
         bypassFormulaSensorId: Types.ObjectId;
     };
     equipmentId: Types.ObjectId;

@@ -22,6 +22,7 @@ import {
   INSIGHT_PRIORITIES
 } from "./insights.constants";
 import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
+import { SENSOR_TYPE } from "./data-logger.constant";
 import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
 import COMMUNICATION_CONSTANTS from "./communication.constants";
 
@@ -78,6 +79,22 @@ const USER_GROUP_OR_SYSTEM = [
   },
 ];
 
+const REMOTE_CONTROL_STATUS = {
+  initiated: "Initiated",
+  initiationFailed: "Initiation Failed",
+
+  published: "Published",
+  publishFailed: "Publish Failed",
+
+  acknowledged: "Acknowledged",
+  acknowledgementFailed: "Acknowledgement Failed",
+
+  executed: "Executed",
+  executionFailed: "Execution Failed",
+
+  unknown: "Unknown",
+};
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -101,6 +118,8 @@ export default {
   INSIGHT_PRIORITIES,
   VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
   WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
+  SENSOR_TYPE,
   SENSOR_PURPOSE_TAGS,
-  COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS
+  REMOTE_CONTROL_STATUS,
+  COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS,
 };

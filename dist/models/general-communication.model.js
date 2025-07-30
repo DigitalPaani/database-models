@@ -87,6 +87,10 @@ const contentSchema = new mongoose_1.Schema({
         enum: ["WHATSAPP", "SMS", "CALL", "EMAIL"],
         required: true,
     },
+    emailBody: {
+        type: String,
+        default: ""
+    },
 }, { _id: false });
 // Main Schema (Composed)
 const generalCommunicationSchema = new mongoose_1.Schema({
