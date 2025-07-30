@@ -111,6 +111,7 @@ import { DLSensorConfigAuditModel } from './models/dl-sensor-config-audit.model'
 import { GeneralCommunicationModel, IGeneralCommunication } from "./models/general-communication.model";
 
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
+import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
@@ -186,6 +187,7 @@ export type {
   IBulkEntryReport,
   IWorkspace,
   IEscalationFlow,
+  IFileUpload
 };
 
 // exports the models
@@ -258,4 +260,5 @@ export {
   WorkspaceModel,
   NotificationComponentsModel,
   EscalationFlowModel,
+  FileManagementUploadModel
 };
