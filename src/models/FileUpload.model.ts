@@ -1,9 +1,8 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
 
 interface IFileUpload extends Document {
-  _id?: string;
-  plantId: string;
-  uploaderId: string;
+  plantId: Types.ObjectId;
+  uploaderId: Types.ObjectId;
   fileName: string;
   description?: string;
   category: string;

@@ -1,8 +1,7 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 interface IFileUpload extends Document {
-    _id?: string;
-    plantId: string;
-    uploaderId: string;
+    plantId: Types.ObjectId;
+    uploaderId: Types.ObjectId;
     fileName: string;
     description?: string;
     category: string;
@@ -14,9 +13,9 @@ interface IFileUpload extends Document {
     uploadedAt: string;
     isDeleted?: boolean;
 }
-declare const FileManagementUploadModel: mongoose.Model<IFileUpload, {}, {}, {}, mongoose.Document<unknown, {}, IFileUpload> & IFileUpload & Required<{
-    _id: string;
-}> & {
+declare const FileManagementUploadModel: mongoose.Model<IFileUpload, {}, {}, {}, mongoose.Document<unknown, {}, IFileUpload> & IFileUpload & {
+    _id: Types.ObjectId;
+} & {
     __v: number;
 }, any>;
 export { IFileUpload, FileManagementUploadModel };
