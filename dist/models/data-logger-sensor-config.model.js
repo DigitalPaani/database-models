@@ -33,37 +33,45 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GeneralCommunicationModel = void 0;
+exports.dataLoggerSensorConfigSchema = exports.DLSensorConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const generalCommunicationSchema = new mongoose_1.default.Schema({
-    userId: {
+const data_logger_constant_1 = require("../constants/data-logger.constant");
+const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
+    dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewUser",
+        ref: "dataLoggers",
         required: true,
     },
-    messageContent: {
-        type: String,
+    sensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
         required: true,
     },
-    senderType: {
+    sensorType: { type: String, enum: ["analog", "boolean"], required: true },
+    referenceSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
+    },
+    referenceSensorPurpose: {
         type: String,
-        enum: ["USER", "DOCTOR_PAANI"],
+        enum: ["totalizer"],
+        trim: true,
     },
-    channel: {
+    scalingFactor: { type: Number },
+    start: { type: Number },
+    end: { type: Number },
+    type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE), required: false },
+    wordOrder: {
         type: String,
-        enum: ["WHATSAPP", "SMS", "CALL", "EMAIL", "REPORT"],
-        required: true,
     },
-    status: {
+    function: {
         type: String,
-        enum: ["ACTIVE", "INACTIVE"]
+        trim: true,
     },
-    isArchived: {
-        type: Boolean,
-        default: false,
-    },
-}, {
-    timestamps: true,
-});
-const GeneralCommunicationModel = mongoose_1.default.model("generalCommunication", generalCommunicationSchema, "generalCommunication");
-exports.GeneralCommunicationModel = GeneralCommunicationModel;
+    modbusMisfireTotalizer: { type: Boolean },
+    bitIndex: { type: Number },
+    version: { type: Number, default: 0, required: true },
+}, { timestamps: true });
+exports.dataLoggerSensorConfigSchema = dataLoggerSensorConfigSchema;
+const DLSensorConfigModel = mongoose_1.default.model("dataLoggerSensorConfig", dataLoggerSensorConfigSchema, "dataLoggerSensorConfig");
+exports.DLSensorConfigModel = DLSensorConfigModel;

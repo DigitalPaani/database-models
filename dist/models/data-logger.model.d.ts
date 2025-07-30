@@ -1,9 +1,22 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IDataLogger extends Document {
     name: string;
-    description: string;
-    assetId: Types.ObjectId;
     createdBy: Types.ObjectId;
+    serialNumber: string;
+    version: number;
+    debug: boolean;
+    plcBrand: string;
+    plcModel: string;
+    assetId: Types.ObjectId;
+    modbusHost: string;
+    modbusPort: number;
+    unitIdReal: number;
+    startAddressReal: number;
+    registerCountReal: number;
+    unitIdBool: number;
+    startAddressBool: number;
+    registerCountBool: number;
+    pollingInterval: number;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
