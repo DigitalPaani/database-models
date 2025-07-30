@@ -45,43 +45,43 @@ const escalationStepSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    timeInMinutes: {
+        type: Number,
+        required: true,
+    },
     userIds: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "NewUser",
+            required: true,
         },
     ],
 }, { _id: false });
 // Main schema
 const escalationFlowSchema = new mongoose_1.Schema({
-    attendanceManager: [
+    attendenceManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "NewUser",
         },
     ],
     rosterManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "NewUser",
         },
     ],
     operator: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "NewUser",
         },
     ],
     userGroup: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "UserGroup",
         required: true,
-        unique: true
     },
     assets: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "Plant",
         },
     ],
     modules: {

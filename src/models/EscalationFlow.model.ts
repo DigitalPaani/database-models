@@ -12,10 +12,15 @@ const escalationStepSchema = new Schema(
       type: String,
       required: true,
     },
+    timeInMinutes: {
+      type: Number,
+      required: true,
+    },
     userIds: [
       {
         type: Schema.Types.ObjectId,
         ref: "NewUser",
+        required: true,
       },
     ],
   },
@@ -24,7 +29,7 @@ const escalationStepSchema = new Schema(
 
 // Interface
 interface IEscalationFlow extends Document {
-  attendanceManager: Types.ObjectId[];
+  attendenceManager: Types.ObjectId[];
   rosterManager: Types.ObjectId[];
   operator: Types.ObjectId[];
   userGroup: Types.ObjectId;
@@ -36,34 +41,29 @@ interface IEscalationFlow extends Document {
 // Main schema
 const escalationFlowSchema = new Schema<IEscalationFlow>(
   {
-    attendanceManager: [
+    attendenceManager: [
       {
         type: Schema.Types.ObjectId,
-        ref: "NewUser",
       },
     ],
     rosterManager: [
       {
         type: Schema.Types.ObjectId,
-        ref: "NewUser",
       },
     ],
     operator: [
       {
         type: Schema.Types.ObjectId,
-        ref: "NewUser",
       },
     ],
     userGroup: {
       type: Schema.Types.ObjectId,
       ref: "UserGroup",
       required: true,
-      unique:true
     },
     assets: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Plant",
       },
     ],
     modules: {

@@ -4,14 +4,17 @@ declare const escalationStepSchema: mongoose.Schema<any, mongoose.Model<any, any
     _id: false;
 }, {
     value: string;
+    timeInMinutes: number;
     unit: string;
     userIds: Types.ObjectId[];
 }, mongoose.Document<unknown, {}, mongoose.FlatRecord<{
     value: string;
+    timeInMinutes: number;
     unit: string;
     userIds: Types.ObjectId[];
 }>> & mongoose.FlatRecord<{
     value: string;
+    timeInMinutes: number;
     unit: string;
     userIds: Types.ObjectId[];
 }> & {
@@ -20,7 +23,7 @@ declare const escalationStepSchema: mongoose.Schema<any, mongoose.Model<any, any
     __v: number;
 }>;
 interface IEscalationFlow extends Document {
-    attendanceManager: Types.ObjectId[];
+    attendenceManager: Types.ObjectId[];
     rosterManager: Types.ObjectId[];
     operator: Types.ObjectId[];
     userGroup: Types.ObjectId;
