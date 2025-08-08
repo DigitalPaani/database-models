@@ -17,6 +17,7 @@ interface IWhatsappTemplate extends Document {
   isReportConfigRequired: boolean;
   isTaskConfigRequired: boolean;
   isInsightConfigRequired: boolean;
+  isTriggerCommunicationEnabled: boolean;
   isArchived: boolean;
 };
 
@@ -68,6 +69,11 @@ const whatsappTemplateSchema = new Schema<IWhatsappTemplate>(
     isInsightConfigRequired: {
         type: Boolean,
         required: false,
+    },
+    isTriggerCommunicationEnabled: {
+      type: Boolean,
+      default: false,
+      required: false,
     },
     isArchived: {
       type: Boolean,
