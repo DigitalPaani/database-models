@@ -52,6 +52,8 @@ const dynamicNameValueSchema = new mongoose_1.default.Schema({
         type: String,
         required: true,
     },
+}, {
+    _id: false
 });
 const insightComponentSchema = new mongoose_1.Schema({
     insightTemplateId: {

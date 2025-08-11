@@ -48,6 +48,8 @@ const dynamicNameValueSchema = new mongoose.Schema<IDynamicValueSchema>({
     type: String,
     required: true,
   },
+}, {
+  _id: false
 });
 
 const insightComponentSchema = new Schema<IInsightComponent>(
