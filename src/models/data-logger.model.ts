@@ -54,7 +54,6 @@ const dataLoggerSchema = new Schema<IDataLogger>(
     },
     plcBrand: {
       type: String,
-      enum: ["Fuji", "Delta"],
       required: true,
     },
     pollingInterval: {
