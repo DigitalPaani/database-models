@@ -35,7 +35,24 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsightComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const DYNAMIC_NAME_TYPE_ENUMS = ['EQUIPMENT'];
 ;
+;
+const dynamicNameValueSchema = new mongoose_1.default.Schema({
+    type: {
+        type: String,
+        enum: DYNAMIC_NAME_TYPE_ENUMS,
+        required: true, // e.g., "EQUIPMENT"
+    },
+    key: {
+        type: String,
+        required: true, // e.g., "EQUIPMENT1"
+    },
+    value: {
+        type: String,
+        required: true,
+    },
+});
 const insightComponentSchema = new mongoose_1.Schema({
     insightTemplateId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -53,6 +70,10 @@ const insightComponentSchema = new mongoose_1.Schema({
     description: {
         type: String,
         default: "",
+    },
+    dynamicNameValues: {
+        type: [dynamicNameValueSchema],
+        default: []
     },
     insightClassification: {
         type: String,

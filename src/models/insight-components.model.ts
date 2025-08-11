@@ -3,12 +3,21 @@ import { Types } from "mongoose";
 
 import { ISensor } from "./sensorModel";
 
+const DYNAMIC_NAME_TYPE_ENUMS = ['EQUIPMENT'];
+interface IDynamicValueSchema extends Document {
+  type: string;
+  key: string;
+  value: string;
+};
+
+
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
     insightTemplateId: Types.ObjectId;
     triggerId: Types.ObjectId;
     name: string;
     description: string;
+    dynamicNameValues: IDynamicValueSchema;
     insightClassification: string;
     insightType: string;
     attachmentId: Types.ObjectId | null;
@@ -24,6 +33,22 @@ interface IInsightComponent extends Document {
     userIdsForTimeSensitive: Types.ObjectId[];
     isDeleted: boolean;
 };
+
+const dynamicNameValueSchema = new mongoose.Schema<IDynamicValueSchema>({
+  type: {
+    type: String,
+    enum: DYNAMIC_NAME_TYPE_ENUMS,
+    required: true, // e.g., "EQUIPMENT"
+  },
+  key: {
+    type: String,
+    required: true, // e.g., "EQUIPMENT1"
+  },
+  value: {
+    type: String,
+    required: true,
+  },
+});
 
 const insightComponentSchema = new Schema<IInsightComponent>(
   {
@@ -43,6 +68,10 @@ const insightComponentSchema = new Schema<IInsightComponent>(
     description: {
       type: String,
       default: "",
+    },
+    dynamicNameValues: {
+      type: [dynamicNameValueSchema],
+      default: []
     },
     insightClassification: {
       type: String,
