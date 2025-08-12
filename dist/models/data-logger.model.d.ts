@@ -18,6 +18,7 @@ interface IDataLogger extends Document {
     registerCountBool: number;
     pollingInterval: number;
     isDeleted: boolean;
+    deletedBy: Types.ObjectId;
     createdAt?: Date;
     updatedAt?: Date;
 }

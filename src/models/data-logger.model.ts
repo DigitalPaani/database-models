@@ -23,6 +23,7 @@ interface IDataLogger extends Document {
 
   // common fields for all schemas
   isDeleted: boolean;
+  deletedBy: Types.ObjectId;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -108,6 +109,20 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       type: Boolean,
       default: false,
       required: true,
+    },
+    deletedBy: {
+      type: Schema.Types.ObjectId,
+      ref: "NewUser",
+      default: null,
+      validate: {
+        validator: function (this: IDataLogger, value: Types.ObjectId): boolean {
+          if (this.isDeleted) {
+            return value != null;
+          }
+          return value == null;
+        },
+      message: "deletedBy must be set when isDeleted is true",
+    }
     },
   },
   { timestamps: true }

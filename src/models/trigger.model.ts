@@ -31,6 +31,7 @@ interface ITriggerDocument extends Document {
   isOpen: boolean;
   equipmentId?: Types.ObjectId;
   isDeleted: boolean; // Default is false
+  deletedBy: Types.ObjectId;
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
 }
@@ -179,6 +180,20 @@ const triggerSchema = new Schema(
       ref:"LayoutEquipments" 
     },
     isDeleted: { type: Boolean, required: true, default: false },
+    deletedBy: {
+      type: Schema.Types.ObjectId,
+      ref: "NewUser",
+      required: false,
+      validate: {
+        validator: function (this: ITriggerDocument, value: Types.ObjectId): boolean {
+          if (this.isDeleted) {
+            return value != null;
+          }
+          return value == null;
+        },
+        message: "deletedBy must be set when isDeleted is true",
+      },
+    }
   },
   { timestamps: true }
 );

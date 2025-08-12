@@ -23,6 +23,7 @@ interface ITriggerDocument extends Document {
     isOpen: boolean;
     equipmentId?: Types.ObjectId;
     isDeleted: boolean;
+    deletedBy: Types.ObjectId;
     createdAt?: Date;
     updatedAt?: Date;
 }
