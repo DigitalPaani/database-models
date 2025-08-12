@@ -35,12 +35,35 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsightComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const insights_constants_1 = require("../constants/insights.constants");
 ;
+;
+const dynamicNameValueSchema = new mongoose_1.default.Schema({
+    type: {
+        type: String,
+        enum: Object.values(insights_constants_1.DYNAMIC_NAME_TYPE_ENUMS),
+        required: true, // e.g., "EQUIPMENT"
+    },
+    key: {
+        type: String,
+        required: true, // e.g., "EQUIPMENT1"
+    },
+    value: {
+        type: String,
+        required: true,
+    },
+}, {
+    _id: false
+});
 const insightComponentSchema = new mongoose_1.Schema({
     insightTemplateId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "insights-templates",
         required: true,
+    },
+    dynamicNameValues: {
+        type: [dynamicNameValueSchema],
+        default: []
     },
     triggerId: {
         type: mongoose_1.Schema.Types.ObjectId,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.INSIGHT_PRIORITIES = exports.EQUIPMENT_TYPES = exports.INSIGHT_TYPE_OBJECTS = exports.TYPES_OF_INSIGHTS = exports.TYPES_OF_INSIGHT_CLASSIFICATIONS = exports.INSIGHT_CLASSIFICATIONS = void 0;
+exports.DYNAMIC_NAME_TYPE_ENUMS = exports.INSIGHT_PRIORITIES = exports.EQUIPMENT_TYPES = exports.INSIGHT_TYPE_OBJECTS = exports.TYPES_OF_INSIGHTS = exports.TYPES_OF_INSIGHT_CLASSIFICATIONS = exports.INSIGHT_CLASSIFICATIONS = void 0;
 exports.INSIGHT_CLASSIFICATIONS = [
     {
         label: "Achievement",
@@ -59,6 +59,10 @@ exports.EQUIPMENT_TYPES = [
         label: "Filter",
         value: "FILTER",
     },
+    {
+        label: "Plant",
+        value: "PLANT",
+    },
 ];
 exports.INSIGHT_PRIORITIES = [
     {
@@ -74,3 +78,6 @@ exports.INSIGHT_PRIORITIES = [
         value: 1,
     },
 ];
+exports.DYNAMIC_NAME_TYPE_ENUMS = {
+    equipment: 'EQUIPMENT'
+};
