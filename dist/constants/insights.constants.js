@@ -79,5 +79,5 @@ exports.INSIGHT_PRIORITIES = [
     },
 ];
 exports.DYNAMIC_NAME_TYPE_ENUMS = {
-    'equipment': 'EQUIPMENT'
+    equipment: 'EQUIPMENT'
 };

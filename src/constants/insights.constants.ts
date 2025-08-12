@@ -93,5 +93,5 @@ export const INSIGHT_PRIORITIES = [
 ];
 
 export const DYNAMIC_NAME_TYPE_ENUMS = {
-  'equipment': 'EQUIPMENT'
+  equipment: 'EQUIPMENT'
 };
