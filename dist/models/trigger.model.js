@@ -178,6 +178,20 @@ const triggerSchema = new mongoose_1.Schema({
         ref: "LayoutEquipments"
     },
     isDeleted: { type: Boolean, required: true, default: false },
+    deletedBy: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewUser",
+        required: false,
+        validate: {
+            validator: function (value) {
+                if (this.isDeleted) {
+                    return value != null;
+                }
+                return value == null;
+            },
+            message: "deletedBy must be set when isDeleted is true",
+        },
+    }
 }, { timestamps: true });
 const TriggerModel = mongoose_1.default.model("triggers", triggerSchema, "triggers");
 exports.TriggerModel = TriggerModel;
