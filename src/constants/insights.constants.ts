@@ -71,6 +71,10 @@ export const EQUIPMENT_TYPES = [
     label: "Filter",
     value: "FILTER",
   },
+  {
+    label: "Plant",
+    value: "PLANT",
+  },
 ];
 
 export const INSIGHT_PRIORITIES = [

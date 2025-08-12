@@ -59,6 +59,10 @@ exports.EQUIPMENT_TYPES = [
         label: "Filter",
         value: "FILTER",
     },
+    {
+        label: "Plant",
+        value: "PLANT",
+    },
 ];
 exports.INSIGHT_PRIORITIES = [
     {
