@@ -116,12 +116,12 @@ const dataLoggerSchema = new Schema<IDataLogger>(
       ref: "NewUser",
       default: null,
       validate: {
-      validator: function (value) {
-        if (this.isDeleted) {
-          return value != null;
-        }
-        return value == null;
-      },
+        validator: function (this: IDataLogger, value: Types.ObjectId): boolean {
+          if (this.isDeleted) {
+            return value != null;
+          }
+          return value == null;
+        },
       message: "deletedBy must be set when isDeleted is true",
     }
     },
