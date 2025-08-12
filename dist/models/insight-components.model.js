@@ -41,7 +41,7 @@ const insights_constants_1 = require("../constants/insights.constants");
 const dynamicNameValueSchema = new mongoose_1.default.Schema({
     type: {
         type: String,
-        enum: insights_constants_1.DYNAMIC_NAME_TYPE_ENUMS,
+        enum: Object.values(insights_constants_1.DYNAMIC_NAME_TYPE_ENUMS),
         required: true, // e.g., "EQUIPMENT"
     },
     key: {

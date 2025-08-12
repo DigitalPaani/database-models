@@ -38,7 +38,7 @@ interface IInsightComponent extends Document {
 const dynamicNameValueSchema = new mongoose.Schema<IDynamicValue>({
   type: {
     type: String,
-    enum: DYNAMIC_NAME_TYPE_ENUMS,
+    enum: Object.values(DYNAMIC_NAME_TYPE_ENUMS),
     required: true, // e.g., "EQUIPMENT"
   },
   key: {
