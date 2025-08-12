@@ -1,9 +1,15 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
 import { ISensor } from "./sensorModel";
+interface IDynamicValue extends Document {
+    type: string;
+    key: string;
+    value: string;
+}
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
     insightTemplateId: Types.ObjectId;
+    dynamicNameValues: IDynamicValue[];
     triggerId: Types.ObjectId;
     name: string;
     description: string;

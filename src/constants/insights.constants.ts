@@ -87,3 +87,5 @@ export const INSIGHT_PRIORITIES = [
     value: 1,
   },
 ];
+
+export const DYNAMIC_NAME_TYPE_ENUMS = ['EQUIPMENT'];

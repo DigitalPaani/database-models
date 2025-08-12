@@ -3,9 +3,19 @@ import { Types } from "mongoose";
 
 import { ISensor } from "./sensorModel";
 
+import { DYNAMIC_NAME_TYPE_ENUMS } from "../constants/insights.constants";
+
+interface IDynamicValue extends Document {
+  type: string;
+  key: string;
+  value: string;
+};
+
+
 interface IInsightComponent extends Document {
     _id: Types.ObjectId;
     insightTemplateId: Types.ObjectId;
+    dynamicNameValues: IDynamicValue[],
     triggerId: Types.ObjectId;
     name: string;
     description: string;
@@ -25,12 +35,34 @@ interface IInsightComponent extends Document {
     isDeleted: boolean;
 };
 
+const dynamicNameValueSchema = new mongoose.Schema<IDynamicValue>({
+  type: {
+    type: String,
+    enum: DYNAMIC_NAME_TYPE_ENUMS,
+    required: true, // e.g., "EQUIPMENT"
+  },
+  key: {
+    type: String,
+    required: true, // e.g., "EQUIPMENT1"
+  },
+  value: {
+    type: String,
+    required: true,
+  },
+}, {
+  _id: false
+});
+
 const insightComponentSchema = new Schema<IInsightComponent>(
   {
     insightTemplateId: {
       type: Schema.Types.ObjectId,
       ref: "insights-templates",
       required: true,
+    },
+    dynamicNameValues: {
+      type: [dynamicNameValueSchema],
+      default: []
     },
     triggerId: {
       type: Schema.Types.ObjectId,
