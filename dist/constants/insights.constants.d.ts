@@ -20,4 +20,7 @@ export declare const INSIGHT_PRIORITIES: {
     label: string;
     value: number;
 }[];
+export declare const DYNAMIC_NAME_TYPE_ENUMS: {
+    equipment: string;
+};
 //# sourceMappingURL=insights.constants.d.ts.map

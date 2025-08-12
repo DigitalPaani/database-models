@@ -60,7 +60,6 @@ const dataLoggerSchema = new mongoose_1.Schema({
     },
     plcBrand: {
         type: String,
-        enum: ["Fuji", "Delta"],
         required: true,
     },
     pollingInterval: {
