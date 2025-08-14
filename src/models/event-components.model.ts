@@ -15,7 +15,7 @@ interface IEventComponent extends Document {
     description: string;
     relatedEquipmentIds: Types.ObjectId[];
     triggerId: Types.ObjectId;
-    assetId: Types.ObjectId;
+    assetId?: Types.ObjectId;
     isDeleted: boolean;
 };
 
@@ -46,7 +46,6 @@ const eventComponentSchema = new Schema<IEventComponent>(
     assetId: {
       type: Schema.Types.ObjectId,
       ref: "Plant",
-      required: true,
     },
     isDeleted: { type: Boolean, default: false },
   },

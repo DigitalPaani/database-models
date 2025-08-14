@@ -63,7 +63,6 @@ const eventComponentSchema = new mongoose_1.Schema({
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
-        required: true,
     },
     isDeleted: { type: Boolean, default: false },
 }, {
