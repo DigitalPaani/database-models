@@ -2,6 +2,7 @@ import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 import { EQUIPMENT_TYPES } from "../constants/insights.constants";
 
+const equipmentTypes = EQUIPMENT_TYPES.map((type) => type.value);
 interface IEventsTemplate extends Document {
   _id: Types.ObjectId;
   name: string;
@@ -25,7 +26,7 @@ const eventsTemplateSchema = new Schema<IEventsTemplate>(
     relatedEquipmentTypes: {
       type: [String],
       ref: "LayoutEquipments",
-      enums: EQUIPMENT_TYPES,
+      enum: equipmentTypes,
     },
     createdBy: {
       type: Types.ObjectId,

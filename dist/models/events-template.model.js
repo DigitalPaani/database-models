@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventsTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const insights_constants_1 = require("../constants/insights.constants");
+const equipmentTypes = insights_constants_1.EQUIPMENT_TYPES.map((type) => type.value);
 const eventsTemplateSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -48,7 +49,7 @@ const eventsTemplateSchema = new mongoose_1.Schema({
     relatedEquipmentTypes: {
         type: [String],
         ref: "LayoutEquipments",
-        enums: insights_constants_1.EQUIPMENT_TYPES,
+        enum: equipmentTypes,
     },
     createdBy: {
         type: mongoose_1.Types.ObjectId,
