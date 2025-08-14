@@ -48,7 +48,6 @@ const eventsTemplateSchema = new mongoose_1.Schema({
     },
     relatedEquipmentTypes: {
         type: [String],
-        ref: "LayoutEquipments",
         enum: equipmentTypes,
     },
     createdBy: {

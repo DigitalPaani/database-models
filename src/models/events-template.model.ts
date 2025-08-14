@@ -25,7 +25,6 @@ const eventsTemplateSchema = new Schema<IEventsTemplate>(
     },
     relatedEquipmentTypes: {
       type: [String],
-      ref: "LayoutEquipments",
       enum: equipmentTypes,
     },
     createdBy: {

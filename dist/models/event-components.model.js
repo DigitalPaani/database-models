@@ -60,19 +60,10 @@ const eventComponentSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
     },
-    userGroupId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup",
-        required: true,
-    },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
         required: true,
-    },
-    workspaceId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Workspace",
     },
     isDeleted: { type: Boolean, default: false },
 }, {

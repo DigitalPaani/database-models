@@ -7,9 +7,7 @@ interface IEventComponent extends Document {
     description: string;
     relatedEquipmentIds: Types.ObjectId[];
     triggerId: Types.ObjectId;
-    userGroupId: Types.ObjectId;
     assetId: Types.ObjectId;
-    workspaceId?: Types.ObjectId;
     isDeleted: boolean;
 }
 declare const EventComponentModel: Model<IEventComponent>;
