@@ -78,5 +78,5 @@ const eventComponentSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-const EventComponentModel = mongoose_1.default.model("eventComponents", eventComponentSchema, "eventComponents");
+const EventComponentModel = mongoose_1.default.model("event-components", eventComponentSchema, "event-components");
 exports.EventComponentModel = EventComponentModel;

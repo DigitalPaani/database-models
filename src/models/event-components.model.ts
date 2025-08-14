@@ -67,9 +67,9 @@ const eventComponentSchema = new Schema<IEventComponent>(
 );
 
 const EventComponentModel: Model<IEventComponent> = mongoose.model<IEventComponent>(
-    "eventComponents",
+    "event-components",
     eventComponentSchema,
-    "eventComponents"
+    "event-components"
 );
 
 

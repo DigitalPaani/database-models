@@ -8,6 +8,7 @@ interface IEventsTemplate extends Document {
   description: string;
   relatedEquipmentTypes: string[];
   createdBy?: Types.ObjectId;
+  updatedBy?: Types.ObjectId;
   isArchived: boolean;
 }
 
@@ -27,6 +28,11 @@ const eventsTemplateSchema = new Schema<IEventsTemplate>(
       enums: EQUIPMENT_TYPES,
     },
     createdBy: {
+      type: Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    updatedBy: {
       type: Types.ObjectId,
       ref: "User",
       required: true,

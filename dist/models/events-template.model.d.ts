@@ -6,6 +6,7 @@ interface IEventsTemplate extends Document {
     description: string;
     relatedEquipmentTypes: string[];
     createdBy?: Types.ObjectId;
+    updatedBy?: Types.ObjectId;
     isArchived: boolean;
 }
 declare const EventsTemplateModel: Model<IEventsTemplate>;
