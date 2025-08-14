@@ -36,7 +36,7 @@ const eventsTemplateSchema = new Schema<IEventsTemplate>(
     updatedBy: {
       type: Types.ObjectId,
       ref: "User",
-      required: true,
+      required: false,
     },
     isArchived: {
       type: Boolean,

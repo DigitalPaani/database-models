@@ -59,7 +59,7 @@ const eventsTemplateSchema = new mongoose_1.Schema({
     updatedBy: {
         type: mongoose_1.Types.ObjectId,
         ref: "User",
-        required: true,
+        required: false,
     },
     isArchived: {
         type: Boolean,
