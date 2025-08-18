@@ -60,5 +60,7 @@ exports.SENSOR_PURPOSE_TAGS = [
     { key: "barScreen50", abbr: "BS50", name: "Bar Screen 50%" },
     { key: "barScreen75", abbr: "BS75", name: "Bar Screen 75%" },
     { key: "barScreen100", abbr: "BS100", name: "Bar Screen 100%" },
+    { key: "voltage", abbr: "VOLT", name: "Voltage" },
+    { key: "power", abbr: "POWE", name: "Power" },
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
