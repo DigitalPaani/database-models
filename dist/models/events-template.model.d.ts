@@ -1,6 +1,6 @@
 import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
-interface IEventTags extends Document {
+export interface IEventTags extends Document {
     startTag: string;
     endTag: string;
     eventTag: string;

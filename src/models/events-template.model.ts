@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 import { EQUIPMENT_TYPES } from "../constants/insights.constants";
 
 const equipmentTypes = EQUIPMENT_TYPES.map((type) => type.value);
-interface IEventTags extends Document{
+export interface IEventTags extends Document{
     startTag: string,
     endTag: string,
     eventTag: string,
