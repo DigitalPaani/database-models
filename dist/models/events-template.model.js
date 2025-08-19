@@ -50,6 +50,11 @@ const eventsTemplateSchema = new mongoose_1.Schema({
         type: [String],
         enum: equipmentTypes,
     },
+    eventTags: {
+        startTag: String,
+        endTag: String,
+        eventTag: String
+    },
     createdBy: {
         type: mongoose_1.Types.ObjectId,
         ref: "User",

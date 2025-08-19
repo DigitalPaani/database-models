@@ -1,10 +1,16 @@
 import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
+interface IEventTags extends Document {
+    startTag: string;
+    endTag: string;
+    eventTag: string;
+}
 interface IEventsTemplate extends Document {
     _id: Types.ObjectId;
     name: string;
     description: string;
     relatedEquipmentTypes: string[];
+    eventTags: IEventTags;
     createdBy?: Types.ObjectId;
     updatedBy?: Types.ObjectId;
     isArchived: boolean;
