@@ -51,9 +51,14 @@ const eventComponentSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
-    relatedEquipmentIds: {
+    relatedEquipments: {
         type: [mongoose_1.Schema.Types.ObjectId],
         ref: "LayoutEquipments",
+        required: true,
+    },
+    relatedSensors: {
+        type: [mongoose_1.Schema.Types.ObjectId],
+        ref: "sensors",
         required: true,
     },
     triggerId: {

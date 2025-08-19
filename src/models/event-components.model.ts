@@ -13,7 +13,8 @@ interface IEventComponent extends Document {
     eventsTemplateId: Types.ObjectId;
     name: string;
     description: string;
-    relatedEquipmentIds: Types.ObjectId[];
+    relatedEquipments: Types.ObjectId[];
+    relatedSensors: Types.ObjectId[];
     triggerId: Types.ObjectId;
     assetId?: Types.ObjectId;
     isDeleted: boolean;
@@ -34,10 +35,15 @@ const eventComponentSchema = new Schema<IEventComponent>(
       type: String,
       default: "",
     },
-    relatedEquipmentIds: {
+    relatedEquipments: {
       type: [Schema.Types.ObjectId],
       ref: "LayoutEquipments",
       required: true,
+    },
+    relatedSensors: {
+        type: [Schema.Types.ObjectId],
+        ref: "sensors",
+        required: true,
     },
     triggerId: {
       type: Schema.Types.ObjectId,

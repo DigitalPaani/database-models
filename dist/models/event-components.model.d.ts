@@ -5,7 +5,8 @@ interface IEventComponent extends Document {
     eventsTemplateId: Types.ObjectId;
     name: string;
     description: string;
-    relatedEquipmentIds: Types.ObjectId[];
+    relatedEquipments: Types.ObjectId[];
+    relatedSensors: Types.ObjectId[];
     triggerId: Types.ObjectId;
     assetId?: Types.ObjectId;
     isDeleted: boolean;
