@@ -36,7 +36,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 ;
-;
 const eventComponentSchema = new mongoose_1.Schema({
     eventsTemplateId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -68,6 +67,10 @@ const eventComponentSchema = new mongoose_1.Schema({
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
+    },
+    userGroupId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "UserGroup"
     },
     isDeleted: { type: Boolean, default: false },
 }, {

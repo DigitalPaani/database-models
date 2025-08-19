@@ -1,13 +1,5 @@
 import mongoose, { Model, Schema, model } from "mongoose";
 import { Types } from "mongoose";
-
-interface IDynamicValue extends Document {
-  type: string;
-  key: string;
-  value: string;
-};
-
-
 interface IEventComponent extends Document {
     _id: Types.ObjectId;
     eventsTemplateId: Types.ObjectId;
@@ -17,6 +9,7 @@ interface IEventComponent extends Document {
     relatedSensors: Types.ObjectId[];
     triggerId: Types.ObjectId;
     assetId?: Types.ObjectId;
+    userGroupId?: Types.ObjectId;
     isDeleted: boolean;
 };
 
@@ -52,6 +45,10 @@ const eventComponentSchema = new Schema<IEventComponent>(
     assetId: {
       type: Schema.Types.ObjectId,
       ref: "Plant",
+    },
+    userGroupId: {
+        type: Schema.Types.ObjectId,
+        ref: "UserGroup"
     },
     isDeleted: { type: Boolean, default: false },
   },
