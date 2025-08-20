@@ -71,6 +71,10 @@ export const EQUIPMENT_TYPES = [
     label: "Filter",
     value: "FILTER",
   },
+  {
+    label: "Plant",
+    value: "PLANT",
+  },
 ];
 
 export const INSIGHT_PRIORITIES = [
@@ -87,3 +91,8 @@ export const INSIGHT_PRIORITIES = [
     value: 1,
   },
 ];
+
+export const DYNAMIC_NAME_TYPE_ENUMS = {
+  equipment: 'EQUIPMENT',
+  sensor: 'SENSOR'
+};

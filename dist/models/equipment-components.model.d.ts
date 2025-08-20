@@ -2,6 +2,7 @@ import mongoose, { Document, Types } from "mongoose";
 interface IEquipmentComponent extends Document {
     bidirectionalLogId: Types.ObjectId;
     controlValue: string;
+    softwareBypassValue?: string;
     triggerTime: number;
     isTriggered: boolean;
     isDeleted: boolean;

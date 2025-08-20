@@ -33,65 +33,29 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BidirectionalModel = void 0;
+exports.FileManagementUploadModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const bidirectionalSchema = new mongoose_1.Schema({
-    dataLoggerId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "dataLoggers",
-        required: false,
-    },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
+const uploadSchema = new mongoose_1.Schema({
+    plantId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "Plant",
         required: true,
     },
-    referenceSensors: {
-        controlSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        tripSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        hmiSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        softwareBypassSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        autoManualSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-        bypassFormulaSensorId: {
-            type: mongoose_1.Schema.Types.ObjectId,
-            ref: "sensors",
-        },
-    },
-    equipmentId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "LayoutEquipments",
-        required: true,
-    },
-    bidirectionalSensorId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "sensors",
-        required: true,
-    },
-    createdBy: {
-        type: mongoose_1.Schema.Types.ObjectId,
+    uploaderId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "NewUser",
         required: true,
     },
-    isDeleted: {
-        type: Boolean,
-        default: false,
-        required: true,
-    },
+    category: { type: String, required: true },
+    subCategory: { type: String, required: true },
+    fileName: { type: String, required: true },
+    description: String,
+    s3Key: { type: String, required: true },
+    fileType: String,
+    fileSize: Number,
+    etag: String,
+    uploadedAt: { type: Date, default: Date.now },
+    isDeleted: { type: Boolean, default: false },
 }, { timestamps: true });
-const BidirectionalModel = mongoose_1.default.model("bidirectional", bidirectionalSchema, "bidirectional");
-exports.BidirectionalModel = BidirectionalModel;
+const FileManagementUploadModel = mongoose_1.default.model("FileManagementUploadDetails", uploadSchema, "FileManagementUploadDetails");
+exports.FileManagementUploadModel = FileManagementUploadModel;

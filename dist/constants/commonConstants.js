@@ -7,6 +7,7 @@ const taskManagementConst_1 = require("./taskManagementConst");
 const triggerConst_1 = require("./triggerConst");
 const insights_constants_1 = require("./insights.constants");
 const visualization_constants_1 = require("./visualization.constants");
+const data_logger_constant_1 = require("./data-logger.constant");
 const sensorConst_1 = require("./sensorConst");
 const communication_constants_1 = __importDefault(require("./communication.constants"));
 const EVENT_TYPES = {
@@ -56,6 +57,17 @@ const USER_GROUP_OR_SYSTEM = [
         label: "User Group",
     },
 ];
+const REMOTE_CONTROL_STATUS = {
+    initiated: "Initiated",
+    initiationFailed: "Initiation Failed",
+    published: "Published",
+    publishFailed: "Publish Failed",
+    acknowledged: "Acknowledged",
+    acknowledgementFailed: "Acknowledgement Failed",
+    executed: "Executed",
+    executionFailed: "Execution Failed",
+    unknown: "Unknown",
+};
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -79,6 +91,8 @@ exports.default = {
     INSIGHT_PRIORITIES: insights_constants_1.INSIGHT_PRIORITIES,
     VISUALIZATION_EQUIPMENT_TYPES_ENUMS: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
     WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
+    SENSOR_TYPE: data_logger_constant_1.SENSOR_TYPE,
     SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
-    COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default
+    REMOTE_CONTROL_STATUS,
+    COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
 };

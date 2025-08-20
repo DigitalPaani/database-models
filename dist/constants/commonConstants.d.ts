@@ -117,11 +117,28 @@ declare const _default: {
         freeText: string;
         unit: string;
     };
+    SENSOR_TYPE: {
+        float: string;
+        double: string;
+        uint: string;
+        int: string;
+    };
     SENSOR_PURPOSE_TAGS: {
         key: string;
         abbr: string;
         name: string;
     }[];
+    REMOTE_CONTROL_STATUS: {
+        initiated: string;
+        initiationFailed: string;
+        published: string;
+        publishFailed: string;
+        acknowledged: string;
+        acknowledgementFailed: string;
+        executed: string;
+        executionFailed: string;
+        unknown: string;
+    };
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];
     };

@@ -105,9 +105,13 @@ import { FormulaCommonTypes } from './types/formulaTypes'
 import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
 import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
 import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
+import { DataLoggerSessionModel, IDataLoggerSession } from './models/data-logger-sessions.model';
+import { DLSensorConfigModel, IDLSensorConfig } from './models/data-logger-sensor-config.model';
+import { DLSensorConfigAuditModel } from './models/dl-sensor-config-audit.model';
 import { GeneralCommunicationModel, IGeneralCommunication } from "./models/general-communication.model";
 
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
+import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
@@ -180,13 +184,16 @@ export type {
   IBidirectional,
   IBidirectionalLogs,
   IEquipmentComponent,
+  IDataLoggerSession,
+  IDLSensorConfig,
   INotification,
   IGeneralCommunication,
   IBulkEntryReport,
   IWorkspace,
   IEscalationFlow,
   ILogbookTemplate,
-  ILogbookAssetConfiguration
+  ILogbookAssetConfiguration,
+  IFileUpload
 };
 
 // exports the models
@@ -250,6 +257,9 @@ export {
   BidirectionalModel,
   BidirectionalLogsModel,
   EquipmentComponentModel,
+  DataLoggerSessionModel,
+  DLSensorConfigModel,
+  DLSensorConfigAuditModel,
   NotificationModel,
   GeneralCommunicationModel,
   BulkEntryReportModel,
@@ -257,5 +267,6 @@ export {
   NotificationComponentsModel,
   EscalationFlowModel,
   LogbookTemplateModel,
-  LogbookAssetConfigurationModel
+  LogbookAssetConfigurationModel,
+  FileManagementUploadModel
 };

@@ -32,69 +32,46 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BidirectionalLogsModel = void 0;
+exports.dataLoggerSensorConfigSchema = exports.DLSensorConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
-const bidirectionalLogsSchema = new mongoose_1.Schema({
-    userId: {
+const data_logger_constant_1 = require("../constants/data-logger.constant");
+const dataLoggerSensorConfigSchema = new mongoose_1.Schema({
+    dataLoggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewUser",
+        ref: "dataLoggers",
         required: true,
     },
-    bidirectionalId: {
+    sensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "bidirectional",
+        ref: "sensors",
         required: true,
     },
-    controlValue: {
+    sensorType: { type: String, enum: ["analog", "boolean"], required: true },
+    referenceSensorId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "sensors",
+    },
+    referenceSensorPurpose: {
         type: String,
-        required: true,
+        enum: ["totalizer"],
+        trim: true,
     },
-    softwareBypassValue: {
+    scalingFactor: { type: Number },
+    start: { type: Number },
+    end: { type: Number },
+    type: { type: String, enum: Object.values(data_logger_constant_1.SENSOR_TYPE), required: false },
+    wordOrder: {
+        type: String,
+    },
+    function: {
         type: String,
         trim: true,
     },
-    startTime: {
-        type: Number,
-        required: true,
-    },
-    endTime: {
-        type: Number,
-    },
-    ipAddress: {
-        type: String,
-        required: true,
-    },
-    events: [
-        {
-            sensorId: {
-                type: mongoose_1.Schema.Types.ObjectId,
-                ref: "sensors",
-            },
-            controlValue: {
-                type: String,
-            },
-        },
-    ],
-    status: {
-        type: String,
-        enum: Object.values(commonConstants_1.default.REMOTE_CONTROL_STATUS),
-        default: commonConstants_1.default.REMOTE_CONTROL_STATUS.unknown,
-    },
-    success: {
-        type: Boolean,
-        default: false,
-        required: true,
-    },
-    isDeleted: {
-        type: Boolean,
-        default: false,
-        required: true,
-    },
+    modbusMisfireTotalizer: { type: Boolean },
+    bitIndex: { type: Number },
+    version: { type: Number, default: 0, required: true },
 }, { timestamps: true });
-const BidirectionalLogsModel = mongoose_1.default.model("bidirectionalLogs", bidirectionalLogsSchema, "bidirectionalLogs");
-exports.BidirectionalLogsModel = BidirectionalLogsModel;
+exports.dataLoggerSensorConfigSchema = dataLoggerSensorConfigSchema;
+const DLSensorConfigModel = mongoose_1.default.model("dataLoggerSensorConfig", dataLoggerSensorConfigSchema, "dataLoggerSensorConfig");
+exports.DLSensorConfigModel = DLSensorConfigModel;

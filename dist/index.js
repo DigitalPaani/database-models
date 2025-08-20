@@ -37,7 +37,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsightComponentModel = exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.UserGroupModel = exports.StoreItemsModel = exports.Store = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
+<<<<<<< HEAD
 exports.LogbookAssetConfigurationModel = exports.LogbookTemplateModel = exports.EscalationFlowModel = exports.NotificationComponentsModel = exports.WorkspaceModel = exports.BulkEntryReportModel = exports.GeneralCommunicationModel = exports.NotificationModel = exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = exports.DataLoggerModel = exports.ManualSensorModel = exports.WhatsappAiCommunicationModel = exports.WhatsappIncomingEventModel = exports.InsightCommentModel = exports.InsightModel = void 0;
+=======
+exports.FileManagementUploadModel = exports.EscalationFlowModel = exports.NotificationComponentsModel = exports.WorkspaceModel = exports.BulkEntryReportModel = exports.GeneralCommunicationModel = exports.NotificationModel = exports.DLSensorConfigAuditModel = exports.DLSensorConfigModel = exports.DataLoggerSessionModel = exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = exports.DataLoggerModel = exports.ManualSensorModel = exports.WhatsappAiCommunicationModel = exports.WhatsappIncomingEventModel = exports.InsightCommentModel = exports.InsightModel = void 0;
+>>>>>>> 0c250583651b361833174e1dcbf8e1c14ef0b20d
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -158,10 +162,18 @@ const whatsapp_ai_communication_model_1 = require("./models/whatsapp-ai-communic
 Object.defineProperty(exports, "WhatsappAiCommunicationModel", { enumerable: true, get: function () { return whatsapp_ai_communication_model_1.WhatsappAiCommunicationModel; } });
 const manual_sensors_template_model_1 = require("./models/manual-sensors-template.model");
 Object.defineProperty(exports, "ManualSensorModel", { enumerable: true, get: function () { return manual_sensors_template_model_1.ManualSensorModel; } });
+const data_logger_sessions_model_1 = require("./models/data-logger-sessions.model");
+Object.defineProperty(exports, "DataLoggerSessionModel", { enumerable: true, get: function () { return data_logger_sessions_model_1.DataLoggerSessionModel; } });
+const data_logger_sensor_config_model_1 = require("./models/data-logger-sensor-config.model");
+Object.defineProperty(exports, "DLSensorConfigModel", { enumerable: true, get: function () { return data_logger_sensor_config_model_1.DLSensorConfigModel; } });
+const dl_sensor_config_audit_model_1 = require("./models/dl-sensor-config-audit.model");
+Object.defineProperty(exports, "DLSensorConfigAuditModel", { enumerable: true, get: function () { return dl_sensor_config_audit_model_1.DLSensorConfigAuditModel; } });
 const general_communication_model_1 = require("./models/general-communication.model");
 Object.defineProperty(exports, "GeneralCommunicationModel", { enumerable: true, get: function () { return general_communication_model_1.GeneralCommunicationModel; } });
 const data_input_bulk_entry_report_1 = require("./models/data-input-bulk-entry-report");
 Object.defineProperty(exports, "BulkEntryReportModel", { enumerable: true, get: function () { return data_input_bulk_entry_report_1.BulkEntryReportModel; } });
+const FileUpload_model_1 = require("./models/FileUpload.model");
+Object.defineProperty(exports, "FileManagementUploadModel", { enumerable: true, get: function () { return FileUpload_model_1.FileManagementUploadModel; } });
 const userGroupModel_1 = require("./models/userGroupModel");
 Object.defineProperty(exports, "UserGroupModel", { enumerable: true, get: function () { return userGroupModel_1.UserGroupModel; } });
 const notificationComponents_model_1 = require("./models/notificationComponents.model");
