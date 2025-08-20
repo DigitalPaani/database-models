@@ -37,6 +37,7 @@ declare const TRIGGER_COMPONENT_TYPES: {
     insight: string;
     equipments: string;
     notification: string;
+    event: string;
 };
 declare const COMMUNICATION_COMPONENT_TYPES: {
     email: string;

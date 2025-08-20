@@ -38,6 +38,7 @@ declare const _default: {
         insight: string;
         equipments: string;
         notification: string;
+        event: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;
