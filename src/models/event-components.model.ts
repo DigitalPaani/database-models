@@ -1,17 +1,19 @@
 import mongoose, { Model, Schema, model } from "mongoose";
 import { Types } from "mongoose";
+import { IEventTags } from "./events-template.model";
 interface IEventComponent extends Document {
-    _id: Types.ObjectId;
-    eventsTemplateId: Types.ObjectId;
-    name: string;
-    description: string;
-    relatedEquipments: Types.ObjectId[];
-    relatedSensors: Types.ObjectId[];
-    triggerId: Types.ObjectId;
-    assetId?: Types.ObjectId;
-    userGroupId?: Types.ObjectId;
-    isDeleted: boolean;
-};
+  _id: Types.ObjectId;
+  eventsTemplateId: Types.ObjectId;
+  name: string;
+  description: string;
+  relatedEquipments: Types.ObjectId[];
+  relatedSensors: Types.ObjectId[];
+  eventTags?: IEventTags;
+  triggerId: Types.ObjectId;
+  assetId?: Types.ObjectId;
+  userGroupId?: Types.ObjectId;
+  isDeleted: boolean;
+}
 
 const eventComponentSchema = new Schema<IEventComponent>(
   {
@@ -34,9 +36,14 @@ const eventComponentSchema = new Schema<IEventComponent>(
       required: true,
     },
     relatedSensors: {
-        type: [Schema.Types.ObjectId],
-        ref: "sensors",
-        required: true,
+      type: [Schema.Types.ObjectId],
+      ref: "sensors",
+      required: true,
+    },
+    eventTags: {
+      startTag: String,
+      endTag: String,
+      eventTag: String,
     },
     triggerId: {
       type: Schema.Types.ObjectId,
@@ -47,8 +54,8 @@ const eventComponentSchema = new Schema<IEventComponent>(
       ref: "Plant",
     },
     userGroupId: {
-        type: Schema.Types.ObjectId,
-        ref: "UserGroup"
+      type: Schema.Types.ObjectId,
+      ref: "UserGroup",
     },
     isDeleted: { type: Boolean, default: false },
   },
@@ -57,11 +64,11 @@ const eventComponentSchema = new Schema<IEventComponent>(
   }
 );
 
-const EventComponentModel: Model<IEventComponent> = mongoose.model<IEventComponent>(
+const EventComponentModel: Model<IEventComponent> =
+  mongoose.model<IEventComponent>(
     "event-components",
     eventComponentSchema,
     "event-components"
-);
-
+  );
 
 export { EventComponentModel, IEventComponent };

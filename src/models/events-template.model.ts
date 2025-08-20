@@ -3,17 +3,17 @@ import mongoose, { Schema, Types } from "mongoose";
 import { EQUIPMENT_TYPES } from "../constants/insights.constants";
 
 const equipmentTypes = EQUIPMENT_TYPES.map((type) => type.value);
-export interface IEventTags extends Document{
-    startTag: string,
-    endTag: string,
-    eventTag: string,
+export interface IEventTags extends Document {
+  startTag: string;
+  endTag: string;
+  eventTag: string;
 }
 interface IEventsTemplate extends Document {
   _id: Types.ObjectId;
   name: string;
   description: string;
   relatedEquipmentTypes: string[];
-  eventTags: IEventTags
+  eventTemplateTags: IEventTags;
   createdBy?: Types.ObjectId;
   updatedBy?: Types.ObjectId;
   isArchived: boolean;
@@ -33,10 +33,10 @@ const eventsTemplateSchema = new Schema<IEventsTemplate>(
       type: [String],
       enum: equipmentTypes,
     },
-    eventTags: {
-        startTag: String,
-        endTag: String,
-        eventTag: String
+    eventTemplateTags: {
+      startTag: String,
+      endTag: String,
+      eventTag: String,
     },
     createdBy: {
       type: Types.ObjectId,

@@ -35,7 +35,6 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-;
 const eventComponentSchema = new mongoose_1.Schema({
     eventsTemplateId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -60,6 +59,11 @@ const eventComponentSchema = new mongoose_1.Schema({
         ref: "sensors",
         required: true,
     },
+    eventTags: {
+        startTag: String,
+        endTag: String,
+        eventTag: String,
+    },
     triggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
@@ -70,7 +74,7 @@ const eventComponentSchema = new mongoose_1.Schema({
     },
     userGroupId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "UserGroup"
+        ref: "UserGroup",
     },
     isDeleted: { type: Boolean, default: false },
 }, {
