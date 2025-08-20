@@ -168,8 +168,8 @@ const notificationComponents_model_1 = require("./models/notificationComponents.
 Object.defineProperty(exports, "NotificationComponentsModel", { enumerable: true, get: function () { return notificationComponents_model_1.NotificationComponentsModel; } });
 const logbook_templates_model_1 = require("./models/logbook-templates.model");
 Object.defineProperty(exports, "LogbookTemplateModel", { enumerable: true, get: function () { return logbook_templates_model_1.LogbookTemplateModel; } });
-const logbook_configuration_model_1 = require("./models/logbook-configuration.model");
-Object.defineProperty(exports, "LogbookAssetConfigurationModel", { enumerable: true, get: function () { return logbook_configuration_model_1.LogbookAssetConfigurationModel; } });
+const logbook_asset_configuration_model_1 = require("./models/logbook-asset-configuration.model");
+Object.defineProperty(exports, "LogbookAssetConfigurationModel", { enumerable: true, get: function () { return logbook_asset_configuration_model_1.LogbookAssetConfigurationModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
 exports.mongooseDatabaseModels = mongooseDatabaseModels;

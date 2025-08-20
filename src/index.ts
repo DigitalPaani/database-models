@@ -113,7 +113,7 @@ import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
 
 import { LogbookTemplateModel, ILogbookTemplate } from "./models/logbook-templates.model";
-import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-configuration.model";
+import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-asset-configuration.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
