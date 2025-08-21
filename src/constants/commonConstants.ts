@@ -25,6 +25,7 @@ import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 import { SENSOR_TYPE } from "./data-logger.constant";
 import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
 import COMMUNICATION_CONSTANTS from "./communication.constants";
+import logbookTemplatesConstants from "./logbook-templates.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -95,6 +96,11 @@ const REMOTE_CONTROL_STATUS = {
   unknown: "Unknown",
 };
 
+const OCR_CONSTANTS = {
+    LOGBOOK_TEMPLATE_TYPES_ENUMS: logbookTemplatesConstants.LOGBOOK_TEMPLATE_TYPES_ENUMS,
+    LOGBOOK_CATEGORY_TYPES_ENUMS: logbookTemplatesConstants.LOGBOOK_CATEGORY_TYPES_ENUMS
+};
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -122,4 +128,5 @@ export default {
   SENSOR_PURPOSE_TAGS,
   REMOTE_CONTROL_STATUS,
   COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS,
+  OCR_CONSTANTS: OCR_CONSTANTS,
 };

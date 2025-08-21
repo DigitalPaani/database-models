@@ -10,6 +10,7 @@ const visualization_constants_1 = require("./visualization.constants");
 const data_logger_constant_1 = require("./data-logger.constant");
 const sensorConst_1 = require("./sensorConst");
 const communication_constants_1 = __importDefault(require("./communication.constants"));
+const logbook_templates_constants_1 = __importDefault(require("./logbook-templates.constants"));
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -68,6 +69,10 @@ const REMOTE_CONTROL_STATUS = {
     executionFailed: "Execution Failed",
     unknown: "Unknown",
 };
+const OCR_CONSTANTS = {
+    LOGBOOK_TEMPLATE_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
+    LOGBOOK_CATEGORY_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_CATEGORY_TYPES_ENUMS
+};
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -95,4 +100,5 @@ exports.default = {
     SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
     REMOTE_CONTROL_STATUS,
     COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
+    OCR_CONSTANTS: OCR_CONSTANTS,
 };

@@ -142,6 +142,10 @@ declare const _default: {
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];
     };
+    OCR_CONSTANTS: {
+        LOGBOOK_TEMPLATE_TYPES_ENUMS: string[];
+        LOGBOOK_CATEGORY_TYPES_ENUMS: string[];
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
