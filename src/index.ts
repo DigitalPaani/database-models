@@ -112,6 +112,7 @@ import { GeneralCommunicationModel, IGeneralCommunication } from "./models/gener
 
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
 import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
+import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.model'
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
@@ -187,7 +188,8 @@ export type {
   IBulkEntryReport,
   IWorkspace,
   IEscalationFlow,
-  IFileUpload
+  IFileUpload,
+  IAnomalyRecord,
 };
 
 // exports the models
@@ -260,5 +262,6 @@ export {
   WorkspaceModel,
   NotificationComponentsModel,
   EscalationFlowModel,
-  FileManagementUploadModel
+  FileManagementUploadModel,
+  AnomalyRecordModel,
 };
