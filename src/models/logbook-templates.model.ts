@@ -32,6 +32,7 @@ const LogbookTemplateSchema = new Schema<ILogbookTemplate>(
     },
     imageAttachmentId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "attachments",
       required: false,
     },
     isArchived: {
