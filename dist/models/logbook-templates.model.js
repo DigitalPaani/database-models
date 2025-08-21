@@ -32,9 +32,13 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogbookTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const logbook_templates_constants_1 = __importDefault(require("../constants/logbook-templates.constants"));
 const LogbookTemplateSchema = new mongoose_1.Schema({
     name: {
         type: String,
@@ -46,12 +50,12 @@ const LogbookTemplateSchema = new mongoose_1.Schema({
     },
     type: {
         type: String,
-        enum: ["LOGBOOK", "INVENTORY"],
+        enum: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
         default: "",
     },
     category: {
         type: String,
-        enum: ["CATEGORY-1", "CATEGORY-2"],
+        enum: logbook_templates_constants_1.default.LOGBOOK_CATEGORY_TYPES_ENUMS,
         default: "",
     },
     imageAttachmentId: {

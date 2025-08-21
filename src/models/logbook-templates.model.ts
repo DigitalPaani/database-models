@@ -1,6 +1,7 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
+import logbookTemplateConstants from "../constants/logbook-templates.constants";
 interface ILogbookTemplate extends Document {
   name: string;
   description: string;
@@ -22,12 +23,12 @@ const LogbookTemplateSchema = new Schema<ILogbookTemplate>(
     },
     type: {
       type: String,
-      enum: ["LOGBOOK", "INVENTORY"],
+      enum: logbookTemplateConstants.LOGBOOK_TEMPLATE_TYPES_ENUMS,
       default: "",
     },
     category: {
       type: String,
-      enum: ["CATEGORY-1", "CATEGORY-2"],
+      enum: logbookTemplateConstants.LOGBOOK_CATEGORY_TYPES_ENUMS,
       default: "",
     },
     imageAttachmentId: {
