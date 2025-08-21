@@ -71,7 +71,9 @@ const REMOTE_CONTROL_STATUS = {
 };
 const OCR_CONSTANTS = {
     LOGBOOK_TEMPLATE_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
-    LOGBOOK_CATEGORY_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_CATEGORY_TYPES_ENUMS
+    LOGBOOK_CATEGORY_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_CATEGORY_TYPES_ENUMS,
+    LOGBOOK_TEMPLATE_TYPES: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES,
+    CATEGORY_TYPES: logbook_templates_constants_1.default.CATEGORY_TYPES,
 };
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
