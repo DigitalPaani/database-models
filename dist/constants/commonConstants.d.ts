@@ -156,11 +156,11 @@ declare const _default: {
             };
         };
         CATEGORY_TYPES: {
-            logbook: {
+            categoryOne: {
                 label: string;
                 value: string;
             };
-            inventory: {
+            categoryTwo: {
                 label: string;
                 value: string;
             };

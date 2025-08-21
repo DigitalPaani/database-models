@@ -11,11 +11,11 @@ const LOGBOOK_TEMPLATE_TYPES = {
     }
 };
 const CATEGORY_TYPES = {
-    logbook: {
+    categoryOne: {
         label: "Category-1",
         value: "CATEGORY-1"
     },
-    inventory: {
+    categoryTwo: {
         label: "Category-2",
         value: "CATEGORY-2"
     }
