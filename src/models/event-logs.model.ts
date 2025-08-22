@@ -59,9 +59,9 @@ const eventLogsSchema = new Schema<IEventLogs>(
 
 const EventLogsModel: Model<IEventLogs> = 
 mongoose.model<IEventLogs>(
-    "events", 
+    "eventLogs", 
     eventLogsSchema,
-    "events"
+    "eventLogs"
 );
 
 export { EventLogsModel, IEventLogs };

@@ -72,5 +72,5 @@ const eventLogsSchema = new mongoose_1.Schema({
         required: true,
     }
 }, { timestamps: true });
-const EventLogsModel = mongoose_1.default.model("events", eventLogsSchema, "events");
+const EventLogsModel = mongoose_1.default.model("eventLogs", eventLogsSchema, "eventLogs");
 exports.EventLogsModel = EventLogsModel;
