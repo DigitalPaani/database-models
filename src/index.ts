@@ -116,6 +116,7 @@ import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.mod
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
+import {IVisualizationPages,VisualizationPagesModel} from './models/visualization-pages.model'
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -190,6 +191,7 @@ export type {
   IEscalationFlow,
   IFileUpload,
   IAnomalyRecord,
+  IVisualizationPages
 };
 
 // exports the models
@@ -264,4 +266,5 @@ export {
   EscalationFlowModel,
   FileManagementUploadModel,
   AnomalyRecordModel,
+  VisualizationPagesModel
 };
