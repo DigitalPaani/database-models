@@ -38,7 +38,8 @@ const mongoose_1 = __importStar(require("mongoose"));
 const VisualizationPagesSchema = new mongoose_1.Schema({
     name: mongoose_1.Schema.Types.String,
     description: mongoose_1.Schema.Types.String,
-    totalEquipments: mongoose_1.Schema.Types.Number,
+    totalEquipments: { type: mongoose_1.Schema.Types.Number, default: 0 },
+    isArchived: { type: mongoose_1.Schema.Types.Boolean, default: false },
 }, { timestamps: true });
 const VisualizationPagesModel = mongoose_1.default.model("VisualizationPages", VisualizationPagesSchema, "VisualizationPages");
 exports.VisualizationPagesModel = VisualizationPagesModel;
