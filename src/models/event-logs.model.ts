@@ -53,7 +53,7 @@ const eventLogsSchema = new Schema<IEventLogs>(
     },
     assetId: {
       type: Schema.Types.ObjectId,
-      ref: "Plant",
+      ref: "Plants",
       required: true,
     }
   },
