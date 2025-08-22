@@ -12,6 +12,7 @@ interface IEventComponent extends Document {
   triggerId: Types.ObjectId;
   assetId?: Types.ObjectId;
   userGroupId?: Types.ObjectId;
+  workspaceId?: Types.ObjectId;
   isDeleted: boolean;
 }
 
@@ -52,6 +53,10 @@ const eventComponentSchema = new Schema<IEventComponent>(
     assetId: {
       type: Schema.Types.ObjectId,
       ref: "Plant",
+    },
+    workspaceId: {
+      type: Schema.Types.ObjectId,
+      ref: "NewWorkspace"
     },
     userGroupId: {
       type: Schema.Types.ObjectId,

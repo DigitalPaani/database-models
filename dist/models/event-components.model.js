@@ -72,6 +72,10 @@ const eventComponentSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
     },
+    workspaceId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewWorkspace"
+    },
     userGroupId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "UserGroup",
