@@ -19,6 +19,7 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
     },
     logbookTemplateId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "logbookTemplates",
       required: true,
     },
     isArchived: {
