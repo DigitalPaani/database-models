@@ -1,0 +1,60 @@
+import type { Document, Model } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
+
+interface IOcrLogbookDataInputLog extends Document {
+  assetId: Types.ObjectId | null;
+  logbookTemplateId: Types.ObjectId | null;
+  attachmentId: Types.ObjectId | null;
+  dataInputSelectedValues: IDataInputSelectedValue[];
+  isArchived: boolean;
+}
+
+interface IDataInputSelectedValue extends Document {
+  key: string;
+  value: string;
+}
+
+const DataInputSelectedValueSchema = new Schema<IDataInputSelectedValue>({
+  key: {
+    type: String,
+    required: true,
+  },
+  value: {
+    type: String,
+    required: true,
+  },
+});
+
+const LogbookConfigurationSchema = new Schema<IOcrLogbookDataInputLog>(
+  {
+    assetId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
+    logbookTemplateId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
+    attachmentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
+    dataInputSelectedValues: {
+      type: [DataInputSelectedValueSchema],
+      required: false,
+    },
+  },
+  {
+    timestamps: true,
+    minimize: false,
+  }
+);
+
+const OcrLogbookDataInputLogModel: Model<IOcrLogbookDataInputLog> =
+  mongoose.model<IOcrLogbookDataInputLog>(
+    "ocrLogbookDataInputLogs",
+    LogbookConfigurationSchema,
+    "ocrLogbookDataInputLogs"
+  );
+
+export { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog };

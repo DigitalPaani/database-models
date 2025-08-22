@@ -118,6 +118,7 @@ import {NotificationComponentsModel} from './models/notificationComponents.model
 
 import { LogbookTemplateModel, ILogbookTemplate } from "./models/logbook-templates.model";
 import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-asset-configuration.model";
+import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/ocr-data-input-logs.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -193,7 +194,8 @@ export type {
   IEscalationFlow,
   ILogbookTemplate,
   ILogbookAssetConfiguration,
-  IFileUpload
+  IFileUpload,
+  IOcrLogbookDataInputLog
 };
 
 // exports the models
@@ -268,5 +270,6 @@ export {
   EscalationFlowModel,
   LogbookTemplateModel,
   LogbookAssetConfigurationModel,
-  FileManagementUploadModel
+  FileManagementUploadModel,
+  OcrLogbookDataInputLogModel
 };
