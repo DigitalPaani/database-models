@@ -118,7 +118,7 @@ import {NotificationComponentsModel} from './models/notificationComponents.model
 
 import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.model";
 import { IEventComponent, EventComponentModel } from "./models/event-components.model";
-import { IEvent, EventModel } from "./models/events.model";
+import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -194,7 +194,7 @@ export type {
   IFileUpload,
   IEventsTemplate,
   IEventComponent,
-  IEvent,
+  IEventLogs,
 };
 
 // exports the models
@@ -270,5 +270,5 @@ export {
   FileManagementUploadModel,
   EventsTemplateModel,
   EventComponentModel,
-  EventModel,
+  EventLogsModel,
 };

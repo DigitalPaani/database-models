@@ -1,14 +1,15 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
+import { EVENT_STATUS_ENUM } from "../constants/events.constants";
 
-interface IEvent extends Document {
+interface IEventLogs extends Document {
   eventComponentId: Types.ObjectId;
   name: string; 
   description?: string;
   eventDuration?: number; // Duration in seconds
   eventFrequency?: number;
-  startTime: Date;
-  endTime?: Date;
+  startTime: number;
+  endTime?: number;
   eventStatus?: string; 
   workspaceId?: Types.ObjectId;
   assetId: Types.ObjectId;
@@ -16,7 +17,7 @@ interface IEvent extends Document {
   updatedAt?: Date;
 }
 
-const eventSchema = new Schema<IEvent>(
+const eventLogsSchema = new Schema<IEventLogs>(
   {
     eventComponentId: {
       type: Schema.Types.ObjectId,
@@ -32,15 +33,16 @@ const eventSchema = new Schema<IEvent>(
       default: "",
     },
     startTime: {
-      type: Date,
+      type: Number,
       required: true,
+    },
+    endTime: {
+      type: Number,
     },
     eventStatus: {
       type: String,
-      enum: ["Active", "Inactive"]
-    },
-    endTime: {
-      type: Date,
+      enum: Object.values(EVENT_STATUS_ENUM),
+      default: EVENT_STATUS_ENUM.INACTIVE,
     },
     workspaceId: {
       type: Schema.Types.ObjectId,
@@ -55,11 +57,11 @@ const eventSchema = new Schema<IEvent>(
   { timestamps: true }
 );
 
-const EventModel: Model<IEvent> = 
-mongoose.model<IEvent>(
+const EventLogsModel: Model<IEventLogs> = 
+mongoose.model<IEventLogs>(
     "events", 
-    eventSchema,
+    eventLogsSchema,
     "events"
 );
 
-export { EventModel, IEvent };
+export { EventLogsModel, IEventLogs };
