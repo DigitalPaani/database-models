@@ -71,7 +71,7 @@ const eventLogsSchema = new mongoose_1.Schema({
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plants",
+        ref: "Plant",
         required: true,
     }
 }, { timestamps: true });
