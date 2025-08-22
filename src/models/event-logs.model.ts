@@ -32,6 +32,9 @@ const eventLogsSchema = new Schema<IEventLogs>(
       type: String,
       default: "",
     },
+    eventDuration: {
+      type: Number,
+    },
     startTime: {
       type: Number,
       required: true,
