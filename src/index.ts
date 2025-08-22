@@ -46,12 +46,21 @@ import {
   TriggerComponentModel,
   ITriggerComponent,
 } from "./models/triggerComponents.model";
-import {Store,IStore} from './models/Store.model'
-import {StoreItemsModel} from './models/StoreItem.model'
-import {EquipmentQuestionsModel,IEquipmentQuestion} from './models/equipmentQuestions.model'
-import {ILayout,LayoutModel} from './models/LayoutSchema.model'
-import {ILayoutEquipment,LayoutEquipmentModel} from './models/equipment.model'
-import { SidebarLayoutItemsModel,ISidebarLayoutItem } from "./models/SidebarLayoutItems.model";
+import { Store, IStore } from "./models/Store.model";
+import { StoreItemsModel } from "./models/StoreItem.model";
+import {
+  EquipmentQuestionsModel,
+  IEquipmentQuestion,
+} from "./models/equipmentQuestions.model";
+import { ILayout, LayoutModel } from "./models/LayoutSchema.model";
+import {
+  ILayoutEquipment,
+  LayoutEquipmentModel,
+} from "./models/equipment.model";
+import {
+  SidebarLayoutItemsModel,
+  ISidebarLayoutItem,
+} from "./models/SidebarLayoutItems.model";
 import {
   TaskComponentsModel,
   ITaskComponent,
@@ -73,9 +82,8 @@ import {
   IEscalationFlow,
 } from "./models/EscalationFlow.model";
 
-
 import { NewUserModel, INewUser } from "./models/newUserModel";
-import { LayoutPathModel,IPathSchema } from "./models/graphConnections.model";
+import { LayoutPathModel, IPathSchema } from "./models/graphConnections.model";
 
 import { ObsoleteTaskModel, IObsoleteTask } from "./models/obsolete.model";
 
@@ -87,36 +95,88 @@ import { FormulaAuditsModel } from "./models/formula-audits";
 import commonConstants from "./constants/commonConstants";
 import mongoose, { Types } from "mongoose";
 
-import { FlocSampleModel, IFlocSample } from './models/floc-sample.model';
-import { FlocImageModel, IFlocImage } from './models/floc-image.model';
-import {WorkspaceModel,IWorkspace} from './models/workspaceModel'
-import { InsightsTemplateModel, IInsightsTemplate } from "./models/insights-template.model";
-import { InsightComponentModel, IInsightComponent } from "./models/insight-components.model";
+import { FlocSampleModel, IFlocSample } from "./models/floc-sample.model";
+import { FlocImageModel, IFlocImage } from "./models/floc-image.model";
+import { WorkspaceModel, IWorkspace } from "./models/workspaceModel";
+import {
+  InsightsTemplateModel,
+  IInsightsTemplate,
+} from "./models/insights-template.model";
+import {
+  InsightComponentModel,
+  IInsightComponent,
+} from "./models/insight-components.model";
 import { InsightModel, IInsight } from "./models/insights.model";
-import { InsightCommentModel, IInsightComment } from "./models/insight-comments.model";
+import {
+  InsightCommentModel,
+  IInsightComment,
+} from "./models/insight-comments.model";
 
 import { DataLoggerModel, IDataLogger } from "./models/data-logger.model";
-import { BidirectionalModel, IBidirectional } from "./models/bidirectional.model";
-import { BidirectionalLogsModel, IBidirectionalLogs } from "./models/bidirectional-logs.model";
-import { EquipmentComponentModel, IEquipmentComponent} from "./models/equipment-components.model";
-import { NotificationModel,INotification} from "./models/notification.model";
+import {
+  BidirectionalModel,
+  IBidirectional,
+} from "./models/bidirectional.model";
+import {
+  BidirectionalLogsModel,
+  IBidirectionalLogs,
+} from "./models/bidirectional-logs.model";
+import {
+  EquipmentComponentModel,
+  IEquipmentComponent,
+} from "./models/equipment-components.model";
+import { NotificationModel, INotification } from "./models/notification.model";
 
-import { FormulaCommonTypes } from './types/formulaTypes'
-import { WhatsappIncomingEventModel, IWhatsappIncomingEvent } from "./models/whatsappIncomingEvents.model";
-import { WhatsappAiCommunicationModel, IWhatsappAiCommunication } from "./models/whatsapp-ai-communication.model";
-import { ManualSensorModel, IManualSensors } from './models/manual-sensors-template.model';
-import { DataLoggerSessionModel, IDataLoggerSession } from './models/data-logger-sessions.model';
-import { DLSensorConfigModel, IDLSensorConfig } from './models/data-logger-sensor-config.model';
-import { DLSensorConfigAuditModel } from './models/dl-sensor-config-audit.model';
-import { GeneralCommunicationModel, IGeneralCommunication } from "./models/general-communication.model";
+import { FormulaCommonTypes } from "./types/formulaTypes";
+import {
+  WhatsappIncomingEventModel,
+  IWhatsappIncomingEvent,
+} from "./models/whatsappIncomingEvents.model";
+import {
+  WhatsappAiCommunicationModel,
+  IWhatsappAiCommunication,
+} from "./models/whatsapp-ai-communication.model";
+import {
+  ManualSensorModel,
+  IManualSensors,
+} from "./models/manual-sensors-template.model";
+import {
+  DataLoggerSessionModel,
+  IDataLoggerSession,
+} from "./models/data-logger-sessions.model";
+import {
+  DLSensorConfigModel,
+  IDLSensorConfig,
+} from "./models/data-logger-sensor-config.model";
+import { DLSensorConfigAuditModel } from "./models/dl-sensor-config-audit.model";
+import {
+  GeneralCommunicationModel,
+  IGeneralCommunication,
+} from "./models/general-communication.model";
 
-import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
-import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
-import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.model'
+import {
+  IBulkEntryReport,
+  BulkEntryReportModel,
+} from "./models/data-input-bulk-entry-report";
+import {
+  IFileUpload,
+  FileManagementUploadModel,
+} from "./models/FileUpload.model";
+import {
+  IAnomalyRecord,
+  AnomalyRecordModel,
+} from "./models/anomaly-records.model";
 
-import {UserGroupModel} from './models/userGroupModel'
-import {NotificationComponentsModel} from './models/notificationComponents.model'
-import {IVisualizationPages,VisualizationPagesModel} from './models/visualization-pages.model'
+import { UserGroupModel } from "./models/userGroupModel";
+import { NotificationComponentsModel } from "./models/notificationComponents.model";
+import {
+  IVisualizationPages,
+  VisualizationPagesModel,
+} from "./models/visualization-pages.model";
+import {
+  RefLayoutEquipmentModel,
+  IRefLayoutEquipment,
+} from "./models/refEquipment.model";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -191,7 +251,8 @@ export type {
   IEscalationFlow,
   IFileUpload,
   IAnomalyRecord,
-  IVisualizationPages
+  IVisualizationPages,
+  IRefLayoutEquipment,
 };
 
 // exports the models
@@ -266,5 +327,6 @@ export {
   EscalationFlowModel,
   FileManagementUploadModel,
   AnomalyRecordModel,
-  VisualizationPagesModel
+  VisualizationPagesModel,
+  RefLayoutEquipmentModel,
 };
