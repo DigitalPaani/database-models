@@ -50,6 +50,9 @@ const eventLogsSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    eventDuration: {
+        type: Number,
+    },
     startTime: {
         type: Number,
         required: true,
