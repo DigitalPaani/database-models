@@ -9,6 +9,7 @@ interface IEvent extends Document {
   eventFrequency?: number;
   startTime: Date;
   endTime?: Date;
+  eventStatus?: string; 
   workspaceId?: Types.ObjectId;
   assetId: Types.ObjectId;
   createdAt?: Date;
@@ -33,6 +34,10 @@ const eventSchema = new Schema<IEvent>(
     startTime: {
       type: Date,
       required: true,
+    },
+    eventStatus: {
+      type: String,
+      enum: ["Active", "Inactive"]
     },
     endTime: {
       type: Date,

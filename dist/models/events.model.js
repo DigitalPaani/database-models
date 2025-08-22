@@ -53,6 +53,10 @@ const eventSchema = new mongoose_1.Schema({
         type: Date,
         required: true,
     },
+    eventStatus: {
+        type: String,
+        enum: ["Active", "Inactive"]
+    },
     endTime: {
         type: Date,
     },

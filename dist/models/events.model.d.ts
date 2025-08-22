@@ -8,6 +8,7 @@ interface IEvent extends Document {
     eventFrequency?: number;
     startTime: Date;
     endTime?: Date;
+    eventStatus?: string;
     workspaceId?: Types.ObjectId;
     assetId: Types.ObjectId;
     createdAt?: Date;
