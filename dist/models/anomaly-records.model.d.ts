@@ -5,6 +5,8 @@ interface IAnomalyRecord extends Document {
     endDate: number;
     values: [number];
     formulaId: Types.ObjectId;
+    noise: boolean;
+    sensitivity: string;
     isDuplicate: boolean;
     isDeleted: boolean;
     createdAt?: Date;

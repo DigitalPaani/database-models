@@ -1,0 +1,6 @@
+const ANOMALY_RECORD_SENSITIVITY = {
+  LOW: "LOW",
+  HIGH: "HIGH",
+};
+
+export default { ANOMALY_RECORD_SENSITIVITY };
