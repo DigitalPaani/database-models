@@ -32,9 +32,13 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnomalyRecordModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const anomaly_record_const_1 = __importDefault(require("../constants/anomaly-record-const"));
 const anomalyRecordsSchema = new mongoose_1.Schema({
     sensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -56,6 +60,16 @@ const anomalyRecordsSchema = new mongoose_1.Schema({
     formulaId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "formulas",
+        required: true,
+    },
+    noise: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
+    sensitivity: {
+        type: String,
+        enum: Object.values(anomaly_record_const_1.default.ANOMALY_RECORD_SENSITIVITY),
         required: true,
     },
     isDuplicate: {
