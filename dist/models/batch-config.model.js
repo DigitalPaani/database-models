@@ -32,14 +32,17 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BatchConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const batch_constants_1 = require("../constants/batch.constants");
+const batch_constants_1 = __importDefault(require("../constants/batch.constants"));
 const batchStatusSchema = new mongoose_1.Schema({
     status: {
         type: [String],
-        enum: Object.values(batch_constants_1.BATCH_STATUS_ENUM),
+        enum: Object.values(batch_constants_1.default.BATCH_STATUS_ENUM),
         required: true,
     },
     condition: { type: String, ref: "sensors", required: true },
@@ -55,7 +58,7 @@ const batchConfigSchema = new mongoose_1.Schema({
     detectionLogic: {
         primary: {
             type: String,
-            enum: Object.values(batch_constants_1.BATCH_DETECTION_ENUM),
+            enum: Object.values(batch_constants_1.default.BATCH_DETECTION_ENUM),
             required: true,
         },
         secondary: {
@@ -70,12 +73,12 @@ const batchConfigSchema = new mongoose_1.Schema({
     },
     chemicalUsage: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "Chemical" }],
     waterTreatmentUnit: {
-        unit: { type: String, enum: Object.values(batch_constants_1.WATER_TREATMENT_UNIT_ENUM) },
+        unit: { type: String, enum: Object.values(batch_constants_1.default.WATER_TREATMENT_UNIT_ENUM) },
         value: { type: Number },
     },
     batchType: {
         type: String,
-        enum: Object.values(batch_constants_1.BATCH_TYPE_ENUM),
+        enum: Object.values(batch_constants_1.default.BATCH_TYPE_ENUM),
         default: "Regular",
     },
     batchPurpose: { type: String, default: "" },

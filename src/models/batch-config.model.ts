@@ -1,6 +1,6 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
-import { BATCH_DETECTION_ENUM, BATCH_STATUS_ENUM, BATCH_TYPE_ENUM, WATER_TREATMENT_UNIT_ENUM } from "../constants/batch.constants";
+import batchConstants from "../constants/batch.constants";
 
 export interface IStatusCondition {
   status: string[];
@@ -45,7 +45,7 @@ const batchStatusSchema = new Schema<IStatusCondition>(
   {
     status: {
       type: [String],
-      enum: Object.values(BATCH_STATUS_ENUM),
+      enum: Object.values(batchConstants.BATCH_STATUS_ENUM),
       required: true,
     },
     condition: { type: String, ref:"sensors", required: true },
@@ -67,7 +67,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
     detectionLogic: {
       primary: {
         type: String,
-        enum: Object.values(BATCH_DETECTION_ENUM),
+        enum: Object.values(batchConstants.BATCH_DETECTION_ENUM),
         required: true,
       },
       secondary: {
@@ -86,13 +86,13 @@ const batchConfigSchema = new Schema<IBatchConfig>(
     chemicalUsage: [{ type: Schema.Types.ObjectId, ref: "Chemical" }],
 
     waterTreatmentUnit: {
-      unit: { type: String, enum:Object.values(WATER_TREATMENT_UNIT_ENUM) },
+      unit: { type: String, enum:Object.values(batchConstants.WATER_TREATMENT_UNIT_ENUM) },
       value: { type: Number },
     },
 
     batchType: {
       type: String,
-      enum: Object.values(BATCH_TYPE_ENUM),
+      enum: Object.values(batchConstants.BATCH_TYPE_ENUM),
       default: "Regular",
     },
 

@@ -10,6 +10,7 @@ const visualization_constants_1 = require("./visualization.constants");
 const data_logger_constant_1 = require("./data-logger.constant");
 const sensorConst_1 = require("./sensorConst");
 const communication_constants_1 = __importDefault(require("./communication.constants"));
+const batch_constants_1 = __importDefault(require("./batch.constants"));
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -95,4 +96,5 @@ exports.default = {
     SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
     REMOTE_CONTROL_STATUS,
     COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
+    BATCH_CONSTANTS: batch_constants_1.default,
 };
