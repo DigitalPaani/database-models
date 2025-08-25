@@ -1,9 +1,6 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
-import { EQUIPMENT_TYPES } from "../constants/insights.constants";
-import { BATCH_DETECTION_ENUM, BATCH_STATUS_ENUM, BATCH_TYPE_ENUM } from "../constants/batch.constants";
-
-const equipmentTypes = EQUIPMENT_TYPES.map((type) => type.value);
+import { BATCH_DETECTION_ENUM, BATCH_STATUS_ENUM, BATCH_TYPE_ENUM, WATER_TREATMENT_UNIT_ENUM } from "../constants/batch.constants";
 
 export interface IStatusCondition {
   status: string[];
@@ -14,7 +11,7 @@ interface IBatchConfig extends Document {
   plantId: Types.ObjectId;
 
   batchName: string;
-  equipmentTypes: string[];
+  batchEquipments: string[];
 
   detectionLogic: {
     primary: string[]
@@ -61,9 +58,9 @@ const batchConfigSchema = new Schema<IBatchConfig>(
 
     batchName: { type: String, required: true },
 
-    equipmentTypes: {
+    batchEquipments: {
       type: [String],
-      enum: equipmentTypes,
+      ref: 'LayoutEquipments',
       required: true,
     },
 
@@ -75,8 +72,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
       },
       secondary: {
         type: String,
-        enum: Object.values(BATCH_DETECTION_ENUM),
-        default: null,
+        ref: "sensors"
       },
     },
 
@@ -90,7 +86,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
     chemicalUsage: [{ type: Schema.Types.ObjectId, ref: "Chemical" }],
 
     waterTreatmentUnit: {
-      unit: { type: String },
+      unit: { type: String, enum:Object.values(WATER_TREATMENT_UNIT_ENUM) },
       value: { type: Number },
     },
 

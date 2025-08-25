@@ -119,7 +119,7 @@ import {NotificationComponentsModel} from './models/notificationComponents.model
 import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.model";
 import { IEventComponent, EventComponentModel } from "./models/event-components.model";
 import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
-import { IBatchConfig, BatchConfigModel } from "./models/batch.model";
+import { IBatchConfig, BatchConfigModel } from "./models/batch-config.model";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 

@@ -16,4 +16,9 @@ export declare const BATCH_TYPE_ENUM: {
     BYPASS: string;
     REGULAR: string;
 };
+export declare const WATER_TREATMENT_UNIT_ENUM: {
+    LITER: string;
+    KILO_LITER: string;
+    MILLION_LITER: string;
+};
 //# sourceMappingURL=batch.constants.d.ts.map

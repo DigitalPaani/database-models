@@ -180,8 +180,8 @@ const event_components_model_1 = require("./models/event-components.model");
 Object.defineProperty(exports, "EventComponentModel", { enumerable: true, get: function () { return event_components_model_1.EventComponentModel; } });
 const event_logs_model_1 = require("./models/event-logs.model");
 Object.defineProperty(exports, "EventLogsModel", { enumerable: true, get: function () { return event_logs_model_1.EventLogsModel; } });
-const batch_model_1 = require("./models/batch.model");
-Object.defineProperty(exports, "BatchConfigModel", { enumerable: true, get: function () { return batch_model_1.BatchConfigModel; } });
+const batch_config_model_1 = require("./models/batch-config.model");
+Object.defineProperty(exports, "BatchConfigModel", { enumerable: true, get: function () { return batch_config_model_1.BatchConfigModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
 exports.mongooseDatabaseModels = mongooseDatabaseModels;

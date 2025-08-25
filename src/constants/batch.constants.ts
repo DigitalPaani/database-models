@@ -18,3 +18,9 @@ export const BATCH_TYPE_ENUM = {
     BYPASS: "Bypass",
     REGULAR: "Regular"
 }
+
+export const WATER_TREATMENT_UNIT_ENUM = {
+    LITER : "Liter",
+    KILO_LITER: "Kilo Liter",
+    MILLION_LITER: "Million Liter",
+}

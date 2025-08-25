@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BATCH_TYPE_ENUM = exports.BATCH_DETECTION_ENUM = exports.BATCH_STATUS_ENUM = void 0;
+exports.WATER_TREATMENT_UNIT_ENUM = exports.BATCH_TYPE_ENUM = exports.BATCH_DETECTION_ENUM = exports.BATCH_STATUS_ENUM = void 0;
 exports.BATCH_STATUS_ENUM = {
     PLANNED: "Planned",
     RUNNING: "Running",
@@ -18,4 +18,9 @@ exports.BATCH_TYPE_ENUM = {
     AUTOMATED: "Automated",
     BYPASS: "Bypass",
     REGULAR: "Regular"
+};
+exports.WATER_TREATMENT_UNIT_ENUM = {
+    LITER: "Liter",
+    KILO_LITER: "Kilo Liter",
+    MILLION_LITER: "Million Liter",
 };
