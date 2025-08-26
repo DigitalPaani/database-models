@@ -64,6 +64,10 @@ const eventComponentSchema = new mongoose_1.Schema({
         endTag: String,
         eventTag: String,
     },
+    isEventCreated: {
+        type: Boolean,
+        default: false,
+    },
     triggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
@@ -74,7 +78,7 @@ const eventComponentSchema = new mongoose_1.Schema({
     },
     workspaceId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace"
+        ref: "NewWorkspace",
     },
     userGroupId: {
         type: mongoose_1.Schema.Types.ObjectId,

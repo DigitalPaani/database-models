@@ -9,6 +9,7 @@ interface IEventComponent extends Document {
   relatedEquipments: Types.ObjectId[];
   relatedSensors: Types.ObjectId[];
   eventTags?: IEventTags;
+  isEventCreated?: boolean;
   triggerId: Types.ObjectId;
   assetId?: Types.ObjectId;
   userGroupId?: Types.ObjectId;
@@ -46,6 +47,10 @@ const eventComponentSchema = new Schema<IEventComponent>(
       endTag: String,
       eventTag: String,
     },
+    isEventCreated: {
+      type: Boolean,
+      default: false,
+    },
     triggerId: {
       type: Schema.Types.ObjectId,
       required: true,
@@ -56,7 +61,7 @@ const eventComponentSchema = new Schema<IEventComponent>(
     },
     workspaceId: {
       type: Schema.Types.ObjectId,
-      ref: "NewWorkspace"
+      ref: "NewWorkspace",
     },
     userGroupId: {
       type: Schema.Types.ObjectId,

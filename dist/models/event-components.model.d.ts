@@ -9,6 +9,7 @@ interface IEventComponent extends Document {
     relatedEquipments: Types.ObjectId[];
     relatedSensors: Types.ObjectId[];
     eventTags?: IEventTags;
+    isEventCreated?: boolean;
     triggerId: Types.ObjectId;
     assetId?: Types.ObjectId;
     userGroupId?: Types.ObjectId;
