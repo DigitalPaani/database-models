@@ -125,7 +125,7 @@ const batchConfigSchema = new mongoose_1.Schema({
     },
     batchPurpose: { type: String, default: "", alias: "purpose" },
     statusConditions: { type: [batchStatusSchema], alias: 'attachedConditions' },
-    createdBy: { type: mongoose_1.Types.ObjectId, ref: "User", required: true },
+    createdBy: { type: mongoose_1.Types.ObjectId, ref: "User" },
     updatedBy: { type: mongoose_1.Types.ObjectId, ref: "User" },
 }, {
     timestamps: true,
