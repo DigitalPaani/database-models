@@ -114,8 +114,7 @@ const timeCycleSchema = new Schema<ITimeCycleConfig>(
     startDate: { type: Date },
     endDate: { type: Date },
     totalOccurrence: { type: Number },
-  },
-  { _id: false }
+  }
 );
 
 // Water treatment sub-schema (used for alias mapping)
@@ -123,8 +122,7 @@ const waterTreatmentSchema = new Schema(
   {
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
     value: { type: Number },
-  },
-  { _id: false }
+  }
 );
 
 const batchConfigSchema = new Schema<IBatchConfig>(

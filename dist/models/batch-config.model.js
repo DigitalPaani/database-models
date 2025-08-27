@@ -83,12 +83,12 @@ const timeCycleSchema = new mongoose_1.Schema({
     startDate: { type: Date },
     endDate: { type: Date },
     totalOccurrence: { type: Number },
-}, { _id: false });
+});
 // Water treatment sub-schema (used for alias mapping)
 const waterTreatmentSchema = new mongoose_1.Schema({
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
     value: { type: Number },
-}, { _id: false });
+});
 const batchConfigSchema = new mongoose_1.Schema({
     assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
     batchName: { type: String, required: true, alias: "name" },
