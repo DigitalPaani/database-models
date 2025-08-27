@@ -171,7 +171,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
 
     statusConditions: { type: [batchStatusSchema], alias: 'attachedConditions' },
 
-    createdBy: { type: Types.ObjectId, ref: "User", required: true },
+    createdBy: { type: Types.ObjectId, ref: "User" },
     updatedBy: { type: Types.ObjectId, ref: "User" },
   },
   {
