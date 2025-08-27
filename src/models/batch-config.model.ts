@@ -3,31 +3,49 @@ import mongoose, { Schema, Types } from "mongoose";
 import batchConstants from "../constants/batch.constants";
 
 export interface IStatusCondition {
-  status: string[];
-  condition: string;
+  status: string;
+  event: Types.ObjectId;
+  eventTag?: Types.ObjectId;
+}
+
+interface ITimeCycleRecurrence {
+  frequency: string;
+  interval: number;
+  daysOfWeek: number[];
+  dayOfMonth: number[];
+  weekOfMonth: number[];
+  month: number[];
+}
+
+interface ITimeCycleConfig {
+  recurrence: ITimeCycleRecurrence;
+  startDate?: Date;
+  endDate?: Date;
+  totalOccurrence?: number;
 }
 
 interface IBatchConfig extends Document {
-  plantId: Types.ObjectId;
+  assetId?: Types.ObjectId;
 
   batchName: string;
-  batchEquipments: string[];
+  batchEquipments: Types.ObjectId[];
 
   detectionLogic: {
-    primary: string[]
-    secondary?: string[];
+    primary: string;
+    selectedEvent?: Types.ObjectId; // event-component id
+    timeCycle?: ITimeCycleConfig;
   };
 
   trackingSensors: Types.ObjectId[];
 
   batchFlow: {
-    startEquipment: Types.ObjectId;
-    endEquipment: Types.ObjectId;
+    nodes: unknown[];
+    edges: unknown[];
   };
 
   chemicalUsage: Types.ObjectId[];
 
-  waterTreatmentUnit?: {
+  waterTreatment?: {
     unit?: string;
     value?: number;
   };
@@ -41,64 +59,112 @@ interface IBatchConfig extends Document {
   updatedBy?: Types.ObjectId;
 }
 
-const batchStatusSchema = new Schema<IStatusCondition>(
+// Accept both enum KEYS (e.g., "PLANNED") and VALUES (e.g., "Planned")
+const BATCH_STATUS_ALLOWED = [
+  ...Object.keys(batchConstants.BATCH_STATUS_ENUM),
+  ...Object.values(batchConstants.BATCH_STATUS_ENUM),
+];
+const BATCH_DETECTION_ALLOWED = [
+  ...Object.keys(batchConstants.BATCH_DETECTION_ENUM),
+  ...Object.values(batchConstants.BATCH_DETECTION_ENUM),
+];
+const BATCH_TYPE_ALLOWED = [
+  ...Object.keys(batchConstants.BATCH_TYPE_ENUM),
+  ...Object.values(batchConstants.BATCH_TYPE_ENUM),
+];
+const WATER_TREATMENT_UNIT_ALLOWED = [
+  ...Object.keys(batchConstants.WATER_TREATMENT_UNIT_ENUM),
+  ...Object.values(batchConstants.WATER_TREATMENT_UNIT_ENUM),
+];
+
+const batchStatusSchema = new Schema<IStatusCondition>({
+  status: {
+    type: String,
+    enum: BATCH_STATUS_ALLOWED,
+    required: true,
+  },
+  event: { type: Schema.Types.ObjectId, ref: "event-components", required: true },
+  eventTag: { type: Schema.Types.ObjectId, ref: "sensors" },
+});
+
+// Time cycle schema for detection logic
+const timeCycleRecurrenceSchema = new Schema<ITimeCycleRecurrence>(
   {
-    status: {
-      type: [String],
-      enum: Object.values(batchConstants.BATCH_STATUS_ENUM),
-      required: true,
-    },
-    condition: { type: String, ref:"sensors", required: true },
-  }
+    frequency: { type: String, required: true },
+    interval: { type: Number, required: true },
+    daysOfWeek: { type: [Number], default: [] },
+    dayOfMonth: { type: [Number], default: [] },
+    weekOfMonth: { type: [Number], default: [] },
+    month: { type: [Number], default: [] },
+  },
+  { _id: false }
+);
+
+const timeCycleSchema = new Schema<ITimeCycleConfig>(
+  {
+    recurrence: { type: timeCycleRecurrenceSchema, required: true },
+    startDate: { type: Date },
+    endDate: { type: Date },
+    totalOccurrence: { type: Number },
+  },
+  { _id: false }
 );
 
 const batchConfigSchema = new Schema<IBatchConfig>(
   {
-    plantId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
+    assetId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
 
-    batchName: { type: String, required: true },
+    batchName: { type: String, required: true, alias: "name" },
 
     batchEquipments: {
-      type: [String],
+      type: [Schema.Types.ObjectId],
       ref: 'LayoutEquipments',
       required: true,
+      alias: 'selectedEquipments',
     },
 
     detectionLogic: {
       primary: {
         type: String,
-        enum: Object.values(batchConstants.BATCH_DETECTION_ENUM),
+        enum: BATCH_DETECTION_ALLOWED,
         required: true,
+        alias: 'detectionType',
       },
-      secondary: {
-        type: String,
-        ref: "sensors"
+      selectedEvent: {
+        type: Schema.Types.ObjectId,
+        ref: "event-components",
+        required: false,
+      },
+      timeCycle: {
+        type: timeCycleSchema,
+        required: false,
       },
     },
 
     trackingSensors: [{ type: Schema.Types.ObjectId, ref: "sensors" }],
 
     batchFlow: {
-      startEquipment: { type: Types.ObjectId, ref: "LayoutEquipments" },
-      endEquipment: { type: Types.ObjectId, ref: "LayoutEquipments" },
+      nodes: { type: [Schema.Types.Mixed], default: [] },
+      edges: { type: [Schema.Types.Mixed], default: [] },
     },
 
-    chemicalUsage: [{ type: Schema.Types.ObjectId, ref: "Chemical" }],
+    chemicalUsage: { type: [Schema.Types.ObjectId], default: [] },
 
-    waterTreatmentUnit: {
-      unit: { type: String, enum:Object.values(batchConstants.WATER_TREATMENT_UNIT_ENUM) },
-      value: { type: Number },
+    waterTreatment: {
+      unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED, set: (v: unknown) => (v === "" ? undefined : v) },
+      value: { type: Number, set: (v: unknown) => (v === "" ? undefined : v) },
+      alias: 'waterTreatmentUnit',
     },
 
     batchType: {
       type: String,
-      enum: Object.values(batchConstants.BATCH_TYPE_ENUM),
+      enum: BATCH_TYPE_ALLOWED,
       default: "Regular",
     },
 
-    batchPurpose: { type: String, default: "" },
+    batchPurpose: { type: String, default: "", alias: "purpose" },
 
-    statusConditions: [batchStatusSchema],
+    statusConditions: { type: [batchStatusSchema], alias: 'attachedConditions' },
 
     createdBy: { type: Types.ObjectId, ref: "User", required: true },
     updatedBy: { type: Types.ObjectId, ref: "User" },
@@ -109,9 +175,9 @@ const batchConfigSchema = new Schema<IBatchConfig>(
 );
 
 const BatchConfigModel: Model<IBatchConfig> = mongoose.model<IBatchConfig>(
-  "batch_configs",
+  "batch-configs",
   batchConfigSchema,
-  "batch_configs"
+  "batch-configs"
 );
 
 export { BatchConfigModel, IBatchConfig };

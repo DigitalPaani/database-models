@@ -1,24 +1,40 @@
 import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 export interface IStatusCondition {
-    status: string[];
-    condition: string;
+    status: string;
+    event: Types.ObjectId;
+    eventTag?: Types.ObjectId;
+}
+interface ITimeCycleRecurrence {
+    frequency: string;
+    interval: number;
+    daysOfWeek: number[];
+    dayOfMonth: number[];
+    weekOfMonth: number[];
+    month: number[];
+}
+interface ITimeCycleConfig {
+    recurrence: ITimeCycleRecurrence;
+    startDate?: Date;
+    endDate?: Date;
+    totalOccurrence?: number;
 }
 interface IBatchConfig extends Document {
-    plantId: Types.ObjectId;
+    assetId?: Types.ObjectId;
     batchName: string;
-    batchEquipments: string[];
+    batchEquipments: Types.ObjectId[];
     detectionLogic: {
-        primary: string[];
-        secondary?: string[];
+        primary: string;
+        selectedEvent?: Types.ObjectId;
+        timeCycle?: ITimeCycleConfig;
     };
     trackingSensors: Types.ObjectId[];
     batchFlow: {
-        startEquipment: Types.ObjectId;
-        endEquipment: Types.ObjectId;
+        nodes: unknown[];
+        edges: unknown[];
     };
     chemicalUsage: Types.ObjectId[];
-    waterTreatmentUnit?: {
+    waterTreatment?: {
         unit?: string;
         value?: number;
     };

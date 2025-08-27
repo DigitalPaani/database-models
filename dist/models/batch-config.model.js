@@ -39,54 +39,95 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BatchConfigModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const batch_constants_1 = __importDefault(require("../constants/batch.constants"));
+// Accept both enum KEYS (e.g., "PLANNED") and VALUES (e.g., "Planned")
+const BATCH_STATUS_ALLOWED = [
+    ...Object.keys(batch_constants_1.default.BATCH_STATUS_ENUM),
+    ...Object.values(batch_constants_1.default.BATCH_STATUS_ENUM),
+];
+const BATCH_DETECTION_ALLOWED = [
+    ...Object.keys(batch_constants_1.default.BATCH_DETECTION_ENUM),
+    ...Object.values(batch_constants_1.default.BATCH_DETECTION_ENUM),
+];
+const BATCH_TYPE_ALLOWED = [
+    ...Object.keys(batch_constants_1.default.BATCH_TYPE_ENUM),
+    ...Object.values(batch_constants_1.default.BATCH_TYPE_ENUM),
+];
+const WATER_TREATMENT_UNIT_ALLOWED = [
+    ...Object.keys(batch_constants_1.default.WATER_TREATMENT_UNIT_ENUM),
+    ...Object.values(batch_constants_1.default.WATER_TREATMENT_UNIT_ENUM),
+];
 const batchStatusSchema = new mongoose_1.Schema({
     status: {
-        type: [String],
-        enum: Object.values(batch_constants_1.default.BATCH_STATUS_ENUM),
+        type: String,
+        enum: BATCH_STATUS_ALLOWED,
         required: true,
     },
-    condition: { type: String, ref: "sensors", required: true },
+    event: { type: mongoose_1.Schema.Types.ObjectId, ref: "event-components", required: true },
+    eventTag: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
 });
+// Time cycle schema for detection logic
+const timeCycleRecurrenceSchema = new mongoose_1.Schema({
+    frequency: { type: String, required: true },
+    interval: { type: Number, required: true },
+    daysOfWeek: { type: [Number], default: [] },
+    dayOfMonth: { type: [Number], default: [] },
+    weekOfMonth: { type: [Number], default: [] },
+    month: { type: [Number], default: [] },
+}, { _id: false });
+const timeCycleSchema = new mongoose_1.Schema({
+    recurrence: { type: timeCycleRecurrenceSchema, required: true },
+    startDate: { type: Date },
+    endDate: { type: Date },
+    totalOccurrence: { type: Number },
+}, { _id: false });
 const batchConfigSchema = new mongoose_1.Schema({
-    plantId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
-    batchName: { type: String, required: true },
+    assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
+    batchName: { type: String, required: true, alias: "name" },
     batchEquipments: {
-        type: [String],
+        type: [mongoose_1.Schema.Types.ObjectId],
         ref: 'LayoutEquipments',
         required: true,
+        alias: 'selectedEquipments',
     },
     detectionLogic: {
         primary: {
             type: String,
-            enum: Object.values(batch_constants_1.default.BATCH_DETECTION_ENUM),
+            enum: BATCH_DETECTION_ALLOWED,
             required: true,
+            alias: 'detectionType',
         },
-        secondary: {
-            type: String,
-            ref: "sensors"
+        selectedEvent: {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "event-components",
+            required: false,
+        },
+        timeCycle: {
+            type: timeCycleSchema,
+            required: false,
         },
     },
     trackingSensors: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" }],
     batchFlow: {
-        startEquipment: { type: mongoose_1.Types.ObjectId, ref: "LayoutEquipments" },
-        endEquipment: { type: mongoose_1.Types.ObjectId, ref: "LayoutEquipments" },
+        nodes: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
+        edges: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
     },
-    chemicalUsage: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "Chemical" }],
-    waterTreatmentUnit: {
-        unit: { type: String, enum: Object.values(batch_constants_1.default.WATER_TREATMENT_UNIT_ENUM) },
-        value: { type: Number },
+    chemicalUsage: { type: [mongoose_1.Schema.Types.ObjectId], default: [] },
+    waterTreatment: {
+        unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED, set: (v) => (v === "" ? undefined : v) },
+        value: { type: Number, set: (v) => (v === "" ? undefined : v) },
+        alias: 'waterTreatmentUnit',
     },
     batchType: {
         type: String,
-        enum: Object.values(batch_constants_1.default.BATCH_TYPE_ENUM),
+        enum: BATCH_TYPE_ALLOWED,
         default: "Regular",
     },
-    batchPurpose: { type: String, default: "" },
-    statusConditions: [batchStatusSchema],
+    batchPurpose: { type: String, default: "", alias: "purpose" },
+    statusConditions: { type: [batchStatusSchema], alias: 'attachedConditions' },
     createdBy: { type: mongoose_1.Types.ObjectId, ref: "User", required: true },
     updatedBy: { type: mongoose_1.Types.ObjectId, ref: "User" },
 }, {
     timestamps: true,
 });
-const BatchConfigModel = mongoose_1.default.model("batch_configs", batchConfigSchema, "batch_configs");
+const BatchConfigModel = mongoose_1.default.model("batch-configs", batchConfigSchema, "batch-configs");
 exports.BatchConfigModel = BatchConfigModel;
