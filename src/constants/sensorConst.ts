@@ -60,6 +60,7 @@ export const SENSOR_PURPOSE_TAGS: { key: string; abbr: string; name: string }[] 
     { key: "barScreen100", abbr: "BS100", name: "Bar Screen 100%" },
     { key: "voltage", abbr: "VOLT", name: "Voltage" },
     { key: "power", abbr: "POWE", name: "Power" },
+    { key: "mlss", abbr: "MLSS", name: "Mixed Liquor Suspended Solid" },
   ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
