@@ -43,9 +43,18 @@ const eventComponentSchema = new Schema<IEventComponent>(
       required: true,
     },
     eventTags: {
-      startTag: String,
-      endTag: String,
-      eventTag: String,
+      startTag: {
+        sensorTag: String,
+        sensorId: Schema.Types.ObjectId
+      },
+      endTag: {
+        sensorTag: String,
+        sensorId: Schema.Types.ObjectId
+      },
+      eventTag: {
+        sensorTag: String,
+        sensorId: Schema.Types.ObjectId,
+      },
     },
     isEventCreated: {
       type: Boolean,

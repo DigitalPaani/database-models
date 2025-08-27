@@ -60,9 +60,18 @@ const eventComponentSchema = new mongoose_1.Schema({
         required: true,
     },
     eventTags: {
-        startTag: String,
-        endTag: String,
-        eventTag: String,
+        startTag: {
+            sensorTag: String,
+            sensorId: mongoose_1.Schema.Types.ObjectId
+        },
+        endTag: {
+            sensorTag: String,
+            sensorId: mongoose_1.Schema.Types.ObjectId
+        },
+        eventTag: {
+            sensorTag: String,
+            sensorId: mongoose_1.Schema.Types.ObjectId,
+        },
     },
     isEventCreated: {
         type: Boolean,

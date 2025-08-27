@@ -4,9 +4,18 @@ import { EQUIPMENT_TYPES } from "../constants/insights.constants";
 
 const equipmentTypes = EQUIPMENT_TYPES.map((type) => type.value);
 export interface IEventTags extends Document {
-  startTag: string;
-  endTag: string;
-  eventTag: string;
+  startTag: {
+    sensorTag: string,
+    sensorId: Types.ObjectId
+  };
+  endTag: {
+    sensorTag: string,
+    sensorId: Types.ObjectId
+  };
+  eventTag: {
+    sensorTag: string,
+    sensorId: Types.ObjectId
+  };
 }
 interface IEventsTemplate extends Document {
   _id: Types.ObjectId;
