@@ -162,7 +162,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
       edges: { type: [Schema.Types.Mixed], default: [] },
     },
 
-    chemicalUsage: { type: [Schema.Types.ObjectId], default: [] },  
+    chemicalUsage: { type: [Schema.Types.ObjectId], ref: "StoreItems", default: [] },  
 
     waterTreatment: { type: waterTreatmentSchema, alias: "waterTreatmentUnit" },
 

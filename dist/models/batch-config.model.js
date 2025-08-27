@@ -120,7 +120,7 @@ const batchConfigSchema = new mongoose_1.Schema({
         nodes: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
         edges: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
     },
-    chemicalUsage: { type: [mongoose_1.Schema.Types.ObjectId], default: [] },
+    chemicalUsage: { type: [mongoose_1.Schema.Types.ObjectId], ref: "StoreItems", default: [] },
     waterTreatment: { type: waterTreatmentSchema, alias: "waterTreatmentUnit" },
     batchType: {
         type: String,
