@@ -33,7 +33,10 @@ interface IBatchConfig extends Document {
         nodes: unknown[];
         edges: unknown[];
     };
-    chemicalUsage: Types.ObjectId[];
+    chemicalUsage?: {
+        chemicalName: string;
+        itemId: Types.ObjectId;
+    }[];
     waterTreatment?: {
         unit?: string;
         value?: number;
