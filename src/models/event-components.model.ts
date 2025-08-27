@@ -45,15 +45,18 @@ const eventComponentSchema = new Schema<IEventComponent>(
     eventTags: {
       startTag: {
         sensorTag: String,
-        sensorId: Schema.Types.ObjectId
+        sensorId: Schema.Types.ObjectId,
+        ref: "sensors"
       },
       endTag: {
         sensorTag: String,
-        sensorId: Schema.Types.ObjectId
+        sensorId: Schema.Types.ObjectId,
+        ref: "sensors"
       },
       eventTag: {
         sensorTag: String,
         sensorId: Schema.Types.ObjectId,
+        ref: "sensors"
       },
     },
     isEventCreated: {
