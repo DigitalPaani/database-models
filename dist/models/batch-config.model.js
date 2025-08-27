@@ -62,7 +62,11 @@ const batchStatusSchema = new mongoose_1.Schema({
         enum: BATCH_STATUS_ALLOWED,
         required: true,
     },
-    event: { type: mongoose_1.Schema.Types.ObjectId, ref: "event-components", required: true },
+    event: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "event-components",
+        required: true,
+    },
     eventTag: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
 });
 // Time cycle schema for detection logic
@@ -83,23 +87,23 @@ const timeCycleSchema = new mongoose_1.Schema({
 // Water treatment sub-schema (used for alias mapping)
 const waterTreatmentSchema = new mongoose_1.Schema({
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
-    value: { type: Number, }
+    value: { type: Number },
 }, { _id: false });
 const batchConfigSchema = new mongoose_1.Schema({
     assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
     batchName: { type: String, required: true, alias: "name" },
     batchEquipments: {
         type: [mongoose_1.Schema.Types.ObjectId],
-        ref: 'LayoutEquipments',
+        ref: "LayoutEquipments",
         required: true,
-        alias: 'selectedEquipments',
+        alias: "selectedEquipments",
     },
     detectionLogic: {
         primary: {
             type: String,
             enum: BATCH_DETECTION_ALLOWED,
             required: true,
-            alias: 'detectionType',
+            alias: "detectionType",
         },
         selectedEvent: {
             type: mongoose_1.Schema.Types.ObjectId,
@@ -117,14 +121,18 @@ const batchConfigSchema = new mongoose_1.Schema({
         edges: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
     },
     chemicalUsage: { type: [mongoose_1.Schema.Types.ObjectId], default: [] },
-    waterTreatment: { type: waterTreatmentSchema, alias: 'waterTreatmentUnit' },
+    waterTreatment: { type: waterTreatmentSchema, alias: "waterTreatmentUnit" },
     batchType: {
         type: String,
         enum: BATCH_TYPE_ALLOWED,
         default: "Regular",
     },
     batchPurpose: { type: String, default: "", alias: "purpose" },
-    statusConditions: { type: [batchStatusSchema], alias: 'attachedConditions' },
+    statusConditions: {
+        type: [batchStatusSchema],
+        alias: "attachedConditions",
+    },
+    isArchived: { type: Boolean, default: false },
     createdBy: { type: mongoose_1.Types.ObjectId, ref: "User" },
     updatedBy: { type: mongoose_1.Types.ObjectId, ref: "User" },
 }, {

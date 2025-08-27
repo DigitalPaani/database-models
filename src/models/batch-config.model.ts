@@ -54,6 +54,7 @@ interface IBatchConfig extends Document {
   batchPurpose?: string;
 
   statusConditions: IStatusCondition[];
+  isArchived: boolean;
 
   createdBy?: Types.ObjectId;
   updatedBy?: Types.ObjectId;
@@ -83,7 +84,11 @@ const batchStatusSchema = new Schema<IStatusCondition>({
     enum: BATCH_STATUS_ALLOWED,
     required: true,
   },
-  event: { type: Schema.Types.ObjectId, ref: "event-components", required: true },
+  event: {
+    type: Schema.Types.ObjectId,
+    ref: "event-components",
+    required: true,
+  },
   eventTag: { type: Schema.Types.ObjectId, ref: "sensors" },
 });
 
@@ -114,7 +119,7 @@ const timeCycleSchema = new Schema<ITimeCycleConfig>(
 const waterTreatmentSchema = new Schema(
   {
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
-    value: { type: Number, }
+    value: { type: Number },
   },
   { _id: false }
 );
@@ -127,9 +132,9 @@ const batchConfigSchema = new Schema<IBatchConfig>(
 
     batchEquipments: {
       type: [Schema.Types.ObjectId],
-      ref: 'LayoutEquipments',
+      ref: "LayoutEquipments",
       required: true,
-      alias: 'selectedEquipments',
+      alias: "selectedEquipments",
     },
 
     detectionLogic: {
@@ -137,7 +142,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
         type: String,
         enum: BATCH_DETECTION_ALLOWED,
         required: true,
-        alias: 'detectionType',
+        alias: "detectionType",
       },
       selectedEvent: {
         type: Schema.Types.ObjectId,
@@ -157,9 +162,9 @@ const batchConfigSchema = new Schema<IBatchConfig>(
       edges: { type: [Schema.Types.Mixed], default: [] },
     },
 
-    chemicalUsage: { type: [Schema.Types.ObjectId], default: [] },
+    chemicalUsage: { type: [Schema.Types.ObjectId], default: [] },  
 
-    waterTreatment: { type: waterTreatmentSchema, alias: 'waterTreatmentUnit' },
+    waterTreatment: { type: waterTreatmentSchema, alias: "waterTreatmentUnit" },
 
     batchType: {
       type: String,
@@ -169,7 +174,11 @@ const batchConfigSchema = new Schema<IBatchConfig>(
 
     batchPurpose: { type: String, default: "", alias: "purpose" },
 
-    statusConditions: { type: [batchStatusSchema], alias: 'attachedConditions' },
+    statusConditions: {
+      type: [batchStatusSchema],
+      alias: "attachedConditions",
+    },
+    isArchived: { type: Boolean, default: false },
 
     createdBy: { type: Types.ObjectId, ref: "User" },
     updatedBy: { type: Types.ObjectId, ref: "User" },

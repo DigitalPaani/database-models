@@ -41,6 +41,7 @@ interface IBatchConfig extends Document {
     batchType: string;
     batchPurpose?: string;
     statusConditions: IStatusCondition[];
+    isArchived: boolean;
     createdBy?: Types.ObjectId;
     updatedBy?: Types.ObjectId;
 }
