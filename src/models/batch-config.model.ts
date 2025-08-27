@@ -25,7 +25,7 @@ interface ITimeCycleConfig {
 }
 
 interface IBatchConfig extends Document {
-  assetId?: Types.ObjectId;
+  assetId: Types.ObjectId;
 
   batchName: string;
   batchEquipments: Types.ObjectId[];
@@ -110,6 +110,15 @@ const timeCycleSchema = new Schema<ITimeCycleConfig>(
   { _id: false }
 );
 
+// Water treatment sub-schema (used for alias mapping)
+const waterTreatmentSchema = new Schema(
+  {
+    unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
+    value: { type: Number, }
+  },
+  { _id: false }
+);
+
 const batchConfigSchema = new Schema<IBatchConfig>(
   {
     assetId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
@@ -150,11 +159,7 @@ const batchConfigSchema = new Schema<IBatchConfig>(
 
     chemicalUsage: { type: [Schema.Types.ObjectId], default: [] },
 
-    waterTreatment: {
-      unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED, set: (v: unknown) => (v === "" ? undefined : v) },
-      value: { type: Number, set: (v: unknown) => (v === "" ? undefined : v) },
-      alias: 'waterTreatmentUnit',
-    },
+    waterTreatment: { type: waterTreatmentSchema, alias: 'waterTreatmentUnit' },
 
     batchType: {
       type: String,

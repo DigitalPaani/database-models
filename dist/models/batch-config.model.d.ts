@@ -20,7 +20,7 @@ interface ITimeCycleConfig {
     totalOccurrence?: number;
 }
 interface IBatchConfig extends Document {
-    assetId?: Types.ObjectId;
+    assetId: Types.ObjectId;
     batchName: string;
     batchEquipments: Types.ObjectId[];
     detectionLogic: {
