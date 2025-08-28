@@ -17,6 +17,12 @@ declare const _default: {
         BYPASS: string;
         REGULAR: string;
     };
+    BATCH_TRIGGERED_BY_ENUM: {
+        EVENT_COMPLETION: string;
+        TIME_CYCLE: string;
+        MANUAL: string;
+        BYPASS: string;
+    };
     WATER_TREATMENT_UNIT_ENUM: {
         LITER: string;
         KILO_LITER: string;

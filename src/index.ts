@@ -120,6 +120,7 @@ import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.m
 import { IEventComponent, EventComponentModel } from "./models/event-components.model";
 import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
 import { IBatchConfig, BatchConfigModel } from "./models/batch-config.model";
+import { IBatchLog, BatchLogModel } from "./models/batch-logs.model";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -197,6 +198,7 @@ export type {
   IEventComponent,
   IEventLogs,
   IBatchConfig,
+  IBatchLog,
 };
 
 // exports the models
@@ -274,4 +276,5 @@ export {
   EventComponentModel,
   EventLogsModel,
   BatchConfigModel,
+  BatchLogModel,
 };
