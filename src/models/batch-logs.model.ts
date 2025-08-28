@@ -70,7 +70,7 @@ const batchLogSchema = new Schema<IBatchLog>(
     
     startTime: {
       type: Number, // Unix timestamp
-      required: true,
+      required: false,
     },
     
     endTime: {
@@ -84,7 +84,7 @@ const batchLogSchema = new Schema<IBatchLog>(
     status: {
       type: String,
       enum: BATCH_STATUS_ALLOWED,
-      required: true,
+      required: false,
     },
     
     previousStatus: {
@@ -95,13 +95,13 @@ const batchLogSchema = new Schema<IBatchLog>(
     detectionType: {
       type: String,
       enum: BATCH_DETECTION_ALLOWED,
-      required: true,
+      required: false,
     },
     
     triggeredBy: {
       type: String,
       enum: BATCH_TRIGGERED_BY_ALLOWED,
-      required: true,
+      required: false,
     },
     
     triggeredEventId: {
@@ -149,13 +149,13 @@ const batchLogSchema = new Schema<IBatchLog>(
     plantId: {
       type: Schema.Types.ObjectId,
       ref: "Plant",
-      required: true,
+      required: false,
     },
     
     assetId: {
       type: Schema.Types.ObjectId,
       ref: "Plant",
-      required: true,
+      required: false,
     },
     
     createdBy: {

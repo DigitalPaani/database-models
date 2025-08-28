@@ -60,7 +60,7 @@ const batchLogSchema = new mongoose_1.Schema({
     },
     startTime: {
         type: Number, // Unix timestamp
-        required: true,
+        required: false,
     },
     endTime: {
         type: Number, // Unix timestamp
@@ -71,7 +71,7 @@ const batchLogSchema = new mongoose_1.Schema({
     status: {
         type: String,
         enum: BATCH_STATUS_ALLOWED,
-        required: true,
+        required: false,
     },
     previousStatus: {
         type: String,
@@ -80,12 +80,12 @@ const batchLogSchema = new mongoose_1.Schema({
     detectionType: {
         type: String,
         enum: BATCH_DETECTION_ALLOWED,
-        required: true,
+        required: false,
     },
     triggeredBy: {
         type: String,
         enum: BATCH_TRIGGERED_BY_ALLOWED,
-        required: true,
+        required: false,
     },
     triggeredEventId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -124,12 +124,12 @@ const batchLogSchema = new mongoose_1.Schema({
     plantId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
-        required: true,
+        required: false,
     },
     assetId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
-        required: true,
+        required: false,
     },
     createdBy: {
         type: mongoose_1.Schema.Types.ObjectId,
