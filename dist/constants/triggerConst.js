@@ -45,7 +45,8 @@ const TRIGGER_COMPONENT_TYPES = {
     insight: "INSIGHT",
     equipments: "EQUIPMENTS",
     notification: "NOTIFICATION",
-    event: "EVENT"
+    event: "EVENT",
+    batch: "BATCH",
 };
 exports.TRIGGER_COMPONENT_TYPES = TRIGGER_COMPONENT_TYPES;
 const COMMUNICATION_COMPONENT_TYPES = {

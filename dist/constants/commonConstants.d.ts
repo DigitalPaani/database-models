@@ -39,6 +39,7 @@ declare const _default: {
         equipments: string;
         notification: string;
         event: string;
+        batch: string;
     };
     COMMUNICATION_COMPONENT_TYPES: {
         email: string;

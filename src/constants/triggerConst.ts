@@ -42,7 +42,8 @@ const TRIGGER_COMPONENT_TYPES = {
   insight: "INSIGHT",
   equipments: "EQUIPMENTS",
   notification: "NOTIFICATION",
-  event: "EVENT"
+  event: "EVENT",
+  batch: "BATCH",
 };
 
 const COMMUNICATION_COMPONENT_TYPES = {

@@ -38,6 +38,7 @@ declare const TRIGGER_COMPONENT_TYPES: {
     equipments: string;
     notification: string;
     event: string;
+    batch: string;
 };
 declare const COMMUNICATION_COMPONENT_TYPES: {
     email: string;
