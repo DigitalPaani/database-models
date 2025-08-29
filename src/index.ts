@@ -24,7 +24,7 @@ import { CompanyModel } from "./models/CompanyModel";
 import { SensorModel, ISensor } from "./models/SensorList";
 import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
 import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
-import SensorsModel from "./models/sensorModel";
+import { SensorsModel, ISensorsData } from "./models/sensorModel";
 import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
@@ -192,6 +192,7 @@ export type {
   IFileUpload,
   IAnomalyRecord,
   IAnomalyDetails,
+  ISensorsData,
 };
 
 // exports the models
