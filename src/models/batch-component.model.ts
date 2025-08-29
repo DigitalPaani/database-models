@@ -33,6 +33,7 @@ interface IBatchComponent extends Document {
   detectionType: string;
 
   startBatchEventComponentId?: Types.ObjectId;
+  startBatchAction: string;
   timeCycle?: ITimeCycleConfig;
 
   trackingSensors: Types.ObjectId[];
@@ -152,6 +153,10 @@ const batchComponentSchema = new Schema<IBatchComponent>(
       type: String,
       enum: BATCH_DETECTION_ALLOWED,
       required: true,
+    },
+    startBatchAction: {
+      type: String,
+      enum: BATCH_ACTION_ALLOWED
     },
     startBatchEventComponentId: {
       type: Schema.Types.ObjectId,

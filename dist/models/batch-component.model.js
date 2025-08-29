@@ -116,6 +116,10 @@ const batchComponentSchema = new mongoose_1.Schema({
         enum: BATCH_DETECTION_ALLOWED,
         required: true,
     },
+    startBatchAction: {
+        type: String,
+        enum: BATCH_ACTION_ALLOWED
+    },
     startBatchEventComponentId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "event-components",

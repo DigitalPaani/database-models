@@ -25,6 +25,7 @@ interface IBatchComponent extends Document {
     equipments: Types.ObjectId[];
     detectionType: string;
     startBatchEventComponentId?: Types.ObjectId;
+    startBatchAction: string;
     timeCycle?: ITimeCycleConfig;
     trackingSensors: Types.ObjectId[];
     flow: {
