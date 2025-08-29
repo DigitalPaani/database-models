@@ -24,7 +24,7 @@ interface ITimeCycleConfig {
   endDate?: Date;
 }
 
-interface IBatchConfig extends Document {
+interface IBatchComponent extends Document {
   assetId: Types.ObjectId;
 
   name: string;
@@ -137,7 +137,7 @@ const waterTreatmentSchema = new Schema({
   value: { type: Number },
 });
 
-const batchConfigSchema = new Schema<IBatchConfig>(
+const batchComponentSchema = new Schema<IBatchComponent>(
   {
     assetId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
 
@@ -210,10 +210,10 @@ const batchConfigSchema = new Schema<IBatchConfig>(
   }
 );
 
-const BatchConfigModel: Model<IBatchConfig> = mongoose.model<IBatchConfig>(
+const BatchComponentModel: Model<IBatchComponent> = mongoose.model<IBatchComponent>(
   "batch-components",
-  batchConfigSchema,
+  batchComponentSchema,
   "batch-components"
 );
 
-export { BatchConfigModel, IBatchConfig };
+export { BatchComponentModel, IBatchComponent };

@@ -19,7 +19,7 @@ interface ITimeCycleConfig {
     startDate?: Date;
     endDate?: Date;
 }
-interface IBatchConfig extends Document {
+interface IBatchComponent extends Document {
     assetId: Types.ObjectId;
     name: string;
     equipments: Types.ObjectId[];
@@ -48,6 +48,6 @@ interface IBatchConfig extends Document {
     createdBy?: Types.ObjectId;
     updatedBy?: Types.ObjectId;
 }
-declare const BatchConfigModel: Model<IBatchConfig>;
-export { BatchConfigModel, IBatchConfig };
+declare const BatchComponentModel: Model<IBatchComponent>;
+export { BatchComponentModel, IBatchComponent };
 //# sourceMappingURL=batch-component.model.d.ts.map

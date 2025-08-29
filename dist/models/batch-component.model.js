@@ -36,7 +36,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BatchConfigModel = void 0;
+exports.BatchComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const batch_constants_1 = __importDefault(require("../constants/batch.constants"));
 const BATCH_STATUS_ALLOWED = [
@@ -103,7 +103,7 @@ const waterTreatmentSchema = new mongoose_1.Schema({
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
     value: { type: Number },
 });
-const batchConfigSchema = new mongoose_1.Schema({
+const batchComponentSchema = new mongoose_1.Schema({
     assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
     name: { type: String, required: true },
     equipments: {
@@ -161,5 +161,5 @@ const batchConfigSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-const BatchConfigModel = mongoose_1.default.model("batch-components", batchConfigSchema, "batch-components");
-exports.BatchConfigModel = BatchConfigModel;
+const BatchComponentModel = mongoose_1.default.model("batch-components", batchComponentSchema, "batch-components");
+exports.BatchComponentModel = BatchComponentModel;
