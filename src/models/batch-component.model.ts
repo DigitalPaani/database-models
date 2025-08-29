@@ -75,6 +75,7 @@ const BATCH_TYPE_ALLOWED = [...Object.values(batchConstants.BATCH_TYPE_ENUM)];
 const WATER_TREATMENT_UNIT_ALLOWED = [
   ...Object.values(batchConstants.WATER_TREATMENT_UNIT_ENUM),
 ];
+const BATCH_ACTION_ALLOWED = [...Object.values(batchConstants.BATCH_ACTION_ENUM)];
 
 const batchStatusSchema = new Schema<IStatusCondition>({
   status: {
@@ -89,7 +90,7 @@ const batchStatusSchema = new Schema<IStatusCondition>({
   },
   action: {
     type: String,
-    enum: ["start", "end"],
+    enum: BATCH_ACTION_ALLOWED,
     required: true,
   },
 });

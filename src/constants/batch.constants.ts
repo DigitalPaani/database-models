@@ -25,9 +25,15 @@ const WATER_TREATMENT_UNIT_ENUM = {
   MILLION_LITER: "Million Liter",
 };
 
+const BATCH_ACTION_ENUM = {
+  START: "Start",
+  END: "End",
+}
+
 export default {
   BATCH_STATUS_ENUM,
   BATCH_DETECTION_ENUM,
   BATCH_TYPE_ENUM,
   WATER_TREATMENT_UNIT_ENUM,
+  BATCH_ACTION_ENUM,
 };

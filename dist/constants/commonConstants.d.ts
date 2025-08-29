@@ -167,6 +167,10 @@ declare const _default: {
             KILO_LITER: string;
             MILLION_LITER: string;
         };
+        BATCH_ACTION_ENUM: {
+            START: string;
+            END: string;
+        };
     };
 };
 export default _default;

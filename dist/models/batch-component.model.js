@@ -49,6 +49,7 @@ const BATCH_TYPE_ALLOWED = [...Object.values(batch_constants_1.default.BATCH_TYP
 const WATER_TREATMENT_UNIT_ALLOWED = [
     ...Object.values(batch_constants_1.default.WATER_TREATMENT_UNIT_ENUM),
 ];
+const BATCH_ACTION_ALLOWED = [...Object.values(batch_constants_1.default.BATCH_ACTION_ENUM)];
 const batchStatusSchema = new mongoose_1.Schema({
     status: {
         type: String,
@@ -62,7 +63,7 @@ const batchStatusSchema = new mongoose_1.Schema({
     },
     action: {
         type: String,
-        enum: ["start", "end"],
+        enum: BATCH_ACTION_ALLOWED,
         required: true,
     },
 });
