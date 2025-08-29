@@ -113,6 +113,7 @@ import { GeneralCommunicationModel, IGeneralCommunication } from "./models/gener
 import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
 import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
 import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.model'
+import { IAnomalyDetails, AnomalyDetailsModel } from './models/anomaly-details.model'
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
@@ -190,6 +191,7 @@ export type {
   IEscalationFlow,
   IFileUpload,
   IAnomalyRecord,
+  IAnomalyDetails,
 };
 
 // exports the models
@@ -264,4 +266,5 @@ export {
   EscalationFlowModel,
   FileManagementUploadModel,
   AnomalyRecordModel,
+  AnomalyDetailsModel,
 };
