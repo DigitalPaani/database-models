@@ -1,6 +1,7 @@
 declare const _default: {
     ANOMALY_RECORD_SENSITIVITY: {
         LOW: string;
+        MEDIUM: string;
         HIGH: string;
     };
 };
