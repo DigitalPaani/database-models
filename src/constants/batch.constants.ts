@@ -19,13 +19,6 @@ const BATCH_TYPE_ENUM = {
   REGULAR: "Regular",
 };
 
-const BATCH_TRIGGERED_BY_ENUM = {
-  EVENT_COMPLETION: "Event Completion",
-  TIME_CYCLE: "Time Cycle",
-  MANUAL: "Manual",
-  BYPASS: "Bypass",
-};
-
 const WATER_TREATMENT_UNIT_ENUM = {
   LITER: "Liter",
   KILO_LITER: "Kilo Liter",
@@ -36,6 +29,5 @@ export default {
   BATCH_STATUS_ENUM,
   BATCH_DETECTION_ENUM,
   BATCH_TYPE_ENUM,
-  BATCH_TRIGGERED_BY_ENUM,
   WATER_TREATMENT_UNIT_ENUM,
 };

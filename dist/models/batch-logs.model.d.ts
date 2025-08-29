@@ -8,23 +8,8 @@ interface IBatchLog extends Document {
     status: string;
     previousStatus?: string;
     detectionType: string;
-    triggeredBy: string;
-    triggeredEventId?: Types.ObjectId;
-    triggeredTimeCycle?: {
-        frequency: string;
-        interval: number;
-        startDate: number;
-    };
-    hasErrors: boolean;
-    errorCount?: number;
-    lastErrorTime?: number;
-    concurrentBatchIds: string[];
-    insightIds: Types.ObjectId[];
-    taskIds: Types.ObjectId[];
-    plantId: Types.ObjectId;
-    assetId: Types.ObjectId;
-    createdBy?: Types.ObjectId;
-    isArchived: boolean;
+    initiatedBy: Types.ObjectId;
+    eventComponentId?: Types.ObjectId;
 }
 declare const BatchLogModel: Model<IBatchLog>;
 export { BatchLogModel, IBatchLog };

@@ -59,19 +59,17 @@ const eventComponentSchema = new mongoose_1.Schema({
         ref: "sensors",
         required: true,
     },
-    eventTags: {
-        startTag: {
-            sensorTag: String,
-            sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
-        },
-        endTag: {
-            sensorTag: String,
-            sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
-        },
-        eventTag: {
-            sensorTag: String,
-            sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
-        },
+    startTag: {
+        sensorTag: String,
+        sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
+    },
+    endTag: {
+        sensorTag: String,
+        sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
+    },
+    eventTag: {
+        sensorTag: String,
+        sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
     },
     isEventCreated: {
         type: Boolean,

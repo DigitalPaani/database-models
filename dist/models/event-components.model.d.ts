@@ -1,6 +1,5 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
-import { IEventTags } from "./events-template.model";
 interface IEventComponent extends Document {
     _id: Types.ObjectId;
     eventsTemplateId: Types.ObjectId;
@@ -8,7 +7,18 @@ interface IEventComponent extends Document {
     description: string;
     relatedEquipments: Types.ObjectId[];
     relatedSensors: Types.ObjectId[];
-    eventTags?: IEventTags;
+    startTag?: {
+        sensorTag: string;
+        sensorId: Types.ObjectId;
+    };
+    endTag?: {
+        sensorTag: string;
+        sensorId: Types.ObjectId;
+    };
+    eventTag?: {
+        sensorTag: string;
+        sensorId: Types.ObjectId;
+    };
     isEventCreated?: boolean;
     triggerId: Types.ObjectId;
     assetId?: Types.ObjectId;

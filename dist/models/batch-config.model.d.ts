@@ -2,8 +2,8 @@ import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 export interface IStatusCondition {
     status: string;
-    event: Types.ObjectId;
-    eventTag?: Types.ObjectId;
+    eventComponent: Types.ObjectId;
+    action: string;
 }
 interface ITimeCycleRecurrence {
     frequency: string;
@@ -11,25 +11,23 @@ interface ITimeCycleRecurrence {
     daysOfWeek: number[];
     dayOfMonth: number[];
     weekOfMonth: number[];
-    month: number[];
+    hours: number[];
+    minutes: number[];
 }
 interface ITimeCycleConfig {
     recurrence: ITimeCycleRecurrence;
     startDate?: Date;
     endDate?: Date;
-    totalOccurrence?: number;
 }
 interface IBatchConfig extends Document {
     assetId: Types.ObjectId;
     batchName: string;
     batchEquipments: Types.ObjectId[];
-    detectionLogic: {
-        primary: string;
-        selectedEvent?: Types.ObjectId;
-        timeCycle?: ITimeCycleConfig;
-    };
+    batchDetectionType: string;
+    startBatchEventComponentId?: Types.ObjectId;
+    timeCycle?: ITimeCycleConfig;
     trackingSensors: Types.ObjectId[];
-    batchFlow: {
+    flow: {
         nodes: unknown[];
         edges: unknown[];
     };
@@ -41,8 +39,10 @@ interface IBatchConfig extends Document {
         unit?: string;
         value?: number;
     };
-    batchType: string;
-    batchPurpose?: string;
+    type: string;
+    purpose?: string;
+    startTriggerId?: Types.ObjectId;
+    endTriggerId?: Types.ObjectId;
     statusConditions: IStatusCondition[];
     isArchived: boolean;
     createdBy?: Types.ObjectId;
