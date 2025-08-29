@@ -70,7 +70,7 @@ import { NotificationComponentsModel } from './models/notificationComponents.mod
 import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.model";
 import { IEventComponent, EventComponentModel } from "./models/event-components.model";
 import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
-import { IBatchConfig, BatchConfigModel } from "./models/batch-config.model";
+import { IBatchConfig, BatchConfigModel } from "./models/batch-component.model";
 import { IBatchLog, BatchLogModel } from "./models/batch-logs.model";
 declare const mongooseDatabaseModels: typeof mongoose;
 export type { IFormula, IHyperFormula, ISensorSetting, IPlcData, ITriggerDocument, IStore, IFormulaEvents, ITaskTemplate, ISkill, IRoster, IRosterSchedule, IWorkflow, ITask, IAttachment, IPlant, ITwilioCall, ICallLog, IWhatsappLog, ISmsLog, IEmailLog, IWhatsappTemplate, ITriggerComponent, IEscalation, IActionNode, ITaskComponent, IWorkflowDetails, IWorkflowNode, IPosition, IWorkflowActions, IWorkflowNodeData, IWorkflowEdge, IComponentAction, ICommunicationComponent, INewUser, ISensor, IObsoleteTask, IQuestion, IBatch, IAnswer, IEquipmentQuestion, ILayout, ILayoutEquipment, ISidebarLayoutItem, IPathSchema, ITaskComment, ITaskLog, IFlocSample, IFlocImage, IInsightsTemplate, IInsightComponent, IInsight, IInsightComment, FormulaCommonTypes, IWhatsappIncomingEvent, IWhatsappAiCommunication, IManualSensors, IDataLogger, IBidirectional, IBidirectionalLogs, IEquipmentComponent, IDataLoggerSession, IDLSensorConfig, INotification, IGeneralCommunication, IBulkEntryReport, IWorkspace, IEscalationFlow, IFileUpload, IEventsTemplate, IEventComponent, IEventLogs, IBatchConfig, IBatchLog, };

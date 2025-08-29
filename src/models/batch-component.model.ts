@@ -27,10 +27,10 @@ interface ITimeCycleConfig {
 interface IBatchConfig extends Document {
   assetId: Types.ObjectId;
 
-  batchName: string;
-  batchEquipments: Types.ObjectId[];
+  name: string;
+  equipments: Types.ObjectId[];
 
-  batchDetectionType: string;
+  detectionType: string;
 
   startBatchEventComponentId?: Types.ObjectId;
   timeCycle?: ITimeCycleConfig;
@@ -140,14 +140,14 @@ const batchConfigSchema = new Schema<IBatchConfig>(
   {
     assetId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
 
-    batchName: { type: String, required: true },
+    name: { type: String, required: true },
 
-    batchEquipments: {
+    equipments: {
       type: [Schema.Types.ObjectId],
       ref: "LayoutEquipments",
       required: true,
     },
-    batchDetectionType: {
+    detectionType: {
       type: String,
       enum: BATCH_DETECTION_ALLOWED,
       required: true,
