@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 import batchConstants from "../constants/batch.constants";
 
 interface IBatchLog extends Document {
-  batchConfigId: Types.ObjectId;
+  batchComponentId: Types.ObjectId;
 
   startTime: number;
   endTime?: number;
@@ -27,7 +27,7 @@ const BATCH_DETECTION_ALLOWED = [
 
 const batchLogSchema = new Schema<IBatchLog>(
   {
-    batchConfigId: {
+    batchComponentId: {
       type: Schema.Types.ObjectId,
       ref: "batch-components",
       required: true,

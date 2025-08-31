@@ -24,6 +24,59 @@ interface ITimeCycleConfig {
   endDate?: Date;
 }
 
+// Flow Node Position Interface
+interface INodePosition {
+  x: number;
+  y: number;
+}
+
+// Flow Node Data Interface
+interface INodeData {
+  label: string;
+  equipmentId: string;
+}
+
+// Flow Node Interface
+interface IFlowNode {
+  id: string;
+  type: string;
+  position: INodePosition;
+  data: INodeData;
+  width: number;
+  height: number;
+  selected: boolean;
+  positionAbsolute: INodePosition;
+  dragging: boolean;
+}
+
+// Flow Edge Style Interface
+interface IEdgeStyle {
+  stroke: string;
+  strokeWidth: number;
+  cursor: string;
+}
+
+// Flow Edge Marker Interface
+interface IEdgeMarker {
+  type: string;
+  width: number;
+  height: number;
+  color: string;
+}
+
+// Flow Edge Interface
+interface IFlowEdge {
+  id: string;
+  source: string;
+  target: string;
+  sourceHandle: string;
+  targetHandle: string;
+  type: string;
+  animated: boolean;
+  style: IEdgeStyle;
+  markerEnd: IEdgeMarker;
+}
+
 interface IBatchComponent extends Document {
   assetId: Types.ObjectId;
 
@@ -39,8 +92,8 @@ interface IBatchComponent extends Document {
   trackingSensors: Types.ObjectId[];
 
   flow: {
-    nodes: unknown[];
-    edges: unknown[];
+    nodes: IFlowNode[];
+    edges: IFlowEdge[];
   };
 
   chemicalUsage?: {
@@ -138,6 +191,59 @@ const waterTreatmentSchema = new Schema({
   value: { type: Number },
 });
 
+// Flow Node Position Schema
+const nodePositionSchema = new Schema<INodePosition>({
+  x: { type: Number, required: true },
+  y: { type: Number, required: true },
+}, { _id: false });
+
+// Flow Node Data Schema
+const nodeDataSchema = new Schema<INodeData>({
+  label: { type: String, required: true },
+  equipmentId: { type: String, required: true },
+}, { _id: false });
+
+// Flow Node Schema
+const flowNodeSchema = new Schema<IFlowNode>({
+  id: { type: String, required: true },
+  type: { type: String, required: true },
+  position: { type: nodePositionSchema, required: true },
+  data: { type: nodeDataSchema, required: true },
+  width: { type: Number, required: true },
+  height: { type: Number, required: true },
+  selected: { type: Boolean, default: false },
+  positionAbsolute: { type: nodePositionSchema, required: true },
+  dragging: { type: Boolean, default: false },
+}, { _id: false });
+
+// Flow Edge Style Schema
+const edgeStyleSchema = new Schema<IEdgeStyle>({
+  stroke: { type: String, required: true },
+  strokeWidth: { type: Number, required: true },
+  cursor: { type: String, required: true },
+}, { _id: false });
+
+// Flow Edge Marker Schema
+const edgeMarkerSchema = new Schema<IEdgeMarker>({
+  type: { type: String, required: true },
+  width: { type: Number, required: true },
+  height: { type: Number, required: true },
+  color: { type: String, required: true },
+}, { _id: false });
+
+// Flow Edge Schema
+const flowEdgeSchema = new Schema<IFlowEdge>({
+  id: { type: String, required: true },
+  source: { type: String, required: true },
+  target: { type: String, required: true },
+  sourceHandle: { type: String, required: true },
+  targetHandle: { type: String, required: true },
+  type: { type: String, required: true },
+  animated: { type: Boolean, default: false },
+  style: { type: edgeStyleSchema, required: true },
+  markerEnd: { type: edgeMarkerSchema, required: true },
+}, { _id: false });
+
 const batchComponentSchema = new Schema<IBatchComponent>(
   {
     assetId: { type: Schema.Types.ObjectId, ref: "Plant", required: true },
@@ -156,7 +262,8 @@ const batchComponentSchema = new Schema<IBatchComponent>(
     },
     startBatchAction: {
       type: String,
-      enum: BATCH_ACTION_ALLOWED
+      enum: BATCH_ACTION_ALLOWED,
+      // default: BATCH_ACTION_ALLOWED.END
     },
     startBatchEventComponentId: {
       type: Schema.Types.ObjectId,
@@ -171,8 +278,8 @@ const batchComponentSchema = new Schema<IBatchComponent>(
     trackingSensors: [{ type: Schema.Types.ObjectId, ref: "sensors" }],
 
     flow: {
-      nodes: { type: [Schema.Types.Mixed], default: [] },
-      edges: { type: [Schema.Types.Mixed], default: [] },
+      nodes: { type: [flowNodeSchema], default: [] },
+      edges: { type: [flowEdgeSchema], default: [] },
     },
     chemicalUsage: {
       type: [

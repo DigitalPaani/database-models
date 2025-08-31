@@ -20,7 +20,7 @@ interface IEventComponent extends Document {
     sensorTag: string;
     sensorId: Types.ObjectId;
   };
-  isEventCreated?: boolean;
+  isEventLogCreated?: boolean;
   triggerId: Types.ObjectId;
   assetId?: Types.ObjectId;
   userGroupId?: Types.ObjectId;
@@ -65,7 +65,7 @@ const eventComponentSchema = new Schema<IEventComponent>(
       sensorTag: String,
       sensorId: { type: Schema.Types.ObjectId, ref: "sensors" },
     },
-    isEventCreated: {
+    isEventLogCreated: {
       type: Boolean,
       default: false,
     },

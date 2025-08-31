@@ -19,6 +19,47 @@ interface ITimeCycleConfig {
     startDate?: Date;
     endDate?: Date;
 }
+interface INodePosition {
+    x: number;
+    y: number;
+}
+interface INodeData {
+    label: string;
+    equipmentId: string;
+}
+interface IFlowNode {
+    id: string;
+    type: string;
+    position: INodePosition;
+    data: INodeData;
+    width: number;
+    height: number;
+    selected: boolean;
+    positionAbsolute: INodePosition;
+    dragging: boolean;
+}
+interface IEdgeStyle {
+    stroke: string;
+    strokeWidth: number;
+    cursor: string;
+}
+interface IEdgeMarker {
+    type: string;
+    width: number;
+    height: number;
+    color: string;
+}
+interface IFlowEdge {
+    id: string;
+    source: string;
+    target: string;
+    sourceHandle: string;
+    targetHandle: string;
+    type: string;
+    animated: boolean;
+    style: IEdgeStyle;
+    markerEnd: IEdgeMarker;
+}
 interface IBatchComponent extends Document {
     assetId: Types.ObjectId;
     name: string;
@@ -29,8 +70,8 @@ interface IBatchComponent extends Document {
     timeCycle?: ITimeCycleConfig;
     trackingSensors: Types.ObjectId[];
     flow: {
-        nodes: unknown[];
-        edges: unknown[];
+        nodes: IFlowNode[];
+        edges: IFlowEdge[];
     };
     chemicalUsage?: {
         chemicalName: string;

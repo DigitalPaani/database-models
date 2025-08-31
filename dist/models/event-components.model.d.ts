@@ -19,7 +19,7 @@ interface IEventComponent extends Document {
         sensorTag: string;
         sensorId: Types.ObjectId;
     };
-    isEventCreated?: boolean;
+    isEventLogCreated?: boolean;
     triggerId: Types.ObjectId;
     assetId?: Types.ObjectId;
     userGroupId?: Types.ObjectId;

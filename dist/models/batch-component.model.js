@@ -103,6 +103,53 @@ const waterTreatmentSchema = new mongoose_1.Schema({
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
     value: { type: Number },
 });
+// Flow Node Position Schema
+const nodePositionSchema = new mongoose_1.Schema({
+    x: { type: Number, required: true },
+    y: { type: Number, required: true },
+}, { _id: false });
+// Flow Node Data Schema
+const nodeDataSchema = new mongoose_1.Schema({
+    label: { type: String, required: true },
+    equipmentId: { type: String, required: true },
+}, { _id: false });
+// Flow Node Schema
+const flowNodeSchema = new mongoose_1.Schema({
+    id: { type: String, required: true },
+    type: { type: String, required: true },
+    position: { type: nodePositionSchema, required: true },
+    data: { type: nodeDataSchema, required: true },
+    width: { type: Number, required: true },
+    height: { type: Number, required: true },
+    selected: { type: Boolean, default: false },
+    positionAbsolute: { type: nodePositionSchema, required: true },
+    dragging: { type: Boolean, default: false },
+}, { _id: false });
+// Flow Edge Style Schema
+const edgeStyleSchema = new mongoose_1.Schema({
+    stroke: { type: String, required: true },
+    strokeWidth: { type: Number, required: true },
+    cursor: { type: String, required: true },
+}, { _id: false });
+// Flow Edge Marker Schema
+const edgeMarkerSchema = new mongoose_1.Schema({
+    type: { type: String, required: true },
+    width: { type: Number, required: true },
+    height: { type: Number, required: true },
+    color: { type: String, required: true },
+}, { _id: false });
+// Flow Edge Schema
+const flowEdgeSchema = new mongoose_1.Schema({
+    id: { type: String, required: true },
+    source: { type: String, required: true },
+    target: { type: String, required: true },
+    sourceHandle: { type: String, required: true },
+    targetHandle: { type: String, required: true },
+    type: { type: String, required: true },
+    animated: { type: Boolean, default: false },
+    style: { type: edgeStyleSchema, required: true },
+    markerEnd: { type: edgeMarkerSchema, required: true },
+}, { _id: false });
 const batchComponentSchema = new mongoose_1.Schema({
     assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
     name: { type: String, required: true },
@@ -118,7 +165,8 @@ const batchComponentSchema = new mongoose_1.Schema({
     },
     startBatchAction: {
         type: String,
-        enum: BATCH_ACTION_ALLOWED
+        enum: BATCH_ACTION_ALLOWED,
+        // default: BATCH_ACTION_ALLOWED.END
     },
     startBatchEventComponentId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -131,8 +179,8 @@ const batchComponentSchema = new mongoose_1.Schema({
     },
     trackingSensors: [{ type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" }],
     flow: {
-        nodes: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
-        edges: { type: [mongoose_1.Schema.Types.Mixed], default: [] },
+        nodes: { type: [flowNodeSchema], default: [] },
+        edges: { type: [flowEdgeSchema], default: [] },
     },
     chemicalUsage: {
         type: [

@@ -71,7 +71,7 @@ const eventComponentSchema = new mongoose_1.Schema({
         sensorTag: String,
         sensorId: { type: mongoose_1.Schema.Types.ObjectId, ref: "sensors" },
     },
-    isEventCreated: {
+    isEventLogCreated: {
         type: Boolean,
         default: false,
     },

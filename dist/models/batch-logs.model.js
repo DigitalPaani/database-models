@@ -46,7 +46,7 @@ const BATCH_DETECTION_ALLOWED = [
     ...Object.values(batch_constants_1.default.BATCH_DETECTION_ENUM),
 ];
 const batchLogSchema = new mongoose_1.Schema({
-    batchConfigId: {
+    batchComponentId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "batch-components",
         required: true,
