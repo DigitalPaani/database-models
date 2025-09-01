@@ -20,8 +20,8 @@ interface ITimeCycleRecurrence {
 
 interface ITimeCycleConfig {
   recurrence: ITimeCycleRecurrence;
-  startDate?: Date;
-  endDate?: Date;
+  startDate?: number;
+  endDate?: number;
 }
 
 // Flow Node Position Interface
@@ -182,8 +182,8 @@ const timeCycleRecurrenceSchema = new Schema<ITimeCycleRecurrence>(
 
 const timeCycleSchema = new Schema<ITimeCycleConfig>({
   recurrence: { type: timeCycleRecurrenceSchema, required: true },
-  startDate: { type: Date },
-  endDate: { type: Date },
+  startDate: { type: Number, required: true },
+  endDate: { type: Number, required: true },
 });
 
 const waterTreatmentSchema = new Schema({

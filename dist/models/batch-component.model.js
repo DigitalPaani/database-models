@@ -96,8 +96,8 @@ const timeCycleRecurrenceSchema = new mongoose_1.Schema({
 }, { _id: false });
 const timeCycleSchema = new mongoose_1.Schema({
     recurrence: { type: timeCycleRecurrenceSchema, required: true },
-    startDate: { type: Date },
-    endDate: { type: Date },
+    startDate: { type: Number, required: true },
+    endDate: { type: Number, required: true },
 });
 const waterTreatmentSchema = new mongoose_1.Schema({
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },
