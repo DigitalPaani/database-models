@@ -105,50 +105,50 @@ const waterTreatmentSchema = new mongoose_1.Schema({
 });
 // Flow Node Position Schema
 const nodePositionSchema = new mongoose_1.Schema({
-    x: { type: Number, required: true },
-    y: { type: Number, required: true },
+    x: { type: Number, required: false },
+    y: { type: Number, required: false },
 }, { _id: false });
 // Flow Node Data Schema
 const nodeDataSchema = new mongoose_1.Schema({
-    label: { type: String, required: true },
-    equipmentId: { type: String, required: true },
+    label: { type: String, required: false },
+    equipmentId: { type: String, required: false },
 }, { _id: false });
 // Flow Node Schema
 const flowNodeSchema = new mongoose_1.Schema({
-    id: { type: String, required: true },
-    type: { type: String, required: true },
-    position: { type: nodePositionSchema, required: true },
-    data: { type: nodeDataSchema, required: true },
-    width: { type: Number, required: true },
-    height: { type: Number, required: true },
+    id: { type: String, required: false },
+    type: { type: String, required: false },
+    position: { type: nodePositionSchema, required: false },
+    data: { type: nodeDataSchema, required: false },
+    width: { type: Number, required: false },
+    height: { type: Number, required: false },
     selected: { type: Boolean, default: false },
-    positionAbsolute: { type: nodePositionSchema, required: true },
+    positionAbsolute: { type: nodePositionSchema, required: false },
     dragging: { type: Boolean, default: false },
 }, { _id: false });
 // Flow Edge Style Schema
 const edgeStyleSchema = new mongoose_1.Schema({
-    stroke: { type: String, required: true },
-    strokeWidth: { type: Number, required: true },
-    cursor: { type: String, required: true },
+    stroke: { type: String, required: false },
+    strokeWidth: { type: Number, required: false },
+    cursor: { type: String, required: false },
 }, { _id: false });
 // Flow Edge Marker Schema
 const edgeMarkerSchema = new mongoose_1.Schema({
-    type: { type: String, required: true },
-    width: { type: Number, required: true },
-    height: { type: Number, required: true },
-    color: { type: String, required: true },
+    type: { type: String, required: false },
+    width: { type: Number, required: false },
+    height: { type: Number, required: false },
+    color: { type: String, required: false },
 }, { _id: false });
 // Flow Edge Schema
 const flowEdgeSchema = new mongoose_1.Schema({
-    id: { type: String, required: true },
-    source: { type: String, required: true },
-    target: { type: String, required: true },
-    sourceHandle: { type: String, required: true },
-    targetHandle: { type: String, required: true },
-    type: { type: String, required: true },
+    id: { type: String, required: false },
+    source: { type: String, required: false },
+    target: { type: String, required: false },
+    sourceHandle: { type: String, required: false },
+    targetHandle: { type: String, required: false },
+    type: { type: String, required: false },
     animated: { type: Boolean, default: false },
-    style: { type: edgeStyleSchema, required: true },
-    markerEnd: { type: edgeMarkerSchema, required: true },
+    style: { type: edgeStyleSchema, required: false },
+    markerEnd: { type: edgeMarkerSchema, required: false },
 }, { _id: false });
 const batchComponentSchema = new mongoose_1.Schema({
     assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },

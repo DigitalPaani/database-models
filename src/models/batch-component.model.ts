@@ -26,55 +26,55 @@ interface ITimeCycleConfig {
 
 // Flow Node Position Interface
 interface INodePosition {
-  x: number;
-  y: number;
+  x?: number;
+  y?: number;
 }
 
 // Flow Node Data Interface
 interface INodeData {
-  label: string;
-  equipmentId: string;
+  label?: string;
+  equipmentId?: string;
 }
 
 // Flow Node Interface
 interface IFlowNode {
-  id: string;
-  type: string;
-  position: INodePosition;
-  data: INodeData;
-  width: number;
-  height: number;
-  selected: boolean;
-  positionAbsolute: INodePosition;
-  dragging: boolean;
+  id?: string;
+  type?: string;
+  position?: INodePosition;
+  data?: INodeData;
+  width?: number;
+  height?: number;
+  selected?: boolean;
+  positionAbsolute?: INodePosition;
+  dragging?: boolean;
 }
 
 // Flow Edge Style Interface
 interface IEdgeStyle {
-  stroke: string;
-  strokeWidth: number;
-  cursor: string;
+  stroke?: string;
+  strokeWidth?: number;
+  cursor?: string;
 }
 
 // Flow Edge Marker Interface
 interface IEdgeMarker {
-  type: string;
-  width: number;
-  height: number;
-  color: string;
+  type?: string;
+  width?: number;
+  height?: number;
+  color?: string;
 }
 
 // Flow Edge Interface
 interface IFlowEdge {
-  id: string;
-  source: string;
-  target: string;
-  sourceHandle: string;
-  targetHandle: string;
-  type: string;
-  animated: boolean;
-  style: IEdgeStyle;
-  markerEnd: IEdgeMarker;
+  id?: string;
+  source?: string;
+  target?: string;
+  sourceHandle?: string;
+  targetHandle?: string;
+  type?: string;
+  animated?: boolean;
+  style?: IEdgeStyle;
+  markerEnd?: IEdgeMarker;
 }
 
 interface IBatchComponent extends Document {
@@ -193,55 +193,55 @@ const waterTreatmentSchema = new Schema({
 
 // Flow Node Position Schema
 const nodePositionSchema = new Schema<INodePosition>({
-  x: { type: Number, required: true },
-  y: { type: Number, required: true },
+  x: { type: Number, required: false },
+  y: { type: Number, required: false },
 }, { _id: false });
 
 // Flow Node Data Schema
 const nodeDataSchema = new Schema<INodeData>({
-  label: { type: String, required: true },
-  equipmentId: { type: String, required: true },
+  label: { type: String, required: false },
+  equipmentId: { type: String, required: false },
 }, { _id: false });
 
 // Flow Node Schema
 const flowNodeSchema = new Schema<IFlowNode>({
-  id: { type: String, required: true },
-  type: { type: String, required: true },
-  position: { type: nodePositionSchema, required: true },
-  data: { type: nodeDataSchema, required: true },
-  width: { type: Number, required: true },
-  height: { type: Number, required: true },
+  id: { type: String, required: false },
+  type: { type: String, required: false },
+  position: { type: nodePositionSchema, required: false },
+  data: { type: nodeDataSchema, required: false },
+  width: { type: Number, required: false },
+  height: { type: Number, required: false },
   selected: { type: Boolean, default: false },
-  positionAbsolute: { type: nodePositionSchema, required: true },
+  positionAbsolute: { type: nodePositionSchema, required: false },
   dragging: { type: Boolean, default: false },
 }, { _id: false });
 
 // Flow Edge Style Schema
 const edgeStyleSchema = new Schema<IEdgeStyle>({
-  stroke: { type: String, required: true },
-  strokeWidth: { type: Number, required: true },
-  cursor: { type: String, required: true },
+  stroke: { type: String, required: false },
+  strokeWidth: { type: Number, required: false },
+  cursor: { type: String, required: false },
 }, { _id: false });
 
 // Flow Edge Marker Schema
 const edgeMarkerSchema = new Schema<IEdgeMarker>({
-  type: { type: String, required: true },
-  width: { type: Number, required: true },
-  height: { type: Number, required: true },
-  color: { type: String, required: true },
+  type: { type: String, required: false },
+  width: { type: Number, required: false },
+  height: { type: Number, required: false },
+  color: { type: String, required: false },
 }, { _id: false });
 
 // Flow Edge Schema
 const flowEdgeSchema = new Schema<IFlowEdge>({
-  id: { type: String, required: true },
-  source: { type: String, required: true },
-  target: { type: String, required: true },
-  sourceHandle: { type: String, required: true },
-  targetHandle: { type: String, required: true },
-  type: { type: String, required: true },
+  id: { type: String, required: false },
+  source: { type: String, required: false },
+  target: { type: String, required: false },
+  sourceHandle: { type: String, required: false },
+  targetHandle: { type: String, required: false },
+  type: { type: String, required: false },
   animated: { type: Boolean, default: false },
-  style: { type: edgeStyleSchema, required: true },
-  markerEnd: { type: edgeMarkerSchema, required: true },
+  style: { type: edgeStyleSchema, required: false },
+  markerEnd: { type: edgeMarkerSchema, required: false },
 }, { _id: false });
 
 const batchComponentSchema = new Schema<IBatchComponent>(

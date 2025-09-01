@@ -20,45 +20,45 @@ interface ITimeCycleConfig {
     endDate?: number;
 }
 interface INodePosition {
-    x: number;
-    y: number;
+    x?: number;
+    y?: number;
 }
 interface INodeData {
-    label: string;
-    equipmentId: string;
+    label?: string;
+    equipmentId?: string;
 }
 interface IFlowNode {
-    id: string;
-    type: string;
-    position: INodePosition;
-    data: INodeData;
-    width: number;
-    height: number;
-    selected: boolean;
-    positionAbsolute: INodePosition;
-    dragging: boolean;
+    id?: string;
+    type?: string;
+    position?: INodePosition;
+    data?: INodeData;
+    width?: number;
+    height?: number;
+    selected?: boolean;
+    positionAbsolute?: INodePosition;
+    dragging?: boolean;
 }
 interface IEdgeStyle {
-    stroke: string;
-    strokeWidth: number;
-    cursor: string;
+    stroke?: string;
+    strokeWidth?: number;
+    cursor?: string;
 }
 interface IEdgeMarker {
-    type: string;
-    width: number;
-    height: number;
-    color: string;
+    type?: string;
+    width?: number;
+    height?: number;
+    color?: string;
 }
 interface IFlowEdge {
-    id: string;
-    source: string;
-    target: string;
-    sourceHandle: string;
-    targetHandle: string;
-    type: string;
-    animated: boolean;
-    style: IEdgeStyle;
-    markerEnd: IEdgeMarker;
+    id?: string;
+    source?: string;
+    target?: string;
+    sourceHandle?: string;
+    targetHandle?: string;
+    type?: string;
+    animated?: boolean;
+    style?: IEdgeStyle;
+    markerEnd?: IEdgeMarker;
 }
 interface IBatchComponent extends Document {
     assetId: Types.ObjectId;
