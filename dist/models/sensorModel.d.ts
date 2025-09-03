@@ -37,5 +37,6 @@ declare const SensorsModel: mongoose.Model<ISensor & mongoose.Document<unknown, 
 }> & {
     __v: number;
 }, any>;
-export default SensorsModel;
+type ISensorsData = ISensor;
+export { SensorsModel, ISensorsData };
 //# sourceMappingURL=sensorModel.d.ts.map

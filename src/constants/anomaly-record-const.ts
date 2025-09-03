@@ -1,5 +1,6 @@
 const ANOMALY_RECORD_SENSITIVITY = {
   LOW: "LOW",
+  MEDIUM: "MEDIUM",
   HIGH: "HIGH",
 };
 

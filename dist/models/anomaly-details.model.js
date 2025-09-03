@@ -32,38 +32,47 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AnomalyRecordModel = void 0;
+exports.AnomalyDetailsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const anomalyRecordsSchema = new mongoose_1.Schema({
-    anomalyDetailsId: {
+const anomaly_record_const_1 = __importDefault(require("../constants/anomaly-record-const"));
+const anomalyDetailsSchema = new mongoose_1.Schema({
+    sensorId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "anomalyDetails",
+        ref: "sensors",
         required: true,
     },
-    startTime: {
+    formulaId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "formulas",
+        required: true,
+    },
+    configStartTime: {
         type: Number,
         required: true,
     },
-    endTime: {
+    configEndTime: {
         type: Number,
         required: true,
     },
-    durationInMinutes: {
-        type: Number,
-        required: true,
-    },
-    isIntersected: {
+    noise: {
         type: Boolean,
         default: false,
         required: true,
     },
-    // common field for all schema
+    sensitivity: {
+        type: String,
+        enum: Object.values(anomaly_record_const_1.default.ANOMALY_RECORD_SENSITIVITY),
+        required: true,
+    },
     isDeleted: {
         type: Boolean,
         default: false,
         required: true,
     },
 }, { timestamps: true });
-const AnomalyRecordModel = mongoose_1.default.model("anomalyRecords", anomalyRecordsSchema, "anomalyRecords");
-exports.AnomalyRecordModel = AnomalyRecordModel;
+const AnomalyDetailsModel = mongoose_1.default.model("anomalyDetails", anomalyDetailsSchema, "anomalyDetails");
+exports.AnomalyDetailsModel = AnomalyDetailsModel;

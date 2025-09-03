@@ -1,15 +1,12 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
-import anomalyRecordConst from "../constants/anomaly-record-const";
 
 interface IAnomalyRecord extends Document {
-  sensorId: Types.ObjectId;
-  startDate: number;
-  endDate: number;
-  values: [number];
-  formulaId: Types.ObjectId;
-  noise: boolean;
-  sensitivity: string;
-  isDuplicate: boolean;
+  anomalyDetailsId: Types.ObjectId;
+  startTime: number;
+  endTime: number;
+  durationInMinutes: number;
+  isIntersected: boolean;
+
   // common fields for all schemas
   isDeleted: boolean;
   createdAt?: Date;
@@ -18,39 +15,24 @@ interface IAnomalyRecord extends Document {
 
 const anomalyRecordsSchema = new Schema<IAnomalyRecord>(
   {
-    sensorId: {
+    anomalyDetailsId: {
       type: Schema.Types.ObjectId,
-      ref: "sensors",
+      ref: "anomalyDetails",
       required: true,
     },
-    startDate: {
+    startTime: {
       type: Number,
       required: true,
     },
-    endDate: {
+    endTime: {
       type: Number,
       required: true,
     },
-    values: {
-      type: [Number],
+    durationInMinutes: {
+      type: Number,
       required: true,
     },
-    formulaId: {
-      type: Schema.Types.ObjectId,
-      ref: "formulas",
-      required: true,
-    },
-    noise: {
-      type: Boolean,
-      default: false,
-      required: true,
-    },
-    sensitivity: {
-      type: String,
-      enum: Object.values(anomalyRecordConst.ANOMALY_RECORD_SENSITIVITY),
-      required: true,
-    },
-    isDuplicate: {
+    isIntersected: {
       type: Boolean,
       default: false,
       required: true,

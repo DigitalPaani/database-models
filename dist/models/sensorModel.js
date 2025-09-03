@@ -33,6 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SensorsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 const flocChildSensorsSchema = new Schema({
@@ -125,4 +126,4 @@ const sensor = new Schema({
     timestamps: true,
 });
 const SensorsModel = mongoose_1.default.model("sensors", sensor);
-exports.default = SensorsModel;
+exports.SensorsModel = SensorsModel;
