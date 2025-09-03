@@ -4,7 +4,7 @@ import mongoose, { Schema, Types } from "mongoose";
 interface ILogbookAssetConfiguration extends Document {
   assetId: Types.ObjectId | null;
   logbookTemplateId: Types.ObjectId | null;
-  
+  textractConfiguration: Schema.Types.Mixed;
   isArchived: boolean;
 };
 
@@ -21,6 +21,10 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
       type: mongoose.Schema.Types.ObjectId,
       ref: "logbookTemplates",
       required: true,
+    },
+    textractConfiguration: {
+      type: mongoose.Schema.Types.Mixed,
+      required: false
     },
     isArchived: {
       type: Boolean,
@@ -41,3 +45,4 @@ const LogbookAssetConfigurationModel: Model<ILogbookAssetConfiguration> =
   );
 
 export { LogbookAssetConfigurationModel, ILogbookAssetConfiguration };
+// ILogbookAssetConfiguration

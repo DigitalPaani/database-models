@@ -1,8 +1,9 @@
 import type { Document, Model } from "mongoose";
-import { Types } from "mongoose";
+import { Schema, Types } from "mongoose";
 interface ILogbookAssetConfiguration extends Document {
     assetId: Types.ObjectId | null;
     logbookTemplateId: Types.ObjectId | null;
+    textractConfiguration: Schema.Types.Mixed;
     isArchived: boolean;
 }
 declare const LogbookAssetConfigurationModel: Model<ILogbookAssetConfiguration>;
