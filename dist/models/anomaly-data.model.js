@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.anomalyDataSchema = exports.AnomalyDataModel = void 0;
+exports.AnomalyDataModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const anomalyDataSchema = new mongoose_1.Schema({
     triggerId: {
@@ -47,7 +47,6 @@ const anomalyDataSchema = new mongoose_1.Schema({
         required: true,
     },
 }, { timestamps: true });
-exports.anomalyDataSchema = anomalyDataSchema;
 anomalyDataSchema.index({ createdAt: 1 }, {
     expireAfterSeconds: 120,
     partialFilterExpression: { formulaId: { $exists: true } },

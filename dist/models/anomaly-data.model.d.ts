@@ -5,19 +5,10 @@ interface IAnomalyData extends Document {
     createdAt?: Date;
     updatedAt?: Date;
 }
-declare const anomalyDataSchema: mongoose.Schema<IAnomalyData, mongoose.Model<IAnomalyData, any, any, any, mongoose.Document<unknown, any, IAnomalyData> & IAnomalyData & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, IAnomalyData, mongoose.Document<unknown, {}, mongoose.FlatRecord<IAnomalyData>> & mongoose.FlatRecord<IAnomalyData> & Required<{
-    _id: unknown;
-}> & {
-    __v: number;
-}>;
 declare const AnomalyDataModel: mongoose.Model<IAnomalyData, {}, {}, {}, mongoose.Document<unknown, {}, IAnomalyData> & IAnomalyData & Required<{
     _id: unknown;
 }> & {
     __v: number;
 }, any>;
-export { AnomalyDataModel, anomalyDataSchema };
+export { IAnomalyData, AnomalyDataModel };
 //# sourceMappingURL=anomaly-data.model.d.ts.map

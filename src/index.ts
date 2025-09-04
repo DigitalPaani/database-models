@@ -114,6 +114,7 @@ import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk
 import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
 import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.model'
 import { IAnomalyDetails, AnomalyDetailsModel } from './models/anomaly-details.model'
+import { IAnomalyData, AnomalyDataModel } from './models/anomaly-data.model'
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
@@ -193,6 +194,7 @@ export type {
   IAnomalyRecord,
   IAnomalyDetails,
   ISensorsData,
+  IAnomalyData,
 };
 
 // exports the models
@@ -268,4 +270,5 @@ export {
   FileManagementUploadModel,
   AnomalyRecordModel,
   AnomalyDetailsModel,
+  AnomalyDataModel,
 };

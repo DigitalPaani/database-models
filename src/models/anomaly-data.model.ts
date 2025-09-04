@@ -38,4 +38,4 @@ const AnomalyDataModel = mongoose.model<IAnomalyData>(
   "anomalyData"
 );
 
-export { AnomalyDataModel, anomalyDataSchema };
+export { IAnomalyData, AnomalyDataModel };
