@@ -13,12 +13,10 @@ const anomalyDataSchema = new Schema<IAnomalyData>(
     triggerId: {
       type: Schema.Types.ObjectId,
       ref: "triggers",
-      required: true,
     },
     formulaId: {
       type: Schema.Types.ObjectId,
       ref: "formulas",
-      required: true,
     },
   },
   { timestamps: true }

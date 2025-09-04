@@ -39,12 +39,10 @@ const anomalyDataSchema = new mongoose_1.Schema({
     triggerId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "triggers",
-        required: true,
     },
     formulaId: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "formulas",
-        required: true,
     },
 }, { timestamps: true });
 anomalyDataSchema.index({ createdAt: 1 }, {
