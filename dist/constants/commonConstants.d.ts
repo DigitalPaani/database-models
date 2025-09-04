@@ -173,6 +173,11 @@ declare const _default: {
             END: string;
         };
     };
+    ANOMALY_RECORD_SENSITIVITY: {
+        LOW: string;
+        MEDIUM: string;
+        HIGH: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

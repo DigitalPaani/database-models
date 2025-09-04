@@ -134,4 +134,6 @@ const SensorsModel = mongoose.model<ISensor & mongoose.Document>(
   "sensors",
   sensor
 );
-export default SensorsModel;
+type ISensorsData = ISensor;
+
+export { SensorsModel, ISensorsData };
