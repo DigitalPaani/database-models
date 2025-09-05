@@ -55,7 +55,7 @@ const eventsTemplateSchema = new mongoose_1.Schema({
         endTag: String,
         eventTag: String,
     },
-    isEventComponentExists: {
+    isEventTemplateUsed: {
         type: Boolean,
         default: false,
     },
