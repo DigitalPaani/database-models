@@ -29,6 +29,13 @@ const BATCH_ACTION_ENUM = {
   START: "Start",
   END: "End",
 }
+const BATCH_DURATION_UNIT = {
+  MINUTE: "Minute",
+  HOUR: "Hour",
+  DAY: "Day",
+  WEEK: "Week",
+  MONTH: "Month",
+}
 
 export default {
   BATCH_STATUS_ENUM,
@@ -36,4 +43,5 @@ export default {
   BATCH_TYPE_ENUM,
   WATER_TREATMENT_UNIT_ENUM,
   BATCH_ACTION_ENUM,
+  BATCH_DURATION_UNIT
 };

@@ -39,6 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BatchComponentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const batch_constants_1 = __importDefault(require("../constants/batch.constants"));
+const BATCH_DURATION_UNIT_ALLOWED = [...Object.values(batch_constants_1.default.BATCH_DURATION_UNIT)];
 const BATCH_STATUS_ALLOWED = [
     ...Object.values(batch_constants_1.default.BATCH_STATUS_ENUM),
 ];
@@ -97,7 +98,8 @@ const timeCycleRecurrenceSchema = new mongoose_1.Schema({
 const timeCycleSchema = new mongoose_1.Schema({
     recurrence: { type: timeCycleRecurrenceSchema, required: true },
     startDate: { type: Number, required: true },
-    endDate: { type: Number, required: true },
+    durationNumber: { type: Number, required: true },
+    durationUnit: { type: String, enum: BATCH_DURATION_UNIT_ALLOWED, required: true },
 });
 const waterTreatmentSchema = new mongoose_1.Schema({
     unit: { type: String, enum: WATER_TREATMENT_UNIT_ALLOWED },

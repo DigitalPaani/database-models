@@ -172,6 +172,13 @@ declare const _default: {
             START: string;
             END: string;
         };
+        BATCH_DURATION_UNIT: {
+            MINUTE: string;
+            HOUR: string;
+            DAY: string;
+            WEEK: string;
+            MONTH: string;
+        };
     };
     ANOMALY_RECORD_SENSITIVITY: {
         LOW: string;

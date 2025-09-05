@@ -17,7 +17,8 @@ interface ITimeCycleRecurrence {
 interface ITimeCycleConfig {
     recurrence: ITimeCycleRecurrence;
     startDate?: number;
-    endDate?: number;
+    durationNumber: number;
+    durationUnit: string;
 }
 interface INodePosition {
     x?: number;

@@ -21,7 +21,8 @@ interface ITimeCycleRecurrence {
 interface ITimeCycleConfig {
   recurrence: ITimeCycleRecurrence;
   startDate?: number;
-  endDate?: number;
+  durationNumber: number;
+  durationUnit: string;
 }
 
 // Flow Node Position Interface
@@ -82,43 +83,44 @@ interface IBatchComponent extends Document {
 
   name: string;
   equipments: Types.ObjectId[];
-
+  
   detectionType: string;
-
+  
   startBatchEventComponentId?: Types.ObjectId;
   startBatchAction: string;
   timeCycle?: ITimeCycleConfig;
-
+  
   trackingSensors: Types.ObjectId[];
-
+  
   flow: {
     nodes: IFlowNode[];
     edges: IFlowEdge[];
   };
-
+  
   chemicalUsage?: {
     chemicalName: string;
     itemId: Types.ObjectId;
   }[];
-
+  
   waterTreatment?: {
     unit?: string;
     value?: number;
   };
-
+  
   type: string;
   purpose?: string;
-
+  
   startTriggerId?: Types.ObjectId;
   endTriggerId?: Types.ObjectId;
-
+  
   statusConditions: IStatusCondition[];
   isArchived: boolean;
-
+  
   createdBy?: Types.ObjectId;
   updatedBy?: Types.ObjectId;
 }
 
+const BATCH_DURATION_UNIT_ALLOWED = [...Object.values(batchConstants.BATCH_DURATION_UNIT)];
 const BATCH_STATUS_ALLOWED = [
   ...Object.values(batchConstants.BATCH_STATUS_ENUM),
 ];
@@ -183,7 +185,8 @@ const timeCycleRecurrenceSchema = new Schema<ITimeCycleRecurrence>(
 const timeCycleSchema = new Schema<ITimeCycleConfig>({
   recurrence: { type: timeCycleRecurrenceSchema, required: true },
   startDate: { type: Number, required: true },
-  endDate: { type: Number, required: true },
+  durationNumber: { type: Number, required: true },
+  durationUnit: { type: String, enum: BATCH_DURATION_UNIT_ALLOWED, required: true },
 });
 
 const waterTreatmentSchema = new Schema({
