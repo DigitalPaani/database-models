@@ -59,12 +59,16 @@ const formulaEventSchema = new mongoose_1.Schema({
         required: true,
     },
     isAggregated: { type: Boolean, required: true, default: false },
+    expiresAt: {
+        type: Date,
+        required: false,
+        index: {
+            expireAfterSeconds: 172800,
+            partialFilterExpression: { formulaId: { $exists: true } },
+        }, // TTL index for automatic expiration
+    },
 }, {
     timestamps: true,
-});
-formulaEventSchema.index({ createdAt: 1 }, {
-    expireAfterSeconds: 172800,
-    partialFilterExpression: { formulaId: { $exists: true } },
 });
 const FormulaEventModel = mongoose_1.default.model("formulaEvents", formulaEventSchema, "formulaEvents");
 exports.FormulaEventModel = FormulaEventModel;
