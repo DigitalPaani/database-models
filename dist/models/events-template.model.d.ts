@@ -20,7 +20,6 @@ interface IEventsTemplate extends Document {
     description: string;
     relatedEquipmentTypes: string[];
     eventTemplateTags: IEventTags;
-    isEventTemplateUsed?: boolean;
     createdBy?: Types.ObjectId;
     updatedBy?: Types.ObjectId;
     isArchived: boolean;
