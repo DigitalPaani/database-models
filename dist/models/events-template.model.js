@@ -55,6 +55,10 @@ const eventsTemplateSchema = new mongoose_1.Schema({
         endTag: String,
         eventTag: String,
     },
+    isEventComponentExists: {
+        type: Boolean,
+        default: false,
+    },
     createdBy: {
         type: mongoose_1.Types.ObjectId,
         ref: "User",

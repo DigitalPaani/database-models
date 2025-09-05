@@ -23,6 +23,7 @@ interface IEventsTemplate extends Document {
   description: string;
   relatedEquipmentTypes: string[];
   eventTemplateTags: IEventTags;
+  isEventComponentExists: boolean
   createdBy?: Types.ObjectId;
   updatedBy?: Types.ObjectId;
   isArchived: boolean;
@@ -46,6 +47,10 @@ const eventsTemplateSchema = new Schema<IEventsTemplate>(
       startTag: String,
       endTag: String,
       eventTag: String,
+    },
+    isEventComponentExists: {
+      type: Boolean,
+      default: false,
     },
     createdBy: {
       type: Types.ObjectId,
