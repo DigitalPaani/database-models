@@ -22,6 +22,7 @@ interface ITriggerDocument extends Document {
     status: string;
     isOpen: boolean;
     equipmentId?: Types.ObjectId;
+    isBatchTrigger?: boolean;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
