@@ -30,11 +30,11 @@ const BATCH_ACTION_ENUM = {
   END: "End",
 }
 const BATCH_DURATION_UNIT = {
-  MINUTE: "minute",
-  HOUR: "hour",
-  DAY: "day",
-  WEEK: "week",
-  MONTH: "month",
+  Minute: "minute",
+  Hour: "hour",
+  Day: "day",
+  Week: "week",
+  Month: "month",
 }
 
 export default {
