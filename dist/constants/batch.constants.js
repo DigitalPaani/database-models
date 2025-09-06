@@ -19,9 +19,9 @@ const BATCH_TYPE_ENUM = {
     REGULAR: "Regular",
 };
 const WATER_TREATMENT_UNIT_ENUM = {
-    LITER: "Liter",
-    KILO_LITER: "Kilo Liter",
-    MILLION_LITER: "Million Liter",
+    LITER: "Litre",
+    KILO_LITER: "Kilo Litre",
+    MILLION_LITER: "Million Litre",
 };
 const BATCH_ACTION_ENUM = {
     START: "Start",
