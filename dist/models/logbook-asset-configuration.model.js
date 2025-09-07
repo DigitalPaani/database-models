@@ -50,6 +50,10 @@ const LogbookConfigurationSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.Mixed,
         required: false
     },
+    logbookSchema: {
+        type: mongoose_1.default.Schema.Types.Mixed,
+        required: false
+    },
     isArchived: {
         type: Boolean,
         default: false,
@@ -60,4 +64,3 @@ const LogbookConfigurationSchema = new mongoose_1.Schema({
 });
 const LogbookAssetConfigurationModel = mongoose_1.default.model("logbookConfigurations", LogbookConfigurationSchema, "logbookConfigurations");
 exports.LogbookAssetConfigurationModel = LogbookAssetConfigurationModel;
-// ILogbookAssetConfiguration

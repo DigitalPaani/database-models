@@ -5,6 +5,7 @@ interface ILogbookAssetConfiguration extends Document {
   assetId: Types.ObjectId | null;
   logbookTemplateId: Types.ObjectId | null;
   textractConfiguration: Schema.Types.Mixed;
+  logbookSchema: Schema.Types.Mixed;
   isArchived: boolean;
 };
 
@@ -23,6 +24,10 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
       required: true,
     },
     textractConfiguration: {
+      type: mongoose.Schema.Types.Mixed,
+      required: false
+    },
+    logbookSchema: {
       type: mongoose.Schema.Types.Mixed,
       required: false
     },
@@ -45,4 +50,3 @@ const LogbookAssetConfigurationModel: Model<ILogbookAssetConfiguration> =
   );
 
 export { LogbookAssetConfigurationModel, ILogbookAssetConfiguration };
-// ILogbookAssetConfiguration
