@@ -8,6 +8,7 @@ interface IFormulaEvents extends Document {
   triggerId: Types.ObjectId;
   calculationTime: number;
   isAggregated: boolean;
+  expiresAt?: Date;
 }
 
 const formulaEventSchema = new Schema<IFormulaEvents>(
@@ -31,16 +32,16 @@ const formulaEventSchema = new Schema<IFormulaEvents>(
       required: true,
     },
     isAggregated: { type: Boolean, required: true, default: false },
+    expiresAt: {
+      type: Date,
+      required: false,
+      index: {
+        expireAfterSeconds: 172800,
+      }, // TTL index for automatic expiration
+    },
   },
   {
     timestamps: true,
-  }
-);
-formulaEventSchema.index(
-  { createdAt: 1 },
-  {
-    expireAfterSeconds: 172800,
-    partialFilterExpression: { formulaId: { $exists: true } },
   }
 );
 const FormulaEventModel: Model<IFormulaEvents> = mongoose.model<IFormulaEvents>(
