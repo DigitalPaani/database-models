@@ -165,6 +165,10 @@ export const ASSIGNEE_METHOD_ENUMS = [
     label: "Fixed User",
     value: "FIXED_USER",
   },
+  {
+    label: "Scheduled Based",
+    value: "SCHEDULED_BASED",
+  },
 ];
 
 export const ESCALATION_UNITS_ENUMS = [

@@ -163,6 +163,10 @@ exports.ASSIGNEE_METHOD_ENUMS = [
         label: "Fixed User",
         value: "FIXED_USER",
     },
+    {
+        label: "Scheduled Based",
+        value: "SCHEDULED_BASED",
+    },
 ];
 exports.ESCALATION_UNITS_ENUMS = [
     "MINUTES",
