@@ -37,7 +37,6 @@ const formulaEventSchema = new Schema<IFormulaEvents>(
       required: false,
       index: {
         expireAfterSeconds: 172800,
-        partialFilterExpression: { formulaId: { $exists: true } },
       }, // TTL index for automatic expiration
     },
   },
