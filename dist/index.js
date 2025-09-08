@@ -37,7 +37,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsightComponentModel = exports.InsightsTemplateModel = exports.FormulaAuditsModel = exports.FlocImageModel = exports.FlocSampleModel = exports.TaskLogModel = exports.TaskCommentModel = exports.LayoutPathModel = exports.SidebarLayoutItemsModel = exports.LayoutEquipmentModel = exports.LayoutModel = exports.SensorsModel = exports.EquipmentQuestionsModel = exports.AnswerSchemaModel = exports.BatchSchemaModel = exports.QuestionSchemaModel = exports.ObsoleteTaskModel = exports.mongooseDatabaseModels = exports.SensorModel = exports.CompanyModel = exports.commonConstants = exports.NewUserModel = exports.CommunicationComponentsModel = exports.TaskComponentsModel = exports.TriggerComponentModel = exports.Types = exports.WhatsappTemplateModel = exports.EmailLogModel = exports.SmsLogModel = exports.UserGroupModel = exports.StoreItemsModel = exports.Store = exports.WhatsappLogModel = exports.CallLogModel = exports.TwilioCallModel = exports.AttachmentModel = exports.TaskModel = exports.WorkflowModel = exports.RosterSchedulesModel = exports.RosterManagementModel = exports.SkillManagementModel = exports.TaskTemplateModel = exports.FormulaEventModel = exports.TriggerModel = exports.PlcModel = exports.SensorSettingsModel = exports.HyperFormulaModel = exports.PlantModel = exports.FormulasModel = exports.ConnectToDatabase = void 0;
-exports.AnomalyDetailsModel = exports.AnomalyRecordModel = exports.FileManagementUploadModel = exports.EscalationFlowModel = exports.NotificationComponentsModel = exports.WorkspaceModel = exports.BulkEntryReportModel = exports.GeneralCommunicationModel = exports.NotificationModel = exports.DLSensorConfigAuditModel = exports.DLSensorConfigModel = exports.DataLoggerSessionModel = exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = exports.DataLoggerModel = exports.ManualSensorModel = exports.WhatsappAiCommunicationModel = exports.WhatsappIncomingEventModel = exports.InsightCommentModel = exports.InsightModel = void 0;
+exports.AnomalyDetailsModel = exports.AnomalyRecordModel = exports.BatchLogModel = exports.BatchComponentModel = exports.EventLogsModel = exports.EventComponentModel = exports.EventsTemplateModel = exports.FileManagementUploadModel = exports.EscalationFlowModel = exports.NotificationComponentsModel = exports.WorkspaceModel = exports.BulkEntryReportModel = exports.GeneralCommunicationModel = exports.NotificationModel = exports.DLSensorConfigAuditModel = exports.DLSensorConfigModel = exports.DataLoggerSessionModel = exports.EquipmentComponentModel = exports.BidirectionalLogsModel = exports.BidirectionalModel = exports.DataLoggerModel = exports.ManualSensorModel = exports.WhatsappAiCommunicationModel = exports.WhatsappIncomingEventModel = exports.InsightCommentModel = exports.InsightModel = void 0;
 const formulaModel_1 = require("./models/formulaModel");
 Object.defineProperty(exports, "FormulasModel", { enumerable: true, get: function () { return formulaModel_1.FormulasModel; } });
 const hyperFormulaModel_1 = require("./models/hyperFormulaModel");
@@ -178,6 +178,16 @@ const userGroupModel_1 = require("./models/userGroupModel");
 Object.defineProperty(exports, "UserGroupModel", { enumerable: true, get: function () { return userGroupModel_1.UserGroupModel; } });
 const notificationComponents_model_1 = require("./models/notificationComponents.model");
 Object.defineProperty(exports, "NotificationComponentsModel", { enumerable: true, get: function () { return notificationComponents_model_1.NotificationComponentsModel; } });
+const events_template_model_1 = require("./models/events-template.model");
+Object.defineProperty(exports, "EventsTemplateModel", { enumerable: true, get: function () { return events_template_model_1.EventsTemplateModel; } });
+const event_components_model_1 = require("./models/event-components.model");
+Object.defineProperty(exports, "EventComponentModel", { enumerable: true, get: function () { return event_components_model_1.EventComponentModel; } });
+const event_logs_model_1 = require("./models/event-logs.model");
+Object.defineProperty(exports, "EventLogsModel", { enumerable: true, get: function () { return event_logs_model_1.EventLogsModel; } });
+const batch_component_model_1 = require("./models/batch-component.model");
+Object.defineProperty(exports, "BatchComponentModel", { enumerable: true, get: function () { return batch_component_model_1.BatchComponentModel; } });
+const batch_logs_model_1 = require("./models/batch-logs.model");
+Object.defineProperty(exports, "BatchLogModel", { enumerable: true, get: function () { return batch_logs_model_1.BatchLogModel; } });
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose_1.default;
 exports.mongooseDatabaseModels = mongooseDatabaseModels;

@@ -117,6 +117,12 @@ import { IAnomalyDetails, AnomalyDetailsModel } from './models/anomaly-details.m
 
 import {UserGroupModel} from './models/userGroupModel'
 import {NotificationComponentsModel} from './models/notificationComponents.model'
+
+import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.model";
+import { IEventComponent, EventComponentModel } from "./models/event-components.model";
+import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
+import { IBatchComponent, BatchComponentModel } from "./models/batch-component.model";
+import { IBatchLog, BatchLogModel } from "./models/batch-logs.model";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -190,6 +196,11 @@ export type {
   IWorkspace,
   IEscalationFlow,
   IFileUpload,
+  IEventsTemplate,
+  IEventComponent,
+  IEventLogs,
+  IBatchComponent,
+  IBatchLog,
   IAnomalyRecord,
   IAnomalyDetails,
   ISensorsData,
@@ -266,6 +277,11 @@ export {
   NotificationComponentsModel,
   EscalationFlowModel,
   FileManagementUploadModel,
+  EventsTemplateModel,
+  EventComponentModel,
+  EventLogsModel,
+  BatchComponentModel,
+  BatchLogModel,
   AnomalyRecordModel,
   AnomalyDetailsModel,
 };
