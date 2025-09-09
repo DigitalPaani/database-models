@@ -63,5 +63,9 @@ exports.SENSOR_PURPOSE_TAGS = [
     { key: "voltage", abbr: "VOLT", name: "Voltage" },
     { key: "power", abbr: "POWE", name: "Power" },
     { key: "mlss", abbr: "MLSS", name: "Mixed Liquor Suspended Solid" },
+    { key: "frwd", abbr: "FRWD", name: "Forward" },
+    { key: "frwdLimit", abbr: "FRWDLT", name: "Forward Limit" },
+    { key: "rvrse", abbr: "RVRSE", name: "Reverse" },
+    { key: "rvrseLimit", abbr: "RVRSELT", name: "Reverse Limit" }
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
