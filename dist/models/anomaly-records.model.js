@@ -36,29 +36,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnomalyRecordModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const anomalyRecordsSchema = new mongoose_1.Schema({
-    sensorId: {
+    anomalyDetailsId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "sensors",
+        ref: "anomalyDetails",
         required: true,
     },
-    startDate: {
+    startTime: {
         type: Number,
         required: true,
     },
-    endDate: {
+    endTime: {
         type: Number,
         required: true,
     },
-    values: {
-        type: [Number],
+    durationInMinutes: {
+        type: Number,
         required: true,
     },
-    formulaId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "formulas",
-        required: true,
-    },
-    isDuplicate: {
+    isIntersected: {
         type: Boolean,
         default: false,
         required: true,

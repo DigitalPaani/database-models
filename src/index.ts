@@ -24,7 +24,7 @@ import { CompanyModel } from "./models/CompanyModel";
 import { SensorModel, ISensor } from "./models/SensorList";
 import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
 import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
-import SensorsModel from "./models/sensorModel";
+import { SensorsModel, ISensorsData } from "./models/sensorModel";
 import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
@@ -154,21 +154,19 @@ import {
   IGeneralCommunication,
 } from "./models/general-communication.model";
 
-import {
-  IBulkEntryReport,
-  BulkEntryReportModel,
-} from "./models/data-input-bulk-entry-report";
-import {
-  IFileUpload,
-  FileManagementUploadModel,
-} from "./models/FileUpload.model";
-import {
-  IAnomalyRecord,
-  AnomalyRecordModel,
-} from "./models/anomaly-records.model";
+import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
+import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
+import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.model'
+import { IAnomalyDetails, AnomalyDetailsModel } from './models/anomaly-details.model'
 
-import { UserGroupModel } from "./models/userGroupModel";
-import { NotificationComponentsModel } from "./models/notificationComponents.model";
+import {UserGroupModel} from './models/userGroupModel'
+import {NotificationComponentsModel} from './models/notificationComponents.model'
+
+import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.model";
+import { IEventComponent, EventComponentModel } from "./models/event-components.model";
+import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
+import { IBatchComponent, BatchComponentModel } from "./models/batch-component.model";
+import { IBatchLog, BatchLogModel } from "./models/batch-logs.model";
 import {
   IVisualizationPages,
   VisualizationPagesModel,
@@ -250,9 +248,16 @@ export type {
   IWorkspace,
   IEscalationFlow,
   IFileUpload,
+  IEventsTemplate,
+  IEventComponent,
+  IEventLogs,
+  IBatchComponent,
+  IBatchLog,
   IAnomalyRecord,
+  IAnomalyDetails,
+  ISensorsData,
   IVisualizationPages,
-  IRefLayoutEquipment,
+  IRefLayoutEquipment
 };
 
 // exports the models
@@ -326,7 +331,13 @@ export {
   NotificationComponentsModel,
   EscalationFlowModel,
   FileManagementUploadModel,
+  EventsTemplateModel,
+  EventComponentModel,
+  EventLogsModel,
+  BatchComponentModel,
+  BatchLogModel,
   AnomalyRecordModel,
+  AnomalyDetailsModel,
   VisualizationPagesModel,
-  RefLayoutEquipmentModel,
+  RefLayoutEquipmentModel
 };

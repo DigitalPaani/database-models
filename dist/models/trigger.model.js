@@ -177,6 +177,7 @@ const triggerSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "LayoutEquipments"
     },
+    isBatchTrigger: { type: Boolean, required: false },
     isDeleted: { type: Boolean, required: true, default: false },
 }, { timestamps: true });
 const TriggerModel = mongoose_1.default.model("triggers", triggerSchema, "triggers");

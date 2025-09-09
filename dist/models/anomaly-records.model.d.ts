@@ -1,11 +1,10 @@
 import mongoose, { Document, Types } from "mongoose";
 interface IAnomalyRecord extends Document {
-    sensorId: Types.ObjectId;
-    startDate: number;
-    endDate: number;
-    values: [number];
-    formulaId: Types.ObjectId;
-    isDuplicate: boolean;
+    anomalyDetailsId: Types.ObjectId;
+    startTime: number;
+    endTime: number;
+    durationInMinutes: number;
+    isIntersected: boolean;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

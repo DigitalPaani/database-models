@@ -25,6 +25,8 @@ import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 import { SENSOR_TYPE } from "./data-logger.constant";
 import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
 import COMMUNICATION_CONSTANTS from "./communication.constants";
+import batchConstants from "./batch.constants";
+import anomalyRecordConst from "./anomaly-record-const";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -122,4 +124,6 @@ export default {
   SENSOR_PURPOSE_TAGS,
   REMOTE_CONTROL_STATUS,
   COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS,
+  BATCH_CONSTANTS: batchConstants,
+  ANOMALY_RECORD_SENSITIVITY: anomalyRecordConst.ANOMALY_RECORD_SENSITIVITY,
 };
