@@ -12,9 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "mongoose": "^8.9.3"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/mongoose": "^5.11.96",
     "@types/node": "^22.10.5",
     "typescript": "^5.7.2"
