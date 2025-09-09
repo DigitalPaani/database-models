@@ -36,9 +36,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VisualizationPagesModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const VisualizationPagesSchema = new mongoose_1.Schema({
-    name: mongoose_1.Schema.Types.String,
-    workspaceId: mongoose_1.Schema.Types.ObjectId,
-    description: mongoose_1.Schema.Types.String,
+    name: { type: String, required: true, trim: true },
+    workspaceId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+    },
+    description: { type: String, required: true, trim: true },
     totalEquipments: { type: mongoose_1.Schema.Types.Number, default: 0 },
     isArchived: { type: mongoose_1.Schema.Types.Boolean, default: false },
 }, { timestamps: true });

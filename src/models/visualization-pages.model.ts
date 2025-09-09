@@ -10,9 +10,12 @@ interface IVisualizationPages extends Document {
 
 const VisualizationPagesSchema = new Schema(
   {
-    name: Schema.Types.String,
-    workspaceId: Schema.Types.ObjectId,
-    description: Schema.Types.String,
+    name: { type: String, required: true, trim: true },
+    workspaceId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+    },
+    description: { type: String, required: true, trim: true },
     totalEquipments: { type: Schema.Types.Number, default: 0 },
     isArchived: { type: Schema.Types.Boolean, default: false },
   },
