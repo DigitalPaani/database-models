@@ -2,7 +2,7 @@ import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
 interface IOcrLogbookDataInputLog extends Document {
-  logbookAssetConfigurationId: Types.ObjectId;
+  logbookAssetConfigurationId: Types.ObjectId | null;
   assetId: Types.ObjectId | null;
   logbookTemplateId: Types.ObjectId | null;
   attachmentId: Types.ObjectId | null;
@@ -30,19 +30,19 @@ const LogbookConfigurationSchema = new Schema<IOcrLogbookDataInputLog>(
   {
     logbookAssetConfigurationId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      required: true,
     },
     assetId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      required: true,
     },
     logbookTemplateId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      required: true,
     },
     attachmentId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: false,
+      required: true,
     },
     dataInputSelectedValues: {
       type: [DataInputSelectedValueSchema],
