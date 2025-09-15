@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OcrLogbookDataInputLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const DataInputSelectedValueSchema = new mongoose_1.Schema({
-    key: {
+    sensorId: {
         type: String,
         required: true,
     },

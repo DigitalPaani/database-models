@@ -11,12 +11,12 @@ interface IOcrLogbookDataInputLog extends Document {
 }
 
 interface IDataInputSelectedValue extends Document {
-  key: string;
+  sensorId: string;
   value: string;
 }
 
 const DataInputSelectedValueSchema = new Schema<IDataInputSelectedValue>({
-  key: {
+  sensorId: {
     type: String,
     required: true,
   },

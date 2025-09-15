@@ -9,7 +9,7 @@ interface IOcrLogbookDataInputLog extends Document {
     isArchived: boolean;
 }
 interface IDataInputSelectedValue extends Document {
-    key: string;
+    sensorId: string;
     value: string;
 }
 declare const OcrLogbookDataInputLogModel: Model<IOcrLogbookDataInputLog>;
