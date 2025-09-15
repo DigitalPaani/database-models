@@ -2,9 +2,9 @@ import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 interface IOcrLogbookDataInputLog extends Document {
     logbookAssetConfigurationId: Types.ObjectId;
-    assetId: Types.ObjectId | null;
-    logbookTemplateId: Types.ObjectId | null;
-    attachmentId: Types.ObjectId | null;
+    assetId: Types.ObjectId;
+    logbookTemplateId: Types.ObjectId;
+    attachmentId: Types.ObjectId;
     dataInputSelectedValues: IDataInputSelectedValue[];
     isArchived: boolean;
 }
