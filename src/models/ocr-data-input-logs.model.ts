@@ -2,7 +2,7 @@ import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
 interface IOcrLogbookDataInputLog extends Document {
-  logbookAssetConfigurationId: Types.ObjectId | null;
+  logbookAssetConfigurationId: Types.ObjectId;
   assetId: Types.ObjectId | null;
   logbookTemplateId: Types.ObjectId | null;
   attachmentId: Types.ObjectId | null;
