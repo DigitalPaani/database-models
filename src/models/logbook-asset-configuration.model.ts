@@ -7,7 +7,7 @@ interface ILogbookAssetConfiguration extends Document {
   textractConfiguration: Schema.Types.Mixed;
   logbookSchema: Schema.Types.Mixed;
   sectionInfo: string;
-  annotationIds: [Types.ObjectId];
+  annotationIds: Types.ObjectId[];
   isArchived: boolean;
 };
 
