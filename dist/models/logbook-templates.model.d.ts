@@ -6,6 +6,7 @@ interface ILogbookTemplate extends Document {
     type: string;
     category: string;
     imageAttachmentId: Types.ObjectId | null;
+    annotationIds: [Types.ObjectId];
     isArchived: boolean;
 }
 declare const LogbookTemplateModel: Model<ILogbookTemplate>;
