@@ -50,7 +50,7 @@ const attachmentSchema = new mongoose_1.Schema({
     },
     type: {
         type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT", "LOGBOOK_TEMPLATE"],
+        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT", "LOGBOOK_TEMPLATE", "LOGBOOK_DATA_INPUT_IMAGES"],
     },
     expireAt: {
         type: Date,

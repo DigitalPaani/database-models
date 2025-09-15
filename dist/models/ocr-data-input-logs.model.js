@@ -46,6 +46,10 @@ const DataInputSelectedValueSchema = new mongoose_1.Schema({
     },
 });
 const LogbookConfigurationSchema = new mongoose_1.Schema({
+    logbookAssetConfigurationId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
     assetId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
