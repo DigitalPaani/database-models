@@ -58,6 +58,10 @@ const LogbookConfigurationSchema = new mongoose_1.Schema({
         type: String,
         required: false
     },
+    annotationIds: {
+        type: [mongoose_1.default.Schema.Types.ObjectId],
+        required: false,
+    },
     isArchived: {
         type: Boolean,
         default: false,

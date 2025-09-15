@@ -8,7 +8,6 @@ interface ILogbookTemplate extends Document {
   type: string;
   category: string;
   imageAttachmentId: Types.ObjectId | null;
-  annotationIds: [Types.ObjectId];
   isArchived: boolean;
 }
 
@@ -35,10 +34,6 @@ const LogbookTemplateSchema = new Schema<ILogbookTemplate>(
     imageAttachmentId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "attachments",
-      required: false,
-    },
-    annotationIds: {
-      type: [mongoose.Schema.Types.ObjectId],
       required: false,
     },
     isArchived: {

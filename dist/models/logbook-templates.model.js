@@ -63,10 +63,6 @@ const LogbookTemplateSchema = new mongoose_1.Schema({
         ref: "attachments",
         required: false,
     },
-    annotationIds: {
-        type: [mongoose_1.default.Schema.Types.ObjectId],
-        required: false,
-    },
     isArchived: {
         type: Boolean,
         default: false,

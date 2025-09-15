@@ -7,6 +7,7 @@ interface ILogbookAssetConfiguration extends Document {
   textractConfiguration: Schema.Types.Mixed;
   logbookSchema: Schema.Types.Mixed;
   sectionInfo: string;
+  annotationIds: [Types.ObjectId];
   isArchived: boolean;
 };
 
@@ -35,6 +36,10 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
     sectionInfo: {
       type: String,
       required: false
+    },
+    annotationIds: {
+      type: [mongoose.Schema.Types.ObjectId],
+      required: false,
     },
     isArchived: {
       type: Boolean,
