@@ -34,6 +34,7 @@ export interface ISensor {
   parentSensor?: Types.ObjectId | null;
   flocChildSensors?: FlocChildSensors;
   granularity?: number;
+  confidenceScore?: number;
 }
 
 const flocChildSensorsSchema = new Schema({
@@ -124,6 +125,7 @@ const sensor = new Schema(
       type: flocChildSensorsSchema,
       required: false
     },
+    confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
   },
   {
     timestamps: true,
