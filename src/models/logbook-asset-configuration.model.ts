@@ -6,6 +6,7 @@ interface ILogbookAssetConfiguration extends Document {
   logbookTemplateId: Types.ObjectId | null;
   textractConfiguration: Schema.Types.Mixed;
   logbookSchema: Schema.Types.Mixed;
+  sectionInfo: string;
   isArchived: boolean;
 };
 
@@ -29,6 +30,10 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
     },
     logbookSchema: {
       type: mongoose.Schema.Types.Mixed,
+      required: false
+    },
+    sectionInfo: {
+      type: String,
       required: false
     },
     isArchived: {

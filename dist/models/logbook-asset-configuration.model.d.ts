@@ -5,6 +5,7 @@ interface ILogbookAssetConfiguration extends Document {
     logbookTemplateId: Types.ObjectId | null;
     textractConfiguration: Schema.Types.Mixed;
     logbookSchema: Schema.Types.Mixed;
+    sectionInfo: string;
     isArchived: boolean;
 }
 declare const LogbookAssetConfigurationModel: Model<ILogbookAssetConfiguration>;

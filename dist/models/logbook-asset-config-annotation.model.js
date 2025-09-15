@@ -40,11 +40,11 @@ const mongoose_1 = __importStar(require("mongoose"));
 const LogbookAssetConfigAnnotationSchema = new mongoose_1.Schema({
     logbookAssetConfigurationId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: true,
+        required: false,
     },
     assetId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
-        required: true,
+        required: false,
     },
     awsTextractRawDoc: {
         type: mongoose_1.default.Schema.Types.Mixed,

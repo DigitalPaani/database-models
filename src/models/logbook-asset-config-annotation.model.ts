@@ -15,11 +15,11 @@ const LogbookAssetConfigAnnotationSchema = new Schema<ILogbookAssetConfigAnnotat
   {
     logbookAssetConfigurationId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,  
+      required: false,  
     },
     assetId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      required: false,
     },
     awsTextractRawDoc: {
         type: mongoose.Schema.Types.Mixed,

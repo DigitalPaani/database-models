@@ -54,6 +54,10 @@ const LogbookConfigurationSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.Mixed,
         required: false
     },
+    sectionInfo: {
+        type: String,
+        required: false
+    },
     isArchived: {
         type: Boolean,
         default: false,
