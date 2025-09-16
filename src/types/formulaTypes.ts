@@ -10,6 +10,7 @@ export namespace FormulaCommonTypes {
     aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative" | "LastActiveValue";
     firstReferenceTimeInMinutes: number;
     lastReferenceTimeInMinutes: number;
+    confidenceScore?: number;
   };
 
   export type FormulaChip = {

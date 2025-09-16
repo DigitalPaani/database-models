@@ -122,6 +122,7 @@ const sensor = new Schema({
         type: flocChildSensorsSchema,
         required: false
     },
+    confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
 }, {
     timestamps: true,
 });
