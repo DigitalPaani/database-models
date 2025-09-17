@@ -6,6 +6,7 @@ interface ISensorSetting extends Document {
     firstReferenceTimeInMinutes: number;
     lastReferenceTimeInMinutes: number;
     returnType: "values" | "value" | "datetime";
+    confidenceScore?: number;
 }
 declare const SensorSettingsModel: Model<ISensorSetting>;
 export { SensorSettingsModel, ISensorSetting };

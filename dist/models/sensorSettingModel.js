@@ -66,6 +66,7 @@ const sensorSettingsSchema = new mongoose_1.Schema({
         required: true,
         default: "value",
     },
+    confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
 }, {
     timestamps: true, // Automatically add createdAt and updatedAt fields
 });
