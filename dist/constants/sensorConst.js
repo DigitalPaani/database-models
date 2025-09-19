@@ -66,6 +66,7 @@ exports.SENSOR_PURPOSE_TAGS = [
     { key: "frwd", abbr: "FRWD", name: "Forward" },
     { key: "frwdLimit", abbr: "FRWDLT", name: "Forward Limit" },
     { key: "rvrse", abbr: "RVRSE", name: "Reverse" },
-    { key: "rvrseLimit", abbr: "RVRSELT", name: "Reverse Limit" }
+    { key: "rvrseLimit", abbr: "RVRSELT", name: "Reverse Limit" },
+    { key: "hooter", abbr: "HTR", name: "Hooter" },
 ];
 exports.sensorInputType = ["Modbus", "Analog", "Digital"];
