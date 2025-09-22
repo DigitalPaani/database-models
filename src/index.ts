@@ -175,6 +175,10 @@ import {
   RefLayoutEquipmentModel,
   IRefLayoutEquipment,
 } from "./models/refEquipment.model";
+import {
+  IchangeOfFormula,
+  changeOfFormulasModel,
+} from "./models/change-of-formulas";
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -257,7 +261,8 @@ export type {
   IAnomalyDetails,
   ISensorsData,
   IVisualizationPages,
-  IRefLayoutEquipment
+  IRefLayoutEquipment,
+  IchangeOfFormula
 };
 
 // exports the models
@@ -339,5 +344,6 @@ export {
   AnomalyRecordModel,
   AnomalyDetailsModel,
   VisualizationPagesModel,
-  RefLayoutEquipmentModel
+  RefLayoutEquipmentModel,
+  changeOfFormulasModel
 };
