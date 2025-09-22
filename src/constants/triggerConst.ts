@@ -41,7 +41,9 @@ const TRIGGER_COMPONENT_TYPES = {
   obsolete: "OBSOLETE",
   insight: "INSIGHT",
   equipments: "EQUIPMENTS",
-  notification: "NOTIFICATION"
+  notification: "NOTIFICATION",
+  event: "EVENT",
+  batch: "BATCH",
 };
 
 const COMMUNICATION_COMPONENT_TYPES = {

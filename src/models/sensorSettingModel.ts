@@ -13,6 +13,7 @@ interface ISensorSetting extends Document {
   firstReferenceTimeInMinutes: number;
   lastReferenceTimeInMinutes: number;
   returnType: "values" | "value" | "datetime";
+  confidenceScore?: number;
 }
 
 const sensorSettingsSchema = new Schema<ISensorSetting>(
@@ -46,6 +47,7 @@ const sensorSettingsSchema = new Schema<ISensorSetting>(
       required: true,
       default: "value",
     },
+    confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
   },
   {
     timestamps: true, // Automatically add createdAt and updatedAt fields

@@ -30,6 +30,7 @@ interface ITriggerDocument extends Document {
   status: string;
   isOpen: boolean;
   equipmentId?: Types.ObjectId;
+  isBatchTrigger?: boolean;
   isDeleted: boolean; // Default is false
   createdAt?: Date; // From Mongoose timestamps
   updatedAt?: Date; // From Mongoose timestamps
@@ -178,6 +179,7 @@ const triggerSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref:"LayoutEquipments" 
     },
+    isBatchTrigger: {type: Boolean, required: false},
     isDeleted: { type: Boolean, required: true, default: false },
   },
   { timestamps: true }
