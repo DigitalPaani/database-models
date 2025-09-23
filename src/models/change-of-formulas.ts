@@ -53,7 +53,6 @@ const frequencySchema = new Schema<FormulaCommonTypes.Frequency>({
 
 const changeOfFormulaSchema = new Schema<IchangeOfFormula>(
   {
-    version: { type: Number, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
     createdBy: { type: Schema.ObjectId, ref: "NewUser", required: true },

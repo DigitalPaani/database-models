@@ -58,7 +58,6 @@ const frequencySchema = new mongoose_1.Schema({
     },
 });
 const changeOfFormulaSchema = new mongoose_1.Schema({
-    version: { type: Number, required: true },
     name: { type: String, required: true },
     description: { type: String, required: true },
     createdBy: { type: mongoose_1.Schema.ObjectId, ref: "NewUser", required: true },
