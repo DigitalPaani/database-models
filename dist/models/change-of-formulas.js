@@ -87,5 +87,5 @@ const changeOfFormulaSchema = new mongoose_1.Schema({
     timestamps: true,
 });
 exports.changeOfFormulaSchema = changeOfFormulaSchema;
-const changeOfFormulasModel = mongoose_1.default.model("ChangeOfformulas", changeOfFormulaSchema, "ChangeOfformulas");
+const changeOfFormulasModel = mongoose_1.default.model("changeOfformulas", changeOfFormulaSchema, "changeOfformulas");
 exports.changeOfFormulasModel = changeOfFormulasModel;

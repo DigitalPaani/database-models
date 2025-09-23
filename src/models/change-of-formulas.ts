@@ -85,9 +85,9 @@ const changeOfFormulaSchema = new Schema<IchangeOfFormula>(
 );
 
 const changeOfFormulasModel: Model<IchangeOfFormula> = mongoose.model<IchangeOfFormula>(
-  "ChangeOfformulas",
+  "changeOfformulas",
   changeOfFormulaSchema,
-  "ChangeOfformulas"
+  "changeOfformulas"
 );
 
 export { changeOfFormulasModel, IchangeOfFormula, changeOfFormulaSchema };
