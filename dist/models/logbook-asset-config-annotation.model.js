@@ -48,6 +48,7 @@ const LogbookAssetConfigAnnotationSchema = new mongoose_1.Schema({
     },
     inputImageAttachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
         required: false,
     },
     awsTextractRawDoc: {
