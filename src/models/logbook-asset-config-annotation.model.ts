@@ -3,7 +3,8 @@ import mongoose, { Schema, Types } from "mongoose";
 
 interface ILogbookAssetConfigAnnotation extends Document {
   logbookAssetConfigurationId: Types.ObjectId | null;
-  assetId: Types.ObjectId | null;
+  assetId: Types.ObjectId | null
+  inputImageAttachmentId: Types.ObjectId | null;
   awsTextractRawDoc: any;
   isArchived: boolean;
 };
@@ -18,6 +19,10 @@ const LogbookAssetConfigAnnotationSchema = new Schema<ILogbookAssetConfigAnnotat
       required: false,  
     },
     assetId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: false,
+    },
+    inputImageAttachmentId: {
       type: mongoose.Schema.Types.ObjectId,
       required: false,
     },
