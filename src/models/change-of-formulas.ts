@@ -58,7 +58,6 @@ const changeOfFormulaSchema = new Schema<IchangeOfFormula>(
     description: { type: String, required: true },
     createdBy: { type: Schema.ObjectId, ref: "NewUser", required: true },
     plantId: { type: Schema.ObjectId, ref: "Plant", required: false },
-    unit: { type: String, required: true, enum: FORMULA_UNITS },
     formulaTag: { type: String, required: true },
     formulaChips: {
       type: [

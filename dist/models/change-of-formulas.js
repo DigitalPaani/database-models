@@ -63,7 +63,6 @@ const changeOfFormulaSchema = new mongoose_1.Schema({
     description: { type: String, required: true },
     createdBy: { type: mongoose_1.Schema.ObjectId, ref: "NewUser", required: true },
     plantId: { type: mongoose_1.Schema.ObjectId, ref: "Plant", required: false },
-    unit: { type: String, required: true, enum: formulaConst_1.FORMULA_UNITS },
     formulaTag: { type: String, required: true },
     formulaChips: {
         type: [
