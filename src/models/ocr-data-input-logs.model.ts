@@ -6,6 +6,7 @@ interface IOcrLogbookDataInputLog extends Document {
   assetId: Types.ObjectId;
   logbookTemplateId: Types.ObjectId;
   attachmentId: Types.ObjectId;
+  logbookTimestamp: number;
   dataInputSelectedValues: IDataInputSelectedValue[];
   isArchived: boolean;
 }
@@ -38,6 +39,10 @@ const LogbookConfigurationSchema = new Schema<IOcrLogbookDataInputLog>(
     },
     logbookTemplateId: {
       type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
+    logbookTimestamp: {
+      type: Number,
       required: true,
     },
     attachmentId: {

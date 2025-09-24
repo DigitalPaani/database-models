@@ -58,6 +58,10 @@ const LogbookConfigurationSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
     },
+    logbookTimestamp: {
+        type: Number,
+        required: true,
+    },
     attachmentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,

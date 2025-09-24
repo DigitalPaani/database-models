@@ -5,6 +5,7 @@ interface IOcrLogbookDataInputLog extends Document {
     assetId: Types.ObjectId;
     logbookTemplateId: Types.ObjectId;
     attachmentId: Types.ObjectId;
+    logbookTimestamp: number;
     dataInputSelectedValues: IDataInputSelectedValue[];
     isArchived: boolean;
 }
