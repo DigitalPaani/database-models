@@ -43,7 +43,7 @@ const LogbookConfigurationSchema = new Schema<IOcrLogbookDataInputLog>(
     },
     logbookTimestamp: {
       type: Number,
-      required: true,
+      default: 0,
     },
     attachmentId: {
       type: mongoose.Schema.Types.ObjectId,
