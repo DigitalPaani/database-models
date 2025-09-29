@@ -3,7 +3,7 @@ import mongoose, { Schema, Types } from "mongoose";
 
 interface IOverallSystemChangesLog extends Document {
   feature: string;
-  type: string;
+  subFeature: string;
   oldConfiguration: any;
   newConfiguration: any;
 }
@@ -14,7 +14,7 @@ const overallSystemLogSchema = new Schema<IOverallSystemChangesLog>(
       type: String,
       enum: ["TRIGGER"],
     },
-    type: {
+    subFeature: {
       type: String,
       enum: ["ACTIVE_INACTIVE_TRIGGER", "EDIT_COMMUNICATION_COMPONENT"],
     },

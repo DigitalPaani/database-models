@@ -1,7 +1,7 @@
 import type { Document, Model } from "mongoose";
 interface IOverallSystemChangesLog extends Document {
     feature: string;
-    type: string;
+    subFeature: string;
     oldConfiguration: any;
     newConfiguration: any;
 }
