@@ -16,7 +16,7 @@ const overallSystemLogSchema = new Schema<IOverallSystemChangesLog>(
     },
     subFeature: {
       type: String,
-      enum: ["ACTIVE_INACTIVE_TRIGGER", "EDIT_COMMUNICATION_COMPONENT"],
+      enum: ["UPDATE_TRIGGER"],
     },
     oldConfiguration: {
       type: Schema.Types.Mixed,

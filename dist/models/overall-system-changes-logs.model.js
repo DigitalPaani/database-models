@@ -42,7 +42,7 @@ const overallSystemLogSchema = new mongoose_1.Schema({
     },
     subFeature: {
         type: String,
-        enum: ["ACTIVE_INACTIVE_TRIGGER", "EDIT_COMMUNICATION_COMPONENT"],
+        enum: ["UPDATE_TRIGGER"],
     },
     oldConfiguration: {
         type: mongoose_1.Schema.Types.Mixed,
