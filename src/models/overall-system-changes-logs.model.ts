@@ -1,11 +1,13 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
+
 interface IOverallSystemChangesLog extends Document {
   feature: string;
   subFeature: string;
   oldConfiguration: any;
   newConfiguration: any;
+  jsonDiff: any;
 }
 
 const overallSystemLogSchema = new Schema<IOverallSystemChangesLog>(
@@ -26,6 +28,10 @@ const overallSystemLogSchema = new Schema<IOverallSystemChangesLog>(
       type: Schema.Types.Mixed,
       required: false,
     },
+    jsonDiff: {
+      type: Schema.Types.Mixed,
+      required: false,
+    }
   },
   {
     timestamps: true,

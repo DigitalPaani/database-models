@@ -4,6 +4,7 @@ interface IOverallSystemChangesLog extends Document {
     subFeature: string;
     oldConfiguration: any;
     newConfiguration: any;
+    jsonDiff: any;
 }
 declare const OverallSystemChangesLogModel: Model<IOverallSystemChangesLog>;
 export { OverallSystemChangesLogModel, IOverallSystemChangesLog };

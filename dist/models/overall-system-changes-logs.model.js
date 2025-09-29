@@ -52,6 +52,10 @@ const overallSystemLogSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.Mixed,
         required: false,
     },
+    jsonDiff: {
+        type: mongoose_1.Schema.Types.Mixed,
+        required: false,
+    }
 }, {
     timestamps: true,
     strict: false,
