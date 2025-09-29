@@ -175,6 +175,10 @@ import {
   RefLayoutEquipmentModel,
   IRefLayoutEquipment,
 } from "./models/refEquipment.model";
+
+
+import { IOverallSystemChangesLog, OverallSystemChangesLogModel } from "./models/overall-system-changes-logs.model";
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -257,7 +261,8 @@ export type {
   IAnomalyDetails,
   ISensorsData,
   IVisualizationPages,
-  IRefLayoutEquipment
+  IRefLayoutEquipment,
+  IOverallSystemChangesLog
 };
 
 // exports the models
@@ -339,5 +344,6 @@ export {
   AnomalyRecordModel,
   AnomalyDetailsModel,
   VisualizationPagesModel,
-  RefLayoutEquipmentModel
+  RefLayoutEquipmentModel,
+  OverallSystemChangesLogModel
 };
