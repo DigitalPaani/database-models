@@ -12,7 +12,7 @@ interface ISensorSetting extends Document {
   aggregation: "Average" | "Current" | "Minimum" | "Maximum" | "Cumulative";
   firstReferenceTimeInMinutes: number;
   lastReferenceTimeInMinutes: number;
-  returnType: "values" | "value" | "datetime";
+  returnType: "values" | "value" | "datetime" | "firstValue" | "lastValue";
   confidenceScore?: number;
 }
 
