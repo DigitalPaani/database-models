@@ -52,6 +52,12 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
   }
 );
 
+// Compound unique index
+LogbookConfigurationSchema.index(
+  { assetId: 1, logbookTemplateId: 1 },
+  { unique: true }
+);
+
 const LogbookAssetConfigurationModel: Model<ILogbookAssetConfiguration> =
   mongoose.model<ILogbookAssetConfiguration>(
     "logbookConfigurations",
