@@ -33,34 +33,47 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentModel = void 0;
+exports.LogbookAssetConfigurationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const attachmentSchema = new mongoose_1.Schema({
-    attachmentLink: {
+;
+const LogbookConfigurationSchema = new mongoose_1.Schema({
+    assetId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: true,
+    },
+    logbookTemplateId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "logbookTemplates",
+        required: true,
+    },
+    textractConfiguration: {
+        type: mongoose_1.default.Schema.Types.Mixed,
+        required: false
+    },
+    logbookSchema: {
+        type: mongoose_1.default.Schema.Types.Mixed,
+        required: false
+    },
+    sectionInfo: {
         type: String,
+        required: false
+    },
+    annotationIds: {
+        type: [mongoose_1.default.Schema.Types.ObjectId],
         required: false,
     },
-    filename: {
-        type: String,
-        required: false,
-    },
-    mimetype: {
-        type: String,
-        required: false,
-    },
-    type: {
-        type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT", "LOGBOOK_TEMPLATE", "LOGBOOK_DATA_INPUT_IMAGES"],
-    },
-    expireAt: {
-        type: Date,
-        required: false, // If we don't want the document to expire, we can set it to null
+    isArchived: {
+        type: Boolean,
+        default: false,
     },
 }, {
     timestamps: true,
     minimize: false,
 });
-// Expire documents after 1 Day
-attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
-exports.AttachmentModel = AttachmentModel;
+// Compound unique index with partial filter
+LogbookConfigurationSchema.index({ assetId: 1, logbookTemplateId: 1 }, {
+    unique: true,
+    partialFilterExpression: { isArchived: false }
+});
+const LogbookAssetConfigurationModel = mongoose_1.default.model("logbookConfigurations", LogbookConfigurationSchema, "logbookConfigurations");
+exports.LogbookAssetConfigurationModel = LogbookAssetConfigurationModel;

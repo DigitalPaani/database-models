@@ -25,6 +25,7 @@ import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 import { SENSOR_TYPE } from "./data-logger.constant";
 import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
 import COMMUNICATION_CONSTANTS from "./communication.constants";
+import logbookTemplatesConstants from "./logbook-templates.constants";
 import batchConstants from "./batch.constants";
 import anomalyRecordConst from "./anomaly-record-const";
 
@@ -97,6 +98,13 @@ const REMOTE_CONTROL_STATUS = {
   unknown: "Unknown",
 };
 
+const OCR_CONSTANTS = {
+    LOGBOOK_TEMPLATE_TYPES_ENUMS: logbookTemplatesConstants.LOGBOOK_TEMPLATE_TYPES_ENUMS,
+    LOGBOOK_CATEGORY_TYPES_ENUMS: logbookTemplatesConstants.LOGBOOK_CATEGORY_TYPES_ENUMS,
+    LOGBOOK_TEMPLATE_TYPES: logbookTemplatesConstants.LOGBOOK_TEMPLATE_TYPES,
+    CATEGORY_TYPES: logbookTemplatesConstants.CATEGORY_TYPES,
+};
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -126,4 +134,5 @@ export default {
   COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS,
   BATCH_CONSTANTS: batchConstants,
   ANOMALY_RECORD_SENSITIVITY: anomalyRecordConst.ANOMALY_RECORD_SENSITIVITY,
+  OCR_CONSTANTS: OCR_CONSTANTS,
 };

@@ -33,34 +33,38 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentModel = void 0;
+exports.LogbookTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const attachmentSchema = new mongoose_1.Schema({
-    attachmentLink: {
+const LogbookTemplateSchema = new mongoose_1.Schema({
+    name: {
         type: String,
-        required: false,
+        required: true,
     },
-    filename: {
+    description: {
         type: String,
-        required: false,
-    },
-    mimetype: {
-        type: String,
-        required: false,
+        default: "",
     },
     type: {
         type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT", "LOGBOOK_TEMPLATE", "LOGBOOK_DATA_INPUT_IMAGES"],
+        enum: ["LOGBOOK", "INVENTORY"],
+        default: "",
     },
-    expireAt: {
-        type: Date,
-        required: false, // If we don't want the document to expire, we can set it to null
+    category: {
+        type: String,
+        enum: ["CATEGORY-1", "CATEGORY-2"],
+        default: "",
+    },
+    imageAttachmentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    isArchived: {
+        type: Boolean,
+        default: false,
     },
 }, {
     timestamps: true,
     minimize: false,
 });
-// Expire documents after 1 Day
-attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
-exports.AttachmentModel = AttachmentModel;
+const LogbookTemplateModel = mongoose_1.default.model("logbookTemplates", LogbookTemplateSchema, "logbookTemplates");
+exports.LogbookTemplateModel = LogbookTemplateModel;

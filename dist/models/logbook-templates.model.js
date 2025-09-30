@@ -32,35 +32,44 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttachmentModel = void 0;
+exports.LogbookTemplateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const attachmentSchema = new mongoose_1.Schema({
-    attachmentLink: {
+const logbook_templates_constants_1 = __importDefault(require("../constants/logbook-templates.constants"));
+const LogbookTemplateSchema = new mongoose_1.Schema({
+    name: {
         type: String,
-        required: false,
+        required: true,
     },
-    filename: {
+    description: {
         type: String,
-        required: false,
-    },
-    mimetype: {
-        type: String,
-        required: false,
+        default: "",
     },
     type: {
         type: String,
-        enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT", "LOGBOOK_TEMPLATE", "LOGBOOK_DATA_INPUT_IMAGES"],
+        enum: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
+        default: "",
     },
-    expireAt: {
-        type: Date,
-        required: false, // If we don't want the document to expire, we can set it to null
+    category: {
+        type: String,
+        enum: logbook_templates_constants_1.default.LOGBOOK_CATEGORY_TYPES_ENUMS,
+        default: "",
+    },
+    imageAttachmentId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "attachments",
+        required: false,
+    },
+    isArchived: {
+        type: Boolean,
+        default: false,
     },
 }, {
     timestamps: true,
     minimize: false,
 });
-// Expire documents after 1 Day
-attachmentSchema.index({ expireAt: 1 }, { expireAfterSeconds: 24 * 60 * 60 });
-const AttachmentModel = mongoose_1.default.model("attachments", attachmentSchema, "attachments");
-exports.AttachmentModel = AttachmentModel;
+const LogbookTemplateModel = mongoose_1.default.model("logbookTemplates", LogbookTemplateSchema, "logbookTemplates");
+exports.LogbookTemplateModel = LogbookTemplateModel;
