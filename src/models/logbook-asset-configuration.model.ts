@@ -52,10 +52,13 @@ const LogbookConfigurationSchema = new Schema<ILogbookAssetConfiguration>(
   }
 );
 
-// Compound unique index
+// Compound unique index with partial filter
 LogbookConfigurationSchema.index(
   { assetId: 1, logbookTemplateId: 1 },
-  { unique: true }
+  { 
+    unique: true,
+    partialFilterExpression: { isArchived: false } 
+  }
 );
 
 const LogbookAssetConfigurationModel: Model<ILogbookAssetConfiguration> =
