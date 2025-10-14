@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 interface FlocChildSensors {
   FDSTParent: Types.ObjectId;
   SVOL30: Types.ObjectId;
-  SVOL30Image: Types.ObjectId
+  SVOL30Image: Types.ObjectId;
   SVOL60: Types.ObjectId;
-  SVOL60Image: Types.ObjectId
+  SVOL60Image: Types.ObjectId;
   SVOL90: Types.ObjectId;
-  SVOL90Image: Types.ObjectId
+  SVOL90Image: Types.ObjectId;
   SVOLRaw: Types.ObjectId;
   SVOLCustom: Types.ObjectId;
   SVOLCustomImage: Types.ObjectId;
@@ -123,9 +123,10 @@ const sensor = new Schema(
     },
     flocChildSensors: {
       type: flocChildSensorsSchema,
-      required: false
+      required: false,
     },
     confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
+    dynamic: { type: Boolean, default: false },
   },
   {
     timestamps: true,

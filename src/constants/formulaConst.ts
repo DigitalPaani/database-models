@@ -322,7 +322,7 @@ const SENSOR_SETTING_AGGREGATION = [
   "LastActiveValue"
 ];
 
-const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime"];
+const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime","firstValue","lastValue"];
 
 const FORMULAS_CHIP_TYPES = [
   "hyperFormulaFunction",

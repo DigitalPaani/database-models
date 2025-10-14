@@ -175,6 +175,10 @@ import {
   RefLayoutEquipmentModel,
   IRefLayoutEquipment,
 } from "./models/refEquipment.model";
+import {
+  IchangeOfFormula,
+  changeOfFormulasModel,
+} from "./models/change-of-formulas";
 
 import { LogbookTemplateModel, ILogbookTemplate } from "./models/logbook-templates.model";
 import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-asset-configuration.model";
@@ -264,10 +268,11 @@ export type {
   ISensorsData,
   IVisualizationPages,
   IRefLayoutEquipment,
+  IchangeOfFormula,
   ILogbookTemplate,
   ILogbookAssetConfiguration,
   IOcrLogbookDataInputLog,
-  ILogbookAssetConfigAnnotation
+  ILogbookAssetConfigAnnotation,
 };
 
 // exports the models
@@ -353,5 +358,6 @@ export {
   AnomalyRecordModel,
   AnomalyDetailsModel,
   VisualizationPagesModel,
-  RefLayoutEquipmentModel
+  RefLayoutEquipmentModel,
+  changeOfFormulasModel,
 };

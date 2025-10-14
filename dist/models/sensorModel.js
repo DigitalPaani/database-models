@@ -120,9 +120,10 @@ const sensor = new Schema({
     },
     flocChildSensors: {
         type: flocChildSensorsSchema,
-        required: false
+        required: false,
     },
     confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
+    dynamic: { type: Boolean, default: false },
 }, {
     timestamps: true,
 });
