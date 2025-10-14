@@ -359,5 +359,5 @@ export {
   AnomalyDetailsModel,
   VisualizationPagesModel,
   RefLayoutEquipmentModel,
-  changeOfFormulasModel
+  changeOfFormulasModel,
 };
