@@ -179,6 +179,12 @@ import {
   IchangeOfFormula,
   changeOfFormulasModel,
 } from "./models/change-of-formulas";
+
+import { LogbookTemplateModel, ILogbookTemplate } from "./models/logbook-templates.model";
+import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-asset-configuration.model";
+import { LogbookAssetConfigAnnotationModel, ILogbookAssetConfigAnnotation } from "./models/logbook-asset-config-annotation.model";
+import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/ocr-data-input-logs.model";
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -262,7 +268,11 @@ export type {
   ISensorsData,
   IVisualizationPages,
   IRefLayoutEquipment,
-  IchangeOfFormula
+  IchangeOfFormula,
+  ILogbookTemplate,
+  ILogbookAssetConfiguration,
+  IOcrLogbookDataInputLog,
+  ILogbookAssetConfigAnnotation,
 };
 
 // exports the models
@@ -335,7 +345,11 @@ export {
   WorkspaceModel,
   NotificationComponentsModel,
   EscalationFlowModel,
+  LogbookTemplateModel,
+  LogbookAssetConfigurationModel,
   FileManagementUploadModel,
+  OcrLogbookDataInputLogModel,
+  LogbookAssetConfigAnnotationModel,
   EventsTemplateModel,
   EventComponentModel,
   EventLogsModel,

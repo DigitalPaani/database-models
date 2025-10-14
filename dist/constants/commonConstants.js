@@ -10,6 +10,7 @@ const visualization_constants_1 = require("./visualization.constants");
 const data_logger_constant_1 = require("./data-logger.constant");
 const sensorConst_1 = require("./sensorConst");
 const communication_constants_1 = __importDefault(require("./communication.constants"));
+const logbook_templates_constants_1 = __importDefault(require("./logbook-templates.constants"));
 const batch_constants_1 = __importDefault(require("./batch.constants"));
 const anomaly_record_const_1 = __importDefault(require("./anomaly-record-const"));
 const EVENT_TYPES = {
@@ -70,6 +71,12 @@ const REMOTE_CONTROL_STATUS = {
     executionFailed: "Execution Failed",
     unknown: "Unknown",
 };
+const OCR_CONSTANTS = {
+    LOGBOOK_TEMPLATE_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
+    LOGBOOK_CATEGORY_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_CATEGORY_TYPES_ENUMS,
+    LOGBOOK_TEMPLATE_TYPES: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES,
+    CATEGORY_TYPES: logbook_templates_constants_1.default.CATEGORY_TYPES,
+};
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -99,4 +106,5 @@ exports.default = {
     COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
     BATCH_CONSTANTS: batch_constants_1.default,
     ANOMALY_RECORD_SENSITIVITY: anomaly_record_const_1.default.ANOMALY_RECORD_SENSITIVITY,
+    OCR_CONSTANTS: OCR_CONSTANTS,
 };

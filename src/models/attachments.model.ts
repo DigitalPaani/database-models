@@ -25,7 +25,7 @@ const attachmentSchema = new Schema<IAttachment>(
     },
     type: {
       type: String,
-      enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT"],
+      enum: ["TASK_TEMPLATE", "INSIGHT_TEMPLATE", "MANUAL_INSIGHT", "LOGBOOK_TEMPLATE", "LOGBOOK_DATA_INPUT_IMAGES"],
     },
     expireAt: {
       type: Date,
