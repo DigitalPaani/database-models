@@ -29,7 +29,7 @@ const escalationStepSchema = new Schema(
 
 // Interface
 interface IEscalationFlow extends Document {
-  attendenceManager: Types.ObjectId[];
+  attendanceManager: Types.ObjectId[];
   rosterManager: Types.ObjectId[];
   operator: Types.ObjectId[];
   userGroup: Types.ObjectId;
@@ -41,7 +41,7 @@ interface IEscalationFlow extends Document {
 // Main schema
 const escalationFlowSchema = new Schema<IEscalationFlow>(
   {
-    attendenceManager: [
+    attendanceManager: [
       {
         type: Schema.Types.ObjectId,
         ref:"NewUser",
