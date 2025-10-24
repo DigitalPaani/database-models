@@ -33,5 +33,25 @@ export const manualCategoryList = [
     name: "Billing",
     key: "BILLING",
     abbr: "BI",
+  },
+  {
+    name: "Power Generated",
+    key: "POWER_GENERATED",
+    abbr: "PG",
+  },
+  {
+    name: "Metal Produced",
+    key: "METAL_PRODUCED",
+    abbr: "MP",
+  },
+  {
+    name: "Temperature",
+    key: "TEMPERATURE",
+    abbr: "TEMP",
+  },
+  {
+    name: "Running Status",
+    key: "RUNNING_STATUS",
+    abbr: "RS",
   }
 ]
