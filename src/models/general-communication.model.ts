@@ -125,6 +125,8 @@ const contentSchema = new Schema(
   { _id: false }
 );
 
+
+
 // Main Schema (Composed)
 const generalCommunicationSchema = new Schema(
   {
@@ -138,10 +140,16 @@ const generalCommunicationSchema = new Schema(
       default: "NOT_AVAILABLE",
     },
 
-
-    emailStatus: {
+    whatsappStatus: { // whatsapp
       type: String,
-      required: false
+      required: false,
+      default: "NOT_AVAILABLE",
+    },
+
+    emailStatus: { // email
+      type: String,
+      required: false,
+      default: "NOT_AVAILABLE",
     },
 
     isMultipleConversations: {
@@ -155,7 +163,7 @@ const generalCommunicationSchema = new Schema(
       required: false
     },
 
-    status: {
+    status: { // Digital Paani
       type: String,
       enum: ["READ", "UNREAD"],
       default: "UNREAD",
