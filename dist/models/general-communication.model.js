@@ -102,6 +102,10 @@ const generalCommunicationSchema = new mongoose_1.Schema({
         enum: communication_constants_1.default.DELIVERY_STATUS_ENUMS,
         default: "NOT_AVAILABLE",
     },
+    emailStatus: {
+        type: String,
+        required: false
+    },
     isMultipleConversations: {
         type: Boolean,
         default: false,

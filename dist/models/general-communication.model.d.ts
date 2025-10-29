@@ -23,6 +23,7 @@ interface IGeneralCommunication extends Document {
     receiver: IReceiver;
     content: IContent;
     deliveryStatus?: string;
+    emailStatus?: string;
     isMultipleConversations?: boolean;
     multipleConversationPartner: string;
     isArchived?: boolean;

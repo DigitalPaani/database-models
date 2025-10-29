@@ -36,6 +36,7 @@ interface IGeneralCommunication extends Document {
   content: IContent;
   
   deliveryStatus?: string;
+  emailStatus?:string;
 
   isMultipleConversations?: boolean;
   multipleConversationPartner: string;
@@ -135,6 +136,12 @@ const generalCommunicationSchema = new Schema(
       type: String,
       enum: communicationConstants.DELIVERY_STATUS_ENUMS,
       default: "NOT_AVAILABLE",
+    },
+
+
+    emailStatus: {
+      type: String,
+      required: false
     },
 
     isMultipleConversations: {
