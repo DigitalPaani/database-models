@@ -164,7 +164,7 @@ const generalCommunicationSchema = new Schema(
       required: false
     },
 
-    status: { // Digital Paani
+    status: {
       type: String,
       enum: ["READ", "UNREAD"],
       default: "UNREAD",
