@@ -36,6 +36,7 @@ interface IGeneralCommunication extends Document {
   content: IContent;
   
   deliveryStatus?: string;
+  whatsappStatus?: string;
   emailStatus?:string;
 
   isMultipleConversations?: boolean;
