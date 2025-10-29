@@ -36,6 +36,8 @@ interface IGeneralCommunication extends Document {
   content: IContent;
   
   deliveryStatus?: string;
+  whatsappStatus?: string;
+  emailStatus?:string;
 
   isMultipleConversations?: boolean;
   multipleConversationPartner: string;
@@ -124,6 +126,8 @@ const contentSchema = new Schema(
   { _id: false }
 );
 
+
+
 // Main Schema (Composed)
 const generalCommunicationSchema = new Schema(
   {
@@ -134,6 +138,18 @@ const generalCommunicationSchema = new Schema(
     deliveryStatus: {
       type: String,
       enum: communicationConstants.DELIVERY_STATUS_ENUMS,
+      default: "NOT_AVAILABLE",
+    },
+
+    whatsappStatus: { // whatsapp
+      type: String,
+      required: false,
+      default: "NOT_AVAILABLE",
+    },
+
+    emailStatus: { // email
+      type: String,
+      required: false,
       default: "NOT_AVAILABLE",
     },
 
