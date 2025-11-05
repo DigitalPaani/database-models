@@ -59,7 +59,7 @@ const escalationStepSchema = new mongoose_1.Schema({
 }, { _id: false });
 // Main schema
 const escalationFlowSchema = new mongoose_1.Schema({
-    attendenceManager: [
+    attendanceManager: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
             ref: "NewUser",
@@ -85,7 +85,7 @@ const escalationFlowSchema = new mongoose_1.Schema({
     assets: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "Plant"
+            ref: "Plant",
         },
     ],
     modules: {
