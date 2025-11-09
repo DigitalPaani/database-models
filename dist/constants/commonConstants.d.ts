@@ -209,6 +209,10 @@ declare const _default: {
             };
         };
     };
+    BIO_HEALTH_TRACKER_CONSTANTS: {
+        FLOC_STATES: string[];
+        ERROR_CODES: string[];
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

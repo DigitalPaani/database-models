@@ -15,7 +15,7 @@ const ERROR_STATES_WITH_MESSAGES = {
 
 const ERROR_CODES = Object.keys(ERROR_STATES_WITH_MESSAGES)
 
-export {
+export default {
     FLOC_STATES,
     ERROR_CODES
 };

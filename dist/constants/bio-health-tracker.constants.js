@@ -1,13 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ERROR_CODES = exports.FLOC_STATES = void 0;
 const FLOC_STATES = [
     '30Mark',
     '60Mark',
     '90Mark',
     'floatingSludge'
 ];
-exports.FLOC_STATES = FLOC_STATES;
 const ERROR_STATES_WITH_MESSAGES = {
     'E001': 'No Beaker Detected',
     'E002': 'Multiple Beakers Detected',
@@ -16,4 +14,7 @@ const ERROR_STATES_WITH_MESSAGES = {
     'E005': 'CPU Overheating',
 };
 const ERROR_CODES = Object.keys(ERROR_STATES_WITH_MESSAGES);
-exports.ERROR_CODES = ERROR_CODES;
+exports.default = {
+    FLOC_STATES,
+    ERROR_CODES
+};

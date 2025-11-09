@@ -32,18 +32,22 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlocSampleModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 require("./sensorModel");
-const bio_health_tracker_constants_1 = require("../constants/bio-health-tracker.constants");
+// import { FLOC_STATES, ERROR_CODES} from '../constants/bio-health-tracker.constants';
+const bio_health_tracker_constants_1 = __importDefault(require("../constants/bio-health-tracker.constants"));
 ;
 ;
 ;
 const flocMarkSchema = new mongoose_1.Schema({
     mark: {
         type: String,
-        enum: bio_health_tracker_constants_1.FLOC_STATES
+        enum: bio_health_tracker_constants_1.default.FLOC_STATES
     },
     timestamp: {
         type: Date
@@ -52,7 +56,7 @@ const flocMarkSchema = new mongoose_1.Schema({
 const errorMarkSchema = new mongoose_1.Schema({
     errorCode: {
         type: String,
-        enum: bio_health_tracker_constants_1.ERROR_CODES
+        enum: bio_health_tracker_constants_1.default.ERROR_CODES
     },
     timestamp: {
         type: Date
