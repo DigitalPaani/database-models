@@ -1,7 +1,22 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 require("./sensorModel");
-import { FLOC_STATES } from '../constants/bio-health-tracker.constants';
+import { FLOC_STATES, ERROR_CODES} from '../constants/bio-health-tracker.constants';
+
+
+interface IFlocMark extends Document {
+    mark: string,
+    timestamp: Date
+};
+
+
+
+
+interface IErrorMark extends Document {
+    errorCode: string,
+    timestamp: Date
+};
+
 
 interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
@@ -11,18 +26,24 @@ interface IFlocSample extends Document {
     isDefault: boolean;
     hide: boolean;
     marks: IFlocMark[]
+    errorMarks: IErrorMark[]
     isArchived: boolean;
-};
-
-interface IFlocMark extends Document {
-    mark: string,
-    timestamp: Date
 };
 
 const flocMarkSchema = new Schema<IFlocMark>({
     mark: {
       type: String,
       enum: FLOC_STATES
+    },
+    timestamp: {
+      type: Date
+    }
+});
+
+const errorMarkSchema = new Schema<IErrorMark>({
+    errorCode: {
+      type: String,
+      enum: ERROR_CODES
     },
     timestamp: {
       type: Date
@@ -59,6 +80,11 @@ const flocSampleSchema = new Schema<IFlocSample>(
     },
     marks: {
       type: [flocMarkSchema],
+      default: [],
+      required: false,
+    },
+    errorMarks: {
+      type: [errorMarkSchema],
       default: [],
       required: false,
     },

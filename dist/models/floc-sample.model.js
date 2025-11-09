@@ -39,10 +39,20 @@ require("./sensorModel");
 const bio_health_tracker_constants_1 = require("../constants/bio-health-tracker.constants");
 ;
 ;
+;
 const flocMarkSchema = new mongoose_1.Schema({
     mark: {
         type: String,
         enum: bio_health_tracker_constants_1.FLOC_STATES
+    },
+    timestamp: {
+        type: Date
+    }
+});
+const errorMarkSchema = new mongoose_1.Schema({
+    errorCode: {
+        type: String,
+        enum: bio_health_tracker_constants_1.ERROR_CODES
     },
     timestamp: {
         type: Date
@@ -76,6 +86,11 @@ const flocSampleSchema = new mongoose_1.Schema({
     },
     marks: {
         type: [flocMarkSchema],
+        default: [],
+        required: false,
+    },
+    errorMarks: {
+        type: [errorMarkSchema],
         default: [],
         required: false,
     },
