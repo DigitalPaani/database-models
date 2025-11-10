@@ -319,7 +319,8 @@ const SENSOR_SETTING_AGGREGATION = [
   "Maximum",
   "Cumulative",
   "Raw",
-  "LastActiveValue"
+  "FirstActiveValue",
+  "LastActiveValue",
 ];
 
 const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime","firstValue","lastValue"];
