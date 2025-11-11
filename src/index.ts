@@ -184,6 +184,9 @@ import { LogbookTemplateModel, ILogbookTemplate } from "./models/logbook-templat
 import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-asset-configuration.model";
 import { LogbookAssetConfigAnnotationModel, ILogbookAssetConfigAnnotation } from "./models/logbook-asset-config-annotation.model";
 import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/ocr-data-input-logs.model";
+import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./models/userGroupWorkspaceAssetUserRole.model";
+import { IUserGroupUserRole, UserGroupUserRoleModel } from "./models/userGroupUserRole.model";
+import { IAppLogs, AppLogsModel } from "./models/app-logs.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -273,6 +276,9 @@ export type {
   ILogbookAssetConfiguration,
   IOcrLogbookDataInputLog,
   ILogbookAssetConfigAnnotation,
+  IUserGroupWorkspaceAssetUserRole,
+  IUserGroupUserRole,
+  IAppLogs,
 };
 
 // exports the models
@@ -360,4 +366,7 @@ export {
   VisualizationPagesModel,
   RefLayoutEquipmentModel,
   changeOfFormulasModel,
+  UserGroupWorkspaceAssetUserRoleModel,
+  UserGroupUserRoleModel,
+  AppLogsModel,
 };
