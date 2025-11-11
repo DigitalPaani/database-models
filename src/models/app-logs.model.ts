@@ -33,6 +33,7 @@ const appLogSchema = new Schema<IAppLogs>(
     actionTakenBy: {
       type: Schema.Types.ObjectId,
       required: true,
+      ref:'NewUser'
     },
     action: {
       type: String,
