@@ -1,4 +1,4 @@
-import type { Document, Model, Types } from "mongoose";
+import { Model, Types } from "mongoose";
 interface IAppLogs extends Document {
     module: string;
     previous?: Record<string, any>;

@@ -1,5 +1,4 @@
-import type { Document, Model, Types } from "mongoose";
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Model, Schema, Types } from "mongoose";
 import {
   APP_LOGS_ACTION_ENUM,
   APP_LOGS_MODULE_NAME,
