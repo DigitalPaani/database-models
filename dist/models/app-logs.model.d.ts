@@ -5,7 +5,6 @@ interface IAppLogs extends Document {
     current?: Record<string, any>;
     actionTakenBy: Types.ObjectId;
     action: string;
-    version: number;
 }
 declare const AppLogsModel: Model<IAppLogs>;
 export { AppLogsModel, IAppLogs };

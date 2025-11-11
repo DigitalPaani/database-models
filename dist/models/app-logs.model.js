@@ -60,10 +60,6 @@ const appLogSchema = new mongoose_1.Schema({
         type: String,
         enum: Object.values(app_logs_const_1.APP_LOGS_ACTION_ENUM),
     },
-    version: {
-        type: Number,
-        required: true,
-    },
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields
 });

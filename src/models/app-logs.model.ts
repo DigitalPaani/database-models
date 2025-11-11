@@ -11,7 +11,6 @@ interface IAppLogs extends Document {
   current?: Record<string, any>;
   actionTakenBy: Types.ObjectId;
   action: string;
-  version: number;
 }
 
 const appLogSchema = new Schema<IAppLogs>(
@@ -38,10 +37,6 @@ const appLogSchema = new Schema<IAppLogs>(
     action: {
       type: String,
       enum: Object.values(APP_LOGS_ACTION_ENUM),
-    },
-    version: {
-      type: Number,
-      required: true,
     },
   },
   {
