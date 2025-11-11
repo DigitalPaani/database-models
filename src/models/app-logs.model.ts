@@ -7,8 +7,8 @@ import {
 
 interface IAppLogs extends Document {
   module: string;
-  previous: Record<string, any>;
-  current: Record<string, any>;
+  previous?: Record<string, any>;
+  current?: Record<string, any>;
   actionTakenBy: Types.ObjectId;
   action: string;
   version: number;
@@ -23,7 +23,8 @@ const appLogSchema = new Schema<IAppLogs>(
     },
     previous: {
       type: Schema.Types.Mixed,
-      required: true,
+      required: false,
+      default: {}
     },
     current: {
       type: Schema.Types.Mixed,

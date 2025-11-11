@@ -1,8 +1,8 @@
 import type { Document, Model, Types } from "mongoose";
 interface IAppLogs extends Document {
     module: string;
-    previous: Record<string, any>;
-    current: Record<string, any>;
+    previous?: Record<string, any>;
+    current?: Record<string, any>;
     actionTakenBy: Types.ObjectId;
     action: string;
     version: number;

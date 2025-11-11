@@ -44,7 +44,8 @@ const appLogSchema = new mongoose_1.Schema({
     },
     previous: {
         type: mongoose_1.Schema.Types.Mixed,
-        required: true,
+        required: false,
+        default: {}
     },
     current: {
         type: mongoose_1.Schema.Types.Mixed,
