@@ -209,6 +209,17 @@ declare const _default: {
             };
         };
     };
+    APP_LOGS_ACTION_ENUM: {
+        CREATED: string;
+        UPDATED: string;
+        DELETED: string;
+    };
+    APP_LOGS_MODULE_NAME: {
+        users: string;
+        userGroupWorkspaceAssetUserRole: string;
+        userGroupUserRole: string;
+        notifications: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
