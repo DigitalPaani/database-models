@@ -4,7 +4,8 @@ const FLOC_STATES = [
     '30Mark',
     '60Mark',
     '90Mark',
-    'floatingSludge'
+    'floatingSludge',
+    'error'
 ];
 const ERROR_STATES_WITH_MESSAGES = {
     'E001': 'No Beaker Detected',

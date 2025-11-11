@@ -12,6 +12,7 @@ interface FlocChildSensors {
     SVOLCustomImage: Types.ObjectId;
     SVOLIssue: Types.ObjectId;
     SVOLIssueImage: Types.ObjectId;
+    SVOLError: Types.ObjectId;
 }
 export interface ISensor {
     _id?: Types.ObjectId;

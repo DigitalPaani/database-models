@@ -85,6 +85,10 @@ const flocChildSensorsSchema = new Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
+    SVOLError: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
 });
 const sensor = new Schema({
     sensorName: String,

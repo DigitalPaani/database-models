@@ -38,7 +38,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlocImageModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// import { FLOC_STATES } from "../constants/bio-health-tracker.constants";
 const bio_health_tracker_constants_1 = __importDefault(require("../constants/bio-health-tracker.constants"));
 const flocImageSchema = new mongoose_1.Schema({
     sensorId: { type: mongoose_1.Types.ObjectId, ref: "sensors", required: true },
@@ -50,6 +49,11 @@ const flocImageSchema = new mongoose_1.Schema({
         type: String,
         enum: bio_health_tracker_constants_1.default.FLOC_STATES,
         required: true,
+    },
+    errorCode: {
+        type: String,
+        enum: bio_health_tracker_constants_1.default.ERROR_CODES,
+        required: false,
     },
     regionOfInterestCoordinates: { type: [[Number]], required: false },
 }, {

@@ -6,6 +6,7 @@ interface IFlocImage extends Document {
     fullImageUrl?: string;
     thumbnailUrl?: string | null;
     state: string;
+    errorCode?: string;
     timestamp?: Date;
     regionOfInterestCoordinates?: number[][] | null;
 }
