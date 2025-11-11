@@ -143,6 +143,11 @@ declare const _default: {
     };
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];
+        CONTENT_TEMPLATE_IDS: {
+            insight_utility_template_v1: {
+                template_id: string;
+            };
+        };
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {
