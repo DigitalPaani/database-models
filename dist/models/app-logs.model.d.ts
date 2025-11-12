@@ -1,9 +1,9 @@
-import { Model } from "mongoose";
+import { Model, Types } from "mongoose";
 interface IAppLogs extends Document {
     module: string;
     previous?: Record<string, any>;
     current?: Record<string, any>;
-    actionTakenBy: string;
+    actionTakenBy: Types.ObjectId;
     action: string;
 }
 declare const AppLogsModel: Model<IAppLogs>;
