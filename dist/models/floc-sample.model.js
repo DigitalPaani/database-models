@@ -39,7 +39,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlocSampleModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 require("./sensorModel");
-// import { FLOC_STATES, ERROR_CODES} from '../constants/bio-health-tracker.constants';
 const bio_health_tracker_constants_1 = __importDefault(require("../constants/bio-health-tracker.constants"));
 ;
 ;

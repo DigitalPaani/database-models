@@ -19,5 +19,5 @@ interface IFlocSample extends Document {
     isArchived: boolean;
 }
 declare const FlocSampleModel: Model<IFlocSample>;
-export { FlocSampleModel, IFlocSample };
+export { FlocSampleModel, IFlocSample, IErrorMark };
 //# sourceMappingURL=floc-sample.model.d.ts.map

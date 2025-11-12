@@ -1,7 +1,6 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 require("./sensorModel");
-// import { FLOC_STATES, ERROR_CODES} from '../constants/bio-health-tracker.constants';
 import bioHealthTrackerConstants from "../constants/bio-health-tracker.constants";
 
 
@@ -103,5 +102,6 @@ const flocSampleSchema = new Schema<IFlocSample>(
 const FlocSampleModel: Model<IFlocSample> = mongoose.model<IFlocSample>('flocsamples', flocSampleSchema, 'flocsamples');
 export {
   FlocSampleModel,
-  IFlocSample
+  IFlocSample,
+  IErrorMark
 };
