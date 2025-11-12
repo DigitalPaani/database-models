@@ -40,7 +40,7 @@ const appLogSchema = new mongoose_1.Schema({
     module: {
         type: String,
         enum: Object.values(app_logs_const_1.APP_LOGS_MODULE_NAME),
-        required: true,
+        required: false,
     },
     previous: {
         type: mongoose_1.Schema.Types.Mixed,
@@ -54,7 +54,7 @@ const appLogSchema = new mongoose_1.Schema({
     },
     actionTakenBy: {
         type: String,
-        required: true,
+        required: false,
         // ref:'NewUser'
     },
     action: {

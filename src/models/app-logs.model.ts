@@ -17,7 +17,7 @@ const appLogSchema = new Schema<IAppLogs>(
     module: {
       type: String,
       enum: Object.values(APP_LOGS_MODULE_NAME),
-      required: true,
+      required: false,
     },
     previous: {
       type: Schema.Types.Mixed,
@@ -31,7 +31,7 @@ const appLogSchema = new Schema<IAppLogs>(
     },
     actionTakenBy: {
       type: String,
-      required: true,
+      required: false,
       // ref:'NewUser'
     },
     action: {
