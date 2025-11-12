@@ -53,9 +53,9 @@ const appLogSchema = new mongoose_1.Schema({
         default: {},
     },
     actionTakenBy: {
-        type: mongoose_1.Schema.Types.ObjectId,
+        type: String,
         required: true,
-        ref: 'NewUser'
+        // ref:'NewUser'
     },
     action: {
         type: String,

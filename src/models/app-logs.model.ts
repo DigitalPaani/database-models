@@ -8,7 +8,7 @@ interface IAppLogs extends Document {
   module: string;
   previous?: Record<string, any>;
   current?: Record<string, any>;
-  actionTakenBy: Types.ObjectId;
+  actionTakenBy: string;
   action: string;
 }
 
@@ -30,9 +30,9 @@ const appLogSchema = new Schema<IAppLogs>(
       default: {},
     },
     actionTakenBy: {
-      type: Schema.Types.ObjectId,
+      type: String,
       required: true,
-      ref:'NewUser'
+      // ref:'NewUser'
     },
     action: {
       type: String,
