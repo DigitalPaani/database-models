@@ -10,6 +10,7 @@ interface IAppLogs extends Document {
   current?: Record<string, any>;
   actionTakenBy: Types.ObjectId;
   action: string;
+  updatedFields?: string[];
 }
 
 const appLogSchema = new Schema<IAppLogs>(
@@ -17,7 +18,7 @@ const appLogSchema = new Schema<IAppLogs>(
     module: {
       type: String,
       enum: Object.values(APP_LOGS_MODULE_NAME),
-      required: false,
+      required: true,
     },
     previous: {
       type: Schema.Types.Mixed,
@@ -31,13 +32,17 @@ const appLogSchema = new Schema<IAppLogs>(
     },
     actionTakenBy: {
       type: Schema.Types.ObjectId,
-      required: false,
+      required: true,
       ref:'NewUser'
     },
     action: {
       type: String,
       enum: Object.values(APP_LOGS_ACTION_ENUM),
     },
+    updatedFields: {
+      type: [String],
+      required: false
+    }
   },
   {
     timestamps: true, // Automatically manage createdAt and updatedAt fields

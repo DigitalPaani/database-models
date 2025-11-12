@@ -40,7 +40,7 @@ const appLogSchema = new mongoose_1.Schema({
     module: {
         type: String,
         enum: Object.values(app_logs_const_1.APP_LOGS_MODULE_NAME),
-        required: false,
+        required: true,
     },
     previous: {
         type: mongoose_1.Schema.Types.Mixed,
@@ -54,13 +54,17 @@ const appLogSchema = new mongoose_1.Schema({
     },
     actionTakenBy: {
         type: mongoose_1.Schema.Types.ObjectId,
-        required: false,
+        required: true,
         ref: 'NewUser'
     },
     action: {
         type: String,
         enum: Object.values(app_logs_const_1.APP_LOGS_ACTION_ENUM),
     },
+    updatedFields: {
+        type: [String],
+        required: false
+    }
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields
 });
