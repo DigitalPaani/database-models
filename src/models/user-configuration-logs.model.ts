@@ -37,22 +37,22 @@ const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
     previousUserGroupUserRoleDoc: {
       type: [UserGroupModel.schema],
       required: false,
-      default: {}
+      default: []
     },
     currentUserGroupUserRoleDoc: {
       type: [UserGroupModel.schema],
       required: false,
-      default: {}
+      default: []
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
       type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
-      default: {}
+      default: []
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
       type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
-      default: {}
+      default: []
     },
     actionTakenBy: {
       type: Schema.Types.ObjectId,
