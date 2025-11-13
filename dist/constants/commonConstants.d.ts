@@ -209,7 +209,7 @@ declare const _default: {
             };
         };
     };
-    USER_CONFIG_LOGS_ACTION_ENUM: {
+    LOGS_ACTION_ENUM: {
         CREATED: string;
         UPDATED: string;
         DELETED: string;

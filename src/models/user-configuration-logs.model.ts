@@ -2,7 +2,7 @@ import mongoose, { Model, Schema, Types } from "mongoose";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./userGroupUserRole.model";
 import { INewUser, NewUserModel } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./userGroupWorkspaceAssetUserRole.model";
-import { USER_CONFIG_LOGS_ACTION_ENUM } from "../constants/user-configuration-logs.constants";
+import { LOGS_ACTION_ENUM } from "../constants/logs.constants";
 
 export interface IUpdatedFields {
   newUserUpdatedFields: string[];
@@ -60,7 +60,7 @@ const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
     },
     action: {
       type: String,
-      enum: Object.values(USER_CONFIG_LOGS_ACTION_ENUM),
+      enum: Object.values(LOGS_ACTION_ENUM),
     },
     updatedFields: {
       type: {

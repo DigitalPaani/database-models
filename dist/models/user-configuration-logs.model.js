@@ -38,7 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const userGroupUserRole_model_1 = require("./userGroupUserRole.model");
 const newUserModel_1 = require("./newUserModel");
 const userGroupWorkspaceAssetUserRole_model_1 = require("./userGroupWorkspaceAssetUserRole.model");
-const user_configuration_logs_constants_1 = require("../constants/user-configuration-logs.constants");
+const logs_constants_1 = require("../constants/logs.constants");
 const UserConfigurationSchema = new mongoose_1.Schema({
     previousUserDoc: {
         type: newUserModel_1.NewUserModel.schema,
@@ -77,7 +77,7 @@ const UserConfigurationSchema = new mongoose_1.Schema({
     },
     action: {
         type: String,
-        enum: Object.values(user_configuration_logs_constants_1.USER_CONFIG_LOGS_ACTION_ENUM),
+        enum: Object.values(logs_constants_1.LOGS_ACTION_ENUM),
     },
     updatedFields: {
         type: {

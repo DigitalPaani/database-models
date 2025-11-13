@@ -28,7 +28,7 @@ import COMMUNICATION_CONSTANTS from "./communication.constants";
 import logbookTemplatesConstants from "./logbook-templates.constants";
 import batchConstants from "./batch.constants";
 import anomalyRecordConst from "./anomaly-record-const";
-import { USER_CONFIG_LOGS_ACTION_ENUM } from "./user-configuration-logs.constants";
+import { LOGS_ACTION_ENUM } from "./logs.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -136,5 +136,5 @@ export default {
   BATCH_CONSTANTS: batchConstants,
   ANOMALY_RECORD_SENSITIVITY: anomalyRecordConst.ANOMALY_RECORD_SENSITIVITY,
   OCR_CONSTANTS: OCR_CONSTANTS,
-  USER_CONFIG_LOGS_ACTION_ENUM,
+  LOGS_ACTION_ENUM,
 };
