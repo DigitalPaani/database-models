@@ -2,7 +2,7 @@ import { Model, Types } from "mongoose";
 import { IUserGroupUserRole } from "./userGroupUserRole.model";
 import { INewUser } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole } from "./userGroupWorkspaceAssetUserRole.model";
-export interface updatedFields {
+export interface IUpdatedFields {
     newUserUpdatedFields: string[];
     userGroupUserRoleUpdatedFields: string[];
     userGroupWorkspaceAssetUserRoleUpdatedFields: string[];
@@ -16,7 +16,7 @@ interface IUserConfigurationLogs extends Document {
     currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole;
     actionTakenBy: Types.ObjectId;
     action: string;
-    updatedFields?: updatedFields;
+    updatedFields?: IUpdatedFields;
 }
 declare const UserConfigurationModel: Model<IUserConfigurationLogs>;
 export { UserConfigurationModel, IUserConfigurationLogs };

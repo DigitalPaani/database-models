@@ -5,7 +5,7 @@ import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel 
 import { UserGroupModel } from "./userGroupModel";
 import { USER_CONFIG_LOGS_ACTION_ENUM } from "../constants/user-configuration-logs.constants";
 
-export interface updatedFields {
+export interface IUpdatedFields {
   newUserUpdatedFields: string[];
   userGroupUserRoleUpdatedFields: string[];
   userGroupWorkspaceAssetUserRoleUpdatedFields: string[];
@@ -19,7 +19,7 @@ interface IUserConfigurationLogs extends Document {
   currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole;
   actionTakenBy: Types.ObjectId;
   action: string;
-  updatedFields?: updatedFields;
+  updatedFields?: IUpdatedFields;
 }
 
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
