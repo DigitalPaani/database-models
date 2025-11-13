@@ -35,9 +35,9 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserConfigurationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const userGroupUserRole_model_1 = require("./userGroupUserRole.model");
 const newUserModel_1 = require("./newUserModel");
 const userGroupWorkspaceAssetUserRole_model_1 = require("./userGroupWorkspaceAssetUserRole.model");
-const userGroupModel_1 = require("./userGroupModel");
 const user_configuration_logs_constants_1 = require("../constants/user-configuration-logs.constants");
 const UserConfigurationSchema = new mongoose_1.Schema({
     previousUserDoc: {
@@ -51,24 +51,24 @@ const UserConfigurationSchema = new mongoose_1.Schema({
         default: undefined
     },
     previousUserGroupUserRoleDoc: {
-        type: [userGroupModel_1.UserGroupModel.schema],
+        type: [userGroupUserRole_model_1.UserGroupUserRoleModel.schema],
         required: false,
-        default: void 0
+        default: undefined
     },
     currentUserGroupUserRoleDoc: {
-        type: [userGroupModel_1.UserGroupModel.schema],
+        type: [userGroupUserRole_model_1.UserGroupUserRoleModel.schema],
         required: false,
-        default: void 0
+        default: undefined
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
         type: [userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema],
         required: false,
-        default: void 0
+        default: undefined
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
         type: [userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema],
         required: false,
-        default: void 0
+        default: undefined
     },
     actionTakenBy: {
         type: mongoose_1.Schema.Types.ObjectId,

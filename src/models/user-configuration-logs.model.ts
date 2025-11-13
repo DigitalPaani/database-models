@@ -1,5 +1,5 @@
 import mongoose, { Model, Schema, Types } from "mongoose";
-import { IUserGroupUserRole } from "./userGroupUserRole.model";
+import { IUserGroupUserRole, UserGroupUserRoleModel } from "./userGroupUserRole.model";
 import { INewUser, NewUserModel } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./userGroupWorkspaceAssetUserRole.model";
 import { UserGroupModel } from "./userGroupModel";
@@ -35,24 +35,24 @@ const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
       default: undefined
     },
     previousUserGroupUserRoleDoc: {
-      type: [UserGroupModel.schema],
+      type: [UserGroupUserRoleModel.schema],
       required: false,
-      default: void 0
+      default: undefined
     },
     currentUserGroupUserRoleDoc: {
-      type: [UserGroupModel.schema],
+      type: [UserGroupUserRoleModel.schema],
       required: false,
-      default: void 0
+      default: undefined
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
       type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
-      default: void 0
+      default: undefined
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
       type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
-      default: void 0
+      default: undefined
     },
     actionTakenBy: {
       type: Schema.Types.ObjectId,
