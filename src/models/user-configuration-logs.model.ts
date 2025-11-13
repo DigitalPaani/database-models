@@ -5,7 +5,7 @@ import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel 
 import { UserGroupModel } from "./userGroupModel";
 import { USER_CONFIG_LOGS_ACTION_ENUM } from "../constants/user-configuration-logs.constants";
 
-interface updatedFields {
+export interface updatedFields {
   newUserUpdatedFields: string[];
   userGroupUserRoleUpdatedFields: string[];
   userGroupWorkspaceAssetUserRoleUpdatedFields: string[];

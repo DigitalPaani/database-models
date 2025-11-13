@@ -2,7 +2,7 @@ import { Model, Types } from "mongoose";
 import { IUserGroupUserRole } from "./userGroupUserRole.model";
 import { INewUser } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole } from "./userGroupWorkspaceAssetUserRole.model";
-interface updatedFields {
+export interface updatedFields {
     newUserUpdatedFields: string[];
     userGroupUserRoleUpdatedFields: string[];
     userGroupWorkspaceAssetUserRoleUpdatedFields: string[];
