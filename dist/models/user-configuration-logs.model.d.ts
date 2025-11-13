@@ -10,10 +10,10 @@ export interface IUpdatedFields {
 interface IUserConfigurationLogs extends Document {
     previousUserDoc?: INewUser;
     currentUserDoc?: INewUser;
-    previousUserGroupUserRoleDoc?: IUserGroupUserRole;
-    currentUserGroupUserRoleDoc?: IUserGroupUserRole;
-    previousUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole;
-    currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole;
+    previousUserGroupUserRoleDoc?: IUserGroupUserRole[];
+    currentUserGroupUserRoleDoc?: IUserGroupUserRole[];
+    previousUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole[];
+    currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole[];
     actionTakenBy: Types.ObjectId;
     action: string;
     updatedFields?: IUpdatedFields;

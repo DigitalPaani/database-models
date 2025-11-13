@@ -13,10 +13,10 @@ export interface IUpdatedFields {
 interface IUserConfigurationLogs extends Document {
   previousUserDoc?: INewUser;
   currentUserDoc?: INewUser;
-  previousUserGroupUserRoleDoc?: IUserGroupUserRole;
-  currentUserGroupUserRoleDoc?: IUserGroupUserRole;
-  previousUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole;
-  currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole;
+  previousUserGroupUserRoleDoc?: IUserGroupUserRole[];
+  currentUserGroupUserRoleDoc?: IUserGroupUserRole[];
+  previousUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole[];
+  currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole[];
   actionTakenBy: Types.ObjectId;
   action: string;
   updatedFields?: IUpdatedFields;
@@ -35,22 +35,22 @@ const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
       default: {}
     },
     previousUserGroupUserRoleDoc: {
-      type: UserGroupModel.schema,
+      type: [UserGroupModel.schema],
       required: false,
       default: {}
     },
     currentUserGroupUserRoleDoc: {
-      type: UserGroupModel.schema,
+      type: [UserGroupModel.schema],
       required: false,
       default: {}
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
-      type: UserGroupWorkspaceAssetUserRoleModel.schema,
+      type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
       default: {}
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
-      type: UserGroupWorkspaceAssetUserRoleModel.schema,
+      type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
       default: {}
     },
