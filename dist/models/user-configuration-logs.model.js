@@ -43,32 +43,32 @@ const UserConfigurationSchema = new mongoose_1.Schema({
     previousUserDoc: {
         type: newUserModel_1.NewUserModel.schema,
         required: false,
-        default: {}
+        // default: {}
     },
     currentUserDoc: {
         type: newUserModel_1.NewUserModel.schema,
         required: false,
-        default: {}
+        // default: {}
     },
     previousUserGroupUserRoleDoc: {
         type: [userGroupModel_1.UserGroupModel.schema],
         required: false,
-        default: []
+        // default: []
     },
     currentUserGroupUserRoleDoc: {
         type: [userGroupModel_1.UserGroupModel.schema],
         required: false,
-        default: []
+        // default: []
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
         type: [userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema],
         required: false,
-        default: []
+        // default: []
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
         type: [userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema],
         required: false,
-        default: []
+        // default: []
     },
     actionTakenBy: {
         type: mongoose_1.Schema.Types.ObjectId,
