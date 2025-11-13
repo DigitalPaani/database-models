@@ -25,12 +25,12 @@ interface IUserConfigurationLogs extends Document {
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   {
     previousUserDoc: {
-      type: NewUserModel.schema as unknown as mongoose.SchemaDefinitionProperty<any>,
+      type: NewUserModel.schema,
       required: false,
       default: undefined
     },
     currentUserDoc: {
-      type: NewUserModel.schema as unknown as mongoose.SchemaDefinitionProperty<any>,
+      type: NewUserModel.schema,
       required: false,
       default: undefined
     },
