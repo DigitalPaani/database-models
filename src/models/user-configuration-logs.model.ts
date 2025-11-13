@@ -2,7 +2,6 @@ import mongoose, { Model, Schema, Types } from "mongoose";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./userGroupUserRole.model";
 import { INewUser, NewUserModel } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./userGroupWorkspaceAssetUserRole.model";
-import { UserGroupModel } from "./userGroupModel";
 import { USER_CONFIG_LOGS_ACTION_ENUM } from "../constants/user-configuration-logs.constants";
 
 export interface IUpdatedFields {
