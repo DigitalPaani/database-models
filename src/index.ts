@@ -186,7 +186,7 @@ import { LogbookAssetConfigAnnotationModel, ILogbookAssetConfigAnnotation } from
 import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/ocr-data-input-logs.model";
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./models/userGroupWorkspaceAssetUserRole.model";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./models/userGroupUserRole.model";
-import { IUserConfigurationLogs, UserConfigurationModel } from "./models/user-configuration-logs.model";
+import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user-configuration-logs.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -368,5 +368,5 @@ export {
   changeOfFormulasModel,
   UserGroupWorkspaceAssetUserRoleModel,
   UserGroupUserRoleModel,
-  UserConfigurationModel,
+  UserConfigurationLogModel,
 };

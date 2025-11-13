@@ -18,6 +18,6 @@ interface IUserConfigurationLogs extends Document {
     action: string;
     updatedFields?: IUpdatedFields;
 }
-declare const UserConfigurationModel: Model<IUserConfigurationLogs>;
-export { UserConfigurationModel, IUserConfigurationLogs };
+declare const UserConfigurationLogModel: Model<IUserConfigurationLogs>;
+export { UserConfigurationLogModel, IUserConfigurationLogs };
 //# sourceMappingURL=user-configuration-logs.model.d.ts.map

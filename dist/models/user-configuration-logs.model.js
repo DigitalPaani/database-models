@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserConfigurationModel = void 0;
+exports.UserConfigurationLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const userGroupUserRole_model_1 = require("./userGroupUserRole.model");
 const newUserModel_1 = require("./newUserModel");
@@ -90,5 +90,5 @@ const UserConfigurationSchema = new mongoose_1.Schema({
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields
 });
-const UserConfigurationModel = mongoose_1.default.model("userConfigurationLogs", UserConfigurationSchema, "user-configuration-logs");
-exports.UserConfigurationModel = UserConfigurationModel;
+const UserConfigurationLogModel = mongoose_1.default.model("userConfigurationLogs", UserConfigurationSchema, "user-configuration-logs");
+exports.UserConfigurationLogModel = UserConfigurationLogModel;

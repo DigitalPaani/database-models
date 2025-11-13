@@ -76,10 +76,10 @@ const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   }
 );
 
-const UserConfigurationModel: Model<IUserConfigurationLogs> = mongoose.model<IUserConfigurationLogs>(
+const UserConfigurationLogModel: Model<IUserConfigurationLogs> = mongoose.model<IUserConfigurationLogs>(
   "userConfigurationLogs",
   UserConfigurationSchema,
   "user-configuration-logs"
 );
 
-export { UserConfigurationModel, IUserConfigurationLogs };
+export { UserConfigurationLogModel, IUserConfigurationLogs };
