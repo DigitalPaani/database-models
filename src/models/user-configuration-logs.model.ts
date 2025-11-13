@@ -25,34 +25,34 @@ interface IUserConfigurationLogs extends Document {
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   {
     previousUserDoc: {
-      type: NewUserModel.schema,
+      type: NewUserModel.schema as unknown as mongoose.SchemaDefinitionProperty<any>,
       required: false,
       default: undefined
     },
     currentUserDoc: {
-      type: NewUserModel.schema,
+      type: NewUserModel.schema as unknown as mongoose.SchemaDefinitionProperty<any>,
       required: false,
       default: undefined
     },
     previousUserGroupUserRoleDoc: {
       type: [UserGroupModel.schema],
       required: false,
-      default: undefined
+      default: void 0
     },
     currentUserGroupUserRoleDoc: {
       type: [UserGroupModel.schema],
       required: false,
-      default: undefined
+      default: void 0
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
       type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
-      default: undefined
+      default: void 0
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
       type: [UserGroupWorkspaceAssetUserRoleModel.schema],
       required: false,
-      default: undefined
+      default: void 0
     },
     actionTakenBy: {
       type: Schema.Types.ObjectId,
