@@ -41,13 +41,10 @@ const PathSchema = new mongoose_1.Schema({
         ref: "Layouts",
         required: true,
     },
-    layoutSets: [
-        {
-            from: { type: String, required: true }, // Starting Equipment ID (SEN)
-            to: { type: String, required: true }, // Ending Equipment ID (SEN)
-            path: [{ type: String, required: true }], // Ordered list of Equipment IDs
-        },
-    ],
+    from: { type: String, required: true }, // Starting Equipment ID (SEN)
+    to: { type: String, required: true }, // Ending Equipment ID (SEN)
+    path: [{ type: String, required: true }], // Ordered list of Equipment IDs
+    index: { type: Number, required: true },
 }, { timestamps: true });
 const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema, "LayoutPaths");
 exports.LayoutPathModel = LayoutPathModel;
