@@ -25,6 +25,9 @@ const PathSchema = new Schema<IPathSchema>(
   },
   { timestamps: true }
 );
+
+PathSchema.index({ path: 1 });
+
 const LayoutPathModel = mongoose.model<IPathSchema>(
   "LayoutPaths",
   PathSchema,

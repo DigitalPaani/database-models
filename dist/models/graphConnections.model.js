@@ -47,5 +47,6 @@ const PathSchema = new mongoose_1.Schema({
     path: [{ type: String, required: true }], // Ordered list of Equipment IDs
     index: { type: Number, required: true },
 }, { timestamps: true });
+PathSchema.index({ path: 1 });
 const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema, "LayoutPaths");
 exports.LayoutPathModel = LayoutPathModel;
