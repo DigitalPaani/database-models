@@ -21,20 +21,15 @@ interface IUserConfigurationLogs extends Document {
   updatedFields?: IUpdatedFields;
 }
 
-const optionalNewUsersSchema = new mongoose.Schema(
-  JSON.parse(JSON.stringify(NewUserModel.schema.obj)),
-  { _id: false }
-);
-
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   {
     previousUserDoc: {
-      type: optionalNewUsersSchema,
+      type: NewUserModel.schema,
       required: false,
       default: undefined
     },
     currentUserDoc: {
-      type: optionalNewUsersSchema,
+      type: NewUserModel.schema,
       required: false,
       default: undefined
     },
