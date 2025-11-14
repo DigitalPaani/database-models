@@ -18,9 +18,9 @@ const NewPathSchema = new Schema<INewPathSchema>(
       required: true,
       index: true,
     },
-    from: { type: String, required: true, index: true }, // Starting Equipment ID (SEN)
-    to: { type: String, required: true, index: true }, // Ending Equipment ID (SEN)
-    path: [{ type: String, required: true }], // Ordered list of Equipment IDs
+    from: { type: String, index: true }, // Starting Equipment ID (SEN)
+    to: { type: String, index: true }, // Ending Equipment ID (SEN)
+    path: [{ type: Schema.Types.Mixed, required: true }], // Ordered list of Equipment IDs
     index: { type: Number, required: true },
   },
   { timestamps: true }
