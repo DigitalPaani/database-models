@@ -39,14 +39,15 @@ const userGroupUserRole_model_1 = require("./userGroupUserRole.model");
 const newUserModel_1 = require("./newUserModel");
 const userGroupWorkspaceAssetUserRole_model_1 = require("./userGroupWorkspaceAssetUserRole.model");
 const logs_constants_1 = require("../constants/logs.constants");
+const optionalNewUsersSchema = new mongoose_1.default.Schema(JSON.parse(JSON.stringify(newUserModel_1.NewUserModel.schema.obj)), { _id: false });
 const UserConfigurationSchema = new mongoose_1.Schema({
     previousUserDoc: {
-        type: newUserModel_1.NewUserModel.schema,
+        type: optionalNewUsersSchema,
         required: false,
         default: undefined
     },
     currentUserDoc: {
-        type: newUserModel_1.NewUserModel.schema,
+        type: optionalNewUsersSchema,
         required: false,
         default: undefined
     },
