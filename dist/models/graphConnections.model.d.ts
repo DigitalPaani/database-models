@@ -1,15 +1,15 @@
-import mongoose, { Types } from "mongoose";
-interface IPathSchema extends Document {
-    graphId: Types.ObjectId;
+import mongoose from "mongoose";
+interface ILayoutSet {
     from: string;
     to: string;
     path: string[];
-    index: number;
-    createdAt: Date;
-    updatedAt: Date;
+}
+interface IPathSchema extends Document {
+    graphId: string;
+    layoutSets: ILayoutSet[];
 }
 declare const LayoutPathModel: mongoose.Model<IPathSchema, {}, {}, {}, mongoose.Document<unknown, {}, IPathSchema> & IPathSchema & {
-    _id: Types.ObjectId;
+    _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }, any>;

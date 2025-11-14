@@ -33,21 +33,20 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LayoutPathModel = void 0;
+exports.NewLayoutPathModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const PathSchema = new mongoose_1.Schema({
+const NewPathSchema = new mongoose_1.Schema({
     graphId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "Layouts",
         required: true,
+        index: true,
     },
-    layoutSets: [
-        {
-            from: { type: String, required: true }, // Starting Equipment ID (SEN)
-            to: { type: String, required: true }, // Ending Equipment ID (SEN)
-            path: [{ type: String, required: true }], // Ordered list of Equipment IDs
-        },
-    ],
+    from: { type: String, required: true, index: true }, // Starting Equipment ID (SEN)
+    to: { type: String, required: true, index: true }, // Ending Equipment ID (SEN)
+    path: [{ type: String, required: true }], // Ordered list of Equipment IDs
+    index: { type: Number, required: true },
 }, { timestamps: true });
-const LayoutPathModel = mongoose_1.default.model("LayoutPaths", PathSchema, "LayoutPaths");
-exports.LayoutPathModel = LayoutPathModel;
+NewPathSchema.index({ path: 1 });
+const NewLayoutPathModel = mongoose_1.default.model("NewLayoutPaths", NewPathSchema, "NewLayoutPaths");
+exports.NewLayoutPathModel = NewLayoutPathModel;

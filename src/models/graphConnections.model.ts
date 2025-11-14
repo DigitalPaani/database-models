@@ -1,33 +1,33 @@
-import mongoose, { Schema, Types } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-interface IPathSchema extends Document {
-  graphId: Types.ObjectId; // Reference to the Layout
+interface ILayoutSet {
   from: string; // Starting Equipment ID (SEN)
   to: string; // Ending Equipment ID (SEN)
   path: string[]; // Ordered list of equipment IDs
-  index: number;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
-const PathSchema = new Schema<IPathSchema>(
+interface IPathSchema extends Document {
+  graphId: string; // Reference to the Layout
+  layoutSets: ILayoutSet[]; // Array of SEN-to-SEN paths
+}
+
+const PathSchema = new Schema(
   {
     graphId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Layouts",
       required: true,
-      index: true,
     },
-    from: { type: String, required: true, index: true }, // Starting Equipment ID (SEN)
-    to: { type: String, required: true, index: true }, // Ending Equipment ID (SEN)
-    path: [{ type: String, required: true }], // Ordered list of Equipment IDs
-    index: { type: Number, required: true },
+    layoutSets: [
+      {
+        from: { type: String, required: true }, // Starting Equipment ID (SEN)
+        to: { type: String, required: true }, // Ending Equipment ID (SEN)
+        path: [{ type: String, required: true }], // Ordered list of Equipment IDs
+      },
+    ],
   },
   { timestamps: true }
 );
-
-PathSchema.index({ path: 1 });
-
 const LayoutPathModel = mongoose.model<IPathSchema>(
   "LayoutPaths",
   PathSchema,
