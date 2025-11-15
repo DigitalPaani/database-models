@@ -1,6 +1,6 @@
 import mongoose, { Model, Schema, Types } from "mongoose";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./userGroupUserRole.model";
-import { INewUser, NewUserModel } from "./newUserModel";
+import { INewUser } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./userGroupWorkspaceAssetUserRole.model";
 import { LOGS_ACTION_ENUM } from "../constants/logs.constants";
 
@@ -21,37 +21,48 @@ interface IUserConfigurationLogs extends Document {
   updatedFields?: IUpdatedFields;
 }
 
+const newUserSchema = new Schema<INewUser>({}, { _id: false });
+const newUserModel = mongoose.model("NewUser", newUserSchema);
+
+const userGroupUserRoleSchema = new Schema<IUserGroupUserRole>({}, {_id: false});
+const userGroupUserRoleModel = mongoose.model("UserGroupUserRole", userGroupUserRoleSchema);
+
+const userGroupWorkspaceAssetUserRoleSchema = new Schema<IUserGroupWorkspaceAssetUserRole>({}, {_id: false});
+const userGroupWorkspaceAssetUserRoleModel = mongoose.model("UserGroupWorkspaceAssetUserRole", userGroupWorkspaceAssetUserRoleSchema);
+
+
+
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   {
     previousUserDoc: {
-      type: NewUserModel.schema,
+      type: newUserModel,
       required: false,
-      default: undefined
+      default: undefined,
     },
     currentUserDoc: {
-      type: NewUserModel.schema,
-      required: false,
-      default: undefined
+      type: newUserModel,
+      required: false,  
+      default: undefined,
     },
     previousUserGroupUserRoleDoc: {
-      type: [UserGroupUserRoleModel.schema],
+      type: [userGroupUserRoleModel],
       required: false,
-      default: undefined
+      default: undefined,
     },
     currentUserGroupUserRoleDoc: {
-      type: [UserGroupUserRoleModel.schema],
+      type: [userGroupUserRoleModel],
       required: false,
-      default: undefined
+      default: undefined,
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
-      type: [UserGroupWorkspaceAssetUserRoleModel.schema],
+      type: [userGroupWorkspaceAssetUserRoleModel],
       required: false,
-      default: undefined
+      default: undefined,
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
-      type: [UserGroupWorkspaceAssetUserRoleModel.schema],
+      type: [userGroupWorkspaceAssetUserRoleModel],
       required: false,
-      default: undefined
+      default: undefined,
     },
     actionTakenBy: {
       type: Schema.Types.ObjectId,

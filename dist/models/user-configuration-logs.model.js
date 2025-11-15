@@ -35,40 +35,43 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserConfigurationLogModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const userGroupUserRole_model_1 = require("./userGroupUserRole.model");
-const newUserModel_1 = require("./newUserModel");
-const userGroupWorkspaceAssetUserRole_model_1 = require("./userGroupWorkspaceAssetUserRole.model");
 const logs_constants_1 = require("../constants/logs.constants");
+const newUserSchema = new mongoose_1.Schema({}, { _id: false });
+const newUserModel = mongoose_1.default.model("NewUser", newUserSchema);
+const userGroupUserRoleSchema = new mongoose_1.Schema({}, { _id: false });
+const userGroupUserRoleModel = mongoose_1.default.model("UserGroupUserRole", userGroupUserRoleSchema);
+const userGroupWorkspaceAssetUserRoleSchema = new mongoose_1.Schema({}, { _id: false });
+const userGroupWorkspaceAssetUserRoleModel = mongoose_1.default.model("UserGroupWorkspaceAssetUserRole", userGroupWorkspaceAssetUserRoleSchema);
 const UserConfigurationSchema = new mongoose_1.Schema({
     previousUserDoc: {
-        type: newUserModel_1.NewUserModel.schema,
+        type: newUserModel,
         required: false,
-        default: undefined
+        default: undefined,
     },
     currentUserDoc: {
-        type: newUserModel_1.NewUserModel.schema,
+        type: newUserModel,
         required: false,
-        default: undefined
+        default: undefined,
     },
     previousUserGroupUserRoleDoc: {
-        type: [userGroupUserRole_model_1.UserGroupUserRoleModel.schema],
+        type: [userGroupUserRoleModel],
         required: false,
-        default: undefined
+        default: undefined,
     },
     currentUserGroupUserRoleDoc: {
-        type: [userGroupUserRole_model_1.UserGroupUserRoleModel.schema],
+        type: [userGroupUserRoleModel],
         required: false,
-        default: undefined
+        default: undefined,
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
-        type: [userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema],
+        type: [userGroupWorkspaceAssetUserRoleModel],
         required: false,
-        default: undefined
+        default: undefined,
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
-        type: [userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema],
+        type: [userGroupWorkspaceAssetUserRoleModel],
         required: false,
-        default: undefined
+        default: undefined,
     },
     actionTakenBy: {
         type: mongoose_1.Schema.Types.ObjectId,
