@@ -1,6 +1,6 @@
 import mongoose, { Model, Schema, Types } from "mongoose";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./userGroupUserRole.model";
-import { INewUser } from "./newUserModel";
+import { INewUser, NewUserModel } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./userGroupWorkspaceAssetUserRole.model";
 import { LOGS_ACTION_ENUM } from "../constants/logs.constants";
 
@@ -21,46 +21,39 @@ interface IUserConfigurationLogs extends Document {
   updatedFields?: IUpdatedFields;
 }
 
-const newUserSchema = new Schema<INewUser>({}, { _id: false });
-const newUserModel = mongoose.model("NewUser", newUserSchema);
-
-const userGroupUserRoleSchema = new Schema<IUserGroupUserRole>({}, {_id: false});
-const userGroupUserRoleModel = mongoose.model("UserGroupUserRole", userGroupUserRoleSchema);
-
-const userGroupWorkspaceAssetUserRoleSchema = new Schema<IUserGroupWorkspaceAssetUserRole>({}, {_id: false});
-const userGroupWorkspaceAssetUserRoleModel = mongoose.model("UserGroupWorkspaceAssetUserRole", userGroupWorkspaceAssetUserRoleSchema);
-
-
+const newUserSubSchema = new Schema(NewUserModel.schema.obj, { _id: false });
+const userGroupUserRoleSubSchema = new Schema(UserGroupUserRoleModel.schema.obj, { _id: false });
+const userGroupWorkspaceAssetUserRoleSubSchema = new Schema(UserGroupWorkspaceAssetUserRoleModel.schema.obj, { _id: false });
 
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   {
     previousUserDoc: {
-      type: newUserModel,
+      type: newUserSubSchema,
       required: false,
       default: undefined,
     },
     currentUserDoc: {
-      type: newUserModel,
+      type: newUserSubSchema,
       required: false,  
       default: undefined,
     },
     previousUserGroupUserRoleDoc: {
-      type: [userGroupUserRoleModel],
+      type: [userGroupUserRoleSubSchema],
       required: false,
       default: undefined,
     },
     currentUserGroupUserRoleDoc: {
-      type: [userGroupUserRoleModel],
+      type: [userGroupUserRoleSubSchema],
       required: false,
       default: undefined,
     },
     previousUserGroupWorkspaceAssetUserRoleDoc: {
-      type: [userGroupWorkspaceAssetUserRoleModel],
+      type: [userGroupWorkspaceAssetUserRoleSubSchema],
       required: false,
       default: undefined,
     },
     currentUserGroupWorkspaceAssetUserRoleDoc: {
-      type: [userGroupWorkspaceAssetUserRoleModel],
+      type: [userGroupWorkspaceAssetUserRoleSubSchema],
       required: false,
       default: undefined,
     },
