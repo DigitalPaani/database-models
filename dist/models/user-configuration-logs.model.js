@@ -39,9 +39,9 @@ const userGroupUserRole_model_1 = require("./userGroupUserRole.model");
 const newUserModel_1 = require("./newUserModel");
 const userGroupWorkspaceAssetUserRole_model_1 = require("./userGroupWorkspaceAssetUserRole.model");
 const logs_constants_1 = require("../constants/logs.constants");
-const newUserSubSchema = new mongoose_1.Schema(newUserModel_1.NewUserModel.schema.obj, { _id: false });
-const userGroupUserRoleSubSchema = new mongoose_1.Schema(userGroupUserRole_model_1.UserGroupUserRoleModel.schema.obj, { _id: false });
-const userGroupWorkspaceAssetUserRoleSubSchema = new mongoose_1.Schema(userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema.obj, { _id: false });
+const newUserSubSchema = new mongoose_1.Schema(Object.assign({ _id: { type: mongoose_1.default.Schema.Types.ObjectId } }, newUserModel_1.NewUserModel.schema.obj), { _id: false });
+const userGroupUserRoleSubSchema = new mongoose_1.Schema(Object.assign({ _id: { type: mongoose_1.default.Schema.Types.ObjectId } }, userGroupUserRole_model_1.UserGroupUserRoleModel.schema.obj), { _id: false });
+const userGroupWorkspaceAssetUserRoleSubSchema = new mongoose_1.Schema(Object.assign({ _id: { type: mongoose_1.default.Schema.Types.ObjectId } }, userGroupWorkspaceAssetUserRole_model_1.UserGroupWorkspaceAssetUserRoleModel.schema.obj), { _id: false });
 const UserConfigurationSchema = new mongoose_1.Schema({
     previousUserDoc: {
         type: newUserSubSchema,

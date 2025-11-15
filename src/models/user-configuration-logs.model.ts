@@ -21,9 +21,27 @@ interface IUserConfigurationLogs extends Document {
   updatedFields?: IUpdatedFields;
 }
 
-const newUserSubSchema = new Schema(NewUserModel.schema.obj, { _id: false });
-const userGroupUserRoleSubSchema = new Schema(UserGroupUserRoleModel.schema.obj, { _id: false });
-const userGroupWorkspaceAssetUserRoleSubSchema = new Schema(UserGroupWorkspaceAssetUserRoleModel.schema.obj, { _id: false });
+const newUserSubSchema = new Schema(
+  {
+    _id: { type: mongoose.Schema.Types.ObjectId },
+    ...NewUserModel.schema.obj
+  },
+  { _id: false }
+);
+const userGroupUserRoleSubSchema = new Schema(
+  {
+    _id: { type: mongoose.Schema.Types.ObjectId },
+    ...UserGroupUserRoleModel.schema.obj
+  },
+  { _id: false }
+);
+const userGroupWorkspaceAssetUserRoleSubSchema = new Schema(
+  {
+    _id: { type: mongoose.Schema.Types.ObjectId },
+    ...UserGroupWorkspaceAssetUserRoleModel.schema.obj
+  },
+  { _id: false }
+);
 
 const UserConfigurationSchema = new Schema<IUserConfigurationLogs>(
   {
