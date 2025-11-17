@@ -66,6 +66,13 @@ export const SENSOR_PURPOSE_TAGS: { key: string; abbr: string; name: string }[] 
     { key: "rvrse", abbr: "RVRSE", name: "Reverse" },
     { key: "rvrseLimit", abbr: "RVRSELT", name: "Reverse Limit"},
     { key: "hooter", abbr: "HTR", name: "Hooter"},
+    { key: "sdiAnalyzer", abbr: "SDAN", name: "SDI Analyzer"},
+    { key: "decanterAuto", abbr: "DEAU", name: "Decanter Auto"},
+    { key: "decanterUp", abbr: "DEUP", name: "Decanter Up"},
+    { key: "decanterDown", abbr: "DEDN", name: "Decanter Down"},
+    { key: "decanterPnpUp", abbr: "DCPNPUP", name: "Decanter PNP Up"},
+    { key: "decanterPnpDown", abbr: "DCPNDN", name: "Decanter PNP Down"},
+    { key: "decanterTrip", abbr: "DCTP", name: "Decanter Trip"},
   ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
