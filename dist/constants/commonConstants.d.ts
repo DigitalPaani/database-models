@@ -220,6 +220,11 @@ declare const _default: {
             };
         };
     };
+    LOGS_ACTION_ENUM: {
+        CREATED: string;
+        UPDATED: string;
+        DELETED: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

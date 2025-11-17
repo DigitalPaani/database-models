@@ -33,17 +33,23 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogbookConfigurationModel = void 0;
+exports.UserGroupWorkspaceAssetUserRoleModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-;
-const LogbookConfigurationSchema = new mongoose_1.Schema({
-    attachmentId: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
+const userGroupWorkspaceAssetUserRoleSchema = new mongoose_1.Schema({
+    userGroupId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "UserGroup",
+        required: true,
     },
-}, {
-    timestamps: true,
-    minimize: false,
-});
-const LogbookConfigurationModel = mongoose_1.default.model("logbookConfigurations", LogbookConfigurationSchema, "logbookConfigurations");
-exports.LogbookConfigurationModel = LogbookConfigurationModel;
+    assetId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Plant", required: true },
+    workspaceId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "NewWorkspace",
+        required: true,
+    },
+    userId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser", required: true },
+    roleId: { type: mongoose_1.Schema.Types.ObjectId, ref: "Role", required: true },
+}, { timestamps: true });
+userGroupWorkspaceAssetUserRoleSchema.index({ userGroupId: 1, assetId: 1, workspaceId: 1, userId: 1, roleId: 1 }, { unique: true });
+const UserGroupWorkspaceAssetUserRoleModel = mongoose_1.default.model("UserGroupWorkspaceAssetUserRole", userGroupWorkspaceAssetUserRoleSchema, "userGroup-workspace-asset-user-role");
+exports.UserGroupWorkspaceAssetUserRoleModel = UserGroupWorkspaceAssetUserRoleModel;

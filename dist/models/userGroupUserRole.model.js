@@ -33,42 +33,17 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventModel = void 0;
+exports.UserGroupUserRoleModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const eventSchema = new mongoose_1.Schema({
-    eventComponentId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "events-components",
-        required: true,
-    },
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        default: "",
-    },
-    startTime: {
-        type: Date,
-        required: true,
-    },
-    eventStatus: {
-        type: String,
-        enum: ["Active", "Inactive"]
-    },
-    endTime: {
-        type: Date,
-    },
-    workspaceId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "NewWorkspace",
-    },
-    assetId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    }
+const userRoleSchema = new mongoose_1.Schema({
+    userGroupId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'UserGroup', required: false },
+    userId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser', required: true },
+    roleId: { type: mongoose_1.Schema.Types.ObjectId, ref: 'Role', required: true },
 }, { timestamps: true });
-const EventModel = mongoose_1.default.model("events", eventSchema, "events");
-exports.EventModel = EventModel;
+// Compound indexes
+userRoleSchema.index({ userId: 1, roleId: 1 });
+userRoleSchema.index({ roleId: 1, userId: 1 });
+// userGroupUserRoleSchema.index({ userId: 1, userGroupId: 1 });
+// userGroupUserRoleSchema.index({ roleId: 1, userGroupId: 1 });
+const UserGroupUserRoleModel = mongoose_1.default.model('UserGroupUserRole', userRoleSchema, 'userGroup-user-role');
+exports.UserGroupUserRoleModel = UserGroupUserRoleModel;
