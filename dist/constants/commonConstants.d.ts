@@ -143,6 +143,17 @@ declare const _default: {
     };
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];
+        CONTENT_TEMPLATE_IDS: {
+            new_insight: {
+                template_id: string;
+            };
+            account_pending_updates: {
+                template_id: string;
+            };
+            dashboard_report_ready: {
+                template_id: string;
+            };
+        };
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {

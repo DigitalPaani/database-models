@@ -4,6 +4,20 @@
 // whatsapp
 const DELIVERY_STATUS_ENUMS = ["NOT_AVAILABLE", "ACCEPTED", "SCHEDULED", "CANCELED", "QUEUED", "SENDING", "SENT", "FAILED", "DELIVERED", "UNDELIVERED", "RECEIVING", "READ"];
 
+
+const CONTENT_TEMPLATE_IDS = {
+    new_insight: { // insight_utility_template_v1
+        template_id: "HX5c8b1d03be029231c8eab79c3a3bcd5b",
+    },
+    account_pending_updates: { // account_pending_updates_quick_reply
+        template_id: "HX2144bc651f8d97ea037f0de1af082d0a",
+    },
+    dashboard_report_ready: { // dashboard_report_ready_quick_reply
+        template_id: "HXaf4bf2b9a2f22f06372da1f76d237eeb",
+    }
+}
+
 export default {
-    DELIVERY_STATUS_ENUMS
+    DELIVERY_STATUS_ENUMS,
+    CONTENT_TEMPLATE_IDS
 }
