@@ -17,6 +17,7 @@ interface IFlocSample extends Document {
     marks: IFlocMark[];
     errorMarks: IErrorMark[];
     isArchived: boolean;
+    allSensorValues: any[];
 }
 declare const FlocSampleModel: Model<IFlocSample>;
 export { FlocSampleModel, IFlocSample, IErrorMark };

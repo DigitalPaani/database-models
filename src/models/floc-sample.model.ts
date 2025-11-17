@@ -28,6 +28,7 @@ interface IFlocSample extends Document {
     marks: IFlocMark[]
     errorMarks: IErrorMark[]
     isArchived: boolean;
+    allSensorValues: any[];
 };
 
 const flocMarkSchema = new Schema<IFlocMark>({
