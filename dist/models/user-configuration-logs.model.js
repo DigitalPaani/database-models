@@ -76,20 +76,15 @@ const UserConfigurationSchema = new mongoose_1.Schema({
     actionTakenBy: {
         type: mongoose_1.Schema.Types.ObjectId,
         required: true,
-        ref: 'NewUser'
+        ref: "NewUser",
     },
     action: {
         type: String,
         enum: Object.values(logs_constants_1.LOGS_ACTION_ENUM),
     },
-    updatedFields: {
-        type: {
-            newUserUpdatedFields: [String],
-            userGroupUserRoleUpdatedFields: [String],
-            userGroupWorkspaceAssetUserRoleUpdatedFields: [String]
-        },
-        required: false
-    }
+    newUserUpdatedFields: [String],
+    userGroupUserRoleUpdatedFields: [String],
+    userGroupWorkspaceAssetUserRoleUpdatedFields: [String],
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields
 });

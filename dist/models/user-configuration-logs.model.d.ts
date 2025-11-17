@@ -2,11 +2,6 @@ import { Model, Types } from "mongoose";
 import { IUserGroupUserRole } from "./userGroupUserRole.model";
 import { INewUser } from "./newUserModel";
 import { IUserGroupWorkspaceAssetUserRole } from "./userGroupWorkspaceAssetUserRole.model";
-export interface IUpdatedFields {
-    newUserUpdatedFields: string[];
-    userGroupUserRoleUpdatedFields: string[];
-    userGroupWorkspaceAssetUserRoleUpdatedFields: string[];
-}
 interface IUserConfigurationLogs extends Document {
     previousUserDoc?: INewUser;
     currentUserDoc?: INewUser;
@@ -16,7 +11,9 @@ interface IUserConfigurationLogs extends Document {
     currentUserGroupWorkspaceAssetUserRoleDoc?: IUserGroupWorkspaceAssetUserRole[];
     actionTakenBy: Types.ObjectId;
     action: string;
-    updatedFields?: IUpdatedFields;
+    newUserUpdatedFields?: string[];
+    userGroupUserRoleUpdatedFields?: string[];
+    userGroupWorkspaceAssetUserRoleUpdatedFields?: string[];
 }
 declare const UserConfigurationLogModel: Model<IUserConfigurationLogs>;
 export { UserConfigurationLogModel, IUserConfigurationLogs };
