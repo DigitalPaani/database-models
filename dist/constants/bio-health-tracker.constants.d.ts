@@ -7,6 +7,8 @@ declare const _default: {
         E003: string;
         E004: string;
         E005: string;
+        E006: string;
+        E007: string;
     };
 };
 export default _default;

@@ -12,6 +12,8 @@ const ERROR_STATES_WITH_MESSAGES = {
     'E003': 'Multiple Sludge Detected',
     'E004': 'Unable To Load Image',
     'E005': 'CPU Overheating',
+    'E006': 'RTSP Stream Error',
+    'E007': 'Internet not working',
 };
 
 const ERROR_CODES = Object.keys(ERROR_STATES_WITH_MESSAGES)
