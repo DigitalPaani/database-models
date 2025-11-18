@@ -3,21 +3,14 @@ import mongoose, { Schema } from "mongoose";
 require("./sensorModel");
 import bioHealthTrackerConstants from "../constants/bio-health-tracker.constants";
 
-
 interface IFlocMark extends Document {
     mark: string,
     timestamp: Date
 };
-
-
-
-
 interface IErrorMark extends Document {
     errorCode: string,
     timestamp: Date
 };
-
-
 interface IFlocSample extends Document {
     sensorId: Types.ObjectId;
     sampleId: string;
@@ -50,7 +43,6 @@ const errorMarkSchema = new Schema<IErrorMark>({
       type: Date
     }
 });
-
 
 const flocSampleSchema = new Schema<IFlocSample>(
   {

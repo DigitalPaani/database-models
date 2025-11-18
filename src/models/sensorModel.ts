@@ -14,7 +14,6 @@ interface FlocChildSensors {
   SVOLCustomImage: Types.ObjectId;
   SVOLIssue: Types.ObjectId;
   SVOLIssueImage: Types.ObjectId;
-  SVOLError: Types.ObjectId;
 }
 
 export interface ISensor {
@@ -86,11 +85,7 @@ const flocChildSensorsSchema = new Schema({
   SVOLIssueImage: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,
-  },
-  SVOLError: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: false,
-  },
+  }
 });
 
 const sensor = new Schema(
