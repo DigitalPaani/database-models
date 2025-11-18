@@ -143,6 +143,17 @@ declare const _default: {
     };
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];
+        CONTENT_TEMPLATE_IDS: {
+            new_insight: {
+                template_id: string;
+            };
+            account_pending_updates: {
+                template_id: string;
+            };
+            dashboard_report_ready: {
+                template_id: string;
+            };
+        };
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {
@@ -209,6 +220,7 @@ declare const _default: {
             };
         };
     };
+<<<<<<< HEAD
     BIO_HEALTH_TRACKER_CONSTANTS: {
         FLOC_STATES: string[];
         ERROR_CODES: string[];
@@ -219,6 +231,12 @@ declare const _default: {
             E004: string;
             E005: string;
         };
+=======
+    LOGS_ACTION_ENUM: {
+        CREATED: string;
+        UPDATED: string;
+        DELETED: string;
+>>>>>>> 793239f68701caa1e742de3801b85f5d47ad4089
     };
 };
 export default _default;

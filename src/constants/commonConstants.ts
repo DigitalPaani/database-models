@@ -29,6 +29,7 @@ import logbookTemplatesConstants from "./logbook-templates.constants";
 import batchConstants from "./batch.constants";
 import anomalyRecordConst from "./anomaly-record-const";
 import bioHealthTrackerConstants from "./bio-health-tracker.constants";
+import { LOGS_ACTION_ENUM } from "./logs.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -136,5 +137,6 @@ export default {
   BATCH_CONSTANTS: batchConstants,
   ANOMALY_RECORD_SENSITIVITY: anomalyRecordConst.ANOMALY_RECORD_SENSITIVITY,
   OCR_CONSTANTS: OCR_CONSTANTS,
-  BIO_HEALTH_TRACKER_CONSTANTS: bioHealthTrackerConstants
+  BIO_HEALTH_TRACKER_CONSTANTS: bioHealthTrackerConstants,
+  LOGS_ACTION_ENUM,
 };
