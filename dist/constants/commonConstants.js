@@ -13,6 +13,7 @@ const communication_constants_1 = __importDefault(require("./communication.const
 const logbook_templates_constants_1 = __importDefault(require("./logbook-templates.constants"));
 const batch_constants_1 = __importDefault(require("./batch.constants"));
 const anomaly_record_const_1 = __importDefault(require("./anomaly-record-const"));
+const bio_health_tracker_constants_1 = __importDefault(require("./bio-health-tracker.constants"));
 const logs_constants_1 = require("./logs.constants");
 const EVENT_TYPES = {
     formula: "formula",
@@ -108,5 +109,6 @@ exports.default = {
     BATCH_CONSTANTS: batch_constants_1.default,
     ANOMALY_RECORD_SENSITIVITY: anomaly_record_const_1.default.ANOMALY_RECORD_SENSITIVITY,
     OCR_CONSTANTS: OCR_CONSTANTS,
+    BIO_HEALTH_TRACKER_CONSTANTS: bio_health_tracker_constants_1.default,
     LOGS_ACTION_ENUM: logs_constants_1.LOGS_ACTION_ENUM,
 };

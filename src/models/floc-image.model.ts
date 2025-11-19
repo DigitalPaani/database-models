@@ -1,6 +1,7 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
-import { FLOC_STATES } from "../constants/bio-health-tracker.constants";
+
+import bioHealthTrackerConstants from "../constants/bio-health-tracker.constants";
 
 interface IFlocImage extends Document {
   sensorId?: Types.ObjectId;
@@ -8,6 +9,7 @@ interface IFlocImage extends Document {
   fullImageUrl?: string;
   thumbnailUrl?: string | null;
   state: string;
+  errorCode?: string;
   timestamp?: Date;
   regionOfInterestCoordinates?: number[][] | null;
 }
@@ -21,8 +23,13 @@ const flocImageSchema = new Schema<IFlocImage>(
     timestamp: { type: Date, default: Date.now },
     state: {
       type: String,
-      enum: FLOC_STATES,
+      enum: bioHealthTrackerConstants.FLOC_STATES,
       required: true,
+    },
+    errorCode: {
+      type: String,
+      enum: bioHealthTrackerConstants.ERROR_CODES,
+      required: false,
     },
     regionOfInterestCoordinates: { type: [[Number]], required: false },
   },

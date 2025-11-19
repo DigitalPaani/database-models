@@ -85,7 +85,7 @@ const flocChildSensorsSchema = new Schema({
   SVOLIssueImage: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,
-  },
+  }
 });
 
 const sensor = new Schema(
