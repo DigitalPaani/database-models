@@ -32,9 +32,22 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewUserModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const bcrypt_1 = __importDefault(require("bcrypt"));
 // Define the schema using the TypeScript interface
 const userSchema = new mongoose_1.Schema({
     name: String,
@@ -50,6 +63,7 @@ const userSchema = new mongoose_1.Schema({
     parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
     isStaff: { type: Boolean, required: true, default: false },
     isArchived: { type: Boolean, default: false },
+    defaultPage: { type: String, default: null },
     blockedNotificationModules: {
         type: [String],
         default: [],
@@ -57,6 +71,28 @@ const userSchema = new mongoose_1.Schema({
     // defaultHomePage: { type: String, required: true, default: '' },
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields
+});
+userSchema.pre('save', function (next) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            // Check for unique email only if the user is not archived
+            if (!this.isArchived && this.isNew) {
+                // $ will only match the exact email string, but in a case-insensitive way.
+                const user = yield NewUserModel.findOne({ email: { $regex: new RegExp('^' + this.email + '$', 'i') }, isArchived: false }).lean();
+                if (user) {
+                    throw new Error('Email already exists');
+                }
+            }
+            if (this.isModified('password')) {
+                this.password = yield bcrypt_1.default.hash(this.password, 10);
+            }
+            next(); // Proceed to save the user
+        }
+        catch (error) {
+            console.error(`Error: ${JSON.stringify(error)}`);
+            throw error; // Pass any errors to the next middleware
+        }
+    });
 });
 // Define the model using the schema and the TypeScript interface
 const NewUserModel = mongoose_1.default.model("NewUser", userSchema, "newUsers");
