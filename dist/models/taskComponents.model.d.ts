@@ -38,7 +38,7 @@ interface ITaskComponent extends Document {
     parentAutocompleteId: string;
     workflowActions: any;
     isDeleted: boolean;
-    isCompletionRequired?: boolean;
+    singleActiveTask?: boolean;
 }
 interface IWorkflowDetails {
     name: string;
