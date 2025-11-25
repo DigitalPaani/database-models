@@ -119,6 +119,7 @@ const TaskComponentSchema = new mongoose_1.Schema({
     parentAutocompleteId: { type: String },
     workflowActions: { type: [mongoose_1.Schema.Types.Mixed] },
     isDeleted: { type: Boolean, default: false },
+    singleActiveTask: { type: Boolean, default: true },
 }, { timestamps: true, strict: false });
 const TaskComponentsModel = (0, mongoose_1.model)("taskComponents", TaskComponentSchema, "taskComponents");
 exports.TaskComponentsModel = TaskComponentsModel;

@@ -284,6 +284,7 @@ const taskSchema = new mongoose_1.Schema({
     taskComponentId: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
+        index: true,
     },
     taskCompleted: {
         type: Boolean,
