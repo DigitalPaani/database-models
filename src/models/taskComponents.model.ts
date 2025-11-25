@@ -39,7 +39,7 @@ interface ITaskComponent extends Document {
   workflowActions: any;
 
   isDeleted: boolean;
-  singleActiveTask?: boolean;  
+  singleActiveTask: boolean;  
 }
 
 interface IWorkflowDetails {
@@ -261,7 +261,7 @@ const TaskComponentSchema = new Schema(
     workflowActions: { type: [Schema.Types.Mixed] },
 
     isDeleted: { type: Boolean, default: false },
-    singleActiveTask:{type: Boolean, default: true},  
+    singleActiveTask: { type: Boolean, default: true },
   },
   { timestamps: true, strict: false }
 );
