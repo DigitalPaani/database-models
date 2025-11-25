@@ -39,6 +39,7 @@ interface ITaskComponent extends Document {
   workflowActions: any;
 
   isDeleted: boolean;
+  isCompletionRequired?: boolean;  
 }
 
 interface IWorkflowDetails {
@@ -260,6 +261,7 @@ const TaskComponentSchema = new Schema(
     workflowActions: { type: [Schema.Types.Mixed] },
 
     isDeleted: { type: Boolean, default: false },
+    isCompletionRequired:{type: Boolean, default: true},  
   },
   { timestamps: true, strict: false }
 );
