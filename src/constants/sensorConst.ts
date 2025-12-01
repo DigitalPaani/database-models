@@ -73,6 +73,10 @@ export const SENSOR_PURPOSE_TAGS: { key: string; abbr: string; name: string }[] 
     { key: "decanterPnpUp", abbr: "DCPNPUP", name: "Decanter PNP Up"},
     { key: "decanterPnpDown", abbr: "DCPNDN", name: "Decanter PNP Down"},
     { key: "decanterTrip", abbr: "DCTP", name: "Decanter Trip"},
+    { key: "rPhaseCurrent ", abbr: "RCURR", name: "R Phase Current"},
+    { key: "yPhaseCurrent", abbr: "YCURR", name: "Y Phase Current"},
+    { key: "bPhaseCurrent", abbr: "BCURR", name: "B Phase Current"},
+    { key: "averageCurrent", abbr: "AVGCURR", name: "Average Current"},
   ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
