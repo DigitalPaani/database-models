@@ -1,5 +1,6 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema } from "mongoose";
+import { SENSOR_PURPOSE_TAGS } from "../constants/sensorConst";
 
 interface ISensorCategory extends Document {
   key: string;
@@ -12,10 +13,30 @@ interface ISensorCategory extends Document {
 
 const sensorCategorySchema = new Schema<ISensorCategory>(
   {
-    key: { type: String, required: true, unique: true },
-    abbr: { type: String, required: true, unique: true },
-    name: { type: String, required: true, unique: true },
-    tag: { type: String, required: true, unique: true },
+    key: {
+      type: String,
+      required: true,
+      unique: true,
+      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.key),
+    },
+    abbr: {
+      type: String,
+      required: true,
+      unique: true,
+      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.abbr),
+    },
+    name: {
+      type: String,
+      required: true,
+      unique: true,
+      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.name),
+    },
+    tag: {
+      type: String,
+      required: true,
+      unique: true,
+      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.tag),
+    },
     isDeprecated: { type: Boolean, required: true, default: false },
   },
   {

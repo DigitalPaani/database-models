@@ -35,11 +35,32 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorCategoryModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const sensorConst_1 = require("../constants/sensorConst");
 const sensorCategorySchema = new mongoose_1.Schema({
-    key: { type: String, required: true, unique: true },
-    abbr: { type: String, required: true, unique: true },
-    name: { type: String, required: true, unique: true },
-    tag: { type: String, required: true, unique: true },
+    key: {
+        type: String,
+        required: true,
+        unique: true,
+        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.key),
+    },
+    abbr: {
+        type: String,
+        required: true,
+        unique: true,
+        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.abbr),
+    },
+    name: {
+        type: String,
+        required: true,
+        unique: true,
+        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.name),
+    },
+    tag: {
+        type: String,
+        required: true,
+        unique: true,
+        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.tag),
+    },
     isDeprecated: { type: Boolean, required: true, default: false },
 }, {
     timestamps: true,
