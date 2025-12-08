@@ -1,4 +1,5 @@
 import mongoose, { Types } from "mongoose";
+import { SENSOR_PURPOSE_TAGS } from "../constants/sensorConst";
 const Schema = mongoose.Schema;
 
 interface FlocChildSensors {
@@ -35,6 +36,7 @@ export interface ISensor {
   flocChildSensors?: FlocChildSensors;
   granularity?: number;
   confidenceScore?: number;
+  category?: string;
 }
 
 const flocChildSensorsSchema = new Schema({
@@ -127,6 +129,12 @@ const sensor = new Schema(
     },
     confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
     dynamic: { type: Boolean, default: false },
+    category: {
+      type: String,
+      required: false,
+      enum: [...SENSOR_PURPOSE_TAGS.map((tag) => tag.name), 'Other'],
+      default: 'Other',
+    },
   },
   {
     timestamps: true,
