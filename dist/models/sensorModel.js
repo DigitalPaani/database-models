@@ -128,7 +128,7 @@ const sensor = new Schema({
     category: {
         type: String,
         required: false,
-        enum: [...sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.name), 'Other'],
+        enum: [...sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.name), 'Manual Input', 'Other'],
         default: 'Other',
     },
 }, {
