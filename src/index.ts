@@ -187,6 +187,7 @@ import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/o
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./models/userGroupWorkspaceAssetUserRole.model";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./models/userGroupUserRole.model";
 import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user-configuration-logs.model";
+import { ISensorCategory, SensorCategoryModel } from "./models/sensorCategories.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -279,6 +280,7 @@ export type {
   IUserGroupWorkspaceAssetUserRole,
   IUserGroupUserRole,
   IUserConfigurationLogs,
+  ISensorCategory,
 };
 
 // exports the models
@@ -369,4 +371,5 @@ export {
   UserGroupWorkspaceAssetUserRoleModel,
   UserGroupUserRoleModel,
   UserConfigurationLogModel,
+  SensorCategoryModel,
 };
