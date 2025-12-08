@@ -55,12 +55,6 @@ const sensorCategorySchema = new mongoose_1.Schema({
         unique: true,
         enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.name),
     },
-    tag: {
-        type: String,
-        required: true,
-        unique: true,
-        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.tag),
-    },
     isDeprecated: { type: Boolean, required: true, default: false },
 }, {
     timestamps: true,

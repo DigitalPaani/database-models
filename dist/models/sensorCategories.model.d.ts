@@ -3,9 +3,7 @@ interface ISensorCategory extends Document {
     key: string;
     abbr: string;
     name: string;
-    tag: string;
     isDeprecated: boolean;
-    isDeleted: boolean;
 }
 declare const SensorCategoryModel: Model<ISensorCategory>;
 export { SensorCategoryModel, ISensorCategory };
