@@ -6,9 +6,7 @@ interface ISensorCategory extends Document {
   key: string;
   abbr: string;
   name: string;
-  tag: string;
   isDeprecated: boolean;
-  isDeleted: boolean;
 }
 
 const sensorCategorySchema = new Schema<ISensorCategory>(
@@ -30,12 +28,6 @@ const sensorCategorySchema = new Schema<ISensorCategory>(
       required: true,
       unique: true,
       enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.name),
-    },
-    tag: {
-      type: String,
-      required: true,
-      unique: true,
-      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.tag),
     },
     isDeprecated: { type: Boolean, required: true, default: false },
   },
