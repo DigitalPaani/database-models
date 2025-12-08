@@ -129,6 +129,8 @@ declare const _default: {
         key: string;
         abbr: string;
         name: string;
+        tag: string;
+        isDeprecated: boolean;
     }[];
     REMOTE_CONTROL_STATUS: {
         initiated: string;
