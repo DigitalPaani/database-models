@@ -191,6 +191,12 @@ const generalCommunicationSchema = new Schema(
       default: [],
     },
 
+    posthogProperties: {
+      type: Map,
+      of: String, // all values inside the map must be strings
+      required: false,
+    },
+
     viewedAt: {
       type: Date,
       default: null
