@@ -143,6 +143,11 @@ const generalCommunicationSchema = new mongoose_1.Schema({
         type: [attachmentSchema],
         default: [],
     },
+    posthogProperties: {
+        type: Map,
+        of: String, // all values inside the map must be strings
+        default: {}
+    },
     viewedAt: {
         type: Date,
         default: null
