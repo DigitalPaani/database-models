@@ -146,7 +146,7 @@ const generalCommunicationSchema = new mongoose_1.Schema({
     posthogProperties: {
         type: Map,
         of: String, // all values inside the map must be strings
-        default: {}
+        required: false,
     },
     viewedAt: {
         type: Date,
