@@ -160,6 +160,9 @@ declare const _default: {
             dashboard_report_ready: {
                 template_id: string;
             };
+            workflow_transition_message: {
+                template_id: string;
+            };
         };
     };
     BATCH_CONSTANTS: {

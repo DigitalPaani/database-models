@@ -14,7 +14,10 @@ const CONTENT_TEMPLATE_IDS = {
     },
     dashboard_report_ready: { // dashboard_report_ready_quick_reply
         template_id: "HXaf4bf2b9a2f22f06372da1f76d237eeb",
-    }
+    },
+    workflow_transition_message: { // workflow_transition_message (old account)
+        template_id: "HXd81b52f613d8312dff802950a1f741d8",
+    },
 }
 
 export default {
