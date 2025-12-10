@@ -23,7 +23,7 @@ import {
 } from "./insights.constants";
 import { VISUALIZATION_EQUIPMENT_TYPES_ENUMS } from "./visualization.constants";
 import { SENSOR_TYPE } from "./data-logger.constant";
-import { SENSOR_PURPOSE_TAGS } from "./sensorConst";
+import { OLD_SENSOR_PURPOSE_TAGS, SENSOR_PURPOSE_TAGS } from "./sensorConst";
 import COMMUNICATION_CONSTANTS from "./communication.constants";
 import logbookTemplatesConstants from "./logbook-templates.constants";
 import batchConstants from "./batch.constants";
@@ -132,6 +132,7 @@ export default {
   WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
   SENSOR_TYPE,
   SENSOR_PURPOSE_TAGS,
+  OLD_SENSOR_PURPOSE_TAGS,
   REMOTE_CONTROL_STATUS,
   COMMUNICATION_FILE_CONSTANTS: COMMUNICATION_CONSTANTS,
   BATCH_CONSTANTS: batchConstants,

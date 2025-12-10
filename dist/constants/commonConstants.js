@@ -104,6 +104,7 @@ exports.default = {
     WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
     SENSOR_TYPE: data_logger_constant_1.SENSOR_TYPE,
     SENSOR_PURPOSE_TAGS: sensorConst_1.SENSOR_PURPOSE_TAGS,
+    OLD_SENSOR_PURPOSE_TAGS: sensorConst_1.OLD_SENSOR_PURPOSE_TAGS,
     REMOTE_CONTROL_STATUS,
     COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
     BATCH_CONSTANTS: batch_constants_1.default,
