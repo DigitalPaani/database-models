@@ -131,6 +131,12 @@ declare const _default: {
         name: string;
         category: string;
     }[];
+    OLD_SENSOR_PURPOSE_TAGS: {
+        key: string;
+        abbr: string;
+        name: string;
+        category: string;
+    }[];
     REMOTE_CONTROL_STATUS: {
         initiated: string;
         initiationFailed: string;
