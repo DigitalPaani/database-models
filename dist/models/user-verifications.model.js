@@ -33,8 +33,13 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserVerificationModel = void 0;
+exports.VerificationTypeEnum = exports.UserVerificationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+var VerificationTypeEnum;
+(function (VerificationTypeEnum) {
+    VerificationTypeEnum["EMAIL_ADDRESS"] = "EMAIL_ADDRESS";
+    VerificationTypeEnum["PHONE_NUMBER"] = "PHONE_NUMBER";
+})(VerificationTypeEnum || (exports.VerificationTypeEnum = VerificationTypeEnum = {}));
 const userVerificationSchema = new mongoose_1.Schema({
     userId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -43,7 +48,7 @@ const userVerificationSchema = new mongoose_1.Schema({
     },
     verificationType: {
         type: String,
-        enum: ['EMAIL_ADDRESS', "PHONE_NUMBER"],
+        enum: Object.values(VerificationTypeEnum),
         required: true,
     },
     encryptedOtp: {

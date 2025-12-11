@@ -1,9 +1,14 @@
 import type { Document, Model } from "mongoose";
 import mongoose, { Schema, Types } from "mongoose";
 
+enum VerificationTypeEnum {
+  EMAIL_ADDRESS = 'EMAIL_ADDRESS',
+  PHONE_NUMBER = 'PHONE_NUMBER',
+}
+
 interface IUserVerification extends Document {
   userId: Types.ObjectId;
-  verificationType: 'EMAIL_ADDRESS' | "PHONE_NUMBER";
+  verificationType: VerificationTypeEnum;
   encryptedOtp: string;
   isVerified: boolean;
   expiresAt: Date | null;
@@ -21,7 +26,7 @@ const userVerificationSchema = new Schema<IUserVerification>(
     },
     verificationType: {
       type: String,
-      enum: ['EMAIL_ADDRESS', "PHONE_NUMBER"],
+      enum: Object.values(VerificationTypeEnum),
       required: true,
     },
     encryptedOtp: {
@@ -50,4 +55,4 @@ const userVerificationSchema = new Schema<IUserVerification>(
 );
 
 const UserVerificationModel: Model<IUserVerification> = mongoose.model<IUserVerification>("UserVerifications", userVerificationSchema);
-export { IUserVerification, UserVerificationModel };
+export { IUserVerification, UserVerificationModel, VerificationTypeEnum };

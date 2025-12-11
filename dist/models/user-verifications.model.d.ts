@@ -1,8 +1,12 @@
 import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
+declare enum VerificationTypeEnum {
+    EMAIL_ADDRESS = "EMAIL_ADDRESS",
+    PHONE_NUMBER = "PHONE_NUMBER"
+}
 interface IUserVerification extends Document {
     userId: Types.ObjectId;
-    verificationType: 'EMAIL_ADDRESS' | "PHONE_NUMBER";
+    verificationType: VerificationTypeEnum;
     encryptedOtp: string;
     isVerified: boolean;
     expiresAt: Date | null;
@@ -11,5 +15,5 @@ interface IUserVerification extends Document {
     updatedAt: Date;
 }
 declare const UserVerificationModel: Model<IUserVerification>;
-export { IUserVerification, UserVerificationModel };
+export { IUserVerification, UserVerificationModel, VerificationTypeEnum };
 //# sourceMappingURL=user-verifications.model.d.ts.map

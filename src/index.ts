@@ -188,7 +188,7 @@ import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel 
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./models/userGroupUserRole.model";
 import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user-configuration-logs.model";
 
-import { IUserVerification, UserVerificationModel } from "./models/user-verifications.model";
+import { IUserVerification, UserVerificationModel, VerificationTypeEnum } from "./models/user-verifications.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -372,5 +372,6 @@ export {
   UserGroupWorkspaceAssetUserRoleModel,
   UserGroupUserRoleModel,
   UserConfigurationLogModel,
-  UserVerificationModel
+  UserVerificationModel,
+  VerificationTypeEnum
 };
