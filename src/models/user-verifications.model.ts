@@ -4,6 +4,7 @@ import mongoose, { Schema, Types } from "mongoose";
 interface IUserVerification extends Document {
   userId: Types.ObjectId;
   verificationType: 'EMAIL' | "PHONE_NUMBER";
+  encryptedOtp: string;
   isVerified: boolean;
   expiresAt: Date | null;
   verifiedAt: Date | null;
@@ -21,6 +22,10 @@ const userVerificationSchema = new Schema<IUserVerification>(
     verificationType: {
       type: String,
       enum: ['EMAIL', "PHONE_NUMBER"],
+      required: true,
+    },
+    encryptedOtp: {
+      type: String,
       required: true,
     },
     isVerified: {
