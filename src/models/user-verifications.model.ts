@@ -40,8 +40,7 @@ const userVerificationSchema = new Schema<IUserVerification>(
     },
     expiresAt: {
       type: Date,
-      required: false,
-      default: null,
+      required: true
     },
     verifiedAt: {
       type: Date,

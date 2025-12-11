@@ -62,8 +62,7 @@ const userVerificationSchema = new mongoose_1.Schema({
     },
     expiresAt: {
         type: Date,
-        required: false,
-        default: null,
+        required: true
     },
     verifiedAt: {
         type: Date,
