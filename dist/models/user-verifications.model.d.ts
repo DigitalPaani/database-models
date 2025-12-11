@@ -9,7 +9,7 @@ interface IUserVerification extends Document {
     verificationType: VerificationTypeEnum;
     encryptedOtp: string;
     isVerified: boolean;
-    expiresAt: Date | null;
+    expiresAt: Date;
     verifiedAt: Date | null;
     createdAt: Date;
     updatedAt: Date;
