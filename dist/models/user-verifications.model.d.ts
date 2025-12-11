@@ -2,7 +2,7 @@ import type { Document, Model } from "mongoose";
 import { Types } from "mongoose";
 interface IUserVerification extends Document {
     userId: Types.ObjectId;
-    verificationType: 'EMAIL' | "PHONE_NUMBER";
+    verificationType: 'EMAIL_ADDRESS' | "PHONE_NUMBER";
     encryptedOtp: string;
     isVerified: boolean;
     expiresAt: Date | null;

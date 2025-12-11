@@ -43,7 +43,7 @@ const userVerificationSchema = new mongoose_1.Schema({
     },
     verificationType: {
         type: String,
-        enum: ['EMAIL', "PHONE_NUMBER"],
+        enum: ['EMAIL_ADDRESS', "PHONE_NUMBER"],
         required: true,
     },
     encryptedOtp: {
