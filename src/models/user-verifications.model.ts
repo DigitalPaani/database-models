@@ -38,5 +38,5 @@ const userVerificationSchema = new Schema<IUserVerification>(
   }
 );
 
-const UserVerification: Model<IUserVerification> = mongoose.model<IUserVerification>("UserVerifications", userVerificationSchema);
-export { IUserVerification, UserVerification };
+const UserVerificationModel: Model<IUserVerification> = mongoose.model<IUserVerification>("UserVerifications", userVerificationSchema);
+export { IUserVerification, UserVerificationModel };
