@@ -49,7 +49,8 @@ const userSchema = new mongoose_1.Schema({
     skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
     parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
     isStaff: { type: Boolean, required: true, default: false },
-    isArchived: { type: Boolean, default: false },
+    isPhoneNumberVerified: { type: Boolean, default: false },
+    isEmailAddressVerified: { type: Boolean, default: false },
     blockedNotificationModules: {
         type: [String],
         default: [],
