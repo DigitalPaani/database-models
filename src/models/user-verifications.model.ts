@@ -5,6 +5,7 @@ interface IUserVerification extends Document {
   userId: Types.ObjectId;
   verificationType: 'EMAIL' | "PHONE_NUMBER";
   isVerified: boolean;
+  expiresAt: Date | null;
   verifiedAt: Date | null;
   createdAt: Date;
   updatedAt: Date;
@@ -26,6 +27,11 @@ const userVerificationSchema = new Schema<IUserVerification>(
       type: Boolean,
       required: true,
       default: false,
+    },
+    expiresAt: {
+      type: Date,
+      required: false,
+      default: null,
     },
     verifiedAt: {
       type: Date,

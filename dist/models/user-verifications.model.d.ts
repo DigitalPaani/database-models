@@ -4,6 +4,7 @@ interface IUserVerification extends Document {
     userId: Types.ObjectId;
     verificationType: 'EMAIL' | "PHONE_NUMBER";
     isVerified: boolean;
+    expiresAt: Date | null;
     verifiedAt: Date | null;
     createdAt: Date;
     updatedAt: Date;
