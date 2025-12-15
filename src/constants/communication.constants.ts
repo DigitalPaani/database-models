@@ -18,9 +18,13 @@ const CONTENT_TEMPLATE_IDS = {
     workflow_transition_message: { // workflow_transition_message (old account)
         template_id: "HXd81b52f613d8312dff802950a1f741d8",
     },
-}
+};
+
+const PHONE_VERIFICATION_LAST_DATE = '2025-12-20T00:00:00Z';
+
 
 export default {
     DELIVERY_STATUS_ENUMS,
-    CONTENT_TEMPLATE_IDS
+    CONTENT_TEMPLATE_IDS,
+    PHONE_VERIFICATION_LAST_DATE
 }

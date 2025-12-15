@@ -164,6 +164,7 @@ declare const _default: {
                 template_id: string;
             };
         };
+        PHONE_VERIFICATION_LAST_DATE: string;
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {

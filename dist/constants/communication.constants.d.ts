@@ -14,6 +14,7 @@ declare const _default: {
             template_id: string;
         };
     };
+    PHONE_VERIFICATION_LAST_DATE: string;
 };
 export default _default;
 //# sourceMappingURL=communication.constants.d.ts.map
