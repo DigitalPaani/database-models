@@ -41,6 +41,11 @@ const equipmentComponentSchema = new mongoose_1.Schema({
         ref: "bidirectionalLogs",
         required: true,
     },
+    triggerId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "triggers",
+        required: true,
+    },
     controlValue: {
         type: String,
         required: true,
