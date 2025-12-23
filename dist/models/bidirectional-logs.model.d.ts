@@ -14,6 +14,12 @@ interface IBidirectionalLogs extends Document {
     events: IBidirectionalEvents[];
     success: boolean;
     status: string;
+    relativeTimeDetails?: {
+        unit: string;
+        value: number;
+        softwareBypassValue: string;
+        controlValue: string;
+    };
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

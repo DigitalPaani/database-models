@@ -16,6 +16,12 @@ interface IBidirectionalLogs extends Document {
   events: IBidirectionalEvents[];
   success: boolean;
   status: string;
+  relativeTimeDetails?: {
+    unit: string;
+    value: number;
+    softwareBypassValue: string;
+    controlValue: string;
+  };
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -72,6 +78,12 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
       type: Boolean,
       default: false,
       required: true,
+    },
+    relativeTimeDetails: {
+      unit: String,
+      value: Number,
+      softwareBypassValue: String,
+      controlValue: String,
     },
     isDeleted: {
       type: Boolean,
