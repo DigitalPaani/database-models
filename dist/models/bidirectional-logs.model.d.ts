@@ -17,8 +17,6 @@ interface IBidirectionalLogs extends Document {
     relativeTimeDetails?: {
         unit: string;
         value: number;
-        softwareBypassValue: string;
-        controlValue: string;
     };
     isDeleted: boolean;
     createdAt?: Date;

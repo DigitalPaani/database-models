@@ -93,8 +93,6 @@ const bidirectionalLogsSchema = new mongoose_1.Schema({
     relativeTimeDetails: {
         unit: String,
         value: Number,
-        softwareBypassValue: String,
-        controlValue: String,
     },
     isDeleted: {
         type: Boolean,
