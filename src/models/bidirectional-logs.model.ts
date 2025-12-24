@@ -16,11 +16,6 @@ interface IBidirectionalLogs extends Document {
   events: IBidirectionalEvents[];
   success: boolean;
   status: string;
-  relativeTimeDetails?: {
-    unit: string;
-    value: number;
-  };
-  scheduledBidirectionalLogId?: Types.ObjectId;
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -77,15 +72,6 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
       type: Boolean,
       default: false,
       required: true,
-    },
-    relativeTimeDetails: {
-      unit: String,
-      value: Number,
-    },
-    scheduledBidirectionalLogId: {
-      type: Schema.Types.ObjectId,
-      ref: "bidirectionalLogs",
-      required: false,
     },
     isDeleted: {
       type: Boolean,
