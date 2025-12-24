@@ -98,6 +98,8 @@ const REMOTE_CONTROL_STATUS = {
   executionFailed: "Execution Failed",
 
   unknown: "Unknown",
+
+  canceled: "Cancelled",
 };
 
 const OCR_CONSTANTS = {

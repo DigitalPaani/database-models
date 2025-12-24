@@ -72,6 +72,7 @@ const REMOTE_CONTROL_STATUS = {
     executed: "Executed",
     executionFailed: "Execution Failed",
     unknown: "Unknown",
+    canceled: "Cancelled",
 };
 const OCR_CONSTANTS = {
     LOGBOOK_TEMPLATE_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
