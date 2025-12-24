@@ -18,6 +18,7 @@ interface IBidirectionalLogs extends Document {
         unit: string;
         value: number;
     };
+    scheduledBidirectionalLogId?: Types.ObjectId;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;

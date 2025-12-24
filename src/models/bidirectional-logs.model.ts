@@ -20,6 +20,7 @@ interface IBidirectionalLogs extends Document {
     unit: string;
     value: number;
   };
+  scheduledBidirectionalLogId?: Types.ObjectId;
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -80,6 +81,11 @@ const bidirectionalLogsSchema = new Schema<IBidirectionalLogs>(
     relativeTimeDetails: {
       unit: String,
       value: Number,
+    },
+    scheduledBidirectionalLogId: {
+      type: Schema.Types.ObjectId,
+      ref: "bidirectionalLogs",
+      required: false,
     },
     isDeleted: {
       type: Boolean,
