@@ -102,6 +102,7 @@ const REMOTE_CONTROL_STATUS = {
   canceled: "Cancelled",
 
   scheduled: "Scheduled",
+  scheduleFailed: "Schedule Failed",
 };
 
 const OCR_CONSTANTS = {
