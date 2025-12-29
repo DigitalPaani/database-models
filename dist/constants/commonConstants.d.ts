@@ -148,6 +148,7 @@ declare const _default: {
         executionFailed: string;
         unknown: string;
         canceled: string;
+        scheduled: string;
     };
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];
