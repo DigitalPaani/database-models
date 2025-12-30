@@ -60,6 +60,10 @@ const userVerificationSchema = new mongoose_1.Schema({
         required: true,
         default: false,
     },
+    phoneNumber: {
+        type: Number,
+        required: false
+    },
     expiresAt: {
         type: Date,
         required: true

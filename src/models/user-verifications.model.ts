@@ -13,6 +13,7 @@ interface IUserVerification extends Document {
   isVerified: boolean;
   expiresAt: Date;
   verifiedAt: Date | null;
+  phoneNumber: Number;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -52,6 +53,10 @@ const userVerificationSchema = new Schema<IUserVerification>(
       type: Boolean,
       required: true,
       default: false,
+    },
+    phoneNumber: {
+      type: Number,
+      required: false
     },
     expiresAt: {
       type: Date,

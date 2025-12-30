@@ -11,6 +11,7 @@ interface IUserVerification extends Document {
     isVerified: boolean;
     expiresAt: Date;
     verifiedAt: Date | null;
+    phoneNumber: Number;
     createdAt: Date;
     updatedAt: Date;
 }
