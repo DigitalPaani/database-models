@@ -163,6 +163,12 @@ declare const _default: {
             workflow_transition_message: {
                 template_id: string;
             };
+            otp_verification: {
+                template_id: string;
+            };
+            phone_number_verification_reminder: {
+                template_id: string;
+            };
         };
         PHONE_VERIFICATION_LAST_DATE: string;
     };

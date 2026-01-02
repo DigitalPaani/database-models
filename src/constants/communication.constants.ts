@@ -18,9 +18,15 @@ const CONTENT_TEMPLATE_IDS = {
     workflow_transition_message: { // workflow_transition_message (old account)
         template_id: "HXd81b52f613d8312dff802950a1f741d8",
     },
+    otp_verification: { // otp_verification
+        template_id: "HX02d30db46d07078c202e07d9cbfefeea",
+    },
+    phone_number_verification_reminder: { // phone_number_verification_reminder
+        template_id: "HX2ac44606e4ca458007fecb0841922645"
+    }
 };
 
-const PHONE_VERIFICATION_LAST_DATE = '2025-12-20T00:00:00Z';
+const PHONE_VERIFICATION_LAST_DATE = '2026-01-10T00:00:00Z';
 
 
 export default {
