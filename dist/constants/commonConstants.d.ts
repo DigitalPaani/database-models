@@ -140,6 +140,12 @@ declare const _default: {
     REMOTE_CONTROL_STATUS: {
         initiated: string;
         initiationFailed: string;
+        initiateSchedule: string;
+        scheduleInitiationFailed: string;
+        initiateScheduleUpdate: string;
+        scheduleUpdateFailed: string;
+        initiateScheduleCancellation: string;
+        scheduleCancellationFailed: string;
         published: string;
         publishFailed: string;
         acknowledged: string;

@@ -65,6 +65,12 @@ const USER_GROUP_OR_SYSTEM = [
 const REMOTE_CONTROL_STATUS = {
     initiated: "Initiated",
     initiationFailed: "Initiation Failed",
+    initiateSchedule: "Initiate Schedule",
+    scheduleInitiationFailed: "Schedule Initiation Failed",
+    initiateScheduleUpdate: "Initiate Schedule Update",
+    scheduleUpdateFailed: "Schedule Update Failed",
+    initiateScheduleCancellation: "Initiate Schedule Cancellation",
+    scheduleCancellationFailed: "Schedule Cancellation Failed",
     published: "Published",
     publishFailed: "Publish Failed",
     acknowledged: "Acknowledged",
