@@ -174,6 +174,7 @@ declare const _default: {
             };
         };
         PHONE_VERIFICATION_LAST_DATE: string;
+        PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {
