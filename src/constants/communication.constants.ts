@@ -23,10 +23,13 @@ const CONTENT_TEMPLATE_IDS = {
     },
     phone_number_verification_reminder: { // phone_number_verification_reminder
         template_id: "HX2ac44606e4ca458007fecb0841922645"
+    },
+    phone_number_verified_successfully: {
+        template_id: "HX974f508d826b1474cd333e8bde2a9971"
     }
 };
 
-const PHONE_VERIFICATION_LAST_DATE = '2026-01-10T00:00:00Z';
+const PHONE_VERIFICATION_LAST_DATE = '2026-01-06T12:44:00Z';
 
 
 export default {
