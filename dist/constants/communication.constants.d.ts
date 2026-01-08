@@ -13,7 +13,7 @@ declare const _default: {
         workflow_transition_message: {
             template_id: string;
         };
-        otp_verification: {
+        otp_verification_2_minutes: {
             template_id: string;
         };
         phone_number_verification_reminder: {

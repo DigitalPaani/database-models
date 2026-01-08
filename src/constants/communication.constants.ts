@@ -18,8 +18,8 @@ const CONTENT_TEMPLATE_IDS = {
     workflow_transition_message: { // workflow_transition_message (old account)
         template_id: "HXd81b52f613d8312dff802950a1f741d8",
     },
-    otp_verification: { // otp_verification
-        template_id: "HX02d30db46d07078c202e07d9cbfefeea",
+    otp_verification_2_minutes: { // otp_verification_2_minutes
+        template_id: "HX266016c3d7477b84f2022193ae7b6dd5",
     },
     phone_number_verification_reminder: { // phone_number_verification_reminder
         template_id: "HX2ac44606e4ca458007fecb0841922645"
