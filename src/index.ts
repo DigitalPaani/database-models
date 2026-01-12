@@ -282,7 +282,7 @@ export type {
   IUserGroupWorkspaceAssetUserRole,
   IUserGroupUserRole,
   IUserConfigurationLogs,
-  IUserVerification
+  IUserVerification,
   ITemporaryShareLinksModel
 };
 
@@ -375,6 +375,6 @@ export {
   UserGroupUserRoleModel,
   UserConfigurationLogModel,
   UserVerificationModel,
-  VerificationTypeEnum
+  VerificationTypeEnum,
   TemporaryShareLinksModel
 };
