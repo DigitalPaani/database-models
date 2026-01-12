@@ -187,6 +187,8 @@ import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/o
 import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./models/userGroupWorkspaceAssetUserRole.model";
 import { IUserGroupUserRole, UserGroupUserRoleModel } from "./models/userGroupUserRole.model";
 import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user-configuration-logs.model";
+
+import { IUserVerification, UserVerificationModel, VerificationTypeEnum } from "./models/user-verifications.model";
 import { TemporaryShareLinksModel, ITemporaryShareLinksModel } from "./models/temporary-share-link.model";
 
 // Assign mongoose to mongooseDatabaseModels
@@ -280,6 +282,7 @@ export type {
   IUserGroupWorkspaceAssetUserRole,
   IUserGroupUserRole,
   IUserConfigurationLogs,
+  IUserVerification
   ITemporaryShareLinksModel
 };
 
@@ -371,5 +374,7 @@ export {
   UserGroupWorkspaceAssetUserRoleModel,
   UserGroupUserRoleModel,
   UserConfigurationLogModel,
+  UserVerificationModel,
+  VerificationTypeEnum
   TemporaryShareLinksModel
 };

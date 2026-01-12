@@ -10,6 +10,8 @@ interface INewUser extends Document {
     language: string;
     profilePic: string;
     isStaff: boolean;
+    isPhoneNumberVerified: boolean;
+    isEmailAddressVerified: boolean;
     parentUserId: Types.ObjectId;
     skillIds: Types.ObjectId[];
     isArchived: boolean;
