@@ -33,32 +33,48 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewUserModel = void 0;
+exports.VerificationTypeEnum = exports.UserVerificationModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Define the schema using the TypeScript interface
-const userSchema = new mongoose_1.Schema({
-    name: String,
-    email: { type: String, required: true }, // Ensure email is unique
-    password: String,
-    defaultPageId: Object,
-    number: String,
-    userStatus: String,
-    twoFactorAuthentication: Boolean,
-    language: String,
-    profilePic: String,
-    skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
-    parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
-    isStaff: { type: Boolean, required: true, default: false },
-    isPhoneNumberVerified: { type: Boolean, default: false },
-    isEmailAddressVerified: { type: Boolean, default: false },
-    blockedNotificationModules: {
-        type: [String],
-        default: [],
+var VerificationTypeEnum;
+(function (VerificationTypeEnum) {
+    VerificationTypeEnum["EMAIL_ADDRESS"] = "EMAIL_ADDRESS";
+    VerificationTypeEnum["PHONE_NUMBER"] = "PHONE_NUMBER";
+})(VerificationTypeEnum || (exports.VerificationTypeEnum = VerificationTypeEnum = {}));
+const userVerificationSchema = new mongoose_1.Schema({
+    userId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+        ref: "User",
     },
-    // defaultHomePage: { type: String, required: true, default: '' },
+    verificationType: {
+        type: String,
+        enum: Object.values(VerificationTypeEnum),
+        required: true,
+    },
+    encryptedOtp: {
+        type: String,
+        required: true,
+    },
+    isVerified: {
+        type: Boolean,
+        required: true,
+        default: false,
+    },
+    phoneNumber: {
+        type: Number,
+        required: false
+    },
+    expiresAt: {
+        type: Date,
+        required: true
+    },
+    verifiedAt: {
+        type: Date,
+        required: false,
+        default: null,
+    },
 }, {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
+    timestamps: true,
 });
-// Define the model using the schema and the TypeScript interface
-const NewUserModel = mongoose_1.default.model("NewUser", userSchema, "newUsers");
-exports.NewUserModel = NewUserModel;
+const UserVerificationModel = mongoose_1.default.model("UserVerifications", userVerificationSchema);
+exports.UserVerificationModel = UserVerificationModel;
