@@ -18,21 +18,6 @@ interface IUserVerification extends Document {
   updatedAt: Date;
 }
 
-type Window = {
-  width: number;
-  height: number;
-}
-
-interface Window2 {
-  innerWidth: number;
-  innerHeight: number;
-}
-
-interface Window2 {
-  innerWidth: number;
-  innerHeight: number;
-}
-
 const userVerificationSchema = new Schema<IUserVerification>(
   {
     userId: {
