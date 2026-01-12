@@ -173,7 +173,6 @@ declare const _default: {
                 template_id: string;
             };
         };
-        PHONE_VERIFICATION_LAST_DATE: string;
         PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
     };
     BATCH_CONSTANTS: {

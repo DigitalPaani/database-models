@@ -25,7 +25,6 @@ const CONTENT_TEMPLATE_IDS = {
         template_id: "HX974f508d826b1474cd333e8bde2a9971"
     }
 };
-
 const PHONE_VERIFICATION_COOLDOWN_MINUTES = 2;
 exports.default = {
     DELIVERY_STATUS_ENUMS,
