@@ -464,6 +464,12 @@ exports.SENSOR_PURPOSE_TAGS = [
         name: "Average Current",
         category: "Current",
     },
+    {
+        key: "faultStatus",
+        abbr: "FAULT",
+        name: "Fault Status",
+        category: "Fault Status",
+    },
 ];
 exports.OLD_SENSOR_PURPOSE_TAGS = [
     {

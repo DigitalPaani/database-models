@@ -33,32 +33,38 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewUserModel = void 0;
+exports.TemporaryShareLinksModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// Define the schema using the TypeScript interface
-const userSchema = new mongoose_1.Schema({
-    name: String,
-    email: { type: String, required: true }, // Ensure email is unique
-    password: String,
-    defaultPageId: Object,
-    number: String,
-    userStatus: String,
-    twoFactorAuthentication: Boolean,
-    language: String,
-    profilePic: String,
-    skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
-    parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
-    isStaff: { type: Boolean, required: true, default: false },
-    isPhoneNumberVerified: { type: Boolean, default: false },
-    isEmailAddressVerified: { type: Boolean, default: false },
-    blockedNotificationModules: {
-        type: [String],
-        default: [],
+const TemporaryShareLinkSchema = new mongoose_1.Schema({
+    url: {
+        type: String,
+        required: true,
     },
-    // defaultHomePage: { type: String, required: true, default: '' },
+    shortToken: {
+        type: String,
+        required: true,
+    },
+    type: {
+        type: String,
+        enum: ["INSIGHT"]
+    },
+    insightId: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false
+    },
+    expiresAt: {
+        type: Date,
+        required: true
+    },
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    }
 }, {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
+    timestamps: true,
 });
-// Define the model using the schema and the TypeScript interface
-const NewUserModel = mongoose_1.default.model("NewUser", userSchema, "newUsers");
-exports.NewUserModel = NewUserModel;
+TemporaryShareLinkSchema.index({ expiresAt: 1 }, // MongoDB will delete the document as soon as expiresAt is reached.
+{ expireAfterSeconds: 0 });
+const TemporaryShareLinksModel = mongoose_1.default.model('temporary-share-links', TemporaryShareLinkSchema, 'temporary-share-links');
+exports.TemporaryShareLinksModel = TemporaryShareLinksModel;

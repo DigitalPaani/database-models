@@ -172,7 +172,17 @@ declare const _default: {
             workflow_transition_message: {
                 template_id: string;
             };
+            otp_verification_2_minutes: {
+                template_id: string;
+            };
+            phone_number_verification_reminder: {
+                template_id: string;
+            };
+            phone_number_verified_successfully: {
+                template_id: string;
+            };
         };
+        PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {
