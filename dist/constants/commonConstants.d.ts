@@ -140,6 +140,12 @@ declare const _default: {
     REMOTE_CONTROL_STATUS: {
         initiated: string;
         initiationFailed: string;
+        initiateSchedule: string;
+        scheduleInitiationFailed: string;
+        initiateScheduleUpdate: string;
+        scheduleUpdateFailed: string;
+        initiateScheduleCancellation: string;
+        scheduleCancellationFailed: string;
         published: string;
         publishFailed: string;
         acknowledged: string;
@@ -147,6 +153,9 @@ declare const _default: {
         executed: string;
         executionFailed: string;
         unknown: string;
+        canceled: string;
+        scheduled: string;
+        scheduleFailed: string;
     };
     COMMUNICATION_FILE_CONSTANTS: {
         DELIVERY_STATUS_ENUMS: string[];

@@ -88,6 +88,15 @@ const REMOTE_CONTROL_STATUS = {
   initiated: "Initiated",
   initiationFailed: "Initiation Failed",
 
+  initiateSchedule: "Initiate Schedule",
+  scheduleInitiationFailed: "Schedule Initiation Failed",
+
+  initiateScheduleUpdate: "Initiate Schedule Update",
+  scheduleUpdateFailed: "Schedule Update Failed",
+
+  initiateScheduleCancellation: "Initiate Schedule Cancellation",
+  scheduleCancellationFailed: "Schedule Cancellation Failed",
+
   published: "Published",
   publishFailed: "Publish Failed",
 
@@ -98,6 +107,11 @@ const REMOTE_CONTROL_STATUS = {
   executionFailed: "Execution Failed",
 
   unknown: "Unknown",
+
+  canceled: "Cancelled",
+
+  scheduled: "Scheduled",
+  scheduleFailed: "Schedule Failed",
 };
 
 const OCR_CONSTANTS = {

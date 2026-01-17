@@ -65,6 +65,12 @@ const USER_GROUP_OR_SYSTEM = [
 const REMOTE_CONTROL_STATUS = {
     initiated: "Initiated",
     initiationFailed: "Initiation Failed",
+    initiateSchedule: "Initiate Schedule",
+    scheduleInitiationFailed: "Schedule Initiation Failed",
+    initiateScheduleUpdate: "Initiate Schedule Update",
+    scheduleUpdateFailed: "Schedule Update Failed",
+    initiateScheduleCancellation: "Initiate Schedule Cancellation",
+    scheduleCancellationFailed: "Schedule Cancellation Failed",
     published: "Published",
     publishFailed: "Publish Failed",
     acknowledged: "Acknowledged",
@@ -72,6 +78,9 @@ const REMOTE_CONTROL_STATUS = {
     executed: "Executed",
     executionFailed: "Execution Failed",
     unknown: "Unknown",
+    canceled: "Cancelled",
+    scheduled: "Scheduled",
+    scheduleFailed: "Schedule Failed",
 };
 const OCR_CONSTANTS = {
     LOGBOOK_TEMPLATE_TYPES_ENUMS: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES_ENUMS,
