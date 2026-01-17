@@ -1,8 +1,9 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
+import { INewUser } from "./newUserModel";
 interface ICommunicationComponent extends Document {
     name: string;
-    userIds: Types.ObjectId[];
+    userIds: Types.ObjectId[] | INewUser[];
     emailSubject?: string;
     attachments?: {
         name: string;
