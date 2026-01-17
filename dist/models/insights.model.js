@@ -112,5 +112,17 @@ const insightsSchema = new mongoose_1.Schema({
     timestamps: true,
     minimize: false,
 });
+insightsSchema.index({
+    isArchived: 1,
+});
+insightsSchema.index({
+    isArchived: 1,
+    assetId: 1,
+    isOpen: -1,
+    priority: 1,
+    insightClassification: 1,
+    insightType: 1,
+    createdAt: -1,
+});
 const InsightModel = mongoose_1.default.model("insights", insightsSchema, "insights");
 exports.InsightModel = InsightModel;
