@@ -24,6 +24,7 @@ declare const _default: {
         };
     };
     PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
+    PHONE_VERIFICATION_EXPIRY_MINUTES: number;
 };
 export default _default;
 //# sourceMappingURL=communication.constants.d.ts.map

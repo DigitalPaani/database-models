@@ -19,6 +19,9 @@ interface INewUser extends Document {
   skillIds: Types.ObjectId[];
   isArchived: boolean;
   blockedNotificationModules:[string];
+  invitedBy?: Types.ObjectId;
+  inviteAcceptedOn?: Date;
+  inviteExpiry?: Date;
   // defaultHomePage: string;
   [key: string]: any;
 }
@@ -41,9 +44,12 @@ const userSchema = new Schema<INewUser>(
     isPhoneNumberVerified: { type: Boolean, default: false },
     isEmailAddressVerified: { type: Boolean, default: false },
     blockedNotificationModules: {
-    type: [String],
-    default: [],
+      type: [String],
+      default: [],
     },
+    invitedBy: { type: Schema.Types.ObjectId, ref: 'NewUser', default: null },
+    inviteAcceptedOn: { type: Date, default: null },
+    inviteExpiry: { type: Date, default: null },
     // defaultHomePage: { type: String, required: true, default: '' },
   },
   {
