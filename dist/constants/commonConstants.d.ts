@@ -175,6 +175,7 @@ declare const _default: {
         };
         PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
         PHONE_VERIFICATION_EXPIRY_MINUTES: number;
+        OTP_SENDING_LIMIT_HOURS: number;
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {
