@@ -26,7 +26,10 @@ const CONTENT_TEMPLATE_IDS = {
     },
     phone_number_verified_successfully: {
         template_id: "HX974f508d826b1474cd333e8bde2a9971"
-    }
+    },
+    otp_verification_5_minutes: { // otp_verification_5_minutes
+        template_id: "HXb32cf30747a238bf6908e8fc390aa22f",
+    },
 };
 
 const PHONE_VERIFICATION_COOLDOWN_MINUTES = 1;
