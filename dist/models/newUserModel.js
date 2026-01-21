@@ -60,9 +60,9 @@ const userSchema = new mongoose_1.Schema({
         type: [String],
         default: [],
     },
-    invitedBy: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser', default: null },
-    inviteAcceptedOn: { type: Date, default: null },
-    inviteExpiry: { type: Date, default: null },
+    invitedBy: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser' },
+    inviteAcceptedOn: { type: Number },
+    inviteExpiry: { type: Number },
     // defaultHomePage: { type: String, required: true, default: '' },
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields

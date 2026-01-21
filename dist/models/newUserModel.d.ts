@@ -17,8 +17,8 @@ interface INewUser extends Document {
     isArchived: boolean;
     blockedNotificationModules: [string];
     invitedBy?: Types.ObjectId;
-    inviteAcceptedOn?: Date;
-    inviteExpiry?: Date;
+    inviteAcceptedOn?: number;
+    inviteExpiry?: number;
     [key: string]: any;
 }
 declare const NewUserModel: Model<INewUser>;
