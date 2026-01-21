@@ -35,6 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewUserModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const users_constants_1 = require("../constants/users.constants");
 // Define the schema using the TypeScript interface
 const userSchema = new mongoose_1.Schema({
     name: String,
@@ -42,7 +43,11 @@ const userSchema = new mongoose_1.Schema({
     password: String,
     defaultPageId: Object,
     number: String,
-    userStatus: String,
+    userStatus: {
+        type: String,
+        enum: Object.values(users_constants_1.USER_STATUS_ENUMS),
+        required: true
+    },
     twoFactorAuthentication: Boolean,
     language: String,
     profilePic: String,

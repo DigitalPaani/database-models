@@ -263,6 +263,11 @@ declare const _default: {
         UPDATED: string;
         DELETED: string;
     };
+    USER_STATUS_ENUMS: {
+        active: string;
+        inactive: string;
+        invited: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

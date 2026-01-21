@@ -1,5 +1,6 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
+import { USER_STATUS_ENUMS } from "../constants/users.constants";
 
 // Define a TypeScript interface for the User document
 interface INewUser extends Document {
@@ -34,7 +35,11 @@ const userSchema = new Schema<INewUser>(
     password: String,
     defaultPageId: Object,
     number: String,
-    userStatus: String,
+    userStatus: {
+      type: String,
+      enum: Object.values(USER_STATUS_ENUMS),
+      required: true
+    },
     twoFactorAuthentication: Boolean,
     language: String,
     profilePic: String,
