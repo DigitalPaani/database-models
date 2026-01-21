@@ -470,6 +470,12 @@ exports.SENSOR_PURPOSE_TAGS = [
         name: "Fault Status",
         category: "Fault Status",
     },
+    {
+        key: "torque",
+        abbr: "TORQUE",
+        name: "Torque",
+        category: "Torque",
+    }
 ];
 exports.OLD_SENSOR_PURPOSE_TAGS = [
     {

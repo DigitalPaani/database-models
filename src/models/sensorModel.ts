@@ -148,6 +148,16 @@ const sensor = new Schema(
   }
 );
 
+sensor.index(
+  { sensorTag: 1, plantId: 1 },
+  {
+    unique: true,
+    partialFilterExpression: {
+      isEnabled: { $ne: false },
+    },
+  }
+);
+
 const SensorsModel = mongoose.model<ISensor & mongoose.Document>(
   "sensors",
   sensor
