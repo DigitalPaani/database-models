@@ -16,6 +16,9 @@ interface INewUser extends Document {
     skillIds: Types.ObjectId[];
     isArchived: boolean;
     blockedNotificationModules: [string];
+    invitedBy?: Types.ObjectId;
+    inviteAcceptedOn?: number;
+    inviteExpiry?: number;
     [key: string]: any;
 }
 declare const NewUserModel: Model<INewUser>;
