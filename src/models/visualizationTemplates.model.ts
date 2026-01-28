@@ -10,10 +10,19 @@ const VisualizationTemplatesSchema = new Schema(
   {
     nodeId: Schema.Types.ObjectId,
     layout: mongoose.Schema.Types.Mixed,
+    version: {
+      type: Schema.Types.Number,
+      default: 0,
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-const VisualizationTemplatesModel = mongoose.model<IVisualizationTemplatesLayout>("VisualizationTemplates", VisualizationTemplatesSchema, "Layouts");
+const VisualizationTemplatesModel =
+  mongoose.model<IVisualizationTemplatesLayout>(
+    "VisualizationTemplates",
+    VisualizationTemplatesSchema,
+    "VisualizationTemplates",
+  );
 
 export { VisualizationTemplatesModel, IVisualizationTemplatesLayout };
