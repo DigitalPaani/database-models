@@ -36,12 +36,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VisualizationTemplatesModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const VisualizationTemplatesSchema = new mongoose_1.Schema({
-    nodeId: mongoose_1.Schema.Types.ObjectId,
-    layout: mongoose_1.default.Schema.Types.Mixed,
-    version: {
-        type: mongoose_1.Schema.Types.Number,
-        default: 0,
-    },
+    name: { type: String, required: true, trim: true },
+    isArchived: { type: mongoose_1.Schema.Types.Boolean, default: false },
 }, { timestamps: true });
 const VisualizationTemplatesModel = mongoose_1.default.model("VisualizationTemplates", VisualizationTemplatesSchema, "VisualizationTemplates");
 exports.VisualizationTemplatesModel = VisualizationTemplatesModel;

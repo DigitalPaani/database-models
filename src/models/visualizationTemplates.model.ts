@@ -1,19 +1,14 @@
 import mongoose, { Schema } from "mongoose";
 
 interface IVisualizationTemplatesLayout extends Document {
-  nodeId: string;
-  layout: object;
-  version: number;
+  name: string;
+  isArchived: string;
 }
 
 const VisualizationTemplatesSchema = new Schema(
   {
-    nodeId: Schema.Types.ObjectId,
-    layout: mongoose.Schema.Types.Mixed,
-    version: {
-      type: Schema.Types.Number,
-      default: 0,
-    },
+    name: { type: String, required: true, trim: true },
+    isArchived: { type: Schema.Types.Boolean, default: false },
   },
   { timestamps: true },
 );
