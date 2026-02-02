@@ -1,7 +1,7 @@
 import { Model, Schema, model } from "mongoose";
 import { COMMUNICATION_COMPONENT_TYPES } from "../constants/triggerConst";
 import { Types } from "mongoose";
-import { INewUser } from "./newUserModel";
+import type { INewUser } from "./newUserModel";
 import commonConstants from "../constants/commonConstants";
 require("./userGroupModel");
 require("./plantModel");
