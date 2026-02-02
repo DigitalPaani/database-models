@@ -1,6 +1,7 @@
 import { Model, Schema, model } from "mongoose";
 import { COMMUNICATION_COMPONENT_TYPES } from "../constants/triggerConst";
 import { Types } from "mongoose";
+import { INewUser } from "./newUserModel";
 import commonConstants from "../constants/commonConstants";
 require("./userGroupModel");
 require("./plantModel");
@@ -8,7 +9,7 @@ require("./plantModel");
 // Interface for the message body
 interface ICommunicationComponent extends Document {
   name: string;
-  userIds: Types.ObjectId[]; // Array of User IDs
+  userIds: Types.ObjectId[] | INewUser[]; // Array of User IDs
   emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string; filetype: string; isReport: boolean }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
