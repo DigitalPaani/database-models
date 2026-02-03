@@ -25,6 +25,9 @@ declare const _default: {
         otp_verification_5_minutes: {
             template_id: string;
         };
+        insights_summary: {
+            template_id: string;
+        };
     };
     PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
     PHONE_VERIFICATION_EXPIRY_MINUTES: number;

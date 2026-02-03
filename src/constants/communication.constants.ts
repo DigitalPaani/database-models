@@ -30,6 +30,9 @@ const CONTENT_TEMPLATE_IDS = {
     otp_verification_5_minutes: { // otp_verification_5_minutes
         template_id: "HXb32cf30747a238bf6908e8fc390aa22f",
     },
+    insights_summary: {
+        template_id: "HXa0458fbfe8c2951ef1457e90d06a3d94"
+    }
 };
 
 const PHONE_VERIFICATION_COOLDOWN_MINUTES = 1;
