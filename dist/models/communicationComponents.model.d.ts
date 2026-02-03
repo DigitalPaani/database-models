@@ -1,6 +1,10 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
 import type { INewUser } from "./newUserModel";
+interface IInsightDigestConfig {
+    lookbackDurationMinutes: number;
+    crossedThresholdDurationMinutes: number;
+}
 interface ICommunicationComponent extends Document {
     name: string;
     userIds: Types.ObjectId[] | INewUser[];
@@ -47,10 +51,11 @@ interface ICommunicationComponent extends Document {
     taskLimit?: number;
     issueFilter?: string;
     issueLimit?: number;
+    insightDigestConfig?: IInsightDigestConfig;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
 declare const CommunicationComponentsModel: Model<ICommunicationComponent>;
-export { CommunicationComponentsModel, ICommunicationComponent };
+export { CommunicationComponentsModel, ICommunicationComponent, IInsightDigestConfig };
 //# sourceMappingURL=communicationComponents.model.d.ts.map
