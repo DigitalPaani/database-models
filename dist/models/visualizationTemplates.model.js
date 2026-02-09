@@ -37,6 +37,7 @@ exports.VisualizationTemplatesModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const VisualizationTemplatesSchema = new mongoose_1.Schema({
     name: { type: String, required: true, trim: true },
+    description: { type: String, required: true, trim: true },
     isArchived: { type: mongoose_1.Schema.Types.Boolean, default: false },
 }, { timestamps: true });
 const VisualizationTemplatesModel = mongoose_1.default.model("VisualizationTemplates", VisualizationTemplatesSchema, "VisualizationTemplates");
