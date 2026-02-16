@@ -7,7 +7,6 @@ interface TimeRangeConfig {
 }
 interface IInsightSummaryConfig {
     lookbackRange: TimeRangeConfig;
-    crossedThresholdRange: TimeRangeConfig;
 }
 interface ICommunicationComponent extends Document {
     name: string;

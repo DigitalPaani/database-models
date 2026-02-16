@@ -15,7 +15,6 @@ interface TimeRangeConfig {
 
 interface IInsightSummaryConfig {
   lookbackRange: TimeRangeConfig;
-  crossedThresholdRange: TimeRangeConfig;
 };
 
 // Interface for the message body
@@ -105,11 +104,7 @@ const communicationComponentsSchema = new Schema(
       lookbackRange: {
         time: { type: Number, required: false },
         unit: { type: String, required: false },
-      },
-      crossedThresholdRange: {
-        time: { type: Number, required: false },
-        unit: { type: String, required: false },
-      },
+      }
     },
     issueLimit: { type: Number },
     isDeleted: { type: Boolean, default: false },

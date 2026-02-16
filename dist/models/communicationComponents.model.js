@@ -64,11 +64,7 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         lookbackRange: {
             time: { type: Number, required: false },
             unit: { type: String, required: false },
-        },
-        crossedThresholdRange: {
-            time: { type: Number, required: false },
-            unit: { type: String, required: false },
-        },
+        }
     },
     issueLimit: { type: Number },
     isDeleted: { type: Boolean, default: false },
