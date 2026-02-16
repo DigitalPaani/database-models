@@ -13,7 +13,7 @@ interface TimeRangeConfig {
   unit: string;
 };
 
-interface IInsightDigestConfig {
+interface IInsightSummaryConfig {
   lookbackRange: TimeRangeConfig;
   crossedThresholdRange: TimeRangeConfig;
 };
@@ -46,7 +46,7 @@ interface ICommunicationComponent extends Document {
   taskLimit?: number;
   issueFilter?: string;
   issueLimit?: number;
-  insightDigestConfig?: IInsightDigestConfig,
+  insightSummaryConfig?: IInsightSummaryConfig,
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -101,7 +101,7 @@ const communicationComponentsSchema = new Schema(
       type: String,
       enum: Object.values(commonConstants.TASK_OR_ISSUE_FILTERS),
     },
-    insightDigestConfig: {
+    insightSummaryConfig: {
       lookbackRange: {
         time: { type: Number, required: false },
         unit: { type: String, required: false },
@@ -124,4 +124,4 @@ const CommunicationComponentsModel: Model<ICommunicationComponent> =
     "communicationComponents"
   );
 
-export { CommunicationComponentsModel, ICommunicationComponent, IInsightDigestConfig };
+export { CommunicationComponentsModel, ICommunicationComponent, IInsightSummaryConfig };

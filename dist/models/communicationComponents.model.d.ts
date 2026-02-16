@@ -5,7 +5,7 @@ interface TimeRangeConfig {
     time: number;
     unit: string;
 }
-interface IInsightDigestConfig {
+interface IInsightSummaryConfig {
     lookbackRange: TimeRangeConfig;
     crossedThresholdRange: TimeRangeConfig;
 }
@@ -55,11 +55,11 @@ interface ICommunicationComponent extends Document {
     taskLimit?: number;
     issueFilter?: string;
     issueLimit?: number;
-    insightDigestConfig?: IInsightDigestConfig;
+    insightSummaryConfig?: IInsightSummaryConfig;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
 declare const CommunicationComponentsModel: Model<ICommunicationComponent>;
-export { CommunicationComponentsModel, ICommunicationComponent, IInsightDigestConfig };
+export { CommunicationComponentsModel, ICommunicationComponent, IInsightSummaryConfig };
 //# sourceMappingURL=communicationComponents.model.d.ts.map

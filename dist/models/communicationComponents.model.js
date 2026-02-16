@@ -60,7 +60,7 @@ const communicationComponentsSchema = new mongoose_1.Schema({
         type: String,
         enum: Object.values(commonConstants_1.default.TASK_OR_ISSUE_FILTERS),
     },
-    insightDigestConfig: {
+    insightSummaryConfig: {
         lookbackRange: {
             time: { type: Number, required: false },
             unit: { type: String, required: false },
