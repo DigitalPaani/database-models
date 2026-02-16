@@ -1,9 +1,13 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
 import type { INewUser } from "./newUserModel";
+interface TimeRangeConfig {
+    time: number;
+    unit: string;
+}
 interface IInsightDigestConfig {
-    lookbackDurationMinutes: number;
-    crossedThresholdDurationMinutes: number;
+    lookbackRange: TimeRangeConfig;
+    crossedThresholdRange: TimeRangeConfig;
 }
 interface ICommunicationComponent extends Document {
     name: string;

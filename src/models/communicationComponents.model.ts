@@ -7,9 +7,15 @@ require("./userGroupModel");
 require("./plantModel");
 
 
+
+interface TimeRangeConfig {
+  time: number;
+  unit: string;
+};
+
 interface IInsightDigestConfig {
-  lookbackDurationMinutes: number;
-  crossedThresholdDurationMinutes: number;
+  lookbackRange: TimeRangeConfig;
+  crossedThresholdRange: TimeRangeConfig;
 };
 
 // Interface for the message body
@@ -96,8 +102,14 @@ const communicationComponentsSchema = new Schema(
       enum: Object.values(commonConstants.TASK_OR_ISSUE_FILTERS),
     },
     insightDigestConfig: {
-      lookbackDurationMinutes: { type: Number },
-      crossedThresholdDurationMinutes: { type: Number },
+      lookbackRange: {
+        time: { type: Number, required: false },
+        unit: { type: String, required: false },
+      },
+      crossedThresholdRange: {
+        time: { type: Number, required: false },
+        unit: { type: String, required: false },
+      },
     },
     issueLimit: { type: Number },
     isDeleted: { type: Boolean, default: false },
