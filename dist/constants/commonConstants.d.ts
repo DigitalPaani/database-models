@@ -172,8 +172,13 @@ declare const _default: {
             phone_number_verified_successfully: {
                 template_id: string;
             };
+            otp_verification_5_minutes: {
+                template_id: string;
+            };
         };
         PHONE_VERIFICATION_COOLDOWN_MINUTES: number;
+        PHONE_VERIFICATION_EXPIRY_MINUTES: number;
+        OTP_SENDING_LIMIT_HOURS: number;
     };
     BATCH_CONSTANTS: {
         BATCH_STATUS_ENUM: {
@@ -257,6 +262,11 @@ declare const _default: {
         CREATED: string;
         UPDATED: string;
         DELETED: string;
+    };
+    USER_STATUS_ENUMS: {
+        active: string;
+        inactive: string;
+        invited: string;
     };
 };
 export default _default;

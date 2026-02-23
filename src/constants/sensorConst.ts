@@ -471,7 +471,13 @@ export const SENSOR_PURPOSE_TAGS: {
     abbr: "FAULT",
     name: "Fault Status",
     category: "Fault Status",
-},
+  },
+  {
+    key: "torque",
+    abbr: "TORQUE",
+    name: "Torque",
+    category: "Torque",
+  }
 ];
 
 export const OLD_SENSOR_PURPOSE_TAGS: {
