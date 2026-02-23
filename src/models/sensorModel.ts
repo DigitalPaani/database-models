@@ -116,6 +116,7 @@ const sensor = new Schema(
     isEnabled: Boolean,
     equipmentId: {
       type: mongoose.Schema.Types.ObjectId,
+      required:false
     },
     sensorTypeAbr: {
       type: String,
