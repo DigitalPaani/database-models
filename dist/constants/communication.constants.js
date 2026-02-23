@@ -27,6 +27,9 @@ const CONTENT_TEMPLATE_IDS = {
     otp_verification_5_minutes: {
         template_id: "HXb32cf30747a238bf6908e8fc390aa22f",
     },
+    insights_summary: {
+        template_id: "HX8c7b47aa047a64a805e70a1126981674"
+    }
 };
 const PHONE_VERIFICATION_COOLDOWN_MINUTES = 1;
 const PHONE_VERIFICATION_EXPIRY_MINUTES = 5;
