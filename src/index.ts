@@ -53,6 +53,7 @@ import {
   IEquipmentQuestion,
 } from "./models/equipmentQuestions.model";
 import { ILayout, LayoutModel } from "./models/LayoutSchema.model";
+import { IVisualizationTemplatesLayout, VisualizationTemplatesModel } from "./models/visualizationTemplates.model";
 import {
   ILayoutEquipment,
   LayoutEquipmentModel,
@@ -285,6 +286,7 @@ export type {
   IUserConfigurationLogs,
   IUserVerification,
   ITemporaryShareLinksModel,
+  IVisualizationTemplatesLayout,
   IInsightSummaryConfig
 };
 
@@ -378,5 +380,6 @@ export {
   UserConfigurationLogModel,
   UserVerificationModel,
   VerificationTypeEnum,
-  TemporaryShareLinksModel
+  TemporaryShareLinksModel,
+  VisualizationTemplatesModel
 };

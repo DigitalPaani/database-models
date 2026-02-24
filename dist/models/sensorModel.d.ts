@@ -23,6 +23,7 @@ export interface ISensor {
     dataType: string;
     sensorType: string;
     dataInputType: string;
+    equipmentId?: Types.ObjectId;
     plcId?: Types.ObjectId;
     isEnabled: boolean;
     sensorTypeAbr?: string;
