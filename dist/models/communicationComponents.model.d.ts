@@ -1,8 +1,16 @@
 import { Model } from "mongoose";
 import { Types } from "mongoose";
+import type { INewUser } from "./newUserModel";
+interface TimeRangeConfig {
+    time: number;
+    unit: string;
+}
+interface IInsightSummaryConfig {
+    lookbackRange: TimeRangeConfig;
+}
 interface ICommunicationComponent extends Document {
     name: string;
-    userIds: Types.ObjectId[];
+    userIds: Types.ObjectId[] | INewUser[];
     emailSubject?: string;
     attachments?: {
         name: string;
@@ -46,10 +54,11 @@ interface ICommunicationComponent extends Document {
     taskLimit?: number;
     issueFilter?: string;
     issueLimit?: number;
+    insightSummaryConfig?: IInsightSummaryConfig;
     isDeleted: boolean;
     createdAt?: Date;
     updatedAt?: Date;
 }
 declare const CommunicationComponentsModel: Model<ICommunicationComponent>;
-export { CommunicationComponentsModel, ICommunicationComponent };
+export { CommunicationComponentsModel, ICommunicationComponent, IInsightSummaryConfig };
 //# sourceMappingURL=communicationComponents.model.d.ts.map

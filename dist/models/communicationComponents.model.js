@@ -10,6 +10,8 @@ const mongoose_2 = require("mongoose");
 const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
 require("./userGroupModel");
 require("./plantModel");
+;
+;
 // Define the embedded schema for the message body
 const communicationComponentsSchema = new mongoose_1.Schema({
     name: { type: String },
@@ -57,6 +59,12 @@ const communicationComponentsSchema = new mongoose_1.Schema({
     issueFilter: {
         type: String,
         enum: Object.values(commonConstants_1.default.TASK_OR_ISSUE_FILTERS),
+    },
+    insightSummaryConfig: {
+        lookbackRange: {
+            time: { type: Number, required: false },
+            unit: { type: String, required: false },
+        }
     },
     issueLimit: { type: Number },
     isDeleted: { type: Boolean, default: false },

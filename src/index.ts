@@ -76,6 +76,7 @@ import {
 import {
   CommunicationComponentsModel,
   ICommunicationComponent,
+  IInsightSummaryConfig
 } from "./models/communicationComponents.model";
 
 import {
@@ -285,7 +286,8 @@ export type {
   IUserConfigurationLogs,
   IUserVerification,
   ITemporaryShareLinksModel,
-  IVisualizationTemplatesLayout
+  IVisualizationTemplatesLayout,
+  IInsightSummaryConfig
 };
 
 // exports the models

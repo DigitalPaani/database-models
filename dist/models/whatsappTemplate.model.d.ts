@@ -12,6 +12,7 @@ interface IWhatsappTemplate extends Document {
     isReportConfigRequired: boolean;
     isTaskConfigRequired: boolean;
     isInsightConfigRequired: boolean;
+    isInsightSummaryConfigRequired: boolean;
     isTriggerCommunicationConfigEnabled: boolean;
     isArchived: boolean;
 }
