@@ -7,6 +7,18 @@ interface ISensor extends Document {
     purpose: string[];
     inputType: string[];
     tags: string[];
+    goodRange: {
+        min: number;
+        max: number;
+    };
+    warningRange: {
+        min: number;
+        max: number;
+    };
+    badRange: {
+        min: number;
+        max: number;
+    };
 }
 declare const SensorModel: mongoose.Model<ISensor, {}, {}, {}, mongoose.Document<unknown, {}, ISensor> & ISensor & Required<{
     _id: unknown;

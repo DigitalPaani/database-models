@@ -45,12 +45,27 @@ const SensorSchema = new mongoose_1.Schema({
     },
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true },
-    purpose: { type: [String], enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.key) },
+    purpose: {
+        type: [String],
+        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.key),
+    },
     inputType: {
         type: [String],
         enum: sensorConst_1.sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
+    goodRange: {
+        min: { type: Number, required: false },
+        max: { type: Number, required: false },
+    },
+    warningRange: {
+        min: { type: Number, required: false },
+        max: { type: Number, required: false },
+    },
+    badRange: {
+        min: { type: Number, required: false },
+        max: { type: Number, required: false },
+    },
 }, { timestamps: true });
 const SensorModel = mongoose_1.default.model("SensorList", SensorSchema, "SensorLists");
 exports.SensorModel = SensorModel;

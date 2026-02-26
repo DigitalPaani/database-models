@@ -9,6 +9,18 @@ interface ISensor extends Document {
   purpose: string[];
   inputType: string[];
   tags: string[];
+  goodRange: {
+    min: number;
+    max: number;
+  };
+  warningRange: {
+    min: number;
+    max: number;
+  };
+  badRange: {
+    min: number;
+    max: number;
+  };
 }
 
 const SensorSchema = new Schema<ISensor>(
@@ -20,15 +32,30 @@ const SensorSchema = new Schema<ISensor>(
       ref: "company",
     },
     sensorModelNumber: { type: String, required: true },
-    granularity: { type: [String], required: true }, 
-    purpose: { type: [String], enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.key) },
+    granularity: { type: [String], required: true },
+    purpose: {
+      type: [String],
+      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.key),
+    },
     inputType: {
       type: [String],
       enum: sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
+    goodRange: {
+      min: { type: Number, required: false },
+      max: { type: Number, required: false },
+    },
+    warningRange: {
+      min: { type: Number, required: false },
+      max: { type: Number, required: false },
+    },
+    badRange: {
+      min: { type: Number, required: false },
+      max: { type: Number, required: false },
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 const SensorModel = mongoose.model<ISensor>(
