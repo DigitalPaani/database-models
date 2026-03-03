@@ -58,5 +58,10 @@ export const manualCategoryList = [
     name: "Maintenance",
     key: "MAINTENANCE",
     abbr: "MAIN",
-  }
+  },
+  {
+    name: "Current",
+    key: "CURRENT",
+    abbr: "CURR",
+  },
 ]
