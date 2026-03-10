@@ -7,9 +7,9 @@ interface ISensor extends Document {
     purpose: string[];
     inputType: string[];
     tags: string[];
-    tagsList?: ITagsList[];
+    templateTags?: ITemplateTags[];
 }
-export interface ITagsList {
+export interface ITemplateTags {
     tag: string;
     thresholds: {
         validRangeMin: number;

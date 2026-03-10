@@ -9,10 +9,10 @@ interface ISensor extends Document {
   purpose: string[];
   inputType: string[];
   tags: string[];
-  tagsList?:ITagsList[]
+  templateTags?: ITemplateTags[];
 }
 
-export interface ITagsList {
+export interface ITemplateTags {
   tag: string;
   thresholds: {
     validRangeMin: number;
@@ -23,7 +23,7 @@ export interface ITagsList {
     safeRangeMax: number;
   };
 }
-const TagsListSchema = new Schema<ITagsList>(
+const TemplateTagSchema = new Schema<ITemplateTags>(
   {
     tag: {
       type: String,
@@ -59,8 +59,8 @@ const SensorSchema = new Schema<ISensor>(
       enum: sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
-    tagsList: {
-      type: [TagsListSchema],
+    templateTags: {
+      type: [TemplateTagSchema],
       default: {},
       required: false
     },

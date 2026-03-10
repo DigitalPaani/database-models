@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const sensorConst_1 = require("../constants/sensorConst");
-const TagsListSchema = new mongoose_1.Schema({
+const TemplateTagSchema = new mongoose_1.Schema({
     tag: {
         type: String,
         required: true,
@@ -65,8 +65,8 @@ const SensorSchema = new mongoose_1.Schema({
         enum: sensorConst_1.sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
-    tagsList: {
-        type: [TagsListSchema],
+    templateTags: {
+        type: [TemplateTagSchema],
         default: {},
         required: false
     },
