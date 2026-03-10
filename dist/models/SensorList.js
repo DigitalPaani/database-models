@@ -36,18 +36,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const sensorConst_1 = require("../constants/sensorConst");
-const thresholdSchema = new mongoose_1.Schema({
-    purpose: {
+const TagsListSchema = new mongoose_1.Schema({
+    tag: {
         type: String,
         required: true,
-        enum: sensorConst_1.SENSOR_PURPOSE_TAGS.map((tag) => tag.key),
     },
-    validRangeMin: { type: Number, required: true },
-    validRangeMax: { type: Number, required: true },
-    cautionRangeMin: { type: Number, required: true },
-    cautionRangeMax: { type: Number, required: true },
-    safeRangeMin: { type: Number, required: true },
-    safeRangeMax: { type: Number, required: true },
+    thresholds: {
+        validRangeMin: { type: Number, required: true },
+        validRangeMax: { type: Number, required: true },
+        cautionRangeMin: { type: Number, required: true },
+        cautionRangeMax: { type: Number, required: true },
+        safeRangeMin: { type: Number, required: true },
+        safeRangeMax: { type: Number, required: true },
+    },
 }, { _id: false });
 const SensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
@@ -64,8 +65,8 @@ const SensorSchema = new mongoose_1.Schema({
         enum: sensorConst_1.sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
-    thresholds: {
-        type: [thresholdSchema],
+    tagsList: {
+        type: [TagsListSchema],
         default: {},
         required: false
     },
