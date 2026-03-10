@@ -48,8 +48,7 @@ const thresholdSchema = new mongoose_1.Schema({
     cautionRangeMax: { type: Number, required: true },
     safeRangeMin: { type: Number, required: true },
     safeRangeMax: { type: Number, required: true },
-}, { _id: false } // prevents creating _id for each threshold object
-);
+}, { _id: false });
 const SensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
     sensorCompanyId: {
@@ -69,7 +68,7 @@ const SensorSchema = new mongoose_1.Schema({
         type: [thresholdSchema],
         default: {},
         required: false
-    }
+    },
 }, { timestamps: true });
 const SensorModel = mongoose_1.default.model("SensorList", SensorSchema, "SensorLists");
 exports.SensorModel = SensorModel;

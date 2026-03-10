@@ -38,7 +38,7 @@ const thresholdSchema = new Schema<IThresholds>(
     safeRangeMin: { type: Number, required: true },
     safeRangeMax: { type: Number, required: true },
   },
-  { _id: false } // prevents creating _id for each threshold object
+  { _id: false },
 );
 
 const SensorSchema = new Schema<ISensor>(
@@ -57,11 +57,11 @@ const SensorSchema = new Schema<ISensor>(
       enum: sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
-    thresholds:{
+    thresholds: {
       type: [thresholdSchema],
       default: {},
       required: false
-    }
+    },
   },
   { timestamps: true }
 );
