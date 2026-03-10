@@ -9,7 +9,37 @@ interface ISensor extends Document {
   purpose: string[];
   inputType: string[];
   tags: string[];
+  thresholds?:IThresholds[]
 }
+
+export interface IThresholds {
+  purpose: string,
+  validRangeMin: number,
+  validRangeMax: number,
+  cautionRangeMin: number,
+  cautionRangeMax: number,
+  safeRangeMin: number,
+  safeRangeMax: number
+}
+const thresholdSchema = new Schema<IThresholds>(
+  {
+    purpose: {
+      type: String,
+      required: true,
+      enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.key),
+    },
+
+    validRangeMin: { type: Number, required: true },
+    validRangeMax: { type: Number, required: true },
+
+    cautionRangeMin: { type: Number, required: true },
+    cautionRangeMax: { type: Number, required: true },
+
+    safeRangeMin: { type: Number, required: true },
+    safeRangeMax: { type: Number, required: true },
+  },
+  { _id: false } // prevents creating _id for each threshold object
+);
 
 const SensorSchema = new Schema<ISensor>(
   {
@@ -27,6 +57,11 @@ const SensorSchema = new Schema<ISensor>(
       enum: sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
+    thresholds:{
+      type: [thresholdSchema],
+      default: {},
+      required: false
+    }
   },
   { timestamps: true }
 );

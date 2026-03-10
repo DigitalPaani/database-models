@@ -7,6 +7,16 @@ interface ISensor extends Document {
     purpose: string[];
     inputType: string[];
     tags: string[];
+    thresholds?: IThresholds[];
+}
+export interface IThresholds {
+    purpose: string;
+    validRangeMin: number;
+    validRangeMax: number;
+    cautionRangeMin: number;
+    cautionRangeMax: number;
+    safeRangeMin: number;
+    safeRangeMax: number;
 }
 declare const SensorModel: mongoose.Model<ISensor, {}, {}, {}, mongoose.Document<unknown, {}, ISensor> & ISensor & Required<{
     _id: unknown;
