@@ -43,6 +43,15 @@ export interface ISensor {
   parentSensor?: Types.ObjectId | null;
   flocChildSensors?: FlocChildSensors;
   granularity?: number;
+  frequency?: number | string;
+  sensorDetails?: Types.ObjectId;
+  validRangeMin?:number,
+  validRangeMax?:number,
+  cautionRangeMin?:number,
+  cautionRangeMax?:number,
+  safeRangeMin?: number,
+  safeRangeMax?: number,
+  mediaValidationType?: string;
   confidenceScore?: number;
   category?: string;
 }
@@ -138,6 +147,22 @@ const sensor = new Schema(
     flocChildSensors: {
       type: flocChildSensorsSchema,
       required: false,
+    },
+    frequency: Number,
+    sensorDetails:{
+      type: mongoose.Schema.Types.ObjectId,
+      ref:"SensorList"  
+    },
+    validRangeMin: { type: Number, required: false },
+    validRangeMax: { type: Number, required: false },
+    cautionRangeMin: { type: Number, required: false },
+    cautionRangeMax: { type: Number, required: false },
+    safeRangeMin: { type: Number, required: false },
+    safeRangeMax: { type: Number, required: false },
+    mediaValidationType:{
+      type: String,
+      required: false,
+      enum:["allMedia", "liveMedia"]
     },
     confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
     dynamic: { type: Boolean, default: false },
