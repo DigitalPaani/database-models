@@ -28,7 +28,7 @@ const CONTENT_TEMPLATE_IDS = {
         template_id: "HXb32cf30747a238bf6908e8fc390aa22f",
     },
     insights_summary: {
-        template_id: "HX8c7b47aa047a64a805e70a1126981674"
+        template_id: "HX990e7506067e4f1c91fb46eea977e08e"
     }
 };
 const PHONE_VERIFICATION_COOLDOWN_MINUTES = 1;
