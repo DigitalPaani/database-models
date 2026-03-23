@@ -34,12 +34,15 @@ export interface ISensor {
     granularity?: number;
     frequency?: number | string;
     sensorDetails?: Types.ObjectId;
-    validRangeMin?: number;
-    validRangeMax?: number;
-    cautionRangeMin?: number;
-    cautionRangeMax?: number;
-    safeRangeMin?: number;
-    safeRangeMax?: number;
+    threshold?: {
+        validMin: number;
+        validMax: number;
+        cautionMin?: number;
+        cautionMax?: number;
+        safeMin: number;
+        safeMax: number;
+        showCautionZone?: boolean;
+    };
     mediaValidationType?: string;
     confidenceScore?: number;
     category?: string;

@@ -41,13 +41,14 @@ const TemplateTagSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    thresholds: {
-        validRangeMin: { type: Number, required: true },
-        validRangeMax: { type: Number, required: true },
-        cautionRangeMin: { type: Number, required: true },
-        cautionRangeMax: { type: Number, required: true },
-        safeRangeMin: { type: Number, required: true },
-        safeRangeMax: { type: Number, required: true },
+    threshold: {
+        validMin: { type: Number, required: true },
+        validMax: { type: Number, required: true },
+        cautionMin: { type: Number, required: false },
+        cautionMax: { type: Number, required: false },
+        safeMin: { type: Number, required: true },
+        safeMax: { type: Number, required: true },
+        showCautionZone: { type: Boolean, required: false },
     },
 }, { _id: false });
 const SensorSchema = new mongoose_1.Schema({

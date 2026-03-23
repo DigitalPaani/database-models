@@ -14,13 +14,14 @@ interface ISensor extends Document {
 
 export interface ITemplateTag {
   tag: string;
-  thresholds: {
-    validRangeMin: number;
-    validRangeMax: number;
-    cautionRangeMin: number;
-    cautionRangeMax: number;
-    safeRangeMin: number;
-    safeRangeMax: number;
+  threshold: {
+    validMin: number;
+    validMax: number;
+    cautionMin?: number;
+    cautionMax?: number;
+    safeMin: number;
+    safeMax: number;
+    showCautionZone?: boolean;
   };
 }
 const TemplateTagSchema = new Schema<ITemplateTag>(
@@ -29,15 +30,17 @@ const TemplateTagSchema = new Schema<ITemplateTag>(
       type: String,
       required: true,
     },
-    thresholds: {
-      validRangeMin: { type: Number, required: true },
-      validRangeMax: { type: Number, required: true },
+    threshold: {
+      validMin: { type: Number, required: true },
+      validMax: { type: Number, required: true },
 
-      cautionRangeMin: { type: Number, required: true },
-      cautionRangeMax: { type: Number, required: true },
+      cautionMin: { type: Number, required: false },
+      cautionMax: { type: Number, required: false },
 
-      safeRangeMin: { type: Number, required: true },
-      safeRangeMax: { type: Number, required: true },
+      safeMin: { type: Number, required: true },
+      safeMax: { type: Number, required: true },
+
+      showCautionZone: { type: Boolean, required: false },
     },
   },
   { _id: false },

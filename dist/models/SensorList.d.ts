@@ -11,13 +11,14 @@ interface ISensor extends Document {
 }
 export interface ITemplateTag {
     tag: string;
-    thresholds: {
-        validRangeMin: number;
-        validRangeMax: number;
-        cautionRangeMin: number;
-        cautionRangeMax: number;
-        safeRangeMin: number;
-        safeRangeMax: number;
+    threshold: {
+        validMin: number;
+        validMax: number;
+        cautionMin?: number;
+        cautionMax?: number;
+        safeMin: number;
+        safeMax: number;
+        showCautionZone?: boolean;
     };
 }
 declare const SensorModel: mongoose.Model<ISensor, {}, {}, {}, mongoose.Document<unknown, {}, ISensor> & ISensor & Required<{

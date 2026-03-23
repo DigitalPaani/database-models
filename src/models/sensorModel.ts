@@ -45,12 +45,15 @@ export interface ISensor {
   granularity?: number;
   frequency?: number | string;
   sensorDetails?: Types.ObjectId;
-  validRangeMin?:number,
-  validRangeMax?:number,
-  cautionRangeMin?:number,
-  cautionRangeMax?:number,
-  safeRangeMin?: number,
-  safeRangeMax?: number,
+  threshold?:{
+    validMin:number,
+    validMax:number,
+    cautionMin?:number,
+    cautionMax?:number,
+    safeMin: number,
+    safeMax: number,
+    showCautionZone?: boolean,
+  }
   mediaValidationType?: string;
   confidenceScore?: number;
   category?: string;
@@ -153,13 +156,19 @@ const sensor = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref:"SensorList"  
     },
-    validRangeMin: { type: Number, required: false },
-    validRangeMax: { type: Number, required: false },
-    cautionRangeMin: { type: Number, required: false },
-    cautionRangeMax: { type: Number, required: false },
-    safeRangeMin: { type: Number, required: false },
-    safeRangeMax: { type: Number, required: false },
-    mediaValidationType:{
+    threshold: {
+      type: {
+        validMin: { type: Number, required: true },
+        validMax: { type: Number, required: true },
+        cautionMin: { type: Number, required: false },
+        cautionMax: { type: Number, required: false },
+        safeMin: { type: Number, required: true },
+        safeMax: { type: Number, required: true },
+        showCautionZone: { type: Boolean, required: false },
+      },
+      required: false,
+    },
+    mediaValidationType: {
       type: String,
       required: false,
       enum:["allMedia", "liveMedia"]

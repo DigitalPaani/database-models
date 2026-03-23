@@ -138,12 +138,18 @@ const sensor = new Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: "SensorList"
     },
-    validRangeMin: { type: Number, required: false },
-    validRangeMax: { type: Number, required: false },
-    cautionRangeMin: { type: Number, required: false },
-    cautionRangeMax: { type: Number, required: false },
-    safeRangeMin: { type: Number, required: false },
-    safeRangeMax: { type: Number, required: false },
+    threshold: {
+        type: {
+            validMin: { type: Number, required: true },
+            validMax: { type: Number, required: true },
+            cautionMin: { type: Number, required: false },
+            cautionMax: { type: Number, required: false },
+            safeMin: { type: Number, required: true },
+            safeMax: { type: Number, required: true },
+            showCautionZone: { type: Boolean, required: false },
+        },
+        required: false,
+    },
     mediaValidationType: {
         type: String,
         required: false,
