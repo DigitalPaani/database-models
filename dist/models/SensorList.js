@@ -50,6 +50,7 @@ const TemplateTagSchema = new mongoose_1.Schema({
         safeMax: { type: Number, required: true },
         showCautionZone: { type: Boolean, required: false },
     },
+    isThresholdConfigured: { type: Boolean, required: false, default: false },
 }, { _id: false });
 const SensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },

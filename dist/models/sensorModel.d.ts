@@ -43,6 +43,7 @@ export interface ISensor {
         safeMax: number;
         showCautionZone?: boolean;
     };
+    isThresholdConfigured?: boolean;
     mediaValidationType?: string;
     confidenceScore?: number;
     category?: string;

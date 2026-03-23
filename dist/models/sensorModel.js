@@ -150,6 +150,7 @@ const sensor = new Schema({
         },
         required: false,
     },
+    isThresholdConfigured: { type: Boolean, required: true, default: false },
     mediaValidationType: {
         type: String,
         required: false,

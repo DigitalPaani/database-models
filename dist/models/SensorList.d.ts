@@ -20,6 +20,7 @@ export interface ITemplateTag {
         safeMax: number;
         showCautionZone?: boolean;
     };
+    isThresholdConfigured?: boolean;
 }
 declare const SensorModel: mongoose.Model<ISensor, {}, {}, {}, mongoose.Document<unknown, {}, ISensor> & ISensor & Required<{
     _id: unknown;
