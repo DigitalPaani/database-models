@@ -21,7 +21,8 @@ export interface ITemplateTag {
     cautionMax?: number;
     safeMin: number;
     safeMax: number;
-    showCautionZone?: boolean;
+    showCautionZone: boolean;
+    isThresholdConfigured: boolean;
   };
 }
 const TemplateTagSchema = new Schema<ITemplateTag>(
@@ -40,7 +41,8 @@ const TemplateTagSchema = new Schema<ITemplateTag>(
       safeMin: { type: Number, required: true },
       safeMax: { type: Number, required: true },
 
-      showCautionZone: { type: Boolean, required: false },
+      showCautionZone: { type: Boolean, required: true },
+      isThresholdConfigured: { type: Boolean, required: true }
     },
   },
   { _id: false },

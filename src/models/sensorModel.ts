@@ -52,7 +52,8 @@ export interface ISensor {
     cautionMax?:number,
     safeMin: number,
     safeMax: number,
-    showCautionZone?: boolean,
+    showCautionZone: boolean,
+    isThresholdConfigured: boolean
   }
   mediaValidationType?: string;
   confidenceScore?: number;
@@ -164,7 +165,8 @@ const sensor = new Schema(
         cautionMax: { type: Number, required: false },
         safeMin: { type: Number, required: true },
         safeMax: { type: Number, required: true },
-        showCautionZone: { type: Boolean, required: false },
+        showCautionZone: { type: Boolean, required: true },
+        isThresholdConfigured: { type: Boolean, required: true }
       },
       required: false,
     },
