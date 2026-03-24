@@ -25,7 +25,7 @@ export interface ITemplateTag {
   };
   isThresholdConfigured?: boolean;
 }
-const TemplateTagSchema = new Schema<ITemplateTag>(
+export const TemplateTagSchema = new Schema<ITemplateTag>(
   {
     tag: {
       type: String,

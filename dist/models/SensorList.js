@@ -33,10 +33,10 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SensorModel = void 0;
+exports.SensorModel = exports.TemplateTagSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const sensorConst_1 = require("../constants/sensorConst");
-const TemplateTagSchema = new mongoose_1.Schema({
+exports.TemplateTagSchema = new mongoose_1.Schema({
     tag: {
         type: String,
         required: true,
@@ -68,7 +68,7 @@ const SensorSchema = new mongoose_1.Schema({
     },
     tags: { type: [String], default: [] },
     templateTags: {
-        type: [TemplateTagSchema],
+        type: [exports.TemplateTagSchema],
         default: {},
         required: false
     },

@@ -36,31 +36,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ManualSensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const manualSensorsCategoryConst_1 = require("../constants/manualSensorsCategoryConst");
+const SensorList_1 = require("./SensorList");
 const manualCategory = manualSensorsCategoryConst_1.manualCategoryList.map((category) => category.key);
-const ManualTemplateTagSchema = new mongoose_1.Schema({
-    tag: {
-        type: String,
-        required: true,
-    },
-    threshold: {
-        validMin: { type: Number, required: true },
-        validMax: { type: Number, required: true },
-        cautionMin: { type: Number, required: false },
-        cautionMax: { type: Number, required: false },
-        safeMin: { type: Number, required: true },
-        safeMax: { type: Number, required: true },
-        showCautionZone: { type: Boolean, required: false },
-    },
-    isThresholdConfigured: { type: Boolean, required: false, default: false },
-}, { _id: false });
 const ManualSensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
     category: { type: String, required: true, enum: manualCategory },
     tag: { type: String },
     isArchived: { type: Boolean, default: false },
     type: { type: String, required: true },
-    templateTag: {
-        type: ManualTemplateTagSchema,
+    templateTags: {
+        type: [SensorList_1.TemplateTagSchema],
         default: {},
         required: false,
     },
