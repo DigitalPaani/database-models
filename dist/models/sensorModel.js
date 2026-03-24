@@ -148,6 +148,7 @@ const sensor = new Schema({
             safeMax: { type: Number, required: true },
             showCautionZone: { type: Boolean, required: false },
         },
+        _id: false,
         required: false,
     },
     isThresholdConfigured: { type: Boolean, required: true, default: false },
