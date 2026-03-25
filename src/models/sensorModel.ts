@@ -46,12 +46,12 @@ export interface ISensor {
   frequency?: number | string;
   sensorDetails?: Types.ObjectId;
   threshold?:{
-    validMin:number,
-    validMax:number,
+    validMin?:number,
+    validMax?:number,
     cautionMin?:number,
     cautionMax?:number,
-    safeMin: number,
-    safeMax: number,
+    safeMin?: number,
+    safeMax?: number,
     showCautionZone?: boolean,
   },
   isThresholdConfigured?: boolean,
@@ -159,12 +159,12 @@ const sensor = new Schema(
     },
     threshold: {
       type: {
-        validMin: { type: Number, required: true },
-        validMax: { type: Number, required: true },
+        validMin: { type: Number, required: false },
+        validMax: { type: Number, required: false },
         cautionMin: { type: Number, required: false },
         cautionMax: { type: Number, required: false },
-        safeMin: { type: Number, required: true },
-        safeMax: { type: Number, required: true },
+        safeMin: { type: Number, required: false },
+        safeMax: { type: Number, required: false },
         showCautionZone: { type: Boolean, required: false },
       },
       _id: false,
