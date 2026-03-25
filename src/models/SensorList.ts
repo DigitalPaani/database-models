@@ -15,12 +15,12 @@ interface ISensor extends Document {
 export interface ITemplateTag {
   tag: string;
   threshold: {
-    validMin: number;
-    validMax: number;
+    validMin?: number;
+    validMax?: number;
     cautionMin?: number;
     cautionMax?: number;
-    safeMin: number;
-    safeMax: number;
+    safeMin?: number;
+    safeMax?: number;
     showCautionZone?: boolean;
   };
   isThresholdConfigured?: boolean;
@@ -32,12 +32,12 @@ export const TemplateTagSchema = new Schema<ITemplateTag>(
       required: true,
     },
     threshold: {
-      validMin: { type: Number, required: true },
-      validMax: { type: Number, required: true },
+      validMin: { type: Number, required: false },
+      validMax: { type: Number, required: false },
       cautionMin: { type: Number, required: false },
       cautionMax: { type: Number, required: false },
-      safeMin: { type: Number, required: true },
-      safeMax: { type: Number, required: true },
+      safeMin: { type: Number, required: false },
+      safeMax: { type: Number, required: false },
       showCautionZone: { type: Boolean, required: false },
     },
     isThresholdConfigured: { type: Boolean, required: false, default: false },

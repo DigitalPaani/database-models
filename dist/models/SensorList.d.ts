@@ -12,12 +12,12 @@ interface ISensor extends Document {
 export interface ITemplateTag {
     tag: string;
     threshold: {
-        validMin: number;
-        validMax: number;
+        validMin?: number;
+        validMax?: number;
         cautionMin?: number;
         cautionMax?: number;
-        safeMin: number;
-        safeMax: number;
+        safeMin?: number;
+        safeMax?: number;
         showCautionZone?: boolean;
     };
     isThresholdConfigured?: boolean;
