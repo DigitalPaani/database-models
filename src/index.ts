@@ -193,6 +193,8 @@ import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user
 import { IUserVerification, UserVerificationModel, VerificationTypeEnum } from "./models/user-verifications.model";
 import { TemporaryShareLinksModel, ITemporaryShareLinksModel } from "./models/temporary-share-link.model";
 
+import { IDataInputBulkEntryLogs, DataInputBulkEntryLogsModel } from "./models/data-input-bulk-entry-logs.model";
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -287,7 +289,8 @@ export type {
   IUserVerification,
   ITemporaryShareLinksModel,
   IVisualizationTemplatesLayout,
-  IInsightSummaryConfig
+  IInsightSummaryConfig,
+  IDataInputBulkEntryLogs
 };
 
 // exports the models
@@ -381,5 +384,6 @@ export {
   UserVerificationModel,
   VerificationTypeEnum,
   TemporaryShareLinksModel,
-  VisualizationTemplatesModel
+  VisualizationTemplatesModel,
+  DataInputBulkEntryLogsModel
 };
