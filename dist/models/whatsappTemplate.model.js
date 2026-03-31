@@ -86,6 +86,10 @@ const whatsappTemplateSchema = new mongoose_1.Schema({
         type: Boolean,
         required: false,
     },
+    isInsightSummaryConfigRequired: {
+        type: Boolean,
+        required: false,
+    },
     isTriggerCommunicationConfigEnabled: {
         type: Boolean,
         default: false,

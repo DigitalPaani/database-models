@@ -26,13 +26,23 @@ const CONTENT_TEMPLATE_IDS = {
     },
     phone_number_verified_successfully: {
         template_id: "HX974f508d826b1474cd333e8bde2a9971"
+    },
+    otp_verification_5_minutes: { // otp_verification_5_minutes
+        template_id: "HXb32cf30747a238bf6908e8fc390aa22f",
+    },
+    insights_summary: {
+        template_id: "HX990e7506067e4f1c91fb46eea977e08e"
     }
 };
 
-const PHONE_VERIFICATION_COOLDOWN_MINUTES = 2;
+const PHONE_VERIFICATION_COOLDOWN_MINUTES = 1;
+const PHONE_VERIFICATION_EXPIRY_MINUTES = 5;
+const OTP_SENDING_LIMIT_HOURS = 6;
 
 export default {
     DELIVERY_STATUS_ENUMS,
     CONTENT_TEMPLATE_IDS,
-    PHONE_VERIFICATION_COOLDOWN_MINUTES
+    PHONE_VERIFICATION_COOLDOWN_MINUTES,
+    PHONE_VERIFICATION_EXPIRY_MINUTES,
+    OTP_SENDING_LIMIT_HOURS
 }

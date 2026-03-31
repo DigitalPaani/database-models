@@ -1,14 +1,26 @@
 import { Model, Schema, model } from "mongoose";
 import { COMMUNICATION_COMPONENT_TYPES } from "../constants/triggerConst";
 import { Types } from "mongoose";
+import type { INewUser } from "./newUserModel";
 import commonConstants from "../constants/commonConstants";
 require("./userGroupModel");
 require("./plantModel");
 
+
+
+interface TimeRangeConfig {
+  time: number;
+  unit: string;
+};
+
+interface IInsightSummaryConfig {
+  lookbackRange: TimeRangeConfig;
+};
+
 // Interface for the message body
 interface ICommunicationComponent extends Document {
   name: string;
-  userIds: Types.ObjectId[]; // Array of User IDs
+  userIds: Types.ObjectId[] | INewUser[]; // Array of User IDs
   emailSubject?: string; // Optional, for EMAIL type
   attachments?: { name: string; link: string; filetype: string; isReport: boolean }[]; // Optional, for EMAIL
   message?: string; // Present for EMAIL, CALL, SMS
@@ -33,6 +45,7 @@ interface ICommunicationComponent extends Document {
   taskLimit?: number;
   issueFilter?: string;
   issueLimit?: number;
+  insightSummaryConfig?: IInsightSummaryConfig,
   isDeleted: boolean;
   createdAt?: Date;
   updatedAt?: Date;
@@ -87,6 +100,12 @@ const communicationComponentsSchema = new Schema(
       type: String,
       enum: Object.values(commonConstants.TASK_OR_ISSUE_FILTERS),
     },
+    insightSummaryConfig: {
+      lookbackRange: {
+        time: { type: Number, required: false },
+        unit: { type: String, required: false },
+      }
+    },
     issueLimit: { type: Number },
     isDeleted: { type: Boolean, default: false },
   },
@@ -100,4 +119,4 @@ const CommunicationComponentsModel: Model<ICommunicationComponent> =
     "communicationComponents"
   );
 
-export { CommunicationComponentsModel, ICommunicationComponent };
+export { CommunicationComponentsModel, ICommunicationComponent, IInsightSummaryConfig };

@@ -1,5 +1,6 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
+import { USER_STATUS_ENUMS } from "../constants/users.constants";
 
 // Define a TypeScript interface for the User document
 interface INewUser extends Document {
@@ -19,6 +20,9 @@ interface INewUser extends Document {
   skillIds: Types.ObjectId[];
   isArchived: boolean;
   blockedNotificationModules:[string];
+  invitedBy?: Types.ObjectId;
+  inviteAcceptedOn?: number;
+  inviteExpiry?: number;
   // defaultHomePage: string;
   [key: string]: any;
 }
@@ -31,7 +35,11 @@ const userSchema = new Schema<INewUser>(
     password: String,
     defaultPageId: Object,
     number: String,
-    userStatus: String,
+    userStatus: {
+      type: String,
+      enum: Object.values(USER_STATUS_ENUMS),
+      required: true
+    },
     twoFactorAuthentication: Boolean,
     language: String,
     profilePic: String,
@@ -41,9 +49,12 @@ const userSchema = new Schema<INewUser>(
     isPhoneNumberVerified: { type: Boolean, default: false },
     isEmailAddressVerified: { type: Boolean, default: false },
     blockedNotificationModules: {
-    type: [String],
-    default: [],
+      type: [String],
+      default: [],
     },
+    invitedBy: { type: Schema.Types.ObjectId, ref: 'NewUser' },
+    inviteAcceptedOn: { type: Number },
+    inviteExpiry: { type: Number },
     // defaultHomePage: { type: String, required: true, default: '' },
   },
   {

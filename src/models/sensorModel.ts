@@ -34,6 +34,7 @@ export interface ISensor {
   dataType: string;
   sensorType: string;
   dataInputType: string;
+  equipmentId?: Types.ObjectId;
   plcId?: Types.ObjectId;
   isEnabled: boolean;
   sensorTypeAbr?: string;
@@ -113,6 +114,10 @@ const sensor = new Schema(
       required: false,
     },
     isEnabled: Boolean,
+    equipmentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required:false
+    },
     sensorTypeAbr: {
       type: String,
       required: false,
