@@ -69,7 +69,7 @@ const SensorSchema = new mongoose_1.Schema({
     tags: { type: [String], default: [] },
     templateTags: {
         type: [exports.TemplateTagSchema],
-        default: {},
+        default: [],
         required: false
     },
 }, { timestamps: true });

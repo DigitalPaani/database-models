@@ -46,7 +46,7 @@ const ManualSensorSchema = new mongoose_1.Schema({
     type: { type: String, required: true },
     templateTags: {
         type: [SensorList_1.TemplateTagSchema],
-        default: {},
+        default: [],
         required: false,
     },
 }, { timestamps: true });

@@ -63,7 +63,7 @@ const SensorSchema = new Schema<ISensor>(
     tags: { type: [String], default: [] },
     templateTags: {
       type: [TemplateTagSchema],
-      default: {},
+      default: [],
       required: false
     },
   },

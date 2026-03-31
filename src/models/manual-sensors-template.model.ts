@@ -22,7 +22,7 @@ const ManualSensorSchema = new Schema<IManualSensors>(
     type: { type: String, required: true },
     templateTags: {
       type: [TemplateTagSchema],
-      default: {},
+      default: [],
       required: false,
     },
   },
