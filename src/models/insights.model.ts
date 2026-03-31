@@ -128,6 +128,13 @@ insightsSchema.index({
   createdAt: -1,
 });
 
+insightsSchema.index({
+  insightComponentId: 1,
+  isArchived: 1,
+  createdAt: 1,
+  _id: 1,
+});
+
 
 const InsightModel: Model<IInsight> =
   mongoose.model<IInsight>(
