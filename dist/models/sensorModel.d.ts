@@ -32,6 +32,19 @@ export interface ISensor {
     parentSensor?: Types.ObjectId | null;
     flocChildSensors?: FlocChildSensors;
     granularity?: number;
+    frequency?: number | string;
+    sensorDetails?: Types.ObjectId;
+    threshold?: {
+        validMin?: number;
+        validMax?: number;
+        cautionMin?: number;
+        cautionMax?: number;
+        safeMin?: number;
+        safeMax?: number;
+        showCautionZone?: boolean;
+    };
+    isThresholdConfigured?: boolean;
+    mediaValidationType?: string;
     confidenceScore?: number;
     category?: string;
 }
