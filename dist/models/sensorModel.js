@@ -133,6 +133,30 @@ const sensor = new Schema({
         type: flocChildSensorsSchema,
         required: false,
     },
+    frequency: Number,
+    sensorDetails: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "SensorList"
+    },
+    threshold: {
+        type: {
+            validMin: { type: Number, required: false },
+            validMax: { type: Number, required: false },
+            cautionMin: { type: Number, required: false },
+            cautionMax: { type: Number, required: false },
+            safeMin: { type: Number, required: false },
+            safeMax: { type: Number, required: false },
+            showCautionZone: { type: Boolean, required: false },
+        },
+        _id: false,
+        required: false,
+    },
+    isThresholdConfigured: { type: Boolean, required: true, default: false },
+    mediaValidationType: {
+        type: String,
+        required: false,
+        enum: ["allMedia", "liveMedia"]
+    },
     confidenceScore: { type: Number, min: 1, max: 100, default: 90 },
     dynamic: { type: Boolean, default: false },
     category: {
