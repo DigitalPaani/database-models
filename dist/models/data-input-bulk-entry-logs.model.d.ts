@@ -5,12 +5,15 @@ interface IDataInputSchema {
     sensorTag: string;
     value: string;
     assetId: string;
+    errorExists: boolean;
+    errorMessage: string;
 }
 interface IDataInputBulkEntryLogs {
     userId: string;
     dataInput: IDataInputSchema;
     fileLink: string;
     fileType: string;
+    success: boolean;
 }
 declare const DataInputBulkEntryLogsModel: mongoose.Model<IDataInputBulkEntryLogs, {}, {}, {}, mongoose.Document<unknown, {}, IDataInputBulkEntryLogs> & IDataInputBulkEntryLogs & {
     _id: Types.ObjectId;

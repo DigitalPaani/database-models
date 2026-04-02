@@ -58,6 +58,14 @@ const dataInputSchema = new mongoose_1.Schema({
         type: String,
         required: false
     },
+    errorExists: {
+        type: Boolean,
+        required: false
+    },
+    errorMessage: {
+        type: String,
+        required: false
+    }
 });
 const DataInputBulkEntryLogSchema = new mongoose_1.Schema({
     userId: {
@@ -74,6 +82,10 @@ const DataInputBulkEntryLogSchema = new mongoose_1.Schema({
     },
     fileType: {
         type: String,
+        required: false
+    },
+    success: {
+        type: Boolean,
         required: false
     }
 }, { timestamps: true });
