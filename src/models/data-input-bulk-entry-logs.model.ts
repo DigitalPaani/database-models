@@ -6,14 +6,17 @@ interface IDataInputSchema {
     sensorId: string
     sensorTag: string,
     value: string,
-    assetId: string
+    assetId: string,
+    errorExists: boolean
+    errorMessage: string
 };
 
 interface IDataInputBulkEntryLogs {
     userId: string,
     dataInput: IDataInputSchema,
     fileLink: string,
-    fileType: string
+    fileType: string,
+    success: boolean
 };
 
 
@@ -38,6 +41,14 @@ const dataInputSchema = new Schema<IDataInputSchema>({
         type: String,
         required: false
     },
+    errorExists: {
+        type: Boolean,
+        required: false
+    },
+    errorMessage: {
+        type: String,
+        required: false
+    }
 });
 
 const DataInputBulkEntryLogSchema = new Schema<IDataInputBulkEntryLogs>({
@@ -55,6 +66,10 @@ const DataInputBulkEntryLogSchema = new Schema<IDataInputBulkEntryLogs>({
     },
     fileType: {
         type: String,
+        required: false
+    },
+    success: {
+        type: Boolean,
         required: false
     }
 }, { timestamps: true });
