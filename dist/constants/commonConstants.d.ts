@@ -271,7 +271,6 @@ declare const _default: {
         inactive: string;
         invited: string;
     };
-    SENSOR_SETTING_AGGREGATION: string[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
