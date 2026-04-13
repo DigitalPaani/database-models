@@ -31,6 +31,7 @@ import anomalyRecordConst from "./anomaly-record-const";
 import bioHealthTrackerConstants from "./bio-health-tracker.constants";
 import { LOGS_ACTION_ENUM } from "./logs.constants";
 import { USER_STATUS_ENUMS } from "./users.constants";
+import { SENSOR_SETTING_AGGREGATION } from "./formulaConst";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -142,4 +143,5 @@ export default {
   BIO_HEALTH_TRACKER_CONSTANTS: bioHealthTrackerConstants,
   LOGS_ACTION_ENUM,
   USER_STATUS_ENUMS,
+  SENSOR_SETTING_AGGREGATION,
 };

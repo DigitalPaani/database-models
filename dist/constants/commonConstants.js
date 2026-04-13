@@ -16,6 +16,7 @@ const anomaly_record_const_1 = __importDefault(require("./anomaly-record-const")
 const bio_health_tracker_constants_1 = __importDefault(require("./bio-health-tracker.constants"));
 const logs_constants_1 = require("./logs.constants");
 const users_constants_1 = require("./users.constants");
+const formulaConst_1 = require("./formulaConst");
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -114,4 +115,5 @@ exports.default = {
     BIO_HEALTH_TRACKER_CONSTANTS: bio_health_tracker_constants_1.default,
     LOGS_ACTION_ENUM: logs_constants_1.LOGS_ACTION_ENUM,
     USER_STATUS_ENUMS: users_constants_1.USER_STATUS_ENUMS,
+    SENSOR_SETTING_AGGREGATION: formulaConst_1.SENSOR_SETTING_AGGREGATION,
 };
