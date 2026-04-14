@@ -80,6 +80,11 @@ const OCR_CONSTANTS = {
     LOGBOOK_TEMPLATE_TYPES: logbook_templates_constants_1.default.LOGBOOK_TEMPLATE_TYPES,
     CATEGORY_TYPES: logbook_templates_constants_1.default.CATEGORY_TYPES,
 };
+const DATA_INPUT_LOGS_STATUS_ENUMS = {
+    pending: "PENDING",
+    completed: "COMPLETED",
+    failed: "FAILED",
+};
 exports.default = {
     SKILL_LEVELS: taskManagementConst_1.SKILL_LEVELS,
     SKILL_TYPES: taskManagementConst_1.SKILL_TYPES,
@@ -114,4 +119,5 @@ exports.default = {
     BIO_HEALTH_TRACKER_CONSTANTS: bio_health_tracker_constants_1.default,
     LOGS_ACTION_ENUM: logs_constants_1.LOGS_ACTION_ENUM,
     USER_STATUS_ENUMS: users_constants_1.USER_STATUS_ENUMS,
+    DATA_INPUT_LOGS_STATUS_ENUMS,
 };

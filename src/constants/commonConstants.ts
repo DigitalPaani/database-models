@@ -108,6 +108,12 @@ const OCR_CONSTANTS = {
     CATEGORY_TYPES: logbookTemplatesConstants.CATEGORY_TYPES,
 };
 
+const DATA_INPUT_LOGS_STATUS_ENUMS = {
+  pending: "PENDING",
+  completed: "COMPLETED",
+  failed: "FAILED",
+};
+
 export default {
   SKILL_LEVELS,
   SKILL_TYPES,
@@ -142,4 +148,5 @@ export default {
   BIO_HEALTH_TRACKER_CONSTANTS: bioHealthTrackerConstants,
   LOGS_ACTION_ENUM,
   USER_STATUS_ENUMS,
+  DATA_INPUT_LOGS_STATUS_ENUMS,
 };
