@@ -4,6 +4,7 @@ interface IDataInputLogs extends Document {
   requestId: string;
   status: string;
   record: any;
+  errorMessage?: string
 }
 
 const dataInputLogsSchema = new Schema<IDataInputLogs>(
@@ -22,6 +23,11 @@ const dataInputLogsSchema = new Schema<IDataInputLogs>(
       type: Schema.Types.Mixed,
       required: true,
     },
+    errorMessage: {
+      type: String,
+      required: false,
+      trim: true,
+    }
   },
   { timestamps: true },
 );

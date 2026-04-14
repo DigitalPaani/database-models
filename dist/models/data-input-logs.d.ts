@@ -3,6 +3,7 @@ interface IDataInputLogs extends Document {
     requestId: string;
     status: string;
     record: any;
+    errorMessage?: string;
 }
 declare const DataInputLogsModel: mongoose.Model<IDataInputLogs, {}, {}, {}, mongoose.Document<unknown, {}, IDataInputLogs> & IDataInputLogs & Required<{
     _id: unknown;

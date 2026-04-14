@@ -54,6 +54,11 @@ const dataInputLogsSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.Mixed,
         required: true,
     },
+    errorMessage: {
+        type: String,
+        required: false,
+        trim: true,
+    }
 }, { timestamps: true });
 const DataInputLogsModel = mongoose_1.default.model("dataInputLogs", dataInputLogsSchema, "dataInputLogs");
 exports.DataInputLogsModel = DataInputLogsModel;
