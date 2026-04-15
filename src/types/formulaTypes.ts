@@ -13,8 +13,10 @@ export namespace FormulaCommonTypes {
       | "Minimum"
       | "Maximum"
       | "Cumulative"
+      | "Raw"
       | "FirstActiveValue"
-      | "LastActiveValue";
+      | "LastActiveValue"
+      | "Time";
     firstReferenceTimeInMinutes: number;
     lastReferenceTimeInMinutes: number;
     confidenceScore?: number;
