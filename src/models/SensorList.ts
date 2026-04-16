@@ -9,7 +9,41 @@ interface ISensor extends Document {
   purpose: string[];
   inputType: string[];
   tags: string[];
+  templateTags?: ITemplateTag[];
 }
+
+export interface ITemplateTag {
+  tag: string;
+  threshold: {
+    validMin?: number;
+    validMax?: number;
+    cautionMin?: number;
+    cautionMax?: number;
+    safeMin?: number;
+    safeMax?: number;
+    showCautionZone?: boolean;
+  };
+  isThresholdConfigured?: boolean;
+}
+export const TemplateTagSchema = new Schema<ITemplateTag>(
+  {
+    tag: {
+      type: String,
+      required: true,
+    },
+    threshold: {
+      validMin: { type: Number, required: false },
+      validMax: { type: Number, required: false },
+      cautionMin: { type: Number, required: false },
+      cautionMax: { type: Number, required: false },
+      safeMin: { type: Number, required: false },
+      safeMax: { type: Number, required: false },
+      showCautionZone: { type: Boolean, required: false },
+    },
+    isThresholdConfigured: { type: Boolean, required: false, default: false },
+  },
+  { _id: false },
+);
 
 const SensorSchema = new Schema<ISensor>(
   {
@@ -27,6 +61,11 @@ const SensorSchema = new Schema<ISensor>(
       enum: sensorInputType, // Restricts values to these three options
     },
     tags: { type: [String], default: [] },
+    templateTags: {
+      type: [TemplateTagSchema],
+      default: [],
+      required: false
+    },
   },
   { timestamps: true }
 );

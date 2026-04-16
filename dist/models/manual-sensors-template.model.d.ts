@@ -1,10 +1,12 @@
 import mongoose, { Document } from "mongoose";
+import { ITemplateTag } from "./SensorList";
 interface IManualSensors extends Document {
     sensorName: string;
     tag: string;
     category: string;
     isArchived: boolean;
     type: string;
+    templateTags?: ITemplateTag[];
 }
 declare const ManualSensorModel: mongoose.Model<IManualSensors, {}, {}, {}, mongoose.Document<unknown, {}, IManualSensors> & IManualSensors & Required<{
     _id: unknown;
