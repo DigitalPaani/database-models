@@ -325,6 +325,7 @@ const SENSOR_SETTING_AGGREGATION = [
     "Raw",
     "FirstActiveValue",
     "LastActiveValue",
+    "Time",
 ];
 exports.SENSOR_SETTING_AGGREGATION = SENSOR_SETTING_AGGREGATION;
 const SENSOR_SETTING_RETURN_TYPES = ["values", "value", "datetime", "firstValue", "lastValue"];
