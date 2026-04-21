@@ -40,11 +40,6 @@ exports.DataInputLogsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const commonConstants_1 = __importDefault(require("../constants/commonConstants"));
 const dataInputLogsSchema = new mongoose_1.Schema({
-    requestId: {
-        type: String,
-        required: true,
-        trim: true,
-    },
     status: {
         type: String,
         enum: commonConstants_1.default.DATA_INPUT_LOGS_STATUS_ENUMS,

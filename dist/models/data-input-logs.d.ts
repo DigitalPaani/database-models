@@ -1,6 +1,5 @@
 import mongoose, { Document } from "mongoose";
 interface IDataInputLogs extends Document {
-    requestId: string;
     status: string;
     record: any;
     errorMessage?: string;

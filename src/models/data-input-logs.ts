@@ -1,7 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 import commonConstants from "../constants/commonConstants";
 interface IDataInputLogs extends Document {
-  requestId: string;
   status: string;
   record: any;
   errorMessage?: string
@@ -9,11 +8,6 @@ interface IDataInputLogs extends Document {
 
 const dataInputLogsSchema = new Schema<IDataInputLogs>(
   {
-    requestId: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     status: {
       type: String,
       enum: commonConstants.DATA_INPUT_LOGS_STATUS_ENUMS,
