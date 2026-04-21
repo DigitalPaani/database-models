@@ -1,0 +1,1 @@
+{"version":3,"file":"data-input-logs.d.ts","sourceRoot":"","sources":["../../src/models/data-input-logs.ts"],"names":[],"mappings":"AAAA,OAAO,QAAQ,EAAE,EAAU,QAAQ,EAAE,MAAM,UAAU,CAAC;AAEtD,UAAU,cAAe,SAAQ,QAAQ;IACvC,MAAM,EAAE,MAAM,CAAC;IACf,MAAM,EAAE,GAAG,CAAC;IACZ,YAAY,CAAC,EAAE,MAAM,CAAA;CACtB;AAsBD,QAAA,MAAM,kBAAkB;;;;OAIvB,CAAC;AAEF,OAAO,EAAE,kBAAkB,EAAE,cAAc,EAAE,CAAC"}

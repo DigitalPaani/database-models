@@ -280,6 +280,11 @@ declare const _default: {
         inactive: string;
         invited: string;
     };
+    DATA_INPUT_LOGS_STATUS_ENUMS: {
+        pending: string;
+        completed: string;
+        failed: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
