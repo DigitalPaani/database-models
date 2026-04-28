@@ -285,6 +285,10 @@ declare const _default: {
         completed: string;
         failed: string;
     };
+    TRANSLATION_EXTERNAL_TYPES: {
+        INSIGHTS: string;
+    };
+    INSIGHT_TRANSLATABLE_FIELDS: string[];
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
