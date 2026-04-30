@@ -44,7 +44,7 @@ const translationsSchema = new mongoose_1.Schema({
             "TASK",
             "INSIGHT_TEMPLATES",
             "TASK_TEMPLATES",
-            "PLANTS",
+            "ASSETS",
         ],
     },
     language: {

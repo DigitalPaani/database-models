@@ -6,7 +6,7 @@ export type ModuleType =
     | "TASK"
     | "INSIGHT_TEMPLATES"
     | "TASK_TEMPLATES"
-    | "PLANTS";
+    | "ASSETS";
 
 
 interface ITranslation extends Document {
@@ -29,7 +29,7 @@ const translationsSchema = new Schema<ITranslation>(
         "TASK",
         "INSIGHT_TEMPLATES",
         "TASK_TEMPLATES",
-        "PLANTS",
+        "ASSETS",
       ],
     },
     language: {

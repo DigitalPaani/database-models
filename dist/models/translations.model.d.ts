@@ -1,5 +1,5 @@
 import mongoose, { Document, Model } from "mongoose";
-export type ModuleType = "INSIGHT" | "TASK" | "INSIGHT_TEMPLATES" | "TASK_TEMPLATES" | "PLANTS";
+export type ModuleType = "INSIGHT" | "TASK" | "INSIGHT_TEMPLATES" | "TASK_TEMPLATES" | "ASSETS";
 interface ITranslation extends Document {
     moduleType: ModuleType;
     language: string;
