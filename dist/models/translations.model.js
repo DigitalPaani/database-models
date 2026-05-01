@@ -45,7 +45,8 @@ const translationsSchema = new mongoose_1.Schema({
             "INSIGHT_TEMPLATES",
             "TASK_TEMPLATES",
             "ASSETS",
-            "INSIGHT_COMMENT"
+            "INSIGHT_COMMENT",
+            "USERS"
         ],
     },
     language: {
