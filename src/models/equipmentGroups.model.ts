@@ -6,6 +6,7 @@ interface IEquipmentGroup extends Document {
   description: string;
   equipmentIds: Types.ObjectId[];
   assetId: Types.ObjectId;
+  dependentSensors: Types.ObjectId[];
 }
 
 const equipmentGroupSchema = new Schema<IEquipmentGroup>(
@@ -14,6 +15,7 @@ const equipmentGroupSchema = new Schema<IEquipmentGroup>(
     description: { type: String },
     equipmentIds: [{ type: Schema.Types.ObjectId }],
     assetId: { type: Schema.Types.ObjectId, required: true },
+    dependentSensors: [{ type: Schema.Types.ObjectId }],
   },
   { timestamps: true }
 );

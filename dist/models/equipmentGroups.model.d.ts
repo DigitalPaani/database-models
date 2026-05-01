@@ -4,6 +4,7 @@ interface IEquipmentGroup extends Document {
     description: string;
     equipmentIds: Types.ObjectId[];
     assetId: Types.ObjectId;
+    dependentSensors: Types.ObjectId[];
 }
 declare const EquipmentGroupModel: Model<IEquipmentGroup>;
 export { IEquipmentGroup, EquipmentGroupModel };

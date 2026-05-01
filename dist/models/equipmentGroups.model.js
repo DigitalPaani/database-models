@@ -40,6 +40,7 @@ const equipmentGroupSchema = new mongoose_1.Schema({
     description: { type: String },
     equipmentIds: [{ type: mongoose_1.Schema.Types.ObjectId }],
     assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
+    dependentSensors: [{ type: mongoose_1.Schema.Types.ObjectId }],
 }, { timestamps: true });
 const EquipmentGroupModel = mongoose_1.default.model('EquipmentGroup', equipmentGroupSchema, 'EquipmentGroups');
 exports.EquipmentGroupModel = EquipmentGroupModel;
