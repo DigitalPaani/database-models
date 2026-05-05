@@ -18,6 +18,7 @@ interface IInsightsTemplate extends Document {
   richTextContent: string;
   rcaEnabled: boolean;
   rcaContent: string;
+  contentVersion: number;
   isArchived: boolean;
 }
 
@@ -60,10 +61,14 @@ const insightsTemplateSchema = new Schema<IInsightsTemplate>(
       type: String,
       default: "",
     },
+    contentVersion: {
+      type: Number,
+      default: 1,
+    },
     isArchived: {
       type: Boolean,
       default: false,
-    },
+    }
   },
   {
     timestamps: true,

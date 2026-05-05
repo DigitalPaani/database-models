@@ -74,10 +74,14 @@ const insightsTemplateSchema = new mongoose_1.Schema({
         type: String,
         default: "",
     },
+    contentVersion: {
+        type: Number,
+        default: 1,
+    },
     isArchived: {
         type: Boolean,
         default: false,
-    },
+    }
 }, {
     timestamps: true,
     minimize: false,

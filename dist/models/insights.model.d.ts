@@ -21,6 +21,7 @@ interface IInsight extends Document {
     rcaEnabled: boolean;
     rcaContent: string;
     isArchived: boolean;
+    contentVersion: number;
     createdAt?: Date;
     updatedAt?: Date;
 }
