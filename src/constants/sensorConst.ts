@@ -478,6 +478,25 @@ export const SENSOR_PURPOSE_TAGS: {
     name: "Torque",
     category: "Torque",
   }
+  ,
+  {
+    key: "auto",
+    abbr: "AUTO",
+    name: "Auto Check",
+    category: "Auto Check",
+  },
+  {
+    key: "health",
+    abbr: "HEALTH",
+    name: "Healthy Bit",
+    category: "Other",
+  },
+  {
+    key: "group",
+    abbr: "GROUP",
+    name: "Group Tag",
+    category: "Other",
+  },
 ];
 
 export const OLD_SENSOR_PURPOSE_TAGS: {
@@ -767,25 +786,7 @@ export const OLD_SENSOR_PURPOSE_TAGS: {
     abbr: "OTH",
     name: "Other",
     category: "Other",
-  },
-  {
-    key: "auto",
-    abbr: "AUTO",
-    name: "Auto Check",
-    category: "Auto Check",
-  },
-  {
-    key: "health",
-    abbr: "HEALTH",
-    name: "Healthy Bit",
-    category: "Other",
-  },
-  {
-    key: "group",
-    abbr: "GROUP",
-    name: "Group Tag",
-    category: "Other",
-  },
+  }
 ];
 
 export const sensorInputType = ["Modbus", "Analog", "Digital"];
