@@ -5,5 +5,9 @@ declare const TRANSLATION_CONFIG: {
     mtProvider: string;
     preTranslateOnWrite: boolean;
 }[];
-export { TRANSLATION_CONFIG };
+declare const INSIGHT_TEMPLATE_CONFIG: {
+    moduleType: string;
+    fields: string[];
+};
+export { TRANSLATION_CONFIG, INSIGHT_TEMPLATE_CONFIG };
 //# sourceMappingURL=translation-config.constants.d.ts.map

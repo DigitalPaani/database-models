@@ -15,4 +15,11 @@ const TRANSLATION_CONFIG = [
   },
 ];
 
-export { TRANSLATION_CONFIG };
+
+
+const INSIGHT_TEMPLATE_CONFIG = {
+    moduleType: "INSIGHT_TEMPLATES",
+    fields: ["name", "description", "richTextContent", "rcaContent"]
+};
+
+export { TRANSLATION_CONFIG, INSIGHT_TEMPLATE_CONFIG };
