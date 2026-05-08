@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.INSIGHT_TEMPLATE_CONFIG = exports.TRANSLATION_CONFIG = void 0;
-const TRANSLATION_CONFIG = [
+exports.TRANSLATION_CONFIG = void 0;
+const TRANSLATION_CONFIG_GLOBAL = [
     {
         name: "Hindi",
         code: "hi",
@@ -17,9 +17,12 @@ const TRANSLATION_CONFIG = [
         preTranslateOnWrite: true,
     },
 ];
-exports.TRANSLATION_CONFIG = TRANSLATION_CONFIG;
 const INSIGHT_TEMPLATE_CONFIG = {
     moduleType: "INSIGHT_TEMPLATES",
     fields: ["name", "description", "richTextContent", "rcaContent"]
 };
-exports.INSIGHT_TEMPLATE_CONFIG = INSIGHT_TEMPLATE_CONFIG;
+const TRANSLATION_CONFIG = {
+    TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
+    INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG
+};
+exports.TRANSLATION_CONFIG = TRANSLATION_CONFIG;

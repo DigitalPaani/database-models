@@ -1,1 +1,1 @@
-{"version":3,"file":"translation-config.constants.d.ts","sourceRoot":"","sources":["../../src/constants/translation-config.constants.ts"],"names":[],"mappings":"AAAA,QAAA,MAAM,kBAAkB;;;;;;GAevB,CAAC;AAIF,QAAA,MAAM,uBAAuB;;;CAG5B,CAAC;AAEF,OAAO,EAAE,kBAAkB,EAAE,uBAAuB,EAAE,CAAC"}
+{"version":3,"file":"translation-config.constants.d.ts","sourceRoot":"","sources":["../../src/constants/translation-config.constants.ts"],"names":[],"mappings":"AAwBA,QAAA,MAAM,kBAAkB;;;;;;;;;;;;CAGvB,CAAC;AAEF,OAAO,EAAE,kBAAkB,EAAE,CAAC"}

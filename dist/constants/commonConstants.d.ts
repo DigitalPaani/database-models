@@ -286,12 +286,18 @@ declare const _default: {
         failed: string;
     };
     TRANSLATION_CONFIG: {
-        name: string;
-        code: string;
-        fallback: string;
-        mtProvider: string;
-        preTranslateOnWrite: boolean;
-    }[];
+        TRANSLATION_CONFIG_GLOBAL: {
+            name: string;
+            code: string;
+            fallback: string;
+            mtProvider: string;
+            preTranslateOnWrite: boolean;
+        }[];
+        INSIGHT_TEMPLATE_CONFIG: {
+            moduleType: string;
+            fields: string[];
+        };
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

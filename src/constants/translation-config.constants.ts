@@ -1,4 +1,4 @@
-const TRANSLATION_CONFIG = [
+const TRANSLATION_CONFIG_GLOBAL = [
   {
     name: "Hindi",
     code: "hi",
@@ -22,4 +22,9 @@ const INSIGHT_TEMPLATE_CONFIG = {
     fields: ["name", "description", "richTextContent", "rcaContent"]
 };
 
-export { TRANSLATION_CONFIG, INSIGHT_TEMPLATE_CONFIG };
+const TRANSLATION_CONFIG = {
+  TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
+  INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG
+};
+
+export { TRANSLATION_CONFIG };

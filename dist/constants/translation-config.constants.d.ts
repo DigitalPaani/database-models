@@ -1,13 +1,15 @@
 declare const TRANSLATION_CONFIG: {
-    name: string;
-    code: string;
-    fallback: string;
-    mtProvider: string;
-    preTranslateOnWrite: boolean;
-}[];
-declare const INSIGHT_TEMPLATE_CONFIG: {
-    moduleType: string;
-    fields: string[];
+    TRANSLATION_CONFIG_GLOBAL: {
+        name: string;
+        code: string;
+        fallback: string;
+        mtProvider: string;
+        preTranslateOnWrite: boolean;
+    }[];
+    INSIGHT_TEMPLATE_CONFIG: {
+        moduleType: string;
+        fields: string[];
+    };
 };
-export { TRANSLATION_CONFIG, INSIGHT_TEMPLATE_CONFIG };
+export { TRANSLATION_CONFIG };
 //# sourceMappingURL=translation-config.constants.d.ts.map
