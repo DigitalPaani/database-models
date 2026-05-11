@@ -152,6 +152,7 @@ const sensor = new Schema({
         required: false,
     },
     isThresholdConfigured: { type: Boolean, required: true, default: false },
+    stuckWindowMinutes: { type: Number, required: false },
     mediaValidationType: {
         type: String,
         required: false,
