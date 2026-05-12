@@ -29,7 +29,7 @@ const ASSETS_CONFIG = {
 
 const INSIGHT_CONFIG = {
     moduleType: "INSIGHT",
-    fields: ["name", "description", "rcaContent", "richTextContent"]
+    fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"]
 };
 
 const TRANSLATION_CONFIG = {
