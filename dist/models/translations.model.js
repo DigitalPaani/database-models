@@ -66,7 +66,7 @@ const translationsSchema = new mongoose_1.Schema({
         required: true,
         default: {},
     },
-    sourceVersion: {
+    translationVersion: {
         type: Number,
         required: true,
         default: 1,

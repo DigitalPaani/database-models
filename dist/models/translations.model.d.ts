@@ -5,7 +5,7 @@ interface ITranslation extends Document {
     language: string;
     referenceId: mongoose.Types.ObjectId;
     translations: Map<string, string>;
-    sourceVersion: number;
+    translationVersion: number;
     createdAt?: Date;
     updatedAt?: Date;
 }
