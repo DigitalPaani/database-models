@@ -297,6 +297,14 @@ declare const _default: {
             moduleType: string;
             fields: string[];
         };
+        ASSETS_CONFIG: {
+            moduleType: string;
+            fields: string[];
+        };
+        INSIGHT_CONFIG: {
+            moduleType: string;
+            fields: string[];
+        };
     };
 };
 export default _default;

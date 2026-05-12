@@ -22,9 +22,21 @@ const INSIGHT_TEMPLATE_CONFIG = {
     fields: ["name", "description", "richTextContent", "rcaContent"]
 };
 
+const ASSETS_CONFIG = {
+    moduleType: "ASSETS",
+    fields: ["plantName"]
+};
+
+const INSIGHT_CONFIG = {
+    moduleType: "INSIGHT",
+    fields: ["name", "description", "rcaContent", "richTextContent"]
+};
+
 const TRANSLATION_CONFIG = {
   TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
-  INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG
+  INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG,
+  ASSETS_CONFIG: ASSETS_CONFIG,
+  INSIGHT_CONFIG: INSIGHT_CONFIG
 };
 
 export { TRANSLATION_CONFIG };
