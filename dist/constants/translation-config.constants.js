@@ -6,14 +6,14 @@ const TRANSLATION_CONFIG_GLOBAL = [
         name: "Hindi",
         code: "hi",
         fallback: "en",
-        mtProvider: "amazon",
+        mtProvider: "aws_translate",
         preTranslateOnWrite: true,
     },
     {
         name: "English",
         code: "en",
         fallback: "en",
-        mtProvider: "amazon",
+        mtProvider: "aws_translate",
         preTranslateOnWrite: true,
     },
 ];

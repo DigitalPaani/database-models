@@ -66,6 +66,11 @@ const translationsSchema = new mongoose_1.Schema({
         required: true,
         default: {},
     },
+    sourceVersion: {
+        type: Number,
+        required: true,
+        default: 1,
+    },
 }, {
     timestamps: true,
 });

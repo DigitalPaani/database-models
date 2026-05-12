@@ -16,6 +16,7 @@ interface ITranslation extends Document {
   language: string; // e.g. "hn"
   referenceId: mongoose.Types.ObjectId; // _id of the original document
   translations: Map<string, string>;
+  sourceVersion: number;
   createdAt?: Date;
   updatedAt?: Date;
 }
@@ -52,6 +53,11 @@ const translationsSchema = new Schema<ITranslation>(
       of: String,
       required: true,
       default: {},
+    },
+    sourceVersion: {
+      type: Number,
+      required: true,
+      default: 1,
     },
   },
   {
