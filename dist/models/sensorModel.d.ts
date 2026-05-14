@@ -44,7 +44,6 @@ export interface ISensor {
         showCautionZone?: boolean;
     };
     isThresholdConfigured?: boolean;
-    stuckWindowMinutes?: number;
     mediaValidationType?: string;
     confidenceScore?: number;
     category?: string;
