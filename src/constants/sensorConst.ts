@@ -477,8 +477,7 @@ export const SENSOR_PURPOSE_TAGS: {
     abbr: "TORQUE",
     name: "Torque",
     category: "Torque",
-  }
-  ,
+  },
   {
     key: "auto",
     abbr: "AUTO",
@@ -496,6 +495,36 @@ export const SENSOR_PURPOSE_TAGS: {
     abbr: "GROUP",
     name: "Group Tag",
     category: "Other",
+  },
+  {
+    key: "fillingCycle",
+    abbr: "FC",
+    name: "Filling Cycle",
+    category: "Cycles",
+  },
+  {
+    key: "aerationCycle",
+    abbr: "AC",
+    name: "Aeration Cycle",
+    category: "Cycles",
+  },
+  {
+    key: "settlingCycle",
+    abbr: "SC",
+    name: "Settling Cycle",
+    category: "Cycles",
+  },
+  {
+    key: "decanting",
+    abbr: "DEC",
+    name: "Decanting",
+    category: "Cycles",
+  },
+  {
+    key: "idle",
+    abbr: "IDLE",
+    name: "Idle",
+    category: "Cycles",
   },
 ];
 
