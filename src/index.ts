@@ -194,6 +194,7 @@ import { IUserVerification, UserVerificationModel, VerificationTypeEnum } from "
 import { TemporaryShareLinksModel, ITemporaryShareLinksModel } from "./models/temporary-share-link.model";
 import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
 import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
+import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -292,6 +293,7 @@ export type {
   IInsightSummaryConfig,
   IDataInputLogs,
   IEquipmentGroup,
+  ISensorPurposeTag,
 };
 
 // exports the models
@@ -388,4 +390,5 @@ export {
   VisualizationTemplatesModel,
   DataInputLogsModel,
   EquipmentGroupModel,
+  SensorPurposeTagModel,
 };
