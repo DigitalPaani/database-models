@@ -1,3 +1,5 @@
+import { SensorCounterStateModel, ISensorCounterState } from "./models/sensor-counter-state.model";
+import { SensorOpenFaultModel, ISensorOpenFault } from "./models/sensor-open-fault.model";
 import { FormulasModel, IFormula } from "./models/formulaModel";
 import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormulaModel";
 import {
@@ -292,6 +294,8 @@ export type {
   IInsightSummaryConfig,
   IDataInputLogs,
   IEquipmentGroup,
+  ISensorCounterState,
+  ISensorOpenFault,
 };
 
 // exports the models
@@ -388,4 +392,6 @@ export {
   VisualizationTemplatesModel,
   DataInputLogsModel,
   EquipmentGroupModel,
+  SensorCounterStateModel,
+  SensorOpenFaultModel,
 };
