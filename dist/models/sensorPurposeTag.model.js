@@ -40,7 +40,6 @@ const sensorPurposeTagSchema = new mongoose_1.Schema({
     abbr: { type: String, required: true },
     name: { type: String, required: true },
     category: { type: String, required: true },
-    isDeprecated: { type: Boolean, default: false },
 }, {
     timestamps: true,
 });

@@ -15,7 +15,6 @@ const sensorPurposeTagSchema = new Schema<ISensorPurposeTag>(
     abbr: { type: String, required: true },
     name: { type: String, required: true },
     category: { type: String, required: true },
-    isDeprecated: { type: Boolean, default: false },
   },
   {
     timestamps: true,
