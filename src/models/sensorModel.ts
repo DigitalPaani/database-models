@@ -2,12 +2,7 @@ import mongoose, { Types } from "mongoose";
 import { SENSOR_PURPOSE_TAGS, OLD_SENSOR_PURPOSE_TAGS } from "../constants/sensorConst";
 const Schema = mongoose.Schema;
 
-const categoryEnums = [
-  ...new Set([
-    ...SENSOR_PURPOSE_TAGS.map((t) => t.category),
-    ...OLD_SENSOR_PURPOSE_TAGS.map((t) => t.category),
-  ]),
-];
+
 
 interface FlocChildSensors {
   FDSTParent: Types.ObjectId;
@@ -181,7 +176,6 @@ const sensor = new Schema(
     category: {
       type: String,
       required: false,
-      enum: categoryEnums,
       default: 'Other',
     },
   },
