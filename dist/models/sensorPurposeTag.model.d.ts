@@ -4,7 +4,6 @@ interface ISensorPurposeTag extends Document {
     abbr: string;
     name: string;
     category: string;
-    isDeprecated: boolean;
 }
 declare const SensorPurposeTagModel: Model<ISensorPurposeTag>;
 export { SensorPurposeTagModel, ISensorPurposeTag };

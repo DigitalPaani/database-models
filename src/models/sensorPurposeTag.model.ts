@@ -6,7 +6,6 @@ interface ISensorPurposeTag extends Document {
   abbr: string;
   name: string;
   category: string;
-  isDeprecated: boolean;
 }
 
 const sensorPurposeTagSchema = new Schema<ISensorPurposeTag>(
