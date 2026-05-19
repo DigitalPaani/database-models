@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
-import { SENSOR_PURPOSE_TAGS, sensorInputType } from "../constants/sensorConst";
+import { sensorInputType } from "../constants/sensorConst";
 
 interface ISensor extends Document {
   sensorName: string;

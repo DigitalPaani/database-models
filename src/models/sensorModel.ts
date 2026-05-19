@@ -1,5 +1,5 @@
 import mongoose, { Types } from "mongoose";
-import { SENSOR_PURPOSE_TAGS, OLD_SENSOR_PURPOSE_TAGS } from "../constants/sensorConst";
+// import { SENSOR_PURPOSE_TAGS, OLD_SENSOR_PURPOSE_TAGS } from "../constants/sensorConst";
 const Schema = mongoose.Schema;
 
 
