@@ -35,7 +35,6 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// import { SENSOR_PURPOSE_TAGS, OLD_SENSOR_PURPOSE_TAGS } from "../constants/sensorConst";
 const Schema = mongoose_1.default.Schema;
 const flocChildSensorsSchema = new Schema({
     FDSTParent: {

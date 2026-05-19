@@ -8,7 +8,6 @@ const triggerConst_1 = require("./triggerConst");
 const insights_constants_1 = require("./insights.constants");
 const visualization_constants_1 = require("./visualization.constants");
 const data_logger_constant_1 = require("./data-logger.constant");
-// import { OLD_SENSOR_PURPOSE_TAGS, SENSOR_PURPOSE_TAGS } from "./sensorConst";
 const communication_constants_1 = __importDefault(require("./communication.constants"));
 const logbook_templates_constants_1 = __importDefault(require("./logbook-templates.constants"));
 const batch_constants_1 = __importDefault(require("./batch.constants"));
@@ -118,8 +117,6 @@ exports.default = {
     VISUALIZATION_EQUIPMENT_TYPES_ENUMS: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS,
     WHATSAPP_TEMPLATE_ALLOWED_INPUTS,
     SENSOR_TYPE: data_logger_constant_1.SENSOR_TYPE,
-    // SENSOR_PURPOSE_TAGS,
-    // OLD_SENSOR_PURPOSE_TAGS,
     REMOTE_CONTROL_STATUS,
     COMMUNICATION_FILE_CONSTANTS: communication_constants_1.default,
     BATCH_CONSTANTS: batch_constants_1.default,
