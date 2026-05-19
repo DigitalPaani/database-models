@@ -55,7 +55,7 @@ const SensorSchema = new Schema<ISensor>(
     },
     sensorModelNumber: { type: String, required: true },
     granularity: { type: [String], required: true }, 
-    purpose: { type: [String], enum: SENSOR_PURPOSE_TAGS.map((tag) => tag.key) },
+    purpose: { type: [String] },
     inputType: {
       type: [String],
       enum: sensorInputType, // Restricts values to these three options
