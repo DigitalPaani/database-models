@@ -6,6 +6,9 @@ interface ISensorPurposeTag extends Document {
   abbr: string;
   name: string;
   category: string;
+  stuckWindowTime?: number;
+  stuckValueTolerance?: number;
+  fixedStuckTolerance?: number;
 }
 
 const sensorPurposeTagSchema = new Schema<ISensorPurposeTag>(
@@ -14,6 +17,9 @@ const sensorPurposeTagSchema = new Schema<ISensorPurposeTag>(
     abbr: { type: String, required: true },
     name: { type: String, required: true },
     category: { type: String, required: true },
+    stuckWindowTime: { type: Number },
+    stuckValueTolerance: { type: Number },
+    fixedStuckTolerance: { type: Number },
   },
   {
     timestamps: true,
