@@ -305,6 +305,10 @@ declare const _default: {
             moduleType: string;
             fields: string[];
         };
+        WIDGET_CONFIG: {
+            moduleType: string;
+            fields: string[];
+        };
     };
 };
 export default _default;

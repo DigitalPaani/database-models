@@ -29,10 +29,15 @@ const INSIGHT_CONFIG = {
     moduleType: "INSIGHT",
     fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"]
 };
+const WIDGET_CONFIG = {
+    moduleType: "WIDGET",
+    fields: ["heading.english"]
+};
 const TRANSLATION_CONFIG = {
     TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
     INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG,
     ASSETS_CONFIG: ASSETS_CONFIG,
-    INSIGHT_CONFIG: INSIGHT_CONFIG
+    INSIGHT_CONFIG: INSIGHT_CONFIG,
+    WIDGET_CONFIG: WIDGET_CONFIG
 };
 exports.TRANSLATION_CONFIG = TRANSLATION_CONFIG;

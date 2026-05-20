@@ -18,6 +18,10 @@ declare const TRANSLATION_CONFIG: {
         moduleType: string;
         fields: string[];
     };
+    WIDGET_CONFIG: {
+        moduleType: string;
+        fields: string[];
+    };
 };
 export { TRANSLATION_CONFIG };
 //# sourceMappingURL=translation-config.constants.d.ts.map
