@@ -31,7 +31,7 @@ const INSIGHT_CONFIG = {
 };
 const WIDGET_CONFIG = {
     moduleType: "WIDGET",
-    fields: ["heading.english", "widgetName", "widgetNickName"]
+    fields: ["heading.english", "widgetName", "widgetNickName", "widgetDescription"]
 };
 const SENSOR_CONFIG = {
     moduleType: "SENSOR",
