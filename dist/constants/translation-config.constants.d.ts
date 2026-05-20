@@ -22,6 +22,10 @@ declare const TRANSLATION_CONFIG: {
         moduleType: string;
         fields: string[];
     };
+    SENSOR_CONFIG: {
+        moduleType: string;
+        fields: string[];
+    };
 };
 export { TRANSLATION_CONFIG };
 //# sourceMappingURL=translation-config.constants.d.ts.map

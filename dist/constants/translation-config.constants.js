@@ -31,13 +31,18 @@ const INSIGHT_CONFIG = {
 };
 const WIDGET_CONFIG = {
     moduleType: "WIDGET",
-    fields: ["heading.english"]
+    fields: ["heading.english", "widgetName", "widgetNickName"]
+};
+const SENSOR_CONFIG = {
+    moduleType: "SENSOR",
+    fields: ["sensorName", "sensorNickName"]
 };
 const TRANSLATION_CONFIG = {
     TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
     INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG,
     ASSETS_CONFIG: ASSETS_CONFIG,
     INSIGHT_CONFIG: INSIGHT_CONFIG,
-    WIDGET_CONFIG: WIDGET_CONFIG
+    WIDGET_CONFIG: WIDGET_CONFIG,
+    SENSOR_CONFIG: SENSOR_CONFIG
 };
 exports.TRANSLATION_CONFIG = TRANSLATION_CONFIG;
