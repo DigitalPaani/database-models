@@ -71,6 +71,10 @@ const translationsSchema = new mongoose_1.Schema({
         required: true,
         default: 1,
     },
+    fieldHashes: {
+        type: Map,
+        of: String,
+    },
 }, {
     timestamps: true,
 });

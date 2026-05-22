@@ -6,6 +6,7 @@ interface ITranslation extends Document {
     referenceId: mongoose.Types.ObjectId;
     translations: Map<string, string>;
     translationVersion: number;
+    fieldHashes?: Record<string, string>;
     createdAt?: Date;
     updatedAt?: Date;
 }
