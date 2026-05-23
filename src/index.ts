@@ -195,6 +195,7 @@ import { TemporaryShareLinksModel, ITemporaryShareLinksModel } from "./models/te
 import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
 import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
+import { InventoryModel,IInventory } from "./models/inventory.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -294,6 +295,7 @@ export type {
   IDataInputLogs,
   IEquipmentGroup,
   ISensorPurposeTag,
+  IInventory
 };
 
 // exports the models
@@ -391,4 +393,5 @@ export {
   DataInputLogsModel,
   EquipmentGroupModel,
   SensorPurposeTagModel,
+  InventoryModel
 };
