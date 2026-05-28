@@ -273,6 +273,14 @@ declare const _default: {
         completed: string;
         failed: string;
     };
+    USER_ROLE_ENUMS: {
+        OPERATOR: string;
+        SUPERVISOR: string;
+        CLIENT: string;
+        MECHANICAL_ENGINEER: string;
+        ELECTRICAL_ENGINEER: string;
+        HELPER: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

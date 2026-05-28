@@ -126,4 +126,5 @@ exports.default = {
     LOGS_ACTION_ENUM: logs_constants_1.LOGS_ACTION_ENUM,
     USER_STATUS_ENUMS: users_constants_1.USER_STATUS_ENUMS,
     DATA_INPUT_LOGS_STATUS_ENUMS,
+    USER_ROLE_ENUMS: users_constants_1.USER_ROLE_ENUMS
 };
