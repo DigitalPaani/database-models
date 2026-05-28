@@ -19,6 +19,7 @@ interface INewUser extends Document {
     invitedBy?: Types.ObjectId;
     inviteAcceptedOn?: number;
     inviteExpiry?: number;
+    role: string;
     [key: string]: any;
 }
 declare const NewUserModel: Model<INewUser>;
