@@ -276,10 +276,7 @@ declare const _default: {
     USER_ROLE_ENUMS: {
         OPERATOR: string;
         SUPERVISOR: string;
-        CLIENT: string;
-        MECHANICAL_ENGINEER: string;
-        ELECTRICAL_ENGINEER: string;
-        HELPER: string;
+        SME: string;
     };
 };
 export default _default;
