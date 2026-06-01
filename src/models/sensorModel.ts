@@ -160,6 +160,7 @@ const sensor = new Schema(
         safeMin: { type: Number, required: false },
         safeMax: { type: Number, required: false },
         showCautionZone: { type: Boolean, required: false },
+        updatedAt: { type: Number, default: Date.now() },
       },
       _id: false,
       required: false,
