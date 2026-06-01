@@ -43,7 +43,7 @@ const SensorOpenFaultSchema = new mongoose_1.Schema({
     confidence: { type: String, enum: ["MEDIUM", "HIGH"], required: true },
     faultType: {
         type: String,
-        enum: ["STUCK", "OUT_OF_RANGE"],
+        enum: ["STUCK", "OUT_OF_RANGE", "DATA_BREAK"],
         required: true,
     },
     subState: {

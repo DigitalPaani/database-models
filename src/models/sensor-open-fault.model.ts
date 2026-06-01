@@ -6,7 +6,7 @@ export interface ISensorOpenFault extends Document {
   plantId: string;
   detectedAt: number;
   confidence: "MEDIUM" | "HIGH";
-  faultType: "STUCK" | "OUT_OF_RANGE";
+  faultType: "STUCK" | "OUT_OF_RANGE" | "DATA_BREAK";
   subState: "NONE" | "FLUTTERING" | "PERSISTENT";
   updatedAt?: Date;
 }
@@ -20,7 +20,7 @@ const SensorOpenFaultSchema = new Schema<ISensorOpenFault>(
     confidence: { type: String, enum: ["MEDIUM", "HIGH"], required: true },
     faultType: {
       type: String,
-      enum: ["STUCK", "OUT_OF_RANGE"],
+      enum: ["STUCK", "OUT_OF_RANGE", "DATA_BREAK"],
       required: true,
     },
     subState: {
