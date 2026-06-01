@@ -63,6 +63,8 @@ const plcSchema = new mongoose_1.Schema({
         type: Date,
         required: false,
     },
+    lastContactedTime: { type: Number },
+    internet: { type: Boolean },
 });
 const PlcModel = mongoose_1.default.model("plcs", plcSchema, "plcs");
 exports.PlcModel = PlcModel;
