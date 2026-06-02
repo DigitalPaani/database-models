@@ -43,17 +43,18 @@ const unitProcessGroupSchema = new mongoose_1.Schema({
     equipments: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: 'Equipment',
+            ref: "Equipment",
         },
     ],
+    assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
     setPoints: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: 'SetPoint',
+            ref: "SetPoint",
         },
     ],
 }, {
     timestamps: true,
 });
-const UnitProcessGroupModel = mongoose_1.default.model('UnitProcessGroup', unitProcessGroupSchema, 'unitProcessGroups');
+const UnitProcessGroupModel = mongoose_1.default.model("UnitProcessGroup", unitProcessGroupSchema, "unitProcessGroups");
 exports.UnitProcessGroupModel = UnitProcessGroupModel;
