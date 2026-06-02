@@ -1,0 +1,9 @@
+import type { Document, Model } from 'mongoose';
+interface ISetPoint extends Document {
+    name: string;
+    type: string;
+    setPoint: unknown;
+}
+declare const SetPointModel: Model<ISetPoint>;
+export { SetPointModel, ISetPoint };
+//# sourceMappingURL=setPoint.model.d.ts.map

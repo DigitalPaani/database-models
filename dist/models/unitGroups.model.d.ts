@@ -1,0 +1,9 @@
+import type { Document, Model, Types } from 'mongoose';
+interface IUnitProcessGroup extends Document {
+    name: string;
+    equipments: Types.ObjectId[];
+    setPoints: Types.ObjectId[];
+}
+declare const UnitProcessGroupModel: Model<IUnitProcessGroup>;
+export { UnitProcessGroupModel, IUnitProcessGroup };
+//# sourceMappingURL=unitGroups.model.d.ts.map
