@@ -48,7 +48,7 @@ const setPointSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
-    setPoint: {
+    setPointDetails: {
         type: mongoose_1.Schema.Types.Mixed,
         required: true,
     },

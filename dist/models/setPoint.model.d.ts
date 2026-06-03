@@ -3,7 +3,7 @@ interface ISetPoint extends Document {
     name: string;
     description?: string;
     type: string;
-    setPoint: unknown;
+    setPointDetails: unknown;
 }
 declare const SetPointModel: Model<ISetPoint>;
 export { SetPointModel, ISetPoint };

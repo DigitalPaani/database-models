@@ -22,7 +22,7 @@ const unitProcessGroupSchema = new Schema<IUnitProcessGroup>(
     equipments: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Equipment",
+        ref: "LayoutEquipments",
       },
     ],
     assetId: { type: Schema.Types.ObjectId, required: true },

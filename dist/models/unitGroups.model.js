@@ -47,7 +47,7 @@ const unitProcessGroupSchema = new mongoose_1.Schema({
     equipments: [
         {
             type: mongoose_1.Schema.Types.ObjectId,
-            ref: "Equipment",
+            ref: "LayoutEquipments",
         },
     ],
     assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },

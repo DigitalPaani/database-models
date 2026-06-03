@@ -5,7 +5,7 @@ interface ISetPoint extends Document {
   name: string;
   description?: string;
   type: string;
-  setPoint: unknown;
+  setPointDetails: unknown;
 }
 
 const setPointSchema = new Schema<ISetPoint>(
@@ -22,7 +22,7 @@ const setPointSchema = new Schema<ISetPoint>(
       type: String,
       required: true,
     },
-    setPoint: {
+    setPointDetails: {
       type: Schema.Types.Mixed,
       required: true,
     },
