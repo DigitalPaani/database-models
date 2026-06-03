@@ -40,6 +40,10 @@ const setPointSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        required: false
+    },
     type: {
         type: String,
         required: true,

@@ -1,6 +1,7 @@
 import type { Document, Model } from 'mongoose';
 interface ISetPoint extends Document {
     name: string;
+    description?: string;
     type: string;
     setPoint: unknown;
 }

@@ -3,6 +3,7 @@ import mongoose, { Schema } from 'mongoose';
 
 interface ISetPoint extends Document {
   name: string;
+  description?: string;
   type: string;
   setPoint: unknown;
 }
@@ -12,6 +13,10 @@ const setPointSchema = new Schema<ISetPoint>(
     name: {
       type: String,
       required: true,
+    },
+    description:{
+      type:String,
+      required:false
     },
     type: {
       type: String,

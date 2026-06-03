@@ -40,6 +40,10 @@ const unitProcessGroupSchema = new mongoose_1.Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        required: false
+    },
     equipments: [
         {
             type: mongoose_1.Schema.Types.ObjectId,

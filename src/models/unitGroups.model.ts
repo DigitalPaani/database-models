@@ -3,6 +3,7 @@ import mongoose, { Schema } from "mongoose";
 
 interface IUnitProcessGroup extends Document {
   name: string;
+  description?:string;
   equipments: Types.ObjectId[];
   assetId: Types.ObjectId;
   setPoints: Types.ObjectId[];
@@ -13,6 +14,10 @@ const unitProcessGroupSchema = new Schema<IUnitProcessGroup>(
     name: {
       type: String,
       required: true,
+    },
+    description:{
+      type:String,
+      required:false
     },
     equipments: [
       {
