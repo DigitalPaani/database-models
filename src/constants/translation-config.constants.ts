@@ -30,6 +30,16 @@ const INSIGHT_CONFIG = {
     fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"]
 };
 
+const INSIGHT_COMMENT_CONFIG = {
+    moduleType: "INSIGHT_COMMENT",
+    fields: ["comment"]
+};
+
+const USER_CONFIG = {
+    moduleType: "USERS",
+    fields: ["name"]
+};
+
 const WIDGET_CONFIG = {
     moduleType: "WIDGET",
     fields: ["heading.english", "widgetName", "widgetNickName", "widgetDescription"]
@@ -46,7 +56,9 @@ const TRANSLATION_CONFIG = {
   ASSETS_CONFIG: ASSETS_CONFIG,
   INSIGHT_CONFIG: INSIGHT_CONFIG,
   WIDGET_CONFIG: WIDGET_CONFIG,
-  SENSOR_CONFIG: SENSOR_CONFIG
+  SENSOR_CONFIG: SENSOR_CONFIG,
+  INSIGHT_COMMENT_CONFIG: INSIGHT_COMMENT_CONFIG,
+  USER_CONFIG: USER_CONFIG
 };
 
 export { TRANSLATION_CONFIG };
