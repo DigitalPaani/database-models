@@ -1,8 +1,7 @@
 import mongoose, { Document } from "mongoose";
 export interface ISensorCounterState extends Document {
     sensorId: string;
-    lastValue?: number;
-    stuckCount: number;
+    stuckValues: number[];
     oorCount: number;
     inRangeCount: number;
     oorEpisodeActive: boolean;

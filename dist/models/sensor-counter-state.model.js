@@ -37,8 +37,7 @@ exports.SensorCounterStateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const SensorCounterStateSchema = new mongoose_1.Schema({
     sensorId: { type: String, required: true, unique: true, index: true },
-    lastValue: { type: Number },
-    stuckCount: { type: Number, required: true, default: 0 },
+    stuckValues: { type: [Number], required: true, default: [] },
     oorCount: { type: Number, required: true, default: 0 },
     inRangeCount: { type: Number, required: true, default: 0 },
     oorEpisodeActive: { type: Boolean, required: true, default: false },
