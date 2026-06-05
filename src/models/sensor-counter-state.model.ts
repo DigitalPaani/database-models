@@ -10,6 +10,7 @@ export interface ISensorCounterState extends Document {
   oorTripCount: number;
   oorTripWindowStart?: number;
   lastReturnToInRangeTime?: number;
+  lastCalculatedAt?: number;
   updatedAt?: Date;
 }
 
@@ -24,6 +25,7 @@ const SensorCounterStateSchema = new Schema<ISensorCounterState>(
     oorTripCount: { type: Number, required: true, default: 0 },
     oorTripWindowStart: { type: Number },
     lastReturnToInRangeTime: { type: Number },
+    lastCalculatedAt: { type: Number },
   },
   { timestamps: true }
 );

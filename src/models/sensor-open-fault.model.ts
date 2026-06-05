@@ -8,6 +8,7 @@ export interface ISensorOpenFault extends Document {
   confidence: "MEDIUM" | "HIGH";
   faultType: "STUCK" | "OUT_OF_RANGE" | "DATA_BREAK";
   subState: "NONE" | "FLUTTERING" | "PERSISTENT";
+  frozenValue?: number;
   updatedAt?: Date;
 }
 
@@ -28,6 +29,7 @@ const SensorOpenFaultSchema = new Schema<ISensorOpenFault>(
       enum: ["NONE", "FLUTTERING", "PERSISTENT"],
       required: true,
     },
+    frozenValue: { type: Number },
   },
   { timestamps: true }
 );
