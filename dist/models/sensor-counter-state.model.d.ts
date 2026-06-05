@@ -9,6 +9,7 @@ export interface ISensorCounterState extends Document {
     oorTripCount: number;
     oorTripWindowStart?: number;
     lastReturnToInRangeTime?: number;
+    lastCalculatedAt?: number;
     updatedAt?: Date;
 }
 export declare const SensorCounterStateModel: mongoose.Model<ISensorCounterState, {}, {}, {}, mongoose.Document<unknown, {}, ISensorCounterState> & ISensorCounterState & Required<{

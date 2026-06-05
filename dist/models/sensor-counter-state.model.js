@@ -45,5 +45,6 @@ const SensorCounterStateSchema = new mongoose_1.Schema({
     oorTripCount: { type: Number, required: true, default: 0 },
     oorTripWindowStart: { type: Number },
     lastReturnToInRangeTime: { type: Number },
+    lastCalculatedAt: { type: Number },
 }, { timestamps: true });
 exports.SensorCounterStateModel = mongoose_1.default.model("sensorCounterState", SensorCounterStateSchema, "sensorCounterState");

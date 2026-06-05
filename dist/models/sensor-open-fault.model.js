@@ -51,6 +51,7 @@ const SensorOpenFaultSchema = new mongoose_1.Schema({
         enum: ["NONE", "FLUTTERING", "PERSISTENT"],
         required: true,
     },
+    frozenValue: { type: Number },
 }, { timestamps: true });
 // Unique constraint matching the Redis key pattern: sensorId + faultType + subState
 SensorOpenFaultSchema.index({ sensorId: 1, faultType: 1, subState: 1 }, { unique: true });

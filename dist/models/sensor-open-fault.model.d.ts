@@ -7,6 +7,7 @@ export interface ISensorOpenFault extends Document {
     confidence: "MEDIUM" | "HIGH";
     faultType: "STUCK" | "OUT_OF_RANGE" | "DATA_BREAK";
     subState: "NONE" | "FLUTTERING" | "PERSISTENT";
+    frozenValue?: number;
     updatedAt?: Date;
 }
 export declare const SensorOpenFaultModel: mongoose.Model<ISensorOpenFault, {}, {}, {}, mongoose.Document<unknown, {}, ISensorOpenFault> & ISensorOpenFault & Required<{
