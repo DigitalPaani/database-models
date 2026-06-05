@@ -4,6 +4,7 @@ interface ISetPoint extends Document {
     description?: string;
     type: string;
     setPointDetails: unknown;
+    isArchived: boolean;
 }
 declare const SetPointModel: Model<ISetPoint>;
 export { SetPointModel, ISetPoint };

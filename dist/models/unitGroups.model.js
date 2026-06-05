@@ -57,6 +57,11 @@ const unitProcessGroupSchema = new mongoose_1.Schema({
             ref: "SetPoint",
         },
     ],
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    }
 }, {
     timestamps: true,
 });

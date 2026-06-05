@@ -7,6 +7,7 @@ interface IUnitProcessGroup extends Document {
   equipments: Types.ObjectId[];
   assetId: Types.ObjectId;
   setPoints: Types.ObjectId[];
+  isArchived:boolean;
 }
 
 const unitProcessGroupSchema = new Schema<IUnitProcessGroup>(
@@ -32,6 +33,11 @@ const unitProcessGroupSchema = new Schema<IUnitProcessGroup>(
         ref: "SetPoint",
       },
     ],
+    isArchived: {
+      type: Boolean,
+      default: false,
+      required: false,
+    }
   },
   {
     timestamps: true,

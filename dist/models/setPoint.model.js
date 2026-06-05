@@ -52,6 +52,11 @@ const setPointSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.Mixed,
         required: true,
     },
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    }
 }, {
     timestamps: true,
 });

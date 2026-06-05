@@ -5,6 +5,7 @@ interface IUnitProcessGroup extends Document {
     equipments: Types.ObjectId[];
     assetId: Types.ObjectId;
     setPoints: Types.ObjectId[];
+    isArchived: boolean;
 }
 declare const UnitProcessGroupModel: Model<IUnitProcessGroup>;
 export { UnitProcessGroupModel, IUnitProcessGroup };

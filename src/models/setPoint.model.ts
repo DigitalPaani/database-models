@@ -6,6 +6,7 @@ interface ISetPoint extends Document {
   description?: string;
   type: string;
   setPointDetails: unknown;
+  isArchived:boolean;
 }
 
 const setPointSchema = new Schema<ISetPoint>(
@@ -26,6 +27,11 @@ const setPointSchema = new Schema<ISetPoint>(
       type: Schema.Types.Mixed,
       required: true,
     },
+    isArchived: {
+      type: Boolean,
+      default: false,
+      required: false,
+    }
   },
   {
     timestamps: true,
