@@ -2,6 +2,7 @@ import mongoose, { Schema, Document } from "mongoose";
 
 export interface ISensorCounterState extends Document {
   sensorId: string;
+  plantId: string;
   stuckValues: number[];
   oorCount: number;
   inRangeCount: number;
@@ -17,6 +18,7 @@ export interface ISensorCounterState extends Document {
 const SensorCounterStateSchema = new Schema<ISensorCounterState>(
   {
     sensorId: { type: String, required: true, unique: true, index: true },
+    plantId: { type: String, required: true },
     stuckValues: { type: [Number], required: true, default: [] },
     oorCount: { type: Number, required: true, default: 0 },
     inRangeCount: { type: Number, required: true, default: 0 },
