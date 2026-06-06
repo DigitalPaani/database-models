@@ -34,6 +34,10 @@ declare const TRANSLATION_CONFIG: {
         moduleType: string;
         fields: string[];
     };
+    NEW_DASHBOARD_CONFIG: {
+        moduleType: string;
+        fields: string[];
+    };
 };
 export { TRANSLATION_CONFIG };
 //# sourceMappingURL=translation-config.constants.d.ts.map

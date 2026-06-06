@@ -321,6 +321,10 @@ declare const _default: {
             moduleType: string;
             fields: string[];
         };
+        NEW_DASHBOARD_CONFIG: {
+            moduleType: string;
+            fields: string[];
+        };
     };
 };
 export default _default;
