@@ -297,9 +297,9 @@ export type {
   IDataInputLogs,
   IEquipmentGroup,
   ISensorPurposeTag,
+  IInventory,
   ISensorCounterState,
   IPlantHealth,
-  IInventory,
 };
 
 // exports the models
@@ -397,7 +397,7 @@ export {
   DataInputLogsModel,
   EquipmentGroupModel,
   SensorPurposeTagModel,
+  InventoryModel,
   SensorCounterStateModel,
   PlantHealthModel,
-  InventoryModel,
 };
