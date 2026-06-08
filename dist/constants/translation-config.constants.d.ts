@@ -38,6 +38,10 @@ declare const TRANSLATION_CONFIG: {
         moduleType: string;
         fields: string[];
     };
+    SKILL_MANAGEMENT_CONFIG: {
+        moduleType: string;
+        fields: string[];
+    };
 };
 export { TRANSLATION_CONFIG };
 //# sourceMappingURL=translation-config.constants.d.ts.map

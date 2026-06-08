@@ -325,6 +325,10 @@ declare const _default: {
             moduleType: string;
             fields: string[];
         };
+        SKILL_MANAGEMENT_CONFIG: {
+            moduleType: string;
+            fields: string[];
+        };
     };
 };
 export default _default;
