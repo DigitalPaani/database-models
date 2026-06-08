@@ -75,6 +75,9 @@ translationsSchema.index(
   { unique: true }
 );
 
+// TTL index: auto-delete documents older than 4 months (120 days)
+translationsSchema.index({ createdAt: 1 }, { expireAfterSeconds: 10368000 });
+
 
 const TranslationsModel: Model<ITranslation> =
   mongoose.models.Translations ||
