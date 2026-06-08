@@ -56,7 +56,10 @@ const setPointSchema = new mongoose_1.Schema({
         type: Boolean,
         default: false,
         required: false,
-    }
+    },
+    sensorIds: [{
+            type: mongoose_1.Schema.Types.ObjectId,
+        }]
 }, {
     timestamps: true,
 });

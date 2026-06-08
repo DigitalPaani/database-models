@@ -1,5 +1,6 @@
 import type { Document, Model } from 'mongoose';
 import mongoose, { Schema } from 'mongoose';
+import { Types } from '..';
 
 interface ISetPoint extends Document {
   name: string;
@@ -7,6 +8,7 @@ interface ISetPoint extends Document {
   type: string;
   setPointDetails: unknown;
   isArchived:boolean;
+  sensorIds:Types.ObjectId;
 }
 
 const setPointSchema = new Schema<ISetPoint>(
@@ -31,7 +33,10 @@ const setPointSchema = new Schema<ISetPoint>(
       type: Boolean,
       default: false,
       required: false,
-    }
+    },
+    sensorIds:[{
+      type:Schema.Types.ObjectId,
+    }]
   },
   {
     timestamps: true,
