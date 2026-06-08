@@ -36,6 +36,7 @@ const setPointSchema = new Schema<ISetPoint>(
     },
     sensorIds:[{
       type:Schema.Types.ObjectId,
+      ref: "sensors",
     }]
   },
   {
