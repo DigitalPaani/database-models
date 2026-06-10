@@ -7,7 +7,7 @@ const TRANSLATION_CONFIG_GLOBAL = [
         code: "hi",
         fallback: "en",
         mtProvider: "aws_translate",
-        preTranslateOnWrite: true,
+        preTranslateOnWrite: false,
     },
     {
         name: "English",
