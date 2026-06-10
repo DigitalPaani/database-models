@@ -6,6 +6,7 @@ interface IVisualizationPages extends Document {
   description: string;
   totalEquipments: string;
   isArchived: string;
+  isDefault: boolean;
 }
 
 const VisualizationPagesSchema = new Schema(
@@ -17,6 +18,7 @@ const VisualizationPagesSchema = new Schema(
     },
     description: { type: String, required: true, trim: true },
     totalEquipments: { type: Schema.Types.Number, default: 0 },
+    isDefault: { type: Schema.Types.Boolean, default: false },
     isArchived: { type: Schema.Types.Boolean, default: false },
   },
   { timestamps: true }

@@ -43,6 +43,7 @@ const VisualizationPagesSchema = new mongoose_1.Schema({
     },
     description: { type: String, required: true, trim: true },
     totalEquipments: { type: mongoose_1.Schema.Types.Number, default: 0 },
+    isDefault: { type: mongoose_1.Schema.Types.Boolean, default: false },
     isArchived: { type: mongoose_1.Schema.Types.Boolean, default: false },
 }, { timestamps: true });
 const VisualizationPagesModel = mongoose_1.default.model("VisualizationPages", VisualizationPagesSchema, "VisualizationPages");
