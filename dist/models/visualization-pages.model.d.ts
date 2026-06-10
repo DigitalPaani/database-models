@@ -5,6 +5,7 @@ interface IVisualizationPages extends Document {
     description: string;
     totalEquipments: string;
     isArchived: string;
+    isDefault: boolean;
 }
 declare const VisualizationPagesModel: mongoose.Model<IVisualizationPages, {}, {}, {}, mongoose.Document<unknown, {}, IVisualizationPages> & IVisualizationPages & {
     _id: Types.ObjectId;
