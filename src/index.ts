@@ -1,3 +1,5 @@
+import { SensorCounterStateModel, ISensorCounterState } from "./models/sensor-counter-state.model";
+import { PlantHealthModel, IPlantHealth } from "./models/plant-health.model";
 import { FormulasModel, IFormula } from "./models/formulaModel";
 import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormulaModel";
 import {
@@ -295,7 +297,9 @@ export type {
   IDataInputLogs,
   IEquipmentGroup,
   ISensorPurposeTag,
-  IInventory
+  IInventory,
+  ISensorCounterState,
+  IPlantHealth,
 };
 
 // exports the models
@@ -393,5 +397,7 @@ export {
   DataInputLogsModel,
   EquipmentGroupModel,
   SensorPurposeTagModel,
-  InventoryModel
+  InventoryModel,
+  SensorCounterStateModel,
+  PlantHealthModel,
 };

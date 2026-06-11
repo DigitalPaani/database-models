@@ -6,6 +6,8 @@ interface IPlcData extends Document {
     lastMessageSentTime?: Date;
     connectionStatus: "online" | "offline";
     lastPinged?: Date;
+    lastContactedTime: number;
+    internet: boolean;
 }
 declare const PlcModel: mongoose.Model<IPlcData, {}, {}, {}, mongoose.Document<unknown, {}, IPlcData> & IPlcData & Required<{
     _id: unknown;

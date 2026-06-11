@@ -40,6 +40,9 @@ const sensorPurposeTagSchema = new mongoose_1.Schema({
     abbr: { type: String, required: true },
     name: { type: String, required: true },
     category: { type: String, required: true },
+    stuckWindowTime: { type: Number },
+    stuckValueTolerance: { type: Number },
+    fixedStuckTolerance: { type: Number },
 }, {
     timestamps: true,
 });
