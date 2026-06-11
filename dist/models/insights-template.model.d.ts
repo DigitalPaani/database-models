@@ -11,7 +11,6 @@ interface IInsightsTemplate extends Document {
     richTextContent: string;
     rcaEnabled: boolean;
     rcaContent: string;
-    contentVersion: number;
     isArchived: boolean;
 }
 declare const InsightsTemplateModel: Model<IInsightsTemplate>;

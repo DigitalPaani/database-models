@@ -49,7 +49,7 @@ const userSchema = new mongoose_1.Schema({
         required: true
     },
     twoFactorAuthentication: Boolean,
-    language: String,
+    language: { type: String, enum: ['hi', 'en'] },
     profilePic: String,
     skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
     parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },

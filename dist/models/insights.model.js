@@ -107,10 +107,6 @@ const insightsSchema = new mongoose_1.Schema({
     isArchived: {
         type: Boolean,
         default: false,
-    },
-    contentVersion: {
-        type: Number,
-        default: 1,
     }
 }, {
     timestamps: true,
