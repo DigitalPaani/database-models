@@ -1,6 +1,6 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
-import { USER_STATUS_ENUMS } from "../constants/users.constants";
+import { USER_ROLE_ENUMS, USER_STATUS_ENUMS } from "../constants/users.constants";
 
 // Define a TypeScript interface for the User document
 interface INewUser extends Document {
@@ -23,6 +23,7 @@ interface INewUser extends Document {
   invitedBy?: Types.ObjectId;
   inviteAcceptedOn?: number;
   inviteExpiry?: number;
+  role: string;
   // defaultHomePage: string;
   [key: string]: any;
 }
@@ -55,6 +56,7 @@ const userSchema = new Schema<INewUser>(
     invitedBy: { type: Schema.Types.ObjectId, ref: 'NewUser' },
     inviteAcceptedOn: { type: Number },
     inviteExpiry: { type: Number },
+    role: { type: String, required: true, enum: Object.keys(USER_ROLE_ENUMS) },
     // defaultHomePage: { type: String, required: true, default: '' },
   },
   {

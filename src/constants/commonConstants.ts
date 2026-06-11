@@ -29,7 +29,7 @@ import batchConstants from "./batch.constants";
 import anomalyRecordConst from "./anomaly-record-const";
 import bioHealthTrackerConstants from "./bio-health-tracker.constants";
 import { LOGS_ACTION_ENUM } from "./logs.constants";
-import { USER_STATUS_ENUMS } from "./users.constants";
+import { USER_ROLE_ENUMS, USER_STATUS_ENUMS } from "./users.constants";
 
 const EVENT_TYPES = {
   formula: "formula",
@@ -160,4 +160,5 @@ export default {
   LOGS_ACTION_ENUM,
   USER_STATUS_ENUMS,
   DATA_INPUT_LOGS_STATUS_ENUMS,
+  USER_ROLE_ENUMS
 };

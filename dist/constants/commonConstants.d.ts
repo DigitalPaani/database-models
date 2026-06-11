@@ -273,6 +273,11 @@ declare const _default: {
         completed: string;
         failed: string;
     };
+    USER_ROLE_ENUMS: {
+        OPERATOR: string;
+        SUPERVISOR: string;
+        SME: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map

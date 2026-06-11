@@ -63,6 +63,7 @@ const userSchema = new mongoose_1.Schema({
     invitedBy: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser' },
     inviteAcceptedOn: { type: Number },
     inviteExpiry: { type: Number },
+    role: { type: String, required: true, enum: Object.keys(users_constants_1.USER_ROLE_ENUMS) },
     // defaultHomePage: { type: String, required: true, default: '' },
 }, {
     timestamps: true, // Automatically manage createdAt and updatedAt fields

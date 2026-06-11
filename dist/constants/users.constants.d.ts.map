@@ -1,1 +1,1 @@
-{"version":3,"file":"users.constants.d.ts","sourceRoot":"","sources":["../../src/constants/users.constants.ts"],"names":[],"mappings":"AACA,QAAA,MAAM,iBAAiB;;;;CAItB,CAAA;AAGD,OAAO,EACH,iBAAiB,EACpB,CAAA"}
+{"version":3,"file":"users.constants.d.ts","sourceRoot":"","sources":["../../src/constants/users.constants.ts"],"names":[],"mappings":"AACA,QAAA,MAAM,iBAAiB;;;;CAItB,CAAA;AAED,QAAA,MAAM,eAAe;;;;CAIpB,CAAA;AAED,OAAO,EACH,iBAAiB,EACjB,eAAe,EAClB,CAAA"}
