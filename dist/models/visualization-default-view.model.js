@@ -41,5 +41,23 @@ const VisualizationDefaultViewSchema = new mongoose_1.Schema({
     pageId: { type: mongoose_1.Schema.Types.ObjectId, required: false, ref: "VisualizationPages" },
     isDefault: { type: Boolean, default: false },
 }, { timestamps: true });
+// Only one record per page
+VisualizationDefaultViewSchema.index({
+    workspaceId: 1,
+    equipmentId: 1,
+    pageId: 1,
+}, {
+    unique: true,
+});
+// Only one default per workspace
+VisualizationDefaultViewSchema.index({
+    workspaceId: 1,
+    isDefault: 1,
+}, {
+    unique: true,
+    partialFilterExpression: {
+        isDefault: true,
+    },
+});
 const VisualizationDefaultViewModel = mongoose_1.default.model("VisualizationDefaultView", VisualizationDefaultViewSchema, "VisualizationDefaultViews");
 exports.VisualizationDefaultViewModel = VisualizationDefaultViewModel;
