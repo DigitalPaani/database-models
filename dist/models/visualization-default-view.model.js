@@ -36,6 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VisualizationDefaultViewModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const VisualizationDefaultViewSchema = new mongoose_1.Schema({
+    workspaceId: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: "Workspace" },
     equipmentId: { type: mongoose_1.Schema.Types.ObjectId, required: false, ref: "Equipment" },
     pageId: { type: mongoose_1.Schema.Types.ObjectId, required: false, ref: "VisualizationPages" },
     isDefault: { type: Boolean, default: false },

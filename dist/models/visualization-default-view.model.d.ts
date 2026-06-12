@@ -1,5 +1,6 @@
 import mongoose, { Types } from "mongoose";
 interface IVisualizationDefaultView extends Document {
+    workspaceId: Types.ObjectId;
     equipmentId: Types.ObjectId;
     pageId: Types.ObjectId;
     isDefault: boolean;
