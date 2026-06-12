@@ -198,6 +198,7 @@ import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
 import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 import { InventoryModel,IInventory } from "./models/inventory.model";
+import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -300,6 +301,7 @@ export type {
   IInventory,
   ISensorCounterState,
   IPlantHealth,
+  IVisualizationDefaultView,
 };
 
 // exports the models
@@ -400,4 +402,5 @@ export {
   InventoryModel,
   SensorCounterStateModel,
   PlantHealthModel,
+  VisualizationDefaultViewModel
 };
