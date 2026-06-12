@@ -2,17 +2,15 @@ import mongoose, { Schema, Types } from "mongoose";
 
 interface IVisualizationDefaultView extends Document {
   workspaceId: Types.ObjectId;
-  equipmentId: Types.ObjectId;
-  pageId: Types.ObjectId;
-  isDefault: boolean;
+  userId: Types.ObjectId;
+  defaultViewLink: string;
 }
 
 const VisualizationDefaultViewSchema = new Schema(
   {
     workspaceId: { type: Schema.Types.ObjectId, required: true, ref: "Workspace" },
-    equipmentId: { type: Schema.Types.ObjectId, required: false, ref: "Equipment" },
-    pageId: { type: Schema.Types.ObjectId, required: false, ref: "VisualizationPages" },
-    isDefault: { type: Boolean, default: false },
+    userId: { type: Schema.Types.ObjectId, required: true, ref: "User" },
+    defaultViewLink: { type: String, required: true },
   },
   { timestamps: true },
 );
@@ -21,25 +19,10 @@ const VisualizationDefaultViewSchema = new Schema(
 VisualizationDefaultViewSchema.index(
   {
     workspaceId: 1,
-    equipmentId: 1,
-    pageId: 1,
+    userId: 1,
   },
   {
     unique: true,
-  },
-);
-
-// Only one default per workspace
-VisualizationDefaultViewSchema.index(
-  {
-    workspaceId: 1,
-    isDefault: 1,
-  },
-  {
-    unique: true,
-    partialFilterExpression: {
-      isDefault: true,
-    },
   },
 );
 

@@ -1,9 +1,8 @@
 import mongoose, { Types } from "mongoose";
 interface IVisualizationDefaultView extends Document {
     workspaceId: Types.ObjectId;
-    equipmentId: Types.ObjectId;
-    pageId: Types.ObjectId;
-    isDefault: boolean;
+    userId: Types.ObjectId;
+    defaultViewLink: string;
 }
 declare const VisualizationDefaultViewModel: mongoose.Model<IVisualizationDefaultView, {}, {}, {}, mongoose.Document<unknown, {}, IVisualizationDefaultView> & IVisualizationDefaultView & {
     _id: Types.ObjectId;

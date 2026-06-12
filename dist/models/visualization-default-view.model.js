@@ -37,27 +37,15 @@ exports.VisualizationDefaultViewModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const VisualizationDefaultViewSchema = new mongoose_1.Schema({
     workspaceId: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: "Workspace" },
-    equipmentId: { type: mongoose_1.Schema.Types.ObjectId, required: false, ref: "Equipment" },
-    pageId: { type: mongoose_1.Schema.Types.ObjectId, required: false, ref: "VisualizationPages" },
-    isDefault: { type: Boolean, default: false },
+    userId: { type: mongoose_1.Schema.Types.ObjectId, required: true, ref: "User" },
+    defaultViewLink: { type: String, required: true },
 }, { timestamps: true });
 // Only one record per page
 VisualizationDefaultViewSchema.index({
     workspaceId: 1,
-    equipmentId: 1,
-    pageId: 1,
+    userId: 1,
 }, {
     unique: true,
-});
-// Only one default per workspace
-VisualizationDefaultViewSchema.index({
-    workspaceId: 1,
-    isDefault: 1,
-}, {
-    unique: true,
-    partialFilterExpression: {
-        isDefault: true,
-    },
 });
 const VisualizationDefaultViewModel = mongoose_1.default.model("VisualizationDefaultView", VisualizationDefaultViewSchema, "VisualizationDefaultViews");
 exports.VisualizationDefaultViewModel = VisualizationDefaultViewModel;
