@@ -126,6 +126,10 @@ import {
   IBidirectionalLogs,
 } from "./models/bidirectional-logs.model";
 import {
+  RemoteControlActionLogModel,
+  IRemoteControlActionLog,
+} from "./models/remote-control-action-logs.model";
+import {
   EquipmentComponentModel,
   IEquipmentComponent,
 } from "./models/equipment-components.model";
@@ -263,6 +267,7 @@ export type {
   IDataLogger,
   IBidirectional,
   IBidirectionalLogs,
+  IRemoteControlActionLog,
   IEquipmentComponent,
   IDataLoggerSession,
   IDLSensorConfig,
@@ -362,6 +367,7 @@ export {
   DataLoggerModel,
   BidirectionalModel,
   BidirectionalLogsModel,
+  RemoteControlActionLogModel,
   EquipmentComponentModel,
   DataLoggerSessionModel,
   DLSensorConfigModel,
