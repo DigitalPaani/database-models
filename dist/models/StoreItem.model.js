@@ -91,7 +91,7 @@ const StoreItemsSchema = new mongoose_2.Schema({
     },
 });
 const assetIdsPath = StoreItemDetails.path('assetIds');
-if ((assetIdsPath === null || assetIdsPath === void 0 ? void 0 : assetIdsPath.instance) === 'Array') {
+if (assetIdsPath?.instance === 'Array') {
     assetIdsPath.validate((value) => value.length >= 1, 'assetIds array must have at least one element');
 }
 const StoreItemsModel = mongoose_1.default.model('StoreItems', StoreItemsSchema, 'StoreItems');

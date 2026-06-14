@@ -3,7 +3,7 @@
       "outDir": "./dist",
       "rootDir": "./src",
       "module": "CommonJS",
-      "target": "ES6",
+      "target": "ES2021",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
