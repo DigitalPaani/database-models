@@ -1,14 +1,5 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
-
-
-export type ModuleType =
-    | "INSIGHT"
-    | "TASK"
-    | "INSIGHT_TEMPLATES"
-    | "TASK_TEMPLATES"
-    | "ASSETS"
-    | "INSIGHT_COMMENT"
-    | "USERS"
+import { MODULE_TYPES, ModuleType } from "../constants/translation-config.constants";
 
 
 interface ITranslation extends Document {
@@ -28,15 +19,7 @@ const translationsSchema = new Schema<ITranslation>(
     moduleType: {
       type: String,
       required: true,
-      enum: [
-        "INSIGHT",
-        "TASK",
-        "INSIGHT_TEMPLATES",
-        "TASK_TEMPLATES",
-        "ASSETS",
-        "INSIGHT_COMMENT",
-        "USERS"
-      ],
+      enum: MODULE_TYPES,
     },
     language: {
       type: String,

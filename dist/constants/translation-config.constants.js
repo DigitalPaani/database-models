@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TRANSLATION_CONFIG = void 0;
+exports.MODULE_TYPES = exports.TRANSLATION_CONFIG = void 0;
 const TRANSLATION_CONFIG_GLOBAL = [
     {
         name: "Hindi",
@@ -17,52 +17,48 @@ const TRANSLATION_CONFIG_GLOBAL = [
         preTranslateOnWrite: true,
     },
 ];
-const INSIGHT_TEMPLATE_CONFIG = {
-    moduleType: "INSIGHT_TEMPLATES",
-    fields: ["name", "description", "richTextContent", "rcaContent"]
-};
-const ASSETS_CONFIG = {
-    moduleType: "ASSETS",
-    fields: ["plantName"]
-};
-const INSIGHT_CONFIG = {
-    moduleType: "INSIGHT",
-    fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"]
-};
-const INSIGHT_COMMENT_CONFIG = {
-    moduleType: "INSIGHT_COMMENT",
-    fields: ["comment"]
-};
-const USER_CONFIG = {
-    moduleType: "USERS",
-    fields: ["name"]
-};
-const WIDGET_CONFIG = {
-    moduleType: "WIDGET",
-    fields: ["heading.english", "widgetName", "widgetNickName", "widgetDescription"]
-};
-const SENSOR_CONFIG = {
-    moduleType: "SENSOR",
-    fields: ["sensorName", "sensorNickName"]
-};
-const NEW_DASHBOARD_CONFIG = {
-    moduleType: "NEW_DASHBOARD_PAGES",
-    fields: ["clusterName"]
-};
-const SKILL_MANAGEMENT_CONFIG = {
-    moduleType: "SKILL_MANAGEMENT",
-    fields: ["name"]
+const MODULE_CONFIG = {
+    INSIGHT: {
+        moduleType: "INSIGHT",
+        fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"],
+    },
+    INSIGHT_TEMPLATES: {
+        moduleType: "INSIGHT_TEMPLATES",
+        fields: ["name", "description", "richTextContent", "rcaContent"],
+    },
+    INSIGHT_COMMENT: {
+        moduleType: "INSIGHT_COMMENT",
+        fields: ["comment"],
+    },
+    ASSETS: {
+        moduleType: "ASSETS",
+        fields: ["plantName"],
+    },
+    USERS: {
+        moduleType: "USERS",
+        fields: ["name"],
+    },
+    WIDGET: {
+        moduleType: "WIDGET",
+        fields: ["heading.english", "widgetName", "widgetNickName", "widgetDescription"],
+    },
+    SENSOR: {
+        moduleType: "SENSOR",
+        fields: ["sensorName", "sensorNickName"],
+    },
+    NEW_DASHBOARD_PAGES: {
+        moduleType: "NEW_DASHBOARD_PAGES",
+        fields: ["clusterName"],
+    },
+    SKILL_MANAGEMENT: {
+        moduleType: "SKILL_MANAGEMENT",
+        fields: ["name"],
+    },
 };
 const TRANSLATION_CONFIG = {
     TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
-    INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG,
-    ASSETS_CONFIG: ASSETS_CONFIG,
-    INSIGHT_CONFIG: INSIGHT_CONFIG,
-    WIDGET_CONFIG: WIDGET_CONFIG,
-    SENSOR_CONFIG: SENSOR_CONFIG,
-    INSIGHT_COMMENT_CONFIG: INSIGHT_COMMENT_CONFIG,
-    USER_CONFIG: USER_CONFIG,
-    NEW_DASHBOARD_CONFIG: NEW_DASHBOARD_CONFIG,
-    SKILL_MANAGEMENT_CONFIG: SKILL_MANAGEMENT_CONFIG
+    moduleConfig: MODULE_CONFIG,
 };
 exports.TRANSLATION_CONFIG = TRANSLATION_CONFIG;
+const MODULE_TYPES = Object.values(MODULE_CONFIG).map(({ moduleType }) => moduleType);
+exports.MODULE_TYPES = MODULE_TYPES;

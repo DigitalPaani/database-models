@@ -15,62 +15,57 @@ const TRANSLATION_CONFIG_GLOBAL = [
   },
 ];
 
-const INSIGHT_TEMPLATE_CONFIG = {
-    moduleType: "INSIGHT_TEMPLATES",
-    fields: ["name", "description", "richTextContent", "rcaContent"]
-};
-
-const ASSETS_CONFIG = {
-    moduleType: "ASSETS",
-    fields: ["plantName"]
-};
-
-const INSIGHT_CONFIG = {
+const MODULE_CONFIG = {
+  INSIGHT: {
     moduleType: "INSIGHT",
-    fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"]
-};
-
-const INSIGHT_COMMENT_CONFIG = {
+    fields: ["name", "description", "rcaContent", "richTextContent", "aiDescription"],
+  },
+  INSIGHT_TEMPLATES: {
+    moduleType: "INSIGHT_TEMPLATES",
+    fields: ["name", "description", "richTextContent", "rcaContent"],
+  },
+  INSIGHT_COMMENT: {
     moduleType: "INSIGHT_COMMENT",
-    fields: ["comment"]
-};
-
-const USER_CONFIG = {
+    fields: ["comment"],
+  },
+  ASSETS: {
+    moduleType: "ASSETS",
+    fields: ["plantName"],
+  },
+  USERS: {
     moduleType: "USERS",
-    fields: ["name"]
-};
-
-const WIDGET_CONFIG = {
+    fields: ["name"],
+  },
+  WIDGET: {
     moduleType: "WIDGET",
-    fields: ["heading.english", "widgetName", "widgetNickName", "widgetDescription"]
-};
-
-const SENSOR_CONFIG = {
+    fields: ["heading.english", "widgetName", "widgetNickName", "widgetDescription"],
+  },
+  SENSOR: {
     moduleType: "SENSOR",
-    fields: ["sensorName", "sensorNickName"] 
-};
-
-const NEW_DASHBOARD_CONFIG = {
+    fields: ["sensorName", "sensorNickName"],
+  },
+  NEW_DASHBOARD_PAGES: {
     moduleType: "NEW_DASHBOARD_PAGES",
-    fields: ["clusterName"] 
-};
-
-const SKILL_MANAGEMENT_CONFIG = {
+    fields: ["clusterName"],
+  },
+  SKILL_MANAGEMENT: {
     moduleType: "SKILL_MANAGEMENT",
-    fields: ["name"] 
+    fields: ["name"],
+  },
 };
 
 const TRANSLATION_CONFIG = {
   TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
-  INSIGHT_TEMPLATE_CONFIG: INSIGHT_TEMPLATE_CONFIG,
-  ASSETS_CONFIG: ASSETS_CONFIG,
-  INSIGHT_CONFIG: INSIGHT_CONFIG,
-  WIDGET_CONFIG: WIDGET_CONFIG,
-  SENSOR_CONFIG: SENSOR_CONFIG,
-  INSIGHT_COMMENT_CONFIG: INSIGHT_COMMENT_CONFIG,
-  USER_CONFIG: USER_CONFIG,
-  NEW_DASHBOARD_CONFIG: NEW_DASHBOARD_CONFIG,
-  SKILL_MANAGEMENT_CONFIG: SKILL_MANAGEMENT_CONFIG
+  moduleConfig: MODULE_CONFIG,
 };
 
-export { TRANSLATION_CONFIG };
+// Module types derived from `MODULE_CONFIG` keys — the single source of truth.
+type ModuleType = keyof typeof MODULE_CONFIG;
+
+
+const MODULE_TYPES = Object.values(MODULE_CONFIG).map(
+  ({ moduleType }) => moduleType
+);
+
+
+export { TRANSLATION_CONFIG, MODULE_TYPES, ModuleType };

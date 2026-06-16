@@ -35,19 +35,12 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TranslationsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const translation_config_constants_1 = require("../constants/translation-config.constants");
 const translationsSchema = new mongoose_1.Schema({
     moduleType: {
         type: String,
         required: true,
-        enum: [
-            "INSIGHT",
-            "TASK",
-            "INSIGHT_TEMPLATES",
-            "TASK_TEMPLATES",
-            "ASSETS",
-            "INSIGHT_COMMENT",
-            "USERS"
-        ],
+        enum: translation_config_constants_1.MODULE_TYPES,
     },
     language: {
         type: String,
