@@ -44,7 +44,7 @@ declare const TRANSLATION_CONFIG: {
         mtProvider: string;
         preTranslateOnWrite: boolean;
     }[];
-    moduleConfig: {
+    MODULE_CONFIG: {
         INSIGHT: {
             moduleType: string;
             fields: string[];

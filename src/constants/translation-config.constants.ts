@@ -56,7 +56,7 @@ const MODULE_CONFIG = {
 
 const TRANSLATION_CONFIG = {
   TRANSLATION_CONFIG_GLOBAL: TRANSLATION_CONFIG_GLOBAL,
-  moduleConfig: MODULE_CONFIG,
+  MODULE_CONFIG: MODULE_CONFIG,
 };
 
 // Module types derived from `MODULE_CONFIG` keys — the single source of truth.

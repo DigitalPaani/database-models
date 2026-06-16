@@ -293,7 +293,7 @@ declare const _default: {
             mtProvider: string;
             preTranslateOnWrite: boolean;
         }[];
-        moduleConfig: {
+        MODULE_CONFIG: {
             INSIGHT: {
                 moduleType: string;
                 fields: string[];
