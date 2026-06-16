@@ -1,3 +1,5 @@
+import { SensorCounterStateModel, ISensorCounterState } from "./models/sensor-counter-state.model";
+import { PlantHealthModel, IPlantHealth } from "./models/plant-health.model";
 import { FormulasModel, IFormula } from "./models/formulaModel";
 import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormulaModel";
 import {
@@ -124,6 +126,10 @@ import {
   IBidirectionalLogs,
 } from "./models/bidirectional-logs.model";
 import {
+  RemoteControlActionLogModel,
+  IRemoteControlActionLog,
+} from "./models/remote-control-action-logs.model";
+import {
   EquipmentComponentModel,
   IEquipmentComponent,
 } from "./models/equipment-components.model";
@@ -193,6 +199,9 @@ import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user
 import { IUserVerification, UserVerificationModel, VerificationTypeEnum } from "./models/user-verifications.model";
 import { TemporaryShareLinksModel, ITemporaryShareLinksModel } from "./models/temporary-share-link.model";
 import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
+import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
+import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
+import { InventoryModel,IInventory } from "./models/inventory.model";
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
 
 // Assign mongoose to mongooseDatabaseModels
@@ -259,6 +268,7 @@ export type {
   IDataLogger,
   IBidirectional,
   IBidirectionalLogs,
+  IRemoteControlActionLog,
   IEquipmentComponent,
   IDataLoggerSession,
   IDLSensorConfig,
@@ -291,6 +301,11 @@ export type {
   IVisualizationTemplatesLayout,
   IInsightSummaryConfig,
   IDataInputLogs,
+  IEquipmentGroup,
+  ISensorPurposeTag,
+  IInventory,
+  ISensorCounterState,
+  IPlantHealth,
   ITranslation
 };
 
@@ -354,6 +369,7 @@ export {
   DataLoggerModel,
   BidirectionalModel,
   BidirectionalLogsModel,
+  RemoteControlActionLogModel,
   EquipmentComponentModel,
   DataLoggerSessionModel,
   DLSensorConfigModel,
@@ -387,5 +403,10 @@ export {
   TemporaryShareLinksModel,
   VisualizationTemplatesModel,
   DataInputLogsModel,
+  EquipmentGroupModel,
+  SensorPurposeTagModel,
+  InventoryModel,
+  SensorCounterStateModel,
+  PlantHealthModel,
   TranslationsModel
 };

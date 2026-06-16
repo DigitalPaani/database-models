@@ -33,38 +33,14 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlcModel = void 0;
+exports.EquipmentGroupModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const plcSchema = new mongoose_1.Schema({
-    nickName: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    plantId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    },
-    lastUpdateTime: {
-        type: Date,
-        required: false,
-    },
-    lastMessageSentTime: {
-        type: Date,
-        required: false,
-    },
-    connectionStatus: {
-        type: String,
-        enum: ["online", "offline"],
-        required: true,
-    },
-    lastPinged: {
-        type: Date,
-        required: false,
-    },
-    lastContactedTime: { type: Number },
-    internet: { type: Boolean },
-});
-const PlcModel = mongoose_1.default.model("plcs", plcSchema, "plcs");
-exports.PlcModel = PlcModel;
+const equipmentGroupSchema = new mongoose_1.Schema({
+    name: { type: String, required: true },
+    description: { type: String },
+    equipmentIds: [{ type: mongoose_1.Schema.Types.ObjectId }],
+    assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
+    dependentSensors: [{ type: mongoose_1.Schema.Types.ObjectId }],
+}, { timestamps: true });
+const EquipmentGroupModel = mongoose_1.default.model('EquipmentGroup', equipmentGroupSchema, 'EquipmentGroups');
+exports.EquipmentGroupModel = EquipmentGroupModel;

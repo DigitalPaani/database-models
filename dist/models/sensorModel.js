@@ -35,14 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const sensorConst_1 = require("../constants/sensorConst");
 const Schema = mongoose_1.default.Schema;
-const categoryEnums = [
-    ...new Set([
-        ...sensorConst_1.SENSOR_PURPOSE_TAGS.map((t) => t.category),
-        ...sensorConst_1.OLD_SENSOR_PURPOSE_TAGS.map((t) => t.category),
-    ]),
-];
 const flocChildSensorsSchema = new Schema({
     FDSTParent: {
         type: mongoose_1.default.Schema.Types.ObjectId,
@@ -162,7 +155,6 @@ const sensor = new Schema({
     category: {
         type: String,
         required: false,
-        enum: categoryEnums,
         default: 'Other',
     },
 }, {

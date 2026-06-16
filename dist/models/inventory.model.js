@@ -33,38 +33,57 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlcModel = void 0;
+exports.InventoryModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const plcSchema = new mongoose_1.Schema({
-    nickName: {
+const inventorySchema = new mongoose_1.Schema({
+    inventoryCategoryName: {
         type: String,
         required: true,
-        trim: true,
+    },
+    categoryItem: {
+        type: String,
+        required: true,
+    },
+    categoryItemId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+    },
+    amount: {
+        type: Number,
+        required: true,
+    },
+    unit: {
+        type: String,
+        required: true,
+    },
+    day: {
+        type: Number,
+        required: true,
+    },
+    action: {
+        type: String,
+        required: true,
+    },
+    remark: {
+        type: String,
+        required: false,
+    },
+    remarkId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: false,
     },
     plantId: {
         type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
+        ref: 'Plant',
         required: true,
     },
-    lastUpdateTime: {
-        type: Date,
-        required: false,
-    },
-    lastMessageSentTime: {
-        type: Date,
-        required: false,
-    },
-    connectionStatus: {
-        type: String,
-        enum: ["online", "offline"],
+    storeId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: 'Store',
         required: true,
     },
-    lastPinged: {
-        type: Date,
-        required: false,
-    },
-    lastContactedTime: { type: Number },
-    internet: { type: Boolean },
+}, {
+    timestamps: true,
 });
-const PlcModel = mongoose_1.default.model("plcs", plcSchema, "plcs");
-exports.PlcModel = PlcModel;
+const InventoryModel = mongoose_1.default.model('Inventory', inventorySchema, 'inventories');
+exports.InventoryModel = InventoryModel;

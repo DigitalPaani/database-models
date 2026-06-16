@@ -33,38 +33,18 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlcModel = void 0;
+exports.SensorPurposeTagModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const plcSchema = new mongoose_1.Schema({
-    nickName: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    plantId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    },
-    lastUpdateTime: {
-        type: Date,
-        required: false,
-    },
-    lastMessageSentTime: {
-        type: Date,
-        required: false,
-    },
-    connectionStatus: {
-        type: String,
-        enum: ["online", "offline"],
-        required: true,
-    },
-    lastPinged: {
-        type: Date,
-        required: false,
-    },
-    lastContactedTime: { type: Number },
-    internet: { type: Boolean },
+const sensorPurposeTagSchema = new mongoose_1.Schema({
+    key: { type: String, required: true, unique: true },
+    abbr: { type: String, required: true },
+    name: { type: String, required: true },
+    category: { type: String, required: true },
+    stuckWindowTime: { type: Number },
+    stuckValueTolerance: { type: Number },
+    fixedStuckTolerance: { type: Number },
+}, {
+    timestamps: true,
 });
-const PlcModel = mongoose_1.default.model("plcs", plcSchema, "plcs");
-exports.PlcModel = PlcModel;
+const SensorPurposeTagModel = mongoose_1.default.model("SensorPurposeTag", sensorPurposeTagSchema, "sensorPurposeTags");
+exports.SensorPurposeTagModel = SensorPurposeTagModel;
