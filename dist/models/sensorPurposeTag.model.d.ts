@@ -4,6 +4,9 @@ interface ISensorPurposeTag extends Document {
     abbr: string;
     name: string;
     category: string;
+    stuckWindowTime?: number;
+    stuckValueTolerance?: number;
+    fixedStuckTolerance?: number;
 }
 declare const SensorPurposeTagModel: Model<ISensorPurposeTag>;
 export { SensorPurposeTagModel, ISensorPurposeTag };

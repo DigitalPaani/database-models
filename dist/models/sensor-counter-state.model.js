@@ -33,38 +33,19 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlcModel = void 0;
+exports.SensorCounterStateModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const plcSchema = new mongoose_1.Schema({
-    nickName: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    plantId: {
-        type: mongoose_1.Schema.Types.ObjectId,
-        ref: "Plant",
-        required: true,
-    },
-    lastUpdateTime: {
-        type: Date,
-        required: false,
-    },
-    lastMessageSentTime: {
-        type: Date,
-        required: false,
-    },
-    connectionStatus: {
-        type: String,
-        enum: ["online", "offline"],
-        required: true,
-    },
-    lastPinged: {
-        type: Date,
-        required: false,
-    },
-    lastContactedTime: { type: Number },
-    internet: { type: Boolean },
-});
-const PlcModel = mongoose_1.default.model("plcs", plcSchema, "plcs");
-exports.PlcModel = PlcModel;
+const SensorCounterStateSchema = new mongoose_1.Schema({
+    sensorId: { type: String, required: true, unique: true, index: true },
+    plantId: { type: String, required: true },
+    stuckValues: { type: [Number], required: true, default: [] },
+    oorCount: { type: Number, required: true, default: 0 },
+    inRangeCount: { type: Number, required: true, default: 0 },
+    oorEpisodeActive: { type: Boolean, required: true, default: false },
+    wasLastValueOOR: { type: Boolean, required: true, default: false },
+    oorTripCount: { type: Number, required: true, default: 0 },
+    oorTripWindowStart: { type: Number },
+    lastReturnToInRangeTime: { type: Number },
+    lastCalculatedAt: { type: Number },
+}, { timestamps: true });
+exports.SensorCounterStateModel = mongoose_1.default.model("sensorCounterState", SensorCounterStateSchema, "sensorCounterState");

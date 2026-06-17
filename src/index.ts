@@ -251,27 +251,15 @@ import {
   ITemporaryShareLinksModel,
 } from "./models/temporary-share-link.model";
 import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
-<<<<<<< HEAD
-import {
-  EquipmentGroupModel,
-  IEquipmentGroup,
-} from "./models/equipmentGroups.model";
-import {
-  SensorPurposeTagModel,
-  ISensorPurposeTag,
-} from "./models/sensorPurposeTag.model";
-import { InventoryModel, IInventory } from "./models/inventory.model";
 import {
   UnitProcessGroupModel,
   IUnitProcessGroup,
 } from "./models/unitGroups.model";
 import { SetPointModel, ISetPoint } from "./models/setPoint.model";
-=======
 import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 import { InventoryModel,IInventory } from "./models/inventory.model";
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
->>>>>>> origin
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -373,14 +361,11 @@ export type {
   IEquipmentGroup,
   ISensorPurposeTag,
   IInventory,
-<<<<<<< HEAD
   IUnitProcessGroup,
   ISetPoint,
-=======
   ISensorCounterState,
   IPlantHealth,
   ITranslation
->>>>>>> origin
 };
 
 // exports the models
@@ -480,12 +465,9 @@ export {
   EquipmentGroupModel,
   SensorPurposeTagModel,
   InventoryModel,
-<<<<<<< HEAD
   UnitProcessGroupModel,
   SetPointModel,
-=======
   SensorCounterStateModel,
   PlantHealthModel,
   TranslationsModel
->>>>>>> origin
 };
