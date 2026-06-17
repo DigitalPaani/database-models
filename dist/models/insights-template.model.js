@@ -77,7 +77,7 @@ const insightsTemplateSchema = new mongoose_1.Schema({
     isArchived: {
         type: Boolean,
         default: false,
-    },
+    }
 }, {
     timestamps: true,
     minimize: false,

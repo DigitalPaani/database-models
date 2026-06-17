@@ -63,7 +63,7 @@ const insightsTemplateSchema = new Schema<IInsightsTemplate>(
     isArchived: {
       type: Boolean,
       default: false,
-    },
+    }
   },
   {
     timestamps: true,

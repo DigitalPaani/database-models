@@ -41,7 +41,7 @@ const userSchema = new Schema<INewUser>(
       required: true
     },
     twoFactorAuthentication: Boolean,
-    language: String,
+    language: { type: String, enum: ['hi', 'en'] },
     profilePic: String,
     skillIds: { type: [Schema.Types.ObjectId], required: false },
     parentUserId: { type: Schema.Types.ObjectId, ref: "NewUser" },

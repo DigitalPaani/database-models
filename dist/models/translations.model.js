@@ -33,40 +33,47 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewUserModel = void 0;
+exports.TranslationsModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const users_constants_1 = require("../constants/users.constants");
-// Define the schema using the TypeScript interface
-const userSchema = new mongoose_1.Schema({
-    name: String,
-    email: { type: String, required: true }, // Ensure email is unique
-    password: String,
-    defaultPageId: Object,
-    number: String,
-    userStatus: {
+const translation_config_constants_1 = require("../constants/translation-config.constants");
+const translationsSchema = new mongoose_1.Schema({
+    moduleType: {
         type: String,
-        enum: Object.values(users_constants_1.USER_STATUS_ENUMS),
-        required: true
+        required: true,
+        enum: translation_config_constants_1.MODULE_TYPES,
     },
-    twoFactorAuthentication: Boolean,
-    language: { type: String, enum: ['hi', 'en'] },
-    profilePic: String,
-    skillIds: { type: [mongoose_1.Schema.Types.ObjectId], required: false },
-    parentUserId: { type: mongoose_1.Schema.Types.ObjectId, ref: "NewUser" },
-    isStaff: { type: Boolean, required: true, default: false },
-    isPhoneNumberVerified: { type: Boolean, default: false },
-    isEmailAddressVerified: { type: Boolean, default: false },
-    blockedNotificationModules: {
-        type: [String],
-        default: [],
+    language: {
+        type: String,
+        required: true,
+        lowercase: true,
+        trim: true,
     },
-    invitedBy: { type: mongoose_1.Schema.Types.ObjectId, ref: 'NewUser' },
-    inviteAcceptedOn: { type: Number },
-    inviteExpiry: { type: Number },
-    // defaultHomePage: { type: String, required: true, default: '' },
+    referenceId: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        required: true,
+        index: true,
+    },
+    translations: {
+        type: Map,
+        of: String,
+        required: true,
+        default: {},
+    },
+    translationVersion: {
+        type: Number,
+        required: true,
+        default: 1,
+    },
+    fieldHashes: {
+        type: Map,
+        of: String,
+    },
 }, {
-    timestamps: true, // Automatically manage createdAt and updatedAt fields
+    timestamps: true,
 });
-// Define the model using the schema and the TypeScript interface
-const NewUserModel = mongoose_1.default.model("NewUser", userSchema, "newUsers");
-exports.NewUserModel = NewUserModel;
+translationsSchema.index({ moduleType: 1, language: 1, referenceId: 1 }, { unique: true });
+// TTL index: auto-delete documents older than 4 months (120 days)
+translationsSchema.index({ createdAt: 1 }, { expireAfterSeconds: 10368000 });
+const TranslationsModel = mongoose_1.default.models.Translations ||
+    mongoose_1.default.model("Translations", translationsSchema);
+exports.TranslationsModel = TranslationsModel;
