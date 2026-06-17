@@ -126,6 +126,10 @@ import {
   IBidirectionalLogs,
 } from "./models/bidirectional-logs.model";
 import {
+  RemoteControlActionLogModel,
+  IRemoteControlActionLog,
+} from "./models/remote-control-action-logs.model";
+import {
   EquipmentComponentModel,
   IEquipmentComponent,
 } from "./models/equipment-components.model";
@@ -199,6 +203,7 @@ import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.m
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 import { InventoryModel,IInventory } from "./models/inventory.model";
 import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
+import { TranslationsModel, ITranslation  } from "./models/translations.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -264,6 +269,7 @@ export type {
   IDataLogger,
   IBidirectional,
   IBidirectionalLogs,
+  IRemoteControlActionLog,
   IEquipmentComponent,
   IDataLoggerSession,
   IDLSensorConfig,
@@ -302,6 +308,7 @@ export type {
   ISensorCounterState,
   IPlantHealth,
   IVisualizationDefaultView,
+  ITranslation
 };
 
 // exports the models
@@ -364,6 +371,7 @@ export {
   DataLoggerModel,
   BidirectionalModel,
   BidirectionalLogsModel,
+  RemoteControlActionLogModel,
   EquipmentComponentModel,
   DataLoggerSessionModel,
   DLSensorConfigModel,
@@ -402,5 +410,6 @@ export {
   InventoryModel,
   SensorCounterStateModel,
   PlantHealthModel,
-  VisualizationDefaultViewModel
+  VisualizationDefaultViewModel,
+  TranslationsModel
 };
