@@ -1,3 +1,5 @@
+import { SensorCounterStateModel, ISensorCounterState } from "./models/sensor-counter-state.model";
+import { PlantHealthModel, IPlantHealth } from "./models/plant-health.model";
 import { FormulasModel, IFormula } from "./models/formulaModel";
 import { HyperFormulaModel, IHyperFormula } from "./models/hyperFormulaModel";
 import {
@@ -127,6 +129,10 @@ import {
   IBidirectionalLogs,
 } from "./models/bidirectional-logs.model";
 import {
+  RemoteControlActionLogModel,
+  IRemoteControlActionLog,
+} from "./models/remote-control-action-logs.model";
+import {
   EquipmentComponentModel,
   IEquipmentComponent,
 } from "./models/equipment-components.model";
@@ -245,6 +251,7 @@ import {
   ITemporaryShareLinksModel,
 } from "./models/temporary-share-link.model";
 import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
+<<<<<<< HEAD
 import {
   EquipmentGroupModel,
   IEquipmentGroup,
@@ -259,6 +266,12 @@ import {
   IUnitProcessGroup,
 } from "./models/unitGroups.model";
 import { SetPointModel, ISetPoint } from "./models/setPoint.model";
+=======
+import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
+import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
+import { InventoryModel,IInventory } from "./models/inventory.model";
+import { TranslationsModel, ITranslation  } from "./models/translations.model";
+>>>>>>> origin
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -324,6 +337,7 @@ export type {
   IDataLogger,
   IBidirectional,
   IBidirectionalLogs,
+  IRemoteControlActionLog,
   IEquipmentComponent,
   IDataLoggerSession,
   IDLSensorConfig,
@@ -359,8 +373,14 @@ export type {
   IEquipmentGroup,
   ISensorPurposeTag,
   IInventory,
+<<<<<<< HEAD
   IUnitProcessGroup,
   ISetPoint,
+=======
+  ISensorCounterState,
+  IPlantHealth,
+  ITranslation
+>>>>>>> origin
 };
 
 // exports the models
@@ -423,6 +443,7 @@ export {
   DataLoggerModel,
   BidirectionalModel,
   BidirectionalLogsModel,
+  RemoteControlActionLogModel,
   EquipmentComponentModel,
   DataLoggerSessionModel,
   DLSensorConfigModel,
@@ -459,6 +480,12 @@ export {
   EquipmentGroupModel,
   SensorPurposeTagModel,
   InventoryModel,
+<<<<<<< HEAD
   UnitProcessGroupModel,
   SetPointModel,
+=======
+  SensorCounterStateModel,
+  PlantHealthModel,
+  TranslationsModel
+>>>>>>> origin
 };
