@@ -260,7 +260,7 @@ import {
   IUnitProcessGroup,
 } from "./models/unitGroups.model";
 import { SetPointModel, ISetPoint } from "./models/setPoint.model";
-import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
+import { EquipmentGroupModel, IEquipmentGroup, IEquipmentGroupEquipment } from "./models/equipmentGroups.model";
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 import { InventoryModel,IInventory } from "./models/inventory.model";
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
@@ -364,6 +364,7 @@ export type {
   IInsightSummaryConfig,
   IDataInputLogs,
   IEquipmentGroup,
+  IEquipmentGroupEquipment,
   ISensorPurposeTag,
   IInventory,
   IUnitProcessGroup,
