@@ -40,15 +40,17 @@ const equipmentGroupSchema = new mongoose_1.Schema({
     description: { type: String },
     equipmentIds: [
         {
-            equipmentId: {
+            _id: {
                 type: mongoose_1.Schema.Types.ObjectId,
                 ref: "LayoutEquipments",
                 required: true,
             },
-            selectedSensorId: {
-                type: mongoose_1.Schema.Types.ObjectId,
-                ref: "sensors",
-            },
+            dependentSensors: [
+                {
+                    type: mongoose_1.Schema.Types.ObjectId,
+                    ref: "sensors",
+                },
+            ],
         },
     ],
     assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },

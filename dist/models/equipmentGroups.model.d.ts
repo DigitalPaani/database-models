@@ -1,7 +1,7 @@
 import type { Document, Model, Types } from "mongoose";
 interface IEquipmentGroupEquipment {
-    equipmentId: Types.ObjectId;
-    selectedSensorId?: Types.ObjectId;
+    _id: Types.ObjectId;
+    dependentSensors: Types.ObjectId[];
 }
 interface IEquipmentGroup extends Document {
     name: string;

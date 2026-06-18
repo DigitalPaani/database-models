@@ -2,8 +2,8 @@ import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 
 interface IEquipmentGroupEquipment {
-  equipmentId: Types.ObjectId;
-  selectedSensorId?: Types.ObjectId;
+  _id: Types.ObjectId;
+  dependentSensors: Types.ObjectId[];
 }
 
 interface IEquipmentGroup extends Document {
@@ -21,15 +21,17 @@ const equipmentGroupSchema = new Schema<IEquipmentGroup>(
     description: { type: String },
     equipmentIds: [
       {
-        equipmentId: {
+        _id: {
           type: Schema.Types.ObjectId,
           ref: "LayoutEquipments",
           required: true,
         },
-        selectedSensorId: {
-          type: Schema.Types.ObjectId,
-          ref: "sensors",
-        },
+        dependentSensors: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: "sensors",
+          },
+        ],
       },
     ],
     assetId: { type: Schema.Types.ObjectId, required: true },
