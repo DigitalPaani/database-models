@@ -320,6 +320,11 @@ declare const _default: {
             };
         };
     };
+    PLANT_STATUS: {
+        inProgress: string;
+        active: string;
+        inactive: string;
+    };
 };
 export default _default;
 //# sourceMappingURL=commonConstants.d.ts.map
