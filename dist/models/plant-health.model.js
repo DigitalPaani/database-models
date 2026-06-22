@@ -43,7 +43,7 @@ const PlantHealthSchema = new mongoose_1.Schema({
         unique: true,
         index: true,
     },
-    lastContactedTime: { type: Number, required: true },
+    lastContactedTime: { type: Number },
     internet: { type: Boolean, required: true },
 }, { timestamps: true });
 exports.PlantHealthModel = mongoose_1.default.model("PlantHealth", PlantHealthSchema, "PlantHealth");

@@ -16,7 +16,7 @@ const PlantHealthSchema = new Schema<IPlantHealth>(
       unique: true,
       index: true,
     },
-    lastContactedTime: { type: Number, required: true },
+    lastContactedTime: { type: Number },
     internet: { type: Boolean, required: true },
   },
   { timestamps: true }
