@@ -5,6 +5,7 @@ interface IFormulaEvents extends Document {
     triggerId: Types.ObjectId;
     calculationTime: number;
     isAggregated: boolean;
+    processCount: number;
     expiresAt?: Date;
 }
 declare const FormulaEventModel: Model<IFormulaEvents>;
