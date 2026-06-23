@@ -33,29 +33,36 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentGroupModel = void 0;
+exports.SetPointModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const equipmentGroupSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
-    description: { type: String },
-    equipmentIds: [
-        {
-            _id: {
-                type: mongoose_1.Schema.Types.ObjectId,
-                ref: "LayoutEquipments",
-                required: true,
-            },
-            dependentSensors: [
-                {
-                    type: mongoose_1.Schema.Types.ObjectId,
-                    ref: "sensors",
-                },
-            ],
-        },
-    ],
-    assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
-    dependentSensors: [{ type: mongoose_1.Schema.Types.ObjectId }],
-    isArchived: { type: Boolean, default: false },
-}, { timestamps: true });
-const EquipmentGroupModel = mongoose_1.default.model("EquipmentGroup", equipmentGroupSchema, "EquipmentGroups");
-exports.EquipmentGroupModel = EquipmentGroupModel;
+const setPointSchema = new mongoose_1.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    type: {
+        type: String,
+        required: true,
+    },
+    setPointDetails: {
+        type: mongoose_1.Schema.Types.Mixed,
+        required: true,
+    },
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    },
+    sensorIds: [{
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        }]
+}, {
+    timestamps: true,
+});
+const SetPointModel = mongoose_1.default.model('SetPoint', setPointSchema, 'setPoints');
+exports.SetPointModel = SetPointModel;

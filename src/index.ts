@@ -55,7 +55,10 @@ import {
   IEquipmentQuestion,
 } from "./models/equipmentQuestions.model";
 import { ILayout, LayoutModel } from "./models/LayoutSchema.model";
-import { IVisualizationTemplatesLayout, VisualizationTemplatesModel } from "./models/visualizationTemplates.model";
+import {
+  IVisualizationTemplatesLayout,
+  VisualizationTemplatesModel,
+} from "./models/visualizationTemplates.model";
 import {
   ILayoutEquipment,
   LayoutEquipmentModel,
@@ -78,7 +81,7 @@ import {
 import {
   CommunicationComponentsModel,
   ICommunicationComponent,
-  IInsightSummaryConfig
+  IInsightSummaryConfig,
 } from "./models/communicationComponents.model";
 
 import {
@@ -130,6 +133,10 @@ import {
   IRemoteControlActionLog,
 } from "./models/remote-control-action-logs.model";
 import {
+  SetPointActionLogModel,
+  ISetPointActionLog,
+} from "./models/set-point-action-logs.model";
+import {
   EquipmentComponentModel,
   IEquipmentComponent,
 } from "./models/equipment-components.model";
@@ -162,18 +169,39 @@ import {
   IGeneralCommunication,
 } from "./models/general-communication.model";
 
-import { IBulkEntryReport, BulkEntryReportModel } from "./models/data-input-bulk-entry-report";
-import {IFileUpload,FileManagementUploadModel} from './models/FileUpload.model'
-import { IAnomalyRecord, AnomalyRecordModel } from './models/anomaly-records.model'
-import { IAnomalyDetails, AnomalyDetailsModel } from './models/anomaly-details.model'
+import {
+  IBulkEntryReport,
+  BulkEntryReportModel,
+} from "./models/data-input-bulk-entry-report";
+import {
+  IFileUpload,
+  FileManagementUploadModel,
+} from "./models/FileUpload.model";
+import {
+  IAnomalyRecord,
+  AnomalyRecordModel,
+} from "./models/anomaly-records.model";
+import {
+  IAnomalyDetails,
+  AnomalyDetailsModel,
+} from "./models/anomaly-details.model";
 
-import {UserGroupModel} from './models/userGroupModel'
-import {NotificationComponentsModel} from './models/notificationComponents.model'
+import { UserGroupModel } from "./models/userGroupModel";
+import { NotificationComponentsModel } from "./models/notificationComponents.model";
 
-import { IEventsTemplate, EventsTemplateModel } from "./models/events-template.model";
-import { IEventComponent, EventComponentModel } from "./models/event-components.model";
+import {
+  IEventsTemplate,
+  EventsTemplateModel,
+} from "./models/events-template.model";
+import {
+  IEventComponent,
+  EventComponentModel,
+} from "./models/event-components.model";
 import { IEventLogs, EventLogsModel } from "./models/event-logs.model";
-import { IBatchComponent, BatchComponentModel } from "./models/batch-component.model";
+import {
+  IBatchComponent,
+  BatchComponentModel,
+} from "./models/batch-component.model";
 import { IBatchLog, BatchLogModel } from "./models/batch-logs.model";
 import {
   IVisualizationPages,
@@ -188,18 +216,51 @@ import {
   changeOfFormulasModel,
 } from "./models/change-of-formulas";
 
-import { LogbookTemplateModel, ILogbookTemplate } from "./models/logbook-templates.model";
-import { LogbookAssetConfigurationModel, ILogbookAssetConfiguration } from "./models/logbook-asset-configuration.model";
-import { LogbookAssetConfigAnnotationModel, ILogbookAssetConfigAnnotation } from "./models/logbook-asset-config-annotation.model";
-import { OcrLogbookDataInputLogModel, IOcrLogbookDataInputLog } from "./models/ocr-data-input-logs.model";
-import { IUserGroupWorkspaceAssetUserRole, UserGroupWorkspaceAssetUserRoleModel } from "./models/userGroupWorkspaceAssetUserRole.model";
-import { IUserGroupUserRole, UserGroupUserRoleModel } from "./models/userGroupUserRole.model";
-import { IUserConfigurationLogs, UserConfigurationLogModel } from "./models/user-configuration-logs.model";
+import {
+  LogbookTemplateModel,
+  ILogbookTemplate,
+} from "./models/logbook-templates.model";
+import {
+  LogbookAssetConfigurationModel,
+  ILogbookAssetConfiguration,
+} from "./models/logbook-asset-configuration.model";
+import {
+  LogbookAssetConfigAnnotationModel,
+  ILogbookAssetConfigAnnotation,
+} from "./models/logbook-asset-config-annotation.model";
+import {
+  OcrLogbookDataInputLogModel,
+  IOcrLogbookDataInputLog,
+} from "./models/ocr-data-input-logs.model";
+import {
+  IUserGroupWorkspaceAssetUserRole,
+  UserGroupWorkspaceAssetUserRoleModel,
+} from "./models/userGroupWorkspaceAssetUserRole.model";
+import {
+  IUserGroupUserRole,
+  UserGroupUserRoleModel,
+} from "./models/userGroupUserRole.model";
+import {
+  IUserConfigurationLogs,
+  UserConfigurationLogModel,
+} from "./models/user-configuration-logs.model";
 
-import { IUserVerification, UserVerificationModel, VerificationTypeEnum } from "./models/user-verifications.model";
-import { TemporaryShareLinksModel, ITemporaryShareLinksModel } from "./models/temporary-share-link.model";
+import {
+  IUserVerification,
+  UserVerificationModel,
+  VerificationTypeEnum,
+} from "./models/user-verifications.model";
+import {
+  TemporaryShareLinksModel,
+  ITemporaryShareLinksModel,
+} from "./models/temporary-share-link.model";
 import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
-import { EquipmentGroupModel, IEquipmentGroup } from "./models/equipmentGroups.model";
+import {
+  UnitProcessGroupModel,
+  IUnitProcessGroup,
+} from "./models/unitGroups.model";
+import { SetPointModel, ISetPoint } from "./models/setPoint.model";
+import { EquipmentGroupModel, IEquipmentGroup, IEquipmentGroupEquipment } from "./models/equipmentGroups.model";
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 import { InventoryModel,IInventory } from "./models/inventory.model";
 import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
@@ -270,6 +331,7 @@ export type {
   IBidirectional,
   IBidirectionalLogs,
   IRemoteControlActionLog,
+  ISetPointActionLog,
   IEquipmentComponent,
   IDataLoggerSession,
   IDLSensorConfig,
@@ -303,8 +365,11 @@ export type {
   IInsightSummaryConfig,
   IDataInputLogs,
   IEquipmentGroup,
+  IEquipmentGroupEquipment,
   ISensorPurposeTag,
   IInventory,
+  IUnitProcessGroup,
+  ISetPoint,
   ISensorCounterState,
   IPlantHealth,
   IVisualizationDefaultView,
@@ -372,6 +437,7 @@ export {
   BidirectionalModel,
   BidirectionalLogsModel,
   RemoteControlActionLogModel,
+  SetPointActionLogModel,
   EquipmentComponentModel,
   DataLoggerSessionModel,
   DLSensorConfigModel,
@@ -408,6 +474,8 @@ export {
   EquipmentGroupModel,
   SensorPurposeTagModel,
   InventoryModel,
+  UnitProcessGroupModel,
+  SetPointModel,
   SensorCounterStateModel,
   PlantHealthModel,
   VisualizationDefaultViewModel,

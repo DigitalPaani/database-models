@@ -33,29 +33,37 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EquipmentGroupModel = void 0;
+exports.UnitProcessGroupModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const equipmentGroupSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
-    description: { type: String },
-    equipmentIds: [
+const unitProcessGroupSchema = new mongoose_1.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    equipments: [
         {
-            _id: {
-                type: mongoose_1.Schema.Types.ObjectId,
-                ref: "LayoutEquipments",
-                required: true,
-            },
-            dependentSensors: [
-                {
-                    type: mongoose_1.Schema.Types.ObjectId,
-                    ref: "sensors",
-                },
-            ],
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "LayoutEquipments",
         },
     ],
     assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
-    dependentSensors: [{ type: mongoose_1.Schema.Types.ObjectId }],
-    isArchived: { type: Boolean, default: false },
-}, { timestamps: true });
-const EquipmentGroupModel = mongoose_1.default.model("EquipmentGroup", equipmentGroupSchema, "EquipmentGroups");
-exports.EquipmentGroupModel = EquipmentGroupModel;
+    setPoints: [
+        {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "SetPoint",
+        },
+    ],
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    }
+}, {
+    timestamps: true,
+});
+const UnitProcessGroupModel = mongoose_1.default.model("UnitProcessGroup", unitProcessGroupSchema, "unitProcessGroups");
+exports.UnitProcessGroupModel = UnitProcessGroupModel;
