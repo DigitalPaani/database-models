@@ -204,6 +204,7 @@ import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurpose
 import { InventoryModel,IInventory } from "./models/inventory.model";
 import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
+import { PlantSensorMappingModel, IPlantSensorMapping } from "./models/plant-sensor-mapping.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -308,7 +309,8 @@ export type {
   ISensorCounterState,
   IPlantHealth,
   IVisualizationDefaultView,
-  ITranslation
+  ITranslation,
+  IPlantSensorMapping,
 };
 
 // exports the models
@@ -411,5 +413,6 @@ export {
   SensorCounterStateModel,
   PlantHealthModel,
   VisualizationDefaultViewModel,
-  TranslationsModel
+  TranslationsModel,
+  PlantSensorMappingModel,
 };
