@@ -258,6 +258,7 @@ import { DataInputLogsModel, IDataInputLogs } from "./models/data-input-logs";
 import {
   UnitProcessGroupModel,
   IUnitProcessGroup,
+  IUnitProcessGroupEquipment,
 } from "./models/unitGroups.model";
 import { SetPointModel, ISetPoint } from "./models/setPoint.model";
 import { EquipmentGroupModel, IEquipmentGroup, IEquipmentGroupEquipment } from "./models/equipmentGroups.model";
@@ -369,6 +370,7 @@ export type {
   ISensorPurposeTag,
   IInventory,
   IUnitProcessGroup,
+  IUnitProcessGroupEquipment,
   ISetPoint,
   ISensorCounterState,
   IPlantHealth,
