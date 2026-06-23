@@ -11,6 +11,8 @@ const plantSensorMappingSchema = new Schema<IPlantSensorMapping>(
       type: Schema.Types.ObjectId,
       ref: "Plant",
       required: true,
+      unique: true,
+      index: true,
     },
     mappings: {
       type: Map,

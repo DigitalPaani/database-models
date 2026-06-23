@@ -40,6 +40,8 @@ const plantSensorMappingSchema = new mongoose_1.Schema({
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Plant",
         required: true,
+        unique: true,
+        index: true,
     },
     mappings: {
         type: Map,
