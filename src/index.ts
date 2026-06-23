@@ -263,6 +263,7 @@ import { SetPointModel, ISetPoint } from "./models/setPoint.model";
 import { EquipmentGroupModel, IEquipmentGroup, IEquipmentGroupEquipment } from "./models/equipmentGroups.model";
 import { SensorPurposeTagModel, ISensorPurposeTag } from "./models/sensorPurposeTag.model";
 import { InventoryModel,IInventory } from "./models/inventory.model";
+import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
 
 // Assign mongoose to mongooseDatabaseModels
@@ -371,6 +372,7 @@ export type {
   ISetPoint,
   ISensorCounterState,
   IPlantHealth,
+  IVisualizationDefaultView,
   ITranslation
 };
 
@@ -476,5 +478,6 @@ export {
   SetPointModel,
   SensorCounterStateModel,
   PlantHealthModel,
+  VisualizationDefaultViewModel,
   TranslationsModel
 };
