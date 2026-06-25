@@ -35,9 +35,14 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PlantModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
+const plant_constants_1 = require("../constants/plant.constants");
 const PlantSchema = new mongoose_1.Schema({
     plantName: String,
-    status: String,
+    status: {
+        type: String,
+        enum: Object.values(plant_constants_1.PLANT_STATUS),
+        default: plant_constants_1.PLANT_STATUS.inProgress
+    },
     lat: String,
     plantImage: String,
     workspaceId: {
