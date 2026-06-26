@@ -1,5 +1,6 @@
 import type { Document, Types } from 'mongoose';
 import mongoose, { Schema } from 'mongoose';
+import { PLANT_STATUS } from '../constants/plant.constants';
 
 interface IPlant extends Partial<Document> {
   plantName: string;
@@ -42,7 +43,11 @@ interface IPlant extends Partial<Document> {
 
 const PlantSchema = new Schema<IPlant>({
   plantName: String,
-  status: String,
+  status: {
+    type: String,
+    enum: Object.values(PLANT_STATUS),
+    default: PLANT_STATUS.inProgress
+  },
   lat: String,
   plantImage:String,
   workspaceId:{

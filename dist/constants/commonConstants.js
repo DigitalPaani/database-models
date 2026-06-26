@@ -16,6 +16,7 @@ const bio_health_tracker_constants_1 = __importDefault(require("./bio-health-tra
 const logs_constants_1 = require("./logs.constants");
 const users_constants_1 = require("./users.constants");
 const translation_config_constants_1 = require("./translation-config.constants");
+const plant_constants_1 = require("./plant.constants");
 const EVENT_TYPES = {
     formula: "formula",
     trigger: "trigger",
@@ -127,5 +128,6 @@ exports.default = {
     LOGS_ACTION_ENUM: logs_constants_1.LOGS_ACTION_ENUM,
     USER_STATUS_ENUMS: users_constants_1.USER_STATUS_ENUMS,
     DATA_INPUT_LOGS_STATUS_ENUMS,
-    TRANSLATION_CONFIG: translation_config_constants_1.TRANSLATION_CONFIG
+    TRANSLATION_CONFIG: translation_config_constants_1.TRANSLATION_CONFIG,
+    PLANT_STATUS: plant_constants_1.PLANT_STATUS,
 };

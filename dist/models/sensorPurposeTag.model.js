@@ -43,6 +43,8 @@ const sensorPurposeTagSchema = new mongoose_1.Schema({
     stuckWindowTime: { type: Number },
     stuckValueTolerance: { type: Number },
     fixedStuckTolerance: { type: Number },
+    stuckMinThreshold: { type: Number },
+    stuckMaxThreshold: { type: Number },
 }, {
     timestamps: true,
 });

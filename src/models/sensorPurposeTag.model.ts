@@ -9,6 +9,8 @@ interface ISensorPurposeTag extends Document {
   stuckWindowTime?: number;
   stuckValueTolerance?: number;
   fixedStuckTolerance?: number;
+  stuckMinThreshold?: number;
+  stuckMaxThreshold?: number;
 }
 
 const sensorPurposeTagSchema = new Schema<ISensorPurposeTag>(
@@ -20,6 +22,8 @@ const sensorPurposeTagSchema = new Schema<ISensorPurposeTag>(
     stuckWindowTime: { type: Number },
     stuckValueTolerance: { type: Number },
     fixedStuckTolerance: { type: Number },
+    stuckMinThreshold: { type: Number },
+    stuckMaxThreshold: { type: Number },
   },
   {
     timestamps: true,
