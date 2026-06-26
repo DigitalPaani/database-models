@@ -1,10 +1,15 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
 
+interface IUnitProcessGroupEquipment {
+  _id: Types.ObjectId;
+  dependentSensors: Types.ObjectId[];
+}
+
 interface IUnitProcessGroup extends Document {
   name: string;
   description?:string;
-  equipments: Types.ObjectId[];
+  equipments: IUnitProcessGroupEquipment[];
   assetId: Types.ObjectId;
   setPoints: Types.ObjectId[];
   isArchived:boolean;
@@ -22,8 +27,17 @@ const unitProcessGroupSchema = new Schema<IUnitProcessGroup>(
     },
     equipments: [
       {
-        type: Schema.Types.ObjectId,
-        ref: "LayoutEquipments",
+        _id: {
+          type: Schema.Types.ObjectId,
+          ref: "LayoutEquipments",
+          required: true,
+        },
+        dependentSensors: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: "sensors",
+          },
+        ],
       },
     ],
     assetId: { type: Schema.Types.ObjectId, required: true },
@@ -51,4 +65,4 @@ const UnitProcessGroupModel: Model<IUnitProcessGroup> =
     "unitProcessGroups",
   );
 
-export { UnitProcessGroupModel, IUnitProcessGroup };
+export { UnitProcessGroupModel, IUnitProcessGroup, IUnitProcessGroupEquipment };
