@@ -38,9 +38,24 @@ const mongoose_1 = __importStar(require("mongoose"));
 const equipmentGroupSchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     description: { type: String },
-    equipmentIds: [{ type: mongoose_1.Schema.Types.ObjectId }],
+    equipmentIds: [
+        {
+            _id: {
+                type: mongoose_1.Schema.Types.ObjectId,
+                ref: "LayoutEquipments",
+                required: true,
+            },
+            dependentSensors: [
+                {
+                    type: mongoose_1.Schema.Types.ObjectId,
+                    ref: "sensors",
+                },
+            ],
+        },
+    ],
     assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
     dependentSensors: [{ type: mongoose_1.Schema.Types.ObjectId }],
+    isArchived: { type: Boolean, default: false },
 }, { timestamps: true });
-const EquipmentGroupModel = mongoose_1.default.model('EquipmentGroup', equipmentGroupSchema, 'EquipmentGroups');
+const EquipmentGroupModel = mongoose_1.default.model("EquipmentGroup", equipmentGroupSchema, "EquipmentGroups");
 exports.EquipmentGroupModel = EquipmentGroupModel;

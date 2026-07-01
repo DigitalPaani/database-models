@@ -7,6 +7,8 @@ interface ISensorPurposeTag extends Document {
     stuckWindowTime?: number;
     stuckValueTolerance?: number;
     fixedStuckTolerance?: number;
+    stuckMinThreshold?: number;
+    stuckMaxThreshold?: number;
 }
 declare const SensorPurposeTagModel: Model<ISensorPurposeTag>;
 export { SensorPurposeTagModel, ISensorPurposeTag };

@@ -33,20 +33,36 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SensorPurposeTagModel = void 0;
+exports.SetPointModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const sensorPurposeTagSchema = new mongoose_1.Schema({
-    key: { type: String, required: true, unique: true },
-    abbr: { type: String, required: true },
-    name: { type: String, required: true },
-    category: { type: String, required: true },
-    stuckWindowTime: { type: Number },
-    stuckValueTolerance: { type: Number },
-    fixedStuckTolerance: { type: Number },
-    stuckMinThreshold: { type: Number },
-    stuckMaxThreshold: { type: Number },
+const setPointSchema = new mongoose_1.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    type: {
+        type: String,
+        required: true,
+    },
+    setPointDetails: {
+        type: mongoose_1.Schema.Types.Mixed,
+        required: true,
+    },
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    },
+    sensorIds: [{
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "sensors",
+        }]
 }, {
     timestamps: true,
 });
-const SensorPurposeTagModel = mongoose_1.default.model("SensorPurposeTag", sensorPurposeTagSchema, "sensorPurposeTags");
-exports.SensorPurposeTagModel = SensorPurposeTagModel;
+const SetPointModel = mongoose_1.default.model('SetPoint', setPointSchema, 'setPoints');
+exports.SetPointModel = SetPointModel;

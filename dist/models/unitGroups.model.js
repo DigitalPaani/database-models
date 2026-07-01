@@ -33,20 +33,46 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SensorPurposeTagModel = void 0;
+exports.UnitProcessGroupModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const sensorPurposeTagSchema = new mongoose_1.Schema({
-    key: { type: String, required: true, unique: true },
-    abbr: { type: String, required: true },
-    name: { type: String, required: true },
-    category: { type: String, required: true },
-    stuckWindowTime: { type: Number },
-    stuckValueTolerance: { type: Number },
-    fixedStuckTolerance: { type: Number },
-    stuckMinThreshold: { type: Number },
-    stuckMaxThreshold: { type: Number },
+const unitProcessGroupSchema = new mongoose_1.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: false
+    },
+    equipments: [
+        {
+            _id: {
+                type: mongoose_1.Schema.Types.ObjectId,
+                ref: "LayoutEquipments",
+                required: true,
+            },
+            dependentSensors: [
+                {
+                    type: mongoose_1.Schema.Types.ObjectId,
+                    ref: "sensors",
+                },
+            ],
+        },
+    ],
+    assetId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
+    setPoints: [
+        {
+            type: mongoose_1.Schema.Types.ObjectId,
+            ref: "SetPoint",
+        },
+    ],
+    isArchived: {
+        type: Boolean,
+        default: false,
+        required: false,
+    }
 }, {
     timestamps: true,
 });
-const SensorPurposeTagModel = mongoose_1.default.model("SensorPurposeTag", sensorPurposeTagSchema, "sensorPurposeTags");
-exports.SensorPurposeTagModel = SensorPurposeTagModel;
+const UnitProcessGroupModel = mongoose_1.default.model("UnitProcessGroup", unitProcessGroupSchema, "unitProcessGroups");
+exports.UnitProcessGroupModel = UnitProcessGroupModel;
