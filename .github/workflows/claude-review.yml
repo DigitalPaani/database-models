@@ -13,12 +13,13 @@ jobs:
       contents: read
       pull-requests: write
       issues: write
+      id-token: write      
 
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Run Claude PR Reviewer
-        uses: drillan/claude-pr-reviewer@v1
+        uses: anthropics/claude-code-action@v1 
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
