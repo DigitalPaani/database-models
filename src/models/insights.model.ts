@@ -125,16 +125,6 @@ insightsSchema.index({
 });
 
 insightsSchema.index({
-  isArchived: 1,
-  assetId: 1,
-  isOpen: -1,
-  priority: 1,
-  insightClassification: 1,
-  insightType: 1,
-  createdAt: -1,
-});
-
-insightsSchema.index({
   insightComponentId: 1,
   isArchived: 1,
   createdAt: 1,
