@@ -28,11 +28,24 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           use_sticky_comment: true   # one review comment that updates on each push
           prompt: |
-            Review this pull request and provide feedback on:
-            - Code quality and best practices
-            - Potential bugs or logic issues
-            - Security concerns
-            - Performance considerations
+            You have two tasks for this pull request:
 
-            Use inline comments for specific lines where helpful,
-            and post a concise summary. Be constructive; don't nitpick style.
+            1. REVIEW: Provide feedback on:
+               - Code quality and best practices
+               - Potential bugs or logic issues
+               - Security concerns
+               - Performance considerations
+               Use inline comments for specific lines where helpful, and post
+               a concise summary comment. Be constructive; don't nitpick style.
+
+            2. PR DESCRIPTION: Update this PR's description using
+               `gh pr edit ${{ github.event.pull_request.number }} --body "..."`.
+               Write a clear description with these sections:
+               ## Summary — what this PR does and why
+               ## Changes — bullet list of key changes by file/area
+               ## Impact — anything reviewers or deployers should know
+               If the PR already has a meaningful description written by the
+               author, keep it and append your generated sections below it
+               under a "## AI Summary" heading instead of replacing it.
+          claude_args: |
+            --allowedTools "mcp__github_comment__create_comment,mcp__github_inline_comment__create_inline_comment,Bash(gh pr edit:*),Bash(gh pr view:*)"
