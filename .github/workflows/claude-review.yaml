@@ -1,0 +1,67 @@
+name: Claude AI PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    # Automatically skips draft PRs to protect your API budget
+    if: github.event.pull_request.draft == false
+
+    permissions:
+      contents: write      # Allows Claude to read/verify file states
+      pull-requests: write # Allows Claude to post PR review comments and inline reviews
+      issues: write        # Necessary for certain tracking utilities
+      id-token: write      # FIX: Grants permission to fetch the OIDC token safely
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Fetches full history so Claude can seamlessly compare git diffs
+
+      - name: Run Claude PR Reviewer
+        uses: anthropics/claude-code-action@v1 
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # FIX: Directs Claude Code on how to behave in automated CI mode
+          prompt: |
+            Review the code changes introduced in this pull request. 
+            1. Write a clear, high-level summary of the changes as a main PR comment.
+            2. Scan for logic bugs, security implications, or optimization opportunities.
+            3. Post helpful, direct inline comments on the changed diff lines for any nits or critical fixes required.name: Claude AI PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    # Automatically skips draft PRs to protect your API budget
+    if: github.event.pull_request.draft == false
+
+    permissions:
+      contents: write      # Allows Claude to read/verify file states
+      pull-requests: write # Allows Claude to post PR review comments and inline reviews
+      issues: write        # Necessary for certain tracking utilities
+      id-token: write      # FIX: Grants permission to fetch the OIDC token safely
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Fetches full history so Claude can seamlessly compare git diffs
+
+      - name: Run Claude PR Reviewer
+        uses: anthropics/claude-code-action@v1 
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # FIX: Directs Claude Code on how to behave in automated CI mode
+          prompt: |
+            Review the code changes introduced in this pull request. 
+            1. Write a clear, high-level summary of the changes as a main PR comment.
+            2. Scan for logic bugs, security implications, or optimization opportunities.
+            3. Post helpful, direct inline comments on the changed diff lines for any nits or critical fixes required.
