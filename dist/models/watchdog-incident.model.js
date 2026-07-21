@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.INCIDENT_STATUSES = exports.INCIDENT_TYPES = exports.IncidentModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const watchdog_event_model_1 = require("./watchdog-event.model");
-const INCIDENT_TYPES = ["connectivity", "device"];
+const INCIDENT_TYPES = ["CONNECTIVITY", "DEVICE"];
 exports.INCIDENT_TYPES = INCIDENT_TYPES;
 const INCIDENT_STATUSES = ["OPEN", "CLOSED"];
 exports.INCIDENT_STATUSES = INCIDENT_STATUSES;

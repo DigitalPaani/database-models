@@ -1,6 +1,6 @@
 import mongoose, { Document } from "mongoose";
 import { WatchdogCauseCode, WatchdogActionTaken } from "./watchdog-event.model";
-declare const INCIDENT_TYPES: readonly ["connectivity", "device"];
+declare const INCIDENT_TYPES: readonly ["CONNECTIVITY", "DEVICE"];
 declare const INCIDENT_STATUSES: readonly ["OPEN", "CLOSED"];
 type IncidentType = (typeof INCIDENT_TYPES)[number];
 type IncidentStatus = (typeof INCIDENT_STATUSES)[number];

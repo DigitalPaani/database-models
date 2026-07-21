@@ -6,7 +6,7 @@ import {
   WatchdogActionTaken,
 } from "./watchdog-event.model";
 
-const INCIDENT_TYPES = ["connectivity", "device"] as const;
+const INCIDENT_TYPES = ["CONNECTIVITY", "DEVICE"] as const;
 const INCIDENT_STATUSES = ["OPEN", "CLOSED"] as const;
 
 type IncidentType = (typeof INCIDENT_TYPES)[number];
