@@ -5,17 +5,24 @@ const Schema = mongoose.Schema;
 
 interface FlocChildSensors {
   FDSTParent: Types.ObjectId;
+  SVOLRaw: Types.ObjectId;
+
   SVOL30: Types.ObjectId;
   SVOL30Image: Types.ObjectId;
   SVOL60: Types.ObjectId;
   SVOL60Image: Types.ObjectId;
   SVOL90: Types.ObjectId;
   SVOL90Image: Types.ObjectId;
-  SVOLRaw: Types.ObjectId;
   SVOLCustom: Types.ObjectId;
   SVOLCustomImage: Types.ObjectId;
   SVOLIssue: Types.ObjectId;
   SVOLIssueImage: Types.ObjectId;
+
+  DO: Types.ObjectId; // DO is a trend graph (frequency 15 seconds)
+  OUR: Types.ObjectId; // 
+  MLSS: Types.ObjectId; // single value (will be sent in the beginning of the trend)
+  SVI: Types.ObjectId // will be calculated after 30 minutes with a formula
+  PumpRunningTime: Types.ObjectId; // will be calculated after 30 minutes with a formula
 }
 
 export interface ISensor {
@@ -59,6 +66,10 @@ const flocChildSensorsSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: false,
   },
+  SVOLRaw: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
   SVOL30: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,
@@ -83,10 +94,6 @@ const flocChildSensorsSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: false,
   },
-  SVOLRaw: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: false,
-  },
   SVOLCustom: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,
@@ -100,6 +107,26 @@ const flocChildSensorsSchema = new Schema({
     required: false,
   },
   SVOLIssueImage: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  DO: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  OUR: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  MLSS: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  SVI: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+  },
+  PumpRunningTime: {
     type: mongoose.Schema.Types.ObjectId,
     required: false,
   }

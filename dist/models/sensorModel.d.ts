@@ -1,17 +1,22 @@
 import mongoose, { Types } from "mongoose";
 interface FlocChildSensors {
     FDSTParent: Types.ObjectId;
+    SVOLRaw: Types.ObjectId;
     SVOL30: Types.ObjectId;
     SVOL30Image: Types.ObjectId;
     SVOL60: Types.ObjectId;
     SVOL60Image: Types.ObjectId;
     SVOL90: Types.ObjectId;
     SVOL90Image: Types.ObjectId;
-    SVOLRaw: Types.ObjectId;
     SVOLCustom: Types.ObjectId;
     SVOLCustomImage: Types.ObjectId;
     SVOLIssue: Types.ObjectId;
     SVOLIssueImage: Types.ObjectId;
+    DO: Types.ObjectId;
+    OUR: Types.ObjectId;
+    MLSS: Types.ObjectId;
+    SVI: Types.ObjectId;
+    PumpRunningTime: Types.ObjectId;
 }
 export interface ISensor {
     _id?: Types.ObjectId;
