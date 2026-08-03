@@ -38,6 +38,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 const SensorCounterStateSchema = new mongoose_1.Schema({
     sensorId: { type: String, required: true, unique: true, index: true },
     plantId: { type: String, required: true },
+    plcId: { type: String, required: false },
     stuckValues: { type: [Number], required: true, default: [] },
     oorCount: { type: Number, required: true, default: 0 },
     inRangeCount: { type: Number, required: true, default: 0 },
