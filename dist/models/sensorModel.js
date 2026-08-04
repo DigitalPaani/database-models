@@ -41,6 +41,10 @@ const flocChildSensorsSchema = new Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
+    SVOLRaw: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
     SVOL30: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
@@ -65,10 +69,6 @@ const flocChildSensorsSchema = new Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     },
-    SVOLRaw: {
-        type: mongoose_1.default.Schema.Types.ObjectId,
-        required: false,
-    },
     SVOLCustom: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
@@ -82,6 +82,26 @@ const flocChildSensorsSchema = new Schema({
         required: false,
     },
     SVOLIssueImage: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    DO: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    OUR: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    MLSS: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    SVI: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        required: false,
+    },
+    PumpRunningTime: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: false,
     }
