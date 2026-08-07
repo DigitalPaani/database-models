@@ -9,6 +9,7 @@ interface IPlcData extends Document {
   lastPinged?: Date;
   lastContactedTime: number;
   internet: boolean;
+  isDataStarted: boolean;
 }
 
 const plcSchema = new Schema<IPlcData>({
@@ -41,6 +42,7 @@ const plcSchema = new Schema<IPlcData>({
   },
   lastContactedTime: { type: Number },
   internet: { type: Boolean },
+  isDataStarted: { type: Boolean, default: false },
 });
 
 const PlcModel = mongoose.model<IPlcData>("plcs", plcSchema, "plcs");
