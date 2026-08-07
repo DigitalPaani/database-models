@@ -59,11 +59,16 @@ const formulaEventSchema = new mongoose_1.Schema({
         required: true,
     },
     isAggregated: { type: Boolean, required: true, default: false },
+    processCount: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
     expiresAt: {
         type: Date,
         required: false,
         index: {
-            expireAfterSeconds: 172800,
+            expireAfterSeconds: 86400,
         }, // TTL index for automatic expiration
     },
 }, {
