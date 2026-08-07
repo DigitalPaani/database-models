@@ -159,5 +159,21 @@ const generalCommunicationSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
+generalCommunicationSchema.index({
+    'receiver.userId': 1,
+    isArchived: 1,
+});
+generalCommunicationSchema.index({
+    'receiver.userId': 1,
+    'content.channel': 1,
+}, {
+    partialFilterExpression: { isArchived: false },
+});
+generalCommunicationSchema.index({
+    'receiver.userId': 1,
+    tags: 1,
+}, {
+    partialFilterExpression: { isArchived: false },
+});
 const GeneralCommunicationModel = mongoose_1.default.model("generalCommunication", generalCommunicationSchema, "generalCommunication");
 exports.GeneralCommunicationModel = GeneralCommunicationModel;
