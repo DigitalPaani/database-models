@@ -9,7 +9,7 @@ interface IPlcData extends Document {
   lastPinged?: Date;
   lastContactedTime: number;
   internet: boolean;
-  isDataStarted: boolean;
+  isDataStarted?: boolean;
 }
 
 const plcSchema = new Schema<IPlcData>({
