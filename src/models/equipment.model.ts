@@ -4,21 +4,22 @@ import mongoose, { Document, Schema } from "mongoose";
 import {
   VISUALIZATION_EQUIPMENT_TYPES_ENUMS
 } from '../constants/visualization.constants';
+import { Types } from "mongoose";
 
 interface ILayoutEquipment extends Document {
-  refId: string;
-  assetId: string;
+  parentId: Types.ObjectId;
   nodeType: string;
   itemDetails: string | object;
   equipmentType:string;
   category:string;
   isArchived:boolean;
+  nodeId:Types.ObjectId;
 }
 
 const LayoutEquipments = new Schema(
   {
-    refId: String,
-    assetId: String,
+    parentId: Schema.Types.ObjectId,
+    nodeId:Schema.Types.ObjectId,
     nodeType: String,
     category:String,
     equipmentType:{
