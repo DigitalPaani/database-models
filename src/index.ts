@@ -486,3 +486,19 @@ export {
   TranslationsModel,
   PlantSensorMappingModel,
 };
+
+export {
+  CtlEventType,
+  EventFamily,
+  validateCtlEvent,
+  buildCtlEventRow,
+} from './ctl-events';
+
+export type {
+  InsertCtlEventInput,
+  CtlEventRow,
+  CtlEventKindValue,
+  CtlEntityType,
+  CtlSeverity,
+  CtlEventStatus,
+} from './ctl-events';
