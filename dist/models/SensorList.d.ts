@@ -9,17 +9,39 @@ interface ISensor extends Document {
     tags: string[];
     templateTags?: ITemplateTag[];
 }
+interface IValueUnit {
+    value: number;
+    unit: string;
+}
+interface IDrift extends IValueUnit {
+    per?: string;
+}
+interface IStuckTolerance {
+    value: number;
+    type?: "FIXED" | "FSR";
+}
+interface IDataSheet {
+    url: string;
+    comments?: string;
+}
 export interface ITemplateTag {
     tag: string;
-    threshold: {
-        validMin?: number;
-        validMax?: number;
-        cautionMin?: number;
-        cautionMax?: number;
-        safeMin?: number;
-        safeMax?: number;
-        showCautionZone?: boolean;
-    };
+    validMin?: number;
+    validMax?: number;
+    cautionMin?: number;
+    cautionMax?: number;
+    safeMin?: number;
+    safeMax?: number;
+    showCautionZone?: boolean;
+    frequency?: IValueUnit;
+    stuckWindowTime?: IValueUnit;
+    precision?: IValueUnit;
+    resolution?: IValueUnit;
+    drift?: IDrift;
+    detectionLimit?: IValueUnit;
+    t90ResponseTime?: IValueUnit;
+    stuckTolerance?: IStuckTolerance;
+    dataSheets?: IDataSheet[];
     isThresholdConfigured?: boolean;
 }
 export declare const TemplateTagSchema: mongoose.Schema<ITemplateTag, mongoose.Model<ITemplateTag, any, any, any, mongoose.Document<unknown, any, ITemplateTag> & ITemplateTag & {

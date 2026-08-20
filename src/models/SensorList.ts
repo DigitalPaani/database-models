@@ -12,17 +12,76 @@ interface ISensor extends Document {
   templateTags?: ITemplateTag[];
 }
 
+interface IValueUnit {
+  value: number;
+  unit: string;
+}
+
+interface IDrift extends IValueUnit {
+  per?: string;
+}
+
+interface IStuckTolerance {
+  value: number;
+  type?: "FIXED" | "FSR";
+}
+
+interface IDataSheet {
+  url: string;
+  comments?: string;
+}
+
+const ValueUnitSchema = new Schema<IValueUnit>(
+  {
+    value: { type: Number, required: true },
+    unit: { type: String, required: true },
+  },
+  { _id: false },
+);
+
+const DriftSchema = new Schema<IDrift>(
+  {
+    value: { type: Number, required: true },
+    unit: { type: String, required: true },
+    per: { type: String, required: false },
+  },
+  { _id: false },
+);
+
+const StuckToleranceSchema = new Schema<IStuckTolerance>(
+  {
+    value: { type: Number, required: true },
+    type: { type: String, enum: ["FIXED", "FSR"], required: false },
+  },
+  { _id: false },
+);
+
+const DataSheetSchema = new Schema<IDataSheet>(
+  {
+    url: { type: String, required: true },
+    comments: { type: String, required: false },
+  },
+  { _id: false },
+);
+
 export interface ITemplateTag {
   tag: string;
-  threshold: {
-    validMin?: number;
-    validMax?: number;
-    cautionMin?: number;
-    cautionMax?: number;
-    safeMin?: number;
-    safeMax?: number;
-    showCautionZone?: boolean;
-  };
+  validMin?: number;
+  validMax?: number;
+  cautionMin?: number;
+  cautionMax?: number;
+  safeMin?: number;
+  safeMax?: number;
+  showCautionZone?: boolean;
+  frequency?: IValueUnit;
+  stuckWindowTime?: IValueUnit;
+  precision?: IValueUnit;
+  resolution?: IValueUnit;
+  drift?: IDrift;
+  detectionLimit?: IValueUnit;
+  t90ResponseTime?: IValueUnit;
+  stuckTolerance?: IStuckTolerance;
+  dataSheets?: IDataSheet[];
   isThresholdConfigured?: boolean;
 }
 export const TemplateTagSchema = new Schema<ITemplateTag>(
@@ -31,15 +90,22 @@ export const TemplateTagSchema = new Schema<ITemplateTag>(
       type: String,
       required: true,
     },
-    threshold: {
-      validMin: { type: Number, required: false },
-      validMax: { type: Number, required: false },
-      cautionMin: { type: Number, required: false },
-      cautionMax: { type: Number, required: false },
-      safeMin: { type: Number, required: false },
-      safeMax: { type: Number, required: false },
-      showCautionZone: { type: Boolean, required: false },
-    },
+    validMin: { type: Number, required: false },
+    validMax: { type: Number, required: false },
+    cautionMin: { type: Number, required: false },
+    cautionMax: { type: Number, required: false },
+    safeMin: { type: Number, required: false },
+    safeMax: { type: Number, required: false },
+    showCautionZone: { type: Boolean, required: false },
+    frequency: { type: ValueUnitSchema, required: false },
+    stuckWindowTime: { type: ValueUnitSchema, required: false },
+    precision: { type: ValueUnitSchema, required: false },
+    resolution: { type: ValueUnitSchema, required: false },
+    drift: { type: DriftSchema, required: false },
+    detectionLimit: { type: ValueUnitSchema, required: false },
+    t90ResponseTime: { type: ValueUnitSchema, required: false },
+    stuckTolerance: { type: StuckToleranceSchema, required: false },
+    dataSheets: { type: [DataSheetSchema], required: false, default: [] },
     isThresholdConfigured: { type: Boolean, required: false, default: false },
   },
   { _id: false },

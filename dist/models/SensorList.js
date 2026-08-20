@@ -36,20 +36,44 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SensorModel = exports.TemplateTagSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const sensorConst_1 = require("../constants/sensorConst");
+const ValueUnitSchema = new mongoose_1.Schema({
+    value: { type: Number, required: true },
+    unit: { type: String, required: true },
+}, { _id: false });
+const DriftSchema = new mongoose_1.Schema({
+    value: { type: Number, required: true },
+    unit: { type: String, required: true },
+    per: { type: String, required: false },
+}, { _id: false });
+const StuckToleranceSchema = new mongoose_1.Schema({
+    value: { type: Number, required: true },
+    type: { type: String, enum: ["FIXED", "FSR"], required: false },
+}, { _id: false });
+const DataSheetSchema = new mongoose_1.Schema({
+    url: { type: String, required: true },
+    comments: { type: String, required: false },
+}, { _id: false });
 exports.TemplateTagSchema = new mongoose_1.Schema({
     tag: {
         type: String,
         required: true,
     },
-    threshold: {
-        validMin: { type: Number, required: false },
-        validMax: { type: Number, required: false },
-        cautionMin: { type: Number, required: false },
-        cautionMax: { type: Number, required: false },
-        safeMin: { type: Number, required: false },
-        safeMax: { type: Number, required: false },
-        showCautionZone: { type: Boolean, required: false },
-    },
+    validMin: { type: Number, required: false },
+    validMax: { type: Number, required: false },
+    cautionMin: { type: Number, required: false },
+    cautionMax: { type: Number, required: false },
+    safeMin: { type: Number, required: false },
+    safeMax: { type: Number, required: false },
+    showCautionZone: { type: Boolean, required: false },
+    frequency: { type: ValueUnitSchema, required: false },
+    stuckWindowTime: { type: ValueUnitSchema, required: false },
+    precision: { type: ValueUnitSchema, required: false },
+    resolution: { type: ValueUnitSchema, required: false },
+    drift: { type: DriftSchema, required: false },
+    detectionLimit: { type: ValueUnitSchema, required: false },
+    t90ResponseTime: { type: ValueUnitSchema, required: false },
+    stuckTolerance: { type: StuckToleranceSchema, required: false },
+    dataSheets: { type: [DataSheetSchema], required: false, default: [] },
     isThresholdConfigured: { type: Boolean, required: false, default: false },
 }, { _id: false });
 const SensorSchema = new mongoose_1.Schema({
