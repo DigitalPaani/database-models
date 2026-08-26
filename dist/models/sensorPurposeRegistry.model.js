@@ -51,5 +51,5 @@ const sensorPurposeRegistrySchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-const SensorPurposeRegistryModel = mongoose_1.default.model("SensorPurposeRegistry", sensorPurposeRegistrySchema, "sensorPurposeRegistries");
+const SensorPurposeRegistryModel = mongoose_1.default.model("SensorPurposeRegistry", sensorPurposeRegistrySchema, "SensorPurposeRegistry");
 exports.SensorPurposeRegistryModel = SensorPurposeRegistryModel;
