@@ -37,7 +37,7 @@ const SensorPurposeRegistryModel: Model<ISensorPurposeRegistry> =
   mongoose.model<ISensorPurposeRegistry>(
     "SensorPurposeRegistry",
     sensorPurposeRegistrySchema,
-    "sensorPurposeRegistries"
+    "SensorPurposeRegistry"
   );
 
 export { SensorPurposeRegistryModel, ISensorPurposeRegistry };

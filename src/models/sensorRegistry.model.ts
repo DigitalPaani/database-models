@@ -24,7 +24,7 @@ const QuantitySchema = new Schema<IQuantity>(
     value: { type: Number, required: true },
     unit: { type: String, required: true },
   },
-  { _id: false },
+  { _id: false }
 );
 
 const DriftQuantitySchema = new Schema<IDriftQuantity>(
@@ -33,7 +33,7 @@ const DriftQuantitySchema = new Schema<IDriftQuantity>(
     unit: { type: String, required: true },
     per: { type: String, required: false },
   },
-  { _id: false },
+  { _id: false }
 );
 
 const StuckToleranceSchema = new Schema<IStuckTolerance>(
@@ -41,7 +41,7 @@ const StuckToleranceSchema = new Schema<IStuckTolerance>(
     value: { type: Number, required: true },
     type: { type: String, enum: ["FIXED", "FSR"], required: true },
   },
-  { _id: false },
+  { _id: false }
 );
 
 const DataSheetSchema = new Schema<IDataSheet>(
@@ -49,7 +49,7 @@ const DataSheetSchema = new Schema<IDataSheet>(
     url: { type: String, required: true },
     comments: { type: String, required: false },
   },
-  { _id: false },
+  { _id: false }
 );
 
 interface ITemplateTag {
@@ -79,40 +79,38 @@ interface ITemplateTag {
   signalType?: string;
 }
 
-const TemplateTagSchema = new Schema<ITemplateTag>(
-  {
-    tag: {
-      type: String,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    validMin: { type: Number, required: false },
-    validMax: { type: Number, required: false },
-    cautionMin: { type: Number, required: false },
-    cautionMax: { type: Number, required: false },
-    safeMin: { type: Number, required: false },
-    safeMax: { type: Number, required: false },
-    showCautionZone: { type: Boolean, required: false },
-    isThresholdConfigured: { type: Boolean, required: false, default: false },
-    frequency: { type: QuantitySchema, required: false },
-    precision: { type: QuantitySchema, required: false },
-    resolution: { type: QuantitySchema, required: false },
-    drift: { type: DriftQuantitySchema, required: false },
-    detectionLimit: { type: QuantitySchema, required: false },
-    t90ResponseTime: { type: QuantitySchema, required: false },
-    stuckWindowTime: { type: QuantitySchema, required: false },
-    stuckTolerance: { type: StuckToleranceSchema, required: false },
-    stuckMinThreshold: { type: Number },
-    stuckMaxThreshold: { type: Number },
-    dataSheets: { type: [DataSheetSchema], required: false },
-    units: { type: [String], required: false },
-    technologyType: { type: String, required: false },
-    signalType: { type: String, required: false },
+const TemplateTagSchema = new Schema<ITemplateTag>({
+  tag: {
+    type: String,
+    required: true,
   },
-);
+  name: {
+    type: String,
+    required: true,
+  },
+  validMin: { type: Number, required: false },
+  validMax: { type: Number, required: false },
+  cautionMin: { type: Number, required: false },
+  cautionMax: { type: Number, required: false },
+  safeMin: { type: Number, required: false },
+  safeMax: { type: Number, required: false },
+  showCautionZone: { type: Boolean, required: false },
+  isThresholdConfigured: { type: Boolean, required: false, default: false },
+  frequency: { type: QuantitySchema, required: false },
+  precision: { type: QuantitySchema, required: false },
+  resolution: { type: QuantitySchema, required: false },
+  drift: { type: DriftQuantitySchema, required: false },
+  detectionLimit: { type: QuantitySchema, required: false },
+  t90ResponseTime: { type: QuantitySchema, required: false },
+  stuckWindowTime: { type: QuantitySchema, required: false },
+  stuckTolerance: { type: StuckToleranceSchema, required: false },
+  stuckMinThreshold: { type: Number },
+  stuckMaxThreshold: { type: Number },
+  dataSheets: { type: [DataSheetSchema], required: false },
+  units: { type: [String], required: false },
+  technologyType: { type: String, required: false },
+  signalType: { type: String, required: false },
+});
 
 interface ISensorRegistry extends Document {
   sensorName: string;
@@ -138,13 +136,13 @@ const SensorRegistrySchema = new Schema<ISensorRegistry>(
       required: false,
     },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 const SensorRegistryModel = mongoose.model<ISensorRegistry>(
   "SensorRegistry",
   SensorRegistrySchema,
-  "sensorRegistries",
+  "SensorRegistry"
 );
 
 export { SensorRegistryModel, ISensorRegistry };
