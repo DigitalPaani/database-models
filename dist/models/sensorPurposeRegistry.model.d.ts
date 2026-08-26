@@ -7,8 +7,8 @@ interface ISensorPurposeRegistry extends Document {
     waterQualityFlag?: boolean;
     dataType?: "float" | "boolean" | "string" | "integer";
     units?: string[];
-    technologyType?: string;
-    signalType?: string;
+    technologyTypes?: string[];
+    signalTypes?: string[];
 }
 declare const SensorPurposeRegistryModel: Model<ISensorPurposeRegistry>;
 export { SensorPurposeRegistryModel, ISensorPurposeRegistry };

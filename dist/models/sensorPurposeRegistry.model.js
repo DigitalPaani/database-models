@@ -46,8 +46,8 @@ const sensorPurposeRegistrySchema = new mongoose_1.Schema({
         enum: ["float", "boolean", "string", "integer"],
     },
     units: { type: [String], required: false },
-    technologyType: { type: String, required: false },
-    signalType: { type: String, required: false },
+    technologyTypes: { type: [String], required: false },
+    signalTypes: { type: [String], required: false },
 }, {
     timestamps: true,
 });

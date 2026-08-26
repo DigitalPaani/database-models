@@ -9,8 +9,8 @@ interface ISensorPurposeRegistry extends Document {
   waterQualityFlag?: boolean;
   dataType?: "float" | "boolean" | "string" | "integer";
   units?: string[];
-  technologyType?: string;
-  signalType?: string;
+  technologyTypes?: string[];
+  signalTypes?: string[];
 }
 
 const sensorPurposeRegistrySchema = new Schema<ISensorPurposeRegistry>(
@@ -25,8 +25,8 @@ const sensorPurposeRegistrySchema = new Schema<ISensorPurposeRegistry>(
       enum: ["float", "boolean", "string", "integer"],
     },
     units: { type: [String], required: false },
-    technologyType: { type: String, required: false },
-    signalType: { type: String, required: false },
+    technologyTypes: { type: [String], required: false },
+    signalTypes: { type: [String], required: false },
   },
   {
     timestamps: true,
