@@ -74,6 +74,9 @@ interface ITemplateTag {
   stuckMinThreshold?: number;
   stuckMaxThreshold?: number;
   dataSheets?: IDataSheet[];
+  units?: string[];
+  technologyType?: string;
+  signalType?: string;
 }
 
 const TemplateTagSchema = new Schema<ITemplateTag>(
@@ -105,8 +108,10 @@ const TemplateTagSchema = new Schema<ITemplateTag>(
     stuckMinThreshold: { type: Number },
     stuckMaxThreshold: { type: Number },
     dataSheets: { type: [DataSheetSchema], required: false },
+    units: { type: [String], required: false },
+    technologyType: { type: String, required: false },
+    signalType: { type: String, required: false },
   },
-  { _id: false },
 );
 
 interface ISensorRegistry extends Document {

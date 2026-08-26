@@ -4,9 +4,11 @@ interface ISensorPurposeRegistry extends Document {
     name: string;
     category: string;
     description?: string;
-    allowedUnits?: string[];
     waterQualityFlag?: boolean;
     dataType?: "float" | "boolean" | "string" | "integer";
+    units?: string[];
+    technologyType?: string;
+    signalType?: string;
 }
 declare const SensorPurposeRegistryModel: Model<ISensorPurposeRegistry>;
 export { SensorPurposeRegistryModel, ISensorPurposeRegistry };

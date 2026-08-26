@@ -36,6 +36,9 @@ interface ITemplateTag {
     stuckMinThreshold?: number;
     stuckMaxThreshold?: number;
     dataSheets?: IDataSheet[];
+    units?: string[];
+    technologyType?: string;
+    signalType?: string;
 }
 interface ISensorRegistry extends Document {
     sensorName: string;

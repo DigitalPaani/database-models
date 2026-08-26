@@ -40,12 +40,14 @@ const sensorPurposeRegistrySchema = new mongoose_1.Schema({
     name: { type: String, required: true },
     category: { type: String, required: true },
     description: { type: String, required: false },
-    allowedUnits: [String],
     waterQualityFlag: { type: Boolean, required: false },
     dataType: {
         type: String,
         enum: ["float", "boolean", "string", "integer"],
     },
+    units: { type: [String], required: false },
+    technologyType: { type: String, required: false },
+    signalType: { type: String, required: false },
 }, {
     timestamps: true,
 });

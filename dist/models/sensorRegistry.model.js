@@ -80,7 +80,10 @@ const TemplateTagSchema = new mongoose_1.Schema({
     stuckMinThreshold: { type: Number },
     stuckMaxThreshold: { type: Number },
     dataSheets: { type: [DataSheetSchema], required: false },
-}, { _id: false });
+    units: { type: [String], required: false },
+    technologyType: { type: String, required: false },
+    signalType: { type: String, required: false },
+});
 const SensorRegistrySchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
     sensorCompanyId: {
