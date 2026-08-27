@@ -80,7 +80,7 @@ const TemplateTagSchema = new mongoose_1.Schema({
     stuckMinThreshold: { type: Number },
     stuckMaxThreshold: { type: Number },
     dataSheets: { type: [DataSheetSchema], required: false },
-    units: { type: [String], required: false },
+    units: { type: String, required: false },
     technologyType: { type: String, required: false },
     signalType: { type: String, required: false },
 });
@@ -99,5 +99,5 @@ const SensorRegistrySchema = new mongoose_1.Schema({
         required: false,
     },
 }, { timestamps: true });
-const SensorRegistryModel = mongoose_1.default.model("SensorRegistry", SensorRegistrySchema, "SensorRegistry");
+const SensorRegistryModel = mongoose_1.default.model("SensorRegistry", SensorRegistrySchema, "sensorRegistry");
 exports.SensorRegistryModel = SensorRegistryModel;

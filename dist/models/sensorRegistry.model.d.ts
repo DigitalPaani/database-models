@@ -36,7 +36,7 @@ interface ITemplateTag {
     stuckMinThreshold?: number;
     stuckMaxThreshold?: number;
     dataSheets?: IDataSheet[];
-    units?: string[];
+    units?: string;
     technologyType?: string;
     signalType?: string;
 }
