@@ -99,5 +99,5 @@ const SensorRegistrySchema = new mongoose_1.Schema({
         required: false,
     },
 }, { timestamps: true });
-const SensorRegistryModel = mongoose_1.default.model("SensorRegistry", SensorRegistrySchema, "sensorRegistry");
+const SensorRegistryModel = mongoose_1.default.model("sensorRegistry", SensorRegistrySchema, "sensorRegistry");
 exports.SensorRegistryModel = SensorRegistryModel;

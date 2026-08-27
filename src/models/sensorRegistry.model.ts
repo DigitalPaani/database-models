@@ -140,7 +140,7 @@ const SensorRegistrySchema = new Schema<ISensorRegistry>(
 );
 
 const SensorRegistryModel = mongoose.model<ISensorRegistry>(
-  "SensorRegistry",
+  "sensorRegistry",
   SensorRegistrySchema,
   "sensorRegistry"
 );
