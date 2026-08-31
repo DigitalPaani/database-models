@@ -38,7 +38,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FlocSampleModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-require("./sensorModel");
 const bio_health_tracker_constants_1 = __importDefault(require("../constants/bio-health-tracker.constants"));
 ;
 ;
@@ -105,5 +104,14 @@ const flocSampleSchema = new mongoose_1.Schema({
     timestamps: true,
     minimize: false
 });
+// primary lookup: sampleId is filtered on by every mark/end operation.
+// partial filter because sampleId is not required, so a plain unique index
+// would collide across documents that have no sampleId.
+flocSampleSchema.index({ sampleId: 1 }, {
+    unique: true,
+    partialFilterExpression: { sampleId: { $type: "string" } }
+});
+// serves "latest sample for a sensor" lookups (sensorId equality, createdAt sort)
+flocSampleSchema.index({ sensorId: 1, createdAt: -1 });
 const FlocSampleModel = mongoose_1.default.model('flocsamples', flocSampleSchema, 'flocsamples');
 exports.FlocSampleModel = FlocSampleModel;

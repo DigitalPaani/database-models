@@ -1,6 +1,5 @@
 import type { Document, Model, Types } from "mongoose";
 import mongoose, { Schema } from "mongoose";
-require("./sensorModel");
 import bioHealthTrackerConstants from "../constants/bio-health-tracker.constants";
 
 interface IFlocMark extends Document {
@@ -91,6 +90,20 @@ const flocSampleSchema = new Schema<IFlocSample>(
     minimize: false
   }
 );
+
+// primary lookup: sampleId is filtered on by every mark/end operation.
+// partial filter because sampleId is not required, so a plain unique index
+// would collide across documents that have no sampleId.
+flocSampleSchema.index(
+  { sampleId: 1 },
+  {
+    unique: true,
+    partialFilterExpression: { sampleId: { $type: "string" } }
+  }
+);
+
+// serves "latest sample for a sensor" lookups (sensorId equality, createdAt sort)
+flocSampleSchema.index({ sensorId: 1, createdAt: -1 });
 
 const FlocSampleModel: Model<IFlocSample> = mongoose.model<IFlocSample>('flocsamples', flocSampleSchema, 'flocsamples');
 export {
