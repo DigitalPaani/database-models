@@ -31,7 +31,9 @@ interface ITemplateTag {
     drift?: IDriftQuantity;
     detectionLimit?: IQuantity;
     t90ResponseTime?: IQuantity;
-    stuckWindowTime?: IQuantity;
+    stuckWindowTimeMs?: number;
+    oorPersistentWindowMs?: number;
+    oorFlutteringWindowMs?: number;
     stuckTolerance?: IStuckTolerance;
     stuckMinThreshold?: number;
     stuckMaxThreshold?: number;
