@@ -267,6 +267,11 @@ import { InventoryModel,IInventory } from "./models/inventory.model";
 import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
 import { PlantSensorMappingModel, IPlantSensorMapping } from "./models/plant-sensor-mapping.model";
+import {
+  SensorPurposeRegistryModel,
+  ISensorPurposeRegistry,
+} from "./models/sensorPurposeRegistry.model";
+import { SensorRegistryModel, ISensorRegistry } from "./models/sensorRegistry.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -378,6 +383,8 @@ export type {
   IVisualizationDefaultView,
   ITranslation,
   IPlantSensorMapping,
+  ISensorPurposeRegistry,
+  ISensorRegistry,
 };
 
 // exports the models
@@ -485,4 +492,6 @@ export {
   VisualizationDefaultViewModel,
   TranslationsModel,
   PlantSensorMappingModel,
+  SensorPurposeRegistryModel,
+  SensorRegistryModel,
 };
