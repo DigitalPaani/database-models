@@ -204,6 +204,7 @@ const sensor = new Schema(
       required: false,
       default: 'Other',
     },
+    lastSeen: { type: Number, required: false  },
   },
   {
     timestamps: true,
