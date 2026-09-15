@@ -268,6 +268,44 @@ import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './model
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
 import { PlantSensorMappingModel, IPlantSensorMapping } from "./models/plant-sensor-mapping.model";
 
+import {
+  PlantModuleLicenceModel,
+  IPlantModuleLicence,
+} from "./models/plantModuleLicence.model";
+import {
+  ExceptionPermissionGrantModel,
+  IExceptionPermissionGrant,
+} from "./models/exceptionPermissionGrant.model";
+import {
+  PermissionAuditLogModel,
+  IPermissionAuditLog,
+  AuditChangeType,
+} from "./models/permissionAuditLog.model";
+import {
+  PermissionShadowLogModel,
+  IPermissionShadowLog,
+  ShadowVerdict,
+} from "./models/permissionShadowLog.model";
+import {
+  UserPermissionOverrideModel,
+  IUserPermissionOverride,
+} from "./models/userPermissionOverride.model";
+import {
+  UserPlantAssignmentModel,
+  IUserPlantAssignment,
+} from "./models/userPlantAssignment.model";
+import {
+  UserSessionModel,
+  IUserSession,
+  RevokeReason,
+} from "./models/userSession.model";
+import {
+  RoleTemplateModel,
+  RoleTemplateVersionModel,
+  IRoleTemplate,
+  IRoleTemplateVersion,
+} from "./models/roleTemplate.model";
+
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
 
@@ -378,6 +416,18 @@ export type {
   IVisualizationDefaultView,
   ITranslation,
   IPlantSensorMapping,
+  IPlantModuleLicence,
+  IExceptionPermissionGrant,
+  IPermissionAuditLog,
+  AuditChangeType,
+  IPermissionShadowLog,
+  ShadowVerdict,
+  IUserPermissionOverride,
+  IUserPlantAssignment,
+  IUserSession,
+  RevokeReason,
+  IRoleTemplate,
+  IRoleTemplateVersion,
 };
 
 // exports the models
@@ -485,4 +535,13 @@ export {
   VisualizationDefaultViewModel,
   TranslationsModel,
   PlantSensorMappingModel,
+  PlantModuleLicenceModel,
+  ExceptionPermissionGrantModel,
+  PermissionAuditLogModel,
+  PermissionShadowLogModel,
+  UserPermissionOverrideModel,
+  UserPlantAssignmentModel,
+  UserSessionModel,
+  RoleTemplateModel,
+  RoleTemplateVersionModel,
 };
