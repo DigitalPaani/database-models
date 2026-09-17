@@ -113,6 +113,40 @@ const insightsSchema = new Schema<IInsight>(
   }
 );
 
+// Insights listing indexes.
+// Every listing/count query filters on `isArchived: false`, so that predicate
+// lives in the partial filter instead of the key, and all three support the
+// listing sort `{ isOpen: -1, priority: 1, createdAt: -1 }` in that exact order.
+
+// Default listing + count (no `filterOnly`), scoped to the caller's assets.
+insightsSchema.index(
+  { assetId: 1, isOpen: -1, priority: 1, createdAt: -1 },
+  {
+    name: "insights_list_main",
+    partialFilterExpression: { isArchived: false },
+  }
+);
+
+// `filterOnly` = OPEN_ALARMS / CLOSED_ALARMS / ACHIEVEMENT.
+// Its prefix also serves the four overview countDocuments.
+insightsSchema.index(
+  { assetId: 1, insightClassification: 1, isOpen: -1, priority: 1, createdAt: -1 },
+  {
+    name: "insights_list_classification",
+    partialFilterExpression: { isArchived: false },
+  }
+);
+
+// Staff listing: no `assetId` predicate is applied, so without this the sort
+// above cannot be served by an index and falls back to a blocking in-memory sort.
+insightsSchema.index(
+  { isOpen: -1, priority: 1, createdAt: -1 },
+  {
+    name: "insights_list_staff",
+    partialFilterExpression: { isArchived: false },
+  }
+);
+
 const InsightModel: Model<IInsight> =
   mongoose.model<IInsight>(
     "insights",
