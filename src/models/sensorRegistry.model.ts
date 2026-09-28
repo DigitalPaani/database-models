@@ -70,8 +70,7 @@ interface ITemplateTag {
   detectionLimit?: IQuantity;
   t90ResponseTime?: IQuantity;
   stuckWindowTimeMs?: number;
-  oorPersistentWindowMs?: number;
-  oorFlutteringWindowMs?: number;
+  oorWindowMs?: number;
   stuckTolerance?: IStuckTolerance;
   stuckMinThreshold?: number;
   stuckMaxThreshold?: number;
@@ -105,8 +104,7 @@ const TemplateTagSchema = new Schema<ITemplateTag>({
   detectionLimit: { type: QuantitySchema, required: false },
   t90ResponseTime: { type: QuantitySchema, required: false },
   stuckWindowTimeMs: { type: Number, required: false },
-  oorPersistentWindowMs: { type: Number, required: false },
-  oorFlutteringWindowMs: { type: Number, required: false },
+  oorWindowMs: { type: Number, required: false },
   stuckTolerance: { type: StuckToleranceSchema, required: false },
   stuckMinThreshold: { type: Number },
   stuckMaxThreshold: { type: Number },

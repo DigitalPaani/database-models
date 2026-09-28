@@ -32,8 +32,7 @@ interface ITemplateTag {
     detectionLimit?: IQuantity;
     t90ResponseTime?: IQuantity;
     stuckWindowTimeMs?: number;
-    oorPersistentWindowMs?: number;
-    oorFlutteringWindowMs?: number;
+    oorWindowMs?: number;
     stuckTolerance?: IStuckTolerance;
     stuckMinThreshold?: number;
     stuckMaxThreshold?: number;
