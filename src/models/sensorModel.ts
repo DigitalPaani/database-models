@@ -59,6 +59,7 @@ export interface ISensor {
   mediaValidationType?: string;
   confidenceScore?: number;
   category?: string;
+  lastSeen?: number;
 }
 
 const flocChildSensorsSchema = new Schema({
@@ -204,7 +205,7 @@ const sensor = new Schema(
       required: false,
       default: 'Other',
     },
-    lastSeen: { type: Number, required: false  },
+    lastSeen: { type: Number, required: false },
   },
   {
     timestamps: true,
