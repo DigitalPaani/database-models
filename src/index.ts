@@ -28,6 +28,18 @@ import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
 import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
 import { SensorsModel, ISensorsData } from "./models/sensorModel";
 import { AnswerSchemaModel, IAnswer } from "./models/AnswerSchema.model";
+import {
+  RepoSyncJobModel,
+  IRepoSyncJob,
+  IRepoSyncJobStats,
+  RepoSyncJobStatus,
+  RepoSyncJobTrigger,
+} from "./models/repo-sync-job.model";
+import {
+  DocManifestModel,
+  IDocManifestEntry,
+  DocManifestKind,
+} from "./models/doc-manifest.model";
 import { ConnectToDatabase } from "./mongoConnection";
 import { TaskModel, ITask, IEscalation } from "./models/tasks.model";
 import { AttachmentModel, IAttachment } from "./models/attachments.model";
@@ -378,11 +390,19 @@ export type {
   IVisualizationDefaultView,
   ITranslation,
   IPlantSensorMapping,
+  IRepoSyncJob,
+  IRepoSyncJobStats,
+  RepoSyncJobStatus,
+  RepoSyncJobTrigger,
+  IDocManifestEntry,
+  DocManifestKind,
 };
 
 // exports the models
 export {
   ConnectToDatabase,
+  RepoSyncJobModel,
+  DocManifestModel,
   FormulasModel,
   PlantModel,
   HyperFormulaModel,
