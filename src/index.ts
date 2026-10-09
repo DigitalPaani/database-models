@@ -267,6 +267,31 @@ import { InventoryModel,IInventory } from "./models/inventory.model";
 import { IVisualizationDefaultView, VisualizationDefaultViewModel} from './models/visualization-default-view.model' 
 import { TranslationsModel, ITranslation  } from "./models/translations.model";
 import { PlantSensorMappingModel, IPlantSensorMapping } from "./models/plant-sensor-mapping.model";
+import {
+  WatchdogEventModel,
+  IWatchdogEvent,
+  WATCHDOG_EVENT_TYPES,
+  WATCHDOG_CAUSE_CODES,
+  WATCHDOG_ACTIONS_TAKEN,
+  WatchdogEventType,
+  WatchdogCauseCode,
+  WatchdogActionTaken,
+} from "./models/watchdog-event.model";
+import {
+  IncidentModel,
+  IIncident,
+  IActionEntry,
+  INCIDENT_TYPES,
+  INCIDENT_STATUSES,
+  IncidentType,
+  IncidentStatus,
+} from "./models/watchdog-incident.model";
+import {
+  DeviceStatusModel,
+  IDeviceStatus,
+  DEVICE_STATUSES,
+  DeviceStatus,
+} from "./models/watchdog-device-status.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -378,6 +403,16 @@ export type {
   IVisualizationDefaultView,
   ITranslation,
   IPlantSensorMapping,
+  IWatchdogEvent,
+  IIncident,
+  IActionEntry,
+  IDeviceStatus,
+  WatchdogEventType,
+  WatchdogCauseCode,
+  WatchdogActionTaken,
+  IncidentType,
+  IncidentStatus,
+  DeviceStatus,
 };
 
 // exports the models
@@ -485,4 +520,13 @@ export {
   VisualizationDefaultViewModel,
   TranslationsModel,
   PlantSensorMappingModel,
+  WatchdogEventModel,
+  IncidentModel,
+  DeviceStatusModel,
+  WATCHDOG_EVENT_TYPES,
+  WATCHDOG_CAUSE_CODES,
+  WATCHDOG_ACTIONS_TAKEN,
+  INCIDENT_TYPES,
+  INCIDENT_STATUSES,
+  DEVICE_STATUSES,
 };
