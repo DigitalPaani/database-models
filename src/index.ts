@@ -305,6 +305,22 @@ import {
   IRoleTemplate,
   IRoleTemplateVersion,
 } from "./models/roleTemplate.model";
+import {
+  EquipmentLibraryTypeModel,
+  EquipmentLibraryTypeDoc,
+} from "./models/equipmentLibraryType.model";
+import {
+  EquipmentLibraryTypeVersionModel,
+  EquipmentLibraryTypeVersionDoc,
+} from "./models/equipmentLibraryTypeVersion.model";
+import {
+  EquipmentRegistryModel,
+  EquipmentRegistryDoc,
+} from "./models/equipmentRegistry.model";
+import {
+  PlantTypeProfileModel,
+  PlantTypeProfileDoc,
+} from "./models/plantTypeProfile.model";
 
 // Assign mongoose to mongooseDatabaseModels
 const mongooseDatabaseModels = mongoose;
@@ -428,6 +444,10 @@ export type {
   RevokeReason,
   IRoleTemplate,
   IRoleTemplateVersion,
+  EquipmentLibraryTypeDoc,
+  EquipmentLibraryTypeVersionDoc,
+  EquipmentRegistryDoc,
+  PlantTypeProfileDoc,
 };
 
 // exports the models
@@ -544,4 +564,8 @@ export {
   UserSessionModel,
   RoleTemplateModel,
   RoleTemplateVersionModel,
+  EquipmentLibraryTypeModel,
+  EquipmentLibraryTypeVersionModel,
+  EquipmentRegistryModel,
+  PlantTypeProfileModel,
 };
