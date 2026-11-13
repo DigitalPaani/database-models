@@ -10,6 +10,7 @@ interface ILayoutEquipment extends Document {
   assetId: string;
   nodeType: string;
   itemDetails: string | object;
+  derivedTags:string;
   equipmentType:string;
   category:string;
   isArchived:boolean;
@@ -25,6 +26,7 @@ const LayoutEquipments = new Schema(
       type: String,
       enum: VISUALIZATION_EQUIPMENT_TYPES_ENUMS
     },
+    derivedTags: String,
     itemDetails: {
       type: Schema.Types.Mixed,
       default: {},

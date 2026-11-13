@@ -45,6 +45,7 @@ const LayoutEquipments = new mongoose_1.Schema({
         type: String,
         enum: visualization_constants_1.VISUALIZATION_EQUIPMENT_TYPES_ENUMS
     },
+    derivedTags: String,
     itemDetails: {
         type: mongoose_1.Schema.Types.Mixed,
         default: {},

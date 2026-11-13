@@ -4,6 +4,7 @@ interface ILayoutEquipment extends Document {
     assetId: string;
     nodeType: string;
     itemDetails: string | object;
+    derivedTags: string;
     equipmentType: string;
     category: string;
     isArchived: boolean;
