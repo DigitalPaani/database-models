@@ -7,6 +7,7 @@ interface ILayoutEquipment extends Document {
     derivedTags: string;
     equipmentType: string;
     category: string;
+    sourceCode: string;
     isArchived: boolean;
 }
 declare const LayoutEquipmentModel: mongoose.Model<ILayoutEquipment, {}, {}, {}, mongoose.Document<unknown, {}, ILayoutEquipment> & ILayoutEquipment & Required<{

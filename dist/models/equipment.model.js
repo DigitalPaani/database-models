@@ -40,6 +40,7 @@ const LayoutEquipments = new mongoose_1.Schema({
     refId: String,
     assetId: String,
     nodeType: String,
+    sourceCode: String,
     category: String,
     equipmentType: {
         type: String,

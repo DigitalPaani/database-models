@@ -13,6 +13,7 @@ interface ILayoutEquipment extends Document {
   derivedTags:string;
   equipmentType:string;
   category:string;
+  sourceCode:string;
   isArchived:boolean;
 }
 
@@ -21,6 +22,7 @@ const LayoutEquipments = new Schema(
     refId: String,
     assetId: String,
     nodeType: String,
+    sourceCode:String,
     category:String,
     equipmentType:{
       type: String,
