@@ -177,7 +177,7 @@ const sensor = new Schema(
     frequency: Number,
     sensorDetails:{
       type: mongoose.Schema.Types.ObjectId,
-      ref:"SensorList"  
+      ref:"sensorRegistry"  
     },
     threshold: {
       type: {

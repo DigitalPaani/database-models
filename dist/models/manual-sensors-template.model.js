@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ManualSensorModel = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const manualSensorsCategoryConst_1 = require("../constants/manualSensorsCategoryConst");
-const SensorList_1 = require("./SensorList");
+const SensorRegistry_1 = require("./SensorRegistry");
 const manualCategory = manualSensorsCategoryConst_1.manualCategoryList.map((category) => category.key);
 const ManualSensorSchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
@@ -45,7 +45,7 @@ const ManualSensorSchema = new mongoose_1.Schema({
     isArchived: { type: Boolean, default: false },
     type: { type: String, required: true },
     templateTags: {
-        type: [SensorList_1.TemplateTagSchema],
+        type: [SensorRegistry_1.TemplateTagSchema],
         default: [],
         required: false,
     },

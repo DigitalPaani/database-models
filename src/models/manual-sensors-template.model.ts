@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { manualCategoryList } from "../constants/manualSensorsCategoryConst";
-import { ITemplateTag, TemplateTagSchema } from "./SensorList";
+import { IPurposeTemplateTag, TemplateTagSchema } from "./SensorRegistry";
 
 const manualCategory = manualCategoryList.map((category) => category.key);
 
@@ -10,7 +10,7 @@ interface IManualSensors extends Document {
   category: string;
   isArchived: boolean;
   type: string;
-  templateTags?: ITemplateTag[]
+  templateTags?: IPurposeTemplateTag[]
 }
 
 const ManualSensorSchema = new Schema<IManualSensors>(

@@ -1,18 +1,18 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
 import { sensorInputType } from "../constants/sensorConst";
 
-interface ISensor extends Document {
+interface ISensorRegistry extends Document {
   sensorName: string;
   sensorCompanyId: Types.ObjectId;
   sensorModelNumber: string;
   granularity: string[];
   purpose: string[];
   inputType: string[];
-  tags: string[];
-  templateTags?: ITemplateTag[];
+  purposeTags: string[];
+  purposeTemplates?: IPurposeTemplateTag[];
 }
 
-export interface ITemplateTag {
+export interface IPurposeTemplateTag {
   tag: string;
   threshold: {
     validMin?: number;
@@ -25,7 +25,7 @@ export interface ITemplateTag {
   };
   isThresholdConfigured?: boolean;
 }
-export const TemplateTagSchema = new Schema<ITemplateTag>(
+export const TemplateTagSchema = new Schema<IPurposeTemplateTag>(
   {
     tag: {
       type: String,
@@ -45,7 +45,7 @@ export const TemplateTagSchema = new Schema<ITemplateTag>(
   { _id: false },
 );
 
-const SensorSchema = new Schema<ISensor>(
+const SensorRegistrySchema = new Schema<ISensorRegistry>(
   {
     sensorName: { type: String, required: true, trim: true },
     sensorCompanyId: {
@@ -60,8 +60,8 @@ const SensorSchema = new Schema<ISensor>(
       type: [String],
       enum: sensorInputType, // Restricts values to these three options
     },
-    tags: { type: [String], default: [] },
-    templateTags: {
+    purposeTags: { type: [String], default: [] },
+    purposeTemplates: {
       type: [TemplateTagSchema],
       default: [],
       required: false
@@ -70,10 +70,10 @@ const SensorSchema = new Schema<ISensor>(
   { timestamps: true }
 );
 
-const SensorModel = mongoose.model<ISensor>(
-  "SensorList",
-  SensorSchema,
-  "SensorLists"
+const SensorRegistryModel = mongoose.model<ISensorRegistry>(
+  "sensorRegistry",
+  SensorRegistrySchema,
+  "sensorRegistry"
 );
 
-export { SensorModel, ISensor };
+export { SensorRegistryModel, ISensorRegistry };

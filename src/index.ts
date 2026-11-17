@@ -23,7 +23,7 @@ import {
   IActionNode,
 } from "./models/workflow.model";
 import { CompanyModel } from "./models/CompanyModel";
-import { SensorModel, ISensor } from "./models/SensorList";
+import { SensorRegistryModel, ISensorRegistry } from "./models/SensorRegistry";
 import { QuestionSchemaModel, IQuestion } from "./models/QuestionSchema";
 import { BatchSchemaModel, IBatch } from "./models/QuestionBatchModel";
 import { SensorsModel, ISensorsData } from "./models/sensorModel";
@@ -307,7 +307,8 @@ export type {
   IComponentAction,
   ICommunicationComponent,
   INewUser,
-  ISensor,
+  // ISensor,
+  ISensorRegistry,
   IObsoleteTask,
   IQuestion,
   IBatch,
@@ -413,7 +414,8 @@ export {
   NewUserModel,
   commonConstants,
   CompanyModel,
-  SensorModel,
+  // SensorModel,
+  SensorRegistryModel,
   mongooseDatabaseModels,
   ObsoleteTaskModel,
   QuestionSchemaModel,

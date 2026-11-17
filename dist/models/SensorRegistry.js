@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SensorModel = exports.TemplateTagSchema = void 0;
+exports.SensorRegistryModel = exports.TemplateTagSchema = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
 const sensorConst_1 = require("../constants/sensorConst");
 exports.TemplateTagSchema = new mongoose_1.Schema({
@@ -52,7 +52,7 @@ exports.TemplateTagSchema = new mongoose_1.Schema({
     },
     isThresholdConfigured: { type: Boolean, required: false, default: false },
 }, { _id: false });
-const SensorSchema = new mongoose_1.Schema({
+const SensorRegistrySchema = new mongoose_1.Schema({
     sensorName: { type: String, required: true, trim: true },
     sensorCompanyId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -66,12 +66,12 @@ const SensorSchema = new mongoose_1.Schema({
         type: [String],
         enum: sensorConst_1.sensorInputType, // Restricts values to these three options
     },
-    tags: { type: [String], default: [] },
-    templateTags: {
+    purposeTags: { type: [String], default: [] },
+    purposeTemplates: {
         type: [exports.TemplateTagSchema],
         default: [],
         required: false
     },
 }, { timestamps: true });
-const SensorModel = mongoose_1.default.model("SensorList", SensorSchema, "SensorLists");
-exports.SensorModel = SensorModel;
+const SensorRegistryModel = mongoose_1.default.model("sensorRegistry", SensorRegistrySchema, "sensorRegistry");
+exports.SensorRegistryModel = SensorRegistryModel;
